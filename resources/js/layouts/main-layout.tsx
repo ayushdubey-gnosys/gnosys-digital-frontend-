@@ -1,11 +1,22 @@
 import React from 'react';
-import { Link, usePage } from '@inertiajs/react';
+import { Link, usePage, router } from '@inertiajs/react';
 import { dashboard, login } from '@/routes';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, User, ShoppingBag } from 'lucide-react';
-
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+import { ChevronDown, User, ShoppingBag, Menu, ChevronRight } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';export default function MainLayout({ children }: { children: React.ReactNode }) {
     const { auth } = usePage().props as any;
+    const [cartOpen, setCartOpen] = React.useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+    React.useEffect(() => {
+        const handleOpenCart = () => {
+            setCartOpen(true);
+            setTimeout(() => setCartOpen(false), 3000);
+        };
+        window.addEventListener('open-cart', handleOpenCart);
+        return () => window.removeEventListener('open-cart', handleOpenCart);
+    }, []);
 
     return (
         <div className="flex min-h-screen flex-col bg-gradient-to-r from-blue-200 via-blue-100 to-pink-100 text-gray-900 font-sans">
@@ -110,33 +121,212 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                                     </button>
                                     <div className="absolute top-full left-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
                                         <div className="w-64 bg-white rounded-md shadow-xl border border-gray-100 p-0 overflow-hidden flex flex-col">
-                                            <Link href="/about/contact" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Contact</Link>
-                                            <Link href="/about/culture-of-change" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Culture Of Change</Link>
+                                            <Link href="/about/culture-of-change" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Culture Of Change</Link>
                                             <Link href="/about/engagement-models" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Engagement Models</Link>
                                         </div>
                                     </div>
+                                </div>
+
+                                {/* Contact Us */}
+                                <div className="relative group">
+                                    <Link href="/contact" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                        Contact Us
+                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                    </Link>
                                 </div>
                             </nav>
 
                             {/* User & Cart Icons */}
                             <div className="flex items-center gap-2 shrink-0">
-                                <Link href={auth?.user ? dashboard() : login()}>
+                                
+                                {/* Mobile Menu Trigger */}
+                                <div className="xl:hidden block">
+                                    <Button 
+                                        variant="outline" 
+                                        size="icon" 
+                                        className="size-10 rounded-full border-gray-200 text-gray-700 bg-white hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                    >
+                                        <Menu className="size-5" />
+                                    </Button>
+                                </div>
+
+                                <Link href={auth?.user ? dashboard() : login()} className="block">
                                     <Button size="icon" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all">
                                         <User className="size-4" />
                                         <span className="sr-only">Account</span>
                                     </Button>
                                 </Link>
-                                <Button size="icon" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all relative group">
-                                    <ShoppingBag className="size-4 group-hover:scale-110 transition-transform" />
-                                    <span className="absolute -top-1 -right-1 flex size-[20px] items-center justify-center rounded-full bg-blue-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white">
-                                        0
-                                    </span>
-                                    <span className="sr-only">Cart</span>
-                                </Button>
+                                
+                                <div className="relative group/cart">
+                                    <Button size="icon" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all relative">
+                                        <ShoppingBag className="size-4 group-hover/cart:scale-110 transition-transform" />
+                                        <span className="absolute -top-1 -right-1 flex size-[20px] items-center justify-center rounded-full bg-blue-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white">
+                                            2
+                                        </span>
+                                        <span className="sr-only">Cart</span>
+                                    </Button>
+
+                                    {/* Cart Dropdown */}
+                                    <div className={`absolute top-full right-0 pt-4 transition-all duration-200 z-50 ${cartOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none group-hover/cart:opacity-100 group-hover/cart:translate-y-0 group-hover/cart:pointer-events-auto'}`}>
+                                        <div className="w-[320px] bg-white rounded-md shadow-2xl border border-gray-100 p-5 flex flex-col gap-4">
+                                            
+                                            {/* Item 1 */}
+                                            <div className="flex gap-3 relative border-b border-gray-100 pb-4">
+                                                <div className="w-16 h-12 bg-blue-100 rounded overflow-hidden flex items-center justify-center shrink-0 text-[8px] text-blue-800 text-center font-bold">
+                                                    Affiliate Template
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <Link href="#" className="text-[13px] font-medium text-blue-600 hover:underline leading-tight pr-4">
+                                                        Affiliate Marketing Landing Page Template
+                                                    </Link>
+                                                    <div className="text-gray-500 text-[12px] mt-1">1 &times; $6.99</div>
+                                                </div>
+                                                <button className="absolute top-0 right-0 text-gray-300 hover:text-red-500 border border-gray-200 rounded-full size-4 flex items-center justify-center text-[10px] pb-[1px]">
+                                                    &times;
+                                                </button>
+                                            </div>
+
+                                            {/* Item 2 */}
+                                            <div className="flex gap-3 relative border-b border-gray-100 pb-4">
+                                                <div className="w-16 h-12 bg-slate-200 rounded overflow-hidden flex items-center justify-center shrink-0 text-[8px] text-slate-800 text-center font-bold">
+                                                    Agency Suite
+                                                </div>
+                                                <div className="flex flex-col">
+                                                    <Link href="#" className="text-[13px] font-medium text-blue-600 hover:underline leading-tight pr-4">
+                                                        Agency Project Management Suite
+                                                    </Link>
+                                                    <div className="text-gray-500 text-[12px] mt-1">1 &times; $29.99</div>
+                                                </div>
+                                                <button className="absolute top-0 right-0 text-gray-300 hover:text-red-500 border border-gray-200 rounded-full size-4 flex items-center justify-center text-[10px] pb-[1px]">
+                                                    &times;
+                                                </button>
+                                            </div>
+
+                                            {/* Subtotal */}
+                                            <div className="flex justify-center items-center py-1">
+                                                <span className="font-bold text-[15px] text-red-600">Subtotal: $36.98</span>
+                                            </div>
+
+                                            {/* Buttons */}
+                                            <div className="flex gap-2 mt-1">
+                                                <Link href="/cart" className="flex-1">
+                                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-sm h-10 text-[13px] font-medium">
+                                                        View cart
+                                                    </Button>
+                                                </Link>
+                                                <Link href="/cart" className="flex-1">
+                                                    <Button className="w-full bg-[#64748b] hover:bg-[#475569] text-white rounded-sm h-10 text-[13px] font-medium">
+                                                        Checkout
+                                                    </Button>
+                                                </Link>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                {/* Mobile Dropdown Menu */}
+                {mobileMenuOpen && (
+                    <div className="xl:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-blue-50 to-white shadow-[0_20px_40px_rgb(0,0,0,0.1)] border-t border-blue-100 flex flex-col max-h-[85vh] overflow-y-auto z-40">
+                        <div className="flex-1 px-4 py-4 flex flex-col gap-2">
+                            <Collapsible className="w-full">
+                                <CollapsibleTrigger 
+                                    className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors"
+                                    onDoubleClick={() => { router.visit('/digital-products'); setMobileMenuOpen(false); }}
+                                >
+                                    Digital Products
+                                    <ChevronDown className="size-4 text-gray-400" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-4 py-2 flex flex-col gap-2 bg-white/60 rounded-b-xl border-t border-blue-100/50">
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-products/ai-tools-automation-packs" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">AI Tools & Automation Packs</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-products/ebooks-guides" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">eBooks & Guides</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-products/hosting-add-ons" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Hosting Add-ons</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-products/marketing-kits" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Marketing Kits</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-products/templates-frameworks" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Templates & Frameworks</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-products/wordpress-themes-plugins" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">WordPress Themes & Plugins</Link>
+                                </CollapsibleContent>
+                            </Collapsible>
+
+                            <Collapsible className="w-full">
+                                <CollapsibleTrigger 
+                                    className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors"
+                                    onDoubleClick={() => { router.visit('/digital-services'); setMobileMenuOpen(false); }}
+                                >
+                                    Digital Services
+                                    <ChevronDown className="size-4 text-gray-400" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-4 py-2 flex flex-col gap-2 bg-white/60 rounded-b-xl border-t border-blue-100/50">
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-services/custom-development" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Custom Development</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-services/digital-marketing" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Digital Marketing</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-services/ecommerce-development" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">eCommerce Development</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-services/seo-content" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">SEO & Content</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/digital-services/server-devops" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Server & Devops</Link>
+                                </CollapsibleContent>
+                            </Collapsible>
+
+                            <Collapsible className="w-full">
+                                <CollapsibleTrigger 
+                                    className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors"
+                                    onDoubleClick={() => { router.visit('/solutions'); setMobileMenuOpen(false); }}
+                                >
+                                    Solutions
+                                    <ChevronDown className="size-4 text-gray-400" />
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-4 py-2 flex flex-col gap-2 bg-white/60 rounded-b-xl border-t border-blue-100/50">
+                                    <Collapsible className="w-full">
+                                        <CollapsibleTrigger 
+                                            className="flex w-full items-center justify-between py-2 text-[14px] font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                                            onDoubleClick={() => { router.visit('/erpnext-implementation'); setMobileMenuOpen(false); }}
+                                        >
+                                            ERPNext Implementation
+                                            <ChevronDown className="size-3.5 text-gray-400" />
+                                        </CollapsibleTrigger>
+                                        <CollapsibleContent className="pl-4 py-1 flex flex-col gap-2 border-l border-blue-200 ml-2 mt-1 mb-2">
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-healthcare" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext For Healthcare</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/epc-project-control" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">EPC Project Control with ERPNext</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-ecommerce" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for E-commerce</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-restaurants" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Restaurants</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-education" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Education Institutions</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-financial" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Financial Services</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-nonprofits" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Non-Profits & NGOs</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-professional-services" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Professional Services Firms</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-retail" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Retail SMEs</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-trading" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext for Trading & Distribution SMEs</Link>
+                                            <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/erpnext-manufacturing" className="py-1.5 text-[13px] text-gray-500 hover:text-blue-600">ERPNext Solutions for Manufacturing SMEs</Link>
+                                        </CollapsibleContent>
+                                    </Collapsible>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/channel-distribution" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Channel & Distribution</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/custom-manufacturing" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Custom Manufacturing</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/supply-chain" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">Supply Chain & Logistics</Link>
+                                    <Link onClick={() => setMobileMenuOpen(false)} href="/solutions/seo-services" className="py-2 text-[14px] text-gray-600 hover:text-blue-600">SEO Services</Link>
+                                </CollapsibleContent>
+                            </Collapsible>
+
+                            <Link onClick={() => setMobileMenuOpen(false)} href="/about" className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors">
+                                About Us
+                                <ChevronRight className="size-4 text-gray-300" />
+                            </Link>
+                            
+                            <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors">
+                                Contact Us
+                                <ChevronRight className="size-4 text-gray-300" />
+                            </Link>
+                        </div>
+                        <div className="p-6 border-t border-blue-100/50 bg-white/60">
+                            <Link onClick={() => setMobileMenuOpen(false)} href={auth?.user ? dashboard() : login()}>
+                                <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white">
+                                    <User className="mr-2 size-4" />
+                                    {auth?.user ? 'Dashboard' : 'Sign In'}
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                )}
 
                 {/* True Dual-color outset box-shadow glow */}
                 <div className="absolute -bottom-1.5 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500/10 via-pink-200/30 to-blue-500/10 blur-[4px] pointer-events-none z-[-1]"></div>
