@@ -130,51 +130,42 @@ export default function CaseStudy() {
         <MainLayout>
             <Head title="Case Studies | Gnosys Digital" />
             
-            <div className="bg-[#fcfdfd] min-h-screen py-16">
-                <div className="container mx-auto px-4 max-w-7xl">
+            <div className="bg-transparent min-h-screen py-24">
+                <div className="w-full mx-auto px-4 lg:px-12 max-w-[1600px] text-center">
                     
-                    {/* Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {caseStudies.map((study, index) => (
-                            <div key={index} className="bg-white border border-[#e2e8f0] rounded-sm flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-                                {/* Card Header Image Area */}
-                                <div className={`relative h-56 ${study.bgColor} border-b border-[#e2e8f0] flex items-center justify-center p-6 text-center`}>
-                                    <h3 className="text-xl font-bold text-[#022c54] z-10">{study.imageText}</h3>
-                                    
-                                    {/* Geometric abstract background for images */}
-                                    <div className="absolute inset-0 opacity-10 flex items-center justify-center pointer-events-none">
-                                        <svg viewBox="0 0 100 100" className="w-3/4 h-3/4" fill="none" stroke="currentColor" strokeWidth="1">
-                                            <rect x="20" y="20" width="60" height="60" rx="4" />
-                                            <circle cx="50" cy="50" r="20" />
-                                            <line x1="20" y1="50" x2="80" y2="50" />
-                                            <line x1="50" y1="20" x2="50" y2="80" />
-                                        </svg>
-                                    </div>
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">Case Studies</span>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">Our Success Stories</h2>
 
-                                    {/* Badge */}
-                                    <div className="absolute top-4 right-4 bg-[#02498b] text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm z-20">
-                                        Case Study
+                    {/* Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full text-left">
+                        {caseStudies.map((study, index) => (
+                            <div key={index} className="group bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 flex flex-col shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1.5 ring-1 ring-white/50 transition-all duration-400 h-full">
+                                <div className={`h-44 w-full bg-blue-50/60 border border-white/80 rounded-[1rem] flex items-center justify-center p-6 text-center mb-6 relative overflow-hidden shadow-[inset_0_0_20px_rgba(255,255,255,0.5)]`}>
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-black/5 mix-blend-overlay"></div>
+                                    <h3 className="text-[19px] font-bold text-[#022c54] z-10 relative tracking-tight drop-shadow-sm leading-tight">{study.imageText}</h3>
+                                    <div className="absolute top-3 right-3 z-20">
+                                        <div className="bg-white/90 backdrop-blur-md text-[#022c54] text-[9px] font-black px-2.5 py-1 rounded-full shadow-sm border border-white/80 uppercase tracking-widest">
+                                            Case Study
+                                        </div>
                                     </div>
                                 </div>
                                 
-                                {/* Card Body */}
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <Link href={study.link} className="group">
-                                        <h2 className="text-[17px] font-bold text-[#02498b] mb-4 leading-snug group-hover:text-blue-600 transition-colors">
+                                <div className="flex flex-col flex-grow">
+                                    <Link href={study.link} className="block mb-3">
+                                        <h4 className="text-[17px] font-medium text-[#00477b] hover:text-blue-600 transition-colors leading-snug tracking-tight">
                                             {study.title}
-                                        </h2>
+                                        </h4>
                                     </Link>
-                                    <p className="text-[13px] text-zinc-600 font-medium mb-6 line-clamp-3 leading-relaxed flex-grow">
+                                    <p className="text-[13px] text-zinc-500 font-medium mb-6 line-clamp-3 leading-relaxed flex-grow">
                                         {study.excerpt}
                                     </p>
                                     
-                                    <Link href={study.link} className="text-[#02498b] text-[11px] font-bold uppercase tracking-wider mb-8 hover:text-blue-600 transition-colors">
-                                        READ MORE +
+                                    <Link href={study.link} className="inline-flex items-center justify-center bg-[#00477b] border border-[#00335e] text-white text-[11px] font-bold uppercase tracking-wider px-6 py-2.5 rounded-full mb-6 hover:bg-[#00335e] hover:border-[#002646] hover:shadow-[0_0_15px_rgba(24,24,27,0.5)] hover:-translate-y-0.5 transition-all self-start mt-auto">
+                                        Read Case Study &rarr;
                                     </Link>
                                     
-                                    {/* Footer */}
-                                    <div className="pt-4 border-t border-[#e2e8f0] flex flex-wrap items-center text-[11px] text-zinc-500 font-medium gap-2">
-                                        <span className="text-[#022c54] font-bold">{study.author}</span>
+                                    <div className="pt-4 border-t border-zinc-200/80 flex flex-wrap items-center text-[10px] text-zinc-400 font-bold uppercase tracking-wider gap-2">
+                                        <span className="text-zinc-600">{study.author}</span>
                                         <span className="text-zinc-300">|</span>
                                         <span>{study.date}</span>
                                         <span className="text-zinc-300">|</span>
@@ -187,10 +178,10 @@ export default function CaseStudy() {
                     
                     {/* Pagination */}
                     <div className="flex justify-center items-center mt-16 gap-3">
-                        <Link href="#" className="w-8 h-8 flex items-center justify-center rounded-sm bg-white border border-[#e2e8f0] text-sm font-bold text-zinc-500 hover:bg-slate-50 transition-colors">
+                        <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-white shadow-sm text-sm font-bold text-zinc-500 hover:bg-white hover:shadow-md transition-all">
                             1
                         </Link>
-                        <Link href="#" className="w-8 h-8 flex items-center justify-center rounded-sm bg-white border border-[#e2e8f0] text-sm font-bold text-[#02498b] hover:bg-slate-50 transition-colors">
+                        <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-white shadow-md text-sm font-bold text-[#02498b] transition-all">
                             2
                         </Link>
                     </div>

@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { 
-    Package, RefreshCw, Truck, TrendingDown, 
+import {
+    Package, RefreshCw, Truck, TrendingDown,
     Link as LinkIcon, FileText, CheckCircle2, ChevronDown
 } from 'lucide-react';
 import React from 'react';
@@ -15,45 +15,43 @@ export default function ErpnextEcommerce() {
     return (
         <MainLayout>
             <Head title="ERPNext For E-Commerce" />
-            
+
             {/* 1. Hero Section */}
             <section className="relative overflow-hidden pt-20 pb-28 lg:pt-32 lg:pb-36 flex flex-col items-center justify-center text-center min-h-[70vh]">
                 <div className="absolute inset-0 z-0">
-                    <div 
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-luminosity"
-                        style={{ backgroundImage: "url('/assets/ecommerce-hero.webp')", backgroundColor: '#002a3a' }}
+                    <div
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        style={{ backgroundImage: "url('/assets/erp-ecomm.webp')", backgroundColor: '#002a3a' }}
                     ></div>
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#002a3a]/90 via-[#002a3a]/80 to-[#002a3a]"></div>
-                    {/* Data stream lines decoration */}
-                    <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+                    <div className="absolute inset-0 bg-black/40"></div>
                 </div>
-                
+
                 <div className="container relative z-10 mx-auto px-4 max-w-4xl">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
                         Unify Your Sales, Stock, And Accounts.
                         <br />
-                        <span className="text-cyan-400">Automate Everything Else.</span>
+                        <span className="text-zinc-300">Automate Everything Else.</span>
                     </h1>
-                    
-                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
+
+                    <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
                         Stop juggling apps and spreadsheets. Get a single, intelligent system that connects your marketplaces, website, warehouse, and financials. Scale your business, not your workload.
                     </p>
-                    <Button className="bg-white text-[#002a3a] hover:bg-cyan-50 rounded-full px-8 h-14 text-base font-bold shadow-xl transition-all hover:scale-105">
+                    <Button className="bg-white text-zinc-900 hover:bg-zinc-100 rounded-full px-8 h-14 text-base font-bold shadow-xl transition-all hover:scale-105">
                         Book Your Free E-Commerce Workflow Assessment
                     </Button>
                 </div>
             </section>
 
             {/* 2. Growth Pains Grid */}
-            <section className="py-24 bg-white text-center">
+            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden text-center">
                 <div className="container mx-auto px-4 max-w-5xl">
-                    <h2 className="text-3xl font-bold text-[#002a3a] mb-4">
+                    <h2 className="text-3xl font-bold text-[#00477b] mb-4">
                         The Growth Pains Every E-Commerce Brand Knows
                     </h2>
                     <p className="text-zinc-600 mb-14 text-lg">
                         Your operations turn into a bottleneck just as sales take off. Does this sound familiar?
                     </p>
-                    
+
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             { icon: Package, title: "Stock-Outs & Overstocks", desc: "Your website says 'In Stock,' your warehouse says 'Sold Out.' Dead inventory piles up while you miss out on sales." },
@@ -63,11 +61,11 @@ export default function ErpnextEcommerce() {
                             { icon: LinkIcon, title: "Disconnected Channels", desc: "Managing Amazon, Flipkart, Shopify, and your own retail stores in completely separate data silos." },
                             { icon: FileText, title: "GST & Compliance Headaches", desc: "Monthly filing becomes a scrambling exercise of manual calculations and mismatched tax reports." }
                         ].map((pain, i) => (
-                            <div key={i} className="bg-white border-2 border-cyan-50/50 hover:border-cyan-200 rounded-xl p-8 flex flex-col items-center shadow-sm hover:shadow-md transition-all text-center group">
-                                <div className="bg-cyan-50 p-4 rounded-full mb-6 group-hover:scale-110 transition-transform">
-                                    <pain.icon className="size-8 text-[#002a3a]" />
+                            <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 hover:bg-white/60 rounded-xl p-8 flex flex-col items-center shadow-sm hover:shadow-md transition-all text-center group">
+                                <div className="bg-white/80 shadow-sm p-4 rounded-full mb-6 group-hover:scale-110 transition-transform">
+                                    <pain.icon className="size-8 text-zinc-900" />
                                 </div>
-                                <h3 className="text-lg font-bold text-[#002a3a] mb-3">{pain.title}</h3>
+                                <h3 className="text-lg font-bold text-[#00477b] mb-3">{pain.title}</h3>
                                 <p className="text-sm text-zinc-600 leading-relaxed">{pain.desc}</p>
                             </div>
                         ))}
@@ -76,27 +74,27 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 3. Command Center Intro */}
-            <section className="py-20 bg-slate-50/80 text-center border-t border-gray-100">
+            <section className="py-24 bg-transparent text-center border-t border-white/40 relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-3xl">
-                    <h2 className="text-3xl font-bold text-[#002a3a] mb-6">
+                    <h2 className="text-3xl font-bold text-[#00477b] mb-6">
                         Your All-In-One Commerce Command Center
                     </h2>
                     <p className="text-zinc-700 text-lg mb-10 leading-relaxed">
                         ERPNext organizes chaos into process, giving you a unified backbone to run your entire business from procurement to final delivery.
                     </p>
-                    <Button className="bg-[#002a3a] text-white hover:bg-[#001d29] h-12 px-8 font-bold shadow-lg">
+                    <Button className="bg-[#00477b] text-white hover:bg-[#00477b] h-12 px-8 font-bold shadow-lg">
                         Schedule An Assessment Call
                     </Button>
                 </div>
             </section>
 
             {/* 4. Modules Built For Scale */}
-            <section className="py-24 bg-white border-t border-gray-100">
+            <section className="py-24 bg-transparent border-t border-white/40 relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-6xl">
-                    <h2 className="text-3xl font-bold text-center text-[#002a3a] mb-14">
+                    <h2 className="text-3xl font-bold text-center text-[#00477b] mb-14">
                         Modules Built For E-Commerce Scale
                     </h2>
-                    
+
                     {/* Top Row - 3 Cards */}
                     <div className="grid lg:grid-cols-3 gap-6 mb-6">
                         {[
@@ -104,15 +102,15 @@ export default function ErpnextEcommerce() {
                             { num: "2", title: "Omnichannel Sales Integrations", desc: "Native connectors for Shopify, WooCommerce, Amazon, Flipkart, and Magento. Manage all orders in one centralized hub." },
                             { num: "3", title: "Intelligent Inventory & Warehouse", desc: "Multi-warehouse real-time stock visibility. Expiry tracking, serial/batch tracking, and barcode scanning operations." }
                         ].map((mod, i) => (
-                            <div key={i} className="bg-[#002a3a] rounded-xl p-8 shadow-xl text-white relative overflow-hidden group">
+                            <div key={i} className="bg-zinc-900 rounded-xl p-8 shadow-xl text-white relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 p-4 opacity-10 font-black text-8xl -mr-4 -mt-6 group-hover:scale-110 transition-transform">
                                     {mod.num}
                                 </div>
-                                <div className="size-8 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold mb-6">
+                                <div className="size-8 bg-zinc-100 text-zinc-900 rounded-full flex items-center justify-center font-bold mb-6">
                                     {mod.num}
                                 </div>
                                 <h3 className="text-xl font-bold mb-4">{mod.title}</h3>
-                                <p className="text-sm text-blue-100 leading-relaxed">{mod.desc}</p>
+                                <p className="text-sm text-zinc-300 leading-relaxed">{mod.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -124,15 +122,15 @@ export default function ErpnextEcommerce() {
                             { num: "5", title: "Smart CRM & Loyalty", desc: "Unified customer profiles, integrated support ticket system, and built-in loyalty/reward programs to boost repeat sales." },
                             { num: "6", title: "Finance, Taxes & Analytics", desc: "Automated GST compliance, AR/AP, bank statement reconciliation, and rich dashboards for P&L, sales trends, and inventory health." }
                         ].map((mod, i) => (
-                            <div key={i} className="bg-[#002a3a] rounded-xl p-8 shadow-xl text-white relative overflow-hidden group">
+                            <div key={i} className="bg-zinc-900 rounded-xl p-8 shadow-xl text-white relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 p-4 opacity-10 font-black text-8xl -mr-4 -mt-6 group-hover:scale-110 transition-transform">
                                     {mod.num}
                                 </div>
-                                <div className="size-8 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold mb-6">
+                                <div className="size-8 bg-zinc-100 text-zinc-900 rounded-full flex items-center justify-center font-bold mb-6">
                                     {mod.num}
                                 </div>
                                 <h3 className="text-xl font-bold mb-4">{mod.title}</h3>
-                                <p className="text-sm text-blue-100 leading-relaxed">{mod.desc}</p>
+                                <p className="text-sm text-zinc-300 leading-relaxed">{mod.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -140,52 +138,47 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 5. Roadmap */}
-            <section className="py-24 bg-slate-50 overflow-hidden border-t border-gray-100">
-                <div className="container mx-auto px-4 max-w-5xl">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-[#002a3a] mb-4">
-                            6-Week E-commerce Automation Roadmap
+            <section className="py-24 bg-transparent overflow-hidden border-t border-white/40 relative z-10 w-full">
+                <div className="w-full px-4 lg:px-8 xl:px-12 mx-auto">
+                    <div className="text-center mb-16 md:mb-24 max-w-5xl mx-auto">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-zinc-200/50 border border-zinc-300/50 text-xs font-bold text-[#00477b] uppercase tracking-wider mb-4">
+                            Implementation Plan
+                        </span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#00477b] mb-6 tracking-tight">
+                            6-Week E-commerce Roadmap
                         </h2>
-                        <p className="text-zinc-600 text-lg">Streamlined plan to automate operations, integrate channels, and empower your team.</p>
+                        <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+                            A streamlined, step-by-step plan to automate operations, integrate channels, and empower your team without the chaos.
+                        </p>
                     </div>
 
-                    <div className="relative py-12">
-                        {/* Center Line */}
-                        <div className="absolute top-1/2 left-0 right-0 h-2 bg-zinc-300 -translate-y-1/2 hidden md:block rounded-full"></div>
-                        
-                        {/* Timeline Points */}
-                        <div className="flex flex-col md:flex-row justify-between relative z-20 gap-8 md:gap-0">
+                    <div className="relative pt-8 max-w-[1600px] mx-auto">
+                        {/* Horizontal connecting line (Desktop only) */}
+                        <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-px bg-white/60 z-0"></div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 relative z-10">
                             {[
-                                { step: "Week 1-2", title: "Process Mapping", desc: "Sales channels, inventory workflows & finance mapped.", color: "bg-cyan-500", up: true },
-                                { step: "Week 3", title: "System Setup", desc: "Configure users, warehouses, pricing rules, and taxes.", color: "bg-emerald-500", up: false },
-                                { step: "Week 4", title: "Integrations", desc: "Connect sales channels, marketplaces, & gateways.", color: "bg-indigo-500", up: true },
-                                { step: "Week 5", title: "Migration & Testing", desc: "Import past sales, inventory data; end-to-end testing.", color: "bg-emerald-500", up: false },
-                                { step: "Week 6", title: "Training & Launch", desc: "Go Live with full hand-holding support and training.", color: "bg-cyan-500", up: true },
+                                { step: "Week 1-2", title: "Process Mapping & Architecture", desc: "Map sales channels, inventory workflows, and financials to establish the baseline." },
+                                { step: "Week 3", title: "Core System Setup", desc: "Configure users, multi-warehouse structures, pricing rules, and GST taxation." },
+                                { step: "Week 4", title: "Omnichannel Integrations", desc: "Connect sales channels (Shopify, Amazon), payment gateways, and logistics." },
+                                { step: "Week 5", title: "Migration & QA Testing", desc: "Import historical data, followed by rigorous end-to-end system testing." },
+                                { step: "Week 6", title: "Training & Launch", desc: "Go live with comprehensive team training and dedicated hand-holding support." },
                             ].map((item, i) => (
-                                <div key={i} className="flex flex-col items-center text-center w-full md:w-1/5 relative">
-                                    {item.up ? (
-                                        <div className="md:absolute bottom-full mb-4 md:mb-6 w-full flex flex-col items-center">
-                                            <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100 mb-4 md:mb-3 w-48 z-10 relative">
-                                                <div className="text-xs font-bold text-cyan-600 mb-1">{item.step}</div>
-                                                <div className="text-sm font-bold text-[#002a3a] mb-2">{item.title}</div>
-                                                <div className="text-xs text-zinc-500 leading-snug">{item.desc}</div>
-                                                {/* Arrow down */}
-                                                <div className="absolute top-full left-1/2 -translate-x-1/2 border-[10px] border-transparent border-t-white hidden md:block"></div>
-                                            </div>
-                                            <div className={`size-6 rounded-full ${item.color} ring-4 ring-white shadow-md z-20`}></div>
-                                        </div>
-                                    ) : (
-                                        <div className="md:absolute top-full mt-4 md:mt-6 w-full flex flex-col items-center">
-                                            <div className={`size-6 rounded-full ${item.color} ring-4 ring-white shadow-md z-20`}></div>
-                                            <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100 mt-4 md:mt-3 w-48 z-10 relative">
-                                                {/* Arrow up */}
-                                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 border-[10px] border-transparent border-b-white hidden md:block"></div>
-                                                <div className="text-xs font-bold text-emerald-600 mb-1">{item.step}</div>
-                                                <div className="text-sm font-bold text-[#002a3a] mb-2">{item.title}</div>
-                                                <div className="text-xs text-zinc-500 leading-snug">{item.desc}</div>
-                                            </div>
-                                        </div>
-                                    )}
+                                <div key={i} className="flex flex-col relative group">
+                                    {/* Vertical Connecting Line (Mobile only) */}
+                                    {i !== 4 && <div className="lg:hidden absolute left-[27px] top-14 bottom-[-24px] w-px bg-white/40"></div>}
+
+                                    {/* Center Dot/Number */}
+                                    <div className="w-14 h-14 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm flex items-center justify-center shrink-0 relative z-10 text-zinc-900 font-bold text-lg group-hover:scale-110 group-hover:border-zinc-900 group-hover:bg-zinc-900 group-hover:text-white transition-all duration-300 mb-6 lg:mx-auto">
+                                        {i + 1}
+                                    </div>
+
+                                    {/* Card */}
+                                    <div className="bg-white/10 backdrop-blur-lg p-5 rounded-2xl shadow-sm border border-white/40 group-hover:shadow-xl group-hover:bg-white/20 transition-all duration-300 flex-1 ml-12 lg:ml-0 flex flex-col">
+                                        <div className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase mb-2">{item.step}</div>
+                                        <h3 className="text-[15px] font-bold text-[#00477b] mb-2 leading-tight">{item.title}</h3>
+                                        <p className="text-[13px] text-zinc-700 leading-relaxed">{item.desc}</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -194,46 +187,46 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 6. Proven Results */}
-            <section className="py-24 bg-[#002a3a] text-white overflow-hidden relative">
+            <section className="py-24 bg-zinc-900 text-white overflow-hidden relative border-y border-zinc-800">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent bg-[size:100px_100px]"></div>
-                
+
                 <div className="container mx-auto px-4 max-w-5xl relative z-10">
-                    <h2 className="text-3xl font-bold text-center mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-white tracking-tight">
                         Proven Results For Indian E-Commerce Brands
                     </h2>
-                    
-                    <div className="grid md:grid-cols-2 gap-8 md:gap-16 divide-y md:divide-y-0 md:divide-x divide-white/20">
-                        <div className="pb-8 md:pb-0 md:pr-8">
-                            <h3 className="text-xl font-bold mb-6 text-cyan-400">D2C Skincare Brand<br/><span className="text-sm font-normal text-white/60">Bangalore</span></h3>
+
+                    <div className="grid md:grid-cols-2 gap-8 md:gap-16 divide-y md:divide-y-0 md:divide-x divide-zinc-700">
+                        <div className="pb-8 md:pb-0 md:pr-8 group">
+                            <h3 className="text-2xl font-bold mb-6 text-white">D2C Skincare Brand<br /><span className="text-sm font-bold text-[#00477b] uppercase tracking-widest mt-1 inline-block">Bangalore</span></h3>
                             <ul className="space-y-4">
-                                <li className="flex items-start gap-3 text-sm text-blue-50">
-                                    <CheckCircle2 className="size-5 shrink-0 text-cyan-400" />
+                                <li className="flex items-start gap-3 text-sm text-zinc-300 font-medium">
+                                    <CheckCircle2 className="size-5 shrink-0 text-zinc-400 mt-0.5" />
                                     <span>1.5x order processing speed without adding warehouse headcount.</span>
                                 </li>
-                                <li className="flex items-start gap-3 text-sm text-blue-50">
-                                    <CheckCircle2 className="size-5 shrink-0 text-cyan-400" />
+                                <li className="flex items-start gap-3 text-sm text-zinc-300 font-medium">
+                                    <CheckCircle2 className="size-5 shrink-0 text-zinc-400 mt-0.5" />
                                     <span>Real-time stock visibility across Shopify, Amazon, and offline distributors.</span>
                                 </li>
-                                <li className="flex items-start gap-3 text-sm text-blue-50">
-                                    <CheckCircle2 className="size-5 shrink-0 text-cyan-400" />
+                                <li className="flex items-start gap-3 text-sm text-zinc-300 font-medium">
+                                    <CheckCircle2 className="size-5 shrink-0 text-zinc-400 mt-0.5" />
                                     <span>99% accuracy in order fulfillment.</span>
                                 </li>
                             </ul>
                         </div>
-                        <div className="pt-8 md:pt-0 md:pl-8">
-                            <h3 className="text-xl font-bold mb-6 text-cyan-400">Electronics Store<br/><span className="text-sm font-normal text-white/60">Mumbai</span></h3>
+                        <div className="pt-8 md:pt-0 md:pl-8 group">
+                            <h3 className="text-2xl font-bold mb-6 text-white">Electronics Store<br /><span className="text-sm font-bold text-[#00477b] uppercase tracking-widest mt-1 inline-block">Mumbai</span></h3>
                             <ul className="space-y-4">
-                                <li className="flex items-start gap-3 text-sm text-blue-50">
-                                    <CheckCircle2 className="size-5 shrink-0 text-cyan-400" />
+                                <li className="flex items-start gap-3 text-sm text-zinc-300 font-medium">
+                                    <CheckCircle2 className="size-5 shrink-0 text-zinc-400 mt-0.5" />
                                     <span>Unified Shopify & retail stores. 30% reduction in dead stock.</span>
                                 </li>
-                                <li className="flex items-start gap-3 text-sm text-blue-50">
-                                    <CheckCircle2 className="size-5 shrink-0 text-cyan-400" />
+                                <li className="flex items-start gap-3 text-sm text-zinc-300 font-medium">
+                                    <CheckCircle2 className="size-5 shrink-0 text-zinc-400 mt-0.5" />
                                     <span>Automated GST compliance saving 40 hours/month for accounting team.</span>
                                 </li>
-                                <li className="flex items-start gap-3 text-sm text-blue-50">
-                                    <CheckCircle2 className="size-5 shrink-0 text-cyan-400" />
+                                <li className="flex items-start gap-3 text-sm text-zinc-300 font-medium">
+                                    <CheckCircle2 className="size-5 shrink-0 text-zinc-400 mt-0.5" />
                                     <span>Single Source of Truth established for all business data.</span>
                                 </li>
                             </ul>
@@ -243,65 +236,65 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 7. Contact Form */}
-            <section className="py-24 bg-white">
+            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-3xl">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-[#002a3a] mb-4">
+                        <h2 className="text-3xl font-bold text-[#00477b] mb-4">
                             Discover Your Automation Potential
                         </h2>
                         <p className="text-zinc-600">
                             Tell us a bit about your business, and we'll identify exactly where bottlenecks are slowing you down.
                         </p>
                     </div>
-                    
-                    <div className="bg-white p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100">
+
+                    <div className="bg-white/10 backdrop-blur-xl p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-white/40">
                         <form className="space-y-6">
                             <div className="space-y-2">
                                 <Label htmlFor="fullName">Full Name</Label>
-                                <Input id="fullName" placeholder="Enter your full name" className="h-12" />
+                                <Input id="fullName" placeholder="Enter your full name" className="h-12 bg-white/20 border-white/40 placeholder:text-zinc-500 focus:bg-white/40 transition-colors" />
                             </div>
-                            
+
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="email">Email Address</Label>
-                                    <Input id="email" type="email" placeholder="Enter your email" className="h-12" />
+                                    <Input id="email" type="email" placeholder="Enter your email" className="h-12 bg-white/20 border-white/40 placeholder:text-zinc-500 focus:bg-white/40 transition-colors" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="phone">Phone Number</Label>
-                                    <Input id="phone" placeholder="Enter your phone number" className="h-12" />
+                                    <Input id="phone" placeholder="Enter your phone number" className="h-12 bg-white/20 border-white/40 placeholder:text-zinc-500 focus:bg-white/40 transition-colors" />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <Label htmlFor="company">Company Name</Label>
-                                <Input id="company" placeholder="Enter your company name" className="h-12" />
+                                <Input id="company" placeholder="Enter your company name" className="h-12 bg-white/20 border-white/40 placeholder:text-zinc-500 focus:bg-white/40 transition-colors" />
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="businessType">What best describes you?</Label>
                                     <div className="relative">
-                                        <select id="businessType" className="w-full h-12 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background appearance-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                                            <option>Select Type...</option>
-                                            <option>D2C Brand</option>
-                                            <option>B2B Distributor</option>
-                                            <option>Retailer (Online + Offline)</option>
-                                            <option>Marketplace Seller</option>
+                                        <select id="businessType" className="w-full h-12 rounded-md border border-white/40 bg-white/20 px-3 py-2 text-sm ring-offset-background appearance-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors">
+                                            <option className="bg-white">Select Type...</option>
+                                            <option className="bg-white">D2C Brand</option>
+                                            <option className="bg-white">B2B Distributor</option>
+                                            <option className="bg-white">Retailer (Online + Offline)</option>
+                                            <option className="bg-white">Marketplace Seller</option>
                                         </select>
-                                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-zinc-400 pointer-events-none" />
+                                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-zinc-600 pointer-events-none" />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="platforms">Platforms you sell on</Label>
                                     <div className="relative">
-                                        <select id="platforms" className="w-full h-12 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background appearance-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2">
-                                            <option>Select Platform...</option>
-                                            <option>Shopify</option>
-                                            <option>WooCommerce</option>
-                                            <option>Amazon / Flipkart</option>
-                                            <option>Multiple Platforms</option>
+                                        <select id="platforms" className="w-full h-12 rounded-md border border-white/40 bg-white/20 px-3 py-2 text-sm ring-offset-background appearance-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 transition-colors">
+                                            <option className="bg-white">Select Platform...</option>
+                                            <option className="bg-white">Shopify</option>
+                                            <option className="bg-white">WooCommerce</option>
+                                            <option className="bg-white">Amazon / Flipkart</option>
+                                            <option className="bg-white">Multiple Platforms</option>
                                         </select>
-                                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-zinc-400 pointer-events-none" />
+                                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-zinc-600 pointer-events-none" />
                                     </div>
                                 </div>
                             </div>
@@ -310,9 +303,9 @@ export default function ErpnextEcommerce() {
                                 <Label>Monthly Order Volume</Label>
                                 <div className="flex flex-wrap gap-4">
                                     {['< 500', '500 - 2000', '2000 - 5000', '5000+'].map((vol, i) => (
-                                        <label key={i} className="flex items-center gap-2 cursor-pointer">
-                                            <input type="radio" name="volume" className="size-4 text-cyan-600 focus:ring-cyan-600" />
-                                            <span className="text-sm text-zinc-700">{vol}</span>
+                                        <label key={i} className="flex items-center gap-2 cursor-pointer group">
+                                            <input type="radio" name="volume" className="size-4 appearance-none rounded-full border border-zinc-300 bg-white checked:border-[5px] checked:border-zinc-900 focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:ring-offset-2 transition-all cursor-pointer shadow-sm" />
+                                            <span className="text-sm text-zinc-700 group-hover:text-zinc-900 transition-colors">{vol}</span>
                                         </label>
                                     ))}
                                 </div>
@@ -320,11 +313,11 @@ export default function ErpnextEcommerce() {
 
                             <div className="space-y-2">
                                 <Label htmlFor="headache">Your Biggest Operational Headache Right Now?</Label>
-                                <Textarea id="headache" placeholder="e.g., 'Inventory never matches,' 'GST filing takes days,' 'Orders get missed'" className="min-h-[120px]" />
+                                <Textarea id="headache" placeholder="e.g., 'Inventory never matches,' 'GST filing takes days,' 'Orders get missed'" className="min-h-[120px] bg-white/20 border-white/40 placeholder:text-zinc-500 focus:bg-white/40 transition-colors" />
                             </div>
-                            
+
                             <div className="pt-4 text-center">
-                                <Button className="bg-[#002a3a] text-white hover:bg-[#001d29] px-10 h-14 font-bold w-full sm:w-auto shadow-lg">
+                                <Button className="bg-[#00477b] text-white hover:bg-[#00477b] hover:scale-105 px-10 h-14 font-bold w-full sm:w-auto shadow-lg transition-all">
                                     Request Free Assessment
                                 </Button>
                             </div>
@@ -334,40 +327,86 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 8. Pricing */}
-            <section className="py-20 bg-slate-50 border-y border-gray-100">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl font-bold text-center text-[#002a3a] mb-10">
-                        E-Commerce ERP Package
-                    </h2>
-                    
-                    <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-cyan-100 flex flex-col md:flex-row items-center gap-10">
-                        <div className="md:w-1/3 text-center md:text-left border-b md:border-b-0 md:border-r border-gray-200 pb-8 md:pb-0 md:pr-8">
-                            <div className="text-2xl lg:text-3xl font-bold text-[#002a3a] mb-2">Starts At</div>
-                            <div className="text-4xl lg:text-5xl font-black text-cyan-600">₹75,000</div>
+            <section className="py-24 bg-transparent border-y border-white/40 relative z-10 w-full overflow-hidden">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <div className="text-center mb-12 md:mb-16">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-zinc-900 text-xs font-bold text-white uppercase tracking-wider mb-4 shadow-lg shadow-zinc-900/20">
+                            Transparent Pricing
+                        </span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#00477b] mb-6 tracking-tight">
+                            E-Commerce ERP Package
+                        </h2>
+                        <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+                            Everything you need to automate workflows, integrate channels, and scale your brand—without the enterprise price tag.
+                        </p>
+                    </div>
+
+                    <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-[0_20px_50px_rgb(0,0,0,0.05)] border border-white/40 overflow-hidden flex flex-col lg:flex-row relative group">
+
+                        {/* Decorative glow */}
+                        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-400/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-pink-400/20 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                        {/* Left Side: Pricing */}
+                        <div className="lg:w-2/5 p-10 lg:p-14 border-b lg:border-b-0 lg:border-r border-white/40 flex flex-col justify-center bg-white/10 relative z-10">
+                            <h3 className="text-xl font-bold text-[#00477b] mb-2">Comprehensive Plan</h3>
+                            <p className="text-sm text-zinc-600 mb-8 font-medium">One-time implementation fee with transparent deliverables.</p>
+
+                            <div className="mb-8">
+                                <div className="text-sm font-bold text-zinc-500 uppercase tracking-widest mb-1">Starts At</div>
+                                <div className="text-5xl lg:text-6xl font-black text-zinc-700 tracking-tight">
+                                    ₹75<span className="text-4xl lg:text-5xl text-zinc-600">,000</span>
+                                </div>
+                            </div>
+
+                            <Button className="w-full bg-[#00477b] hover:bg-[#00477b] text-white h-14 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]">
+                                Book Your Assessment
+                            </Button>
+                            <p className="text-xs text-center text-zinc-500 mt-4 font-medium">Takes 2 minutes • No credit card required</p>
                         </div>
-                        <div className="md:w-2/3">
-                            <p className="text-sm text-zinc-700 mb-6 font-medium">
-                                Everything you need to automate workflows and scale your brand.
-                            </p>
-                            
-                            <div className="mb-6">
-                                <h4 className="font-bold text-[#002a3a] mb-3 uppercase tracking-wider text-xs">Includes:</h4>
-                                <ul className="space-y-2 text-sm text-zinc-600">
-                                    <li className="flex items-start gap-2"><CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" /> Complete Inventory Management & Warehouse operations</li>
-                                    <li className="flex items-start gap-2"><CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" /> Order & Shipping automation integrations</li>
-                                    <li className="flex items-start gap-2"><CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" /> Finance, Taxes, & Accounting configuration</li>
-                                    <li className="flex items-start gap-2"><CheckCircle2 className="size-4 text-emerald-500 shrink-0 mt-0.5" /> Training & Go-Live support</li>
+
+                        {/* Right Side: Features */}
+                        <div className="lg:w-3/5 p-10 lg:p-14 relative z-10">
+                            <div className="mb-10">
+                                <h4 className="font-bold text-[#00477b] mb-6 uppercase tracking-widest text-sm flex items-center gap-3">
+                                    <span className="w-8 h-px bg-zinc-400"></span>
+                                    What's Included
+                                </h4>
+                                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-5 text-sm text-zinc-700 font-medium">
+                                    <li className="flex items-start gap-3">
+                                        <div className="bg-zinc-900/10 rounded-full p-1 shrink-0"><CheckCircle2 className="size-4 text-zinc-900" /></div>
+                                        <span>Complete Inventory & Warehouse Management</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="bg-zinc-900/10 rounded-full p-1 shrink-0"><CheckCircle2 className="size-4 text-zinc-900" /></div>
+                                        <span>Order & Shipping Automation</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="bg-zinc-900/10 rounded-full p-1 shrink-0"><CheckCircle2 className="size-4 text-zinc-900" /></div>
+                                        <span>Finance, Taxes, & Accounting</span>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="bg-zinc-900/10 rounded-full p-1 shrink-0"><CheckCircle2 className="size-4 text-zinc-900" /></div>
+                                        <span>Training & Dedicated Go-Live Support</span>
+                                    </li>
                                 </ul>
                             </div>
-                            
-                            <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-                                <h4 className="font-bold text-amber-700 mb-2 uppercase tracking-wider text-xs flex items-center gap-2">
-                                    Limited-time bonuses:
+
+                            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-sm relative overflow-hidden group/bonus">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-zinc-900"></div>
+                                <h4 className="font-bold text-[#00477b] mb-3 uppercase tracking-wider text-xs flex items-center gap-2">
+                                    Limited-Time Bonuses
                                 </h4>
-                                <ul className="space-y-1 text-sm text-amber-800/80">
-                                    <li>• Free Amazon/Flipkart connector setup</li>
-                                    <li>• Free data migration from your current platform</li>
-                                    <li>• 3 Months Extended Priority Support</li>
+                                <ul className="space-y-2 text-sm text-zinc-800 font-medium">
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-zinc-400 font-bold">•</span> Free Amazon/Flipkart connector setup
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-zinc-400 font-bold">•</span> Free data migration from your current platform
+                                    </li>
+                                    <li className="flex items-center gap-2">
+                                        <span className="text-zinc-400 font-bold">•</span> 3 Months Extended Priority Support
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -376,12 +415,12 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 9. Why Partner With Us */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-transparent relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-5xl text-center">
-                    <h2 className="text-2xl font-bold text-[#002a3a] mb-10">
+                    <h2 className="text-2xl font-bold text-[#00477b] mb-10">
                         Why Partner With Gnosys Digital?
                     </h2>
-                    
+
                     <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
                         {[
                             "50+ E-commerce implementations across India",
@@ -389,8 +428,8 @@ export default function ErpnextEcommerce() {
                             "Agile onboarding (Go-Live in 4-6 weeks)",
                             "Dedicated support team that understands e-commerce ops"
                         ].map((item, i) => (
-                            <div key={i} className="bg-slate-50 border border-gray-100 p-6 rounded-xl text-sm font-medium text-zinc-700 shadow-sm">
-                                <CheckCircle2 className="size-6 text-cyan-600 mx-auto mb-4" />
+                            <div key={i} className="bg-white/10 backdrop-blur-lg border border-white/40 p-6 rounded-xl text-sm font-medium text-zinc-700 shadow-sm hover:bg-white/30 transition-colors">
+                                <CheckCircle2 className="size-6 text-zinc-800 mx-auto mb-4" />
                                 {item}
                             </div>
                         ))}
@@ -399,36 +438,36 @@ export default function ErpnextEcommerce() {
             </section>
 
             {/* 10. Final CTA */}
-            <section className="py-24 bg-slate-50 text-center border-t border-gray-100">
+            <section className="py-24 bg-transparent text-center border-t border-white/40 relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-5xl">
-                    <h2 className="text-3xl font-bold text-[#002a3a] mb-4">
+                    <h2 className="text-3xl font-bold text-[#00477b] mb-4">
                         Ready To Scale Without The Chaos?
                     </h2>
                     <p className="text-zinc-500 mb-12">Choose Your Next Step.</p>
-                    
+
                     <div className="grid md:grid-cols-3 gap-6">
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                            <h3 className="font-bold text-lg mb-2 text-[#002a3a]">Get a tailored automation plan.</h3>
-                            <Button className="mt-4 bg-[#002a3a] text-white hover:bg-[#001d29] w-full">
+                        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-sm border border-white/40 hover:bg-white/20 transition-all group flex flex-col">
+                            <h3 className="font-bold text-lg mb-auto text-[#00477b]">Get a tailored automation plan.</h3>
+                            <Button className="mt-6 bg-[#00477b] text-white group-hover:bg-[#00477b] transition-colors w-full border border-transparent group-hover:scale-[1.02] shadow-sm">
                                 Book Free Assessment
                             </Button>
                         </div>
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                            <h3 className="font-bold text-lg mb-2 text-[#002a3a]">Walk through the platform with our expert.</h3>
-                            <Button variant="outline" className="mt-4 border-cyan-600 text-cyan-700 hover:bg-cyan-50 w-full">
+                        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-sm border border-white/40 hover:bg-white/20 transition-all group flex flex-col">
+                            <h3 className="font-bold text-lg mb-auto text-[#00477b]">Walk through the platform with our expert.</h3>
+                            <Button className="mt-6 bg-[#00477b] text-white group-hover:bg-[#00477b] transition-colors w-full border border-transparent group-hover:scale-[1.02] shadow-sm">
                                 See Live Demo
                             </Button>
                         </div>
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                            <h3 className="font-bold text-lg mb-2 text-[#002a3a]">Instant clarity on your questions.</h3>
-                            <Button variant="secondary" className="mt-4 bg-slate-100 text-[#002a3a] hover:bg-slate-200 w-full">
+                        <div className="bg-white/10 backdrop-blur-lg p-8 rounded-xl shadow-sm border border-white/40 hover:bg-white/20 transition-all group flex flex-col">
+                            <h3 className="font-bold text-lg mb-auto text-[#00477b]">Instant clarity on your questions.</h3>
+                            <Button className="mt-6 bg-[#00477b] text-white group-hover:bg-[#00477b] transition-colors w-full border border-transparent group-hover:scale-[1.02] shadow-sm">
                                 Talk To An Expert
                             </Button>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
         </MainLayout>
     );
 }

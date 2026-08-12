@@ -24,15 +24,12 @@ export default function EngagementModels() {
             <Head title="Delivery & Engagement Models - Gnosys Digital" />
 
             {/* 1. Hero Section */}
-            <section className="relative bg-[#00477b] text-white overflow-hidden py-24 lg:py-32">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0%,transparent_100%)]"></div>
-                <div className="absolute top-0 right-0 opacity-10">
-                    <svg width="600" height="600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="4 4"/>
-                        <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="currentColor"/>
-                    </svg>
-                </div>
+            <section 
+                className="relative text-white overflow-hidden py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url("/assets/about-engaement.png")' }}
+            >
+                {/* Very light dark gradient just for text readability, keeping the image natural and bright */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#022c54]/30 via-[#022c54]/10 to-transparent"></div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -58,7 +55,7 @@ export default function EngagementModels() {
             </section>
 
             {/* 2. Built For Clarity */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
                     <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Built For Clarity, Speed, And Control</span>
                     <h2 className="text-3xl font-bold text-[#00477b] mb-4">Built For Clarity, Speed, And Control</h2>
@@ -73,11 +70,11 @@ export default function EngagementModels() {
                             { title: "Transparent Reporting", desc: "Full visibility into task progress and billable hours.", icon: BarChart3 },
                             { title: "Direct Communication", desc: "Work directly with developers and project managers.", icon: MessageSquare },
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-white border border-gray-200 p-6 rounded-lg text-left shadow-sm hover:shadow-md transition-shadow">
+                            <div key={idx} className="bg-white/50 backdrop-blur-xl border border-white/80 p-6 rounded-2xl text-left shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all">
                                 <div className="mb-4 text-[#00477b]">
                                     <item.icon className="size-8 stroke-[1.5]" />
                                 </div>
-                                <h3 className="text-lg font-bold text-zinc-900 mb-2">{item.title}</h3>
+                                <h3 className="text-lg font-bold text-[#00477b] mb-2">{item.title}</h3>
                                 <p className="text-gray-600 text-[13px] leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
@@ -86,7 +83,7 @@ export default function EngagementModels() {
             </section>
 
             {/* 3. Our Delivery Models */}
-            <section className="py-20 bg-slate-50 border-t border-gray-100">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="text-center mb-16">
                         <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Choose Your Engagement Route</span>
@@ -96,14 +93,14 @@ export default function EngagementModels() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         
                         {/* 1. Fixed Scope */}
-                        <div className="bg-white rounded-xl border-t-[6px] border-t-[#00477b] border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="bg-white/50 backdrop-blur-xl rounded-2xl border border-white/80 border-t-[6px] border-t-[#00477b] p-8 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all flex flex-col">
                             <h3 className="text-2xl font-bold text-[#00477b] mb-4">1. Fixed Scope Projects</h3>
                             <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                                 <span className="font-bold text-zinc-800">Ideal For:</span> Startups and businesses with strict budgets and clear requirements (Websites, Apps, Integrations).
                             </p>
                             
                             <div className="mb-6">
-                                <h4 className="font-bold text-zinc-900 mb-3 text-sm">Key Benefits:</h4>
+                                <h4 className="font-bold text-[#00477b] mb-3 text-sm">Key Benefits:</h4>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#00477b] mt-1.5 shrink-0"></div>
@@ -130,14 +127,14 @@ export default function EngagementModels() {
                         </div>
 
                         {/* 2. Retainer Based */}
-                        <div className="bg-white rounded-xl border-t-[6px] border-t-emerald-500 border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="bg-white/50 backdrop-blur-xl rounded-2xl border border-white/80 border-t-[6px] border-t-emerald-500 p-8 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all flex flex-col">
                             <h3 className="text-2xl font-bold text-[#00477b] mb-4">2. Retainer Based Engagements</h3>
                             <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                                 <span className="font-bold text-zinc-800">Ideal For:</span> Ongoing maintenance, continuous improvement, and steady team extensions (Design, Development, SEO).
                             </p>
                             
                             <div className="mb-6">
-                                <h4 className="font-bold text-zinc-900 mb-3 text-sm">Key Benefits:</h4>
+                                <h4 className="font-bold text-[#00477b] mb-3 text-sm">Key Benefits:</h4>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0"></div>
@@ -164,14 +161,14 @@ export default function EngagementModels() {
                         </div>
 
                         {/* 3. Hybrid Model */}
-                        <div className="bg-white rounded-xl border-t-[6px] border-t-amber-500 border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="bg-white/50 backdrop-blur-xl rounded-2xl border border-white/80 border-t-[6px] border-t-amber-500 p-8 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all flex flex-col">
                             <h3 className="text-2xl font-bold text-[#00477b] mb-4">3. Hybrid Model</h3>
                             <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                                 <span className="font-bold text-zinc-800">Ideal For:</span> Businesses that need a foundational project built first, followed by continuous monthly support (Growth, Management).
                             </p>
                             
                             <div className="mb-6">
-                                <h4 className="font-bold text-zinc-900 mb-3 text-sm">Key Benefits:</h4>
+                                <h4 className="font-bold text-[#00477b] mb-3 text-sm">Key Benefits:</h4>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0"></div>
@@ -198,14 +195,14 @@ export default function EngagementModels() {
                         </div>
 
                         {/* 4. Task-Based */}
-                        <div className="bg-white rounded-xl border-t-[6px] border-t-purple-500 border border-gray-200 p-8 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+                        <div className="bg-white/50 backdrop-blur-xl rounded-2xl border border-white/80 border-t-[6px] border-t-purple-500 p-8 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all flex flex-col">
                             <h3 className="text-2xl font-bold text-[#00477b] mb-4">4. Task-Based / Mini-Engagements</h3>
                             <p className="text-gray-600 text-sm mb-6 leading-relaxed">
                                 <span className="font-bold text-zinc-800">Ideal For:</span> Quick fixes, small feature additions, and one-off integrations.
                             </p>
                             
                             <div className="mb-6">
-                                <h4 className="font-bold text-zinc-900 mb-3 text-sm">Key Benefits:</h4>
+                                <h4 className="font-bold text-[#00477b] mb-3 text-sm">Key Benefits:</h4>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 shrink-0"></div>
@@ -235,7 +232,7 @@ export default function EngagementModels() {
             </section>
 
             {/* 4. Our Delivery Process */}
-            <section className="py-20 bg-white border-t border-gray-100">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-5xl">
                     <div className="text-center mb-16">
                         <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">How We Approach Every Project From Start To Finish</span>
@@ -243,32 +240,32 @@ export default function EngagementModels() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-6">
-                        <div className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-sm">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 text-center shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-transform">
                             <Handshake className="size-6 text-[#00477b] mx-auto mb-3" />
-                            <h4 className="font-bold text-zinc-900 mb-2">Discovery & Scoping</h4>
+                            <h4 className="font-bold text-[#00477b] mb-2">Discovery & Scoping</h4>
                             <p className="text-xs text-gray-500">We understand your goals and define the scope.</p>
                         </div>
-                        <div className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-sm">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 text-center shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-transform">
                             <FileText className="size-6 text-[#00477b] mx-auto mb-3" />
-                            <h4 className="font-bold text-zinc-900 mb-2">Proposal & Agreement</h4>
+                            <h4 className="font-bold text-[#00477b] mb-2">Proposal & Agreement</h4>
                             <p className="text-xs text-gray-500">Detailed plan, timeline, and cost breakdown.</p>
                         </div>
-                        <div className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-sm">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 text-center shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-transform">
                             <Rocket className="size-6 text-[#00477b] mx-auto mb-3" />
-                            <h4 className="font-bold text-zinc-900 mb-2">Kickoff & Execution</h4>
+                            <h4 className="font-bold text-[#00477b] mb-2">Kickoff & Execution</h4>
                             <p className="text-xs text-gray-500">Dedicated team begins work with full transparency.</p>
                         </div>
                     </div>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-10">
-                        <div className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-sm">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 text-center shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-transform">
                             <SearchCheck className="size-6 text-[#00477b] mx-auto mb-3" />
-                            <h4 className="font-bold text-zinc-900 mb-2">Review & Feedback</h4>
+                            <h4 className="font-bold text-[#00477b] mb-2">Review & Feedback</h4>
                             <p className="text-xs text-gray-500">Weekly check-ins and progress reviews.</p>
                         </div>
-                        <div className="bg-white border border-gray-200 rounded-lg p-6 text-center shadow-sm">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 text-center shadow-xl shadow-blue-900/5 hover:-translate-y-1 transition-transform">
                             <PackageCheck className="size-6 text-[#00477b] mx-auto mb-3" />
-                            <h4 className="font-bold text-zinc-900 mb-2">Delivery & Handover</h4>
+                            <h4 className="font-bold text-[#00477b] mb-2">Delivery & Handover</h4>
                             <p className="text-xs text-gray-500">Final delivery, training, and transition to maintenance/support.</p>
                         </div>
                     </div>
@@ -282,12 +279,12 @@ export default function EngagementModels() {
             </section>
 
             {/* 5. Our Transparency Promise */}
-            <section className="py-20 bg-slate-50">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
                     <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">No hidden fees, no surprises. Just great work and a great process.</span>
                     <h2 className="text-3xl font-bold text-[#00477b] mb-10">Our Transparency Promise</h2>
                     
-                    <div className="bg-white p-10 rounded-xl shadow-sm border border-gray-100 text-left max-w-2xl mx-auto">
+                    <div className="bg-white/50 backdrop-blur-xl p-10 rounded-3xl shadow-xl shadow-blue-900/5 border border-white/80 text-left max-w-2xl mx-auto">
                         <ul className="space-y-4">
                             {[
                                 "Detailed proposals that outline exactly what you pay for.",
@@ -309,7 +306,7 @@ export default function EngagementModels() {
             </section>
 
             {/* 6. Scales Growth Section */}
-            <section className="py-24 bg-white border-b border-gray-100">
+            <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="w-full md:w-1/2">
@@ -346,7 +343,7 @@ export default function EngagementModels() {
             </section>
 
             {/* 7. Let's Discuss Form */}
-            <section className="py-24 bg-white">
+            <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 max-w-3xl">
                     <div className="text-center mb-12">
                         <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Start Finding What You Need To Accelerate Your Work</span>
@@ -356,7 +353,7 @@ export default function EngagementModels() {
                         </p>
                     </div>
 
-                    <form className="bg-white p-8 md:p-10 border border-gray-100 rounded-xl shadow-lg">
+                    <form className="bg-white/50 backdrop-blur-xl p-8 md:p-10 border border-white/80 rounded-3xl shadow-xl shadow-blue-900/5">
                         <div className="space-y-4 mb-6">
                             <div className="space-y-2">
                                 <Label htmlFor="name" className="text-gray-700 font-bold">Name *</Label>

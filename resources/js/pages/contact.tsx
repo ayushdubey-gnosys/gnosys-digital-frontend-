@@ -11,61 +11,68 @@ export default function Contact() {
             <Head title="Contact Us" />
 
             {/* Map Section */}
-            <section className="w-full h-[400px] bg-gray-100">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d2887.828551408892!2d-79.55835692381273!3d43.6309257711036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b37803e1e479d%3A0xc32a41dc563e414c!2s225%20The%20East%20Mall%2C%20Etobicoke%2C%20ON%20M9B%200A9%2C%20Canada!5e0!3m2!1sen!2sin!4v1714470164871!5m2!1sen!2sin" 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }} 
-                    allowFullScreen={true} 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Gnosys Digital Location Map"
-                ></iframe>
+            <section className="w-full min-h-[400px] md:h-[500px] bg-slate-900 relative overflow-hidden flex items-center py-12 md:py-0">
+                <div 
+                    className="absolute inset-0 bg-cover bg-[75%_center] md:bg-center bg-no-repeat"
+                    style={{ backgroundImage: 'url("/assets/contact%20us.webp")' }}
+                ></div>
+                {/* Gradient overlay for text readability on left, image clarity on right */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 md:via-black/30 to-transparent"></div>
+                
+                <div className="w-full px-6 md:px-16 relative z-10">
+                    <div className="max-w-3xl text-left">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-white mb-4 md:mb-6 drop-shadow-lg leading-tight">
+                            Let’s Build Something That Moves Your Business Forward
+                        </h1>
+                        <p className="text-base sm:text-lg md:text-xl font-light text-white/90 drop-shadow-md leading-relaxed">
+                            At Gnosys Digital, we help businesses turn ideas into scalable digital solutions. Whether you need to streamline operations with ERPNext, automate workflows with AI and data services, grow your online visibility through SEO, or keep your website fast and secure with Managed WordPress, our team is ready to help.
+                        </p>
+                    </div>
+                </div>
             </section>
 
             {/* Contact Content Section */}
-            <section className="py-20 bg-white">
+            <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex flex-col lg:flex-row gap-16">
                         
                         {/* Form Side */}
                         <div className="w-full lg:w-3/5">
-                            <form className="space-y-6">
+                            <form className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-3xl p-8 md:p-10 shadow-2xl shadow-blue-900/10 space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <Label htmlFor="firstName" className="text-gray-700">Your Name <span className="text-red-500">*</span></Label>
-                                        <Input id="firstName" className="h-11 rounded-sm border-gray-300 focus:border-[#00477b] focus:ring-[#00477b]" />
+                                        <Label htmlFor="firstName" className="text-gray-700 font-semibold">Your Name <span className="text-red-500">*</span></Label>
+                                        <Input id="firstName" className="h-12 bg-white/60 backdrop-blur-md border border-white/80 rounded-xl shadow-inner focus:border-blue-400 focus:ring-blue-400" />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="surname" className="text-gray-700">Your Surname <span className="text-red-500">*</span></Label>
-                                        <Input id="surname" className="h-11 rounded-sm border-gray-300 focus:border-[#00477b] focus:ring-[#00477b]" />
+                                        <Label htmlFor="surname" className="text-gray-700 font-semibold">Your Surname <span className="text-red-500">*</span></Label>
+                                        <Input id="surname" className="h-12 bg-white/60 backdrop-blur-md border border-white/80 rounded-xl shadow-inner focus:border-blue-400 focus:ring-blue-400" />
                                     </div>
                                 </div>
                                 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <Label htmlFor="email" className="text-gray-700">Your Email <span className="text-red-500">*</span></Label>
-                                        <Input id="email" type="email" className="h-11 rounded-sm border-gray-300 focus:border-[#00477b] focus:ring-[#00477b]" />
+                                        <Label htmlFor="email" className="text-gray-700 font-semibold">Your Email <span className="text-red-500">*</span></Label>
+                                        <Input id="email" type="email" className="h-12 bg-white/60 backdrop-blur-md border border-white/80 rounded-xl shadow-inner focus:border-blue-400 focus:ring-blue-400" />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="website" className="text-gray-700">Website <span className="text-red-500">*</span></Label>
-                                        <Input id="website" className="h-11 rounded-sm border-gray-300 focus:border-[#00477b] focus:ring-[#00477b]" />
+                                        <Label htmlFor="website" className="text-gray-700 font-semibold">Website <span className="text-red-500">*</span></Label>
+                                        <Input id="website" className="h-12 bg-white/60 backdrop-blur-md border border-white/80 rounded-xl shadow-inner focus:border-blue-400 focus:ring-blue-400" />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="subject" className="text-gray-700">Subject <span className="text-red-500">*</span></Label>
-                                    <Input id="subject" className="h-11 rounded-sm border-gray-300 focus:border-[#00477b] focus:ring-[#00477b]" />
+                                    <Label htmlFor="subject" className="text-gray-700 font-semibold">Subject <span className="text-red-500">*</span></Label>
+                                    <Input id="subject" className="h-12 bg-white/60 backdrop-blur-md border border-white/80 rounded-xl shadow-inner focus:border-blue-400 focus:ring-blue-400" />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="message" className="text-gray-700">Your Message</Label>
-                                    <Textarea id="message" className="min-h-[150px] rounded-sm border-gray-300 focus:border-[#00477b] focus:ring-[#00477b]" />
+                                    <Label htmlFor="message" className="text-gray-700 font-semibold">Your Message</Label>
+                                    <Textarea id="message" className="min-h-[150px] bg-white/60 backdrop-blur-md border border-white/80 rounded-xl shadow-inner focus:border-blue-400 focus:ring-blue-400" />
                                 </div>
 
                                 <div>
-                                    <Button className="bg-[#00477b] hover:bg-[#00335e] text-white px-8 h-12 text-sm font-bold shadow-md rounded-sm">
+                                    <Button className="bg-[#00477b] hover:bg-[#00335e] text-white px-8 h-12 text-sm font-bold shadow-lg hover:shadow-xl rounded-full w-full md:w-auto mt-4 transition-all hover:-translate-y-0.5">
                                         Send Message
                                     </Button>
                                 </div>
@@ -74,10 +81,10 @@ export default function Contact() {
 
                         {/* Details Side */}
                         <div className="w-full lg:w-2/5">
-                            <div className="lg:pl-10">
+                            <div className="bg-white/40 backdrop-blur-xl border border-white/60 rounded-3xl p-8 md:p-10 shadow-xl h-full flex flex-col justify-center">
                                 <h2 className="text-3xl font-bold text-[#00477b] mb-6">Let's Talk</h2>
                                 
-                                <div className="w-full h-[1px] bg-gray-200 mb-6"></div>
+                                <div className="w-16 h-[3px] rounded-full bg-[#00477b] mb-8"></div>
                                 
                                 <p className="text-gray-700 mb-8 leading-relaxed">
                                     Whatever are your marketing needs, big or small we are here to help – get in touch with us and see how GnosysDigital can help you to grow your Business.

@@ -501,7 +501,7 @@ export default function Category({ type, slug }: CategoryProps) {
 
                                             {/* Content */}
                                             <div className="pt-6 pb-2 px-3 flex flex-col flex-1 items-center text-center">
-                                                <h4 className="font-extrabold text-[15px] text-zinc-900 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors">
+                                                <h4 className="font-extrabold text-[15px] text-[#00477b] mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors">
                                                     {product.title}
                                                 </h4>
                                                 

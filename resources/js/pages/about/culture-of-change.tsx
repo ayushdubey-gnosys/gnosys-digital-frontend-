@@ -9,8 +9,14 @@ export default function CultureOfChange() {
             <Head title="About Gnosys Digital - The Studio Behind The Change" />
 
             {/* 1. Hero Section */}
-            <section className="relative bg-[#00477b] text-white overflow-hidden py-24 lg:py-32">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0%,transparent_100%)]"></div>
+            <section 
+                className="relative text-white overflow-hidden py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: 'url("/assets/about.webp")' }}
+            >
+                {/* Lighter blue overlay to make the image clearly visible */}
+                <div className="absolute inset-0 bg-[#00477b]/30 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#022c54]/40 to-transparent"></div>
+                
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
                     <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6 leading-tight">
                         About Gnosys Digital<br/>The Studio Behind The Change
@@ -25,7 +31,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 2. Mission Section */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex flex-col lg:flex-row items-center gap-12">
                         <div className="w-full lg:w-1/2">
@@ -49,7 +55,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 3. What We Do */}
-            <section className="py-20 bg-slate-50">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-5xl text-center">
                     <h2 className="text-3xl font-bold text-[#00477b] mb-4">What We Do</h2>
                     <p className="text-gray-600 max-w-3xl mx-auto mb-12">
@@ -57,40 +63,40 @@ export default function CultureOfChange() {
                     </p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col items-start hover:shadow-md transition-shadow">
-                            <div className="p-3 bg-blue-50 text-[#00477b] rounded-lg mb-6">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 p-8 rounded-2xl flex flex-col items-start shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all">
+                            <div className="p-3 bg-white border border-white/60 shadow-sm text-blue-600 rounded-xl mb-6">
                                 <Layout className="size-6" />
                             </div>
                             <h3 className="text-xl font-bold text-[#00477b] mb-3">Ready-to-Use Digital Products</h3>
                             <p className="text-gray-600 mb-8 flex-grow text-sm leading-relaxed">
                                 Pre-built UI templates, code snippets, and UI kits designed to accelerate your development process.
                             </p>
-                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white px-6">View Digital Products</Button>
+                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white px-6 rounded-full shadow-md hover:shadow-lg">View Digital Products</Button>
                         </div>
-                        <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col items-start hover:shadow-md transition-shadow">
-                            <div className="p-3 bg-blue-50 text-[#00477b] rounded-lg mb-6">
+                        <div className="bg-white/50 backdrop-blur-xl border border-white/80 p-8 rounded-2xl flex flex-col items-start shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1 transition-all">
+                            <div className="p-3 bg-white border border-white/60 shadow-sm text-blue-600 rounded-xl mb-6">
                                 <Settings className="size-6" />
                             </div>
                             <h3 className="text-xl font-bold text-[#00477b] mb-3">Done-for-You Services</h3>
                             <p className="text-gray-600 mb-8 flex-grow text-sm leading-relaxed">
                                 From consulting to custom Web Apps, SaaS development, React Native app development, API integration and backend architecture — we build everything from scratch, focusing on performance.
                             </p>
-                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white px-6">Explore Services</Button>
+                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white px-6 rounded-full shadow-md hover:shadow-lg">Explore Services</Button>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* 4. Our Culture Of Change */}
-            <section className="py-20 bg-white border-t border-gray-50">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-5xl text-center">
                     <h2 className="text-3xl font-bold text-[#00477b] mb-6">Our Culture Of Change</h2>
                     <p className="text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
                         At Gnosys Digital, innovation is not a buzzword; it's our daily practice. We constantly explore new frameworks, refine our codebases, and embrace agility in a rapidly evolving digital world. We call it "Culture of Change."
                     </p>
                     
-                    <div className="bg-white p-8 md:p-12 text-left">
-                        <h3 className="text-xl font-bold text-zinc-900 mb-6">What It Means:</h3>
+                    <div className="bg-white/50 backdrop-blur-xl border border-white/80 p-8 md:p-12 rounded-3xl shadow-xl shadow-blue-900/5 text-left">
+                        <h3 className="text-xl font-bold text-[#00477b] mb-6">What It Means:</h3>
                         <div className="space-y-4">
                             {[
                                 "Staying current: We proactively upgrade our tech stack before it's a necessity.",
@@ -114,7 +120,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 5. Our Approach */}
-            <section className="py-20 bg-slate-50 border-t border-gray-100">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
                     <h2 className="text-3xl font-bold text-[#00477b] mb-4">Our Approach — The Gnosys Way</h2>
                     <p className="text-gray-600 max-w-3xl mx-auto mb-12">
@@ -128,7 +134,7 @@ export default function CultureOfChange() {
                             { title: "Build", desc: "We code. We build robust, scalable architectures using cutting-edge technologies.", icon: Layout },
                             { title: "Deliver", desc: "We test. We launch. We ensure flawless deployment, optimize for speed, and support your ongoing success.", icon: Target },
                         ].map((step, idx) => (
-                            <div key={idx} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-left hover:-translate-y-1 transition-transform">
+                            <div key={idx} className="bg-white/50 backdrop-blur-xl border border-white/80 p-6 rounded-2xl shadow-xl shadow-blue-900/5 text-left hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/15 transition-all">
                                 <h3 className="text-lg font-bold text-[#00477b] mb-3 flex items-center gap-2">
                                     <step.icon className="size-5 text-[#00477b]" />
                                     {step.title}
@@ -141,7 +147,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 6. Why Choose */}
-            <section className="py-20 bg-white">
+            <section className="py-20 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
                     <h2 className="text-3xl font-bold text-[#00477b] mb-12">Why Choose Gnosys Digital</h2>
                     
@@ -152,8 +158,8 @@ export default function CultureOfChange() {
                             { title: "Global Resources", desc: "A talented, distributed workforce that allows for round-the-clock progress.", icon: Globe },
                             { title: "Real Results", desc: "We focus on outcomes. We don't just build products; we build tools that drive revenue and efficiency.", icon: Target },
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-slate-50 p-6 rounded-xl border border-blue-50 text-left hover:border-blue-200 transition-colors">
-                                <div className="p-2.5 bg-white text-[#00477b] rounded-md inline-block shadow-sm mb-4">
+                            <div key={idx} className="bg-white/40 backdrop-blur-xl p-6 rounded-2xl border border-white/70 shadow-lg hover:shadow-xl transition-all">
+                                <div className="p-2.5 bg-white border border-white/60 text-[#00477b] rounded-xl inline-block shadow-sm mb-4">
                                     <item.icon className="size-5" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-2">{item.title}</h3>
@@ -185,7 +191,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 8. Meet The People */}
-            <section className="py-24 bg-white border-b border-gray-100">
+            <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
                     <h2 className="text-3xl font-bold text-[#00477b] mb-4">Meet The People Behind The Work</h2>
                     <p className="text-gray-600 max-w-3xl mx-auto mb-16">
@@ -198,13 +204,13 @@ export default function CultureOfChange() {
                             { name: "Arjun Desai", role: "Lead Developer", desc: "Arjun leads the development team, ensuring robust architecture and seamless integrations." },
                             { name: "Daniel Kim", role: "UI/UX Designer", desc: "Daniel crafts intuitive and engaging interfaces, focusing on user journeys and interaction design." },
                         ].map((person, idx) => (
-                            <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 text-left">
+                            <div key={idx} className="bg-white/50 backdrop-blur-xl p-6 rounded-3xl shadow-xl shadow-blue-900/5 border border-white/80 text-left">
                                 <div className="flex items-center gap-4 mb-4 pb-4 border-b border-gray-100">
                                     <div className="w-14 h-14 bg-[#00477b]/10 text-[#00477b] rounded-full flex items-center justify-center shrink-0">
                                         <User className="size-6" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-bold text-zinc-900">{person.name}</h3>
+                                        <h3 className="text-lg font-bold text-[#00477b]">{person.name}</h3>
                                         <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">{person.role}</p>
                                     </div>
                                 </div>
@@ -239,7 +245,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 10. CTA */}
-            <section className="py-24 bg-white border-b border-gray-100">
+            <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 text-center max-w-4xl">
                     <h2 className="text-3xl font-bold text-[#00477b] mb-6">Ready To Work With Us?</h2>
                     <p className="text-gray-600 mb-10 text-lg">

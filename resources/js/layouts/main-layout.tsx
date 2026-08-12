@@ -168,56 +168,64 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                     </Button>
 
                                     {/* Cart Dropdown */}
-                                    <div className={`absolute top-full right-0 pt-4 transition-all duration-200 z-50 ${cartOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none group-hover/cart:opacity-100 group-hover/cart:translate-y-0 group-hover/cart:pointer-events-auto'}`}>
-                                        <div className="w-[320px] bg-white rounded-md shadow-2xl border border-gray-100 p-5 flex flex-col gap-4">
+                                    <div className={`absolute top-full right-0 pt-4 transition-all duration-300 z-50 ${cartOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none group-hover/cart:opacity-100 group-hover/cart:translate-y-0 group-hover/cart:pointer-events-auto'}`}>
+                                        <div className="w-[360px] bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-200/60 p-6 flex flex-col">
                                             
-                                            {/* Item 1 */}
-                                            <div className="flex gap-3 relative border-b border-gray-100 pb-4">
-                                                <div className="w-16 h-12 bg-blue-100 rounded overflow-hidden flex items-center justify-center shrink-0 text-[8px] text-blue-800 text-center font-bold">
-                                                    Affiliate Template
-                                                </div>
-                                                <div className="flex flex-col">
-                                                    <Link href="#" className="text-[13px] font-medium text-blue-600 hover:underline leading-tight pr-4">
-                                                        Affiliate Marketing Landing Page Template
-                                                    </Link>
-                                                    <div className="text-gray-500 text-[12px] mt-1">1 &times; $6.99</div>
-                                                </div>
-                                                <button className="absolute top-0 right-0 text-gray-300 hover:text-red-500 border border-gray-200 rounded-full size-4 flex items-center justify-center text-[10px] pb-[1px]">
-                                                    &times;
-                                                </button>
+                                            <div className="flex justify-between items-center mb-5 pb-3 border-b border-gray-100">
+                                                <h3 className="font-bold text-gray-900 text-[15px]">Shopping Cart</h3>
+                                                <span className="bg-blue-50 text-[#00477b] text-xs font-bold px-2.5 py-0.5 rounded-full">2 Items</span>
                                             </div>
 
-                                            {/* Item 2 */}
-                                            <div className="flex gap-3 relative border-b border-gray-100 pb-4">
-                                                <div className="w-16 h-12 bg-slate-200 rounded overflow-hidden flex items-center justify-center shrink-0 text-[8px] text-slate-800 text-center font-bold">
-                                                    Agency Suite
+                                            <div className="flex flex-col gap-5 max-h-[300px] overflow-y-auto pr-1">
+                                                {/* Item 1 */}
+                                                <div className="flex gap-4 relative group/item">
+                                                    <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl overflow-hidden flex items-center justify-center shrink-0 border border-blue-100/50 shadow-sm text-[9px] text-[#00477b] text-center font-bold px-1 leading-tight">
+                                                        Affiliate Template
+                                                    </div>
+                                                    <div className="flex flex-col justify-center flex-1 pr-6">
+                                                        <Link href="#" className="text-[13.5px] font-semibold text-gray-800 hover:text-[#00477b] transition-colors leading-snug mb-1 line-clamp-2">
+                                                            Affiliate Marketing Landing Page Template
+                                                        </Link>
+                                                        <div className="text-gray-500 text-[13px] font-medium">1 &times; <span className="text-gray-900 font-bold">$6.99</span></div>
+                                                    </div>
+                                                    <button className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                                    </button>
                                                 </div>
-                                                <div className="flex flex-col">
-                                                    <Link href="#" className="text-[13px] font-medium text-blue-600 hover:underline leading-tight pr-4">
-                                                        Agency Project Management Suite
-                                                    </Link>
-                                                    <div className="text-gray-500 text-[12px] mt-1">1 &times; $29.99</div>
+
+                                                {/* Item 2 */}
+                                                <div className="flex gap-4 relative group/item">
+                                                    <div className="w-16 h-16 bg-gradient-to-br from-slate-50 to-gray-100 rounded-xl overflow-hidden flex items-center justify-center shrink-0 border border-slate-200/50 shadow-sm text-[9px] text-slate-700 text-center font-bold px-1 leading-tight">
+                                                        Agency Suite
+                                                    </div>
+                                                    <div className="flex flex-col justify-center flex-1 pr-6">
+                                                        <Link href="#" className="text-[13.5px] font-semibold text-gray-800 hover:text-[#00477b] transition-colors leading-snug mb-1 line-clamp-2">
+                                                            Agency Project Management Suite
+                                                        </Link>
+                                                        <div className="text-gray-500 text-[13px] font-medium">1 &times; <span className="text-gray-900 font-bold">$29.99</span></div>
+                                                    </div>
+                                                    <button className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                                    </button>
                                                 </div>
-                                                <button className="absolute top-0 right-0 text-gray-300 hover:text-red-500 border border-gray-200 rounded-full size-4 flex items-center justify-center text-[10px] pb-[1px]">
-                                                    &times;
-                                                </button>
                                             </div>
 
                                             {/* Subtotal */}
-                                            <div className="flex justify-center items-center py-1">
-                                                <span className="font-bold text-[15px] text-red-600">Subtotal: $36.98</span>
+                                            <div className="flex justify-between items-center py-4 mt-4 border-t border-gray-100">
+                                                <span className="font-medium text-[14px] text-gray-500">Subtotal</span>
+                                                <span className="font-black text-xl text-gray-900">$36.98</span>
                                             </div>
 
                                             {/* Buttons */}
-                                            <div className="flex gap-2 mt-1">
-                                                <Link href="/cart" className="flex-1">
-                                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-sm h-10 text-[13px] font-medium">
-                                                        View cart
+                                            <div className="flex flex-col gap-2 mt-2">
+                                                <Link href="/cart" className="w-full">
+                                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-xl h-11 text-[14px] font-bold shadow-md shadow-[#00477b]/20 hover:shadow-lg transition-all hover:-translate-y-0.5">
+                                                        Checkout
                                                     </Button>
                                                 </Link>
-                                                <Link href="/cart" className="flex-1">
-                                                    <Button className="w-full bg-[#64748b] hover:bg-[#475569] text-white rounded-sm h-10 text-[13px] font-medium">
-                                                        Checkout
+                                                <Link href="/cart" className="w-full">
+                                                    <Button className="w-full bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 rounded-xl h-11 text-[14px] font-bold shadow-sm transition-all">
+                                                        View cart
                                                     </Button>
                                                 </Link>
                                             </div>
@@ -338,11 +346,11 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
 
             {/* Footer */}
             <footer className="bg-white/40 backdrop-blur-lg pt-16 pb-0 flex flex-col mt-auto text-zinc-900 border-t border-white/60">
-                <div className="container mx-auto px-4 lg:px-8 pb-12">
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <div className="col-span-1 md:col-span-1">
+                <div className="container mx-auto px-4 lg:px-8 pb-12 text-left">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8">
+                        <div className="flex flex-col items-start">
                             <img src="/gnosysLogo.png" alt="Gnosys Digital" className="h-10 object-contain mb-8 opacity-90" />
-                            <div className="text-[13px] text-gray-600 space-y-2.5 leading-relaxed">
+                            <div className="text-[12px] md:text-[13px] text-gray-600 space-y-2.5 leading-relaxed">
                                 <p><strong className="text-gray-900 font-bold">[Address-CA]:</strong> 1664, 225 The East Mall,<br />Toronto, ON, M9B 0A9</p>
                                 <p><strong className="text-gray-900 font-bold">[Address-UK]:</strong> 20-22 Wenlock Road, London<br />N1 7GU, United Kingdom.</p>
                                 <p><strong className="text-gray-900 font-bold">[Phone]:</strong> +1 647 947 9546</p>
@@ -351,8 +359,8 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                         </div>
 
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-6 text-[15px] uppercase tracking-wider">Digital Services</h4>
-                            <ul className="text-[14px] text-gray-600 space-y-3">
+                            <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Digital Services</h4>
+                            <ul className="text-[13px] md:text-[14px] text-gray-600 space-y-3">
                                 <li><Link href="/digital-services/erpnext-implementation" className="hover:text-blue-500 transition-colors">ERPNext Implementation</Link></li>
                                 <li><Link href="/digital-services/ai-automation-data-services" className="hover:text-blue-500 transition-colors">Ai Automation Data Services</Link></li>
                                 <li><Link href="/digital-services/seo-growth-services" className="hover:text-blue-500 transition-colors">SEO & Growth Services</Link></li>
@@ -361,8 +369,8 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                         </div>
 
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-6 text-[15px] uppercase tracking-wider">Quick Links</h4>
-                            <ul className="text-[14px] text-gray-600 space-y-3">
+                            <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Quick Links</h4>
+                            <ul className="text-[13px] md:text-[14px] text-gray-600 space-y-3">
                                 <li><Link href="/digital-services/custom-development" className="hover:text-blue-500 transition-colors">Explore Custom Development</Link></li>
                                 <li><Link href="/digital-services/ecommerce-development" className="hover:text-blue-500 transition-colors">Explore eCommerce Solutions</Link></li>
                                 <li><Link href="/about/contact" className="hover:text-blue-500 transition-colors">Contact Us Today</Link></li>
@@ -370,27 +378,27 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                             </ul>
                         </div>
 
-                        <div>
-                            <h4 className="font-bold text-gray-900 mb-6 text-[15px] uppercase tracking-wider">Follow Us</h4>
-                            <div className="flex gap-3">
+                        <div className="flex flex-col items-start mt-0 md:mt-0">
+                            <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Follow Us</h4>
+                            <div className="flex gap-3 flex-wrap justify-start">
                                 {/* FB */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-zinc-900 hover:border-zinc-900 hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
                                 </a>
                                 {/* X */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-zinc-900 hover:border-zinc-900 hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" /></svg>
                                 </a>
                                 {/* IG */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-zinc-900 hover:border-zinc-900 hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
                                 </a>
                                 {/* Pinterest */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-zinc-900 hover:border-zinc-900 hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.633 0 12.017 0z" /></svg>
                                 </a>
                                 {/* LinkedIn */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-zinc-900 hover:border-zinc-900 hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
                                 </a>
                             </div>
