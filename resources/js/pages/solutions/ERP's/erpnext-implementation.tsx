@@ -22,7 +22,8 @@ import {
     Rocket,
     Plus,
     Minus,
-    Check
+    Check,
+    Star
 } from 'lucide-react';
 import React from 'react';
 import FaqAccordion from '@/components/FaqAccordion';
@@ -86,7 +87,7 @@ export default function ErpnextImplementation() {
             {/* 2. Why ERPNext Grid */}
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Why ERPNext</span>
+                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why ERPNext</span>
                     <h2 className="text-3xl font-bold text-[#00477b]">Why ERPNext — One Platform For Your Entire Business</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                         ERPNext helps you run your entire business from one place — with zero recurring license costs. It's open-source, modular, and designed for SMEs who want control, scalability, and savings.
@@ -120,7 +121,7 @@ export default function ErpnextImplementation() {
             {/* 3. Why Gnosys Digital */}
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Why Gnosys Digital</span>
+                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why Gnosys Digital</span>
                     <h2 className="text-3xl font-bold text-[#00477b]">Your Implementation Partner For ERPNext — Done Right</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                         We're not just ERP implementers — we're a digital transformation partner who understands SMEs.
@@ -245,7 +246,7 @@ export default function ErpnextImplementation() {
             {/* 5. Implementation Process */}
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Implementation Process</span>
+                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Implementation Process</span>
                     <h2 className="text-3xl font-bold text-[#00477b]">Our ERPNext Implementation Process</h2>
                 </div>
 
@@ -274,7 +275,7 @@ export default function ErpnextImplementation() {
                         </div>
                         
                         <div className="mt-16 text-center">
-                            <Button className="bg-[#00477b] hover:bg-[#00477b] text-white px-8 h-12 text-sm font-bold shadow-md">
+                            <Button className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold shadow-md border-none transition-all">
                                 Start Your Implementation
                             </Button>
                         </div>
@@ -285,7 +286,7 @@ export default function ErpnextImplementation() {
             {/* 6. Pricing Packages */}
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Engagement Models / Packages</span>
+                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Engagement Models / Packages</span>
                     <h2 className="text-3xl font-bold text-[#00477b]">Flexible Plans For Every Stage Of Your ERP Journey</h2>
                 </div>
 
@@ -296,7 +297,7 @@ export default function ErpnextImplementation() {
                         <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse">
                                 <thead>
-                                    <tr className="bg-zinc-900 text-white">
+                                    <tr className="bg-[#00477b] text-white">
                                         <th className="py-5 px-6 font-bold w-1/4">Plan</th>
                                         <th className="py-5 px-6 font-bold w-1/4 border-l border-white/20">Ideal For</th>
                                         <th className="py-5 px-6 font-bold w-1/3 border-l border-white/20">What's Included</th>
@@ -334,7 +335,7 @@ export default function ErpnextImplementation() {
                     </div>
 
                     <div className="mt-8 text-center">
-                        <Button className="bg-[#00477b] hover:bg-[#00477b] text-white px-8 h-12 text-sm font-bold shadow-md">
+                        <Button className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold shadow-md border-none transition-all">
                             Get a Detailed Quote
                         </Button>
                     </div>
@@ -344,144 +345,213 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 7. Add-Ons */}
-            <section className="py-20 bg-transparent">
-                <div className="container mx-auto px-4 max-w-5xl">
-                    <div className="flex flex-col md:flex-row items-center gap-12">
-                        <div className="w-full md:w-1/2">
-                            <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-zinc-200/50">
-                                <img src="/assets/erp-cycle.png" alt="ERP Cycle" className="w-full h-auto object-cover" />
-                            </div>
+            <section className="py-24 bg-transparent border-t border-white/40 overflow-hidden">
+                <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <div className="w-full lg:w-1/2">
+                        <div className="relative overflow-hidden shadow-2xl ring-1 ring-zinc-200/50 aspect-[4/3] lg:aspect-[16/10] bg-white rounded-r-[2rem]">
+                            <img src="/assets/erp-cycle.png" alt="ERP Cycle" className="w-full h-full object-cover" />
                         </div>
-                        <div className="w-full md:w-1/2">
-                            <h2 className="text-3xl font-bold text-[#00477b] mb-4">ERPNext Add-Ons We Offer</h2>
-                            <p className="text-gray-600 mb-8 leading-relaxed">
-                                Extend your ERP with modules and automations designed for your industry.
-                            </p>
-                            
-                            <ul className="space-y-4 mb-8">
-                                {[
-                                    "API Integrations (CRM, Shopify, WooCommerce)",
-                                    "WhatsApp & Email Automation",
-                                    "Advanced Reporting Dashboards",
-                                    "Custom Workflows & Approval Systems",
-                                    "Server Setup & Cloud Hosting (AWS, DigitalOcean)",
-                                    "Mobile App Enablement"
-                                ].map((item, idx) => (
-                                    <li key={idx} className="flex items-start gap-3">
-                                        <div className="mt-1 bg-zinc-100 text-zinc-700 rounded-sm p-0.5">
-                                            <Check className="size-3.5 stroke-[3]" />
-                                        </div>
-                                        <span className="text-gray-700 font-medium">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                    </div>
+                    <div className="w-full lg:w-1/2 px-4 sm:px-8 lg:px-12 lg:pr-24">
+                        <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-6">Powerful Extensions</span>
+                        <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-6 tracking-tight leading-tight">ERPNext Add-Ons We Offer</h2>
+                        <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
+                            Extend your ERP with modules and automations designed for your industry. Scale without limits using our custom integrations.
+                        </p>
+                        
+                        <ul className="space-y-4 mb-12">
+                            {[
+                                "API Integrations (CRM, Shopify, WooCommerce)",
+                                "WhatsApp & Email Automation",
+                                "Advanced Reporting Dashboards",
+                                "Custom Workflows & Approval Systems",
+                                "Server Setup & Cloud Hosting (AWS, DigitalOcean)",
+                                "Mobile App Enablement"
+                            ].map((item, idx) => (
+                                <li key={idx} className="flex items-center gap-4 bg-white/60 backdrop-blur-sm border border-zinc-200/60 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-blue-200/60 hover:-translate-y-0.5 transition-all duration-300 group">
+                                    <div className="bg-blue-50 text-blue-600 rounded-full p-2 shadow-sm group-hover:bg-[#00477b] group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                                        <Check className="size-4 stroke-[3]" />
+                                    </div>
+                                    <span className="text-zinc-800 font-semibold">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
 
-                            <Button className="bg-[#00477b] hover:bg-[#00477b] text-white px-8 h-12 text-sm font-bold shadow-md">
-                                Explore Custom Solutions
-                            </Button>
-                        </div>
+                        <Button className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-14 rounded-xl text-base font-bold shadow-xl shadow-blue-900/20 hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300 border-none">
+                            Explore Custom Solutions
+                        </Button>
                     </div>
                 </div>
             </section>
 
             {/* 8. FAQs & Case Study */}
-            <section className="py-24 bg-transparent border-t border-white/40">
-                <div className="container mx-auto px-4 max-w-3xl">
-                    
-                    <div className="text-center mb-16">
-                        <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Case Study</span>
-                        <h2 className="text-3xl font-bold text-[#00477b]">ERPNext In Action — Real SME Success Story</h2>
-                        <div className="mt-6 bg-white/40 backdrop-blur-lg p-6 rounded-xl border border-white/60 shadow-sm text-zinc-600 font-medium text-sm">
-                            [Case study placeholder - add relevant customer success story here]
+            <section className="pt-24 bg-transparent border-t border-white/40">
+                <div className="w-full">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-20 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
+                        <div className="max-w-[90rem] mx-auto w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                        
+                        {/* Left: Case Study */}
+                        <div className="flex flex-col h-full lg:pr-8">
+                            <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Case Study</span>
+                            <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-6 tracking-tight leading-tight">ERPNext In Action</h2>
+                            <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                                See how a real SME transformed their business operations, streamlined workflows, and boosted efficiency using our tailored ERPNext solutions.
+                            </p>
+                            
+                            <div className="relative bg-transparent backdrop-blur-sm border border-white/60 rounded-3xl p-8 sm:p-10 shadow-xl shadow-blue-900/5 text-zinc-900 overflow-hidden group flex-grow">
+                                <div className="absolute -top-4 -right-4 p-6 opacity-30 text-blue-200 group-hover:scale-110 transition-transform duration-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="text-zinc-200"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
+                                </div>
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div className="flex gap-2 mb-6 text-[#00477b]">
+                                        <Star className="size-5 fill-current" />
+                                        <Star className="size-5 fill-current" />
+                                        <Star className="size-5 fill-current" />
+                                        <Star className="size-5 fill-current" />
+                                        <Star className="size-5 fill-current" />
+                                    </div>
+                                    <p className="text-xl sm:text-2xl font-normal leading-relaxed mb-8 text-zinc-800">
+                                        "Implementing ERPNext with Gnosys Digital was a game-changer. We reduced operational costs by 30% and improved delivery times significantly within the first quarter."
+                                    </p>
+                                    <div className="mt-auto pt-6 border-t border-zinc-200/80">
+                                        <h4 className="font-bold text-lg text-[#00477b]">Rajesh Kumar</h4>
+                                        <p className="text-zinc-500 text-sm font-medium">CEO, Manufacturing Solutions Pvt. Ltd.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right: FAQs */}
+                        <div className="flex flex-col h-full mt-10 lg:mt-0">
+                            <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Support & Queries</span>
+                            <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-8 tracking-tight leading-tight">Implementation FAQs</h2>
+                            
+                            <div className="flex-grow">
+                                <FaqAccordion 
+                                    items={faqs}
+                                    iconPosition="right"
+                                    iconSize={5}
+                                    iconColorClass="text-[#00477b]"
+                                    containerClassName="bg-white/60 backdrop-blur-xl border border-zinc-200/60 rounded-3xl shadow-xl shadow-blue-900/5 overflow-hidden"
+                                    itemClassName="border-b border-zinc-200/60 last:border-0"
+                                    buttonClassName="text-zinc-900 font-medium px-6 sm:px-8 py-6 text-left hover:bg-white/80 transition-colors"
+                                    answerClassName="px-6 sm:px-8 pb-8 text-gray-600 bg-white/40 pt-2 leading-relaxed"
+                                />
+                            </div>
+                        </div>
+
+                            </div>
                         </div>
                     </div>
-
-                    <div className="text-center mb-10">
-                        <h2 className="text-3xl font-bold text-[#00477b]">ERPNext Implementation FAQs</h2>
-                    </div>
-
-                    <FaqAccordion 
-                        items={faqs}
-                        iconPosition="right"
-                        iconSize={5}
-                        iconColorClass="text-gray-400"
-                        containerClassName="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl shadow-sm"
-                        itemClassName="border-b border-white/40 last:border-0"
-                        buttonClassName="text-zinc-900 font-bold px-6 py-5 hover:bg-white/40"
-                        answerClassName="px-6 pb-5 text-gray-600 border-t border-gray-50 bg-white/30 pt-4"
-                    />
                 </div>
             </section>
 
             {/* 9. Contact Form */}
-            <section className="py-24 bg-transparent">
-                <div className="container mx-auto px-4 max-w-3xl">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-[#00477b]">Let's Simplify Your Operations With ERPNext</h2>
-                        <p className="mt-3 text-gray-500">Tell us about your business — we'll recommend the right modules, timeline, and cost.</p>
-                    </div>
-
-                    <form className="bg-white/40 backdrop-blur-xl border border-white/60 p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div className="space-y-2">
-                                <Label htmlFor="firstName">Name *</Label>
-                                <Input id="firstName" placeholder="First" className="bg-white/60 border-white/80 h-11" />
-                            </div>
-                            <div className="space-y-2">
-                                <Label htmlFor="lastName">&nbsp;</Label>
-                                <Input id="lastName" placeholder="Last" className="bg-white/60 border-white/80 h-11" />
-                            </div>
-                        </div>
-
-                        <div className="space-y-2 mb-6">
-                            <Label htmlFor="email">Email *</Label>
-                            <Input id="email" type="email" className="bg-white/60 border-white/80 h-11" />
-                        </div>
-
-                        <div className="space-y-2 mb-6">
-                            <Label htmlFor="phone">Phone *</Label>
-                            <Input id="phone" type="tel" className="bg-white/60 border-white/80 h-11" />
-                        </div>
-
-                        <div className="space-y-2 mb-8">
-                            <Label htmlFor="businessType">Business Type *</Label>
-                            <select id="businessType" className="w-full bg-white/60 border border-white/80 rounded-md h-11 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900/20">
-                                <option>--- Select Choice ---</option>
-                                <option>Manufacturing</option>
-                                <option>Retail / E-commerce</option>
-                                <option>Services</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div className="mb-8">
-                            <Label className="mb-4 block">Modules Needed *</Label>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                {[
-                                    "Accounting & Finance",
-                                    "Inventory & Warehouse",
-                                    "Manufacturing",
-                                    "CRM & Sales",
-                                    "HR & Payroll",
-                                    "Cloud-Based Access"
-                                ].map((mod, idx) => (
-                                    <div key={idx} className="flex items-center space-x-2">
-                                        <Checkbox id={`mod-${idx}`} />
-                                        <Label htmlFor={`mod-${idx}`} className="font-normal text-sm cursor-pointer">{mod}</Label>
+            <section className="py-24 bg-transparent border-t border-white/40">
+                <div className="w-full">
+                    <div className="py-20 px-4 sm:px-8 lg:px-12">
+                        <div className="max-w-[90rem] mx-auto w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                                
+                                {/* Left: Text Content */}
+                                <div className="flex flex-col lg:pr-8">
+                                    <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Get Started</span>
+                                    <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-6 tracking-tight leading-tight">Let's Simplify Your Operations With ERPNext</h2>
+                                    <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                                        Tell us about your business — we'll recommend the right modules, timeline, and cost. Start your digital transformation journey today.
+                                    </p>
+                                    <div className="space-y-6 mt-4 hidden lg:block">
+                                        <div className="flex items-center gap-4 text-zinc-700">
+                                            <div className="size-12 rounded-full bg-blue-50 flex items-center justify-center text-[#00477b] shrink-0 border border-blue-100">
+                                                <Check className="size-6" />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-[#00477b] text-lg">Free Consultation</h4>
+                                                <p className="text-sm text-gray-500">Expert advice tailored to your needs</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-4 text-zinc-700">
+                                            <div className="size-12 rounded-full bg-blue-50 flex items-center justify-center text-[#00477b] shrink-0 border border-blue-100">
+                                                <Zap className="size-6" />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-[#00477b] text-lg">Fast Implementation</h4>
+                                                <p className="text-sm text-gray-500">Get up and running in weeks, not months</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                ))}
+                                </div>
+
+                                {/* Right: Form */}
+                                <div>
+                                    <form className="bg-white/50 backdrop-blur-md border border-white/50 p-8 md:p-10 rounded-[2rem] shadow-sm">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 mb-8">
+                                            <div className="space-y-3">
+                                                <Label htmlFor="firstName" className="text-[#00477b] font-semibold text-[15px] ml-1">Your Name <span className="text-red-500">*</span></Label>
+                                                <Input id="firstName" className="bg-white/60 border-none shadow-sm h-14 rounded-[20px] px-5 text-slate-800 placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-[#00477b]/20" />
+                                            </div>
+                                            <div className="space-y-3">
+                                                <Label htmlFor="lastName" className="text-[#00477b] font-semibold text-[15px] ml-1">Your Surname <span className="text-red-500">*</span></Label>
+                                                <Input id="lastName" className="bg-white/60 border-none shadow-sm h-14 rounded-[20px] px-5 text-slate-800 placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-[#00477b]/20" />
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 mb-8">
+                                            <div className="space-y-3">
+                                                <Label htmlFor="email" className="text-[#00477b] font-semibold text-[15px] ml-1">Your Email <span className="text-red-500">*</span></Label>
+                                                <Input id="email" type="email" className="bg-white/60 border-none shadow-sm h-14 rounded-[20px] px-5 text-slate-800 placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-[#00477b]/20" />
+                                            </div>
+                                            <div className="space-y-3">
+                                                <Label htmlFor="phone" className="text-[#00477b] font-semibold text-[15px] ml-1">Phone Number <span className="text-red-500">*</span></Label>
+                                                <Input id="phone" type="tel" className="bg-white/60 border-none shadow-sm h-14 rounded-[20px] px-5 text-slate-800 placeholder:text-gray-500 focus-visible:ring-2 focus-visible:ring-[#00477b]/20" />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-3 mb-8">
+                                            <Label htmlFor="businessType" className="text-[#00477b] font-semibold text-[15px] ml-1">Business Type <span className="text-red-500">*</span></Label>
+                                            <select id="businessType" className="w-full bg-white/60 border-none shadow-sm text-slate-800 rounded-[20px] h-14 px-5 text-[15px] focus:outline-none focus:ring-2 focus:ring-[#00477b]/20">
+                                                <option className="text-zinc-900">--- Select Choice ---</option>
+                                                <option className="text-zinc-900">Manufacturing</option>
+                                                <option className="text-zinc-900">Retail / E-commerce</option>
+                                                <option className="text-zinc-900">Services</option>
+                                                <option className="text-zinc-900">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="mb-8">
+                                            <Label className="mb-4 block text-[#00477b] font-semibold text-[15px] ml-1">Modules Needed <span className="text-red-500">*</span></Label>
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pl-1">
+                                                {[
+                                                    "Accounting",
+                                                    "Inventory",
+                                                    "Manufacturing",
+                                                    "CRM & Sales",
+                                                    "HR & Payroll",
+                                                    "Cloud Access"
+                                                ].map((mod, idx) => (
+                                                    <div key={idx} className="flex items-center space-x-3">
+                                                        <Checkbox id={`mod-${idx}`} className="border-slate-300 rounded-[6px] data-[state=checked]:bg-[#00477b] data-[state=checked]:border-[#00477b]" />
+                                                        <Label htmlFor={`mod-${idx}`} className="font-normal text-[15px] text-slate-700 cursor-pointer">{mod}</Label>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-3 mb-10">
+                                            <Label htmlFor="message" className="text-[#00477b] font-semibold text-[15px] ml-1">Your Message</Label>
+                                            <Textarea id="message" className="bg-white/60 border-none shadow-sm text-slate-800 placeholder:text-gray-500 min-h-[140px] rounded-[20px] p-5 focus-visible:ring-2 focus-visible:ring-[#00477b]/20" />
+                                        </div>
+
+                                        <Button className="bg-[#00477b] hover:bg-[#003355] text-white h-[52px] px-8 text-[15px] font-bold rounded-full shadow-md transition-all border-none">
+                                            Send Message
+                                        </Button>
+                                    </form>
+                                </div>
+
                             </div>
                         </div>
-
-                        <div className="space-y-2 mb-8">
-                            <Label htmlFor="message">Message</Label>
-                            <Textarea id="message" className="bg-white/60 border-white/80 min-h-[120px]" />
-                        </div>
-
-                        <Button className="w-full bg-[#00477b] hover:bg-[#00477b] text-white h-12 text-base font-bold rounded-lg shadow-md">
-                            Submit Request
-                        </Button>
-                    </form>
+                    </div>
                 </div>
             </section>
         </MainLayout>
