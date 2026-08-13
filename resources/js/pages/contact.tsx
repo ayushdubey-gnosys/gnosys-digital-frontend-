@@ -33,7 +33,7 @@ export default function Contact() {
 
             {/* Contact Content Section */}
             <section className="py-24 bg-transparent">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
                     <div className="flex flex-col lg:flex-row gap-16">
                         
                         {/* Form Side */}

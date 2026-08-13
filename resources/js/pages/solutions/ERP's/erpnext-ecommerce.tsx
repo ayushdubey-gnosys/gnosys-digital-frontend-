@@ -45,6 +45,9 @@ export default function ErpnextEcommerce() {
             {/* 2. Growth Pains Grid */}
             <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden text-center">
                 <div className="container mx-auto px-4 max-w-5xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        THE CHALLENGE
+                    </span>
                     <h2 className="text-3xl font-bold text-[#00477b] mb-4">
                         The Growth Pains Every E-Commerce Brand Knows
                     </h2>
@@ -76,6 +79,9 @@ export default function ErpnextEcommerce() {
             {/* 3. Command Center Intro */}
             <section className="py-24 bg-transparent text-center border-t border-white/40 relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-3xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        OUR SOLUTION
+                    </span>
                     <h2 className="text-3xl font-bold text-[#00477b] mb-6">
                         Your All-In-One Commerce Command Center
                     </h2>
@@ -91,6 +97,9 @@ export default function ErpnextEcommerce() {
             {/* 4. Modules Built For Scale */}
             <section className="py-24 bg-transparent border-t border-white/40 relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-6xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        CORE MODULES
+                    </span>
                     <h2 className="text-3xl font-bold text-center text-[#00477b] mb-14">
                         Modules Built For E-Commerce Scale
                     </h2>
@@ -239,6 +248,9 @@ export default function ErpnextEcommerce() {
             <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-3xl">
                     <div className="text-center mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            ASSESSMENT
+                        </span>
                         <h2 className="text-3xl font-bold text-[#00477b] mb-4">
                             Discover Your Automation Potential
                         </h2>
@@ -417,6 +429,9 @@ export default function ErpnextEcommerce() {
             {/* 9. Why Partner With Us */}
             <section className="py-20 bg-transparent relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-5xl text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        WHY GNOSYS
+                    </span>
                     <h2 className="text-2xl font-bold text-[#00477b] mb-10">
                         Why Partner With Gnosys Digital?
                     </h2>
@@ -440,6 +455,9 @@ export default function ErpnextEcommerce() {
             {/* 10. Final CTA */}
             <section className="py-24 bg-transparent text-center border-t border-white/40 relative z-10 w-full overflow-hidden">
                 <div className="container mx-auto px-4 max-w-5xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        GET STARTED
+                    </span>
                     <h2 className="text-3xl font-bold text-[#00477b] mb-4">
                         Ready To Scale Without The Chaos?
                     </h2>

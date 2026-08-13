@@ -367,9 +367,9 @@ export default function ErpnextRetail() {
                 {/* 9. Why Choose Gnosys Digital */}
                 <section className="py-24 relative z-10">
                     <div className="container mx-auto px-4 max-w-[90rem] text-center">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-3 py-1 mb-5 shadow-sm">
-                            <span className="text-[9px] font-medium text-zinc-800 uppercase tracking-widest">WHY GNOSYS</span>
-                        </div>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-5">
+                            WHY GNOSYS
+                        </span>
                         <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-12">
                             Why Businesses Choose Gnosys Digital
                         </h2>

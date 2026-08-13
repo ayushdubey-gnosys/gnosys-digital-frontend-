@@ -44,10 +44,10 @@ export default function CustomManufacturing() {
                 {/* 2. Why Off-the-Shelf Systems Fail Your Plants */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHY STANDARD ERPs FAIL</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-16 max-w-3xl mx-auto leading-tight">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHY STANDARD ERPs FAIL
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16 max-w-3xl mx-auto leading-tight">
                             Your Process Isn't Standard — So Why Use Standard Software?
                         </h2>
                         
@@ -78,10 +78,10 @@ export default function CustomManufacturing() {
                 {/* 3. What We Build For You (Features Table alternative as Cards) */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHAT WE BUILD</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-6">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHAT WE BUILD
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                             We Design Your Factory's Digital Nervous System.
                         </h2>
                         <p className="text-zinc-600 font-medium mb-16 max-w-3xl mx-auto">
@@ -117,7 +117,7 @@ export default function CustomManufacturing() {
                 {/* 4. Custom Manufacturing (Hexagon Flow Diagram -> Modernized to match main page style) */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-[90rem]">
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-20">
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-20">
                             Custom Manufacturing Flow
                         </h2>
                         
@@ -153,10 +153,10 @@ export default function CustomManufacturing() {
                 {/* 5. Our Approach */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">OUR APPROACH</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-6">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            OUR APPROACH
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                             We Don't Install Systems. We Design Them With You.
                         </h2>
                         <p className="text-zinc-600 font-medium mb-16 max-w-3xl mx-auto">
@@ -187,10 +187,10 @@ export default function CustomManufacturing() {
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="flex flex-col lg:flex-row items-center gap-16 bg-white/60 backdrop-blur-md border border-white/80 rounded-3xl p-10 lg:p-16 shadow-lg">
                             <div className="lg:w-1/2">
-                                <div className="inline-block bg-white/80 border border-white rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                                    <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHY IT OUTPERFORMS</span>
-                                </div>
-                                <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-8 leading-tight">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                                    WHY IT OUTPERFORMS
+                                </span>
+                                <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-8 leading-tight">
                                     Because Efficiency Comes From Alignment, Not Adoption.
                                 </h2>
                                 
@@ -226,10 +226,10 @@ export default function CustomManufacturing() {
                 {/* 7. Technology & Capabilities (Stack Table alternative) */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-4xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">TECH STACK</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            TECH STACK
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">
                             Enterprise-Grade Tech, Applied To SME-Scale Manufacturing.
                         </h2>
                         
@@ -260,10 +260,10 @@ export default function CustomManufacturing() {
                 {/* 8. Engagement Models */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">ENGAGEMENT MODELS</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-16">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            ENGAGEMENT MODELS
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16">
                             Transparent Engagement, Flexible Scope.
                         </h2>
                         
@@ -306,10 +306,10 @@ export default function CustomManufacturing() {
                 {/* 9. Why Gnosys Digital */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHY US</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHY US
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">
                             Your Factory, Digitized By Engineers<br/>Who Understand Manufacturing.
                         </h2>
                         

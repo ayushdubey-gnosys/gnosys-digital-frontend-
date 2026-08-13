@@ -20,7 +20,7 @@ const lightModeVars = {
     '--destructive-foreground': 'oklch(0.577 0.245 27.325)',
     '--border': 'oklch(0.922 0 0)',
     '--input': 'oklch(0.922 0 0)',
-    '--ring': 'oklch(0.87 0 0)'
+    '--ring': 'oklch(0.87 0 0)',
 } as React.CSSProperties;
 
 export default function AuthSimpleLayout({
@@ -30,14 +30,18 @@ export default function AuthSimpleLayout({
 }: AuthLayoutProps) {
     return (
         <MainLayout>
-            <div style={lightModeVars} className="flex flex-col items-center justify-center gap-6 py-20 px-6 md:px-10 bg-transparent min-h-[calc(100vh-100px)]">
-                <div className="w-full max-w-md bg-card text-card-foreground p-8 md:p-10 rounded-2xl shadow-xl border border-border">
-                    <div className="flex flex-col gap-8">
-                        <div className="space-y-2 text-center">
-                            <h1 className="text-2xl md:text-3xl font-bold text-[#00477b]">{title}</h1>
-                            <p className="text-center text-sm text-muted-foreground">
-                                {description}
-                            </p>
+            <div
+                style={lightModeVars}
+                className="flex min-h-[calc(100vh-100px)] items-center justify-center bg-[linear-gradient(135deg,#dfeeff_0%,#edf5ff_35%,#f7ecf4_100%)] px-4 py-16 sm:px-6 lg:px-8"
+            >
+                <div className="w-full max-w-[440px] rounded-[28px] border border-slate-200/80 bg-white/80 p-6 shadow-[0_30px_60px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:p-8 md:p-10">
+                    <div className="flex flex-col gap-7">
+                        <div className="space-y-3 text-center">
+                            <span className="inline-flex items-center rounded-full border border-[#dfeeff] bg-[#f3f8ff] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#123b61]">
+                                Gnosys Digital
+                            </span>
+                            <h1 className="text-3xl font-semibold tracking-[-0.06em] text-[#0b1f35]">{title}</h1>
+                            <p className="text-center text-sm text-slate-600">{description}</p>
                         </div>
                         {children}
                     </div>

@@ -53,6 +53,9 @@ export default function ErpnextFinance() {
             {/* 2. Challenges */}
             <section className="py-24 bg-transparent text-center relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-4xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        THE CHALLENGE
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-4 tracking-tight">
                         Challenges Faced By Financial Services Firms
                     </h2>
@@ -92,6 +95,9 @@ export default function ErpnextFinance() {
             <section className="py-24 bg-transparent relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="text-center mb-16">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            OUR SOLUTION
+                        </span>
                         <h2 className="text-3xl font-extrabold text-[#00477b] mb-4 tracking-tight">
                             ERPNext Solution For Financial Services
                         </h2>
@@ -146,6 +152,9 @@ export default function ErpnextFinance() {
             {/* 4. Measurable Business Impact */}
             <section className="py-20 bg-transparent relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        BUSINESS IMPACT
+                    </span>
                     <h2 className="text-3xl font-extrabold text-center text-[#00477b] mb-12 tracking-tight">
                         Measurable Business Impact
                     </h2>
@@ -169,13 +178,14 @@ export default function ErpnextFinance() {
             {/* 5. Success Stories */}
             <section className="py-24 bg-transparent text-zinc-900 relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
-                    <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200/50 text-zinc-700 font-bold text-xs uppercase tracking-wider">
-                        Case Studies
+                    <div className="text-center mb-16 relative z-10">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            SUCCESS STORIES
+                        </span>
+                        <h2 className="text-3xl font-extrabold mb-16 tracking-tight">
+                            Success Stories
+                        </h2>
                     </div>
-                    <h2 className="text-3xl font-extrabold mb-16 tracking-tight">
-                        Success Stories
-                    </h2>
-
                     <div className="grid md:grid-cols-3 gap-8 text-left">
                         <div className="bg-white/40 backdrop-blur-xl border border-white/60 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:bg-white/60 transition-all duration-300 relative group overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl group-hover:bg-blue-400/20 transition-all"></div>
@@ -210,6 +220,9 @@ export default function ErpnextFinance() {
             {/* 6. Why Gnosys Digital */}
             <section className="py-20 bg-transparent relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        WHY GNOSYS
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-12 tracking-tight">
                         Why Gnosys Digital
                     </h2>
@@ -235,6 +248,9 @@ export default function ErpnextFinance() {
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="bg-white/40 backdrop-blur-xl border border-white/60 rounded-3xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="text-center mb-10">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                                GET STARTED
+                            </span>
                             <h2 className="text-3xl font-extrabold text-[#00477b] tracking-tight">
                                 Request Your Confidential Assessment
                             </h2>
@@ -328,6 +344,9 @@ export default function ErpnextFinance() {
             {/* 8. Final CTA */}
             <section className="py-24 bg-transparent relative z-10 text-center">
                 <div className="container mx-auto px-4 max-w-3xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        NEXT STEPS
+                    </span>
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#00477b] mb-6 tracking-tight">
                         Ready To Transform Your Financial Operations?
                     </h2>

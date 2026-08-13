@@ -12,7 +12,7 @@ export default function Cart() {
             <Head title="Checkout" />
             
             <div className="bg-transparent min-h-screen py-16">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
                     <h1 className="text-3xl font-medium text-gray-900 mb-8">Checkout</h1>
 
                     <div className="flex flex-col lg:flex-row gap-8">

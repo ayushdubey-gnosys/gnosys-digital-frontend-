@@ -1,235 +1,199 @@
 import MainLayout from '@/layouts/main-layout';
 import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
-import { 
-    PieChart, FileText, Target, Wrench, Link, BarChart3, PenTool 
-} from 'lucide-react';
-import React from 'react';
+import { PieChart, FileText, Target, Wrench, Link, BarChart3, PenTool } from 'lucide-react';
 
 export default function SeoServices() {
     return (
         <MainLayout>
             <Head title="SEO Services | Gnosys Digital" />
-            
-            {/* 1. Hero Section */}
-            <section 
-                className="relative overflow-hidden pt-20 pb-28 lg:pt-36 lg:pb-40 flex items-center justify-center text-center min-h-[85vh] bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/assets/seo service.webp')" }}
-            >
-                <div className="absolute inset-0 z-0">
 
-                </div>
-                
-                <div className="container relative z-20 mx-auto px-4 max-w-5xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-6 leading-tight drop-shadow-lg">
-                        Be Found. Be Chosen. Be Profitable.
-                    </h1>
-                    
-                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-16 max-w-4xl mx-auto drop-shadow-md">
-                        We don't just get you on Google — we grow your revenue. At Gnosys Digital, SEO is not about rankings; it's about measurable outcomes — traffic that converts, content that scales, and visibility that drives profit.
-                    </p>
-                    
-                    {/* Big Metrics */}
-                    <div className="flex flex-wrap justify-center gap-12 sm:gap-24 mb-16">
-                        <div className="text-center">
-                            <p className="text-5xl sm:text-6xl font-medium text-white mb-2 tracking-tight drop-shadow-md">300%</p>
-                            <p className="text-sm sm:text-base font-medium text-blue-200 uppercase tracking-widest drop-shadow-md">Traffic Growth</p>
-                        </div>
-                        <div className="text-center">
-                            <p className="text-5xl sm:text-6xl font-medium text-white mb-2 tracking-tight drop-shadow-md">5X</p>
-                            <p className="text-sm sm:text-base font-medium text-blue-200 uppercase tracking-widest drop-shadow-md">ROI within 6 Months</p>
-                        </div>
-                        <div className="text-center">
-                            <p className="text-5xl sm:text-6xl font-medium text-white mb-2 tracking-tight drop-shadow-md">50%</p>
-                            <p className="text-sm sm:text-base font-medium text-blue-200 uppercase tracking-widest drop-shadow-md">Faster Results</p>
-                        </div>
-                    </div>
+            <div className="bg-transparent w-full">
+                <section
+                    className="relative overflow-hidden flex min-h-[82vh] items-center justify-center pb-20 pt-20 text-center lg:pt-28"
+                    style={{ backgroundImage: "url('/assets/seo service.webp')", backgroundPosition: 'center', backgroundSize: 'cover' }}
+                >
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#071a2b]/85 via-[#0b2038]/65 to-[#0b2038]/20" />
+                    <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#eaf3ff] to-transparent opacity-0" />
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Button className="bg-white/20 backdrop-blur-md border border-white/40 text-white hover:bg-white/30 rounded-full px-10 h-14 text-base font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 w-full sm:w-auto hover:-translate-y-1">
-                            Get My SEO Growth Plan
-                        </Button>
-                        <Button className="bg-black/20 backdrop-blur-md border border-white/30 text-white hover:bg-black/30 rounded-full px-10 h-14 text-base font-bold shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 w-full sm:w-auto hover:-translate-y-1">
-                            Talk to an expert
-                        </Button>
-                    </div>
-                </div>
-            </section>
+                    <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+                        <h1 className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+                            Be Found. Be Chosen. <span className="text-blue-300">Be Profitable.</span>
+                        </h1>
 
-            {/* 2. Why SEO Matters Now */}
-            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Why SEO Matters Now
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 max-w-4xl mx-auto leading-tight">
-                        Visibility Is Profit. If You're Not Ranking, You're Not In The Game.
-                    </h2>
-                    <p className="text-lg text-gray-600 font-medium mb-16 max-w-4xl mx-auto leading-relaxed">
-                        93% of online experiences start with a search — and 75% of users never go past page one. But SEO today is not just about keywords — it's about <strong>data-driven visibility, intent-based optimization</strong>, and <strong>strategic storytelling</strong> that makes search engines and humans trust you.
-                    </p>
-                    
-                    <div className="flex flex-wrap justify-center gap-6 mb-12">
-                        {[
-                            { icon: <PieChart className="size-8 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "57% of marketers say SEO drives more sales than paid ads." },
-                            { icon: <FileText className="size-8 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "Companies that blog consistently see 13x higher ROI." },
-                            { icon: <Target className="size-8 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "Organic leads convert 5x better than outbound ones." }
-                        ].map((item, i) => (
-                            <div key={i} className="bg-white/40 backdrop-blur-md border border-white/60 p-10 rounded-[2rem] shadow-lg shadow-blue-900/5 flex flex-col items-center text-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:-translate-y-2 hover:shadow-xl hover:bg-white/60 transition-all duration-300 group">
-                                <div className="mb-6 bg-white rounded-full p-4 shrink-0 shadow-sm border border-gray-100 group-hover:bg-zinc-900 transition-all duration-300">
-                                    {item.icon}
+                        <p className="mx-auto mb-16 max-w-4xl text-lg text-blue-50/90 sm:text-xl">
+                            We don't just get you on Google — we grow your revenue. At Gnosys Digital, SEO is not about rankings; it's about measurable outcomes — traffic that converts, content that scales, and visibility that drives profit.
+                        </p>
+
+                        <div className="mb-16 flex flex-wrap justify-center gap-8 sm:gap-16">
+                            {[
+                                { value: '300%', label: 'Traffic Growth' },
+                                { value: '5X', label: 'ROI within 6 Months' },
+                                { value: '50%', label: 'Faster Results' },
+                            ].map((stat) => (
+                                <div key={stat.label} className="text-center">
+                                    <p className="mb-2 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl">{stat.value}</p>
+                                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-100/90">{stat.label}</p>
                                 </div>
-                                <h3 className="text-[17px] font-bold text-[#00477b] leading-relaxed">{item.title}</h3>
-                            </div>
-                        ))}
-                    </div>
-                    
-                    <Button className="bg-[#00477b] text-white hover:bg-[#00477b] rounded-full px-10 h-14 text-[16px] font-bold shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        Get My SEO Growth Plan
-                    </Button>
-                </div>
-            </section>
+                            ))}
+                        </div>
 
-            {/* 3. Our SEO Framework */}
-            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden text-center">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Our SEO Framework - Built For Outcomes
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
-                        The Gnosys SEO Engine
-                    </h2>
-                    <p className="text-lg text-gray-600 font-medium mb-16 max-w-3xl mx-auto leading-relaxed">
-                        We combine <strong>data intelligence, creative content,</strong> and <strong>technical precision</strong> to deliver growth you can measure in revenue, not vanity metrics.
-                    </p>
-                    
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[
-                            { icon: <Wrench className="size-6 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "Technical SEO", desc: "Fix what search engines see first — site speed, structure, crawl depth." },
-                            { icon: <PenTool className="size-6 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "Content Intelligence", desc: "We turn keywords into compelling narratives that rank and convert." },
-                            { icon: <Link className="size-6 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "Authority Building", desc: "Acquire contextual, high-trust surge within 90 days." },
-                            { icon: <BarChart3 className="size-6 text-zinc-900 group-hover:text-white transition-colors duration-300" />, title: "Performance Analytics", desc: "Weekly dashboards that tie clicks to revenue." }
-                        ].map((step, i) => (
-                            <div key={i} className="relative bg-white/50 backdrop-blur-xl border border-white/80 p-8 rounded-[2.5rem] shadow-lg shadow-blue-900/5 flex flex-col text-left hover:bg-white/70 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group overflow-hidden">
-                                <div className="absolute -right-6 -top-6 text-[100px] font-black text-slate-100/60 leading-none select-none z-0 group-hover:scale-110 group-hover:text-blue-50 transition-all duration-500">
-                                    0{i + 1}
-                                </div>
-                                <div className="relative z-10 flex flex-col h-full">
-                                    <div className="mb-6 bg-white w-fit p-4 rounded-full shadow-sm border border-gray-100 group-hover:bg-zinc-900 transition-colors duration-300">
-                                        {step.icon}
+                        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                            <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-sm px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Get My SEO Growth Plan
+                            </Button>
+                            <Button variant="secondary" className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-sm px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Talk to an expert
+                            </Button>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="bg-transparent py-20 sm:py-24">
+                    <div className="container mx-auto px-4 max-w-6xl text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">Why SEO Matters Now</span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mx-auto mb-6 max-w-4xl">
+                            Visibility Is Profit. If You're Not Ranking, You're Not In The Game.
+                        </h2>
+                        <p className="text-lg sm:text-xl text-gray-600 font-medium mx-auto mb-12 max-w-4xl">
+                            93% of online experiences start with a search — and 75% of users never go past page one. But SEO today is not just about keywords — it's about <strong>data-driven visibility, intent-based optimization</strong>, and <strong>strategic storytelling</strong> that makes search engines and humans trust you.
+                        </p>
+
+                        <div className="mb-12 grid gap-6 md:grid-cols-3">
+                            {[
+                                { icon: PieChart, title: '57% of marketers say SEO drives more sales than paid ads.' },
+                                { icon: FileText, title: 'Companies that blog consistently see 13x higher ROI.' },
+                                { icon: Target, title: 'Organic leads convert 5x better than outbound ones.' },
+                            ].map((item, i) => (
+                                <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[2rem] shadow-lg shadow-blue-900/5 hover:bg-white/60 hover:shadow-xl transition-all duration-300 text-center">
+                                    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-gray-100 shadow-sm bg-white text-zinc-800">
+                                        <item.icon className="h-7 w-7" />
                                     </div>
-                                    <h3 className="text-xl font-extrabold mb-4 text-[#00477b] leading-tight">{step.title}</h3>
-                                    <p className="text-[15px] font-medium text-gray-700 leading-relaxed flex-grow">{step.desc}</p>
+                                    <h3 className="text-lg font-semibold text-[#123b61] leading-relaxed">{item.title}</h3>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                            ))}
+                        </div>
 
-            {/* 4. Measurable Outcomes (Data Table) */}
-            <section className="py-24 bg-transparent text-center relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-5xl text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Measurable Outcomes — Our Promise
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12 leading-tight">
-                        We Don't Talk Traffic — We Talk ROI.
-                    </h2>
-                    
-                    <div className="overflow-hidden shadow-2xl shadow-blue-900/5 border border-white/60 rounded-[2.5rem] bg-white/40 backdrop-blur-xl mb-16">
-                        <table className="w-full text-left">
-                            <thead>
-                                <tr className="bg-zinc-900 border-b border-zinc-800 text-white">
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-1/3">Metric</th>
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-1/3 border-l border-zinc-800">Our Benchmarks</th>
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-1/3 border-l border-zinc-800">Impact</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-white/40">
-                                {[
-                                    { metric: "Organic Traffic Growth", benchmark: "250-400%", impact: "Within 6 months of engagement" },
-                                    { metric: "Conversion Rate Lift", benchmark: "↑ 3-5X", impact: "Through content and UX optimization" },
-                                    { metric: "Cost Per Lead (CPL)", benchmark: "↓ 30-40%", impact: "Lower vs. PPC channels" },
-                                    { metric: "Average Ranking Improvement", benchmark: "+20-30 Positions", impact: "Across 50+ tracked keywords" },
-                                    { metric: "ROI Realization", benchmark: "90 Days", impact: "Measured through sales-qualified leads" }
-                                ].map((row, i) => (
-                                    <tr key={i} className="hover:bg-white/60 transition-colors duration-300">
-                                        <td className="py-5 px-8 text-[15px] font-extrabold text-zinc-900 border-r border-white/40">{row.metric}</td>
-                                        <td className="py-5 px-8 text-[15px] font-black text-green-700 border-r border-white/40">{row.benchmark}</td>
-                                        <td className="py-5 px-8 text-[15px] text-zinc-700 font-semibold">{row.impact}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                        <Button className="bg-[#00477b] text-white hover:bg-[#00477b] rounded-full px-10 h-14 text-[16px] font-bold shadow-lg shadow-blue-900/20 hover:-translate-y-1 transition-all duration-300">Get My SEO Growth Plan</Button>
                     </div>
-                    
-                    <div className="max-w-4xl mx-auto py-12 px-6">
-                        <blockquote className="border-l-4 border-blue-600 pl-8 text-left">
-                            <p className="text-2xl sm:text-3xl font-light text-zinc-800 italic leading-relaxed tracking-tight">
-                                "If SEO doesn't move your business KPIs, it's not SEO — it's noise."
-                            </p>
+                </section>
+
+                <section className="bg-transparent py-20 sm:py-24">
+                    <div className="container mx-auto px-4 max-w-6xl text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">Our SEO Framework</span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">The Gnosys SEO Engine</h2>
+                        <p className="text-lg sm:text-xl text-gray-600 font-medium mx-auto mb-12 max-w-3xl">
+                            We combine <strong>data intelligence, creative content,</strong> and <strong>technical precision</strong> to deliver growth you can measure in revenue, not vanity metrics.
+                        </p>
+
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                            {[
+                                { icon: Wrench, title: 'Technical SEO', desc: 'Fix what search engines see first — site speed, structure, crawl depth.' },
+                                { icon: PenTool, title: 'Content Intelligence', desc: 'We turn keywords into compelling narratives that rank and convert.' },
+                                { icon: Link, title: 'Authority Building', desc: 'Acquire contextual, high-trust surge within 90 days.' },
+                                { icon: BarChart3, title: 'Performance Analytics', desc: 'Weekly dashboards that tie clicks to revenue.' },
+                            ].map((step, i) => (
+                                <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[2rem] shadow-lg shadow-blue-900/5 hover:bg-white/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden text-left">
+                                    <div className="absolute -right-5 -top-5 text-[90px] font-black text-slate-200/80">0{i + 1}</div>
+                                    <div className="relative z-10 flex h-full flex-col">
+                                        <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-gray-100 shadow-sm bg-white text-zinc-800">
+                                            <step.icon className="h-5 w-5" />
+                                        </div>
+                                        <h3 className="mb-4 text-xl font-bold text-[#00477b]">{step.title}</h3>
+                                        <p className="text-sm font-medium leading-relaxed text-gray-600">{step.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="bg-transparent py-20 sm:py-24">
+                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">Measurable Outcomes</span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">We Don't Talk Traffic — We Talk ROI.</h2>
+
+                        <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-[2.5rem] shadow-lg shadow-blue-900/5 mb-16 overflow-hidden">
+                            <table className="w-full text-left">
+                                <thead>
+                                    <tr className="bg-[#0b1f35] text-white">
+                                        <th className="px-6 py-5 text-xs font-bold uppercase tracking-[0.18em]">Metric</th>
+                                        <th className="border-l border-white/10 px-6 py-5 text-xs font-bold uppercase tracking-[0.18em]">Our Benchmarks</th>
+                                        <th className="border-l border-white/10 px-6 py-5 text-xs font-bold uppercase tracking-[0.18em]">Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-200">
+                                    {[
+                                        { metric: 'Organic Traffic Growth', benchmark: '250-400%', impact: 'Within 6 months of engagement' },
+                                        { metric: 'Conversion Rate Lift', benchmark: '↑ 3-5X', impact: 'Through content and UX optimization' },
+                                        { metric: 'Cost Per Lead (CPL)', benchmark: '↓ 30-40%', impact: 'Lower vs. PPC channels' },
+                                        { metric: 'Average Ranking Improvement', benchmark: '+20-30 Positions', impact: 'Across 50+ tracked keywords' },
+                                        { metric: 'ROI Realization', benchmark: '90 Days', impact: 'Measured through sales-qualified leads' },
+                                    ].map((row) => (
+                                        <tr key={row.metric} className="bg-white/50 hover:bg-slate-50/80">
+                                            <td className="px-6 py-5 text-sm font-semibold text-slate-900">{row.metric}</td>
+                                            <td className="border-l border-slate-200 px-6 py-5 text-sm font-bold text-emerald-700">{row.benchmark}</td>
+                                            <td className="border-l border-slate-200 px-6 py-5 text-sm text-slate-600">{row.impact}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <blockquote className="max-w-4xl border-l-4 border-blue-600 pl-6 text-left text-2xl font-light italic tracking-[-0.03em] text-slate-700 sm:text-3xl">
+                            “If SEO doesn't move your business KPIs, it's not SEO — it's noise.”
                         </blockquote>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            {/* 5. How We Work (Growth Playbook) */}
-            <section className="py-24 bg-transparent text-center relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        How We Work - The Gnosys Growth Playbook
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16 leading-tight">
-                        SEO That Starts With Data.<br />Ends With Revenue.
-                    </h2>
-                    
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[
-                            { title: "Discover", desc: "Deep audit & competitor gap analysis" },
-                            { title: "Define", desc: "Strategy roadmap with measurable KPIs" },
-                            { title: "Deploy", desc: "On-page, off-page, and technical rollout" },
-                            { title: "Deliver", desc: "Transparent weekly reports" },
-                            { title: "Dominate", desc: "Continuous optimization & authority scaling" }
-                        ].map((step, i) => (
-                            <div key={i} className={`relative bg-white/50 backdrop-blur-xl border border-white/80 p-8 rounded-[2rem] shadow-lg shadow-blue-900/5 flex flex-col justify-center min-h-[160px] hover:bg-white/70 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group overflow-hidden ${i === 3 ? 'md:col-span-2 lg:col-span-1' : ''} ${i === 4 ? 'md:col-span-2 lg:col-span-2' : ''}`}>
-                                <div className="absolute -right-4 -top-6 text-[120px] font-black text-slate-200/50 leading-none select-none z-0 group-hover:scale-110 group-hover:text-blue-100/50 transition-all duration-500">
-                                    0{i + 1}
+                <section className="bg-transparent py-20 sm:py-24">
+                    <div className="container mx-auto px-4 max-w-6xl text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">How We Work</span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12 text-center">SEO That Starts With Data. Ends With Revenue.</h2>
+
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                            {[
+                                { title: 'Discover', desc: 'Deep audit & competitor gap analysis' },
+                                { title: 'Define', desc: 'Strategy roadmap with measurable KPIs' },
+                                { title: 'Deploy', desc: 'On-page, off-page, and technical rollout' },
+                                { title: 'Deliver', desc: 'Transparent weekly reports' },
+                                { title: 'Dominate', desc: 'Continuous optimization & authority scaling' },
+                            ].map((step, i) => (
+                                <div key={step.title} className="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[2rem] shadow-lg shadow-blue-900/5 hover:bg-white/60 hover:shadow-xl transition-all duration-300 relative overflow-hidden text-left">
+                                    <div className="absolute -right-4 -top-5 text-[100px] font-black text-slate-200/90">0{i + 1}</div>
+                                    <div className="relative z-10">
+                                        <h3 className="mb-3 text-xl font-bold text-[#00477b]">{step.title}</h3>
+                                        <p className="text-sm font-medium leading-relaxed text-gray-600">{step.desc}</p>
+                                    </div>
                                 </div>
-                                <div className="relative z-10">
-                                    <h3 className="text-xl font-extrabold text-[#00477b] mb-3">{step.title}</h3>
-                                    <p className="text-[15px] font-semibold text-gray-700 leading-relaxed">{step.desc}</p>
-                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section className="bg-transparent pb-24 sm:pb-28">
+                    <div className="container mx-auto px-4 max-w-4xl text-center">
+                        <div className="bg-[#0b1f35] border border-white/10 p-10 rounded-[2.5rem] shadow-2xl shadow-blue-900/30 text-white sm:p-14">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm text-xs font-extrabold text-white uppercase tracking-wider">Ready To Scale?</span>
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mt-6">
+                                Let’s Turn Search Into Sales
+                            </h2>
+                            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                                Your customers are searching. Let’s make sure they find you — and choose you.
+                            </p>
+
+                            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+                                <Button className="bg-white text-[#0b1f35] hover:bg-slate-100 rounded-full px-10 h-14 text-[16px] font-bold shadow-lg transition-all duration-300">
+                                    Request a Free SEO Audit
+                                </Button>
+                                <Button className="bg-transparent border-2 border-white/20 text-white hover:bg-white/10 rounded-full px-10 h-14 text-[16px] font-bold shadow-xl transition-all duration-300">
+                                    Schedule a Discovery Call
+                                </Button>
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </div>
-            </section>
-
-            {/* 6. Final Dark CTA Section */}
-            <section className="py-28 bg-transparent text-center relative z-20 overflow-hidden">
-                <div className="container relative z-10 mx-auto px-4 max-w-4xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        Ready To Scale Your Search Success?
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
-                        Let's Turn Search Into Sales
-                    </h2>
-                    <p className="text-gray-700 font-medium text-lg mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Your customers are searching. Let's make sure they find you — and choose you.
-                    </p>
-                    
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Button className="bg-[#00477b] text-white hover:bg-[#00477b] rounded-full px-10 h-16 text-[16px] font-bold w-full sm:w-auto shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg">
-                            Request a Free SEO Audit
-                        </Button>
-                        <Button className="bg-white/50 backdrop-blur-sm border border-zinc-300 text-zinc-900 hover:bg-white/80 rounded-full px-10 h-16 text-[16px] font-bold w-full sm:w-auto shadow-sm transition-all hover:-translate-y-1">
-                            Schedule a Discovery Call
-                        </Button>
-                    </div>
-                </div>
-            </section>
-
+                </section>
+            </div>
         </MainLayout>
     );
 }

@@ -46,6 +46,9 @@ export default function ErpnextRestaurants() {
             {/* 2. Bottlenecks Grid */}
             <section className="py-24 bg-transparent text-center border-t border-white/40">
                 <div className="container mx-auto px-4 max-w-5xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        THE CHALLENGE
+                    </span>
                     <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-14">
                         Stop Losing Money to These 6 Restaurant Bottlenecks
                     </h2>
@@ -75,6 +78,9 @@ export default function ErpnextRestaurants() {
             <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 max-w-5xl">
                     <div className="text-center mb-10">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            OUR SOLUTION
+                        </span>
                         <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
                             How Gnosys Digital Fixes This
                         </h2>
@@ -121,6 +127,9 @@ export default function ErpnextRestaurants() {
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="w-full lg:w-1/2">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                                WHY US
+                            </span>
                             <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                                 Why Gnosys Beats Standard POS Systems
                             </h2>
@@ -170,6 +179,9 @@ export default function ErpnextRestaurants() {
             {/* 5. Tailored for Every Restaurant Type */}
             <section className="py-24 bg-transparent text-center border-t border-white/40">
                 <div className="container mx-auto px-4 max-w-5xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        WHO WE SERVE
+                    </span>
                     <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
                         Tailored for Every Restaurant Type
                     </h2>
@@ -213,6 +225,9 @@ export default function ErpnextRestaurants() {
             {/* 6. Why Gnosys Digital (Trust) */}
             <section className="py-16 bg-transparent border-y border-white/40">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        EXPERTISE
+                    </span>
                     <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-[#00477b] mb-8">
                         Why Gnosys Digital? (Trust & Expertise)
                     </h2>
@@ -238,6 +253,9 @@ export default function ErpnextRestaurants() {
             <section className="py-24 bg-transparent">
                 <div className="container mx-auto px-4 max-w-4xl">
                     <div className="text-center mb-10">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            FAQS
+                        </span>
                         <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
                             Frequently Asked Questions
                         </h2>
@@ -267,6 +285,9 @@ export default function ErpnextRestaurants() {
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="flex flex-col lg:flex-row gap-16">
                         <div className="w-full lg:w-1/2">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                                NEXT STEPS
+                            </span>
                             <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                                 Ready to Modernize Your Restaurant?
                             </h2>

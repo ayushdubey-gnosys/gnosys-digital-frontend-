@@ -88,7 +88,7 @@ export default function ErpnextImplementation() {
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
                     <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why ERPNext</span>
-                    <h2 className="text-3xl font-bold text-[#00477b]">Why ERPNext — One Platform For Your Entire Business</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Why ERPNext — One Platform For Your Entire Business</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                         ERPNext helps you run your entire business from one place — with zero recurring license costs. It's open-source, modular, and designed for SMEs who want control, scalability, and savings.
                     </p>
@@ -122,7 +122,7 @@ export default function ErpnextImplementation() {
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
                     <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why Gnosys Digital</span>
-                    <h2 className="text-3xl font-bold text-[#00477b]">Your Implementation Partner For ERPNext — Done Right</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Your Implementation Partner For ERPNext — Done Right</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                         We're not just ERP implementers — we're a digital transformation partner who understands SMEs.
                     </p>
@@ -154,7 +154,7 @@ export default function ErpnextImplementation() {
             {/* 4. SWOT Analysis */}
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <h2 className="text-3xl font-bold text-[#00477b]">Client-Side SWOT Analysis</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Client-Side SWOT Analysis</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
                         A clear understanding of the client's strengths, weaknesses, opportunities, and threats helps us deliver a tailored ERP solution that drives efficiency and growth.
                     </p>
@@ -247,7 +247,7 @@ export default function ErpnextImplementation() {
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
                     <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Implementation Process</span>
-                    <h2 className="text-3xl font-bold text-[#00477b]">Our ERPNext Implementation Process</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Our ERPNext Implementation Process</h2>
                 </div>
 
                 <div className="w-full">
@@ -287,7 +287,7 @@ export default function ErpnextImplementation() {
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
                     <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Engagement Models / Packages</span>
-                    <h2 className="text-3xl font-bold text-[#00477b]">Flexible Plans For Every Stage Of Your ERP Journey</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Flexible Plans For Every Stage Of Your ERP Journey</h2>
                 </div>
 
                 <div className="w-full">
@@ -354,7 +354,7 @@ export default function ErpnextImplementation() {
                     </div>
                     <div className="w-full lg:w-1/2 px-4 sm:px-8 lg:px-12 lg:pr-24">
                         <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-6">Powerful Extensions</span>
-                        <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-6 tracking-tight leading-tight">ERPNext Add-Ons We Offer</h2>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">ERPNext Add-Ons We Offer</h2>
                         <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
                             Extend your ERP with modules and automations designed for your industry. Scale without limits using our custom integrations.
                         </p>
@@ -394,7 +394,7 @@ export default function ErpnextImplementation() {
                         {/* Left: Case Study */}
                         <div className="flex flex-col h-full lg:pr-8">
                             <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Case Study</span>
-                            <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-6 tracking-tight leading-tight">ERPNext In Action</h2>
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">ERPNext In Action</h2>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
                                 See how a real SME transformed their business operations, streamlined workflows, and boosted efficiency using our tailored ERPNext solutions.
                             </p>
@@ -425,7 +425,7 @@ export default function ErpnextImplementation() {
                         {/* Right: FAQs */}
                         <div className="flex flex-col h-full mt-10 lg:mt-0">
                             <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Support & Queries</span>
-                            <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-8 tracking-tight leading-tight">Implementation FAQs</h2>
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-8 leading-tight">Implementation FAQs</h2>
                             
                             <div className="flex-grow">
                                 <FaqAccordion 
@@ -450,14 +450,14 @@ export default function ErpnextImplementation() {
             {/* 9. Contact Form */}
             <section className="py-24 bg-transparent border-t border-white/40">
                 <div className="w-full">
-                    <div className="py-20 px-4 sm:px-8 lg:px-12">
-                        <div className="max-w-[90rem] mx-auto w-full">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div className="py-20 px-4 lg:px-12 xl:px-24">
+                        <div className="w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-x-16 items-center">
                                 
                                 {/* Left: Text Content */}
                                 <div className="flex flex-col lg:pr-8">
                                     <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Get Started</span>
-                                    <h2 className="text-4xl lg:text-5xl font-medium text-[#00477b] mb-6 tracking-tight leading-tight">Let's Simplify Your Operations With ERPNext</h2>
+                                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">Let's Simplify Your Operations With ERPNext</h2>
                                     <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
                                         Tell us about your business — we'll recommend the right modules, timeline, and cost. Start your digital transformation journey today.
                                     </p>

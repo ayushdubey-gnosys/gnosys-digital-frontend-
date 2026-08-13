@@ -1,111 +1,101 @@
 import MainLayout from '@/layouts/main-layout';
 import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import {
-    CheckSquare, TrendingUp, Search, Settings,
-    Database, MonitorPlay, Rocket, ArrowUp, Briefcase
-} from 'lucide-react';
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { CheckSquare, Search, Settings, Database, MonitorPlay, Rocket, Briefcase } from 'lucide-react';
 
 export default function ErpnextProfessionalServices() {
     return (
         <MainLayout>
             <Head title="ERPNext For Professional Services" />
-            <div className="text-slate-800 min-h-screen font-sans">
-                {/* 1. Hero Section */}
-                <section className="relative overflow-hidden pt-20 pb-28 lg:pt-36 lg:pb-40 flex items-center justify-center text-center min-h-[85vh]">
+
+            <div className="brand-shell">
+                <section className="relative flex min-h-[82vh] items-center justify-center overflow-hidden pb-20 pt-20 text-center">
                     <div className="absolute inset-0 z-0">
-                        <div
-                            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                            style={{ backgroundImage: "url('/assets/erp-professi.webp')" }}
-                        ></div>
+                        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/erp-professi.webp')" }} />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#071a2b]/85 via-[#0b2038]/65 to-[#0b2038]/20" />
                     </div>
 
-                    <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight drop-shadow-md">
-                            A Unified System To Manage Projects, People, And Profitability
+                    <div className="container-brand relative z-10 max-w-5xl">
+                        <h1 className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+                            A Unified System To Manage <span className="text-blue-300">Projects, People, And Profitability</span>
                         </h1>
 
-                        <p className="text-lg sm:text-xl text-blue-100/80 leading-relaxed font-medium mb-10 max-w-3xl mx-auto drop-shadow-sm">
+                        <p className="mx-auto mb-10 max-w-3xl text-lg text-blue-50/90 sm:text-xl">
                             Connect project planning, resource allocation, and financials on one platform so you can focus on delivering value.
                         </p>
-                        <Button className="bg-white text-[#1e3a8a] hover:bg-slate-100 rounded-sm px-10 h-14 text-base font-bold shadow-xl transition-all">
+
+                        <Button className="brand-button h-14 rounded-full bg-white px-8 text-base text-[#0b1f35] hover:bg-slate-100">
                             Request A Consultation
                         </Button>
                     </div>
                 </section>
 
-                {/* 2. Challenges Faced By Professional Services Firms */}
-                <section className="py-24 bg-transparent text-center">
-                    <div className="container mx-auto px-4 max-w-4xl">
-                        <h2 className="text-3xl font-bold text-[#1e3a8a] mb-4">
-                            Challenges Faced By Professional Services Firms
-                        </h2>
-                        <p className="text-slate-600 mb-10 text-sm font-medium">
+                <section className="section-brand py-20 sm:py-24">
+                    <div className="container-brand max-w-4xl text-center">
+                        <span className="brand-badge mb-6">Challenges</span>
+                        <h2 className="brand-heading mb-4">Challenges Faced By Professional Services Firms</h2>
+                        <p className="brand-subheading mx-auto mb-12 max-w-2xl">
                             When your primary asset is time, disconnected systems drain profitability and cause client dissatisfaction.
                         </p>
 
-                        <div className="bg-white/60 p-10 rounded-3xl shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-white/50 text-left backdrop-blur-md transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-1 relative overflow-hidden group">
-                            <div className="absolute -inset-x-20 -top-20 h-40 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent blur-3xl group-hover:opacity-100 opacity-50 transition-opacity"></div>
+                        <div className="brand-card relative overflow-hidden p-8 text-left sm:p-10">
+                            <div className="absolute -inset-x-20 -top-20 h-40 bg-gradient-to-r from-transparent via-blue-200/30 to-transparent blur-3xl" />
+                            <div className="relative z-10">
+                                <h3 className="mb-8 flex items-center gap-3 text-2xl font-semibold text-[#123b61]">
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-sky-600">
+                                        <Briefcase className="h-5 w-5" />
+                                    </span>
+                                    Common Problems
+                                </h3>
 
-                            <h3 className="text-2xl font-bold text-[#1e3a8a] mb-8 flex items-center gap-3 relative z-10">
-                                <div className="p-3 bg-blue-50 rounded-xl border border-blue-100">
-                                    <Briefcase className="size-7 text-blue-600" />
-                                </div>
-                                Common Problems:
-                            </h3>
-                            <ul className="space-y-5 relative z-10">
-                                {[
-                                    "Unpredictable resource availability and bench time.",
-                                    "Disconnected time tracking leading to delayed billing.",
-                                    "Difficulty tracking project profitability and cost overruns.",
-                                    "Sales pipelines not integrated with project delivery.",
-                                    "Managing multiple vendor/sub-contractor invoices and payments.",
-                                    "Complicated manual revenue recognition processes."
-                                ].map((prob, i) => (
-                                    <li key={i} className="flex items-start gap-4 text-slate-700 font-medium group/item hover:text-[#1e3a8a] transition-colors">
-                                        <div className="bg-blue-50 rounded-full p-1.5 mt-0.5 shrink-0 text-blue-500 group-hover/item:bg-blue-500 group-hover/item:text-white transition-colors border border-blue-100 group-hover/item:border-blue-500">
-                                            <CheckSquare className="size-4" />
-                                        </div>
-                                        <span className="text-[15px]">{prob}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                                <ul className="space-y-4">
+                                    {[
+                                        'Unpredictable resource availability and bench time.',
+                                        'Disconnected time tracking leading to delayed billing.',
+                                        'Difficulty tracking project profitability and cost overruns.',
+                                        'Sales pipelines not integrated with project delivery.',
+                                        'Managing multiple vendor/sub-contractor invoices and payments.',
+                                        'Complicated manual revenue recognition processes.',
+                                    ].map((problem, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-slate-700">
+                                            <span className="mt-1 flex h-5 w-5 items-center justify-center rounded-full bg-sky-100 text-sky-600">
+                                                <CheckSquare className="h-3.5 w-3.5" />
+                                            </span>
+                                            <span className="text-sm leading-relaxed sm:text-base">{problem}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 3. How ERPNext Transforms Your Firm */}
-                <section className="py-24 bg-transparent">
-                    <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl font-bold text-[#1e3a8a] mb-4">
-                                How ERPNext Transforms Your Firm
-                            </h2>
-                            <p className="text-slate-600 text-sm font-medium">
+                <section className="section-brand py-20 sm:py-24">
+                    <div className="container-brand max-w-6xl">
+                        <div className="mb-12 text-center">
+                            <span className="brand-badge mb-6">Transformation</span>
+                            <h2 className="brand-heading mb-4">How ERPNext Transforms Your Firm</h2>
+                            <p className="brand-subheading mx-auto max-w-3xl">
                                 A 360-degree view of your entire business—from pipeline to project delivery and invoicing.
                             </p>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid gap-6 md:grid-cols-2">
                             {[
-                                { title: "Project Delivery & Operations", points: ["Streamline planning, task management, and task dependencies.", "Track milestones vs actual progress.", "Real-time dashboards on project health.", "Centralized document storage."] },
-                                { title: "Resource Management", points: ["Skill-based search and allocation.", "Utilization rates, capacity, and bench management.", "Capacity planning across projects."] },
-                                { title: "Project Financials & Billing", points: ["Activity-based costing, timesheets, and direct/indirect expenses.", "Automated invoicing from timesheets and milestones.", "Profitability tracking by project, client, or team member.", "Flexible revenue recognition processes."] },
-                                { title: "CRM & Pipeline Management", points: ["360-degree view of client communications.", "Track leads, opportunities, and pipeline value.", "Estimate to project conversion workflows."] }
+                                { title: 'Project Delivery & Operations', points: ['Streamline planning, task management, and task dependencies.', 'Track milestones vs actual progress.', 'Real-time dashboards on project health.', 'Centralized document storage.'] },
+                                { title: 'Resource Management', points: ['Skill-based search and allocation.', 'Utilization rates, capacity, and bench management.', 'Capacity planning across projects.'] },
+                                { title: 'Project Financials & Billing', points: ['Activity-based costing, timesheets, and direct/indirect expenses.', 'Automated invoicing from timesheets and milestones.', 'Profitability tracking by project, client, or team member.', 'Flexible revenue recognition processes.'] },
+                                { title: 'CRM & Pipeline Management', points: ['360-degree view of client communications.', 'Track leads, opportunities, and pipeline value.', 'Estimate to project conversion workflows.'] },
                             ].map((mod, i) => (
-                                <div key={i} className="bg-white/60 rounded-xl p-8 shadow-sm text-[#1e3a8a] border-l-4 border-blue-500 backdrop-blur-md border border-white/50">
-                                    <h3 className="text-xl font-bold mb-5">{mod.title}</h3>
+                                <div key={i} className="brand-card border-l-4 border-l-blue-500 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_44px_rgba(15,23,42,0.08)]">
+                                    <h3 className="mb-5 text-xl font-semibold text-[#123b61]">{mod.title}</h3>
                                     <ul className="space-y-3">
-                                        {mod.points.map((pt, j) => (
-                                            <li key={j} className="flex items-start gap-3 text-sm text-slate-700 leading-relaxed">
-                                                <div className="bg-white rounded-sm p-0.5 mt-0.5 shrink-0 border border-slate-200">
-                                                    <CheckSquare className="size-3 text-blue-500" />
-                                                </div>
-                                                <span>{pt}</span>
+                                        {mod.points.map((point, j) => (
+                                            <li key={j} className="flex items-start gap-3 text-sm leading-relaxed text-slate-600">
+                                                <span className="mt-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-sky-100 text-sky-600">
+                                                    <CheckSquare className="h-2.5 w-2.5" />
+                                                </span>
+                                                <span>{point}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -115,35 +105,33 @@ export default function ErpnextProfessionalServices() {
                     </div>
                 </section>
 
-                {/* 4. Core ERPNext Modules For Professional Services */}
-                <section className="py-24 bg-transparent">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
-                        <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12">
-                            Core ERPNext Modules For Professional Services
-                        </h2>
+                <section className="section-brand py-20 sm:py-24">
+                    <div className="container-brand max-w-5xl text-center">
+                        <span className="brand-badge mb-6">Core Modules</span>
+                        <h2 className="brand-heading mb-12">Core ERPNext Modules For Professional Services</h2>
 
-                        <div className="overflow-x-auto bg-white/60 shadow-sm border border-white/50 rounded-xl backdrop-blur-md">
-                            <table className="w-full text-sm sm:text-base border-collapse text-left">
-                                <thead className="bg-white/80 text-[#1e3a8a] border-b border-slate-200">
-                                    <tr>
-                                        <th className="py-4 px-6 font-bold text-left w-1/3 border-r border-slate-200">Module</th>
-                                        <th className="py-4 px-6 font-bold text-left w-2/3">Key Capabilities</th>
+                        <div className="brand-card overflow-hidden">
+                            <table className="w-full text-left">
+                                <thead>
+                                    <tr className="bg-slate-50 text-[#123b61]">
+                                        <th className="px-6 py-4 text-sm font-semibold">Module</th>
+                                        <th className="border-l border-slate-200 px-6 py-4 text-sm font-semibold">Key Capabilities</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-slate-200 border-x border-b border-slate-200">
+                                <tbody className="divide-y divide-slate-200">
                                     {[
-                                        { mod: "Project & Task Management", cap: "Gantt charts, dependencies, progress analytics" },
-                                        { mod: "Time & Expense", cap: "Mobile entries, approvals, reimbursements" },
-                                        { mod: "Resource Planning", cap: "Skills mapping, utilization tracking, forecasting" },
-                                        { mod: "Billing & Accounting", cap: "Automated invoicing, revenue recognition, GST compliance" },
-                                        { mod: "CRM & Pipeline", cap: "Lead-to-contract workflow, proposals, dashboards" },
-                                        { mod: "Client Portal", cap: "Collaboration, file sharing, updates, approvals" },
-                                        { mod: "HR & Payroll", cap: "Hiring, onboarding, attendance, payrol" },
-                                        { mod: "Reporting & Analytics", cap: "Project margins, utilization, forecasting" }
-                                    ].map((row, i) => (
-                                        <tr key={i} className="hover:bg-white/40 transition-colors">
-                                            <td className="py-4 px-6 text-sm text-[#1e3a8a] font-medium border-r border-slate-200">{row.mod}</td>
-                                            <td className="py-4 px-6 text-sm text-slate-700">{row.cap}</td>
+                                        { mod: 'Project & Task Management', cap: 'Gantt charts, dependencies, progress analytics' },
+                                        { mod: 'Time & Expense', cap: 'Mobile entries, approvals, reimbursements' },
+                                        { mod: 'Resource Planning', cap: 'Skills mapping, utilization tracking, forecasting' },
+                                        { mod: 'Billing & Accounting', cap: 'Automated invoicing, revenue recognition, GST compliance' },
+                                        { mod: 'CRM & Pipeline', cap: 'Lead-to-contract workflow, proposals, dashboards' },
+                                        { mod: 'Client Portal', cap: 'Collaboration, file sharing, updates, approvals' },
+                                        { mod: 'HR & Payroll', cap: 'Hiring, onboarding, attendance, payroll' },
+                                        { mod: 'Reporting & Analytics', cap: 'Project margins, utilization, forecasting' },
+                                    ].map((row) => (
+                                        <tr key={row.mod} className="bg-white/60 hover:bg-slate-50/80">
+                                            <td className="px-6 py-4 text-sm font-semibold text-[#123b61]">{row.mod}</td>
+                                            <td className="border-l border-slate-200 px-6 py-4 text-sm text-slate-600">{row.cap}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -152,112 +140,82 @@ export default function ErpnextProfessionalServices() {
                     </div>
                 </section>
 
-                {/* 5. Industries We Support */}
-                <section className="py-20 bg-transparent text-center border-b border-white/30">
-                    <div className="container mx-auto px-4 max-w-6xl">
-                        <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12">
-                            Industries We Support
-                        </h2>
+                <section className="section-brand py-20 sm:py-24">
+                    <div className="container-brand max-w-6xl text-center">
+                        <span className="brand-badge mb-6">Industries</span>
+                        <h2 className="brand-heading mb-12">Industries We Support</h2>
 
-                        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {[
-                                "IT & Technology Services / Software",
-                                "Advertising, PR & Marketing Agencies",
-                                "Management & Strategy Consulting",
-                                "Architecture & Engineering Firms",
-                                "Legal & Accounting Practices",
-                                "Research & Development Services"
-                            ].map((ind, i) => (
-                                <div key={i} className="bg-white/60 rounded-xl p-6 shadow-sm border border-white/50 flex items-center justify-center min-h-[100px] backdrop-blur-md">
-                                    <h3 className="text-blue-700 font-bold text-sm leading-snug">{ind}</h3>
+                                'IT & Technology Services / Software',
+                                'Advertising, PR & Marketing Agencies',
+                                'Management & Strategy Consulting',
+                                'Architecture & Engineering Firms',
+                                'Legal & Accounting Practices',
+                                'Research & Development Services',
+                            ].map((industry) => (
+                                <div key={industry} className="brand-card flex min-h-[108px] items-center justify-center p-6 text-center">
+                                    <h3 className="text-sm font-semibold leading-snug text-[#123b61] sm:text-base">{industry}</h3>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* 6. Professional Services ERP Implementation Roadmap */}
-                <section className="py-24 bg-transparent text-center overflow-hidden">
-                    <div className="container mx-auto px-4 max-w-6xl">
-                        <h2 className="text-3xl font-bold text-[#1e3a8a] mb-4">
-                            Professional Services ERP Implementation Roadmap
-                        </h2>
-                        <p className="text-slate-600 text-sm font-medium mb-16">
-                            A complete 5-Step blueprint to modernize your operations.
-                        </p>
+                <section className="section-brand py-20 sm:py-24">
+                    <div className="container-brand max-w-6xl text-center">
+                        <span className="brand-badge mb-6">Roadmap</span>
+                        <h2 className="brand-heading mb-4">Professional Services ERP Implementation Roadmap</h2>
+                        <p className="brand-subheading mx-auto mb-12 max-w-2xl">A complete 5-step blueprint to modernize your operations.</p>
 
-                        {/* Custom Timeline Layout */}
-                        <div className="relative max-w-5xl mx-auto py-10">
-                            {/* Horizontal Line */}
-                            <div className="hidden md:block absolute top-[50%] left-0 w-full h-3 bg-blue-100 rounded-full border-t-2 border-dashed border-blue-300 z-0"></div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-0 relative z-10">
-                                {/* Step 1 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="mb-4 md:mb-14 text-center md:h-20">
-                                        <h4 className="font-bold text-[#1e3a8a] text-sm">Week 1-2</h4>
-                                        <h5 className="font-bold text-blue-600 text-xs uppercase tracking-wider mb-1">Discovery</h5>
-                                        <p className="text-[10px] text-slate-600 max-w-[120px] mx-auto leading-tight">Requirements gathering, process mapping.</p>
+                        <div className="grid gap-6 md:grid-cols-5">
+                            {[
+                                { phase: 'Discovery', period: 'Week 1-2', note: 'Requirements gathering, process mapping.', icon: Search },
+                                { phase: 'Configuration', period: 'Week 3-4', note: 'Setup projects, billing rules, workflows.', icon: Settings },
+                                { phase: 'Migration', period: 'Week 5', note: 'Import historical projects and client data.', icon: Database },
+                                { phase: 'Training', period: 'Week 6', note: 'Role-based training for PMs, Finance, HR.', icon: MonitorPlay },
+                                { phase: 'Go Live', period: 'Week 7+', note: 'System launch and ongoing hyper-care.', icon: Rocket },
+                            ].map((step, i) => (
+                                <div key={step.phase} className="brand-card flex flex-col items-center p-6 text-center">
+                                    <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#0b1f35] text-white shadow-lg shadow-[#0b1f35]/15">
+                                        <step.icon className="h-7 w-7" />
                                     </div>
-                                    <div className="size-16 rounded-full bg-blue-600 border-4 border-white shadow-md flex items-center justify-center text-white relative z-10 mx-auto">
-                                        <Search className="size-6" />
-                                    </div>
+                                    <p className="text-xs font-bold uppercase tracking-[0.15em] text-sky-600">{step.period}</p>
+                                    <h3 className="mt-3 text-lg font-semibold text-[#123b61]">{step.phase}</h3>
+                                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{step.note}</p>
                                 </div>
-
-                                {/* Step 2 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="md:order-3 mt-4 md:mt-14 text-center md:h-20">
-                                        <h4 className="font-bold text-[#1e3a8a] text-sm">Week 3-4</h4>
-                                        <h5 className="font-bold text-blue-600 text-xs uppercase tracking-wider mb-1">Configuration</h5>
-                                        <p className="text-[10px] text-slate-600 max-w-[120px] mx-auto leading-tight">Setup projects, billing rules, workflows.</p>
-                                    </div>
-                                    <div className="size-16 rounded-full bg-indigo-600 border-4 border-white shadow-md flex items-center justify-center text-white relative z-10 mx-auto md:order-2">
-                                        <Settings className="size-6" />
-                                    </div>
-                                </div>
-
-                                {/* Step 3 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="mb-4 md:mb-14 text-center md:h-20">
-                                        <h4 className="font-bold text-[#1e3a8a] text-sm">Week 5</h4>
-                                        <h5 className="font-bold text-blue-600 text-xs uppercase tracking-wider mb-1">Migration</h5>
-                                        <p className="text-[10px] text-slate-600 max-w-[120px] mx-auto leading-tight">Import historical projects and client data.</p>
-                                    </div>
-                                    <div className="size-16 rounded-full bg-sky-600 border-4 border-white shadow-md flex items-center justify-center text-white relative z-10 mx-auto">
-                                        <Database className="size-6" />
-                                    </div>
-                                </div>
-
-                                {/* Step 4 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="md:order-3 mt-4 md:mt-14 text-center md:h-20">
-                                        <h4 className="font-bold text-[#1e3a8a] text-sm">Week 6</h4>
-                                        <h5 className="font-bold text-blue-600 text-xs uppercase tracking-wider mb-1">Training</h5>
-                                        <p className="text-[10px] text-slate-600 max-w-[120px] mx-auto leading-tight">Role-based training for PMs, Finance, HR.</p>
-                                    </div>
-                                    <div className="size-16 rounded-full bg-emerald-600 border-4 border-white shadow-md flex items-center justify-center text-white relative z-10 mx-auto md:order-2">
-                                        <MonitorPlay className="size-6" />
-                                    </div>
-                                </div>
-
-                                {/* Step 5 */}
-                                <div className="flex flex-col items-center">
-                                    <div className="mb-4 md:mb-14 text-center md:h-20">
-                                        <h4 className="font-bold text-[#1e3a8a] text-sm">Week 7+</h4>
-                                        <h5 className="font-bold text-blue-600 text-xs uppercase tracking-wider mb-1">Go Live</h5>
-                                        <p className="text-[10px] text-slate-600 max-w-[120px] mx-auto leading-tight">System launch and ongoing hyper-care.</p>
-                                    </div>
-                                    <div className="size-16 rounded-full bg-teal-600 border-4 border-white shadow-md flex items-center justify-center text-white relative z-10 mx-auto">
-                                        <Rocket className="size-6" />
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>
 
-                {/* 7. Proven Business Outcomes */}
-                <section className="py-20 bg-transparent">
+                <section className="section-brand pb-24 sm:pb-28">
+                    <div className="container-brand max-w-4xl text-center">
+                        <div className="brand-card bg-[#0b1f35] p-10 text-white shadow-[0_24px_60px_rgba(11,31,53,0.18)] sm:p-14">
+                            <span className="brand-badge border-white/10 bg-white/10 text-white">Results</span>
+                            <h2 className="mt-6 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-5xl">
+                                Ready To Modernize Your Professional Services Business?
+                            </h2>
+                            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                                Connect planning, resources, and profitability in one operating system built for growth.
+                            </p>
+
+                            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+                                <Button className="brand-button h-14 rounded-full bg-white px-8 text-base text-[#0b1f35] hover:bg-slate-100">
+                                    Request A Consultation
+                                </Button>
+                                <Button className="brand-button-secondary h-14 rounded-full border-white/20 bg-white/5 px-8 text-base text-white hover:bg-white/10">
+                                    Talk To An Expert
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </MainLayout>
+    );
+}
+
                     <div className="container mx-auto px-4 max-w-5xl text-center">
                         <h2 className="text-3xl font-bold text-[#1e3a8a] mb-12">
                             Proven Business Outcomes

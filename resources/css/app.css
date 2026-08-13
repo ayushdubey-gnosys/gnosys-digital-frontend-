@@ -109,6 +109,16 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.87 0 0);
+
+    --brand-navy: #0b1f35;
+    --brand-navy-soft: #123b61;
+    --brand-blue: #1677ff;
+    --brand-blue-soft: #edf5ff;
+    --brand-blue-pale: #f3f8ff;
+    --brand-lavender: #f5f0ff;
+    --brand-card: rgba(255, 255, 255, 0.82);
+    --brand-border: rgba(148, 163, 184, 0.22);
+    --brand-shadow: 0 18px 44px rgba(15, 23, 42, 0.06);
 }
 
 .dark-disabled {
@@ -153,5 +163,53 @@
 
     body {
         @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .brand-shell {
+        @apply relative overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(60,130,246,0.12),transparent_28%),linear-gradient(180deg,#f7faff_0%,#f5f8ff_50%,#eef4ff_100%)] text-slate-800;
+    }
+
+    .container-brand {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .brand-badge {
+        @apply inline-flex items-center rounded-full border border-[#dfeeff] bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#123b61] shadow-[0_10px_30px_rgba(15,23,42,0.04)];
+    }
+
+    .brand-heading {
+        @apply text-3xl font-semibold tracking-[-0.05em] text-[#0f172a] sm:text-4xl lg:text-5xl;
+    }
+
+    .brand-subheading {
+        @apply text-base leading-relaxed text-slate-600 md:text-lg;
+    }
+
+    .brand-card {
+        @apply rounded-[1.75rem] border border-slate-200/80 bg-white/85 shadow-[0_14px_35px_rgba(15,23,42,0.04)] backdrop-blur-sm;
+    }
+
+    .brand-button {
+        @apply inline-flex items-center justify-center rounded-full bg-[#0b1f35] px-6 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(11,31,53,0.18)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#0a1a2d];
+    }
+
+    .brand-button-secondary {
+        @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-[0_8px_22px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-50;
+    }
+
+    .brand-stat {
+        border-radius: 1.75rem;
+        border: 1px solid rgb(226 232 240 / 0.8);
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 14px 35px rgba(15, 23, 42, 0.04);
+        backdrop-filter: blur(0.5rem);
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    .brand-grid {
+        @apply grid gap-6 md:gap-8;
     }
 }

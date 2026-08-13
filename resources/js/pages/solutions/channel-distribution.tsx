@@ -51,10 +51,10 @@ export default function ChannelDistribution() {
                 {/* 2. Why Off-the-Shelf CRMs Don't Work */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHY STANDARD CRMs FAIL</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-16 max-w-3xl mx-auto leading-tight">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHY STANDARD CRMs FAIL
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16 max-w-3xl mx-auto leading-tight">
                             Every Manufacturer's Distribution Model Is Different.
                         </h2>
 
@@ -82,10 +82,10 @@ export default function ChannelDistribution() {
                 {/* 3. What We Build For You (Features Table alternative as Cards) */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHAT WE BUILD</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-6">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHAT WE BUILD
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                             From Order To Payment. Complete Visibility.
                         </h2>
                         <p className="text-zinc-600 font-normal mb-16 max-w-3xl mx-auto leading-relaxed">
@@ -120,7 +120,7 @@ export default function ChannelDistribution() {
                 {/* 4. Built for Your Network (Hexagon Flow Diagram) -> modernized */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-[90rem]">
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-20">
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-20">
                             Built for Your Network
                         </h2>
 
@@ -156,10 +156,10 @@ export default function ChannelDistribution() {
                 {/* 5. Our Development Process */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">DEVELOPMENT PROCESS</span>
-                        </div>
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-6">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            DEVELOPMENT PROCESS
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                             We Design Around Your Business
                         </h2>
                         <p className="text-zinc-600 font-normal mb-16 max-w-3xl mx-auto">
@@ -188,7 +188,7 @@ export default function ChannelDistribution() {
                 {/* 6. Why Businesses Choose Gnosys Digital */}
                 <section className="py-24 text-center">
                     <div className="container mx-auto px-4 max-w-6xl">
-                        <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] mb-16">
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16">
                             Why Businesses Choose Gnosys Digital
                         </h2>
 
@@ -216,7 +216,7 @@ export default function ChannelDistribution() {
                 {/* 7. Ready To Start Something Great? */}
                 <section className="py-32 text-center relative z-10">
                     <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
-                        <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-6">
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
                             Ready To Start Something Great?
                         </h2>
                         <p className="text-base sm:text-lg text-zinc-700 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">

@@ -218,9 +218,9 @@ export default function ErpnextManufacturing() {
                 {/* 7. Why Manufacturers Choose Gnosys Digital */}
                 <section className="py-24 text-center relative z-10">
                     <div className="container mx-auto px-4 max-w-[90rem]">
-                        <div className="inline-block bg-white/60 backdrop-blur-md border border-white/80 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-                            <span className="text-[10px] font-bold text-zinc-800 uppercase tracking-widest">WHY GNOSYS</span>
-                        </div>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHY GNOSYS
+                        </span>
                         <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-16">
                             Why Manufacturers Choose Us
                         </h2>

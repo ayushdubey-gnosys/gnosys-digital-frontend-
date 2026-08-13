@@ -47,6 +47,9 @@ export default function ErpnextEducation() {
             {/* 2. The Challenge Modern Institutions Face */}
             <section className="py-24 bg-transparent relative z-10 border-b border-white/20 text-center">
                 <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        THE CHALLENGE
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-4 tracking-tight">
                         The Challenge Modern Institutions Face
                     </h2>
@@ -90,6 +93,9 @@ export default function ErpnextEducation() {
             <section className="py-24 bg-transparent relative z-10 border-t border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="text-center mb-16">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            OUR SOLUTION
+                        </span>
                         <h2 className="text-3xl font-extrabold text-[#00477b] mb-4 tracking-tight">
                             The Complete Digital Campus Solution
                         </h2>
@@ -197,6 +203,9 @@ export default function ErpnextEducation() {
             <section className="py-24 bg-transparent relative z-10 border-b border-white/20 text-center overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent"></div>
                 <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        WHO WE SERVE
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-12 tracking-tight">
                         Who We Serve
                     </h2>
@@ -225,6 +234,9 @@ export default function ErpnextEducation() {
             {/* 5. Implementation Journey (Timeline) */}
             <section className="py-24 bg-transparent text-center overflow-hidden relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        IMPLEMENTATION
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-4 tracking-tight">
                         Education ERP Implementation Journey
                     </h2>
@@ -305,6 +317,9 @@ export default function ErpnextEducation() {
             {/* 6. Results You Can Expect */}
             <section className="py-20 bg-transparent relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-4xl text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        EXPECTED RESULTS
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-12 tracking-tight">
                         Results You Can Expect
                     </h2>
@@ -340,6 +355,9 @@ export default function ErpnextEducation() {
                 <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent bg-[size:30px_30px]"></div>
                 
                 <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        SUCCESS HIGHLIGHTS
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-16 tracking-tight">
                         Success Highlights
                     </h2>
@@ -398,6 +416,9 @@ export default function ErpnextEducation() {
             {/* 8. Education ERP Package (Pricing) */}
             <section className="py-24 bg-transparent text-center relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-5xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        PRICING & PACKAGES
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-12 tracking-tight">
                         Education ERP Package
                     </h2>
@@ -433,6 +454,9 @@ export default function ErpnextEducation() {
             {/* 9. Why Partner With Gnosys Digital */}
             <section className="py-20 bg-transparent relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        WHY GNOSYS
+                    </span>
                     <h2 className="text-3xl font-extrabold text-[#00477b] mb-12 tracking-tight">
                         Why Partner With Gnosys Digital
                     </h2>
@@ -457,6 +481,9 @@ export default function ErpnextEducation() {
                 <div className="container mx-auto px-4 max-w-4xl relative z-10">
                     <div className="bg-white/40 backdrop-blur-2xl border border-white/60 rounded-3xl p-8 md:p-14 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="text-center mb-10">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                                GET STARTED
+                            </span>
                             <h2 className="text-3xl font-extrabold text-[#00477b] mb-3 tracking-tight">
                                 Request Your Digital Campus Assessment
                             </h2>
@@ -553,6 +580,9 @@ export default function ErpnextEducation() {
             {/* 11. Final CTA */}
             <section className="py-24 bg-transparent text-center border-t border-white/20">
                 <div className="container mx-auto px-4 max-w-3xl">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        NEXT STEPS
+                    </span>
                     <h2 className="text-3xl sm:text-4xl font-extrabold text-[#00477b] mb-10 tracking-tight">
                         Ready To Transform?
                     </h2>
