@@ -24,8 +24,9 @@ export default function ErpnextProfessionalServices() {
                             Connect project planning, resource allocation, and financials on one platform so you can focus on delivering value.
                         </p>
 
-                        <Button className="brand-button h-14 rounded-full bg-white px-8 text-base text-[#0b1f35] hover:bg-slate-100">
-                            Request A Consultation
+                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-2">Request A Consultation <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
                         </Button>
                     </div>
                 </section>

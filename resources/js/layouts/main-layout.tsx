@@ -19,7 +19,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
     }, []);
 
     return (
-        <div className="flex min-h-screen flex-col bg-[#dde8ff] text-gray-900 font-sans">
+        <div className="flex min-h-screen flex-col bg-gradient-to-r from-blue-100 via-blue-50 to-pink-100 text-gray-900 font-sans">
             {/* Header Container */}
             <header className="w-full bg-white/80 backdrop-blur-md sticky top-0 z-50 relative">
                 {/* Unified Header Row */}

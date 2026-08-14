@@ -71,10 +71,11 @@ export default function ErpnextImplementation() {
                         Automate accounting, inventory, CRM, and HR — all in one open-source platform. We help SMEs deploy ERPNext fast, affordably, and with zero chaos.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-white text-zinc-900 hover:bg-zinc-100 rounded-full px-8 h-12 text-base font-bold shadow-lg">
-                            Book a free consultation
+                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-2">Book a free consultation <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
                         </Button>
-                        <Button className="bg-transparent text-white border-2 border-white hover:bg-white/10 rounded-full px-8 h-12 text-base font-bold shadow-lg">
+                        <Button className="bg-transparent text-white border border-white/40 hover:bg-white/10 hover:border-white rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all duration-300">
                             Request a Quote
                         </Button>
                     </div>

@@ -36,12 +36,9 @@ export default function ErpnextNgo() {
                     <p className="text-lg sm:text-xl text-blue-100/90 leading-relaxed font-medium mb-10 max-w-3xl mx-auto drop-shadow-sm">
                         Manage donors, projects, compliance, and finances efficiently on one open-source ERP platform.
                     </p>
-                    <Button size="lg" className="group relative bg-zinc-200/20 backdrop-blur-md text-white border-0 hover:bg-zinc-200/30 shadow-[0_8px_30px_rgba(0,0,0,0.4)] rounded-2xl px-10 h-16 text-[16px] font-bold w-full sm:w-auto overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(0,0,0,0.5)]">
-                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                        <span className="flex items-center gap-3">
-                            Request Free Assessment
-                            <svg className="size-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                        </span>
+                    <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                        <span className="relative z-10 flex items-center gap-2">Request Free Assessment <span className="text-xl">&rarr;</span></span>
+                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
                     </Button>
                 </div>
             </section>

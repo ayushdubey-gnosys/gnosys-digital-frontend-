@@ -31,7 +31,7 @@ export default function CultureOfChange() {
             </section>
 
             {/* 2. Mission Section */}
-            <section className="relative overflow-hidden bg-white/20 backdrop-blur-md flex flex-col lg:flex-row items-stretch">
+            <section className="relative overflow-hidden bg-white/20 backdrop-blur-md flex flex-col lg:flex-row items-stretch mt-12 lg:mt-16">
                 <div className="w-full lg:w-1/2 flex justify-end border-y border-white/40">
                     <div className="w-full max-w-[800px] py-24 lg:py-32 px-4 sm:px-6 lg:px-10 xl:px-12 flex flex-col justify-center space-y-12">
                         <div>
