@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, usePage, Head } from '@inertiajs/react';
 import { dashboard, login, register } from '@/routes';
 import MainLayout from '@/layouts/main-layout';
@@ -14,6 +15,55 @@ import {
     Briefcase, Package, Users, Award, Zap, TrendingUp,
     Globe, ShieldCheck, Code, Cpu, Server, Rocket, Settings, Eye
 } from 'lucide-react';
+
+function StatCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
+    const [count, setCount] = useState(0);
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    setHasAnimated(true);
+                    let start = 0;
+                    const duration = 2000;
+                    const frameRate = 1000 / 60;
+                    const totalFrames = Math.round(duration / frameRate);
+                    let frame = 0;
+
+                    const counter = setInterval(() => {
+                        frame++;
+                        const progress = frame / totalFrames;
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        const current = Math.round(start + (target - start) * easeOut);
+                        setCount(current);
+
+                        if (frame >= totalFrames) {
+                            clearInterval(counter);
+                            setCount(target);
+                        }
+                    }, frameRate);
+                }
+            },
+            { threshold: 0.25 }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
+        return () => {
+            if (ref.current) observer.unobserve(ref.current);
+        };
+    }, [hasAnimated, target]);
+
+    return (
+        <div ref={ref} className="text-5xl font-normal text-[#00477b] mb-3 tracking-tight group-hover:scale-110 transition-transform duration-500">
+            {count}{suffix}
+        </div>
+    );
+}
 
 export default function Welcome() {
     const { auth } = usePage().props as any;
@@ -161,7 +211,7 @@ export default function Welcome() {
                 </section>
 
                 {/* 2. Why Choose Gnosys */}
-                <section className="pt-24 bg-transparent text-center border-t border-white/40">
+                <section className="pt-24 pb-20 lg:pb-28 bg-transparent text-center border-t border-white/40">
                     <div className="w-full px-4 lg:px-8 mb-12">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">Why Gnosys</span>
                         <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Why Businesses Choose Gnosys Digital</h2>
@@ -192,79 +242,107 @@ export default function Welcome() {
                 </section>
 
                 {/* 3. Culture of Change */}
-                <section className="border-t border-white/40 relative overflow-hidden text-zinc-900" style={{ minHeight: '480px' }}>
-                    {/* Background Container */}
-                    <div className="absolute inset-0 z-0">
-                        <div
-                            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                            style={{ backgroundImage: "url('/assets/worldmap.webp')" }}
+                <section className="relative overflow-hidden w-full flex flex-col lg:flex-row items-stretch bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] my-20 lg:my-28">
+                    {/* Left Side: Flush World Map Image (100% 50/50 Cover, Attached to Left) */}
+                    <div className="relative w-full lg:w-1/2 min-h-[360px] lg:min-h-[460px]">
+                        <div 
+                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat shadow-[15px_0_40px_-10px_rgba(0,71,123,0.15)]" 
+                            style={{ backgroundImage: 'url("/assets/world-map.webp")' }}
                         ></div>
-                        {/* Dark overlay for better text contrast */}
-                        <div className="absolute inset-0 bg-zinc-900/40 z-10"></div>
                     </div>
 
-                    <div className="flex items-center justify-center w-full min-h-[480px] relative z-10">
-                        {/* Center Text */}
-                        <div className="flex-1 flex flex-col items-center justify-center text-center py-24 px-8 lg:px-12">
-                            <h2 className="text-4xl sm:text-5xl font-medium tracking-tight text-white drop-shadow-md mb-6">Our Culture Of Change</h2>
-                            <p className="text-zinc-300 font-normal text-md sm:text-lg leading-relaxed mb-8 max-w-4xl drop-shadow">
-                                Change isn't a campaign for us - it's our culture. We constantly evolve our tools, design, and strategies to help our clients grow faster in a world that changes every day. At Gnosys Digital, we experiment boldly, execute precisely, and learn endlessly - because progress never stands still.
-                            </p>
-                            <Button className="bg-white hover:bg-zinc-100 text-zinc-900 shadow-lg shadow-black/20 border border-white rounded-full px-8 h-12 font-bold transition-all duration-300 hover:-translate-y-1">
-                                Read Our Story
-                            </Button>
+                    {/* Right Side: Content */}
+                    <div className="w-full lg:w-1/2 flex justify-start">
+                        <div className="w-full max-w-[800px] py-12 lg:py-20 px-6 sm:px-10 lg:px-14 xl:px-16 flex flex-col justify-center space-y-6">
+                            <div>
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                                    CULTURE OF CHANGE
+                                </span>
+                                <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                    Our Culture Of Change
+                                </h2>
+                                <p className="text-zinc-600 text-sm sm:text-base md:text-lg font-normal leading-relaxed">
+                                    Change isn't a campaign for us - it's our culture. We constantly evolve our tools, design, and strategies to help our clients grow faster in a world that changes every day. At Gnosys Digital, we experiment boldly, execute precisely, and learn endlessly - because progress never stands still.
+                                </p>
+                            </div>
+
+                            <div className="pt-2">
+                                <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 shadow-lg shadow-blue-900/10 text-sm font-semibold transition-all hover:-translate-y-0.5 w-fit">
+                                    <Link href="/about/culture-of-change">Read Our Story</Link>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 {/* 4. Featured Gigs */}
-                <section className="pt-24 bg-transparent text-left border-t border-white/40">
-                    <div className="w-full px-4 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <section className="pt-24 pb-12 bg-transparent text-left border-t border-white/40">
+                    <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 max-w-[1800px] mx-auto">
                         <div>
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">Featured Gigs</span>
-                            <h2 className=" text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] ">Our Top Gigs - Built & Delivered By Experts</h2>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                                FEATURED GIGS
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Our Top Gigs - Built & Delivered By Experts
+                            </h2>
                         </div>
                         <div className="shrink-0">
-                            <Button className="bg-[#00477b] hover:bg-[#00477b] text-white shadow-lg shadow-blue-900/20 border border-[#00335e] rounded-full px-8 h-12 font-bold transition-all duration-300 hover:-translate-y-1">
-                                View All Gigs
+                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white shadow-lg shadow-blue-900/10 rounded-full px-8 h-12 text-sm font-semibold transition-all hover:-translate-y-0.5">
+                                <Link href="/digital-services">View All Gigs</Link>
                             </Button>
                         </div>
                     </div>
 
-                    <div className="w-full">
-                        <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                            <div className="grid md:grid-cols-3 gap-8 w-full max-w-[1800px] mx-auto">
+                    <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 max-w-[1800px] mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {[
-                                { icon: Code, title: "Laravel", desc: "Expert development & APIs", img: "/assets/larawel.webp" },
-                                { icon: Cpu, title: "AI Automation", desc: "Smart workflow integration", img: "/assets/ai-automation.jpg" },
-                                { icon: Server, title: "Server Setup", desc: "Cloud deployment & scaling", img: "/assets/server-setup.jpg" },
+                                { icon: Code, tag: "POPULAR", title: "Laravel Development", desc: "Enterprise architecture, custom APIs, and scalable web apps.", img: "/assets/larawel.webp" },
+                                { icon: Cpu, tag: "AI POWERED", title: "AI Workflow Automation", desc: "Smart AI integration, LLM pipelines, and automated business workflows.", img: "/assets/ai-automation.jpg" },
+                                { icon: Server, tag: "INFRASTRUCTURE", title: "Server Setup & DevOps", desc: "High-availability cloud deployment, CI/CD, and server optimization.", img: "/assets/server-setup.jpg" },
                             ].map((gig, i) => (
-                                <div key={i} className="group relative bg-white/30 backdrop-blur-xl border border-white/80 rounded-[2rem] p-3 hover:bg-white/50 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl hover:shadow-blue-900/10 flex flex-col overflow-hidden">
+                                <div key={i} className="group relative bg-gradient-to-br from-white/60 via-white/40 to-white/20 backdrop-blur-2xl border border-white/70 rounded-[2.5rem] p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:bg-white/65 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 transition-all duration-400 flex flex-col justify-between h-full overflow-hidden">
+                                    
+                                    <div>
+                                        {/* Image Container */}
+                                        <div className="relative h-[240px] sm:h-[260px] w-full rounded-[1.75rem] overflow-hidden bg-slate-900 shadow-sm mb-6">
+                                            <img 
+                                                src={gig.img} 
+                                                alt={gig.title} 
+                                                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-108" 
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+                                            
+                                            {/* Floating Badge */}
+                                            <div className="absolute top-4 left-4 z-20">
+                                                <span className="bg-white/80 backdrop-blur-md text-[#00477b] text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm border border-white/80">
+                                                    {gig.tag}
+                                                </span>
+                                            </div>
+                                        </div>
 
-                                    {/* Image Container */}
-                                    <div className="relative h-[280px] w-full rounded-[1.25rem] overflow-hidden bg-zinc-100/50">
-                                        <div className="absolute inset-0 bg-zinc-900/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                                        <img src={gig.img} alt={gig.title} className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
-
-                                        {/* Floating Badge over image */}
-                                        <div className="absolute top-4 right-4 z-20">
-                                            <div className="bg-white/80 backdrop-blur-md text-zinc-900 text-xs font-bold px-4 py-1.5 rounded-full shadow-sm border border-white/80 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                                                Explore Gig
+                                        {/* Content */}
+                                        <div className="flex items-start gap-4 mb-4">
+                                            <div className="size-12 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shrink-0 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                <gig.icon className="size-5" />
+                                            </div>
+                                            <div>
+                                                <h4 className="text-xl font-medium text-[#00477b] tracking-tight mb-1.5 group-hover:text-[#00335e] transition-colors">
+                                                    {gig.title}
+                                                </h4>
+                                                <p className="text-sm text-zinc-600 font-normal leading-relaxed">
+                                                    {gig.desc}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* Content */}
-                                    <div className="pt-6 pb-4 px-3 flex flex-col items-start text-left">
-                                        <div className="flex items-center gap-4">
-                                            <div className="size-12 bg-white/60 backdrop-blur-md rounded-xl flex shrink-0 items-center justify-center border border-white/80 text-zinc-700 shadow-sm">
-                                                <gig.icon className="size-6" />
-                                            </div>
-                                            <div>
-                                                <h4 className="text-xl font-bold text-[#00477b] tracking-tight mb-1">{gig.title}</h4>
-                                                <p className="text-sm text-zinc-500 font-medium leading-relaxed">{gig.desc}</p>
-                                            </div>
-                                        </div>
+                                    {/* Action Bar */}
+                                    <div className="pt-4 border-t border-zinc-200/60 flex items-center justify-between mt-4">
+                                        <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Expert Team</span>
+                                        <span className="text-sm font-semibold text-[#00477b] group-hover:translate-x-1 transition-transform duration-300 flex items-center gap-1.5">
+                                            Explore Gig <span>&rarr;</span>
+                                        </span>
                                     </div>
                                 </div>
                             ))}
@@ -387,13 +465,13 @@ export default function Welcome() {
                             `}</style>
 
                             {[
-                                { num: "500+", label: "Projects Delivered" },
-                                { num: "90%", label: "Client Retention Rate" },
-                                { num: "3", label: "Global Offices" },
-                                { num: "38%", label: "Avg Increase In Client Conversions" },
+                                { target: 500, suffix: "+", label: "Projects Delivered" },
+                                { target: 90, suffix: "%", label: "Client Retention Rate" },
+                                { target: 3, suffix: "", label: "Global Offices" },
+                                { target: 38, suffix: "%", label: "Avg Increase In Client Conversions" },
                             ].map((stat, i) => (
                                 <div key={i} className="px-8 sm:px-14 flex flex-col items-center relative z-10 group cursor-default my-4 sm:my-0">
-                                    <div className="text-5xl font-normal text-zinc-900 mb-3 tracking-tight group-hover:scale-110 transition-transform duration-500">{stat.num}</div>
+                                    <StatCounter target={stat.target} suffix={stat.suffix} />
                                     <div className="text-[11px] font-semibold text-zinc-500 uppercase tracking-[0.2em] text-center max-w-[140px] leading-relaxed">{stat.label}</div>
                                 </div>
                             ))}

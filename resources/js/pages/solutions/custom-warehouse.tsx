@@ -4,7 +4,9 @@ import { Button } from '@/components/ui/button';
 import { 
     PackageOpen, Clock, Network, Search, Zap, 
     CheckCircle2, FileCode, Users, CheckCircle, 
-    ArrowRight, Boxes, Truck, MapPin, TabletSmartphone, Code, Settings, Warehouse
+    ArrowRight, Boxes, Truck, MapPin, TabletSmartphone, Code, Settings, Warehouse,
+    ShieldCheck, BarChart3, RotateCcw, ScanLine, Layers, Workflow, ShoppingCart,
+    Server, Layout, Smartphone, Cpu, Cloud
 } from 'lucide-react';
 import React from 'react';
 
@@ -13,337 +15,460 @@ export default function CustomWarehouse() {
         <MainLayout>
             <Head title="Custom Warehouse & Inventory Management Software Development" />
             
-            {/* 1. Hero Section */}
+            {/* 1. Hero Section (Clear Background) */}
             <section 
                 className="relative overflow-hidden pt-20 pb-28 lg:pt-36 lg:pb-40 flex items-center justify-center text-center min-h-[85vh] bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: "url('/assets/warehouse.webp')" }}
             >
-                <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[#022c54]/40 z-10"></div>
-                </div>
-                
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <p className="text-sm sm:text-base font-bold text-blue-300 uppercase tracking-widest mb-6">
-                        Every Warehouse Is Different. Your Software Should Be Too.
+                    <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
+                        EVERY WAREHOUSE IS DIFFERENT. YOUR SOFTWARE SHOULD BE TOO.
                     </p>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
-                        Your Stock Process Is Unique.<br/>Your System Should Match It — Not Fight It.
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
+                        Your Stock Process Is Unique.<br className="hidden sm:block" /> Your System Should Match It — Not Fight It.
                     </h1>
                     
-                    <p className="text-lg sm:text-xl text-blue-100/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
+                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
                         Custom barcode systems, tailored allocations, and real-time inventory tracking. We build custom warehouse software that maps to how your physical operations actually run.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-sm px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                        <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
                             Talk to an inventory expert
                         </Button>
-                        <Button className="bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-sm px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                        <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
                             Explore solutions
                         </Button>
                     </div>
                 </div>
             </section>
 
-            {/* 2. Why Off-the-Shelf Software Doesn't Work */}
-            <section className="py-24 bg-transparent text-center relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Why Off-The-Shelf Software Doesn't Work
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16 max-w-4xl mx-auto leading-tight">
-                        You've Tried Excel. You've Seen ERPs.<br/>But Neither Fits How Your Warehouse Actually Runs.
-                    </h2>
-                    
-                    <div className="flex flex-wrap justify-center gap-6">
-                        {[
-                            { icon: <PackageOpen className="size-6 text-zinc-800" />, title: "Too Generic", desc: "They force rigid processes that don't fit your products." },
-                            { icon: <Settings className="size-6 text-zinc-800" />, title: "Too Manual", desc: "Excel spreadsheets require constant typing and get out of sync." },
-                            { icon: <Network className="size-6 text-zinc-800" />, title: "Too Isolated", desc: "Your stock info doesn't sync with sales and accounts in real-time." },
-                            { icon: <MapPin className="size-6 text-zinc-800" />, title: "No Bin Insights", desc: "You have stock but don't know the exact shelf or rack." },
-                            { icon: <Clock className="size-6 text-zinc-800" />, title: "Too Slow to Adapt", desc: "Standard systems can't adapt to seasonal business rules." }
-                        ].map((item, i) => (
-                            <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[2rem] shadow-lg shadow-blue-900/5 flex flex-col items-center text-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] hover:bg-white/60 hover:shadow-xl transition-all duration-300">
-                                <div className="size-14 bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center mb-6">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-lg font-bold text-[#00477b] mb-2">{item.title}</h3>
-                                <p className="text-sm text-gray-600 font-medium">{item.desc}</p>
-                            </div>
-                        ))}
+            <div className="relative z-10 w-full bg-transparent">
+                {/* 2. Why Off-the-Shelf Software Doesn't Work (Balanced 6 Cards) */}
+                <section className="pt-24 pb-12 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHY OFF-THE-SHELF SOFTWARE FAILS
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] max-w-3xl mx-auto leading-tight">
+                            You've Tried Excel. You've Seen Generic ERPs. Neither Fits How Your Warehouse Actually Runs.
+                        </h2>
                     </div>
-                    
-                    <p className="mt-12 text-sm text-zinc-500 font-bold max-w-2xl mx-auto">
-                        You don't need generic software. You need a warehouse platform that works exactly how your staff does.
-                    </p>
-                </div>
-            </section>
 
-            {/* 3. What We Build For You (Features Table & Flow) */}
-            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-5xl text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        What We Build For You
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 max-w-4xl mx-auto">
-                        From Racks To Reconciliation.<br/>We Design Your Digital Warehouse, Your Way.
-                    </h2>
-                    <p className="text-gray-600 font-medium mb-12 max-w-3xl mx-auto">
-                        Custom modules that map to your physical warehouse flow. From barcoding inward goods to managing complex outward dispatches, we give you end-to-end visibility without forcing you to change your workflow.
-                    </p>
-                    
-                    <div className="overflow-x-auto mb-16 pb-4">
-                        <table className="w-full text-left bg-white/10 backdrop-blur-md shadow-lg shadow-blue-900/5 border border-white/40 rounded-[2.5rem] overflow-hidden">
-                            <thead>
-                                <tr className="bg-zinc-800 border-b border-zinc-700 text-white">
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-1/3">Function</th>
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-2/3 border-l border-zinc-700">Custom Solutions We Can Build</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-white/30">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[90rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                                 {[
-                                    { f: "Inward Stock", c: "Barcode scanning, blind checking, GRN workflows" },
-                                    { f: "Bin & Location Management", c: "Zone, aisle, rack, and bin level tracking logic" },
-                                    { f: "Stock Movement & Tracking", c: "Internal transfers, warehouse-to-warehouse workflows" },
-                                    { f: "Barcode / QR Integration", c: "Custom label generation, mobile scanning functionality" },
-                                    { f: "Multi-Warehouse Control", c: "Centralized dashboard for multiple distribution centers" },
-                                    { f: "Dispatch Rules", c: "FEFO, FIFO, FMFO, or custom allocation & dispatch process" },
-                                    { f: "Inventory Audits", c: "Cycle counting, reconciliation, shrinkage reporting" },
-                                    { f: "ERP / Tally Integrations", c: "Auto-sync of inward, dispatch, and stock adjustments" }
-                                ].map((row, i) => (
-                                    <tr key={i} className="hover:bg-white/30 transition-colors duration-300">
-                                        <td className="py-5 px-8 text-[15px] font-bold text-zinc-900 border-r border-white/30">{row.f}</td>
-                                        <td className="py-5 px-8 text-[15px] text-gray-700 font-medium">{row.c}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    {/* Custom Inbound -> Warehouse -> Dispatch Flow Diagram */}
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-5xl mx-auto relative z-10">
-                        <div className="bg-white/60 backdrop-blur-xl border border-white/80 p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 text-center flex-1 w-full group hover:bg-white transition-all duration-300">
-                            <div className="size-16 mx-auto bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center mb-4">
-                                <Boxes className="size-8 text-zinc-900" />
-                            </div>
-                            <h3 className="font-bold text-lg text-[#00477b] mb-2">Inbound</h3>
-                            <p className="text-sm text-gray-600 font-medium max-w-[180px] mx-auto">Receiving, sorting & barcoding goods.</p>
-                        </div>
-                        {/* Arrow */}
-                        <div className="hidden md:flex text-zinc-300">
-                            <svg className="size-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
-                        <div className="bg-white/60 backdrop-blur-xl border border-white/80 p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 text-center flex-1 w-full group hover:bg-white transition-all duration-300">
-                            <div className="size-16 mx-auto bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center mb-4">
-                                <Warehouse className="size-8 text-zinc-900" />
-                            </div>
-                            <h3 className="font-bold text-lg text-[#00477b] mb-2">Warehouse</h3>
-                            <p className="text-sm text-gray-600 font-medium max-w-[180px] mx-auto">Putaway, transfers & real-time visibility.</p>
-                        </div>
-                        {/* Arrow */}
-                        <div className="hidden md:flex text-zinc-300">
-                            <svg className="size-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
-                        <div className="bg-white/60 backdrop-blur-xl border border-white/80 p-8 rounded-[2rem] shadow-xl shadow-blue-900/5 text-center flex-1 w-full group hover:bg-white transition-all duration-300">
-                            <div className="size-16 mx-auto bg-white shadow-sm border border-gray-100 rounded-full flex items-center justify-center mb-4">
-                                <Truck className="size-8 text-zinc-900" />
-                            </div>
-                            <h3 className="font-bold text-lg text-[#00477b] mb-2">Dispatch</h3>
-                            <p className="text-sm text-gray-600 font-medium max-w-[180px] mx-auto">Pick, pack, label, & outbound shipping.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. Our Development Process */}
-            <section className="py-24 bg-transparent text-center relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Our Development Process
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">
-                        We Don't Sell Software. We Engineer It Around You.
-                    </h2>
-                    
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[
-                            { icon: <Search className="size-6 text-zinc-800" />, title: "Process Discovery & Mapping", desc: "We study your physical warehouse operations to define the required workflows and logic." },
-                            { icon: <TabletSmartphone className="size-6 text-zinc-800" />, title: "UI/UX & Solution Design", desc: "We design simple, intuitive interfaces for your floor staff and robust portals for management." },
-                            { icon: <Code className="size-6 text-zinc-800" />, title: "Development & Integration", desc: "Custom backends built to scale, and native integrations (ERP/Tally) to ensure data flows." },
-                            { icon: <Zap className="size-6 text-zinc-800" />, title: "Training & Deployment", desc: "We roll out your software globally and train your staff, providing ongoing support." }
-                        ].map((step, i) => (
-                            <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 p-8 rounded-[2rem] shadow-lg shadow-blue-900/5 text-center hover:bg-white/60 hover:shadow-xl transition-all duration-300 flex flex-col items-center group">
-                                <div className="mb-6 bg-white w-fit p-4 rounded-full border border-gray-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                                    {step.icon}
-                                </div>
-                                <h3 className="text-lg font-bold mb-4 text-[#00477b] leading-tight">{step.title}</h3>
-                                <p className="text-sm text-gray-600 font-medium leading-relaxed">{step.desc}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* 5. Why Custom Warehouse Software Wins */}
-            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
-                        <div className="lg:w-1/2">
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                                Why Custom Warehouse Software Wins
-                            </span>
-                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-8 leading-tight">
-                                Because No Ready-Made Tool Can Match Your Real-World Operations.
-                            </h2>
-                            
-                            <ul className="space-y-5 mb-10">
-                                {[
-                                    "Custom workflows built for your specific categories and aging rules.",
-                                    "Mobile-first interfaces for your warehouse staff.",
-                                    "Seamless integration with existing accounting tools (Tally, SAP, ERPs).",
-                                    "Full ownership of the code and data—no recurring per-user fees."
+                                    { icon: <PackageOpen className="size-7" />, title: "Too Generic", desc: "Forced into rigid processes that don't match your physical rack & lot structure." },
+                                    { icon: <Settings className="size-7" />, title: "Too Manual", desc: "Excel spreadsheets require constant typing and get out of sync with real stock." },
+                                    { icon: <Network className="size-7" />, title: "Too Isolated", desc: "Warehouse stock data fails to sync with active sales orders and dispatch teams." },
+                                    { icon: <MapPin className="size-7" />, title: "No Bin Insights", desc: "You know stock exists, but operators waste hours finding the exact shelf or rack." },
+                                    { icon: <Clock className="size-7" />, title: "Too Slow to Adapt", desc: "Standard software cannot accommodate dynamic FEFO, FIFO, or seasonal batch rules." },
+                                    { icon: <ShieldCheck className="size-7" />, title: "Shrinkage & Discrepancies", desc: "No automated cycle counting or audit trails to prevent lost and stolen inventory." }
                                 ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-4">
-                                        <div className="bg-zinc-900 rounded-full p-1 mt-0.5 shrink-0 shadow-sm">
-                                            <CheckCircle2 className="size-4 text-white" />
+                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
+                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                            {item.icon}
                                         </div>
-                                        <span className="text-gray-700 font-medium text-[16px]">{item}</span>
-                                    </li>
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
+                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{item.desc}</p>
+                                    </div>
                                 ))}
-                            </ul>
-                            
-                            <Button className="bg-[#00477b] text-white hover:bg-[#00477b] rounded-full px-8 h-14 text-[16px] font-bold shadow-lg shadow-blue-900/20 hover:-translate-y-1 transition-all duration-300">
-                                Book a Discovery Call
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 3. What We Build For You (Balanced 4-Column 8-Card Grid) */}
+                <section className="pt-24 pb-12 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHAT WE BUILD
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            From Racks To Reconciliation. Complete Digital Warehouse.
+                        </h2>
+                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto leading-relaxed">
+                            Custom modules that map to your physical warehouse flow. From barcoding inward goods to managing complex outward dispatches, we give you end-to-end visibility.
+                        </p>
+                    </div>
+
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[90rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-left">
+                                {[
+                                    { icon: <ScanLine className="size-6" />, f: "Inward Stock & GRN", c: "Barcode & QR scanning, blind checking, automated GRN creation." },
+                                    { icon: <MapPin className="size-6" />, f: "Bin & Location Tracking", c: "Precise zone, aisle, rack, and bin-level location assignment logic." },
+                                    { icon: <Boxes className="size-6" />, f: "Stock Transfers", c: "Internal rack-to-rack and warehouse-to-warehouse workflows." },
+                                    { icon: <TabletSmartphone className="size-6" />, f: "Handheld Barcode Scanning", c: "Instant mobile/tablet app scanning for high-speed pick & pack." },
+                                    { icon: <Warehouse className="size-6" />, f: "Multi-Warehouse Dashboard", c: "Centralized live inventory control across all depots & regional hubs." },
+                                    { icon: <Workflow className="size-6" />, f: "Dynamic Dispatch Rules", c: "Automated FIFO, FEFO, FMFO allocation & batch-expiry controls." },
+                                    { icon: <RotateCcw className="size-6" />, f: "Cycle Audits & Reconciliation", c: "Routine cycle counting, automated reconciliation & shrinkage reporting." },
+                                    { icon: <Network className="size-6" />, f: "Tally & ERP Integration", c: "Real-time sync of inward, outward dispatches, and inventory valuation." }
+                                ].map((row, i) => (
+                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-7 rounded-[2rem] border border-white shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col relative overflow-hidden h-full">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
+                                        
+                                        <div className="flex items-center justify-between mb-5 relative z-10">
+                                            <div className="size-12 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                {row.icon}
+                                            </div>
+                                            <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase">
+                                                0{i + 1}
+                                            </span>
+                                        </div>
+
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-snug relative z-10">
+                                            {row.f}
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed relative z-10 mt-auto">
+                                            {row.c}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 4. Warehouse Flow Pipeline */}
+                <section className="pt-24 pb-16 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-5xl mb-14">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WORKFLOW PIPELINE
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            Connected Warehouse Operations
+                        </h2>
+                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-2xl mx-auto">
+                            Seamless inventory flow from inward gate receipt to final customer delivery.
+                        </p>
+                    </div>
+
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-16 pb-20 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[92rem]">
+                            <div className="relative">
+                                {/* Connecting Line */}
+                                <div className="hidden lg:block absolute top-[6.5rem] left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 z-0"></div>
+
+                                <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto relative z-10">
+                                    {[
+                                        {
+                                            step: "01",
+                                            tag: "Inward Flow",
+                                            icon: <Boxes className="size-7" />,
+                                            title: "Inbound Gate",
+                                            desc: "Receiving, blind checking, barcoding, and automated PO matching."
+                                        },
+                                        {
+                                            step: "02",
+                                            tag: "Storage Flow",
+                                            icon: <Warehouse className="size-7" />,
+                                            title: "Warehouse Putaway",
+                                            desc: "Intelligent bin putaway, shelf allocation & real-time visibility."
+                                        },
+                                        {
+                                            step: "03",
+                                            tag: "Outward Flow",
+                                            icon: <Truck className="size-7" />,
+                                            title: "Dispatch & Logistics",
+                                            desc: "Pick-lists, box packing, shipping labels & E-Way bill generation."
+                                        }
+                                    ].map((node, i) => (
+                                        <div key={i} className="flex flex-col h-full group">
+                                            <div className="bg-gradient-to-b from-white/90 via-white/70 to-white/40 backdrop-blur-xl border border-white rounded-[2.25rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,71,123,0.12)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col items-center text-center h-full relative overflow-hidden">
+                                                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-[#00477b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-[2.25rem]"></div>
+                                                
+                                                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/60 shadow-inner">
+                                                    <span className="size-1.5 rounded-full bg-[#00477b]"></span>
+                                                    <span className="text-[11px] font-black text-[#00477b] tracking-wider uppercase">Stage {node.step}</span>
+                                                </div>
+
+                                                <div className="size-18 mb-5 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                                    {node.icon}
+                                                </div>
+
+                                                <span className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1.5">
+                                                    {node.tag}
+                                                </span>
+
+                                                <h3 className="font-bold text-[#00477b] text-xl mb-3 tracking-tight">
+                                                    {node.title}
+                                                </h3>
+
+                                                <p className="text-xs text-zinc-600 font-medium leading-relaxed mt-auto">
+                                                    {node.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 5. Development Process */}
+                <section className="pt-24 pb-12 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            DEVELOPMENT PROCESS
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            We Don't Sell Software. We Engineer It Around You.
+                        </h2>
+                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto">
+                            Custom backends built for high-throughput scanning and native integrations to ensure frictionless operations.
+                        </p>
+                    </div>
+
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[90rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                                {[
+                                    { icon: <Search className="size-7" />, title: "Process Discovery & Mapping", desc: "We study your physical warehouse layout, bins, and SKU velocity to architect custom logic." },
+                                    { icon: <TabletSmartphone className="size-7" />, title: "UI/UX & Solution Design", desc: "Simple, high-contrast mobile scanning screens for staff and deep analytics for managers." },
+                                    { icon: <Code className="size-7" />, title: "Development & Integration", desc: "Built with high-speed caching and direct API hooks into your ERP or Tally database." },
+                                    { icon: <Zap className="size-7" />, title: "Training & Deployment", desc: "Floor-level worker onboarding, handheld barcode testing, and ongoing dedicated SLA support." }
+                                ].map((step, i) => (
+                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
+                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                            {step.icon}
+                                        </div>
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
+                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{step.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 6. Why Custom Warehouse Software Wins (Full Width Edge-to-Edge Split Layout) */}
+                <section className="pt-24 pb-12 relative z-10">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[540px]">
+                                
+                                {/* Left Content: Text & Points */}
+                                <div className="p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center max-w-2xl lg:max-w-none lg:ml-auto">
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6 w-fit">
+                                        WHY CUSTOM SOFTWARE WINS
+                                    </span>
+                                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
+                                        Because No Ready-Made Tool Can Match Your Real Operations.
+                                    </h2>
+                                    <p className="text-zinc-600 font-medium text-sm sm:text-base mb-8 leading-relaxed">
+                                        Commercial off-the-shelf software forces you to change your operations. Custom warehouse solutions adapt completely to your physical facility layout, worker habits, and SKU velocity.
+                                    </p>
+                                    
+                                    <ul className="space-y-4 mb-10">
+                                        {[
+                                            "Custom workflows built for your specific categories and aging rules.",
+                                            "Mobile-first barcode & QR interfaces for your floor workers.",
+                                            "Seamless real-time integration with Tally, SAP, or legacy databases.",
+                                            "Full ownership of the software — zero recurring per-user license fees."
+                                        ].map((item, i) => (
+                                            <li key={i} className="flex items-start gap-3.5">
+                                                <div className="size-6 rounded-full bg-blue-50 border border-blue-200/60 flex items-center justify-center shrink-0 mt-0.5 text-[#00477b]">
+                                                    <CheckCircle2 className="size-4" />
+                                                </div>
+                                                <span className="text-zinc-800 font-semibold text-sm sm:text-[15px]">{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    
+                                    <div>
+                                        <Button className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-10 h-14 text-sm font-bold shadow-lg shadow-blue-900/15 transition-all">
+                                            Book a Discovery Call
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Right Content: Edge-to-Edge Image with No Radius and No Padding */}
+                                <div className="relative w-full h-[400px] lg:h-full min-h-[460px] overflow-hidden">
+                                    <img 
+                                        src="/assets/warehourse.png" 
+                                        alt="Warehouse Operations" 
+                                        className="w-full h-full object-cover object-center rounded-none" 
+                                    />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 7. Technology & Capabilities (Modern 6-Card Grid) */}
+                <section className="pt-24 pb-12 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            TECH STACK & ARCHITECTURE
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            We Use Enterprise Technology — Sized For SME Scale
+                        </h2>
+                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-2xl mx-auto">
+                            Modern, resilient, and battle-tested frameworks built to handle high-frequency logistics data.
+                        </p>
+                    </div>
+
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[90rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-left">
+                                {[
+                                    {
+                                        icon: <Server className="size-6" />,
+                                        area: "Backend Engine",
+                                        desc: "High-concurrency data processing, custom business logic, and transactional integrity.",
+                                        stack: ["Laravel", "Node.js", "Python", "REST APIs", "PostgreSQL"]
+                                    },
+                                    {
+                                        icon: <Layout className="size-6" />,
+                                        area: "Frontend & UI",
+                                        desc: "Ultra-fast, touch-responsive interfaces designed specifically for floor staff & managers.",
+                                        stack: ["React.js", "Next.js", "Vue.js", "TypeScript", "TailwindCSS"]
+                                    },
+                                    {
+                                        icon: <Smartphone className="size-6" />,
+                                        area: "Mobile & Tablets",
+                                        desc: "Offline-first shop floor mobile apps and rugged handheld barcode workstations.",
+                                        stack: ["React Native", "Android Tablets", "Offline Sync", "PWA Support"]
+                                    },
+                                    {
+                                        icon: <Cpu className="size-6" />,
+                                        area: "IoT & Integrations",
+                                        desc: "Real-time barcode scanners, weighbridge telemetry, and bi-directional ERP sync.",
+                                        stack: ["PLC Sensors", "SAP / Tally Bridge", "IoT Gateways", "Webhooks"]
+                                    },
+                                    {
+                                        icon: <Cloud className="size-6" />,
+                                        area: "Cloud Infrastructure",
+                                        desc: "99.9% uptime SLA with automatic failover, containerization, and scaling.",
+                                        stack: ["AWS", "DigitalOcean", "Docker", "CI/CD Pipelines", "Redis"]
+                                    },
+                                    {
+                                        icon: <ShieldCheck className="size-6" />,
+                                        area: "Security & Governance",
+                                        desc: "Bank-grade data encryption, granular role permissions, and immutable audit logs.",
+                                        stack: ["Role-Based ACL", "SSL 256-Bit", "Audit Trails", "Automated Backups"]
+                                    }
+                                ].map((item, i) => (
+                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between h-full relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
+
+                                        <div className="relative z-10">
+                                            {/* Header with Icon & Category */}
+                                            <div className="flex items-center gap-4 mb-4">
+                                                <div className="size-13 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                    {item.icon}
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-lg font-bold text-[#00477b] leading-tight">
+                                                        {item.area}
+                                                    </h3>
+                                                    <span className="text-[11px] font-black text-zinc-400 uppercase tracking-wider">
+                                                        LAYER 0{i + 1}
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            {/* Description */}
+                                            <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed mb-6">
+                                                {item.desc}
+                                            </p>
+                                        </div>
+
+                                        {/* Tech Badges / Pills */}
+                                        <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-200/60 relative z-10">
+                                            {item.stack.map((tech, idx) => (
+                                                <span key={idx} className="px-3 py-1 rounded-full bg-white/90 border border-blue-100/80 text-[12px] font-bold text-zinc-700 shadow-sm hover:bg-blue-50 hover:text-[#00477b] transition-colors">
+                                                    {tech}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 8. Engagement Models */}
+                <section className="pt-24 pb-12 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            ENGAGEMENT MODELS
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Transparent Engagement, Flexible Scope
+                        </h2>
+                    </div>
+
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[90rem]">
+                            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                                {[
+                                    { 
+                                        icon: <FileCode className="size-7" />, 
+                                        title: "Fixed-Scope Project", 
+                                        desc: "Defined scope and timelines. Ideal for clearly outlined custom warehouse software builds.",
+                                        btn: "Get A Proposal"
+                                    },
+                                    { 
+                                        icon: <Users className="size-7" />, 
+                                        title: "Long-Term Tech Partner", 
+                                        desc: "An extended team that continuously optimizes and expands your software alongside your growth.",
+                                        btn: "Discuss Partnership"
+                                    },
+                                    { 
+                                        icon: <CheckCircle className="size-7" />, 
+                                        title: "Process & Tech Consulting", 
+                                        desc: "We map your inventory flow, define process gaps, and recommend a phased digital strategy.",
+                                        btn: "Book Consultation"
+                                    }
+                                ].map((model, i) => (
+                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white p-9 rounded-[2.25rem] shadow-sm flex flex-col items-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group h-full relative overflow-hidden">
+                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                            {model.icon}
+                                        </div>
+                                        <h3 className="text-xl font-bold text-[#00477b] mb-3">{model.title}</h3>
+                                        <p className="text-sm text-zinc-600 font-medium mb-8 leading-relaxed flex-grow">{model.desc}</p>
+                                        <Button className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold w-full shadow-md transition-all mt-auto">
+                                            {model.btn}
+                                        </Button>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 9. Bottom CTA */}
+                <section className="py-32 text-center relative z-10">
+                    <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            DIGITIZE YOUR WAREHOUSE
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
+                            We Bring Enterprise Thinking To SME Warehouses
+                        </h2>
+                        <p className="text-base sm:text-lg text-zinc-700 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">
+                            Stop losing money to lost stock and manual entry. Build a custom warehouse management system with Gnosys Digital.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                            <Button className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-10 h-14 text-base font-bold shadow-md transition-all w-full sm:w-auto">
+                                Talk To A Supply Chain Expert
+                            </Button>
+                            <Button className="bg-white border border-white/80 text-zinc-900 hover:bg-white/80 rounded-full px-10 h-14 text-base font-semibold shadow-sm transition-all w-full sm:w-auto">
+                                Book a Demo
                             </Button>
                         </div>
-                        <div className="lg:w-1/2">
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 p-3 rounded-[2.5rem] shadow-2xl shadow-blue-900/10">
-                                <div className="rounded-[2rem] overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200" alt="Warehouse worker using tablet" className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" />
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </div>
-            </section>
-
-            {/* 6. Technology & Capabilities (Stack Table) */}
-            <section className="py-24 bg-transparent text-center relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Technology & Capabilities
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">
-                        We Use Enterprise Technology — Sized For SME Scale.
-                    </h2>
-                    
-                    <div className="overflow-hidden shadow-lg shadow-blue-900/5 border border-white/40 rounded-[2.5rem] bg-white/10 backdrop-blur-md">
-                        <table className="w-full text-left">
-                            <thead>
-                                <tr className="bg-zinc-800 border-b border-zinc-700 text-white">
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-1/3">Area</th>
-                                    <th className="py-6 px-8 font-extrabold text-xs uppercase tracking-wider w-2/3 border-l border-zinc-700">Tech Stack</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-white/30">
-                                {[
-                                    { area: "Backend", tech: "Laravel, Node.js, Python (Django)" },
-                                    { area: "Frontend", tech: "React, Vue, Next.js, HTML/CSS" },
-                                    { area: "Mobile Apps", tech: "React Native, Flutter (Android & iOS Apps)" },
-                                    { area: "Integrations", tech: "Tally, SAP, ERPs, Barcode Scanners, APIs" },
-                                    { area: "Hosting", tech: "AWS, DigitalOcean, Azure (Cloud Hosting)" },
-                                    { area: "Security", tech: "SSL, Data Encryption, Role-Based Access" }
-                                ].map((row, i) => (
-                                    <tr key={i} className="hover:bg-white/30 transition-colors duration-300">
-                                        <td className="py-5 px-8 text-[15px] font-bold text-zinc-900 border-r border-white/30">{row.area}</td>
-                                        <td className="py-5 px-8 text-[15px] text-gray-700 font-medium">{row.tech}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                    
-                    <p className="mt-8 text-xs font-bold text-zinc-500 uppercase tracking-widest">
-                        Custom software that runs as fast as your operations.
-                    </p>
-                </div>
-            </section>
-
-            {/* 7. Engagement Models */}
-            <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden text-center">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Engagement Models
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-16">
-                        We Fit Into Your Process — And Your Budget.
-                    </h2>
-                    
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {[
-                            { 
-                                icon: <FileCode className="size-8 text-zinc-800" />, 
-                                title: "Fixed-Scope Project", 
-                                desc: "Defined scope and timelines. Ideal for clearly outlined custom warehouse software builds.",
-                                btn: "Get A Proposal"
-                            },
-                            { 
-                                icon: <Users className="size-8 text-zinc-800" />, 
-                                title: "Long-Term Development Partner", 
-                                desc: "An extended team that grows your software continuously alongside your business.",
-                                btn: "Discuss Partnership"
-                            },
-                            { 
-                                icon: <CheckCircle className="size-8 text-zinc-800" />, 
-                                title: "Process & Tech Consulting", 
-                                desc: "We map your inventory flow, define process gaps, and recommend a phased tech strategy.",
-                                btn: "Book Consultation"
-                            }
-                        ].map((model, i) => (
-                            <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 p-10 rounded-[2.5rem] shadow-lg shadow-blue-900/5 flex flex-col items-center hover:bg-white/60 hover:shadow-xl transition-all duration-300 group">
-                                <div className="mb-6 bg-white p-4 rounded-full border border-gray-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                                    {model.icon}
-                                </div>
-                                <h3 className="text-xl font-bold text-[#00477b] mb-4">{model.title}</h3>
-                                <p className="text-[15px] text-gray-600 font-medium mb-10 flex-grow leading-relaxed">{model.desc}</p>
-                                <Button className="bg-[#00477b] text-white hover:bg-[#00477b] rounded-full px-8 h-12 text-[15px] font-bold w-full shadow-lg shadow-blue-900/20 hover:-translate-y-1 transition-all duration-300">
-                                    {model.btn}
-                                </Button>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* 8. Why Gnosys Digital */}
-            <section className="py-24 bg-transparent text-center relative z-10 w-full overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        Why Gnosys Digital
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">
-                        We Bring Enterprise Thinking To SME Warehouses.
-                    </h2>
-                    
-                    <div className="flex flex-wrap justify-center gap-6 mb-16">
-                        {[
-                            "10+ years transforming warehousing for B2B logistics.",
-                            "Deep domain understanding of FMCG, parts, and hardware.",
-                            "Strong Laravel, Node.js & React developer teams.",
-                            "UX specifically designed for fast-paced warehouse staff.",
-                            "Outstanding support, zero hidden or ongoing license fees."
-                        ].map((item, i) => (
-                            <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 p-6 rounded-[2rem] shadow-lg shadow-blue-900/5 w-full sm:w-[calc(50%-12px)] lg:w-[calc(20%-19.2px)] flex items-center justify-center min-h-[140px] hover:bg-white/60 transition-all duration-300">
-                                <p className="text-[15px] font-bold text-zinc-800 leading-relaxed">{item}</p>
-                            </div>
-                        ))}
-                    </div>
-                    
-                    <Button className="bg-[#00477b] text-white hover:bg-[#00477b] rounded-full px-10 h-14 text-[16px] font-bold shadow-lg shadow-blue-900/20 hover:-translate-y-1 transition-all duration-300">
-                        Talk To A Supply Chain Expert
-                    </Button>
-                </div>
-            </section>
-
+                </section>
+            </div>
         </MainLayout>
     );
 }

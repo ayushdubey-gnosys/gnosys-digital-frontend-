@@ -1,5 +1,6 @@
 import MainLayout from '@/layouts/main-layout';
 import { Head, Link } from '@inertiajs/react';
+import { ArrowRight } from 'lucide-react';
 import React from 'react';
 
 const caseStudies = [
@@ -41,87 +42,37 @@ const caseStudies = [
         date: "April 4, 2025",
         comments: "No Comments",
         link: "#",
-        bgColor: "bg-zinc-100"
+        bgColor: "bg-amber-50"
     },
     {
-        imageText: "3x SCALE Without Adding Staff",
-        title: "How an E-commerce Brand Scaled 3x Without Hiring More Ops Team Using ERPNext",
-        excerpt: "Company Overview: The client is a fast-growing D2C e-commerce brand selling across multiple marketplaces, including Amazon, Flipkart, and Shopify. Operating in a highly competitive environment,",
+        imageText: "2x SCALE Without Adding Overhead",
+        title: "2x SCALE Without Adding Overhead: Custom Logistics Platform for Regional Distributor",
+        excerpt: "The Situation The client is a fast-growing regional distributor operating across 4 warehouses with 1,200 active retail touchpoints. As order volumes doubled over 18 months, their manual dispatch",
         author: "Jay Thanki",
-        date: "April 1, 2025",
-        comments: "No Comments",
-        link: "#",
-        bgColor: "bg-orange-50"
-    },
-    {
-        imageText: "ERPNext for Construction",
-        title: "How a Construction Company Reduced Project Delays by 32% Using ERPNext",
-        excerpt: "Company Overview: The client is a mid-size EPC contractor managing residential complexes, commercial buildings, and small infrastructure projects. Operating in a competitive construction market, the",
-        author: "Jay Thanki",
-        date: "March 31, 2025",
-        comments: "No Comments",
-        link: "#",
-        bgColor: "bg-blue-50"
-    },
-    {
-        imageText: "From Blind Stocking to Data-Driven Inventory Valuation",
-        title: "From Blind Stocking to Data-Driven Inventory Valuation With ERPNext",
-        excerpt: "Industry: Retail (Multi-Store Chain) Core Challenge: Fragmented inventory data leading to excess stock, cash flow issues, and reactive purchasing Solution: ERPNext delivers real-time inventory valuation, replenishment automation,",
-        author: "Aman Kapadiya",
-        date: "January 27, 2025",
+        date: "March 15, 2025",
         comments: "No Comments",
         link: "#",
         bgColor: "bg-indigo-50"
     },
     {
-        imageText: "From Reactive to Predictable: Precision Manufacturing",
-        title: "From Reactive to Predictable: How ERPNext Unified a Precision Manufacturing Operation",
-        excerpt: "Executive Summary Within six months, a precision component manufacturer increased on-time delivery from 78% to 95% and reduced machine downtime by 15%. These gains were",
+        imageText: "From Blind Stocking to Data-Driven Buying",
+        title: "From Blind Stocking to Data-Driven Buying: How a Retailer Cut Stockouts by 60%",
+        excerpt: "Company Overview A multi-outlet retail chain was struggling with stock imbalances — overstocking slow items while high-demand products frequently ran out of stock.",
         author: "Aman Kapadiya",
-        date: "January 25, 2025",
+        date: "February 12, 2025",
         comments: "No Comments",
         link: "#",
-        bgColor: "bg-sky-50"
+        bgColor: "bg-purple-50"
     },
     {
-        imageText: "From Reactive to Predictable: Precision Manufacturing",
-        title: "From Reactive to Predictable: How ERPNext Unified a Precision Manufacturing Operation",
-        excerpt: "Executive Summary Within six months, a precision component manufacturer increased on-time delivery from 78% to 95% and reduced machine downtime by 15%. These gains were",
-        author: "Aman Kapadiya",
-        date: "January 24, 2025",
-        comments: "No Comments",
-        link: "#",
-        bgColor: "bg-cyan-50"
-    },
-    {
-        imageText: "ERPNext Healthcare Case Study",
-        title: "Digital Transformation of a Multi-Specialty Hospital",
-        excerpt: "Industry Profile Sector: Healthcare (Acute Care, Outpatient & Diagnostic Services) Country: India Core Challenge: Fragmented Clinical, Financial, and Operational Systems Functional Scope+ Clinical: EMR, Pharmacy, Laboratory+ Financial:",
+        imageText: "From Reactive to Predictable",
+        title: "From Reactive to Predictable: Building an ERP for Precision Manufacturing",
+        excerpt: "Industry: Heavy Engineering & Components Delivered By: Gnosys Digital The client transitioned from spreadsheets to a unified ERPNext system with machine-level job card tracking.",
         author: "Aman Kapadiya",
         date: "January 25, 2025",
         comments: "No Comments",
         link: "#",
         bgColor: "bg-emerald-50"
-    },
-    {
-        imageText: "From Disconnected Data to Unified Control",
-        title: "From Disconnected Data to Unified Control: An ERPNext Transformation",
-        excerpt: "Client Profile The Transformation in a Nutshell A concise view of how operational challenges were converted into measurable outcomes: Challenge Solution Result Siloed systems across",
-        author: "Aman Kapadiya",
-        date: "January 3, 2025",
-        comments: "No Comments",
-        link: "#",
-        bgColor: "bg-blue-50"
-    },
-    {
-        imageText: "Migrating 16 Years of Business Data",
-        title: "How We Migrated 16 Years of Business Data to ERPNext Without Losing a Single Transaction",
-        excerpt: "Project Snapshot Executive Summary Gnosys Digital migrated 16 years of business data to ERPNext with zero downtime and 100 percent data preservation, reducing month-end closing",
-        author: "Aman Kapadiya",
-        date: "December 30, 2025",
-        comments: "No Comments",
-        link: "#",
-        bgColor: "bg-slate-100"
     }
 ];
 
@@ -133,43 +84,62 @@ export default function CaseStudy() {
             <div className="bg-transparent min-h-screen py-24">
                 <div className="w-full mx-auto px-4 lg:px-12 max-w-[1600px] text-center">
                     
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">Case Studies</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-12">Our Success Stories</h2>
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                        CASE STUDIES
+                    </span>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-14">
+                        Our Success Stories
+                    </h2>
 
                     {/* Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full text-left">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 w-full text-left">
                         {caseStudies.map((study, index) => (
-                            <div key={index} className="group bg-white/50 backdrop-blur-xl border border-white/80 rounded-2xl p-6 flex flex-col shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/15 hover:-translate-y-1.5 ring-1 ring-white/50 transition-all duration-400 h-full">
-                                <div className={`h-44 w-full bg-blue-50/60 border border-white/80 rounded-[1rem] flex items-center justify-center p-6 text-center mb-6 relative overflow-hidden shadow-[inset_0_0_20px_rgba(255,255,255,0.5)]`}>
-                                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-black/5 mix-blend-overlay"></div>
-                                    <h3 className="text-[19px] font-bold text-[#022c54] z-10 relative tracking-tight drop-shadow-sm leading-tight">{study.imageText}</h3>
+                            <div 
+                                key={index} 
+                                className="group bg-gradient-to-br from-white/50 via-white/35 to-white/20 backdrop-blur-xl border border-white/60 hover:border-white/80 rounded-[2rem] p-6 sm:p-7 flex flex-col shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/50 hover:-translate-y-2 transition-all duration-400 h-full relative overflow-hidden"
+                            >
+                                {/* Ambient Hover Glow */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
+
+                                {/* Top Glassmorphism Banner / Thumbnail */}
+                                <div className="h-44 w-full bg-gradient-to-br from-white/45 via-white/25 to-blue-50/20 backdrop-blur-md border border-white/60 rounded-2xl flex flex-col items-center justify-center p-6 text-center mb-6 relative overflow-hidden shadow-inner group-hover:scale-[1.02] transition-transform duration-500">
+                                    <div className="absolute -top-10 -right-10 size-28 rounded-full bg-blue-200/20 blur-2xl pointer-events-none"></div>
+                                    <div className="absolute -bottom-10 -left-10 size-28 rounded-full bg-cyan-200/15 blur-2xl pointer-events-none"></div>
+
+                                    <h3 className="text-[17px] font-normal text-[#00477b] z-10 relative tracking-tight leading-snug">
+                                        {study.imageText}
+                                    </h3>
+                                    
                                     <div className="absolute top-3 right-3 z-20">
-                                        <div className="bg-white/90 backdrop-blur-md text-[#022c54] text-[9px] font-black px-2.5 py-1 rounded-full shadow-sm border border-white/80 uppercase tracking-widest">
+                                        <div className="bg-white/70 backdrop-blur-md text-[#00477b] text-[10px] font-semibold px-3 py-1 rounded-full shadow-sm border border-white/80 uppercase tracking-widest">
                                             Case Study
                                         </div>
                                     </div>
                                 </div>
                                 
-                                <div className="flex flex-col flex-grow">
+                                {/* Card Body */}
+                                <div className="flex flex-col flex-grow relative z-10">
                                     <Link href={study.link} className="block mb-3">
-                                        <h4 className="text-[17px] font-medium text-[#00477b] hover:text-blue-600 transition-colors leading-snug tracking-tight">
+                                        <h4 className="text-[16px] font-normal text-zinc-900 group-hover:text-[#00477b] transition-colors leading-snug tracking-tight line-clamp-2">
                                             {study.title}
                                         </h4>
                                     </Link>
-                                    <p className="text-[13px] text-zinc-500 font-medium mb-6 line-clamp-3 leading-relaxed flex-grow">
+                                    
+                                    <p className="text-[13px] text-zinc-500 font-normal mb-6 line-clamp-3 leading-relaxed flex-grow">
                                         {study.excerpt}
                                     </p>
                                     
-                                    <Link href={study.link} className="inline-flex items-center justify-center bg-[#00477b] border border-[#00335e] text-white text-[11px] font-bold uppercase tracking-wider px-6 py-2.5 rounded-full mb-6 hover:bg-[#00335e] hover:border-[#002646] hover:shadow-[0_0_15px_rgba(24,24,27,0.5)] hover:-translate-y-0.5 transition-all self-start mt-auto">
-                                        Read Case Study &rarr;
+                                    <Link 
+                                        href={study.link} 
+                                        className="inline-flex items-center gap-2 bg-[#00477b] text-white text-[12px] font-medium px-6 py-2.5 rounded-full mb-6 hover:bg-[#00335e] shadow-md shadow-blue-900/10 hover:-translate-y-0.5 transition-all self-start mt-auto group-hover:gap-3"
+                                    >
+                                        <span>Read Case Study</span>
+                                        <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                                     </Link>
                                     
-                                    <div className="pt-4 border-t border-zinc-200/80 flex flex-wrap items-center text-[10px] text-zinc-400 font-bold uppercase tracking-wider gap-2">
-                                        <span className="text-zinc-600">{study.author}</span>
-                                        <span className="text-zinc-300">|</span>
+                                    <div className="pt-4 border-t border-zinc-200/60 flex items-center justify-between text-[11px] text-zinc-400 font-normal">
+                                        <span className="text-zinc-600 font-medium">{study.author}</span>
                                         <span>{study.date}</span>
-                                        <span className="text-zinc-300">|</span>
-                                        <span>{study.comments}</span>
                                     </div>
                                 </div>
                             </div>
@@ -178,10 +148,10 @@ export default function CaseStudy() {
                     
                     {/* Pagination */}
                     <div className="flex justify-center items-center mt-16 gap-3">
-                        <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-white shadow-sm text-sm font-bold text-zinc-500 hover:bg-white hover:shadow-md transition-all">
+                        <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm border border-white shadow-sm text-sm font-normal text-zinc-500 hover:bg-white hover:shadow-md transition-all">
                             1
                         </Link>
-                        <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-white shadow-md text-sm font-bold text-[#02498b] transition-all">
+                        <Link href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-white shadow-md text-sm font-semibold text-[#00477b] transition-all">
                             2
                         </Link>
                     </div>
