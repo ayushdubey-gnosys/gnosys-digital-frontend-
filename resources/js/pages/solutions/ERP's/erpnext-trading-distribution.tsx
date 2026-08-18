@@ -1,5 +1,5 @@
 import MainLayout from '@/layouts/main-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -36,9 +36,11 @@ export default function ErpnextTradingDistribution() {
                     <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
                         Manage inventory, orders, logistics and accounting seamlessly from one single platform. Accelerate business growth and customer satisfaction.
                     </p>
-                    <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                        <span className="relative z-10 flex items-center gap-2">Get A Free Consultation <span className="text-xl">&rarr;</span></span>
-                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                    <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                        <Link href="/free-digital-consultation">
+                            <span className="relative z-10 flex items-center gap-2">Get A Free Consultation <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                        </Link>
                     </Button>
                 </div>
             </section>

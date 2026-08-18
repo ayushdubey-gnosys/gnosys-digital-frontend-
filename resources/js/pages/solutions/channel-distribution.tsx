@@ -1,5 +1,5 @@
 import MainLayout from '@/layouts/main-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import {
     Users, Boxes, CircleDollarSign, AlertCircle, FileSpreadsheet,
@@ -325,8 +325,10 @@ export default function ChannelDistribution() {
                             <Button className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-semibold shadow-md transition-all w-full sm:w-auto">
                                 Get Started
                             </Button>
-                            <Button className="bg-white border border-white/80 text-zinc-900 hover:bg-white/80 rounded-full px-8 h-12 text-sm font-semibold shadow-sm transition-all w-full sm:w-auto">
-                                Book a Free Consultation
+                            <Button asChild className="bg-white border border-white/80 text-zinc-900 hover:bg-white/80 rounded-full px-8 h-12 text-sm font-semibold shadow-sm transition-all w-full sm:w-auto">
+                                <Link href="/free-digital-consultation">
+                                    Book a Free Consultation
+                                </Link>
                             </Button>
                         </div>
                     </div>

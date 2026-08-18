@@ -388,7 +388,7 @@ export default function CultureOfChange() {
             <section className="flex flex-col lg:flex-row items-stretch border-t border-white/60 my-0">
                 {/* Left Side: 60% Map Image */}
                 <div className="w-full lg:w-[60%] bg-[#082f49] flex items-center justify-center relative overflow-hidden group">
-                    <img src="/assets/global-work.webp" alt="Our Global Presence" className="w-full h-auto block object-cover" />
+                    <img src="/assets/global-work.webp" alt="Our Global Presence" width="1200" height="700" loading="lazy" decoding="async" className="w-full h-auto block object-cover" />
                     <div className="absolute bottom-6 left-6 lg:bottom-10 lg:left-10 z-10">
                         <h3 className="text-white/80 text-2xl md:text-3xl lg:text-5xl font-light tracking-tight">Global Presence</h3>
                     </div>

@@ -30,19 +30,60 @@
             }
         </style>
 
+        <meta name="description" content="Gnosys Digital delivers expert-built digital solutions, ERPNext implementations, custom web apps, AI automation, and ready-to-use digital products.">
+        <meta name="theme-color" content="#00477b">
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="{{ url()->current() }}">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ url()->current() }}">
+        <meta property="og:site_name" content="Gnosys Digital">
+        <meta property="og:title" content="{{ config('app.name', 'Gnosys Digital') }}">
+        <meta property="og:description" content="Expert-built digital solutions, ERPNext implementations, AI automation, and digital products.">
+        <meta property="og:image" content="{{ url('/gnosysLogo.png') }}">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ config('app.name', 'Gnosys Digital') }}">
+        <meta name="twitter:description" content="Expert-built digital solutions, ERPNext implementations, AI automation, and digital products.">
+        <meta name="twitter:image" content="{{ url('/gnosysLogo.png') }}">
+
+        <!-- Preconnect to Font Services for faster FCP -->
+        <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+        <link rel="dns-prefetch" href="https://fonts.bunny.net">
+
         <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "Organization",
+            "name": "Gnosys Digital",
+            "url": "{{ url('/') }}",
+            "logo": "{{ url('/gnosysLogo.png') }}",
+            "description": "Expert-built digital solutions, ERPNext implementations, AI automation, and ready-to-use digital products.",
+            "contactPoint": {
+                "@@type": "ContactPoint",
+                "telephone": "+1-647-947-9546",
+                "contactType": "customer support",
+                "email": "connect@@gnosysdigital.com"
+            }
+        }
+        </script>
 
         @fonts
 
         @viteReactRefresh
         @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
-        <x-inertia::head>
-            <title>{{ config('app.name', 'Laravel') }}</title>
-        </x-inertia::head>
+        <title inertia>{{ config('app.name', 'Gnosys Digital') }}</title>
+        @inertiaHead
     </head>
     <body class="font-sans antialiased">
-        <x-inertia::app />
+        @inertia
     </body>
 </html>

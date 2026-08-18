@@ -1,5 +1,5 @@
 import MainLayout from '@/layouts/main-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { 
     Truck, FileText, Clock, Network, Settings, 
@@ -428,19 +428,22 @@ export default function SupplyChain() {
                                         icon: <FileCode className="size-7" />, 
                                         title: "Fixed-Scope Project", 
                                         desc: "Defined scope and timelines. Ideal for clearly outlined custom supply chain builds.",
-                                        btn: "Get A Proposal"
+                                        btn: "Get A Proposal",
+                                        link: "/delivery-engagement-models"
                                     },
                                     { 
                                         icon: <Users className="size-7" />, 
                                         title: "Dedicated Tech Partner", 
                                         desc: "An extended engineering team that grows and scales your logistics platform alongside your business.",
-                                        btn: "Discuss Partnership"
+                                        btn: "Discuss Partnership",
+                                        link: "/growth-systems-discovery-call"
                                     },
                                     { 
                                         icon: <CheckCircle className="size-7" />, 
                                         title: "Process & Tech Consulting", 
                                         desc: "We audit your dispatch and inventory flow, mapping out bottlenecks and a phased tech strategy.",
-                                        btn: "Book Consultation"
+                                        btn: "Book Consultation",
+                                        link: "/free-digital-consultation"
                                     }
                                 ].map((model, i) => (
                                     <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white p-9 rounded-[2.25rem] shadow-sm flex flex-col items-center hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group h-full relative overflow-hidden">
@@ -449,8 +452,10 @@ export default function SupplyChain() {
                                         </div>
                                         <h3 className="text-xl font-bold text-[#00477b] mb-3">{model.title}</h3>
                                         <p className="text-sm text-zinc-600 font-medium mb-8 leading-relaxed flex-grow">{model.desc}</p>
-                                        <Button className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold w-full shadow-md transition-all mt-auto">
-                                            {model.btn}
+                                        <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold w-full shadow-md transition-all mt-auto">
+                                            <Link href={model.link}>
+                                                {model.btn}
+                                            </Link>
                                         </Button>
                                     </div>
                                 ))}

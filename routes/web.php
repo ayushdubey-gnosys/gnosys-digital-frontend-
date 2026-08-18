@@ -34,10 +34,13 @@ Route::get('/{type}/{slug?}', function($type, $slug = null) {
     ]);
 })->whereIn('type', ['digital-products', 'digital-services', 'solutions'])->name('category');
 
+Route::inertia('/free-digital-consultation', 'free-digital-consultation')->name('free-digital-consultation');
+Route::inertia('/growth-systems-discovery-call', 'growth-systems-discovery-call')->name('growth-systems-discovery-call');
+Route::inertia('/delivery-engagement-models', 'delivery-engagement-models')->name('delivery-engagement-models');
 Route::inertia('/erpnext-implementation', 'solutions/ERP\'s/erpnext-implementation')->name('erpnext-implementation');
 Route::inertia('/contact', 'contact')->name('contact');
 Route::inertia('/about/culture-of-change', 'about/culture-of-change')->name('culture-of-change');
-Route::inertia('/about/engagement-models', 'about/engagement-models')->name('engagement-models');
+Route::inertia('/about/engagement-models', 'delivery-engagement-models')->name('engagement-models');
 Route::inertia('/cart', 'cart')->name('cart');
 Route::get('/product/{slug?}', function($slug = null) {
     return inertia('product', [

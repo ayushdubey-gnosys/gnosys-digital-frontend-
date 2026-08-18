@@ -367,7 +367,7 @@ export default function ErpnextEducation() {
             <section className="pt-28 pb-40 relative z-10 overflow-hidden border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0">
-                    <img src="/assets/edu-erp.webp" alt="Education ERP" className="w-full h-full object-cover object-bottom opacity-100" />
+                    <img src="/assets/edu-erp.webp" alt="Education ERP Highlights" width="1200" height="600" loading="lazy" decoding="async" className="w-full h-full object-cover object-bottom opacity-100" />
                 </div>
 
                 <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">

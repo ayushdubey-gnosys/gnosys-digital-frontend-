@@ -13,7 +13,8 @@ import {
 import {
     ChevronDown, Search, User, ShoppingBag,
     Briefcase, Package, Users, Award, Zap, TrendingUp,
-    Globe, ShieldCheck, Code, Cpu, Server, Rocket, Settings, Eye
+    Globe, ShieldCheck, Code, Cpu, Server, Rocket, Settings, Eye,
+    ArrowRight, Sparkles
 } from 'lucide-react';
 
 function StatCounter({ target, suffix = '' }: { target: number; suffix?: string }) {
@@ -22,28 +23,30 @@ function StatCounter({ target, suffix = '' }: { target: number; suffix?: string 
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        let animationFrameId: number;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !hasAnimated) {
                     setHasAnimated(true);
-                    let start = 0;
-                    const duration = 2000;
-                    const frameRate = 1000 / 60;
-                    const totalFrames = Math.round(duration / frameRate);
-                    let frame = 0;
+                    const duration = 1800;
+                    let startTime: number | null = null;
 
-                    const counter = setInterval(() => {
-                        frame++;
-                        const progress = frame / totalFrames;
+                    const animate = (timestamp: number) => {
+                        if (!startTime) startTime = timestamp;
+                        const elapsed = timestamp - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
                         const easeOut = 1 - Math.pow(1 - progress, 3);
-                        const current = Math.round(start + (target - start) * easeOut);
+                        const current = Math.round(target * easeOut);
                         setCount(current);
 
-                        if (frame >= totalFrames) {
-                            clearInterval(counter);
+                        if (progress < 1) {
+                            animationFrameId = requestAnimationFrame(animate);
+                        } else {
                             setCount(target);
                         }
-                    }, frameRate);
+                    };
+
+                    animationFrameId = requestAnimationFrame(animate);
                 }
             },
             { threshold: 0.25 }
@@ -55,6 +58,7 @@ function StatCounter({ target, suffix = '' }: { target: number; suffix?: string 
 
         return () => {
             if (ref.current) observer.unobserve(ref.current);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
         };
     }, [hasAnimated, target]);
 
@@ -70,7 +74,9 @@ export default function Welcome() {
 
     return (
         <>
-            <Head title="Gnosys Digital" />
+            <Head title="Gnosys Digital - Expert-Built Digital Solutions">
+                <meta name="description" content="Expert-built digital solutions, ERPNext implementations, custom web apps, AI automation, and ready-to-use digital products by Gnosys Digital." />
+            </Head>
 
             <MainLayout>
                 {/* Hero Section */}
@@ -101,15 +107,17 @@ export default function Welcome() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-5 pt-8 w-full sm:w-auto">
-                                <Button size="lg" className="group relative bg-white text-[#1677FF] hover:bg-zinc-100 shadow-[0_8px_25px_rgba(255,255,255,0.15)] rounded-2xl px-10 h-16 text-[16px] font-bold w-full sm:w-auto overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(255,255,255,0.25)] border-0">
-                                    <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-zinc-200/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
-                                    <span className="flex items-center gap-3">
-                                        Explore Our Solutions
-                                        <svg className="size-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-                                    </span>
+                                <Button asChild size="lg" className="group relative bg-white text-[#1677FF] hover:bg-zinc-100 shadow-[0_8px_25px_rgba(255,255,255,0.15)] rounded-2xl px-10 h-16 text-[16px] font-bold w-full sm:w-auto overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(255,255,255,0.25)] border-0">
+                                    <Link href="/solutions">
+                                        <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-zinc-200/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                                        <span className="flex items-center gap-3">
+                                            Explore Our Solutions
+                                            <svg className="size-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                                        </span>
+                                    </Link>
                                 </Button>
-                                <Button size="lg" className="bg-white/5 backdrop-blur-xl text-white border border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-2xl px-10 h-16 text-[16px] font-bold w-full sm:w-auto transition-all duration-300 hover:-translate-y-1">
-                                    Shop Products
+                                <Button asChild size="lg" className="bg-white/5 backdrop-blur-xl text-white border border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white shadow-[0_4px_20px_rgba(0,0,0,0.1)] rounded-2xl px-10 h-16 text-[16px] font-bold w-full sm:w-auto transition-all duration-300 hover:-translate-y-1">
+                                    <Link href="/digital-products">Shop Products</Link>
                                 </Button>
                             </div>
 
@@ -142,9 +150,9 @@ export default function Welcome() {
                 {/* 1. Core Offerings */}
                 <section className="py-24 bg-transparent relative z-10 w-full overflow-hidden">
                     <div className="container mx-auto px-4 lg:px-8 max-w-7xl mb-16">
-                        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <div className="text-center flex flex-col items-center">
                             <span className="inline-flex items-center px-5 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-widest mb-6">What We Do</span>
-                            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal  tracking-tight text-[#00477b] leading-tight">Our Core Offerings</h2>
+                            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#00477b] leading-tight">Our Core Offerings</h2>
                         </div>
                     </div>
 
@@ -183,26 +191,25 @@ export default function Welcome() {
                             </div>
                         </div>
 
-                        {/* Right Side: Image (Curve on left side) */}
-                        <div className="relative border-y border-white/60 bg-white/40 backdrop-blur-lg min-h-[400px] lg:min-h-full flex items-start justify-start text-left px-8 pt-4 pb-8 sm:px-12 sm:pt-6 sm:pb-12">
-                            {/* Shadow wrapper */}
-                            <div className="absolute inset-0 lg:rounded-l-[2.5rem] shadow-[-15px_0_20px_-5px_rgba(0,0,0,0.3),_-30px_0_60px_-15px_rgba(13,148,136,0.4)] z-0">
-                                <div className="absolute inset-0 overflow-hidden lg:rounded-l-[2.5rem]">
-                                    <img
-                                        src="/assets/mountain.webp"
-                                        alt="Digital Offerings"
-                                        className="absolute inset-0 w-full h-full object-cover z-0"
-                                    />
-                                    {/* Overlay to ensure text readability */}
-                                    <div className="absolute inset-0 bg-zinc-900/10 z-10"></div>
-                                </div>
-                            </div>
+                        {/* Right Side: Image (Curve on left side with elevation shadow) */}
+                        <div className="relative min-h-[400px] lg:min-h-full flex items-start justify-start text-left px-8 pt-8 pb-8 sm:px-12 sm:pt-10 sm:pb-12 lg:rounded-l-[2.5rem] shadow-[-25px_0_50px_-10px_rgba(0,0,0,0.35),_-15px_0_30px_-5px_rgba(0,71,123,0.3)] overflow-hidden z-10">
+                            <img
+                                src="/assets/mountain.webp"
+                                alt="Digital Offerings Peak Mountain"
+                                width="800"
+                                height="600"
+                                loading="lazy"
+                                decoding="async"
+                                className="absolute inset-0 w-full h-full object-cover z-0"
+                            />
+                            {/* Overlay to ensure text readability */}
+                            <div className="absolute inset-0 bg-zinc-900/15 z-10"></div>
 
                             <div className="relative z-20 flex flex-col items-start">
-                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-zinc-300 tracking-tight mb-4 drop-shadow-md">
+                                <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-zinc-100 tracking-tight mb-4 drop-shadow-md">
                                     Build. Transform. Scale.
                                 </h3>
-                                <p className="text-lg sm:text-xl text-zinc-300/80 font-normal max-w-md drop-shadow">
+                                <p className="text-lg sm:text-xl text-zinc-200/90 font-normal max-w-md drop-shadow">
                                     Taking your business from its digital foundation to its next peak.
                                 </p>
                             </div>
@@ -242,20 +249,26 @@ export default function Welcome() {
                 </section>
 
                 {/* 3. Culture of Change */}
-                <section className="relative overflow-hidden w-full flex flex-col lg:flex-row items-stretch bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] my-20 lg:my-28">
-                    {/* Left Side: Flush World Map Image (100% 50/50 Cover, Attached to Left) */}
-                    <div className="relative w-full lg:w-1/2 min-h-[360px] lg:min-h-[460px]">
-                        <div 
-                            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat shadow-[15px_0_40px_-10px_rgba(0,71,123,0.15)]" 
-                            style={{ backgroundImage: 'url("/assets/world-map.webp")' }}
-                        ></div>
+                <section className="relative overflow-hidden w-full flex flex-col lg:flex-row items-stretch border-y border-white/60 my-20 lg:my-28 bg-white/40 backdrop-blur-xl">
+                    {/* Left Side: World Map Image with Curve on Right & Elevation Shadow */}
+                    <div className="relative w-full lg:w-1/2 min-h-[360px] lg:min-h-[480px] lg:rounded-r-[3rem] shadow-[25px_0_50px_-10px_rgba(0,0,0,0.35),_15px_0_30px_-5px_rgba(0,71,123,0.3)] overflow-hidden z-10">
+                        <img 
+                            src="/assets/world-map.webp" 
+                            alt="Global reach world map" 
+                            width="900"
+                            height="600"
+                            loading="lazy"
+                            decoding="async"
+                            className="absolute inset-0 w-full h-full object-cover object-center z-0"
+                        />
+                        <div className="absolute inset-0 bg-zinc-900/10 z-10"></div>
                     </div>
 
                     {/* Right Side: Content */}
-                    <div className="w-full lg:w-1/2 flex justify-start">
+                    <div className="relative z-0 w-full lg:w-1/2 flex justify-start">
                         <div className="w-full max-w-[800px] py-12 lg:py-20 px-6 sm:px-10 lg:px-14 xl:px-16 flex flex-col justify-center space-y-6">
                             <div>
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                                     CULTURE OF CHANGE
                                 </span>
                                 <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
@@ -276,46 +289,46 @@ export default function Welcome() {
                 </section>
 
                 {/* 4. Featured Gigs */}
-                <section className="pt-24 pb-12 bg-transparent text-left border-t border-white/40">
-                    <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 max-w-[1800px] mx-auto">
-                        <div>
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                                FEATURED GIGS
-                            </span>
-                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                                Our Top Gigs - Built & Delivered By Experts
-                            </h2>
-                        </div>
-                        <div className="shrink-0">
-                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white shadow-lg shadow-blue-900/10 rounded-full px-8 h-12 text-sm font-semibold transition-all hover:-translate-y-0.5">
-                                <Link href="/digital-services">View All Gigs</Link>
-                            </Button>
-                        </div>
+                <section className="pt-24 bg-transparent text-center border-t border-white/40">
+                    <div className="w-full px-4 lg:px-8 mb-12">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                            FEATURED GIGS
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Our Top Gigs - Built & Delivered By Experts
+                        </h2>
                     </div>
 
-                    <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 max-w-[1800px] mx-auto">
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="w-full">
+                        <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12 w-full text-left">
                             {[
-                                { icon: Code, tag: "POPULAR", title: "Laravel Development", desc: "Enterprise architecture, custom APIs, and scalable web apps.", img: "/assets/larawel.webp" },
-                                { icon: Cpu, tag: "AI POWERED", title: "AI Workflow Automation", desc: "Smart AI integration, LLM pipelines, and automated business workflows.", img: "/assets/ai-automation.jpg" },
-                                { icon: Server, tag: "INFRASTRUCTURE", title: "Server Setup & DevOps", desc: "High-availability cloud deployment, CI/CD, and server optimization.", img: "/assets/server-setup.jpg" },
+                                { icon: Code, tag: "POPULAR", title: "Laravel Development", desc: "Enterprise architecture, custom APIs, and scalable web apps.", img: "/assets/larawel.webp", link: "/digital-services/custom-development" },
+                                { icon: Cpu, tag: "AI POWERED", title: "AI Workflow Automation", desc: "Smart AI integration, LLM pipelines, and automated business workflows.", img: "/assets/ai-automation.jpg", link: "/digital-services/ai-automation-data-services" },
+                                { icon: Server, tag: "INFRASTRUCTURE", title: "Server Setup & DevOps", desc: "High-availability cloud deployment, CI/CD, and server optimization.", img: "/assets/server-setup.jpg", link: "/digital-services/server-devops" },
                             ].map((gig, i) => (
-                                <div key={i} className="group relative bg-gradient-to-br from-white/60 via-white/40 to-white/20 backdrop-blur-2xl border border-white/70 rounded-[2.5rem] p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:bg-white/65 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 transition-all duration-400 flex flex-col justify-between h-full overflow-hidden">
-                                    
+                                <Link 
+                                    key={i} 
+                                    href={gig.link}
+                                    className="group relative bg-white/35 backdrop-blur-xl border border-white/60 rounded-[2.5rem] p-5 sm:p-6 shadow-lg shadow-blue-900/5 hover:bg-white/55 hover:shadow-[0_20px_50px_-10px_rgba(0,71,123,0.18)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full overflow-hidden cursor-pointer"
+                                >
                                     <div>
                                         {/* Image Container */}
-                                        <div className="relative h-[240px] sm:h-[260px] w-full rounded-[1.75rem] overflow-hidden bg-slate-900 shadow-sm mb-6">
+                                        <div className="relative h-[230px] sm:h-[250px] w-full rounded-[1.75rem] overflow-hidden bg-slate-900 shadow-md mb-6">
                                             <img 
                                                 src={gig.img} 
                                                 alt={gig.title} 
-                                                className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-108" 
+                                                width="600"
+                                                height="400"
+                                                loading="lazy"
+                                                decoding="async"
+                                                className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" 
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
                                             
                                             {/* Floating Badge */}
-                                            <div className="absolute top-4 left-4 z-20">
-                                                <span className="bg-white/80 backdrop-blur-md text-[#00477b] text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm border border-white/80">
+                                            <div className="absolute top-4 left-4 z-10">
+                                                <span className="bg-white/85 backdrop-blur-md text-[#00477b] text-[11px] font-extrabold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-sm border border-white/80">
                                                     {gig.tag}
                                                 </span>
                                             </div>
@@ -323,7 +336,7 @@ export default function Welcome() {
 
                                         {/* Content */}
                                         <div className="flex items-start gap-4 mb-4">
-                                            <div className="size-12 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shrink-0 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                            <div className="size-12 rounded-2xl bg-white/80 border border-white/90 flex items-center justify-center text-[#00477b] shrink-0 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
                                                 <gig.icon className="size-5" />
                                             </div>
                                             <div>
@@ -344,9 +357,13 @@ export default function Welcome() {
                                             Explore Gig <span>&rarr;</span>
                                         </span>
                                     </div>
-                                </div>
+                                </Link>
                             ))}
                             </div>
+
+                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white shadow-lg shadow-blue-900/20 border border-[#00335e] rounded-full px-8 h-14 text-[15px] font-extrabold transition-all duration-300 hover:-translate-y-1">
+                                <Link href="/digital-services">View All Gigs</Link>
+                            </Button>
                         </div>
                     </div>
                 </section>
@@ -538,8 +555,10 @@ export default function Welcome() {
                                 <Button className="bg-white text-zinc-900 hover:bg-gray-100 rounded-full px-10 h-14 w-full sm:w-auto font-bold shadow-xl shadow-black/20 border border-white hover:-translate-y-1 hover:scale-105 transition-all duration-300">
                                     Get Started Today
                                 </Button>
-                                <Button variant="outline" className="bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:text-white rounded-full px-10 h-14 w-full sm:w-auto font-bold hover:-translate-y-1 hover:scale-105 transition-all duration-300 shadow-sm">
-                                    Book a Free Consultation
+                                <Button asChild variant="outline" className="bg-white/10 backdrop-blur-md border border-white/30 text-white hover:bg-white/20 hover:text-white rounded-full px-10 h-14 w-full sm:w-auto font-bold hover:-translate-y-1 hover:scale-105 transition-all duration-300 shadow-sm">
+                                    <Link href="/free-digital-consultation">
+                                        Book a Free Consultation
+                                    </Link>
                                 </Button>
                             </div>
                         </div>

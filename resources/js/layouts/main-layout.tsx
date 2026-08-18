@@ -26,14 +26,14 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                 <div>
                     <div className="container mx-auto px-4 lg:px-8 py-3 flex items-center justify-between gap-4 lg:gap-6">
                         {/* Logo */}
-                        <Link href="/" className="shrink-0 transition-transform hover:scale-105">
-                            <img src="/gnosysLogo.png" alt="Gnosys Digital" className="h-9 lg:h-10 object-contain" />
+                        <Link href="/" className="shrink-0 transition-transform hover:scale-105" aria-label="Gnosys Digital Home">
+                            <img src="/gnosysLogo.png" alt="Gnosys Digital Logo" width="160" height="40" className="h-9 lg:h-10 w-auto object-contain" fetchPriority="high" />
                         </Link>
 
                         {/* Right Side: Links & Icons */}
                         <div className="flex items-center gap-6 xl:gap-8">
                             {/* Navigation Links */}
-                            <nav className="hidden xl:flex items-center gap-6 font-medium text-gray-600 text-[14px]">
+                            <nav aria-label="Main Navigation" className="hidden xl:flex items-center gap-6 font-medium text-gray-600 text-[14px]">
                                 {/* Digital Products */}
                                 <div className="relative group">
                                     <Link href="/digital-products" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
@@ -115,7 +115,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
 
                                 {/* About Us */}
                                 <div className="relative group">
-                                    <button className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                    <button aria-label="About Us navigation" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
                                         About Us <ChevronDown className="size-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
                                         <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                     </button>
@@ -144,6 +144,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                     <Button 
                                         variant="outline" 
                                         size="icon" 
+                                        aria-label="Toggle navigation menu"
                                         className="size-10 rounded-full border-gray-200 text-gray-700 bg-white hover:bg-blue-50 hover:text-blue-600 transition-colors"
                                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                                     >
@@ -151,15 +152,15 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                     </Button>
                                 </div>
 
-                                <Link href={auth?.user ? dashboard() : login()} className="block">
-                                    <Button size="icon" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all">
+                                <Link href={auth?.user ? dashboard() : login()} aria-label="User Account" className="block">
+                                    <Button size="icon" aria-label="User Account" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all">
                                         <User className="size-4" />
                                         <span className="sr-only">Account</span>
                                     </Button>
                                 </Link>
                                 
                                 <div className="relative group/cart">
-                                    <Button size="icon" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all relative">
+                                    <Button size="icon" aria-label="Shopping Cart" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all relative">
                                         <ShoppingBag className="size-4 group-hover/cart:scale-110 transition-transform" />
                                         <span className="absolute -top-1 -right-1 flex size-[20px] items-center justify-center rounded-full bg-blue-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white">
                                             2
@@ -188,7 +189,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                                         </Link>
                                                         <div className="text-gray-500 text-[13px] font-medium">1 &times; <span className="text-gray-900 font-bold">$6.99</span></div>
                                                     </div>
-                                                    <button className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
+                                                    <button aria-label="Remove Affiliate Marketing Landing Page Template from cart" className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                                                     </button>
                                                 </div>
@@ -204,7 +205,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                                         </Link>
                                                         <div className="text-gray-500 text-[13px] font-medium">1 &times; <span className="text-gray-900 font-bold">$29.99</span></div>
                                                     </div>
-                                                    <button className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
+                                                    <button aria-label="Remove Agency Project Management Suite from cart" className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
                                                     </button>
                                                 </div>
@@ -349,7 +350,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                 <div className="container mx-auto px-4 lg:px-8 pb-12 text-left">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8">
                         <div className="flex flex-col items-start">
-                            <img src="/gnosysLogo.png" alt="Gnosys Digital" className="h-10 object-contain mb-8 opacity-90" />
+                            <img src="/gnosysLogo.png" alt="Gnosys Digital Logo" width="160" height="40" className="h-10 w-auto object-contain mb-8 opacity-90" loading="lazy" decoding="async" />
                             <div className="text-[12px] md:text-[13px] text-gray-600 space-y-2.5 leading-relaxed">
                                 <p><strong className="text-gray-900 font-bold">[Address-CA]:</strong> 1664, 225 The East Mall,<br />Toronto, ON, M9B 0A9</p>
                                 <p><strong className="text-gray-900 font-bold">[Address-UK]:</strong> 20-22 Wenlock Road, London<br />N1 7GU, United Kingdom.</p>
@@ -382,23 +383,23 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                             <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Follow Us</h4>
                             <div className="flex gap-3 flex-wrap justify-start">
                                 {/* FB */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Facebook" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
                                 </a>
                                 {/* X */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on X" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" /></svg>
                                 </a>
                                 {/* IG */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Instagram" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
                                 </a>
                                 {/* Pinterest */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Pinterest" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.633 0 12.017 0z" /></svg>
                                 </a>
                                 {/* LinkedIn */}
-                                <a href="#" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on LinkedIn" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
                                 </a>
                             </div>
@@ -409,7 +410,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                 <div className="bg-transparent text-gray-600 py-4 relative w-full border-t border-white/40">
                     <div className="container mx-auto px-4 lg:px-8 flex items-center justify-center relative">
                         {/* Cookie icon */}
-                        <div className="absolute left-4 -top-8 size-[38px] rounded-full bg-zinc-900 text-white flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all duration-300 shadow-lg border-[3px] border-white">
+                        <div role="button" aria-label="Cookie preferences" tabIndex={0} className="absolute left-4 -top-8 size-[38px] rounded-full bg-zinc-900 text-white flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all duration-300 shadow-lg border-[3px] border-white">
                             <svg className="size-[20px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" /><path d="M8.5 8.5v.01" /><path d="M16 12.5v.01" /><path d="M12 16v.01" /><path d="M11 11v.01" /><path d="M8 14v.01" /></svg>
                         </div>
                         <div className="text-[12px] md:text-sm font-medium">© {new Date().getFullYear()} Gnosys Digital. All rights reserved.</div>

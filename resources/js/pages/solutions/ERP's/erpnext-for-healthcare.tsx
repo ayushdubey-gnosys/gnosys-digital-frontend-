@@ -315,8 +315,10 @@ export default function ErpnextForHealthcare() {
                     <p className="text-zinc-600 font-medium mb-8">
                         Your customers are searching. Let's make sure they find you — and choose you.
                     </p>
-                    <Button className="bg-[#00477b] hover:bg-[#003862] text-white font-bold h-12 px-8 shadow-lg">
-                        Book a Free Consultation
+                    <Button asChild className="bg-[#00477b] hover:bg-[#003862] text-white font-bold h-12 px-8 shadow-lg">
+                        <Link href="/free-digital-consultation">
+                            Book a Free Consultation
+                        </Link>
                     </Button>
                 </div>
             </section>
