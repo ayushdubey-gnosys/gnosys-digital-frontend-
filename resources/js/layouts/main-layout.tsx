@@ -2,12 +2,16 @@ import React from 'react';
 import { Link, usePage, router } from '@inertiajs/react';
 import { dashboard, login } from '@/routes';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, User, ShoppingBag, Menu, ChevronRight } from 'lucide-react';
+import { ChevronDown, User, ShoppingBag, Menu, ChevronRight, MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';export default function MainLayout({ children }: { children: React.ReactNode }) {
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
+import CookiePreferencesModal from '@/components/cookie-preferences-modal';
+
+export default function MainLayout({ children }: { children: React.ReactNode }) {
     const { auth } = usePage().props as any;
     const [cartOpen, setCartOpen] = React.useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+    const [cookieModalOpen, setCookieModalOpen] = React.useState(false);
 
     React.useEffect(() => {
         const handleOpenCart = () => {
@@ -84,7 +88,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                                 <Link href="/erpnext-implementation" className="py-3 px-5 cursor-pointer flex justify-between items-center hover:bg-[#00477b] hover:text-white text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 group-hover/sub:bg-[#00477b] group-hover/sub:text-white rounded-t-md">
                                                     ERPNext Implementation <ChevronDown className="size-3.5 -rotate-90 opacity-50 group-hover/sub:opacity-100 group-hover/sub:text-white" />
                                                 </Link>
-                                                
+
                                                 {/* Nested Dropdown */}
                                                 <div className="absolute top-0 right-full pr-0 opacity-0 pointer-events-none group-hover/sub:opacity-100 group-hover/sub:pointer-events-auto transition-opacity duration-200 z-[60]">
                                                     <div className="w-[280px] bg-white rounded-md shadow-2xl border border-gray-100 p-0 flex flex-col overflow-hidden">
@@ -138,12 +142,12 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
 
                             {/* User & Cart Icons */}
                             <div className="flex items-center gap-2 shrink-0">
-                                
+
                                 {/* Mobile Menu Trigger */}
                                 <div className="xl:hidden block">
-                                    <Button 
-                                        variant="outline" 
-                                        size="icon" 
+                                    <Button
+                                        variant="outline"
+                                        size="icon"
                                         aria-label="Toggle navigation menu"
                                         className="size-10 rounded-full border-gray-200 text-gray-700 bg-white hover:bg-blue-50 hover:text-blue-600 transition-colors"
                                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -158,7 +162,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                         <span className="sr-only">Account</span>
                                     </Button>
                                 </Link>
-                                
+
                                 <div className="relative group/cart">
                                     <Button size="icon" aria-label="Shopping Cart" className="size-10 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-blue-50 hover:text-blue-500 hover:border-blue-200 shadow-sm transition-all relative">
                                         <ShoppingBag className="size-4 group-hover/cart:scale-110 transition-transform" />
@@ -171,7 +175,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                     {/* Cart Dropdown */}
                                     <div className={`absolute top-full right-0 pt-4 transition-all duration-300 z-50 ${cartOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-2 pointer-events-none group-hover/cart:opacity-100 group-hover/cart:translate-y-0 group-hover/cart:pointer-events-auto'}`}>
                                         <div className="w-[360px] bg-white/95 backdrop-blur-2xl rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-200/60 p-6 flex flex-col">
-                                            
+
                                             <div className="flex justify-between items-center mb-5 pb-3 border-b border-gray-100">
                                                 <h3 className="font-bold text-gray-900 text-[15px]">Shopping Cart</h3>
                                                 <span className="bg-blue-50 text-[#00477b] text-xs font-bold px-2.5 py-0.5 rounded-full">2 Items</span>
@@ -190,7 +194,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                                         <div className="text-gray-500 text-[13px] font-medium">1 &times; <span className="text-gray-900 font-bold">$6.99</span></div>
                                                     </div>
                                                     <button aria-label="Remove Affiliate Marketing Landing Page Template from cart" className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                                                     </button>
                                                 </div>
 
@@ -206,7 +210,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                                         <div className="text-gray-500 text-[13px] font-medium">1 &times; <span className="text-gray-900 font-bold">$29.99</span></div>
                                                     </div>
                                                     <button aria-label="Remove Agency Project Management Suite from cart" className="absolute top-1/2 -translate-y-1/2 -right-1 text-gray-300 hover:text-red-500 hover:bg-red-50 size-7 rounded-full flex items-center justify-center transition-all opacity-0 group-hover/item:opacity-100" title="Remove item">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                                                     </button>
                                                 </div>
                                             </div>
@@ -244,7 +248,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                     <div className="xl:hidden absolute top-full left-0 right-0 bg-gradient-to-b from-blue-50 to-white shadow-[0_20px_40px_rgb(0,0,0,0.1)] border-t border-blue-100 flex flex-col max-h-[85vh] overflow-y-auto z-40">
                         <div className="flex-1 px-4 py-4 flex flex-col gap-2">
                             <Collapsible className="w-full">
-                                <CollapsibleTrigger 
+                                <CollapsibleTrigger
                                     className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors"
                                     onDoubleClick={() => { router.visit('/digital-products'); setMobileMenuOpen(false); }}
                                 >
@@ -262,7 +266,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                             </Collapsible>
 
                             <Collapsible className="w-full">
-                                <CollapsibleTrigger 
+                                <CollapsibleTrigger
                                     className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors"
                                     onDoubleClick={() => { router.visit('/digital-services'); setMobileMenuOpen(false); }}
                                 >
@@ -279,7 +283,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                             </Collapsible>
 
                             <Collapsible className="w-full">
-                                <CollapsibleTrigger 
+                                <CollapsibleTrigger
                                     className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors"
                                     onDoubleClick={() => { router.visit('/solutions'); setMobileMenuOpen(false); }}
                                 >
@@ -288,7 +292,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="px-4 py-2 flex flex-col gap-2 bg-white/60 rounded-b-xl border-t border-blue-100/50">
                                     <Collapsible className="w-full">
-                                        <CollapsibleTrigger 
+                                        <CollapsibleTrigger
                                             className="flex w-full items-center justify-between py-2 text-[14px] font-medium text-gray-700 hover:text-blue-600 transition-colors"
                                             onDoubleClick={() => { router.visit('/erpnext-implementation'); setMobileMenuOpen(false); }}
                                         >
@@ -320,7 +324,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                                 About Us
                                 <ChevronRight className="size-4 text-gray-300" />
                             </Link>
-                            
+
                             <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="flex w-full items-center justify-between py-3 px-4 font-semibold text-[15px] text-gray-800 rounded-xl hover:bg-white/80 transition-colors">
                                 Contact Us
                                 <ChevronRight className="size-4 text-gray-300" />
@@ -341,65 +345,67 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                 <div className="absolute -bottom-1.5 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500/10 via-pink-200/30 to-blue-500/10 blur-[4px] pointer-events-none z-[-1]"></div>
             </header>
 
-            <main className="flex-1">
+            <main key={usePage().url} className="flex-1 animate-in fade-in-0 slide-in-from-bottom-2 duration-500">
                 {children}
             </main>
 
-            {/* Footer */}
-            <footer className="bg-white/40 backdrop-blur-lg pt-16 pb-0 flex flex-col mt-auto text-zinc-900 border-t border-white/60">
+            {/* Footer - Project Theme Aligned */}
+            <footer className="bg-transparent pt-16 pb-0 flex flex-col mt-auto text-zinc-900 border-t border-white/60 relative z-10">
                 <div className="container mx-auto px-4 lg:px-8 pb-12 text-left">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-8">
+                        {/* 1. Brand & Contact */}
                         <div className="flex flex-col items-start">
-                            <img src="/gnosysLogo.png" alt="Gnosys Digital Logo" width="160" height="40" className="h-10 w-auto object-contain mb-8 opacity-90" loading="lazy" decoding="async" />
-                            <div className="text-[12px] md:text-[13px] text-gray-600 space-y-2.5 leading-relaxed">
-                                <p><strong className="text-gray-900 font-bold">[Address-CA]:</strong> 1664, 225 The East Mall,<br />Toronto, ON, M9B 0A9</p>
-                                <p><strong className="text-gray-900 font-bold">[Address-UK]:</strong> 20-22 Wenlock Road, London<br />N1 7GU, United Kingdom.</p>
-                                <p><strong className="text-gray-900 font-bold">[Phone]:</strong> +1 647 947 9546</p>
-                                <p><strong className="text-gray-900 font-bold">[E-Mail]:</strong> connect@gnosysdigital.com</p>
+                            <Link href="/" aria-label="Gnosys Digital Home" className="transition-transform hover:scale-105 mb-6">
+                                <img src="/gnosysLogo.png" alt="Gnosys Digital Logo" width="160" height="40" className="h-9 w-auto object-contain" loading="lazy" decoding="async" />
+                            </Link>
+                            <div className="text-[13px] text-gray-700 space-y-3 leading-relaxed">
+                                <p><strong className="text-[#00477b] font-bold">Canada Office:</strong> 1664, 225 The East Mall, Toronto, ON, M9B 0A9</p>
+                                <p><strong className="text-[#00477b] font-bold">UK Office:</strong> 20-22 Wenlock Road, London N1 7GU, United Kingdom.</p>
+                                <p><strong className="text-[#00477b] font-bold">Phone:</strong> <a href="tel:+16479479546" className="text-gray-700 hover:text-[#00477b] transition-colors font-medium">+1 647 947 9546</a></p>
+                                <p><strong className="text-[#00477b] font-bold">Email:</strong> <a href="mailto:connect@gnosysdigital.com" className="text-gray-700 hover:text-[#00477b] transition-colors font-medium">connect@gnosysdigital.com</a></p>
                             </div>
                         </div>
 
+                        {/* 2. Digital Services */}
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Digital Services</h4>
-                            <ul className="text-[13px] md:text-[14px] text-gray-600 space-y-3">
-                                <li><Link href="/digital-services/erpnext-implementation" className="hover:text-blue-500 transition-colors">ERPNext Implementation</Link></li>
-                                <li><Link href="/digital-services/ai-automation-data-services" className="hover:text-blue-500 transition-colors">Ai Automation Data Services</Link></li>
-                                <li><Link href="/digital-services/seo-growth-services" className="hover:text-blue-500 transition-colors">SEO & Growth Services</Link></li>
-                                <li><Link href="/digital-services/managed-wordpress-services" className="hover:text-blue-500 transition-colors">Managed WordPress Services</Link></li>
+                            <h4 className="font-bold text-[#00477b] mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Digital Services</h4>
+                            <ul className="text-[13px] md:text-[14px] text-gray-700 space-y-3 font-medium">
+                                <li><Link href="/digital-services/erpnext-implementation" className="hover:text-[#00477b] transition-colors">ERPNext Implementation</Link></li>
+                                <li><Link href="/digital-services/ai-automation-data-services" className="hover:text-[#00477b] transition-colors">AI Automation & Data Services</Link></li>
+                                <li><Link href="/digital-services/seo-growth-services" className="hover:text-[#00477b] transition-colors">SEO & Growth Services</Link></li>
+                                <li><Link href="/digital-services/managed-wordpress-services" className="hover:text-[#00477b] transition-colors">Managed WordPress Services</Link></li>
                             </ul>
                         </div>
 
+                        {/* 3. Quick Links */}
                         <div>
-                            <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Quick Links</h4>
-                            <ul className="text-[13px] md:text-[14px] text-gray-600 space-y-3">
-                                <li><Link href="/digital-services/custom-development" className="hover:text-blue-500 transition-colors">Explore Custom Development</Link></li>
-                                <li><Link href="/digital-services/ecommerce-development" className="hover:text-blue-500 transition-colors">Explore eCommerce Solutions</Link></li>
-                                <li><Link href="/about/contact" className="hover:text-blue-500 transition-colors">Contact Us Today</Link></li>
-                                <li><Link href="#" className="hover:text-blue-500 transition-colors">Mailchimp Newsletter Landing Page</Link></li>
+                            <h4 className="font-bold text-[#00477b] mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Quick Links</h4>
+                            <ul className="text-[13px] md:text-[14px] text-gray-700 space-y-3 font-medium">
+                                <li><Link href="/digital-services/custom-development" className="hover:text-[#00477b] transition-colors">Explore Custom Development</Link></li>
+                                <li><Link href="/digital-services/ecommerce-development" className="hover:text-[#00477b] transition-colors">Explore eCommerce Solutions</Link></li>
+                                <li><Link href="/about/contact" className="hover:text-[#00477b] transition-colors">Contact Us Today</Link></li>
+                                <li><Link href="/delivery-engagement-models" className="hover:text-[#00477b] transition-colors">Delivery & Engagement Models</Link></li>
                             </ul>
                         </div>
 
+                        {/* 4. Follow Us (Facebook, X, Instagram, LinkedIn) */}
                         <div className="flex flex-col items-start mt-0 md:mt-0">
-                            <h4 className="font-bold text-gray-900 mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Follow Us</h4>
+                            <h4 className="font-bold text-[#00477b] mb-6 text-[14px] md:text-[15px] uppercase tracking-wider">Follow Us</h4>
                             <div className="flex gap-3 flex-wrap justify-start">
                                 {/* FB */}
-                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Facebook" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Facebook" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-[#00477b] hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all duration-300 rounded-full flex items-center justify-center hover:-translate-y-1 shadow-sm">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
                                 </a>
                                 {/* X */}
-                                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on X" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on X" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-[#00477b] hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all duration-300 rounded-full flex items-center justify-center hover:-translate-y-1 shadow-sm">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" /></svg>
                                 </a>
                                 {/* IG */}
-                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Instagram" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Instagram" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-[#00477b] hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all duration-300 rounded-full flex items-center justify-center hover:-translate-y-1 shadow-sm">
                                     <svg className="size-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
                                 </a>
-                                {/* Pinterest */}
-                                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on Pinterest" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
-                                    <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.633 0 12.017 0z" /></svg>
-                                </a>
                                 {/* LinkedIn */}
-                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on LinkedIn" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-zinc-600 hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all rounded-full flex items-center justify-center">
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Follow Gnosys Digital on LinkedIn" className="size-9 bg-white/60 backdrop-blur-md border border-white/80 text-[#00477b] hover:bg-[#00477b] hover:border-[#00335e] hover:text-white transition-all duration-300 rounded-full flex items-center justify-center hover:-translate-y-1 shadow-sm">
                                     <svg className="size-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
                                 </a>
                             </div>
@@ -407,16 +413,29 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
                     </div>
                 </div>
                 {/* Copyright Bar */}
-                <div className="bg-transparent text-gray-600 py-4 relative w-full border-t border-white/40">
+                <div className="bg-transparent text-gray-700 py-4 relative w-full border-t border-white/60">
                     <div className="container mx-auto px-4 lg:px-8 flex items-center justify-center relative">
                         {/* Cookie icon */}
-                        <div role="button" aria-label="Cookie preferences" tabIndex={0} className="absolute left-4 -top-8 size-[38px] rounded-full bg-zinc-900 text-white flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-all duration-300 shadow-lg border-[3px] border-white">
+                        <div 
+                            role="button" 
+                            aria-label="Cookie preferences" 
+                            tabIndex={0} 
+                            onClick={() => setCookieModalOpen(true)}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setCookieModalOpen(true); }}
+                            className="absolute left-4 -top-8 size-[38px] rounded-full bg-zinc-900 hover:bg-[#00477b] text-white flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg border-[3px] border-white z-20"
+                        >
                             <svg className="size-[20px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" /><path d="M8.5 8.5v.01" /><path d="M16 12.5v.01" /><path d="M12 16v.01" /><path d="M11 11v.01" /><path d="M8 14v.01" /></svg>
                         </div>
                         <div className="text-[12px] md:text-sm font-medium">© {new Date().getFullYear()} Gnosys Digital. All rights reserved.</div>
                     </div>
                 </div>
             </footer>
+
+            {/* Cookie Preferences Modal */}
+            <CookiePreferencesModal
+                isOpen={cookieModalOpen}
+                onClose={() => setCookieModalOpen(false)}
+            />
         </div>
     );
 }

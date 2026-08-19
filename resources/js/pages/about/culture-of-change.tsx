@@ -2,6 +2,7 @@ import MainLayout from '@/layouts/main-layout';
 import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { Search, PenTool, Layout, Target, Settings, Globe, Award, User, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
 
 export default function CultureOfChange() {
     return (
@@ -31,6 +32,9 @@ export default function CultureOfChange() {
                         No freelancers. No outsourcing. Just a focused team obsessed with helping brands launch faster, scale smarter, and grow stronger.
                     </p>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Mission Section */}

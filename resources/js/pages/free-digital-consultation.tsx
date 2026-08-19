@@ -23,7 +23,8 @@ import {
     Calendar,
     ArrowRight,
     Lock
-} from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function FreeDigitalConsultation() {
     const [faqOpen, setFaqOpen] = useState<number | null>(null);
@@ -84,55 +85,68 @@ export default function FreeDigitalConsultation() {
                 <div className="absolute inset-0 bg-black/20"></div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
-                    <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-5 py-2 border border-white/20 shadow-sm">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-blue-100">Free Digital Strategy Session</span>
-                    </div>
-
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
-                        Your Digital Transformation <br className="hidden sm:inline" /> Starts With A Conversation
-                    </h1>
-
-                    <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
-                        Get expert guidance on your website, app, or marketing system without commitment. Free growth audit for businesses ready to scale. Tell us your current bottlenecks, and we'll deliver actionable insights — whether you decide to work with us or not.
-                    </p>
-
-                    <div className="flex flex-col items-center gap-6">
-                        <Button 
-                            onClick={scrollToForm}
-                            className="bg-white text-[#00477b] hover:bg-blue-50 rounded-full px-8 sm:px-10 h-14 text-base font-bold shadow-2xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1"
-                        >
-                            Book Your Free Consultation Today
-                        </Button>
-
-                        {/* 3 Pillars / Feature Pills */}
-                        <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2">
-                            <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
-                                ✓ No-sales pressure
-                            </span>
-                            <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
-                                ✓ 30-minute consultation
-                            </span>
-                            <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
-                                ✓ Senior experts only
-                            </span>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-5 py-2 border border-white/20 shadow-sm">
+                            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-100">Free Digital Strategy Session</span>
                         </div>
-                    </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
+                            Your Digital Transformation <br className="hidden sm:inline" /> Starts With A Conversation
+                        </h1>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
+                            Get expert guidance on your website, app, or marketing system without commitment. Free growth audit for businesses ready to scale. Tell us your current bottlenecks, and we'll deliver actionable insights — whether you decide to work with us or not.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col items-center gap-6">
+                            <Button 
+                                onClick={scrollToForm}
+                                className="bg-white text-[#00477b] hover:bg-blue-50 rounded-full px-8 sm:px-10 h-14 text-base font-bold shadow-2xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1"
+                            >
+                                Book Your Free Consultation Today
+                            </Button>
+
+                            {/* 3 Pillars / Feature Pills */}
+                            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2">
+                                <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
+                                    ✓ No-sales pressure
+                                </span>
+                                <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
+                                    ✓ 30-minute consultation
+                                </span>
+                                <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
+                                    ✓ Senior experts only
+                                </span>
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Why a Free Consultation? */}
             <section className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why a Free Consultation?</span>
+                <ScrollReveal animation="fade-up" delay={100}>
+                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
+                        <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
+                            <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why a Free Consultation?</span>
+                        </div>
+                        <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Because Every Business Faces Unique Digital Challenges
+                        </h2>
+                        <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
+                            Most agencies sell boilerplate solutions before understanding the root cause. We believe in asking the right questions before recommending any system:
+                        </p>
                     </div>
-                    <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Because Every Business Faces Unique Digital Challenges
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-                        Most agencies sell boilerplate solutions before understanding the root cause. We believe in asking the right questions before recommending any system:
-                    </p>
-                </div>
+                </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
                 <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
@@ -170,35 +184,38 @@ export default function FreeDigitalConsultation() {
                                     icon: BarChart3
                                 }
                             ].map((item, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full"
-                                >
-                                    <div>
-                                        <div className="flex items-center justify-between mb-5">
-                                            <div className="size-13 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] p-3 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                                <item.icon className="size-6" />
+                                <ScrollReveal key={idx} animation="fade-up" delay={idx * 80} className="h-full">
+                                    <div 
+                                        className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full"
+                                    >
+                                        <div>
+                                            <div className="flex items-center justify-between mb-5">
+                                                <div className="size-13 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] p-3 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                    <item.icon className="size-6" />
+                                                </div>
+                                                <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3 py-1.5 rounded-full border border-blue-100">
+                                                    Challenge 0{idx + 1}
+                                                </span>
                                             </div>
-                                            <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3 py-1.5 rounded-full border border-blue-100">
-                                                Challenge 0{idx + 1}
-                                            </span>
+                                            <h3 className="text-xl font-bold text-[#00477b] mb-2.5 tracking-tight">{item.title}</h3>
+                                            <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item.desc}</p>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-2.5 tracking-tight">{item.title}</h3>
-                                        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item.desc}</p>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
                     </div>
                 </div>
 
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center mt-6">
-                    <div className="p-6 rounded-2xl bg-blue-50/60 border border-blue-100">
-                        <p className="text-sm sm:text-base text-[#00477b] font-medium">
-                            💡 During our 30-minute session, we explore your unique digital architecture — and give you actionable clarity on what to fix first.
-                        </p>
+                <ScrollReveal animation="fade-up" delay={200}>
+                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center mt-6">
+                        <div className="p-6 rounded-2xl bg-blue-50/60 border border-blue-100">
+                            <p className="text-sm sm:text-base text-[#00477b] font-medium">
+                                💡 During our 30-minute session, we explore your unique digital architecture — and give you actionable clarity on what to fix first.
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* 3. What We Deliver */}

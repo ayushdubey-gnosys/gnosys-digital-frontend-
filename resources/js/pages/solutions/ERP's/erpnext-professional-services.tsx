@@ -2,6 +2,8 @@ import MainLayout from '@/layouts/main-layout';
 import { Head } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { CheckSquare, Search, Settings, Database, MonitorPlay, Rocket, Briefcase } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextProfessionalServices() {
     return (
@@ -19,19 +21,28 @@ export default function ErpnextProfessionalServices() {
                     </div>
 
                     <div className="container-brand relative z-10 max-w-5xl">
-                        <h1 className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
-                            A Unified System To Manage <span className="text-blue-300">Projects, People, And Profitability</span>
-                        </h1>
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <h1 className="mb-6 text-4xl font-semibold tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+                                A Unified System To Manage <span className="text-blue-300">Projects, People, And Profitability</span>
+                            </h1>
+                        </ScrollReveal>
 
-                        <p className="mx-auto mb-10 max-w-3xl text-lg text-blue-50/90 sm:text-xl">
-                            Connect project planning, resource allocation, and financials on one platform so you can focus on delivering value.
-                        </p>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="mx-auto mb-10 max-w-3xl text-lg text-blue-50/90 sm:text-xl">
+                                Connect project planning, resource allocation, and financials on one platform so you can focus on delivering value.
+                            </p>
+                        </ScrollReveal>
 
-                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <span className="relative z-10 flex items-center gap-2">Request A Consultation <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Button>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                                <span className="relative z-10 flex items-center gap-2">Request A Consultation <span className="text-xl">&rarr;</span></span>
+                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            </Button>
+                        </ScrollReveal>
                     </div>
+
+                    {/* Curved Wave Divider */}
+                    <HeroWaveDivider />
                 </section>
 
                 <section className="pt-24 bg-transparent border-t border-white/40">

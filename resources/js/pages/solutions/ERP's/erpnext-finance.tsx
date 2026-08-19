@@ -7,6 +7,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { CheckSquare, Shield, CheckCircle2, AlertTriangle, TrendingUp, Trophy, Target } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextFinance() {
     return (
@@ -28,23 +30,32 @@ export default function ErpnextFinance() {
 
                 <div className="container relative z-10 mx-auto px-4 lg:px-8">
                     <div className="max-w-4xl space-y-8 flex flex-col items-center relative z-20 mx-auto">
-                        <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-[68px] leading-[1.05] drop-shadow-lg mt-12">
-                            One Secure Platform To Manage Operations, Compliance<br />
-                            And Client Portfolios
-                        </h1>
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-[68px] leading-[1.05] drop-shadow-lg mt-12">
+                                One Secure Platform To Manage Operations, Compliance<br />
+                                And Client Portfolios
+                            </h1>
+                        </ScrollReveal>
 
-                        <p className="max-w-2xl text-lg sm:text-xl text-zinc-300/90 leading-relaxed font-medium mx-auto">
-                            Streamline client onboarding, investment management, regulatory reporting, and fee tracking. Reduce risk and improve efficiency—all in a single platform designed for financial services.
-                        </p>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="max-w-2xl text-lg sm:text-xl text-zinc-300/90 leading-relaxed font-medium mx-auto">
+                                Streamline client onboarding, investment management, regulatory reporting, and fee tracking. Reduce risk and improve efficiency—all in a single platform designed for financial services.
+                            </p>
+                        </ScrollReveal>
 
-                        <div className="flex flex-col sm:flex-row justify-center gap-5 pt-8 w-full sm:w-auto">
-                            <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                                <span className="relative z-10 flex items-center gap-2">Book Free Assessment <span className="text-xl">&rarr;</span></span>
-                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                            </Button>
-                        </div>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <div className="flex flex-col sm:flex-row justify-center gap-5 pt-8 w-full sm:w-auto">
+                                <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                                    <span className="relative z-10 flex items-center gap-2">Book Free Assessment <span className="text-xl">&rarr;</span></span>
+                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                </Button>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Challenges */}

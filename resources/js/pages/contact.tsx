@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { MapPin, Mail, Globe, Clock, Send, Sparkles, MessageSquare, PhoneCall } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
 
 export default function Contact() {
     return (
@@ -21,7 +22,7 @@ export default function Contact() {
                 {/* Subtle soft gradient overlay so text on left is sharp and image on right remains crystal clear */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 md:via-black/25 to-transparent"></div>
                 
-                <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 max-w-[1600px] mx-auto relative z-10">
+                <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-16 max-w-[1600px] mx-auto relative z-10 pb-12 md:pb-16">
                     <div className="max-w-3xl text-left space-y-6">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-semibold tracking-wider text-blue-200 uppercase">
                             GET IN TOUCH
@@ -34,6 +35,9 @@ export default function Contact() {
                         </p>
                     </div>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* Contact Content Section */}

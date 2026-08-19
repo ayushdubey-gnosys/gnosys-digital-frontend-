@@ -21,6 +21,8 @@ import {
     ChevronDown,
     Lock
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function DeliveryEngagementModels() {
     const [faqOpen, setFaqOpen] = useState<number | null>(0);
@@ -75,48 +77,60 @@ export default function DeliveryEngagementModels() {
                 <div className="absolute inset-0 bg-black/20"></div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
-                        Smart, Scalable Delivery Models For Every Business
-                    </h1>
-                    <p className="text-lg md:text-xl text-blue-100/90 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
-                        Whether you're launching your first website or optimizing an existing digital ecosystem — our flexible engagement models guarantee control, scale, and clear ROI.
-                    </p>
+                    <ScrollReveal animation="fade-up" delay={100}>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
+                            Smart, Scalable Delivery Models For Every Business
+                        </h1>
+                    </ScrollReveal>
 
-                    <div className="flex flex-col items-center gap-6">
-                        <div className="border border-white/30 bg-white/10 backdrop-blur-md text-white px-7 py-2.5 rounded-full font-medium text-xs sm:text-sm inline-block shadow-sm">
-                            Transparent pricing and deliverables. Total accountability.
+                    <ScrollReveal animation="fade-up" delay={200}>
+                        <p className="text-lg md:text-xl text-blue-100/90 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
+                            Whether you're launching your first website or optimizing an existing digital ecosystem — our flexible engagement models guarantee control, scale, and clear ROI.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={300}>
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="border border-white/30 bg-white/10 backdrop-blur-md text-white px-7 py-2.5 rounded-full font-medium text-xs sm:text-sm inline-block shadow-sm">
+                                Transparent pricing and deliverables. Total accountability.
+                            </div>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button 
+                                    onClick={scrollToContact}
+                                    className="bg-white text-[#00477b] hover:bg-gray-50 rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+                                >
+                                    Talk to a Delivery Expert
+                                </Button>
+                                <Button 
+                                    onClick={scrollToModels}
+                                    className="bg-transparent text-white hover:bg-white/10 border-2 border-white/60 rounded-full px-8 h-14 text-base font-bold shadow-sm transition-all duration-300"
+                                >
+                                    Explore All Models
+                                </Button>
+                            </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Button 
-                                onClick={scrollToContact}
-                                className="bg-white text-[#00477b] hover:bg-gray-50 rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all duration-300 hover:-translate-y-0.5"
-                            >
-                                Talk to a Delivery Expert
-                            </Button>
-                            <Button 
-                                onClick={scrollToModels}
-                                className="bg-transparent text-white hover:bg-white/10 border-2 border-white/60 rounded-full px-8 h-14 text-base font-bold shadow-sm transition-all duration-300"
-                            >
-                                Explore All Models
-                            </Button>
-                        </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Built For Clarity, Speed, And Control */}
             <section className="py-20 lg:py-24 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Predictable Delivery. Zero Headaches.</span>
+                <ScrollReveal animation="fade-up" delay={100}>
+                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+                        <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
+                            <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Predictable Delivery. Zero Headaches.</span>
+                        </div>
+                        <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Built For Clarity, Speed, And Control
+                        </h2>
+                        <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed mb-6">
+                            Our delivery models are structured for high agility and clear execution. Every engagement comes with structured milestones, clear communication, and full code ownership.
+                        </p>
                     </div>
-                    <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Built For Clarity, Speed, And Control
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed mb-6">
-                        Our delivery models are structured for high agility and clear execution. Every engagement comes with structured milestones, clear communication, and full code ownership.
-                    </p>
-                </div>
+                </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
                 <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">

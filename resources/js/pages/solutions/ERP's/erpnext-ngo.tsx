@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextNgo() {
     return (
@@ -33,24 +35,35 @@ export default function ErpnextNgo() {
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm text-xs font-extrabold text-white uppercase tracking-wider mb-6">
-                        ERPNEXT FOR NGOS
-                    </span>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 shadow-sm text-xs font-extrabold text-white uppercase tracking-wider mb-6">
+                            ERPNEXT FOR NGOS
+                        </span>
+                    </ScrollReveal>
                     
-                    <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] tracking-tight mb-8">
-                        Maximize Impact While Streamlining Operations
-                    </h1>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white leading-[1.1] tracking-tight mb-8">
+                            Maximize Impact While Streamlining Operations
+                        </h1>
+                    </ScrollReveal>
                     
-                    <p className="text-lg md:text-xl text-zinc-200 font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Manage donors, projects, compliance, and finances efficiently on one open-source ERP platform.
-                    </p>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-lg md:text-xl text-zinc-200 font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
+                            Manage donors, projects, compliance, and finances efficiently on one open-source ERP platform.
+                        </p>
+                    </ScrollReveal>
                     
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-transparent border-2 border-white/60 hover:bg-white/10 text-white rounded-full px-8 py-6 text-base font-bold transition-all duration-300 backdrop-blur-sm hover:-translate-y-1">
-                            Request Free Assessment <ArrowUpRight className="ml-2 size-5" />
-                        </Button>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button className="bg-transparent border-2 border-white/60 hover:bg-white/10 text-white rounded-full px-8 py-6 text-base font-bold transition-all duration-300 backdrop-blur-sm hover:-translate-y-1">
+                                Request Free Assessment <ArrowUpRight className="ml-2 size-5" />
+                            </Button>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Challenges Faced By Non-Profits */}

@@ -27,6 +27,8 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import FaqAccordion from '@/components/FaqAccordion';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextImplementation() {
 
@@ -64,27 +66,41 @@ export default function ErpnextImplementation() {
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Simplify Your Operations With ERPNext Fully Implemented, Configured, And Supported
-                    </h1>
-                    <p className="text-lg md:text-xl text-zinc-200/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Automate accounting, inventory, CRM, and HR — all in one open-source platform. We help SMEs deploy ERPNext fast, affordably, and with zero chaos.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <Link href="/free-digital-consultation">
-                                <span className="relative z-10 flex items-center gap-2">Book a free consultation <span className="text-xl">&rarr;</span></span>
-                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                            </Link>
-                        </Button>
-                        <Button className="bg-transparent text-white border border-white/40 hover:bg-white/10 hover:border-white rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all duration-300">
-                            Request a Quote
-                        </Button>
-                    </div>
-                    <div className="mt-12 text-sm text-zinc-300 font-medium tracking-wide">
-                        Trusted by growing manufacturers, distributors and service providers across India.
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                            Simplify Your Operations With ERPNext Fully Implemented, Configured, And Supported
+                        </h1>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <p className="text-lg md:text-xl text-zinc-200/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+                            Automate accounting, inventory, CRM, and HR — all in one open-source platform. We help SMEs deploy ERPNext fast, affordably, and with zero chaos.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                                <Link href="/free-digital-consultation">
+                                    <span className="relative z-10 flex items-center gap-2">Book a free consultation <span className="text-xl">&rarr;</span></span>
+                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                </Link>
+                            </Button>
+                            <Button className="bg-transparent text-white border border-white/40 hover:bg-white/10 hover:border-white rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all duration-300">
+                                Request a Quote
+                            </Button>
+                        </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="mt-12 text-sm text-zinc-300 font-medium tracking-wide">
+                            Trusted by growing manufacturers, distributors and service providers across India.
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Why ERPNext Grid */}

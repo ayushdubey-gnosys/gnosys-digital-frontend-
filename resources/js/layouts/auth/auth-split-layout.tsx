@@ -1,44 +1,32 @@
-import { Link, usePage } from '@inertiajs/react';
-import AppLogoIcon from '@/components/app-logo-icon';
-import { home } from '@/routes';
+import React from 'react';
+import MainLayout from '@/layouts/main-layout';
 import type { AuthLayoutProps } from '@/types';
 
 export default function AuthSplitLayout({
     children,
-    title,
-    description,
 }: AuthLayoutProps) {
-    const { name } = usePage().props;
-
     return (
-        <div className="relative grid h-dvh flex-col items-center justify-center px-8 sm:px-0 lg:max-w-none lg:grid-cols-2 lg:px-0">
-            <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-                <div className="absolute inset-0 bg-zinc-900" />
-                <Link
-                    href={home()}
-                    className="relative z-20 flex items-center text-lg font-medium"
-                >
-                    <AppLogoIcon className="mr-2 size-8 fill-current text-white" />
-                    {name}
-                </Link>
-            </div>
-            <div className="w-full lg:p-8">
-                <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-                    <Link
-                        href={home()}
-                        className="relative z-20 flex items-center justify-center lg:hidden"
-                    >
-                        <AppLogoIcon className="h-10 fill-current text-black sm:h-12" />
-                    </Link>
-                    <div className="flex flex-col items-start gap-2 text-left sm:items-center sm:text-center">
-                        <h1 className="text-xl font-medium">{title}</h1>
-                        <p className="text-sm text-balance text-muted-foreground">
-                            {description}
-                        </p>
-                    </div>
+        <MainLayout>
+            <div className="w-full min-h-[calc(100vh-70px)] relative overflow-hidden flex flex-col lg:flex-row bg-transparent">
+                
+                {/* Full-Bleed Background Image Across Entire Page (No Cropping) */}
+                <img
+                    src="/assets/login.webp"
+                    alt="Background"
+                    className="absolute inset-0 w-full h-full object-fill z-0 pointer-events-none select-none"
+                />
+
+                {/* Left 55% Section - Completely Clean Image View (No Text) */}
+                <div className="hidden lg:flex lg:w-[55%] xl:w-[58%] relative z-10 pointer-events-none">
+                    {/* Left side remains 100% clean showing the full cherry blossom tree */}
+                </div>
+
+                {/* Right 45% Section - 3D Flip Card Container with Slightly Increased Width */}
+                <div className="w-full lg:w-[45%] xl:w-[42%] relative z-10 flex flex-col justify-center p-6 sm:p-8 xl:p-10 bg-transparent min-h-full">
                     {children}
                 </div>
+
             </div>
-        </div>
+        </MainLayout>
     );
 }

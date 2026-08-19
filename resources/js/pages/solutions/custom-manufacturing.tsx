@@ -7,6 +7,8 @@ import {
     ShieldCheck, Layers, Cpu, TrendingUp, ClipboardCheck, Smartphone, Server, Workflow, Gauge, RotateCcw, Box,
     Cloud, Database, Layout
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 import React from 'react';
 
 export default function CustomManufacturing() {
@@ -20,25 +22,35 @@ export default function CustomManufacturing() {
                 </div>
                 
                 <div className="container relative z-20 mx-auto px-4 max-w-5xl">
-                    <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
-                        YOUR FACTORY DOES NOT NEED A SYSTEM. IT NEEDS A NERVOUS SYSTEM.
-                    </p>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
-                        Your Production Runs Daily. But Your Visibility Stops At Paperwork.
-                    </h1>
-                    
-                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
-                        Custom Web Applications, Mobile Apps, And Shop Floor Management Systems. We digitize the dirty, messy, undocumented workflows that off-the-shelf ERPs just can't handle.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                            Talk to a manufacturing expert
-                        </Button>
-                        <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                            Explore our implementations
-                        </Button>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
+                            YOUR FACTORY DOES NOT NEED A SYSTEM. IT NEEDS A NERVOUS SYSTEM.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
+                            Your Production Runs Daily. But Your Visibility Stops At Paperwork.
+                        </h1>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
+                            Custom Web Applications, Mobile Apps, And Shop Floor Management Systems. We digitize the dirty, messy, undocumented workflows that off-the-shelf ERPs just can't handle.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Talk to a manufacturing expert
+                            </Button>
+                            <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Explore our implementations
+                            </Button>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             <div className="relative z-10 w-full bg-transparent">

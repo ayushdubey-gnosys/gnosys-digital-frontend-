@@ -1,6 +1,7 @@
 import MainLayout from '@/layouts/main-layout';
 import { Head, Link } from '@inertiajs/react';
 import { ArrowRight } from 'lucide-react';
+import ScrollReveal from '@/components/scroll-reveal';
 import React from 'react';
 
 const caseStudies = [
@@ -84,20 +85,22 @@ export default function CaseStudy() {
             <div className="bg-transparent min-h-screen py-24">
                 <div className="w-full mx-auto px-4 lg:px-12 max-w-[1600px] text-center">
                     
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                        CASE STUDIES
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-14">
-                        Our Success Stories
-                    </h2>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                            CASE STUDIES
+                        </span>
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-14">
+                            Our Success Stories
+                        </h2>
+                    </ScrollReveal>
 
                     {/* Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 w-full text-left">
                         {caseStudies.map((study, index) => (
-                            <div 
-                                key={index} 
-                                className="group bg-gradient-to-br from-white/50 via-white/35 to-white/20 backdrop-blur-xl border border-white/60 hover:border-white/80 rounded-[2rem] p-6 sm:p-7 flex flex-col shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/50 hover:-translate-y-2 transition-all duration-400 h-full relative overflow-hidden"
-                            >
+                            <ScrollReveal key={index} animation="fade-up" delay={index * 70} className="h-full">
+                                <div 
+                                    className="group bg-gradient-to-br from-white/50 via-white/35 to-white/20 backdrop-blur-xl border border-white/60 hover:border-white/80 rounded-[2rem] p-6 sm:p-7 flex flex-col shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/50 hover:-translate-y-2 transition-all duration-400 h-full relative overflow-hidden"
+                                >
                                 {/* Ambient Hover Glow */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
 
@@ -143,6 +146,7 @@ export default function CaseStudy() {
                                     </div>
                                 </div>
                             </div>
+                        </ScrollReveal>
                         ))}
                     </div>
                     

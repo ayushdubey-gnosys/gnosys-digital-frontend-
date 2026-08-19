@@ -17,6 +17,7 @@ import {
     PackageCheck,
     CheckSquare
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
 
 export default function EngagementModels() {
     return (
@@ -53,6 +54,9 @@ export default function EngagementModels() {
                         </div>
                     </div>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Built For Clarity */}

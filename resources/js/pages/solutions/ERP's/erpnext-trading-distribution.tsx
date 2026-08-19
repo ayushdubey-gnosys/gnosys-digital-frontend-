@@ -11,6 +11,8 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextTradingDistribution() {
     return (
@@ -29,20 +31,30 @@ export default function ErpnextTradingDistribution() {
                 <div className="absolute inset-0 bg-[#0a2540]/20 z-0"></div>
                 
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8 leading-tight drop-shadow-lg">
-                        Streamline Your Wholesale, Retail & Distribution Operations
-                    </h1>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8 leading-tight drop-shadow-lg">
+                            Streamline Your Wholesale, Retail & Distribution Operations
+                        </h1>
+                    </ScrollReveal>
                     
-                    <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
-                        Manage inventory, orders, logistics and accounting seamlessly from one single platform. Accelerate business growth and customer satisfaction.
-                    </p>
-                    <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                        <Link href="/free-digital-consultation">
-                            <span className="relative z-10 flex items-center gap-2">Get A Free Consultation <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Link>
-                    </Button>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
+                            Manage inventory, orders, logistics and accounting seamlessly from one single platform. Accelerate business growth and customer satisfaction.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <Link href="/free-digital-consultation">
+                                <span className="relative z-10 flex items-center gap-2">Get A Free Consultation <span className="text-xl">&rarr;</span></span>
+                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            </Link>
+                        </Button>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* Main Content Wrapper */}

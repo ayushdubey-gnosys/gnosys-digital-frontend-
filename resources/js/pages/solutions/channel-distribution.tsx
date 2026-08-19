@@ -8,6 +8,8 @@ import {
     Globe, Activity, ShieldCheck, TrendingUp, BarChart3, MapPin, RotateCcw,
     BadgePercent, UserCheck, ShoppingCart
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 import React from 'react';
 
 export default function ChannelDistribution() {
@@ -27,25 +29,35 @@ export default function ChannelDistribution() {
                 <div className="absolute inset-0 bg-[#022c54]/20 z-0"></div>
 
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
-                        EVERY MANUFACTURER HAS A DIFFERENT SALES NETWORK. WE BUILD SYSTEMS THAT FIT YOURS.
-                    </p>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
-                        Your Dealers, Distributors, And Sales Team Deserve A System That Works Your Way.
-                    </h1>
-
-                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-normal mb-12 max-w-3xl mx-auto drop-shadow-md">
-                        Specialized Web Applications, Mobile Apps, And CRM Portals. We map your exact business logic to a custom channel distribution management system. Stop adjusting your process to standard tools. Fit the tool to your process.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-white text-zinc-900 hover:bg-slate-100 rounded-full px-8 h-12 text-sm font-semibold shadow-xl transition-all w-full sm:w-auto">
-                            Talk To An Expert
-                        </Button>
-                        <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-8 h-12 text-sm font-semibold shadow-xl transition-all w-full sm:w-auto">
-                            Explore Features
-                        </Button>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
+                            EVERY MANUFACTURER HAS A DIFFERENT SALES NETWORK. WE BUILD SYSTEMS THAT FIT YOURS.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
+                            Your Dealers, Distributors, And Sales Team Deserve A System That Works Your Way.
+                        </h1>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-normal mb-12 max-w-3xl mx-auto drop-shadow-md">
+                            Specialized Web Applications, Mobile Apps, And CRM Portals. We map your exact business logic to a custom channel distribution management system. Stop adjusting your process to standard tools. Fit the tool to your process.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button className="bg-white text-zinc-900 hover:bg-slate-100 rounded-full px-8 h-12 text-sm font-semibold shadow-xl transition-all w-full sm:w-auto">
+                                Talk To An Expert
+                            </Button>
+                            <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-8 h-12 text-sm font-semibold shadow-xl transition-all w-full sm:w-auto">
+                                Explore Features
+                            </Button>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             <div className="relative z-10 w-full bg-transparent">

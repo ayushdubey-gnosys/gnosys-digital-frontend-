@@ -21,6 +21,8 @@ import {
     Lock,
     Sparkles
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function GrowthSystemsDiscoveryCall() {
     const [faqOpen, setFaqOpen] = useState<number | null>(null);
@@ -67,48 +69,61 @@ export default function GrowthSystemsDiscoveryCall() {
                 <div className="absolute inset-0 bg-black/20"></div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
-                    <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-5 py-2 border border-white/20 shadow-sm">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-blue-100">Growth Systems Discovery Call</span>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-5 py-2 border border-white/20 shadow-sm">
+                            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-100">Growth Systems Discovery Call</span>
+                        </div>
+                    </ScrollReveal>
 
-                    <h1 className="text-3xl sm:text-4xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
-                        A 30-Minute Session To Get Absolute Clarity On The Right Digital System For Your Business.
-                    </h1>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
+                            A 30-Minute Session To Get Absolute Clarity On The Right Digital System For Your Business.
+                        </h1>
+                    </ScrollReveal>
 
-                    <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
-                        A zero-pressure exploratory session to uncover where your website, custom software, ERP, or sales funnel is leaking revenue — and show you how to turn digital bottlenecks into scalable growth machines.
-                    </p>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
+                            A zero-pressure exploratory session to uncover where your website, custom software, ERP, or sales funnel is leaking revenue — and show you how to turn digital bottlenecks into scalable growth machines.
+                        </p>
 
-                    <p className="text-xs sm:text-sm text-blue-200/80 mb-10 max-w-2xl mx-auto font-medium">
-                        No generic pitches. Just a custom, actionable blueprint tailored to where you are today.
-                    </p>
+                        <p className="text-xs sm:text-sm text-blue-200/80 mb-10 max-w-2xl mx-auto font-medium">
+                            No generic pitches. Just a custom, actionable blueprint tailored to where you are today.
+                        </p>
+                    </ScrollReveal>
 
-                    <div className="flex flex-col items-center gap-4">
-                        <Button 
-                            onClick={scrollToForm}
-                            className="bg-white text-[#00477b] hover:bg-blue-50 rounded-full px-8 sm:px-10 h-14 text-base font-bold shadow-2xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1"
-                        >
-                            Book Your Growth Systems Discovery Call
-                        </Button>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col items-center gap-4">
+                            <Button 
+                                onClick={scrollToForm}
+                                className="bg-white text-[#00477b] hover:bg-blue-50 rounded-full px-8 sm:px-10 h-14 text-base font-bold shadow-2xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1"
+                            >
+                                Book Your Growth Systems Discovery Call
+                            </Button>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Why We Offer This Call */}
             <section className="py-20 lg:py-28 bg-transparent">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center mb-8">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why We Offer This Call</span>
-                    </div>
-                    <h2 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Why We Offer This Call
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed mb-6">
-                        Too many businesses waste months and lakhs of rupees on the wrong digital systems. This call helps you understand exactly what you need BEFORE you write a single line of code.
-                    </p>
+                <ScrollReveal animation="fade-up" delay={100}>
+                    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center mb-8">
+                        <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
+                            <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why We Offer This Call</span>
+                        </div>
+                        <h2 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Why We Offer This Call
+                        </h2>
+                        <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed mb-6">
+                            Too many businesses waste months and lakhs of rupees on the wrong digital systems. This call helps you understand exactly what you need BEFORE you write a single line of code.
+                        </p>
 
-                    <h3 className="text-xl font-bold text-[#00477b]">What You'll Walk Away With:</h3>
-                </div>
+                        <h3 className="text-xl font-bold text-[#00477b]">What You'll Walk Away With:</h3>
+                    </div>
+                </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
                 <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">

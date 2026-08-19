@@ -5,6 +5,8 @@ import {
     PieChart, FileText, Target, Wrench, Link, BarChart3, PenTool, 
     CheckCircle2, Search, Zap, TrendingUp, CheckCircle, ArrowRight, ShieldCheck, Quote
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 import React from 'react';
 
 export default function SeoServices() {
@@ -19,40 +21,53 @@ export default function SeoServices() {
             >
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
                     <div className="max-w-2xl lg:max-w-xl text-left">
-                        <p className="text-[13px] font-extrabold text-blue-200 uppercase tracking-widest mb-4 drop-shadow-lg">
-                            DATA-DRIVEN SEO & REVENUE ACCELERATION
-                        </p>
-                        <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
-                            Be Found. Be Chosen.<br /> <span className="text-blue-300">Be Profitable.</span>
-                        </h1>
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <p className="text-[13px] font-extrabold text-blue-200 uppercase tracking-widest mb-4 drop-shadow-lg">
+                                DATA-DRIVEN SEO & REVENUE ACCELERATION
+                            </p>
+                        </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
+                                Be Found. Be Chosen.<br /> <span className="text-blue-300">Be Profitable.</span>
+                            </h1>
+                        </ScrollReveal>
 
-                        <p className="mb-8 text-base sm:text-lg text-blue-50/95 font-medium drop-shadow-md leading-relaxed">
-                            We don't just get you on Google — we grow your revenue. At Gnosys Digital, SEO is not about vanity metrics; it's about measurable outcomes — traffic that converts, content that scales, and visibility that drives profit.
-                        </p>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <p className="mb-8 text-base sm:text-lg text-blue-50/95 font-medium drop-shadow-md leading-relaxed">
+                                We don't just get you on Google — we grow your revenue. At Gnosys Digital, SEO is not about vanity metrics; it's about measurable outcomes — traffic that converts, content that scales, and visibility that drives profit.
+                            </p>
+                        </ScrollReveal>
 
-                        <div className="mb-10 flex flex-wrap gap-8 sm:gap-12 text-left">
-                            {[
-                                { value: '300%', label: 'Traffic Growth' },
-                                { value: '5X', label: 'ROI in 6 Mos' },
-                                { value: '50%', label: 'Faster Results' },
-                            ].map((stat) => (
-                                <div key={stat.label}>
-                                    <p className="mb-1 text-3xl sm:text-4xl font-bold tracking-tight text-white drop-shadow-lg">{stat.value}</p>
-                                    <p className="text-[11px] font-extrabold uppercase tracking-wider text-blue-200 drop-shadow-md">{stat.label}</p>
-                                </div>
-                            ))}
-                        </div>
+                        <ScrollReveal animation="fade-up" delay={380}>
+                            <div className="mb-10 flex flex-wrap gap-8 sm:gap-12 text-left">
+                                {[
+                                    { value: '300%', label: 'Traffic Growth' },
+                                    { value: '5X', label: 'ROI in 6 Mos' },
+                                    { value: '50%', label: 'Faster Results' },
+                                ].map((stat) => (
+                                    <div key={stat.label}>
+                                        <p className="mb-1 text-3xl sm:text-4xl font-bold tracking-tight text-white drop-shadow-lg">{stat.value}</p>
+                                        <p className="text-[11px] font-extrabold uppercase tracking-wider text-blue-200 drop-shadow-md">{stat.label}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </ScrollReveal>
 
-                        <div className="flex flex-col sm:flex-row items-center gap-4">
-                            <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-8 h-13 text-sm sm:text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                                Get My SEO Growth Plan
-                            </Button>
-                            <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-8 h-13 text-sm sm:text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                                Talk to an expert
-                            </Button>
-                        </div>
+                        <ScrollReveal animation="fade-up" delay={480}>
+                            <div className="flex flex-col sm:flex-row items-center gap-4">
+                                <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-8 h-13 text-sm sm:text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                    Get My SEO Growth Plan
+                                </Button>
+                                <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-8 h-13 text-sm sm:text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                    Talk to an expert
+                                </Button>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             <div className="relative z-10 w-full bg-transparent">

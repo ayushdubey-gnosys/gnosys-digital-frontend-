@@ -8,6 +8,8 @@ import {
     Boxes, Warehouse, BarChart3,
     Server, Layout, Smartphone, Cpu, Cloud, Package
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 import React from 'react';
 
 export default function SupplyChain() {
@@ -21,25 +23,35 @@ export default function SupplyChain() {
                 style={{ backgroundImage: "url('/assets/supply-chain.webp')" }}
             >
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
-                        YOUR SUPPLY CHAIN IS UNIQUE. YOUR SOFTWARE SHOULD BE TOO.
-                    </p>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
-                        You Don't Need Another Off-The-Shelf ERP.<br className="hidden sm:block" /> You Need Software Built For How Your Factory Ships.
-                    </h1>
-                    
-                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
-                        From custom dispatch logic to specialized packing rules and dealer portals. We build custom Supply Chain & Logistics software that maps to your exact physical workflows.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                            Book a Strategy Call
-                        </Button>
-                        <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                            Explore Solutions
-                        </Button>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
+                            YOUR SUPPLY CHAIN IS UNIQUE. YOUR SOFTWARE SHOULD BE TOO.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
+                            You Don't Need Another Off-The-Shelf ERP.<br className="hidden sm:block" /> You Need Software Built For How Your Factory Ships.
+                        </h1>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
+                            From custom dispatch logic to specialized packing rules and dealer portals. We build custom Supply Chain & Logistics software that maps to your exact physical workflows.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Book a Strategy Call
+                            </Button>
+                            <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Explore Solutions
+                            </Button>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             <div className="relative z-10 w-full bg-transparent">

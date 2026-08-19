@@ -8,6 +8,8 @@ import {
     ShieldCheck, BarChart3, RotateCcw, ScanLine, Layers, Workflow, ShoppingCart,
     Server, Layout, Smartphone, Cpu, Cloud
 } from 'lucide-react';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 import React from 'react';
 
 export default function CustomWarehouse() {
@@ -21,25 +23,35 @@ export default function CustomWarehouse() {
                 style={{ backgroundImage: "url('/assets/warehouse.webp')" }}
             >
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
-                        EVERY WAREHOUSE IS DIFFERENT. YOUR SOFTWARE SHOULD BE TOO.
-                    </p>
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
-                        Your Stock Process Is Unique.<br className="hidden sm:block" /> Your System Should Match It — Not Fight It.
-                    </h1>
-                    
-                    <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
-                        Custom barcode systems, tailored allocations, and real-time inventory tracking. We build custom warehouse software that maps to how your physical operations actually run.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                            Talk to an inventory expert
-                        </Button>
-                        <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                            Explore solutions
-                        </Button>
-                    </div>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <p className="text-[13px] font-extrabold text-white uppercase tracking-widest mb-6 drop-shadow-lg">
+                            EVERY WAREHOUSE IS DIFFERENT. YOUR SOFTWARE SHOULD BE TOO.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-8 leading-tight drop-shadow-xl">
+                            Your Stock Process Is Unique.<br className="hidden sm:block" /> Your System Should Match It — Not Fight It.
+                        </h1>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-lg sm:text-xl text-blue-50/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
+                            Custom barcode systems, tailored allocations, and real-time inventory tracking. We build custom warehouse software that maps to how your physical operations actually run.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Button className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Talk to an inventory expert
+                            </Button>
+                            <Button className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-10 h-14 text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                Explore solutions
+                            </Button>
+                        </div>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             <div className="relative z-10 w-full bg-transparent">

@@ -12,6 +12,8 @@ import {
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FaqAccordion from '@/components/FaqAccordion';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextRestaurants() {
 
@@ -31,18 +33,28 @@ export default function ErpnextRestaurants() {
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-xl">
-                        ERPNext for Restaurants: One Platform to Manage Orders, Inventory & Accounts
-                    </h1>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight drop-shadow-xl">
+                            ERPNext for Restaurants: One Platform to Manage Orders, Inventory & Accounts
+                        </h1>
+                    </ScrollReveal>
 
-                    <p className="text-lg sm:text-2xl text-zinc-100 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-lg">
-                        Stop juggling between a POS, Excel sheets, and your accountant. Streamline dine-in, QSR, cloud kitchen, and multi-outlet chains with India's leading open-source ERP.
-                    </p>
-                    <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                        <span className="relative z-10 flex items-center gap-2">Book Your Free ERP Consult Assessment <span className="text-xl">&rarr;</span></span>
-                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                    </Button>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <p className="text-lg sm:text-2xl text-zinc-100 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-lg">
+                            Stop juggling between a POS, Excel sheets, and your accountant. Streamline dine-in, QSR, cloud kitchen, and multi-outlet chains with India's leading open-source ERP.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-2">Book Your Free ERP Consult Assessment <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                        </Button>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Bottlenecks Grid */}

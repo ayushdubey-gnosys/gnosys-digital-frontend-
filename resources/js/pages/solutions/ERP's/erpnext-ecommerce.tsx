@@ -11,7 +11,8 @@ import {
     ArrowUpRight
 } from 'lucide-react';
 import React from 'react';
-import { cn } from '@/lib/utils';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextEcommerce() {
     return (
@@ -29,20 +30,30 @@ export default function ErpnextEcommerce() {
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 max-w-4xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6">
-                        Unify Your Sales, Stock, And Accounts.
-                        <br />
-                        <span className="text-zinc-300 font-normal">Automate Everything Else.</span>
-                    </h1>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6">
+                            Unify Your Sales, Stock, And Accounts.
+                            <br />
+                            <span className="text-zinc-300 font-normal">Automate Everything Else.</span>
+                        </h1>
+                    </ScrollReveal>
 
-                    <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
-                        Stop juggling apps and spreadsheets. Get a single, intelligent system that connects your marketplaces, website, warehouse, and financials. Scale your business, not your workload.
-                    </p>
-                    <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                        <span className="relative z-10 flex items-center gap-2">Book Your Free E-Commerce Workflow Assessment <span className="text-xl">&rarr;</span></span>
-                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                    </Button>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
+                            Stop juggling apps and spreadsheets. Get a single, intelligent system that connects your marketplaces, website, warehouse, and financials. Scale your business, not your workload.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-2">Book Your Free E-Commerce Workflow Assessment <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                        </Button>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Growth Pains Grid */}

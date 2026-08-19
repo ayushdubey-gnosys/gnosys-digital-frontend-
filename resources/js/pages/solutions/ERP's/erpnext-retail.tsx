@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextRetail() {
     return (
@@ -29,33 +31,45 @@ export default function ErpnextRetail() {
                 <div className="absolute inset-0 bg-[#0a2540]/20 z-0"></div>
 
                 <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-10 leading-tight drop-shadow-md">
-                        ERPNext For Retail SMEs
-                    </h1>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-10 leading-tight drop-shadow-md">
+                            ERPNext For Retail SMEs
+                        </h1>
+                    </ScrollReveal>
 
-                    <div className="flex flex-wrap justify-center gap-8 mb-10 text-white font-bold text-sm sm:text-base">
-                        <div className="flex flex-col items-center gap-3">
-                            <Store className="size-8 text-white" />
-                            <span>Run Better Stores</span>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <div className="flex flex-wrap justify-center gap-8 mb-10 text-white font-bold text-sm sm:text-base">
+                            <div className="flex flex-col items-center gap-3">
+                                <Store className="size-8 text-white" />
+                                <span>Run Better Stores</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-3">
+                                <Globe className="size-8 text-white" />
+                                <span>Sell Anywhere</span>
+                            </div>
+                            <div className="flex flex-col items-center gap-3">
+                                <ArrowUpRight className="size-8 text-white" />
+                                <span>Grow Faster</span>
+                            </div>
                         </div>
-                        <div className="flex flex-col items-center gap-3">
-                            <Globe className="size-8 text-white" />
-                            <span>Sell Anywhere</span>
-                        </div>
-                        <div className="flex flex-col items-center gap-3">
-                            <ArrowUpRight className="size-8 text-white" />
-                            <span>Grow Faster</span>
-                        </div>
-                    </div>
+                    </ScrollReveal>
 
-                    <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-2xl mx-auto">
-                        A single platform to manage inventory, sales, customers, and finance for retail businesses.
-                    </p>
-                    <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                        <span className="relative z-10 flex items-center gap-2">Request Free Assessment <span className="text-xl">&rarr;</span></span>
-                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                    </Button>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-2xl mx-auto">
+                            A single platform to manage inventory, sales, customers, and finance for retail businesses.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-2">Request Free Assessment <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                        </Button>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* Main Content Wrapper */}

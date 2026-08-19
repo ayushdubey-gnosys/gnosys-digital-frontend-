@@ -8,6 +8,8 @@ import {
 import React from 'react';
 import { cn } from '@/lib/utils';
 import FaqAccordion from '@/components/FaqAccordion';
+import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextForHealthcare() {
 
@@ -26,20 +28,31 @@ export default function ErpnextForHealthcare() {
                 </div>
                 
                 <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-5xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
-                        ERPNext For Healthcare
-                    </h1>
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-blue-100 mb-6">
-                        Digital Systems For Clinics, Hospitals & Labs
-                    </h2>
-                    <p className="max-w-3xl mx-auto text-lg text-blue-50 leading-relaxed font-medium mb-10">
-                        Transform your healthcare operations with one unified, open-source platform. From patient registration to pharmacy inventory, labs to billing — ERPNext turns your medical practice into a streamlined, compliant, and data-driven institution.
-                    </p>
-                    <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                        <span className="relative z-10 flex items-center gap-2">Book a Free Healthcare-ERP Discovery Call <span className="text-xl">&rarr;</span></span>
-                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                    </Button>
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
+                            ERPNext For Healthcare
+                        </h1>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h2 className="text-2xl sm:text-3xl font-semibold text-blue-100 mb-6">
+                            Digital Systems For Clinics, Hospitals & Labs
+                        </h2>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="max-w-3xl mx-auto text-lg text-blue-50 leading-relaxed font-medium mb-10">
+                            Transform your healthcare operations with one unified, open-source platform. From patient registration to pharmacy inventory, labs to billing — ERPNext turns your medical practice into a streamlined, compliant, and data-driven institution.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                            <span className="relative z-10 flex items-center gap-2">Book a Free Healthcare-ERP Discovery Call <span className="text-xl">&rarr;</span></span>
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                        </Button>
+                    </ScrollReveal>
                 </div>
+
+                {/* Curved Wave Divider */}
+                <HeroWaveDivider />
             </section>
 
             {/* 2. Why Healthcare Businesses Choose ERPNext */}
