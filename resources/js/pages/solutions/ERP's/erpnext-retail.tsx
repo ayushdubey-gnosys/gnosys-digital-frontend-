@@ -6,66 +6,78 @@ import { Label } from '@/components/ui/label';
 import {
     CheckCircle, BarChart3, Store, Globe, ArrowUpRight,
     Smartphone, Database, Settings, RefreshCw, ShoppingCart,
-    CreditCard, Users, Box, HeadphonesIcon, Search, Rocket
+    CreditCard, Users, Box, HeadphonesIcon, Search, Rocket, CheckSquare
 } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import HeroWaveDivider from '@/components/hero-wave-divider';
 import ScrollReveal from '@/components/scroll-reveal';
 
 export default function ErpnextRetail() {
+    const [selectedChallenges, setSelectedChallenges] = useState<string[]>([]);
+
+    const toggleChallenge = (item: string) => {
+        setSelectedChallenges((prev) =>
+            prev.includes(item) ? prev.filter((c) => c !== item) : [...prev, item]
+        );
+    };
     return (
         <MainLayout>
             <Head title="ERPNext For Retail SMEs" />
 
             {/* 1. Hero Section */}
-            <section
-                className="relative overflow-hidden pt-20 pb-28 lg:pt-36 lg:pb-40 flex items-center justify-center text-center min-h-[85vh]"
-                style={{
-                    backgroundImage: "url('/assets/erp-treading.webp')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                }}
-            >
-                <div className="absolute inset-0 bg-[#0a2540]/20 z-0"></div>
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
+                {/* Background Container */}
+                <div className="absolute inset-0 z-0">
+                    <div
+                        className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/erp-treading.webp')", backgroundColor: '#020b18' }}
+                    ></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none lg:w-1/2"></div>
+                </div>
 
-                <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white mb-10 leading-tight drop-shadow-md">
-                            ERPNext For Retail SMEs
-                        </h1>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                RETAIL ERP SOLUTION
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                ERPNext For <br />
+                                <span className="text-blue-100 font-normal">Retail SMEs</span>
+                            </h1>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <div className="flex flex-wrap justify-center gap-8 mb-10 text-white font-bold text-sm sm:text-base">
-                            <div className="flex flex-col items-center gap-3">
-                                <Store className="size-8 text-white" />
-                                <span>Run Better Stores</span>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6 mb-8 text-white font-bold text-xs sm:text-sm">
+                                <div className="flex items-center gap-2.5 bg-black/30 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20">
+                                    <Store className="size-4 text-blue-300" />
+                                    <span>Run Better Stores</span>
+                                </div>
+                                <div className="flex items-center gap-2.5 bg-black/30 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20">
+                                    <Globe className="size-4 text-blue-300" />
+                                    <span>Sell Anywhere</span>
+                                </div>
+                                <div className="flex items-center gap-2.5 bg-black/30 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/20">
+                                    <ArrowUpRight className="size-4 text-blue-300" />
+                                    <span>Grow Faster</span>
+                                </div>
                             </div>
-                            <div className="flex flex-col items-center gap-3">
-                                <Globe className="size-8 text-white" />
-                                <span>Sell Anywhere</span>
-                            </div>
-                            <div className="flex flex-col items-center gap-3">
-                                <ArrowUpRight className="size-8 text-white" />
-                                <span>Grow Faster</span>
-                            </div>
-                        </div>
-                    </ScrollReveal>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-2xl mx-auto">
-                            A single platform to manage inventory, sales, customers, and finance for retail businesses.
-                        </p>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                A single platform to manage inventory, sales, customers, and finance for retail businesses.
+                            </p>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={380}>
-                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <span className="relative z-10 flex items-center gap-2">Request Free Assessment <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Button>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={380}>
+                            <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300">
+                                <span className="relative z-10 flex items-center gap-2">Request Free Assessment <ArrowUpRight className="size-5" /></span>
+                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            </Button>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -85,7 +97,7 @@ export default function ErpnextRetail() {
                             Retail Challenges
                         </h2>
                         <p className="text-zinc-600 text-sm font-normal mb-12">
-                            Common hurdles in retail operations.
+                            Common Problems in Retail Operations
                         </p>
                     </div>
 
@@ -94,11 +106,11 @@ export default function ErpnextRetail() {
                             <div className="container mx-auto max-w-[90rem]">
                                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
                                     {[
-                                        { icon: <RefreshCw />, title: "Disconnected Systems", desc: "Silos between online and offline channels leading to data mismatch." },
-                                        { icon: <Box />, title: "Stock Out / Overstock", desc: "Poor inventory visibility causing lost sales or tied-up capital." },
-                                        { icon: <Settings />, title: "Manual Processes & Errors", desc: "High reliance on manual data entry for pricing and promotions." },
-                                        { icon: <Users />, title: "Poor Data & Customer Understanding", desc: "Lack of insights into customer buying behavior and lifetime value." },
-                                        { icon: <Store />, title: "Shrinkage & Pilferage", desc: "Inadequate controls leading to inventory losses." }
+                                        { icon: <RefreshCw />, title: "Disconnected Channels", desc: "POS, online store, and marketplaces function separately without integration." },
+                                        { icon: <Box />, title: "Stock Surprises", desc: "Inventory between the store and warehouse is often unclear and inconsistent." },
+                                        { icon: <Settings />, title: "Slow Checkout & Errors", desc: "Manual discounts, delayed billing, and offline glitches slow the process." },
+                                        { icon: <Users />, title: "Job Work & Contract Manufacturing", desc: "Purchase patterns and customer loyalty are not visible in a single view." },
+                                        { icon: <Store />, title: "Month-End Pain", desc: "Reconciliation is time-consuming, taking hours or even days." }
                                     ].map((item, i) => (
                                         <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
                                             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
@@ -125,7 +137,7 @@ export default function ErpnextRetail() {
                             ERPNext Retail Solutions
                         </h2>
                         <p className="text-zinc-600 text-sm font-normal mb-12">
-                            How ERPNext solves for Retail SMEs
+                            How ERPNext Transforms Your Retail Business
                         </p>
                     </div>
 
@@ -134,12 +146,12 @@ export default function ErpnextRetail() {
                             <div className="container mx-auto max-w-[90rem]">
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                                     {[
-                                        { icon: <Database />, title: "Unified Inventory", desc: "Real-time stock visibility across all stores and warehouses." },
-                                        { icon: <Smartphone />, title: "Fast & Robust POS", desc: "Cloud-based POS that works offline and syncs automatically." },
-                                        { icon: <Users />, title: "360° Customer View", desc: "Track purchase history, preferences, and loyalty programs." },
-                                        { icon: <RefreshCw />, title: "Automated Replenishment", desc: "Smart reordering rules to prevent stockouts and overstock." },
-                                        { icon: <BarChart3 />, title: "Financial Clarity", desc: "Integrated accounting for store-wise profitability and cash flow tracking." },
-                                        { icon: <Globe />, title: "Omnichannel Operations", desc: "Manage physical stores, e-commerce, and marketplaces centrally." }
+                                        { icon: <Database />, title: "Unified Inventory", desc: "Real-time stock visibility across all stores and warehouses" },
+                                        { icon: <Smartphone />, title: "Fast POS & Offline Capability", desc: "Smooth checkout and automatic stock updates." },
+                                        { icon: <Users />, title: "Customer 360° View", desc: "Track preferences, purchases, and loyalty programs." },
+                                        { icon: <RefreshCw />, title: "Automated Restocking", desc: "Smart reorder suggestions based on sales trends." },
+                                        { icon: <BarChart3 />, title: "Financial Clarity", desc: "GST-ready invoicing, automated reconciliation, dashboards." },
+                                        { icon: <Globe />, title: "Omnichannel Operations", desc: "Connect physical stores, online channels, and marketplaces." }
                                     ].map((item, i) => (
                                         <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
                                             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
@@ -172,12 +184,12 @@ export default function ErpnextRetail() {
                             <div className="container mx-auto max-w-[90rem]">
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                                     {[
-                                        { icon: <ShoppingCart />, title: "Point of Sale (POS)", desc: "Fast checkout, offline mode, multi-payment methods, barcode integration, receipt printing." },
-                                        { icon: <Box />, title: "Inventory Management", desc: "Serial/batch tracking, multi-warehouse, stock transfers, barcode generation." },
-                                        { icon: <HeadphonesIcon />, title: "Customer Engagement & CRM", desc: "Loyalty programs, customer groups, marketing campaigns, feedback collection." },
-                                        { icon: <Smartphone />, title: "Orders & Fulfillment", desc: "E-commerce integration (Shopify, WooCommerce), order tracking, returns & refunds management." },
-                                        { icon: <Store />, title: "Multi-Store Management", desc: "Centralized pricing, promotions, and stock visibility across retail chains." },
-                                        { icon: <CreditCard />, title: "Finance & Accounting", desc: "Automated store invoicing, tax compliance (GST), expense tracking, profit & loss analysis." }
+                                        { icon: <ShoppingCart />, title: "Point of Sale (POS)", desc: "Quick barcode/product search, multiple payment options, returns/exchanges, offline functionality." },
+                                        { icon: <Box />, title: "Inventory Management", desc: "Multi-location stock tracking, batch/serial tracking, automated reorders, stock audits." },
+                                        { icon: <HeadphonesIcon />, title: "Customer Engagement & CRM", desc: "Loyalty programs, customer history, targeted promotions, feedback tracking." },
+                                        { icon: <Smartphone />, title: "Orders & Fulfillment", desc: "Unified order management across channels, Click & Collect, home delivery tracking, payment gateway integration." },
+                                        { icon: <Store />, title: "Staff & Store Management", desc: "Shift scheduling, performance monitoring, attendance, role-based access, task checklists." },
+                                        { icon: <CreditCard />, title: "Finance & Reporting", desc: "Sales, expense tracking, P&L, GST-compliant invoices, automated bank reconciliation, dashboards." }
                                     ].map((mod, i) => (
                                         <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
                                             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
@@ -210,24 +222,24 @@ export default function ErpnextRetail() {
                         <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
                             Implementation Process
                         </h2>
-                        <p className="text-zinc-600 text-sm font-normal mb-12 uppercase tracking-widest">
+                        <h3 className="text-base font-bold text-[#00477b] tracking-wider uppercase mb-1">
                             Future-Ready Roadmap
+                        </h3>
+                        <p className="text-zinc-600 text-sm font-normal mb-12">
+                            Plan for continuous digital growth and improvement
                         </p>
                     </div>
 
                     <div className="w-full">
                         <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-16 pb-20 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                             <div className="relative max-w-[90rem] mx-auto">
-                                {/* Continuous Horizontal Line for Desktop */}
-                                <div className="hidden md:block absolute top-[2rem] left-[10%] w-[80%] h-0.5 bg-gradient-to-r from-transparent via-[#00477b]/30 to-transparent z-0"></div>
-
                                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 relative z-10">
                                     {[
-                                        { title: "Retail Audit", desc: "Requirement analysis and gap identification.", icon: <Search /> },
-                                        { title: "System Config", desc: "Setup pricing, taxes, stock locations, and POS.", icon: <Settings /> },
-                                        { title: "Data Migration", desc: "Import item masters, barcodes, opening stock.", icon: <Database /> },
-                                        { title: "Training & Pilot", desc: "Store staff training on POS, pilot launch.", icon: <Users /> },
-                                        { title: "Go-Live & Support", desc: "Complete rollout and ongoing support.", icon: <Rocket /> }
+                                        { week: "Week 1", title: "Retail Operations Analysis", desc: "Analyze retail operations and workflows.", icon: <Search /> },
+                                        { week: "Weeks 2–3", title: "System Customization", desc: "Customize stores, POS, and dashboards.", icon: <Settings /> },
+                                        { week: "Weeks 4–5", title: "Data Migration & Integration", desc: "Migrate data and connect integrations.", icon: <Database /> },
+                                        { week: "Weeks 5–6", title: "Training", desc: "Train teams across all retail functions.", icon: <Users /> },
+                                        { week: "Weeks 7–8", title: "Go-Live & Support", desc: "Launch system and support improvement.", icon: <Rocket /> }
                                     ].map((step, i) => (
                                         <div key={i} className="flex flex-col items-center group pt-2">
                                             {/* Icon Node */}
@@ -238,7 +250,7 @@ export default function ErpnextRetail() {
                                             {/* Content Card */}
                                             <div className="bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm text-center w-full h-full flex flex-col items-center hover:bg-white/70 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
                                                 <span className="inline-flex items-center justify-center bg-blue-100/50 text-[#00477b] font-extrabold text-[10px] px-3 py-1 rounded-full mb-4 tracking-widest uppercase">
-                                                    Phase 0{i + 1}
+                                                    {step.week}
                                                 </span>
                                                 <h4 className="font-semibold text-[#00477b] text-base mb-3 leading-tight">{step.title}</h4>
                                                 <p className="text-sm text-zinc-600 font-normal leading-relaxed">{step.desc}</p>
@@ -261,7 +273,7 @@ export default function ErpnextRetail() {
                             Retail Formats
                         </h2>
                         <p className="text-zinc-600 text-sm font-normal mb-12">
-                            Tailored for Various Retail Types
+                            Tailored ERP for Various Retail Types
                         </p>
                     </div>
 
@@ -270,12 +282,12 @@ export default function ErpnextRetail() {
                             <div className="container mx-auto max-w-[90rem]">
                                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                                     {[
-                                        { bold: "Apparel & Footwear", text: "Size/Color matrix, seasonal collections, discount pricing." },
-                                        { bold: "Electronics & Appliances", text: "Serial number tracking, warranty management." },
-                                        { bold: "Supermarkets & Grocery", text: "Fast checkout, barcode scanning, perishable goods tracking." },
-                                        { bold: "Pharmacies / Healthcare", text: "Batch/expiry tracking, prescription management." },
-                                        { bold: "Boutiques & Specialty Stores", text: "Customer profiles, loyalty programs, bespoke orders." },
-                                        { bold: "Furniture & Home", text: "Showroom inventory, catalog pricing, delivery tracking." }
+                                        { bold: "Apparel & Fashion", text: "Size/color matrix, seasonal collection management." },
+                                        { bold: "Electronics & Appliances", text: "Serial/warranty tracking, demo stock." },
+                                        { bold: "Department Stores", text: "Multi-department and concessionaire management." },
+                                        { bold: "Pharmacy", text: "Batch/expiry tracking, prescription management." },
+                                        { bold: "Grocery & Supermarkets", text: "Perishables, weight-based items, rapid checkout." },
+                                        { bold: "Specialty Stores", text: "Custom attributes, gift wrapping, and delivery options." }
                                     ].map((item, i) => (
                                         <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
                                             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
@@ -293,98 +305,61 @@ export default function ErpnextRetail() {
                 </section>
 
                 {/* 7. Benefits */}
-                <section className="pt-24 pb-12 bg-transparent border-t border-white/40">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                <section className="py-24 bg-transparent text-center relative z-10 border-t border-white/40">
+                    <div className="w-full px-4 mb-8">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             BENEFITS
                         </span>
-                        <h2 className="mb-12 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Why Choose ERPNext?
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            Measurable Retail Business Benefits
                         </h2>
+                        <p className="text-zinc-600 text-sm font-medium max-w-2xl mx-auto">
+                            Data-backed improvements across efficiency, customer loyalty, and financial control.
+                        </p>
                     </div>
 
-                    <div className="w-full">
-                        <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-16 pb-20 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                            <div className="container mx-auto max-w-[90rem]">
-                                <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-                                    {[
-                                        {
-                                            title: "Operational Efficiency",
-                                            icon: <Settings />,
-                                            points: ["20% faster checkouts", "30% time saved on admin", "15% reduction in errors"]
-                                        },
-                                        {
-                                            title: "Customer Experience",
-                                            icon: <Users />,
-                                            points: ["360° customer view", "Personalized loyalty programs", "Omnichannel returns"]
-                                        },
-                                        {
-                                            title: "Financial Control",
-                                            icon: <BarChart3 />,
-                                            points: ["Automated tax compliance", "Store-wise profitability", "Real-time cash flow visibility"]
-                                        },
-                                        {
-                                            title: "Business Growth",
-                                            icon: <ArrowUpRight />,
-                                            points: ["Scalable multi-store setup", "Centralized operations", "Data-driven insights"]
-                                        }
-                                    ].map((benefit, idx) => (
-                                        <div key={idx} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col text-left relative overflow-hidden">
-                                            {/* Subtle glare effect */}
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-
-                                            <div className="flex items-center gap-5 mb-8 relative z-10">
-                                                <div className="size-14 rounded-full bg-white backdrop-blur-md border border-zinc-100 shadow-sm flex items-center justify-center text-[#00477b] group-hover:scale-110 transition-transform duration-300">
-                                                    {React.cloneElement(benefit.icon, { className: "size-6" })}
-                                                </div>
-                                                <h3 className="text-xl font-semibold text-[#00477b]">{benefit.title}</h3>
-                                            </div>
-                                            <ul className="space-y-4 mt-auto relative z-10">
-                                                {benefit.points.map((point, pIdx) => (
-                                                    <li key={pIdx} className="flex items-start gap-3">
-                                                        <div className="mt-0.5 shrink-0 text-[#00477b]/50">
-                                                            <CheckCircle className="size-5" />
-                                                        </div>
-                                                        <span className="text-sm font-medium text-zinc-700 leading-relaxed">{point}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* 8. Why Choose Gnosys Digital */}
-                <section className="pt-24 pb-12 relative z-10">
-                    <div className="container mx-auto px-4 max-w-[90rem] text-center mb-12">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-5">
-                            WHY GNOSYS
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Why Businesses Choose Gnosys Digital
-                        </h2>
-                    </div>
-
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 px-0 shadow-lg shadow-blue-900/5 my-8">
+                        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
                                 {[
-                                    { title: "Deep Retail ERP Implementation Experience", icon: <Store className="size-6" /> },
-                                    { title: "Focus on Usability and Quick Adoption", icon: <Rocket className="size-6" /> },
-                                    { title: "End-to-End System Integration Capabilities", icon: <RefreshCw className="size-6" /> },
-                                    { title: "Responsive Local Support and Maintenance", icon: <HeadphonesIcon className="size-6" /> }
-                                ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center justify-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        
-                                        <div className="size-14 mb-5 rounded-full bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
-                                            {item.icon}
+                                    {
+                                        title: "Operational Efficiency",
+                                        icon: <Settings className="size-6 text-[#00477b]" />,
+                                        points: ["70% faster checkout", "60% fewer stockouts", "80% faster reconciliation"]
+                                    },
+                                    {
+                                        title: "Customer Experience",
+                                        icon: <Users className="size-6 text-[#00477b]" />,
+                                        points: ["360° customer view", "personalized loyalty programs", "omnichannel service"]
+                                    },
+                                    {
+                                        title: "Financial Control",
+                                        icon: <BarChart3 className="size-6 text-[#00477b]" />,
+                                        points: ["Automated GST compliance", "audit-ready records", "real-time cash flow visibility"]
+                                    },
+                                    {
+                                        title: "Business Growth",
+                                        icon: <ArrowUpRight className="size-6 text-[#00477b]" />,
+                                        points: ["Data-driven decisions", "scalable operations", "improved margins"]
+                                    }
+                                ].map((benefit, idx) => (
+                                    <div key={idx} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 text-left hover:-translate-y-2 flex flex-col group relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+
+                                        <div className="p-3 bg-blue-50/50 rounded-2xl mb-6 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 self-start">
+                                            {benefit.icon}
                                         </div>
-                                        
-                                        <h3 className="text-[15px] font-bold text-[#00477b] leading-relaxed relative z-10">{item.title}</h3>
+
+                                        <h3 className="text-xl font-bold text-[#00477b] mb-6 tracking-tight group-hover:text-blue-600 transition-colors">{benefit.title}</h3>
+
+                                        <ul className="space-y-3.5 mt-auto relative z-10">
+                                            {benefit.points.map((point, pIdx) => (
+                                                <li key={pIdx} className="flex items-center gap-3 bg-blue-50/40 p-2.5 px-3.5 rounded-xl border border-blue-100/40 group-hover:bg-white transition-colors shadow-xs">
+                                                    <CheckCircle className="size-4 text-[#00477b] shrink-0" />
+                                                    <span className="text-xs font-semibold text-zinc-700 leading-snug">{point}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 ))}
                             </div>
@@ -392,70 +367,85 @@ export default function ErpnextRetail() {
                     </div>
                 </section>
 
-                {/* 9. Special Offer & Contact Form */}
-                <section className="py-24 relative z-10 w-full bg-transparent">
-                    <div className="container mx-auto px-4 lg:px-8 max-w-[90rem]">
-                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full">
-                            
+                {/* 8. Why Choose Gnosys Digital */}
+                <section className="py-24 bg-transparent text-center relative z-10 border-t border-white/40">
+                    <div className="w-full px-4 mb-8">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                            WHY GNOSYS
+                        </span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            Why Choose Gnosys Digital
+                        </h2>
+                    </div>
+
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 px-0 shadow-lg shadow-blue-900/5 my-8">
+                        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+                                {[
+                                    "Retail-focused ERP implementations for Indian SMEs.",
+                                    "Transparent pricing with predictable ROI.",
+                                    "End-to-end support, including training, updates, and account management.",
+                                    "Experience across multiple retail formats and channels."
+                                ].map((item, i) => (
+                                    <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center group min-h-[160px] relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+                                        <div className="bg-blue-50/50 p-3 rounded-2xl mb-4 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                            <CheckCircle className="size-5 text-[#00477b]" />
+                                        </div>
+                                        <p className="text-sm font-bold text-[#00477b] leading-relaxed relative z-10">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 9. Special Offer & Assessment Form (Wrapped in Single Parent Grid) */}
+                <section className="py-24 relative z-10 w-full">
+                    <div className="w-full px-4 lg:px-6 2xl:px-8 max-w-[1600px] mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+
                             {/* Left Column: Special Offer */}
-                            <div className="lg:col-span-5 lg:sticky lg:top-24 mt-4">
-                                <h2 className="text-3xl md:text-4xl font-normal tracking-tight text-[#00477b] mb-6">
-                                    Retail Standard ERP Package
+                            <div className="lg:col-span-5 text-center lg:text-left flex flex-col">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6 self-center lg:self-start">
+                                    SPECIAL PRICING
+                                </span>
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-8">
+                                    Special Offer
                                 </h2>
-                                
-                                <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group">
-                                    <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/40 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-                                    
-                                    <div className="text-center border-b border-zinc-200/60 pb-8 mb-8 relative z-10">
-                                        <h3 className="text-[11px] font-black text-zinc-400 mb-3 uppercase tracking-[0.2em]">Package Starts At</h3>
-                                        <div className="flex justify-center items-start gap-1 mb-4">
-                                            <span className="text-2xl font-bold text-[#00477b] mt-2">₹</span>
-                                            <p className="text-6xl font-black text-[#00477b] tracking-tighter">85,000</p>
+
+                                <div className="bg-white/60 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 border border-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col justify-center h-full">
+                                    {/* Price Header */}
+                                    <div className="text-center pb-8 mb-8 border-b border-zinc-200/60">
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-2">Starts At</h3>
+                                        <div className="flex items-baseline justify-center gap-1">
+                                            <span className="text-3xl font-bold text-[#00477b]">₹</span>
+                                            <span className="text-6xl font-black text-[#00477b] tracking-tight">85,000</span>
                                         </div>
-                                        <span className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 text-[#00477b] text-xs font-bold uppercase tracking-widest border border-blue-200/60 shadow-sm">
-                                            Ideal for 1-5 store setups
-                                        </span>
                                     </div>
 
-                                    <div className="bg-gradient-to-r from-[#00477b]/5 to-transparent rounded-2xl p-5 mb-8 border-l-4 border-[#00477b] relative z-10">
-                                        <p className="text-sm text-zinc-700 font-medium leading-relaxed">
-                                            Includes core modules: <br/>
-                                            <span className="text-[#00477b] font-bold text-base">Core POS, Inventory, Accounts</span>
-                                        </p>
-                                    </div>
+                                    {/* Offer Content */}
+                                    <div className="text-left space-y-4">
+                                        <h4 className="text-base font-bold text-zinc-900">Limited-Time Retail ERP Package</h4>
+                                        <p className="text-sm font-bold text-[#00477b]">Bonus for early bookings:</p>
 
-                                    <div className="relative text-center mb-8 z-10">
-                                        <span className="bg-white/50 backdrop-blur-sm px-4 py-1 rounded-full text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] shadow-sm border border-white">What's Included</span>
-                                        <div className="absolute left-0 top-1/2 w-full h-px bg-gradient-to-r from-transparent via-zinc-300 to-transparent -z-10"></div>
-                                    </div>
-
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
-                                        <div className="bg-white/60 hover:bg-white transition-colors rounded-2xl p-4 border border-white shadow-sm flex items-start gap-3">
-                                            <div className="bg-blue-50 rounded-full p-1 shrink-0 mt-0.5">
-                                                <CheckCircle className="size-4 text-[#00477b]" />
-                                            </div>
-                                            <span className="text-xs font-semibold text-zinc-700 leading-snug">Unlimited SKUs & Transactions</span>
-                                        </div>
-                                        <div className="bg-white/60 hover:bg-white transition-colors rounded-2xl p-4 border border-white shadow-sm flex items-start gap-3">
-                                            <div className="bg-blue-50 rounded-full p-1 shrink-0 mt-0.5">
-                                                <CheckCircle className="size-4 text-[#00477b]" />
-                                            </div>
-                                            <span className="text-xs font-semibold text-zinc-700 leading-snug">No per-transaction fees</span>
-                                        </div>
-                                        <div className="bg-white/60 hover:bg-white transition-colors rounded-2xl p-4 border border-white shadow-sm flex items-start gap-3 sm:col-span-2">
-                                            <div className="bg-blue-50 rounded-full p-1 shrink-0 mt-0.5">
-                                                <CheckCircle className="size-4 text-[#00477b]" />
-                                            </div>
-                                            <span className="text-xs font-semibold text-zinc-700 leading-snug">Standard data import and POS hardware integration support</span>
-                                        </div>
+                                        <ul className="space-y-3 text-sm text-zinc-600 font-medium">
+                                            <li className="flex items-start gap-2.5">
+                                                <span className="text-[#00477b] font-bold text-lg leading-none mt-0.5">•</span>
+                                                <span className="leading-relaxed">Free e-commerce integration, 3 months extended support, custom dashboard.</span>
+                                            </li>
+                                            <li className="flex items-start gap-2.5">
+                                                <span className="text-[#00477b] font-bold text-lg leading-none mt-0.5">•</span>
+                                                <span className="leading-relaxed">Unified POS for up to 3 stores, inventory management, loyalty program, GST compliance, training, and support.</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Right Column: Contact Form */}
-                            <div className="lg:col-span-7 relative">
-                                <div className="absolute -inset-4 bg-gradient-to-br from-white/40 to-white/10 blur-2xl rounded-[3rem] -z-10"></div>
-                                <div className="bg-white/60 backdrop-blur-2xl rounded-[2.5rem] p-8 md:p-12 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden">
+                            {/* Right Column: Assessment Form */}
+                            <div className="lg:col-span-7 flex flex-col">
+                                <div className="bg-gradient-to-bl from-white/70 to-white/40 backdrop-blur-xl border border-white/80 rounded-[2.5rem] p-8 md:p-12 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-500 h-full">
                                     <div className="mb-10 text-left">
                                         <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-white shadow-sm text-[10px] font-black text-[#00477b] uppercase tracking-widest mb-6">
                                             GET STARTED
@@ -516,35 +506,31 @@ export default function ErpnextRetail() {
 
                                         <div className="pt-2">
                                             <Label className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest block mb-4 ml-1">Key Operational Challenges</Label>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                <label className="flex items-center gap-4 p-4 rounded-2xl border border-white hover:border-[#00477b]/30 hover:shadow-md cursor-pointer transition-all bg-white/80 backdrop-blur-sm shadow-sm group">
-                                                    <div className="relative flex items-center justify-center size-5 rounded border border-zinc-300 bg-white group-hover:border-[#00477b]/50 transition-colors shrink-0">
-                                                        <input type="checkbox" className="absolute opacity-0 w-full h-full cursor-pointer peer" />
-                                                        <svg className="hidden peer-checked:block size-3.5 text-[#00477b] pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                    </div>
-                                                    <span className="text-sm font-semibold text-zinc-600 group-hover:text-[#00477b] transition-colors">Inventory Discrepancies</span>
-                                                </label>
-                                                <label className="flex items-center gap-4 p-4 rounded-2xl border border-white hover:border-[#00477b]/30 hover:shadow-md cursor-pointer transition-all bg-white/80 backdrop-blur-sm shadow-sm group">
-                                                    <div className="relative flex items-center justify-center size-5 rounded border border-zinc-300 bg-white group-hover:border-[#00477b]/50 transition-colors shrink-0">
-                                                        <input type="checkbox" className="absolute opacity-0 w-full h-full cursor-pointer peer" />
-                                                        <svg className="hidden peer-checked:block size-3.5 text-[#00477b] pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                    </div>
-                                                    <span className="text-sm font-semibold text-zinc-600 group-hover:text-[#00477b] transition-colors">Multi-store Sync Issues</span>
-                                                </label>
-                                                <label className="flex items-center gap-4 p-4 rounded-2xl border border-white hover:border-[#00477b]/30 hover:shadow-md cursor-pointer transition-all bg-white/80 backdrop-blur-sm shadow-sm group">
-                                                    <div className="relative flex items-center justify-center size-5 rounded border border-zinc-300 bg-white group-hover:border-[#00477b]/50 transition-colors shrink-0">
-                                                        <input type="checkbox" className="absolute opacity-0 w-full h-full cursor-pointer peer" />
-                                                        <svg className="hidden peer-checked:block size-3.5 text-[#00477b] pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                    </div>
-                                                    <span className="text-sm font-semibold text-zinc-600 group-hover:text-[#00477b] transition-colors">Poor Billing Speed (POS)</span>
-                                                </label>
-                                                <label className="flex items-center gap-4 p-4 rounded-2xl border border-white hover:border-[#00477b]/30 hover:shadow-md cursor-pointer transition-all bg-white/80 backdrop-blur-sm shadow-sm group">
-                                                    <div className="relative flex items-center justify-center size-5 rounded border border-zinc-300 bg-white group-hover:border-[#00477b]/50 transition-colors shrink-0">
-                                                        <input type="checkbox" className="absolute opacity-0 w-full h-full cursor-pointer peer" />
-                                                        <svg className="hidden peer-checked:block size-3.5 text-[#00477b] pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                                    </div>
-                                                    <span className="text-sm font-semibold text-zinc-600 group-hover:text-[#00477b] transition-colors">E-commerce Integration</span>
-                                                </label>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-white/70 p-4 rounded-2xl border border-white shadow-sm">
+                                                {[
+                                                    "Inventory Discrepancies",
+                                                    "Multi-store Sync Issues",
+                                                    "Poor Billing Speed (POS)",
+                                                    "E-commerce Integration"
+                                                ].map((challenge, idx) => {
+                                                    const isChecked = selectedChallenges.includes(challenge);
+                                                    return (
+                                                        <div
+                                                            key={idx}
+                                                            onClick={() => toggleChallenge(challenge)}
+                                                            className="flex items-start gap-2.5 text-xs font-medium text-zinc-700 cursor-pointer hover:text-[#00477b] transition-colors p-1.5 rounded-lg hover:bg-white/80 select-none"
+                                                        >
+                                                            <div className={`mt-0.5 size-4 rounded border-2 flex items-center justify-center shrink-0 transition-all duration-200 ${isChecked ? 'bg-[#00477b] border-[#00477b] text-white shadow-xs' : 'bg-white border-zinc-400 hover:border-[#00477b]'}`}>
+                                                                {isChecked && (
+                                                                    <svg className="size-3 fill-none stroke-current stroke-[3]" viewBox="0 0 24 24">
+                                                                        <polyline points="20 6 9 17 4 12" />
+                                                                    </svg>
+                                                                )}
+                                                            </div>
+                                                            <span className="leading-snug font-semibold">{challenge}</span>
+                                                        </div>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
 

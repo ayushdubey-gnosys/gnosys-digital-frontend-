@@ -8,7 +8,7 @@ import {
     Package, RefreshCw, Truck, TrendingDown,
     Link as LinkIcon, FileText, CheckCircle2, ChevronDown,
     ArrowRight, Coins, FileCheck, Settings, Users, BarChart3,
-    ArrowUpRight
+    ArrowUpRight, Search, Globe, Database, Rocket, Layers
 } from 'lucide-react';
 import React from 'react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
@@ -20,36 +20,41 @@ export default function ErpnextEcommerce() {
             <Head title="ERPNext For E-Commerce" />
 
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-20 pb-28 lg:pt-32 lg:pb-36 flex flex-col items-center justify-center text-center min-h-[85vh]">
+            <section className="relative overflow-hidden pt-24 pb-36 lg:pt-36 lg:pb-48 flex items-center min-h-[92vh] lg:min-h-[100vh] w-full">
                 <div className="absolute inset-0 z-0">
                     <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
                         style={{ backgroundImage: "url('/assets/erp-ecomm.webp')", backgroundColor: '#002a3a' }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none lg:w-1/2"></div>
                 </div>
 
-                <div className="container relative z-10 mx-auto px-4 max-w-4xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6">
-                            Unify Your Sales, Stock, And Accounts.
-                            <br />
-                            <span className="text-zinc-300 font-normal">Automate Everything Else.</span>
-                        </h1>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                E-Commerce ERP Solution
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                Unify Your Sales, Stock, And Accounts.
+                                <br />
+                                <span className="text-blue-100 font-normal">Automate Everything Else.</span>
+                            </h1>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed font-medium mb-10 max-w-3xl mx-auto">
-                            Stop juggling apps and spreadsheets. Get a single, intelligent system that connects your marketplaces, website, warehouse, and financials. Scale your business, not your workload.
-                        </p>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                Stop juggling apps and spreadsheets. Get a single, intelligent system that connects your marketplaces, website, warehouse, and financials. Scale your business, not your workload.
+                            </p>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <span className="relative z-10 flex items-center gap-2">Book Your Free E-Commerce Workflow Assessment <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Button>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300">
+                                <span className="relative z-10 flex items-center gap-2">Book Your Free E-Commerce Workflow Assessment <span className="text-xl">&rarr;</span></span>
+                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            </Button>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -179,51 +184,55 @@ export default function ErpnextEcommerce() {
             {/* 5. Roadmap */}
             <section className="py-24 bg-transparent overflow-hidden relative z-10 w-full">
                 <div className="w-full mx-auto text-center">
-                    <div className="text-center mb-16 md:mb-24 max-w-5xl mx-auto px-4">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                    <div className="text-center mb-16 md:mb-20 max-w-5xl mx-auto px-4">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-white/80 shadow-xs text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                             Implementation Plan
                         </span>
-                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
+                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
                             6-Week E-commerce Roadmap
                         </h2>
-                        <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
+                        <p className="text-zinc-600 text-base sm:text-lg max-w-2xl mx-auto font-normal">
                             A streamlined, step-by-step plan to automate operations, integrate channels, and empower your team without the chaos.
                         </p>
                     </div>
                 </div>
 
-                <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 px-0 shadow-lg shadow-blue-900/5 my-8">
-                    <div className="container mx-auto px-4 max-w-7xl">
-                        <div className="relative pt-8 max-w-[1600px] mx-auto">
-                            {/* Horizontal connecting line (Desktop only) */}
-                            <div className="hidden lg:block absolute top-[36px] left-[10%] right-[10%] border-t-2 border-dashed border-[#00477b]/20 z-0"></div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 relative z-10">
-                                {[
-                                    { step: "Week 1-2", title: "Process Mapping & Architecture", desc: "Map sales channels, inventory workflows, and financials to establish the baseline." },
-                                    { step: "Week 3", title: "Core System Setup", desc: "Configure users, multi-warehouse structures, pricing rules, and GST taxation." },
-                                    { step: "Week 4", title: "Omnichannel Integrations", desc: "Connect sales channels (Shopify, Amazon), payment gateways, and logistics." },
-                                    { step: "Week 5", title: "Migration & QA Testing", desc: "Import historical data, followed by rigorous end-to-end system testing." },
-                                    { step: "Week 6", title: "Training & Launch", desc: "Go live with comprehensive team training and dedicated hand-holding support." },
-                                ].map((item, i) => (
-                                    <div key={i} className="flex flex-col relative group">
-                                        {/* Vertical Connecting Line (Mobile only) */}
-                                        {i !== 4 && <div className="lg:hidden absolute left-[27px] top-14 bottom-[-24px] border-l-2 border-dashed border-[#00477b]/20"></div>}
-
-                                        {/* Center Dot/Number */}
-                                        <div className="w-14 h-14 rounded-full bg-white/85 backdrop-blur-sm border border-white/95 shadow-sm flex items-center justify-center shrink-0 relative z-10 text-[#00477b] font-bold text-lg group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 mb-6 lg:mx-auto">
-                                            {i + 1}
+                <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 px-4 sm:px-6 lg:px-10 shadow-lg shadow-blue-900/5 my-8">
+                    <div className="max-w-[1650px] mx-auto w-full">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 xl:gap-6 w-full">
+                            {[
+                                { step: "Week 1-2", icon: Search, title: "Process Mapping & Architecture", desc: "Map sales channels, inventory workflows, and financials to establish the baseline." },
+                                { step: "Week 3", icon: Settings, title: "Core System Setup", desc: "Configure users, multi-warehouse structures, pricing rules, and GST taxation." },
+                                { step: "Week 4", icon: Globe, title: "Omnichannel Integrations", desc: "Connect sales channels (Shopify, Amazon), payment gateways, and logistics." },
+                                { step: "Week 5", icon: Database, title: "Migration & QA Testing", desc: "Import historical data, followed by rigorous end-to-end system testing." },
+                                { step: "Week 6", icon: Rocket, title: "Training & Launch", desc: "Go live with comprehensive team training and dedicated hand-holding support." },
+                            ].map((item, i) => (
+                                <div 
+                                    key={i} 
+                                    className="relative bg-white/80 hover:bg-white backdrop-blur-md rounded-2xl p-6 sm:p-7 border border-white/90 hover:border-[#00477b]/25 shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between group min-h-[280px]"
+                                >
+                                    <div>
+                                        <div className="flex items-center justify-between w-full mb-4">
+                                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 text-[#00477b] flex items-center justify-center group-hover:bg-[#00477b] group-hover:text-white group-hover:border-[#00477b] transition-all duration-300 shadow-2xs">
+                                                <item.icon className="size-5" />
+                                            </div>
+                                            <span className="text-xs font-bold font-mono px-3 py-1 rounded-full bg-[#00477b]/10 text-[#00477b] group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                0{i + 1}
+                                            </span>
                                         </div>
-
-                                        {/* Card */}
-                                        <div className="bg-white/30 backdrop-blur-lg p-6 rounded-2xl shadow-sm border border-white/50 group-hover:shadow-md group-hover:bg-white/50 transition-all duration-300 flex-1 ml-12 lg:ml-0 flex flex-col">
-                                            <div className="text-[10px] font-bold text-zinc-500 tracking-widest uppercase mb-2">{item.step}</div>
-                                            <h3 className="text-[15px] font-bold text-[#00477b] mb-2 leading-tight">{item.title}</h3>
-                                            <p className="text-[13px] text-zinc-600 leading-relaxed">{item.desc}</p>
-                                        </div>
+                                        <div className="w-8 h-1 rounded-full bg-[#00477b]/20 group-hover:w-full group-hover:bg-[#00477b] transition-all duration-500 mb-3" />
+                                        <span className="inline-block px-3 py-1 rounded-full bg-blue-50/80 border border-blue-100/90 text-[#00477b] font-extrabold text-[11px] uppercase tracking-wider mb-2.5">
+                                            {item.step}
+                                        </span>
+                                        <h3 className="text-[16px] font-bold text-[#00477b] mb-2 leading-snug tracking-tight group-hover:text-[#002f52]">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-xs sm:text-[13px] text-zinc-600 leading-relaxed font-normal">
+                                            {item.desc}
+                                        </p>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -310,9 +319,12 @@ export default function ErpnextEcommerce() {
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6 w-fit">
                                 GET STARTED
                             </span>
-                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] leading-tight">
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] leading-tight mb-2">
                                 Ready To Scale Without The Chaos?
                             </h2>
+                            <p className="text-zinc-500 text-sm font-medium">
+                                Choose Your Next Step:
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -326,10 +338,10 @@ export default function ErpnextEcommerce() {
                             <div className="lg:col-span-6 flex flex-col justify-center">
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[
-                                        "50+ E-commerce implementations across India",
-                                        "Specialists in retail operations (B2B, B2C, D2C, Marketplaces)",
-                                        "Agile onboarding (Go-Live in 4-6 weeks)",
-                                        "Dedicated support team that understands e-commerce ops"
+                                        "60+ E-commerce Implementations across India.",
+                                        "Specialists in Indian Compliance (GST, E-Way Bills, E-Invoicing).",
+                                        "Rapid Onboarding: Go-live in 6-8 weeks.",
+                                        "Dedicated Support Team that understands e-commerce ops."
                                     ].map((item, i) => (
                                         <div key={i} className="bg-white/20 backdrop-blur-lg border border-white/40 p-6 rounded-2xl text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center justify-center">
                                             <div className="size-12 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shrink-0">
@@ -344,9 +356,9 @@ export default function ErpnextEcommerce() {
                             {/* Right Side Content: Stack of 3 action buttons */}
                             <div className="lg:col-span-6 flex flex-col justify-between gap-4 w-full">
                                 {[
-                                    { title: "Get a tailored automation plan.", btnText: "Book Free Assessment" },
+                                    { title: "Get a tailored automation plan.", btnText: "Book a Free Assessment" },
                                     { title: "Walk through the platform with our expert.", btnText: "See Live Demo" },
-                                    { title: "Instant clarity on your questions.", btnText: "Talk To An Expert" }
+                                    { title: "Instant clarity on your questions.", btnText: "Talk to an Expert" }
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white/20 backdrop-blur-lg p-5 rounded-2xl shadow-sm border border-white/40 hover:bg-white/30 transition-all group flex flex-col sm:flex-row items-center justify-between gap-4">
                                         <h3 className="font-bold text-sm sm:text-base text-[#00477b] text-center sm:text-left flex-1">{item.title}</h3>
@@ -372,44 +384,28 @@ export default function ErpnextEcommerce() {
                             <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6 w-fit">
                                 Transparent Pricing
                             </span>
-                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4 leading-tight">
                                 E-Commerce ERP Package
                             </h2>
                             <p className="text-zinc-600 font-medium mb-8 text-sm sm:text-base leading-relaxed">
-                                Everything you need to automate workflows, integrate channels, and scale your brand—without the enterprise price tag.
+                                Everything you need to automate and scale.
                             </p>
 
                             {/* Pricing Box */}
                             <div className="bg-white/20 backdrop-blur-xl rounded-3xl shadow-xl border border-white/40 p-8 flex flex-col gap-6 relative group overflow-hidden mb-6">
                                 <div className="border-b border-white/40 pb-6">
-                                    <h3 className="text-lg font-bold text-[#00477b] mb-2">Comprehensive Plan</h3>
-                                    <p className="text-xs text-zinc-500 font-medium">One-time implementation fee with transparent deliverables.</p>
-                                    <div className="mt-4">
-                                        <div className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-1">Starts At</div>
-                                        <div className="text-4xl sm:text-5xl font-black text-[#00477b] tracking-tight">
-                                            ₹75<span className="text-3xl sm:text-4xl text-[#00477b]/80">,000</span>
-                                        </div>
+                                    <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">Starts At</div>
+                                    <div className="text-4xl sm:text-5xl font-black text-[#00477b] tracking-tight">
+                                        ₹75,000
                                     </div>
                                 </div>
 
                                 <div className="space-y-4">
-                                    <h4 className="font-bold text-[#00477b] uppercase tracking-widest text-xs">What's Included</h4>
+                                    <h4 className="font-bold text-[#00477b] uppercase tracking-widest text-xs">Includes:</h4>
                                     <ul className="space-y-3 text-sm text-zinc-700 font-medium">
                                         <li className="flex items-start gap-2.5">
-                                            <CheckCircle2 className="size-4 text-[#00477b] shrink-0 mt-0.5" />
-                                            <span>Complete Inventory & Warehouse Management</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <CheckCircle2 className="size-4 text-[#00477b] shrink-0 mt-0.5" />
-                                            <span>Order & Shipping Automation</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <CheckCircle2 className="size-4 text-[#00477b] shrink-0 mt-0.5" />
-                                            <span>Finance, Taxes, & Accounting</span>
-                                        </li>
-                                        <li className="flex items-start gap-2.5">
-                                            <CheckCircle2 className="size-4 text-[#00477b] shrink-0 mt-0.5" />
-                                            <span>Training & Dedicated Go-Live Support</span>
+                                            <span className="size-1.5 rounded-full bg-[#00477b] shrink-0 mt-2" />
+                                            <span>Order & Inventory Management, 2 Marketplace Integrations, Automated Shipping & GST, 5 User Licenses, Training & Go-Live Support.</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -419,17 +415,17 @@ export default function ErpnextEcommerce() {
                             <div className="bg-white/30 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-sm relative overflow-hidden group/bonus">
                                 <div className="absolute top-0 left-0 w-1 h-full bg-[#00477b]"></div>
                                 <h4 className="font-bold text-[#00477b] mb-3 uppercase tracking-wider text-xs flex items-center gap-2">
-                                    Limited-Time Bonuses
+                                    Limited time bonuses:
                                 </h4>
                                 <ul className="space-y-2 text-sm text-zinc-700 font-medium">
                                     <li className="flex items-center gap-2">
-                                        <span className="text-zinc-400 font-bold">•</span> Free Amazon/Flipkart connector setup
+                                        <span className="text-zinc-400 font-bold">•</span> Free Amazon/Flipkart Connector Setup.
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="text-zinc-400 font-bold">•</span> Free data migration from current platform
+                                        <span className="text-zinc-400 font-bold">•</span> Free Data Migration from your current platform
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <span className="text-zinc-400 font-bold">•</span> 3 Months Extended Priority Support
+                                        <span className="text-zinc-400 font-bold">•</span> 3 Months Extended Priority Support.
                                     </li>
                                 </ul>
                             </div>

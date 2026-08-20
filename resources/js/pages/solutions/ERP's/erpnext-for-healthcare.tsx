@@ -3,7 +3,8 @@ import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { 
     Activity, Clock, FileCheck, Target, Heart, Search, FileText, CheckCircle2, ChevronDown,
-    Stethoscope, Pill, Hospital, Microscope, Truck, HeartPulse, ShoppingBag
+    Stethoscope, Pill, Hospital, Microscope, Truck, HeartPulse, ShoppingBag,
+    Calendar, Building2, CreditCard, Users2, Wrench, BarChart3, ShieldCheck
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
@@ -18,35 +19,39 @@ export default function ErpnextForHealthcare() {
             <Head title="ERPNext For Healthcare" />
             
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 flex items-center justify-center text-center min-h-[85vh]">
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-28 lg:pb-44 flex items-center justify-center text-center min-h-[92vh] lg:min-h-[100vh]">
                 <div className="absolute inset-0 z-0">
                     <div 
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
                         style={{ backgroundImage: "url('/assets/healthcare.webp')", backgroundColor: '#00477b' }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/40"></div>
+                    {/* Subtle, soft gradient so the image stays 100% sharp and clear while keeping text readable */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none"></div>
                 </div>
                 
-                <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-5xl">
+                <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-4xl">
                     <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                            Healthcare ERP Solution
+                        </span>
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                             ERPNext For Healthcare
                         </h1>
                     </ScrollReveal>
                     <ScrollReveal animation="fade-up" delay={180}>
-                        <h2 className="text-2xl sm:text-3xl font-semibold text-blue-100 mb-6">
+                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-100 mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                             Digital Systems For Clinics, Hospitals & Labs
                         </h2>
                     </ScrollReveal>
                     <ScrollReveal animation="fade-up" delay={280}>
-                        <p className="max-w-3xl mx-auto text-lg text-blue-50 leading-relaxed font-medium mb-10">
+                        <p className="max-w-2xl mx-auto text-sm sm:text-base text-white/95 leading-relaxed font-medium mb-8 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
                             Transform your healthcare operations with one unified, open-source platform. From patient registration to pharmacy inventory, labs to billing — ERPNext turns your medical practice into a streamlined, compliant, and data-driven institution.
                         </p>
                     </ScrollReveal>
                     <ScrollReveal animation="fade-up" delay={380}>
-                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
+                        <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 h-12 text-sm sm:text-base font-bold shadow-lg transition-all duration-300">
                             <span className="relative z-10 flex items-center gap-2">Book a Free Healthcare-ERP Discovery Call <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
                         </Button>
                     </ScrollReveal>
                 </div>
@@ -94,69 +99,84 @@ export default function ErpnextForHealthcare() {
 
             {/* 3. What ERPNext Healthcare Can Manage (Table) */}
             <section className="py-20 bg-transparent">
-                <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                     <div className="text-center mb-10">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                            Capabilities
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-white/80 shadow-xs text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                            Capabilities & Scope
                         </span>
                         <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">
                             What ERPNext Healthcare Can Manage
                         </h2>
+                        <p className="mt-4 text-zinc-600 max-w-2xl mx-auto text-sm sm:text-base font-normal">
+                            Explore full-stack clinical, inventory, financial, and compliance modules engineered for modern medical facilities.
+                        </p>
                     </div>
                     
-                    <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl shadow-xl overflow-hidden">
-                        <table className="w-full text-left border-collapse text-sm sm:text-base">
-                            <thead>
-                                <tr className="bg-[#00477b] text-white">
-                                    <th className="py-5 px-6 font-bold w-[65%] border-r border-blue-800 text-xs sm:text-sm uppercase tracking-wider">Module / Functionality</th>
-                                    <th className="py-5 px-6 font-bold w-[35%] text-xs sm:text-sm uppercase tracking-wider">Ideal For</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-white/60 text-zinc-800">
-                                {[
-                                    { mod: "Patient Management: registration, patient master data, patient history & medical records, encounter management", ideal: "Clinics, hospitals, multi-doctor practices" },
-                                    { mod: "Appointment Scheduling & Practitioner Calendars", ideal: "OPD clinics, multi-doctor hospitals, diagnostic centers" },
-                                    { mod: "OPD / IPD Workflow: admissions, bed management, discharge processes, inpatient tracking", ideal: "Hospitals, multi-specialty centers" },
-                                    { mod: "Laboratory & Radiology Module: sample tracking, test requests, report generation, lab order management", ideal: "Labs, diagnostic centers, hospitals with in-house labs" },
-                                    { mod: "Pharmacy & Inventory Management: drug stock, expiry tracking, reorder alerts, billing, integration with pharmacy & store", ideal: "Hospitals, clinics with pharmacy, drug store, dispensary" },
-                                    { mod: "Billing & Financials: patient billing, insurance/ insurance claims (if needed), expense tracking, accounting integration", ideal: "Clinics, hospitals, diagnostic centers, multi-branch facilities" },
-                                    { mod: "HR & Staff Management: doctor/nurse scheduling, payroll, leave/attendance, staff records, compliance & certification tracking", ideal: "Hospitals, clinics, labs, healthcare centers" },
-                                    { mod: "Asset & Equipment Management: manage medical equipment, maintenance schedules, asset tracking, depreciation / maintenance history", ideal: "Hospitals, labs, diagnostic centers, clinics with equipment" },
-                                    { mod: "Reporting & Analytics: dashboards, appointment analytics, financial reports, lab test stats, occupancy, and resource utilization reports", ideal: "Hospital management, admin staff, decision makers" },
-                                    { mod: "Compliance & Audit Trail Support: Medical coding support (ICD-10, etc.), record of encounters, medication history, documentation for audits/standards", ideal: "Hospitals, clinics needing regulatory compliance & structured records" }
-                                ].map((row, i) => {
-                                    const parts = row.mod.split(':');
-                                    const title = parts[0];
-                                    const desc = parts.slice(1).join(':');
-
-                                    return (
-                                        <tr key={i} className="hover:bg-white/20 transition-colors">
-                                            <td className="py-5 px-6 border-r border-white/60">
-                                                <div className="flex items-start gap-3">
-                                                    <span className="mt-2 size-1.5 rounded-full bg-zinc-500 shrink-0 shadow-sm animate-pulse" />
+                    <div className="bg-white/70 backdrop-blur-xl border border-white/90 rounded-3xl shadow-[0_16px_40px_rgba(0,50,110,0.06)] overflow-hidden">
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left border-collapse">
+                                <thead>
+                                    <tr className="bg-gradient-to-r from-[#00477b] to-[#003355] text-white">
+                                        <th className="py-5 px-6 sm:px-8 font-bold w-[62%] text-xs sm:text-sm uppercase tracking-wider border-r border-white/10">
+                                            <div className="flex items-center gap-2.5">
+                                                <Activity className="size-4 text-blue-200" />
+                                                <span>Module / Functionality</span>
+                                            </div>
+                                        </th>
+                                        <th className="py-5 px-6 sm:px-8 font-bold w-[38%] text-xs sm:text-sm uppercase tracking-wider">
+                                            <div className="flex items-center gap-2.5">
+                                                <Building2 className="size-4 text-blue-200" />
+                                                <span>Ideal For</span>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-zinc-200/60 text-zinc-800">
+                                    {[
+                                        { icon: HeartPulse, title: "Patient Management", desc: "Registration, patient master data, patient history & medical records, encounter management.", ideal: ["Clinics", "Hospitals", "Multi-doctor practices"] },
+                                        { icon: Calendar, title: "Appointment Scheduling & Practitioner Calendars", desc: "Online booking, slot allocation, queue management, and SMS/WhatsApp notifications.", ideal: ["OPD clinics", "Multi-doctor hospitals", "Diagnostic centers"] },
+                                        { icon: Hospital, title: "OPD / IPD Workflow", desc: "Admissions, bed management, discharge processes, and inpatient clinical tracking.", ideal: ["Hospitals", "Multi-specialty centers"] },
+                                        { icon: Microscope, title: "Laboratory & Radiology Module", desc: "Sample tracking, test requests, report generation, and lab order management.", ideal: ["Labs", "Diagnostic centers", "In-house hospital labs"] },
+                                        { icon: Pill, title: "Pharmacy & Inventory Management", desc: "Drug stock, expiry tracking, reorder alerts, billing, and pharmacy POS integration.", ideal: ["Hospitals", "Dispensaries", "Pharmacy retail stores"] },
+                                        { icon: CreditCard, title: "Billing & Financials", desc: "Patient billing, insurance claims, expense tracking, and real-time accounting integration.", ideal: ["Clinics", "Hospitals", "Diagnostic centers", "Multi-branch facilities"] },
+                                        { icon: Users2, title: "HR & Staff Management", desc: "Doctor/nurse scheduling, payroll, leave/attendance, staff records, and compliance tracking.", ideal: ["Hospitals", "Clinics", "Labs", "Healthcare centers"] },
+                                        { icon: Wrench, title: "Asset & Equipment Management", desc: "Medical equipment maintenance schedules, asset tracking, depreciation, and calibration history.", ideal: ["Hospitals", "Diagnostic labs", "Clinics with devices"] },
+                                        { icon: BarChart3, title: "Reporting & Analytics", desc: "Interactive dashboards, appointment stats, revenue analytics, lab test metrics, and occupancy reports.", ideal: ["Hospital leadership", "Admin staff", "Decision makers"] },
+                                        { icon: ShieldCheck, title: "Compliance & Audit Trail Support", desc: "Medical coding support (ICD-10), record of encounters, medication history, and audit readiness.", ideal: ["Regulatory healthcare", "Accredited hospitals", "Clinics"] }
+                                    ].map((row, i) => (
+                                        <tr key={i} className="hover:bg-blue-50/40 transition-colors group">
+                                            <td className="py-4.5 sm:py-5 px-6 sm:px-8 border-r border-zinc-200/60">
+                                                <div className="flex items-start gap-4">
+                                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 text-[#00477b] border border-[#00477b]/15 flex items-center justify-center shrink-0 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 shadow-2xs mt-0.5">
+                                                        <row.icon className="size-5" />
+                                                    </div>
                                                     <div className="flex flex-col">
-                                                        <span className="font-bold text-zinc-900 text-[15px] sm:text-base leading-snug">{title.trim()}</span>
-                                                        {desc && <span className="text-xs sm:text-sm text-zinc-500 mt-1 font-medium leading-relaxed">{desc.trim()}</span>}
+                                                        <span className="font-bold text-[#00477b] text-[15px] sm:text-base leading-snug group-hover:text-[#003355]">
+                                                            {row.title}
+                                                        </span>
+                                                        <span className="text-xs sm:text-[13px] text-zinc-600 mt-1 font-normal leading-relaxed">
+                                                            {row.desc}
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td className="py-5 px-6">
-                                                <div className="flex flex-wrap gap-1.5">
-                                    {row.ideal.split(',').map((item, idx) => (
+                                            <td className="py-4.5 sm:py-5 px-6 sm:px-8 align-middle">
+                                                <div className="flex flex-wrap gap-2">
+                                                    {row.ideal.map((item, idx) => (
                                                         <span 
                                                             key={idx} 
-                                                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/60 text-zinc-800 border border-white/80 hover:bg-white/80 transition-colors cursor-default"
+                                                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white text-[#00477b] border border-blue-200/80 shadow-2xs group-hover:border-[#00477b]/40 hover:bg-[#00477b] hover:text-white transition-all duration-200 cursor-default"
                                                         >
-                                                            {item.trim()}
+                                                            {item}
                                                         </span>
                                                     ))}
                                                 </div>
                                             </td>
                                         </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -337,20 +357,20 @@ export default function ErpnextForHealthcare() {
             </section>
 
             {/* 8. Who This Is For */}
-            <section className="py-24 bg-transparent text-center">
+            <section className="pt-16 pb-4 bg-transparent text-center">
                 <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-8">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                             Target Audience
                         </span>
                         <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Who This Is For</h2>
                     </div>
-                    <p className="text-zinc-600 mb-12 max-w-2xl mx-auto font-medium">
+                    <p className="text-zinc-600 mb-8 max-w-2xl mx-auto font-medium">
                         This solution fits a wide range of healthcare organizations, tailored to streamline operational workflows and improve patient care.
                     </p>
                 </div>
 
-                <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-12 pb-12 px-0 shadow-lg shadow-blue-900/5 my-8">
+                <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-8 pb-8 px-0 shadow-lg shadow-blue-900/5 mt-4 mb-0">
                     <div className="w-full px-4 md:px-8">
                         {/* First Row: 4 Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left mb-6">
@@ -401,7 +421,7 @@ export default function ErpnextForHealthcare() {
             </section>
 
             {/* 9. FAQ & Final CTA Side-by-Side Section */}
-            <section className="py-24 bg-transparent border-t border-white/40">
+            <section className="pt-10 pb-20 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 md:px-8 lg:px-10">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
                         

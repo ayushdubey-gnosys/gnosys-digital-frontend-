@@ -19,37 +19,39 @@ export default function ErpnextFinance() {
             <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-blue-100/60 via-purple-50/50 to-pink-100/60 pointer-events-none"></div>
 
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 flex items-center justify-center text-center min-h-[85vh]">
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
                 {/* Background Container */}
                 <div className="absolute inset-0 z-0">
                     <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: "url('/assets/erp-finance.webp')" }}
+                        className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/erp-finance.webp')", backgroundColor: '#020b18' }}
                     ></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent pointer-events-none lg:w-1/2"></div>
                 </div>
 
-                <div className="container relative z-10 mx-auto px-4 lg:px-8">
-                    <div className="max-w-4xl space-y-8 flex flex-col items-center relative z-20 mx-auto">
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl lg:max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
                         <ScrollReveal animation="fade-up" delay={80}>
-                            <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-6xl lg:text-[68px] leading-[1.05] drop-shadow-lg mt-12">
-                                One Secure Platform To Manage Operations, Compliance<br />
-                                And Client Portfolios
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                Financial Services ERP
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                One Secure Platform To Manage Operations, Compliance <br />
+                                <span className="text-blue-100 font-normal">And Client Portfolios</span>
                             </h1>
                         </ScrollReveal>
 
                         <ScrollReveal animation="fade-up" delay={180}>
-                            <p className="max-w-2xl text-lg sm:text-xl text-zinc-300/90 leading-relaxed font-medium mx-auto">
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
                                 Streamline client onboarding, investment management, regulatory reporting, and fee tracking. Reduce risk and improve efficiency—all in a single platform designed for financial services.
                             </p>
                         </ScrollReveal>
 
                         <ScrollReveal animation="fade-up" delay={280}>
-                            <div className="flex flex-col sm:flex-row justify-center gap-5 pt-8 w-full sm:w-auto">
-                                <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                                    <span className="relative z-10 flex items-center gap-2">Book Free Assessment <span className="text-xl">&rarr;</span></span>
-                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                                </Button>
-                            </div>
+                            <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300">
+                                <span className="relative z-10 flex items-center gap-2">Book Free Assessment <span className="text-xl">&rarr;</span></span>
+                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            </Button>
                         </ScrollReveal>
                     </div>
                 </div>

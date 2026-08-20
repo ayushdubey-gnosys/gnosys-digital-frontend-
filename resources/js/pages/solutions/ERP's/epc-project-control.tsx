@@ -498,26 +498,46 @@ export default function EpcProjectControl() {
                             {/* Left Column: Pricing / Offer (5/12) */}
                             <div className="lg:col-span-5">
                                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                                    Limited-Time Offer
+                                    Limited-Time EPC Implementation Offer
                                 </span>
                                 <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-[#00477b] mb-6">
-                                    ERPNext For EPC Pricing
+                                    ERPNext For EPC
                                 </h2>
 
-                                <div className="bg-white/40 backdrop-blur-lg border border-white/60 p-6 sm:p-8 rounded-2xl shadow-xl">
-                                    <div className="mb-6">
-                                        <div className="text-zinc-500 font-medium mb-1 text-sm">Starting At</div>
-                                        <div className="text-4xl sm:text-5xl font-extrabold text-[#00477b]">₹1,20,000</div>
+                                <div className="bg-white/70 backdrop-blur-xl border border-white/80 p-6 sm:p-7 rounded-3xl shadow-xl space-y-6">
+                                    <div className="bg-white/90 border border-blue-100/80 rounded-2xl p-5 text-center sm:text-left shadow-2xs">
+                                        <div className="text-zinc-500 font-bold mb-1 text-xs uppercase tracking-wider">Starting At</div>
+                                        <div className="text-4xl sm:text-5xl font-extrabold text-[#00477b] tracking-tight">₹1,20,000</div>
                                     </div>
+
                                     <div className="space-y-4">
-                                        <p className="text-sm text-zinc-700 font-medium leading-relaxed">
-                                            Comprehensive package including project management, BOQ & Billing, procurement, HR & payroll, inventory, & support.
+                                        <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed">
+                                            Complete package including project management, BOQ & billing, procurement, dashboards, training & support
                                         </p>
-                                        <ul className="space-y-3 text-sm text-zinc-600 border-t border-white/40 pt-4">
-                                            <li className="flex items-center gap-2.5"><CheckCircle2 className="size-4.5 text-[#00477b]" /> End-To-End Implementation</li>
-                                            <li className="flex items-center gap-2.5"><CheckCircle2 className="size-4.5 text-[#00477b]" /> 3 months post-go-live AMC</li>
-                                            <li className="flex items-center gap-2.5"><CheckCircle2 className="size-4.5 text-[#00477b]" /> Cloud Hosting Assistance</li>
-                                        </ul>
+
+                                        <div className="bg-blue-50/60 border border-blue-100/80 rounded-2xl p-5">
+                                            <div className="text-sm font-bold text-[#00477b] mb-3">
+                                                First 10 Implementations Receive:
+                                            </div>
+                                            <ul className="space-y-2.5 text-xs sm:text-[13px] text-zinc-700 font-medium">
+                                                <li className="flex items-center gap-2.5">
+                                                    <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                                    <span>Custom Project Control Dashboard</span>
+                                                </li>
+                                                <li className="flex items-center gap-2.5">
+                                                    <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                                    <span>2 Additional User Licenses Free</span>
+                                                </li>
+                                                <li className="flex items-center gap-2.5">
+                                                    <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                                    <span>3 Months Extended Support</span>
+                                                </li>
+                                                <li className="flex items-center gap-2.5">
+                                                    <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                                    <span>Priority Go-Live Assistance</span>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -613,32 +633,29 @@ export default function EpcProjectControl() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                             {[
                                 {
-                                    title: "EPC Domain Experts",
-                                    desc: "Implementing ERPs for large Solar, Civil, & MEP projects with domain expertise.",
+                                    text: "40+ successful EPC implementations",
                                     icon: HardHat,
                                 },
                                 {
-                                    title: "Industry Templates",
-                                    desc: "Pre-configured templates for BOQ, subcontracts, & site billing to launch faster.",
+                                    text: "Industry-specific templates for faster deployment",
                                     icon: FileCheck,
                                 },
                                 {
-                                    title: "Transparent Pricing",
-                                    desc: "No hidden license fees or surprise costs. Clear milestone-based models.",
+                                    text: "Transparent pricing with guaranteed deliverables",
                                     icon: Coins,
                                 },
                                 {
-                                    title: "Continuous support",
-                                    desc: "Dedicated post-launch training, updates, and expert optimization support.",
+                                    text: "Dedicated support team familiar with EPC workflows",
                                     icon: Settings,
                                 }
                             ].map((item, i) => (
-                                <div key={i} className="flex flex-col items-start bg-white/40 backdrop-blur-lg border border-white/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                                    <div className="size-12 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shrink-0">
-                                        <item.icon className="size-5 text-[#00477b]" />
+                                <div key={i} className="flex flex-col items-center text-center justify-center bg-white/70 backdrop-blur-md border border-white/80 p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group min-h-[160px]">
+                                    <div className="size-12 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#00477b] group-hover:text-white shrink-0 shadow-2xs">
+                                        <item.icon className="size-5 text-[#00477b] group-hover:text-white transition-colors" />
                                     </div>
-                                    <h4 className="font-bold text-[#00477b] text-base mb-2">{item.title}</h4>
-                                    <p className="text-zinc-600 text-xs leading-relaxed font-medium">{item.desc}</p>
+                                    <p className="font-bold text-[#00477b] text-sm sm:text-[15px] leading-relaxed group-hover:text-[#002f52]">
+                                        {item.text}
+                                    </p>
                                 </div>
                             ))}
                         </div>

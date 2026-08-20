@@ -7,7 +7,7 @@ import {
     CheckCircle, ShoppingCart, Box, Truck, CreditCard, 
     TrendingUp, FileText, ClipboardList, Clock, CheckSquare,
     Search, Server, PlayCircle, Settings, Monitor, Headset,
-    LayoutDashboard, MapPin
+    LayoutDashboard, MapPin, Eye, ArrowUpRight
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
@@ -18,39 +18,48 @@ export default function ErpnextTradingDistribution() {
     return (
         <MainLayout>
             <Head title="ERPNext For Trading & Distribution SMEs" />
+
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
             
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-20 pb-28 lg:pt-36 lg:pb-40 flex items-center justify-center text-center min-h-[85vh] "
-                style={{
-                    backgroundImage: "url('/assets/erp-treading.webp')",
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                }}
-            >
-                <div className="absolute inset-0 bg-[#0a2540]/20 z-0"></div>
-                
-                <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-8 leading-tight drop-shadow-lg">
-                            Streamline Your Wholesale, Retail & Distribution Operations
-                        </h1>
-                    </ScrollReveal>
-                    
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-12 max-w-3xl mx-auto drop-shadow-md">
-                            Manage inventory, orders, logistics and accounting seamlessly from one single platform. Accelerate business growth and customer satisfaction.
-                        </p>
-                    </ScrollReveal>
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
+                {/* Background Container */}
+                <div className="absolute inset-0 z-0">
+                    <div
+                        className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/erp-treading.webp')", backgroundColor: '#020b18' }}
+                    ></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent pointer-events-none lg:w-1/2"></div>
+                </div>
 
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <Link href="/free-digital-consultation">
-                                <span className="relative z-10 flex items-center gap-2">Get A Free Consultation <span className="text-xl">&rarr;</span></span>
-                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                            </Link>
-                        </Button>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                TRADING & DISTRIBUTION
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                Streamline Your <br />
+                                <span className="text-blue-100 font-normal">Wholesale & Distribution</span>
+                            </h1>
+                        </ScrollReveal>
+
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                Manage inventory, orders, logistics, and accounting seamlessly from one single platform. Accelerate business growth and customer satisfaction.
+                            </p>
+                        </ScrollReveal>
+
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <Button asChild className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300">
+                                <Link href="/free-digital-consultation">
+                                    <span className="relative z-10 flex items-center gap-2">Get A Free Consultation <ArrowUpRight className="size-5" /></span>
+                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                </Link>
+                            </Button>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -75,18 +84,19 @@ export default function ErpnextTradingDistribution() {
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
                                 {[
-                                    { icon: <Box />, title: "Stock Uncertainty", desc: "Real-time tracking across multiple warehouses." },
-                                    { icon: <Settings />, title: "Manual Orders", desc: "Automated order to fulfillment workflows." },
-                                    { icon: <Truck />, title: "Logistics Delays", desc: "Optimized dispatch and delivery tracking." },
-                                    { icon: <CreditCard />, title: "Payment Delays", desc: "Integrated invoicing and payment gateways." },
-                                    { icon: <TrendingUp />, title: "Profitability", desc: "Accurate landed cost calculations." }
+                                    { icon: <Box />, title: "Stock Uncertainty", desc: "Not knowing inventory levels across warehouses" },
+                                    { icon: <Settings />, title: "Manual Orders", desc: "Errors in sales orders and invoices" },
+                                    { icon: <Truck />, title: "Logistics Chaos", desc: "Difficulty tracking shipments and deliveries" },
+                                    { icon: <CreditCard />, title: "Payment Delays", desc: "No clarity on receivables and payables" },
+                                    { icon: <Eye />, title: "Poor Visibility", desc: "Lack of real-time data for decisions" }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                        <div className="p-3.5 bg-blue-50/50 text-blue-600 rounded-2xl inline-flex mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-blue-100/50">
+                                    <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center h-full group relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+                                        <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 group-hover:scale-110 transition-transform duration-300 border border-blue-100/50 relative z-10">
                                             {React.cloneElement(item.icon, { className: "size-6" })}
                                         </div>
-                                        <h3 className="text-base font-semibold text-[#00477b] mb-2 leading-tight">{item.title}</h3>
-                                        <p className="text-sm text-zinc-700 font-normal leading-relaxed">{item.desc}</p>
+                                        <h3 className="text-base font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
+                                        <p className="text-xs text-zinc-600 font-medium leading-relaxed relative z-10">{item.desc}</p>
                                     </div>
                                 ))}
                             </div>
@@ -121,18 +131,18 @@ export default function ErpnextTradingDistribution() {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {[
-                                    "End-to-end Inventory visibility",
-                                    "Automated Order Processing",
-                                    "Seamless Logistics & Delivery Tracking",
-                                    "Integrated Accounting & GST Compliance",
-                                    "Multi-Warehouse, Multi-Branch Support",
-                                    "Real-time Analytics & Dashboards"
+                                    "Real-time multi-location inventory tracking",
+                                    "Automated order-to-invoice processing",
+                                    "Integrated logistics and delivery management",
+                                    "Smart accounting with automated GST compliance",
+                                    "Dashboards for sales, stock, and financial health",
+                                    "Faster month-end closing and reconciliation"
                                 ].map((item, i) => (
-                                    <div key={i} className="flex items-center gap-3.5 p-4 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 shadow-sm hover:bg-white/90 hover:shadow-md transition-all duration-200">
+                                    <div key={i} className="flex items-center gap-3.5 p-4 bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:bg-white hover:shadow-md transition-all duration-200">
                                         <div className="flex-shrink-0 size-9 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm">
                                             <CheckCircle className="size-4" />
                                         </div>
-                                        <span className="text-zinc-700 text-sm font-medium leading-tight">{item}</span>
+                                        <span className="text-zinc-700 text-sm font-semibold leading-tight">{item}</span>
                                     </div>
                                 ))}
                             </div>
@@ -153,52 +163,66 @@ export default function ErpnextTradingDistribution() {
                             MODULES
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Key ERPNext Modules
+                            Key ERPNext Modules For Trading & Distribution
                         </h2>
                     </div>
 
                     <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                            {[
-                                { 
-                                    icon: <Box />, 
-                                    title: "Inventory & Warehousing", 
-                                    items: ["Multi-level item trees", "Tracking by serial/batch", "Stock transfers", "Automated re-order levels", "Stock audits"] 
-                                },
-                                { 
-                                    icon: <ShoppingCart />, 
-                                    title: "Sales & Order Processing", 
-                                    items: ["Quotation to invoice automation", "B2B/B2C pricing rules", "Customer portal", "Sales commissions"] 
-                                },
-                                { 
-                                    icon: <Truck />, 
-                                    title: "Logistics & Delivery", 
-                                    items: ["Delivery notes", "Integration with 3PL providers", "Fleet tracking & dispatch schedules", "Route planning and vehicle tracking"] 
-                                },
-                                { 
-                                    icon: <FileText />, 
-                                    title: "Finance & Accounting", 
-                                    items: ["GST/Tax compliance", "Accounts Payable/Receivable", "Multi-currency", "Profitability by item/category"] 
-                                }
-                            ].map((mod, i) => (
-                                <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                    <div className="p-3.5 bg-blue-50/50 text-blue-600 rounded-2xl inline-flex mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-blue-100/50">
-                                        {React.cloneElement(mod.icon, { className: "size-6" })}
+                                {[
+                                    { 
+                                        icon: <FileText className="size-6 text-[#00477b]" />, 
+                                        title: "Inventory & Warehousing", 
+                                        items: [
+                                            "Multi-location stock tracking and stock transfers",
+                                            "Batch & expiry management (essential for FMCG & pharma)",
+                                            "Automated reorder alerts and stock valuation"
+                                        ] 
+                                    },
+                                    { 
+                                        icon: <ShoppingCart className="size-6 text-[#00477b]" />, 
+                                        title: "Sales & Order Processing", 
+                                        items: [
+                                            "Quotation-to-invoice automation",
+                                            "Multi-channel order handling (wholesale, retail, online)",
+                                            "Customer credit & discount management"
+                                        ] 
+                                    },
+                                    { 
+                                        icon: <Box className="size-6 text-[#00477b]" />, 
+                                        title: "Logistics & Delivery", 
+                                        items: [
+                                            "Delivery note management & route optimization",
+                                            "Fleet tracking & proof of delivery",
+                                            "E-way bill generation and freight automation"
+                                        ] 
+                                    },
+                                    { 
+                                        icon: <CreditCard className="size-6 text-[#00477b]" />, 
+                                        title: "Finance & Reporting", 
+                                        items: [
+                                            "Accounts receivable/payable and bank reconciliation",
+                                            "Profitability analysis per product/customer"
+                                        ] 
+                                    }
+                                ].map((mod, i) => (
+                                    <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left h-full group relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+                                        <div className="p-3.5 bg-blue-50/50 rounded-2xl mb-6 border border-blue-100/50 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                            {mod.icon}
+                                        </div>
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-4 relative z-10">{mod.title}</h3>
+                                        <ul className="space-y-3 mt-auto text-left w-full relative z-10">
+                                            {mod.items.map((item, j) => (
+                                                <li key={j} className="flex items-start gap-2.5 text-xs text-zinc-600 font-medium leading-relaxed">
+                                                    <span className="text-[#00477b] font-bold mt-0.5">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                    <h3 className="text-base font-semibold text-[#00477b] mb-4">{mod.title}</h3>
-                                    <ul className="space-y-2 mt-auto text-left w-full">
-                                        {mod.items.map((item, j) => (
-                                            <li key={j} className="flex items-start gap-2 text-sm text-zinc-700 font-normal">
-                                                <div className="bg-white border border-zinc-200 rounded-full p-0.5 mt-0.5 shrink-0">
-                                                    <div className="size-1 bg-zinc-600 rounded-full"></div>
-                                                </div>
-                                                <span className="leading-tight">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -218,28 +242,48 @@ export default function ErpnextTradingDistribution() {
                     <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-                            {[
-                                { step: "1", title: "Discovery & Configuration", desc: ["Process mapping, setup taxes, items, and warehouses.", "Custom workflows and dashboards."] },
-                                { step: "2", title: "Training & Go-Live", desc: ["Role-based training for sales, inventory, and finance teams.", "Master data upload and system launch."] },
-                                { step: "3", title: "Ongoing Support", desc: ["Post go-live stabilization.", "Continuous process refinement and training."] }
-                            ].map((phase, i) => (
-                                <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-sm flex flex-col items-center text-center hover:-translate-y-1 hover:bg-white/60 transition-all duration-300 justify-center">
-                                    <div className="bg-white rounded-full size-12 flex items-center justify-center mb-4 shadow-sm text-zinc-800 font-bold text-lg">
-                                        {phase.step}
+                                {[
+                                    { 
+                                        step: "1", 
+                                        title: "Discovery & Configuration", 
+                                        desc: [
+                                            "Analyze workflows, inventory, and order processes",
+                                            "Configure ERPNext modules and dashboards"
+                                        ] 
+                                    },
+                                    { 
+                                        step: "2", 
+                                        title: "Training & Go-Live", 
+                                        desc: [
+                                            "Role-based training for sales, inventory, logistics, and accounts",
+                                            "Monitor initial operations and optimize"
+                                        ] 
+                                    },
+                                    { 
+                                        step: "3", 
+                                        title: "Ongoing Support", 
+                                        desc: [
+                                            "Regular system health checks",
+                                            "Continuous improvements and scalability planning"
+                                        ] 
+                                    }
+                                ].map((phase, i) => (
+                                    <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col text-left relative overflow-hidden group">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+                                        <div className="size-11 rounded-full border border-blue-100 bg-blue-50/70 flex items-center justify-center mb-6 text-[#00477b] font-bold text-base shadow-sm group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                            {phase.step}
+                                        </div>
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-4 relative z-10">{phase.title}</h3>
+                                        <ul className="space-y-3.5 mt-auto w-full relative z-10">
+                                            {phase.desc.map((pt, j) => (
+                                                <li key={j} className="flex items-start gap-2.5 text-xs text-zinc-600 font-medium leading-relaxed">
+                                                    <span className="text-[#00477b] font-bold mt-0.5">•</span>
+                                                    <span>{pt}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                    <h3 className="text-base font-semibold text-[#00477b] mb-4">{phase.title}</h3>
-                                    <ul className="space-y-2 mt-auto text-left w-full">
-                                        {phase.desc.map((pt, j) => (
-                                            <li key={j} className="flex items-start gap-2 text-xs text-zinc-700 font-normal leading-relaxed">
-                                                <div className="bg-white border border-zinc-200 rounded-full p-0.5 mt-1 shrink-0">
-                                                    <div className="size-1 bg-zinc-600 rounded-full"></div>
-                                                </div>
-                                                <span>{pt}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -261,13 +305,13 @@ export default function ErpnextTradingDistribution() {
                             <div className="grid md:grid-cols-2 gap-6 lg:gap-8 text-left">
                                 <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:bg-white/60 transition-all duration-300 flex flex-col justify-center">
                                     <h3 className="text-xl font-semibold text-[#00477b] mb-1">FMCG Distributor</h3>
-                                    <p className="text-[10px] text-zinc-500 font-bold mb-4 uppercase tracking-wider">Kolkata</p>
-                                    <p className="text-sm text-zinc-700 leading-relaxed font-normal">Automated 500+ daily orders, reduced stock-outs by 40%, and improved delivery time by 2 days.</p>
+                                    <p className="text-[10px] text-zinc-500 font-bold mb-4 uppercase tracking-wider">Delhi NCR</p>
+                                    <p className="text-sm text-zinc-700 leading-relaxed font-normal">Automated stock management reduced stockouts by 70%; month-end closing went from 3 days to 3 hours.</p>
                                 </div>
                                 <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-8 shadow-sm hover:-translate-y-1 hover:bg-white/60 transition-all duration-300 flex flex-col justify-center">
                                     <h3 className="text-xl font-semibold text-[#00477b] mb-1">Pharma Wholesaler</h3>
                                     <p className="text-[10px] text-zinc-500 font-bold mb-4 uppercase tracking-wider">Mumbai</p>
-                                    <p className="text-sm text-zinc-700 leading-relaxed font-normal">Achieved 100% batch traceability and increased order fulfillment rate to 99%.</p>
+                                    <p className="text-sm text-zinc-700 leading-relaxed font-normal">Batch expiry alerts cut medicine waste by 40%; real-time reporting simplified audits.</p>
                                 </div>
                             </div>
                         </div>
@@ -288,79 +332,76 @@ export default function ErpnextTradingDistribution() {
                     <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-                            {[
-                                { title: "Operational Efficiency", items: ["30% faster order processing", "50% less manual data entry", "99% inventory accuracy"] },
-                                { title: "Financial Control", items: ["20% improvement in cash flow", "Automated GST filing & returns", "Real-time tracking of unpaid invoices"] },
-                                { title: "Business Growth", items: ["Seamless scaling across new branches", "Better vendor negotiations", "Scalable platform ready for e-commerce"] }
-                            ].map((benefit, i) => (
-                                <div key={i} className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-sm text-center flex flex-col items-center hover:-translate-y-1 hover:bg-white/60 transition-all duration-300 justify-center">
-                                    <h3 className="text-lg font-semibold text-[#00477b] mb-4">{benefit.title}</h3>
-                                    <ul className="space-y-3 w-full text-left mt-auto">
-                                        {benefit.items.map((item, j) => (
-                                            <li key={j} className="flex items-start gap-2 text-sm text-zinc-700 font-normal">
-                                                <div className="bg-white border border-zinc-200 rounded-full p-0.5 mt-1 shrink-0">
-                                                    <div className="size-1 bg-zinc-600 rounded-full"></div>
-                                                </div>
-                                                <span className="leading-snug">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
+                                {[
+                                    { 
+                                        title: "Operational Efficiency", 
+                                        items: [
+                                            "60% faster order processing", 
+                                            "40% reduction in stockouts", 
+                                            "50% faster delivery"
+                                        ] 
+                                    },
+                                    { 
+                                        title: "Financial Control", 
+                                        items: [
+                                            "Real-time cash flow visibility", 
+                                            "Automated GST compliance", 
+                                            "Accurate profit margins per product/customer"
+                                        ] 
+                                    },
+                                    { 
+                                        title: "Business Growth", 
+                                        items: [
+                                            "Data-driven decisions with dashboards", 
+                                            "Better customer service", 
+                                            "Scalable platform for future growth"
+                                        ] 
+                                    }
+                                ].map((benefit, i) => (
+                                    <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 text-left flex flex-col h-full group relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+                                        <h3 className="text-lg font-bold text-[#00477b] mb-6 relative z-10">{benefit.title}</h3>
+                                        <ul className="space-y-3.5 mt-auto w-full relative z-10">
+                                            {benefit.items.map((item, j) => (
+                                                <li key={j} className="flex items-start gap-2.5 text-xs text-zinc-700 font-medium leading-relaxed">
+                                                    <span className="text-[#00477b] font-bold mt-0.5">•</span>
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 8. Common Trading Challenges */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-[90rem] mb-12">
+                {/* 8. Common Manufacturing Challenges / Distribution Strengths */}
+                <section className="py-24 bg-transparent text-center relative z-10 border-t border-white/40">
+                    <div className="w-full px-4 mb-8">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            CHALLENGES
+                            WHY GNOSYS
                         </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Common Trading Challenges
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                            Common Manufacturing Challenges
                         </h2>
                     </div>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 px-0 shadow-lg shadow-blue-900/5 my-8">
+                        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
                                 {[
-                                    {
-                                        icon: <Server className="size-7" />,
-                                        title: "Disconnected Systems",
-                                        desc: "Siloed sales, inventory, and accounts causing data discrepancies and manual overhead."
-                                    },
-                                    {
-                                        icon: <Box className="size-7" />,
-                                        title: "Inventory Blind Spots",
-                                        desc: "Lack of real-time multi-warehouse stock visibility leading to frequent stockouts and lost orders."
-                                    },
-                                    {
-                                        icon: <CreditCard className="size-7" />,
-                                        title: "Complex Pricing Margins",
-                                        desc: "Complicated customer tiers, volume discounts, and error-prone manual margin calculations."
-                                    },
-                                    {
-                                        icon: <Truck className="size-7" />,
-                                        title: "Dispatch & Logistics Delays",
-                                        desc: "Inefficient order routing, delayed dispatches, and untracked multi-point deliveries."
-                                    }
+                                    "40+ distribution business implementations in India",
+                                    "ERPNext is configured specifically for trading & distribution",
+                                    "Transparent pricing with predictable ROI",
+                                    "End-to-end support, including training, updates, and account management"
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
-                                            {item.icon}
+                                    <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center group min-h-[160px] relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
+                                        <div className="bg-blue-50/50 p-3 rounded-2xl mb-4 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                            <CheckCircle className="size-5 text-[#00477b]" />
                                         </div>
-                                        
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-snug relative z-10">
-                                            {item.title}
-                                        </h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">
-                                            {item.desc}
-                                        </p>
+                                        <p className="text-sm font-bold text-[#00477b] leading-relaxed relative z-10">{item}</p>
                                     </div>
                                 ))}
                             </div>

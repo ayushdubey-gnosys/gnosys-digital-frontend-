@@ -23,34 +23,39 @@ export default function ErpnextEducation() {
             <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-blue-100/60 via-purple-50/50 to-pink-100/60 pointer-events-none"></div>
 
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-20 pb-28 lg:pt-36 lg:pb-40 flex items-center justify-center text-center min-h-[75vh]">
+            <section className="relative overflow-hidden pt-24 pb-36 lg:pt-36 lg:pb-48 flex items-center min-h-[92vh] lg:min-h-[100vh] w-full">
                 <div className="absolute inset-0 z-0">
                     <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: "url('/assets/erp-education.webp')" }}
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/erp-education.webp')", backgroundColor: '#001a30' }}
                     ></div>
-                    <div className="absolute inset-0 bg-[#29628d]/80 mix-blend-multiply"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none lg:w-1/2"></div>
                 </div>
 
-                <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-white mb-6 leading-tight drop-shadow-md">
-                            One Platform For Academic Excellence And Administrative Efficiency
-                        </h1>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                Education ERP Solution
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                One Platform For Academic Excellence And Administrative Efficiency
+                            </h1>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <p className="text-lg sm:text-xl text-blue-50 leading-relaxed font-medium mb-10 max-w-3xl mx-auto drop-shadow-sm">
-                            Stop managing scattered data. Unify admissions, fees, academics, and HR in one seamless digital campus.
-                        </p>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                Streamline admissions, academics, finance, HR, and operations. Let your institution focus on education while we handle the complexity.
+                            </p>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <span className="relative z-10 flex items-center gap-2">Talk to an Expert <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Button>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300">
+                                <span className="relative z-10 flex items-center gap-2">Get Free Assessment <span className="text-xl">&rarr;</span></span>
+                                <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                            </Button>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -123,82 +128,90 @@ export default function ErpnextEducation() {
                 </div>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto w-full">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-6 lg:px-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-[1650px] mx-auto w-full">
                         {/* Column 1 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
-                            <h3 className="font-normal text-[#1a4464] text-xl mb-6">Streamlined Administration</h3>
-                            <ul className="space-y-4">
-                                {[
-                                    "Automated online admissions",
-                                    "Centralized communication (portal, mobile app, SMS, email)",
-                                    "Facility, asset, and library management",
-                                    "Transport and hostel operations"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                        <div className="bg-zinc-100 rounded p-0.5 mt-0.5 shrink-0 text-zinc-600">
-                                            <CheckSquare className="size-3.5" />
-                                        </div>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
+                            <div>
+                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Streamlined Administration</h3>
+                                <ul className="space-y-4">
+                                    {[
+                                        "Automated online admissions",
+                                        "Centralized communication (portal, mobile app, SMS, email)",
+                                        "Facility, asset, and library management",
+                                        "Transport and hostel operations"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
+                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
+                                                <CheckSquare className="size-3.5" />
+                                            </div>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         {/* Column 2 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
-                            <h3 className="font-normal text-[#1a4464] text-xl mb-6">Academic Delivery & Learning</h3>
-                            <ul className="space-y-4">
-                                {[
-                                    "Curriculum planning and smart timetable scheduling",
-                                    "Digital exams and automated grade books",
-                                    "Assignment and learning content management",
-                                    "Student performance insights"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                        <div className="bg-zinc-100 rounded p-0.5 mt-0.5 shrink-0 text-zinc-600">
-                                            <CheckSquare className="size-3.5" />
-                                        </div>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
+                            <div>
+                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Academic Delivery & Learning</h3>
+                                <ul className="space-y-4">
+                                    {[
+                                        "Curriculum planning and smart timetable scheduling",
+                                        "Digital exams and automated grade books",
+                                        "Assignment and learning content management",
+                                        "Student performance insights"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
+                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
+                                                <CheckSquare className="size-3.5" />
+                                            </div>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         {/* Column 3 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
-                            <h3 className="font-normal text-[#1a4464] text-xl mb-6">Financial and Control</h3>
-                            <ul className="space-y-4">
-                                {[
-                                    "End-to-end fee cycle automation",
-                                    "Scholarship and concession management",
-                                    "Payroll and vendor payments",
-                                    "Built-in statutory and audit reports"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                        <div className="bg-zinc-100 rounded p-0.5 mt-0.5 shrink-0 text-zinc-600">
-                                            <CheckSquare className="size-3.5" />
-                                        </div>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
+                            <div>
+                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Financial and Control</h3>
+                                <ul className="space-y-4">
+                                    {[
+                                        "End-to-end fee cycle automation",
+                                        "Scholarship and concession management",
+                                        "Payroll and vendor payments",
+                                        "Built-in statutory and audit reports"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
+                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
+                                                <CheckSquare className="size-3.5" />
+                                            </div>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         {/* Column 4 */}
-                        <div className="bg-white p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300 h-full flex flex-col">
-                            <h3 className="font-normal text-[#1a4464] text-xl mb-6">Data-Driven Leadership</h3>
-                            <ul className="space-y-4">
-                                {[
-                                    "Real-time dashboards for all stakeholders",
-                                    "Student and faculty analytics",
-                                    "Accreditation reporting automation"
-                                ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                        <div className="bg-zinc-100 rounded p-0.5 mt-0.5 shrink-0 text-zinc-600">
-                                            <CheckSquare className="size-3.5" />
-                                        </div>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
+                            <div>
+                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Data-Driven Leadership</h3>
+                                <ul className="space-y-4">
+                                    {[
+                                        "Real-time dashboards for all stakeholders",
+                                        "Student and faculty analytics",
+                                        "Accreditation reporting automation"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
+                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
+                                                <CheckSquare className="size-3.5" />
+                                            </div>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                         </div>
                     </div>
@@ -256,7 +269,7 @@ export default function ErpnextEducation() {
 
             {/* 5. Implementation Journey (Timeline) */}
             <section className="py-24 bg-transparent text-center overflow-hidden relative z-10">
-                <div className="w-full px-6 lg:px-12 xl:px-20 mx-auto max-w-[100rem]">
+                <div className="w-full px-4 sm:px-6 lg:px-12 max-w-[1650px] mx-auto">
                     <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                         IMPLEMENTATION
                     </span>
@@ -270,71 +283,71 @@ export default function ErpnextEducation() {
 
                 {/* Custom Timeline Layout */}
                 <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-12 md:py-16 mt-16">
-                    <div className="w-full px-6 lg:px-12 xl:px-20 mx-auto max-w-[100rem] flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-5 relative z-10">
+                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-[1650px] mx-auto flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-4 relative z-10">
                             
                             {/* Step 1 */}
-                            <div className="bg-white rounded-[24px] p-8 lg:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-[#00477b] mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
                                     <Search className="size-7" strokeWidth={1.5} />
                                 </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-3">Discovery</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed">Review academic workflows and identify core requirements.</p>
+                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Discovery</h4>
+                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Review academic workflows and identify core requirements.</p>
                             </div>
 
                             {/* Arrow 1 */}
-                            <div className="flex items-center justify-center shrink-0 text-slate-400 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-6 lg:size-7" strokeWidth={1.5} />
+                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
+                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
                             </div>
 
                             {/* Step 2 */}
-                            <div className="bg-white rounded-[24px] p-8 lg:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-[#00477b] mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
                                     <Settings className="size-7" strokeWidth={1.5} />
                                 </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-3">Configuration</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed">Set up courses, fees, roles, and dashboards.</p>
+                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Configuration</h4>
+                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Set up courses, fees, roles, and dashboards.</p>
                             </div>
 
                             {/* Arrow 2 */}
-                            <div className="flex items-center justify-center shrink-0 text-slate-400 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-6 lg:size-7" strokeWidth={1.5} />
+                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
+                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
                             </div>
 
                             {/* Step 3 */}
-                            <div className="bg-white rounded-[24px] p-8 lg:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-[#00477b] mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
                                     <Database className="size-7" strokeWidth={1.5} />
                                 </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-3">Migration</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed">Import student and staff data and connect integrations.</p>
+                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Migration</h4>
+                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Import student and staff data and connect integrations.</p>
                             </div>
 
                             {/* Arrow 3 */}
-                            <div className="flex items-center justify-center shrink-0 text-slate-400 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-6 lg:size-7" strokeWidth={1.5} />
+                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
+                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
                             </div>
 
                             {/* Step 4 */}
-                            <div className="bg-white rounded-[24px] p-8 lg:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-[#00477b] mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
                                     <MonitorPlay className="size-7" strokeWidth={1.5} />
                                 </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-3">Training</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed">Train admin, faculty, and support teams for launch.</p>
+                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Training</h4>
+                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Train admin, faculty, and support teams for launch.</p>
                             </div>
 
                             {/* Arrow 4 */}
-                            <div className="flex items-center justify-center shrink-0 text-slate-400 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-6 lg:size-7" strokeWidth={1.5} />
+                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
+                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
                             </div>
 
                             {/* Step 5 */}
-                            <div className="bg-white rounded-[24px] p-8 lg:p-10 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-[#00477b] mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
+                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
                                     <Rocket className="size-7" strokeWidth={1.5} />
                                 </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-3">Optimization</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed">Refine workflows and provide ongoing support.</p>
+                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Optimization</h4>
+                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Refine workflows and provide ongoing support.</p>
                             </div>
 
                         </div>
@@ -377,22 +390,22 @@ export default function ErpnextEducation() {
 
             {/* 7. Success Highlights */}
             <section className="pt-28 pb-40 relative z-10 overflow-hidden border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                {/* Background Image Overlay */}
+                {/* Background Image */}
                 <div className="absolute inset-0 z-0">
-                    <img src="/assets/edu-erp.webp" alt="Education ERP Highlights" width="1200" height="600" loading="lazy" decoding="async" className="w-full h-full object-cover object-bottom opacity-100" />
+                    <img src="/assets/edu-erp.webp" alt="Education ERP Highlights" width="1200" height="600" loading="lazy" decoding="async" className="w-full h-full object-cover object-bottom" />
                 </div>
 
-                <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1600px] relative z-10 text-center">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                         SUCCESS HIGHLIGHTS
                     </span>
-                    <h2 className="text-4xl font-normal text-[#00477b] mb-16 tracking-tight">
+                    <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-16 tracking-tight">
                         Success Highlights
                     </h2>
 
-                    <div className="grid md:grid-cols-3 gap-8 text-left">
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-2xl font-normal mb-1 text-[#00477b]">CBSE school group</h3>
+                    <div className="grid md:grid-cols-3 gap-6 lg:gap-8 text-left">
+                        <div className="bg-white/85 hover:bg-white backdrop-blur-xl border border-white/70 p-8 sm:p-9 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300">
+                            <h3 className="text-2xl font-bold mb-1 text-[#00477b]">CBSE school group</h3>
                             <p className="text-xs text-indigo-600 font-bold mb-6 uppercase tracking-wider">Mumbai</p>
                             <ul className="space-y-3 list-none text-sm text-zinc-700 leading-snug">
                                 <li className="flex items-start gap-2">
@@ -409,8 +422,8 @@ export default function ErpnextEducation() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-2xl font-normal mb-1 text-[#00477b]">Engineering College</h3>
+                        <div className="bg-white/85 hover:bg-white backdrop-blur-xl border border-white/70 p-8 sm:p-9 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300">
+                            <h3 className="text-2xl font-bold mb-1 text-[#00477b]">Engineering College</h3>
                             <p className="text-xs text-indigo-600 font-bold mb-6 uppercase tracking-wider">Pune</p>
                             <ul className="space-y-3 list-none text-sm text-zinc-700 leading-snug">
                                 <li className="flex items-start gap-2">
@@ -423,8 +436,8 @@ export default function ErpnextEducation() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-2xl font-normal mb-1 text-[#00477b]">Coaching institute network</h3>
+                        <div className="bg-white/85 hover:bg-white backdrop-blur-xl border border-white/70 p-8 sm:p-9 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300">
+                            <h3 className="text-2xl font-bold mb-1 text-[#00477b]">Coaching institute network</h3>
                             <p className="text-xs text-indigo-600 font-bold mb-6 uppercase tracking-wider">Delhi</p>
                             <ul className="space-y-3 list-none text-sm text-zinc-700 leading-snug">
                                 <li className="flex items-start gap-2">
@@ -454,8 +467,8 @@ export default function ErpnextEducation() {
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             {
-                                title: "20+ Institutions",
-                                desc: "Successfully transformed and digitized across India.",
+                                title: "35+ Institutions",
+                                desc: "35+ institutions transformed and digitized across India.",
                                 icon: (
                                     <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -463,8 +476,8 @@ export default function ErpnextEducation() {
                                 )
                             },
                             {
-                                title: "Local Expertise",
-                                desc: "Deep knowledge of Indian academic & accreditation needs.",
+                                title: "Academic & Compliance",
+                                desc: "Strong knowledge of Indian academic and accreditation needs.",
                                 icon: (
                                     <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -473,7 +486,7 @@ export default function ErpnextEducation() {
                             },
                             {
                                 title: "Dedicated Experts",
-                                desc: "Specialized team of education ERP professionals.",
+                                desc: "Dedicated education ERP experts tailored for your institution.",
                                 icon: (
                                     <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -482,7 +495,7 @@ export default function ErpnextEducation() {
                             },
                             {
                                 title: "Proven Support",
-                                desc: "Robust support and training framework for success.",
+                                desc: "Proven support and training framework for long-term success.",
                                 icon: (
                                     <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -495,7 +508,7 @@ export default function ErpnextEducation() {
                                     {item.icon}
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-3">{item.title}</h3>
-                                <p className="text-sm text-zinc-600 leading-relaxed">
+                                <p className="text-sm text-zinc-600 leading-relaxed font-medium">
                                     {item.desc}
                                 </p>
                             </div>

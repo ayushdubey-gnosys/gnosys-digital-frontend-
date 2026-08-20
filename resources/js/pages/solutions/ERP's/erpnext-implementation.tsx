@@ -23,7 +23,9 @@ import {
     Plus,
     Minus,
     Check,
-    Star
+    Star,
+    Wrench,
+    ArrowRight
 } from 'lucide-react';
 import React from 'react';
 import FaqAccordion from '@/components/FaqAccordion';
@@ -270,33 +272,48 @@ export default function ErpnextImplementation() {
                 </div>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-7xl mx-auto w-full">
-                            {[
-                                { icon: Search, title: "Requirement Analysis", desc: "Identify workflows, pain points & modules." },
-                                { icon: Settings, title: "System Setup", desc: "Configure modules, roles & permissions." },
-                                { icon: Database, title: "Data Migration", desc: "Clean and import existing database details." },
-                                { icon: CheckCircle2, title: "Customization", desc: "Build custom fields, workflows & approvals." },
-                                { icon: GraduationCap, title: "Training & Testing", desc: "Validate system features with end users." },
-                                { icon: Rocket, title: "Go-Live & Support", desc: "Deploy system and provide continuous support." }
-                            ].map((step, idx) => (
-                                <div key={idx} className="bg-white/40 border border-zinc-200/80 p-5 rounded-2xl flex flex-col items-start text-left shadow-sm hover:shadow-md transition-shadow duration-300">
-                                    <div className="flex items-center justify-between w-full mb-4">
-                                        <div className="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200/60 text-zinc-800 flex items-center justify-center">
-                                            <step.icon className="size-5" />
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 shadow-lg shadow-blue-900/5">
+                        <div className="max-w-[1700px] mx-auto w-full">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 xl:gap-4 w-full">
+                                {[
+                                    { icon: Search, title: "Business Requirement Analysis", desc: "Identify workflows, pain points, and the exact modules your team needs." },
+                                    { icon: Settings, title: "System Setup & Configuration", desc: "Configure modules, permissions, roles, and basic settings based on your processes." },
+                                    { icon: Database, title: "Data Migration", desc: "Prepare, clean, and import your existing data into ERPNext." },
+                                    { icon: Wrench, title: "Customization & Workflow Setup", desc: "Add custom fields, forms, automation rules, and approvals to match your operations." },
+                                    { icon: GraduationCap, title: "User Training & Testing", desc: "Train your team, run test scenarios, and validate every function works smoothly." },
+                                    { icon: Rocket, title: "Go-Live & Post-Launch Support", desc: "Deploy the system and offer continuous guidance to ensure stable adoption." }
+                                ].map((step, idx) => (
+                                    <div 
+                                        key={idx} 
+                                        className="relative bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 hover:border-[#00477b]/20 p-5 lg:p-6 rounded-2xl flex flex-col justify-between shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] transition-all duration-300 hover:-translate-y-1.5 group min-h-[260px]"
+                                    >
+                                        <div>
+                                            <div className="flex items-center justify-between w-full mb-4">
+                                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 text-[#00477b] flex items-center justify-center group-hover:bg-[#00477b] group-hover:text-white group-hover:border-[#00477b] transition-all duration-300 shadow-sm">
+                                                    <step.icon className="size-5" />
+                                                </div>
+                                                <span className="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-[#00477b]/10 text-[#00477b] group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                    0{idx + 1}
+                                                </span>
+                                            </div>
+                                            <div className="w-8 h-1 rounded-full bg-[#00477b]/20 group-hover:w-full group-hover:bg-[#00477b] transition-all duration-500 mb-3" />
+                                            <h4 className="font-bold text-[#00477b] text-[15px] mb-2 leading-snug tracking-tight group-hover:text-[#002f52]">
+                                                {step.title}
+                                            </h4>
+                                            <p className="text-xs text-zinc-600 leading-relaxed font-normal">
+                                                {step.desc}
+                                            </p>
                                         </div>
-                                        <span className="text-xs font-bold text-zinc-400">0{idx + 1}</span>
                                     </div>
-                                    <h4 className="font-bold text-[#00477b] text-sm mb-2 leading-snug">{step.title}</h4>
-                                    <p className="text-xs text-zinc-500 leading-relaxed font-medium">{step.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                        
-                        <div className="mt-16 text-center">
-                            <Button className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold shadow-md border-none transition-all">
-                                Start Your Implementation
-                            </Button>
+                                ))}
+                            </div>
+                            
+                            <div className="mt-14 text-center">
+                                <Button className="group bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold rounded-xl shadow-lg shadow-blue-900/15 hover:shadow-xl hover:shadow-blue-900/25 hover:-translate-y-0.5 border-none transition-all duration-300 inline-flex items-center gap-2">
+                                    <span>Start Your Implementation</span>
+                                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
