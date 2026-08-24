@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, usePage, router } from '@inertiajs/react';
 import { dashboard, login } from '@/routes';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, User, ShoppingBag, Menu, ChevronRight, MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import { ChevronDown, User, ShoppingBag, Menu, ChevronRight, MapPin, Phone, Mail, ArrowUpRight, Cookie } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import CookiePreferencesModal from '@/components/cookie-preferences-modal';
@@ -12,14 +12,33 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const [cartOpen, setCartOpen] = React.useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
     const [cookieModalOpen, setCookieModalOpen] = React.useState(false);
+    const [showScrollTop, setShowScrollTop] = React.useState(false);
+    const [scrollProgress, setScrollProgress] = React.useState(0);
 
     React.useEffect(() => {
         const handleOpenCart = () => {
             setCartOpen(true);
             setTimeout(() => setCartOpen(false), 3000);
         };
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = totalHeight > 0 ? Math.min(100, Math.max(0, (scrollY / totalHeight) * 100)) : 0;
+            
+            setScrollProgress(progress);
+            if (scrollY > 150) {
+                setShowScrollTop(true);
+            } else {
+                setShowScrollTop(false);
+            }
+        };
         window.addEventListener('open-cart', handleOpenCart);
-        return () => window.removeEventListener('open-cart', handleOpenCart);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return () => {
+            window.removeEventListener('open-cart', handleOpenCart);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     return (
@@ -40,47 +59,47 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                             <nav aria-label="Main Navigation" className="hidden xl:flex items-center gap-6 font-medium text-gray-600 text-[14px]">
                                 {/* Digital Products */}
                                 <div className="relative group">
-                                    <Link href="/digital-products" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                    <Link href="/digital-products" className="flex items-center gap-1 hover:text-[#00477b] group-hover:text-[#00477b] transition-colors py-1 relative focus:outline-none">
                                         Digital Products <ChevronDown className="size-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#00477b] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                     </Link>
                                     <div className="absolute top-full left-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
                                         <div className="w-64 bg-white rounded-md shadow-xl border border-gray-100 p-0 overflow-hidden flex flex-col">
-                                            <Link href="/digital-products/ai-tools-automation-packs" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">AI Tools & Automation Packs</Link>
-                                            <Link href="/digital-products/ebooks-guides" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">eBooks & Guides</Link>
-                                            <Link href="/digital-products/hosting-add-ons" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Hosting Add-ons</Link>
-                                            <Link href="/digital-products/marketing-kits" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Marketing Kits</Link>
-                                            <Link href="/digital-products/templates-frameworks" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Templates & Frameworks</Link>
-                                            <Link href="/digital-products/wordpress-themes-plugins" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">WordPress Themes & Plugins</Link>
+                                            <Link href="/digital-products/ai-tools-automation-packs" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">AI Tools & Automation Packs</Link>
+                                            <Link href="/digital-products/ebooks-guides" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">eBooks & Guides</Link>
+                                            <Link href="/digital-products/hosting-add-ons" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Hosting Add-ons</Link>
+                                            <Link href="/digital-products/marketing-kits" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Marketing Kits</Link>
+                                            <Link href="/digital-products/templates-frameworks" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Templates & Frameworks</Link>
+                                            <Link href="/digital-products/wordpress-themes-plugins" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">WordPress Themes & Plugins</Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Digital Services */}
                                 <div className="relative group">
-                                    <Link href="/digital-services" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                    <Link href="/digital-services" className="flex items-center gap-1 hover:text-[#00477b] group-hover:text-[#00477b] transition-colors py-1 relative focus:outline-none">
                                         Digital Services <ChevronDown className="size-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#00477b] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                     </Link>
                                     <div className="absolute top-full left-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
                                         <div className="w-64 bg-white rounded-md shadow-xl border border-gray-100 p-0 overflow-hidden flex flex-col">
-                                            <Link href="/digital-services/custom-development" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Custom Development</Link>
-                                            <Link href="/digital-services/digital-marketing" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Digital Marketing</Link>
-                                            <Link href="/digital-services/ecommerce-development" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">eCommerce Development</Link>
-                                            <Link href="/digital-services/ecommerce-operations-support" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">eCommerce Operations Support</Link>
-                                            <Link href="/digital-services/seo-content" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">SEO & Content</Link>
-                                            <Link href="/digital-services/server-devops" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Server & Devops</Link>
-                                            <Link href="/digital-services/social-media-management" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Social Media Management</Link>
-                                            <Link href="/digital-services/web-app-development" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Web & App Development</Link>
+                                            <Link href="/digital-services/custom-development" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Custom Development</Link>
+                                            <Link href="/digital-services/digital-marketing" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Digital Marketing</Link>
+                                            <Link href="/digital-services/ecommerce-development" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">eCommerce Development</Link>
+                                            <Link href="/digital-services/ecommerce-operations-support" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">eCommerce Operations Support</Link>
+                                            <Link href="/digital-services/seo-content" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">SEO & Content</Link>
+                                            <Link href="/digital-services/server-devops" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Server & Devops</Link>
+                                            <Link href="/digital-services/social-media-management" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Social Media Management</Link>
+                                            <Link href="/digital-services/web-app-development" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Web & App Development</Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Solutions */}
                                 <div className="relative group">
-                                    <Link href="/solutions" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                    <Link href="/solutions" className="flex items-center gap-1 hover:text-[#00477b] group-hover:text-[#00477b] transition-colors py-1 relative focus:outline-none">
                                         Solutions <ChevronDown className="size-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#00477b] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                     </Link>
                                     <div className="absolute top-full left-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
                                         <div className="w-64 bg-white rounded-md shadow-xl border border-gray-100 p-0 flex flex-col">
@@ -92,50 +111,50 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                                                 {/* Nested Dropdown */}
                                                 <div className="absolute top-0 right-full pr-0 opacity-0 pointer-events-none group-hover/sub:opacity-100 group-hover/sub:pointer-events-auto transition-opacity duration-200 z-[60]">
                                                     <div className="w-[280px] bg-white rounded-md shadow-2xl border border-gray-100 p-0 flex flex-col overflow-hidden">
-                                                        <Link href="/solutions/erpnext-healthcare" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext For Healthcare</Link>
-                                                        <Link href="/solutions/epc-project-control" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">EPC Project Control with ERPNext</Link>
-                                                        <Link href="/solutions/erpnext-ecommerce" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for E-commerce</Link>
-                                                        <Link href="/solutions/erpnext-restaurants" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Restaurants</Link>
-                                                        <Link href="/solutions/erpnext-education" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Education Institutions</Link>
-                                                        <Link href="/solutions/erpnext-financial" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Financial Services</Link>
-                                                        <Link href="/solutions/erpnext-nonprofits" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Non-Profits & NGOs</Link>
-                                                        <Link href="/solutions/erpnext-professional-services" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Professional Services Firms</Link>
-                                                        <Link href="/solutions/erpnext-retail" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Retail SMEs</Link>
-                                                        <Link href="/solutions/erpnext-trading" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Trading & Distribution SMEs</Link>
-                                                        <Link href="/solutions/erpnext-manufacturing" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors last:border-b-0">ERPNext Solutions for Manufacturing SMEs</Link>
+                                                        <Link href="/solutions/erpnext-healthcare" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext For Healthcare</Link>
+                                                        <Link href="/solutions/epc-project-control" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">EPC Project Control with ERPNext</Link>
+                                                        <Link href="/solutions/erpnext-ecommerce" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for E-commerce</Link>
+                                                        <Link href="/solutions/erpnext-restaurants" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Restaurants</Link>
+                                                        <Link href="/solutions/erpnext-education" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Education Institutions</Link>
+                                                        <Link href="/solutions/erpnext-financial" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Financial Services</Link>
+                                                        <Link href="/solutions/erpnext-nonprofits" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Non-Profits & NGOs</Link>
+                                                        <Link href="/solutions/erpnext-professional-services" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Professional Services Firms</Link>
+                                                        <Link href="/solutions/erpnext-retail" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Retail SMEs</Link>
+                                                        <Link href="/solutions/erpnext-trading" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">ERPNext for Trading & Distribution SMEs</Link>
+                                                        <Link href="/solutions/erpnext-manufacturing" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors last:border-b-0">ERPNext Solutions for Manufacturing SMEs</Link>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <Link href="/solutions/channel-distribution" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Channel & Distribution</Link>
-                                            <Link href="/solutions/custom-manufacturing" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Custom Manufacturing</Link>
-                                            <Link href="/solutions/custom-warehouse" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Custom Warehouse & Inventory</Link>
-                                            <Link href="/solutions/supply-chain" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Supply Chain & Logistics</Link>
-                                            <Link href="/solutions/seo-services" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">SEO Services</Link>
-                                            <Link href="/solutions/case-study" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Case Study</Link>
-                                            <Link href="/solutions/blog" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Blog</Link>
+                                            <Link href="/solutions/channel-distribution" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Channel & Distribution</Link>
+                                            <Link href="/solutions/custom-manufacturing" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Custom Manufacturing</Link>
+                                            <Link href="/solutions/custom-warehouse" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Custom Warehouse & Inventory</Link>
+                                            <Link href="/solutions/supply-chain" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Supply Chain & Logistics</Link>
+                                            <Link href="/solutions/seo-services" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">SEO Services</Link>
+                                            <Link href="/solutions/case-study" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Case Study</Link>
+                                            <Link href="/solutions/blog" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Blog</Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* About Us */}
                                 <div className="relative group">
-                                    <button aria-label="About Us navigation" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                    <button aria-label="About Us navigation" className="flex items-center gap-1 hover:text-[#00477b] group-hover:text-[#00477b] transition-colors py-1 relative focus:outline-none">
                                         About Us <ChevronDown className="size-3.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#00477b] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                     </button>
                                     <div className="absolute top-full left-0 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
                                         <div className="w-64 bg-white rounded-md shadow-xl border border-gray-100 p-0 overflow-hidden flex flex-col">
-                                            <Link href="/about/culture-of-change" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Culture Of Change</Link>
-                                            <Link href="/about/engagement-models" className="py-3 px-5 hover:bg-slate-50 hover:text-blue-600 text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Engagement Models</Link>
+                                            <Link href="/about/culture-of-change" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100">Culture Of Change</Link>
+                                            <Link href="/about/engagement-models" className="py-3 px-5 hover:bg-slate-50 hover:text-[#00477b] text-[13px] font-medium text-gray-700 transition-colors border-b border-gray-100 last:border-b-0">Engagement Models</Link>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Contact Us */}
                                 <div className="relative group">
-                                    <Link href="/contact" className="flex items-center gap-1 hover:text-blue-500 group-hover:text-blue-500 transition-colors py-1 relative focus:outline-none">
+                                    <Link href="/contact" className="flex items-center gap-1 hover:text-[#00477b] group-hover:text-[#00477b] transition-colors py-1 relative focus:outline-none">
                                         Contact Us
-                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                                        <span className="absolute inset-x-0 -bottom-1 h-[2px] bg-[#00477b] scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                     </Link>
                                 </div>
                             </nav>
@@ -415,21 +434,95 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                 {/* Copyright Bar */}
                 <div className="bg-transparent text-gray-700 py-4 relative w-full border-t border-white/60">
                     <div className="container mx-auto px-4 lg:px-8 flex items-center justify-center relative">
-                        {/* Cookie icon */}
-                        <div 
-                            role="button" 
-                            aria-label="Cookie preferences" 
-                            tabIndex={0} 
-                            onClick={() => setCookieModalOpen(true)}
-                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setCookieModalOpen(true); }}
-                            className="absolute left-4 -top-8 size-[38px] rounded-full bg-zinc-900 hover:bg-[#00477b] text-white flex items-center justify-center cursor-pointer hover:-translate-y-1 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg border-[3px] border-white z-20"
-                        >
-                            <svg className="size-[20px]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" /><path d="M8.5 8.5v.01" /><path d="M16 12.5v.01" /><path d="M12 16v.01" /><path d="M11 11v.01" /><path d="M8 14v.01" /></svg>
-                        </div>
                         <div className="text-[12px] md:text-sm font-medium">© {new Date().getFullYear()} Gnosys Digital. All rights reserved.</div>
                     </div>
                 </div>
             </footer>
+            {/* Stylish Fixed Floating Cookie Preferences Trigger (Animated Expand on Hover, Subtle Soft Pink Shadow) */}
+            <div className="fixed bottom-5 left-5 z-40">
+                <button 
+                    type="button" 
+                    aria-label="Cookie Preferences" 
+                    title="Cookie Preferences"
+                    onClick={() => setCookieModalOpen(true)}
+                    className="group relative flex items-center bg-white/95 text-[#00477b] backdrop-blur-xl border border-white/90 shadow-[0_0_15px_rgba(244,114,182,0.22),0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_0_20px_rgba(244,114,182,0.38),0_4px_12px_rgba(0,0,0,0.06)] rounded-full p-2 sm:p-2.5 transition-all duration-500 ease-out hover:scale-105 active:scale-95 cursor-pointer overflow-hidden"
+                >
+                    <div className="size-7 sm:size-8 rounded-full bg-blue-50 border border-blue-100/60 flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+                        <Cookie className="size-4 sm:size-4.5 text-[#00477b]" />
+                    </div>
+                    
+                    {/* Smooth expanding text on hover */}
+                    <div className="max-w-0 opacity-0 group-hover:max-w-[140px] group-hover:opacity-100 group-hover:pl-2.5 group-hover:pr-2 transition-all duration-500 ease-in-out overflow-hidden whitespace-nowrap">
+                        <span className="text-xs font-bold tracking-tight text-[#00477b]">
+                            Cookie Settings
+                        </span>
+                    </div>
+                </button>
+            </div>
+
+            {/* Stylish Fixed Floating Unified Scroll-To-Top Pill (Right Side, with Teal Progress Ring, Expanding Text Inside Same Unified Pill) */}
+            <div className={`fixed bottom-5 right-5 z-40 transition-all duration-500 ease-out ${
+                showScrollTop ? 'opacity-100 translate-y-0 pointer-events-auto scale-100' : 'opacity-0 translate-y-6 pointer-events-none scale-90'
+            }`}>
+                <button 
+                    type="button" 
+                    aria-label="Back to Top" 
+                    title="Back to Top"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    className="group relative flex flex-row-reverse items-center bg-white/95 text-[#00477b] backdrop-blur-xl border border-white/90 shadow-[0_0_18px_rgba(13,148,136,0.18),0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_0_24px_rgba(13,148,136,0.32),0_4px_12px_rgba(0,0,0,0.06)] rounded-full p-1.5 sm:p-2 transition-all duration-500 ease-out hover:scale-105 active:scale-95 cursor-pointer overflow-hidden"
+                >
+                    {/* Circle Icon Container with Circular Progress Ring */}
+                    <div className="relative size-8 sm:size-9 flex items-center justify-center shrink-0">
+                        {/* Progress SVG */}
+                        <svg className="absolute inset-0 size-full -rotate-90 pointer-events-none" viewBox="0 0 40 40">
+                            <defs>
+                                <linearGradient id="scrollProgressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stopColor="#14b8a6" />
+                                    <stop offset="100%" stopColor="#0284c7" />
+                                </linearGradient>
+                            </defs>
+                            {/* Track Circle */}
+                            <circle
+                                cx="20"
+                                cy="20"
+                                r="17.5"
+                                fill="none"
+                                stroke="#e2e8f0"
+                                strokeWidth="2.2"
+                                strokeOpacity="0.8"
+                            />
+                            {/* Animated Glowing Teal Progress Circle */}
+                            <circle
+                                cx="20"
+                                cy="20"
+                                r="17.5"
+                                fill="none"
+                                stroke="url(#scrollProgressGradient)"
+                                strokeWidth="2.4"
+                                strokeLinecap="round"
+                                strokeDasharray="110"
+                                strokeDashoffset={110 - (110 * scrollProgress) / 100}
+                                className="transition-all duration-150 ease-out"
+                                style={{
+                                    filter: 'drop-shadow(0 0 3px rgba(20, 184, 166, 0.65))',
+                                }}
+                            />
+                        </svg>
+
+                        {/* Inner Logo Image */}
+                        <div className="size-5 sm:size-5.5 flex items-center justify-center z-10">
+                            <img src="/gnosys.png" alt="Scroll to Top" width="22" height="22" className="size-full object-contain" />
+                        </div>
+                    </div>
+                    
+                    {/* Smooth expanding text INSIDE the same unified pill */}
+                    <div className="max-w-0 opacity-0 group-hover:max-w-[140px] group-hover:opacity-100 group-hover:pl-3 group-hover:pr-1 transition-all duration-500 ease-in-out overflow-hidden whitespace-nowrap">
+                        <span className="text-xs font-bold tracking-tight text-[#00477b] flex items-center gap-1">
+                            Back to Top &uarr;
+                        </span>
+                    </div>
+                </button>
+            </div>
 
             {/* Cookie Preferences Modal */}
             <CookiePreferencesModal

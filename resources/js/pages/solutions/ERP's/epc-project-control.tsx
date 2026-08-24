@@ -20,52 +20,69 @@ export default function EpcProjectControl() {
         <MainLayout>
             <Head title="EPC Project Control With ERPNext" />
 
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
+
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-16 pb-24 lg:pt-28 lg:pb-32 flex flex-col items-center justify-center text-center min-h-[85vh]">
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
+                {/* Background Container */}
                 <div className="absolute inset-0 z-0">
-                    <div
-                        className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
-                        style={{ backgroundImage: "url('/assets/erp-imp.webp')", backgroundColor: '#09090b' }}
+                    <div 
+                        className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/epc-page.png')", backgroundColor: '#020b18' }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/40"></div>
+                    {/* Soft gradient on the left to ensure text is 100% readable while the image on the right remains crystal clear */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent pointer-events-none lg:w-3/5"></div>
                 </div>
 
-                <div className="container relative z-10 mx-auto px-4 max-w-5xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-12">
-                            EPC Project Control With ERPNext
-                        </h1>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                EPC PROJECT CONTROL ERP
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                EPC Project Control <br />
+                                <span className="text-blue-100 font-normal">With ERPNext</span>
+                            </h1>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-10 text-white">
-                            <div className="flex flex-col items-center">
-                                <Clock className="size-8 mb-2 text-white" />
-                                <span className="font-semibold text-lg">Deliver On Time</span>
+                        {/* 3 Key Highlights */}
+                        <ScrollReveal animation="fade-up" delay={140}>
+                            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-6 text-white">
+                                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 shadow-sm">
+                                    <Clock className="size-4 text-blue-300" />
+                                    <span className="font-medium text-xs sm:text-sm">Deliver On Time</span>
+                                </div>
+                                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 shadow-sm">
+                                    <DollarSign className="size-4 text-emerald-300" />
+                                    <span className="font-medium text-xs sm:text-sm">On Budget</span>
+                                </div>
+                                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 shadow-sm">
+                                    <Target className="size-4 text-cyan-300" />
+                                    <span className="font-medium text-xs sm:text-sm">Every Time</span>
+                                </div>
                             </div>
-                            <div className="flex flex-col items-center">
-                                <DollarSign className="size-8 mb-2 text-white" />
-                                <span className="font-semibold text-lg">On Budget</span>
-                            </div>
-                            <div className="flex flex-col items-center">
-                                <Target className="size-8 mb-2 text-white" />
-                                <span className="font-semibold text-lg">Every Time</span>
-                            </div>
-                        </div>
-                    </ScrollReveal>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <p className="max-w-4xl mx-auto text-lg text-zinc-200/80 leading-relaxed font-medium mb-10">
-                            One intelligent, integrated platform with unified control over engineering, procurement, site execution, billing and finance. All in one platform built for EPC complexity.
-                        </p>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={200}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                One intelligent, integrated platform with unified control over engineering, procurement, site execution, billing and finance. All in one platform built for EPC complexity.
+                            </p>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={380}>
-                        <Button className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                            <span className="relative z-10 flex items-center gap-2">Book Your EPC Discovery Assessment <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Button>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                                <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                    <span className="relative z-10 flex items-center gap-2">Book EPC Discovery Assessment <ArrowRight className="size-5" /></span>
+                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                </Button>
+                                <Button className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 rounded-full px-8 h-14 text-sm sm:text-base font-bold shadow-lg transition-all w-full sm:w-auto">
+                                    Explore Modules
+                                </Button>
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -137,7 +154,7 @@ export default function EpcProjectControl() {
                                         i < 4 ? "lg:w-[calc(25%-18px)]" : "lg:w-[calc(33.333%-16px)]"
                                     )}
                                 >
-                                    <div className="size-12 rounded-full bg-white shadow-sm border border-gray-100 flex items-center justify-center mb-4 transition-transform group-hover:scale-110 shrink-0">
+                                    <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-4 shrink-0 text-[#00477b]">
                                         <item.icon className="size-5 text-[#00477b]" />
                                     </div>
                                     <h4 className="font-bold text-[#00477b] text-lg mb-2">{item.title}</h4>
@@ -166,53 +183,63 @@ export default function EpcProjectControl() {
                     <div className="container mx-auto max-w-7xl px-4 md:px-8">
                         <div className="grid lg:grid-cols-3 gap-6 mb-6">
                             {/* Top Row - 3 Cards */}
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <BarChart3 className="size-10 text-[#00477b] mb-5" />
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3">Exec. Time Cost Intelligence</h3>
-                                <ul className="text-sm text-zinc-600 space-y-2">
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Dashboard for real-time project profitability.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Item-wise cost tracking against budget.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Project performance tracking across portfolio.</li>
+                            <div className="bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 rounded-[2rem] p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
+                                    <BarChart3 className="size-6 text-[#00477b]" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">Exec. Time Cost Intelligence</h3>
+                                <ul className="text-sm text-zinc-600 space-y-2.5 mt-auto">
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Dashboard for real-time project profitability.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Item-wise cost tracking against budget.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Project performance tracking across portfolio.</span></li>
                                 </ul>
                             </div>
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <FileText className="size-10 text-[#00477b] mb-5" />
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3">Engineering & Document Control</h3>
-                                <ul className="text-sm text-zinc-600 space-y-2">
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Comprehensive BOQ management linked to items.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Drawing revisions and version control.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Trace document approvals directly in system.</li>
+                            <div className="bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 rounded-[2rem] p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
+                                    <FileText className="size-6 text-[#00477b]" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">Engineering & Document Control</h3>
+                                <ul className="text-sm text-zinc-600 space-y-2.5 mt-auto">
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Comprehensive BOQ management linked to items.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Drawing revisions and version control.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Trace document approvals directly in system.</span></li>
                                 </ul>
                             </div>
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <ShoppingCart className="size-10 text-[#00477b] mb-5" />
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3">Procurement & Subcontracts</h3>
-                                <ul className="text-sm text-zinc-600 space-y-2">
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Automated POs, Indents and vendor approvals.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Subcontractor PO tracking against schedule.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Efficient quality control before issuing items.</li>
+                            <div className="bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 rounded-[2rem] p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
+                                    <ShoppingCart className="size-6 text-[#00477b]" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">Procurement & Subcontracts</h3>
+                                <ul className="text-sm text-zinc-600 space-y-2.5 mt-auto">
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Automated POs, Indents and vendor approvals.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Subcontractor PO tracking against schedule.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Efficient quality control before issuing items.</span></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div className="grid lg:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
                             {/* Bottom Row - 2 Cards */}
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <HardHat className="size-10 text-[#00477b] mb-5" />
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3">Site Execution & Inventory</h3>
-                                <ul className="text-sm text-zinc-600 space-y-2">
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Multi-location material tracking and stock visibility.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Site logging and daily progress reports.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Equipment usage and maintenance logging.</li>
+                            <div className="bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 rounded-[2rem] p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
+                                    <HardHat className="size-6 text-[#00477b]" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">Site Execution & Inventory</h3>
+                                <ul className="text-sm text-zinc-600 space-y-2.5 mt-auto">
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Multi-location material tracking and stock visibility.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Site logging and daily progress reports.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Equipment usage and maintenance logging.</span></li>
                                 </ul>
                             </div>
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-                                <Building2 className="size-10 text-[#00477b] mb-5" />
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3">Financial Control & Compliance</h3>
-                                <ul className="text-sm text-zinc-600 space-y-2">
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> AR/AP and automated invoicing.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> GST / tax compliance directly integrated.</li>
-                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-zinc-500" /> Contract billing based on milestones and RA Bills.</li>
+                            <div className="bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 rounded-[2rem] p-7 sm:p-8 shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
+                                    <Building2 className="size-6 text-[#00477b]" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">Financial Control & Compliance</h3>
+                                <ul className="text-sm text-zinc-600 space-y-2.5 mt-auto">
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>AR/AP and automated invoicing.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>GST / tax compliance directly integrated.</span></li>
+                                    <li className="flex items-start gap-2"><ArrowRight className="size-4 shrink-0 mt-0.5 text-[#00477b]/70" strokeWidth={1.5} /> <span>Contract billing based on milestones and RA Bills.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -365,7 +392,7 @@ export default function EpcProjectControl() {
                                         <div key={i} className="relative pl-8 md:pl-10 group">
                                             {/* Timeline Dot */}
                                             <span className={cn(
-                                                "absolute -left-[17px] top-1 size-8 rounded-full flex items-center justify-center font-bold text-xs text-white shadow-lg ring-4 ring-white z-10 transition-transform group-hover:scale-110",
+                                                "absolute -left-[17px] top-1 size-8 rounded-full flex items-center justify-center font-bold text-xs text-white shadow-lg ring-4 ring-white z-10",
                                                 item.color
                                             )}>
                                                 {i + 1}
@@ -649,9 +676,9 @@ export default function EpcProjectControl() {
                                     icon: Settings,
                                 }
                             ].map((item, i) => (
-                                <div key={i} className="flex flex-col items-center text-center justify-center bg-white/70 backdrop-blur-md border border-white/80 p-6 sm:p-7 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group min-h-[160px]">
-                                    <div className="size-12 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#00477b] group-hover:text-white shrink-0 shadow-2xs">
-                                        <item.icon className="size-5 text-[#00477b] group-hover:text-white transition-colors" />
+                                <div key={i} className="flex flex-col items-center text-center justify-center bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 p-7 sm:p-8 rounded-[2rem] shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] hover:-translate-y-1.5 transition-all duration-300 group min-h-[170px]">
+                                    <div className="size-14 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-5 shrink-0 text-[#00477b]">
+                                        <item.icon className="size-6 text-[#00477b]" strokeWidth={1.5} />
                                     </div>
                                     <p className="font-bold text-[#00477b] text-sm sm:text-[15px] leading-relaxed group-hover:text-[#002f52]">
                                         {item.text}

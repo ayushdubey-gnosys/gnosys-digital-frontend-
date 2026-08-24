@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { 
     Activity, Clock, FileCheck, Target, Heart, Search, FileText, CheckCircle2, ChevronDown,
     Stethoscope, Pill, Hospital, Microscope, Truck, HeartPulse, ShoppingBag,
-    Calendar, Building2, CreditCard, Users2, Wrench, BarChart3, ShieldCheck
+    Calendar, Building2, CreditCard, Users2, Wrench, BarChart3, ShieldCheck, ArrowRight
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
@@ -17,43 +17,51 @@ export default function ErpnextForHealthcare() {
     return (
         <MainLayout>
             <Head title="ERPNext For Healthcare" />
+
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
             
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-28 lg:pb-44 flex items-center justify-center text-center min-h-[92vh] lg:min-h-[100vh]">
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
+                {/* Background Container */}
                 <div className="absolute inset-0 z-0">
                     <div 
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
-                        style={{ backgroundImage: "url('/assets/healthcare.webp')", backgroundColor: '#00477b' }}
+                        className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/hospital-erp.webp')", backgroundColor: '#020b18' }}
                     ></div>
-                    {/* Subtle, soft gradient so the image stays 100% sharp and clear while keeping text readable */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none lg:w-3/5"></div>
                 </div>
                 
-                <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-4xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
-                            Healthcare ERP Solution
-                        </span>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                            ERPNext For Healthcare
-                        </h1>
-                    </ScrollReveal>
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-100 mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                            Digital Systems For Clinics, Hospitals & Labs
-                        </h2>
-                    </ScrollReveal>
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <p className="max-w-2xl mx-auto text-sm sm:text-base text-white/95 leading-relaxed font-medium mb-8 drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
-                            Transform your healthcare operations with one unified, open-source platform. From patient registration to pharmacy inventory, labs to billing — ERPNext turns your medical practice into a streamlined, compliant, and data-driven institution.
-                        </p>
-                    </ScrollReveal>
-                    <ScrollReveal animation="fade-up" delay={380}>
-                        <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 h-12 text-sm sm:text-base font-bold shadow-lg transition-all duration-300">
-                            <span className="relative z-10 flex items-center gap-2">Book a Free Healthcare-ERP Discovery Call <span className="text-xl">&rarr;</span></span>
-                            <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                        </Button>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                HEALTHCARE ERP SOLUTION
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                ERPNext For Healthcare <br />
+                                <span className="text-blue-100 font-normal">Digital Systems For Clinics, Hospitals & Labs</span>
+                            </h1>
+                        </ScrollReveal>
+
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                Transform your healthcare operations with one unified, open-source platform. From patient registration to pharmacy inventory, labs to billing - ERPNext turns your medical practice into a streamlined, compliant, and data-driven institution.
+                            </p>
+                        </ScrollReveal>
+
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                                <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                    <span className="relative z-10 flex items-center gap-2">Talk To An Expert <ArrowRight className="size-5" /></span>
+                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                </Button>
+                                <Button className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 rounded-full px-8 h-14 text-sm sm:text-base font-bold shadow-lg transition-all w-full sm:w-auto">
+                                    Explore Features
+                                </Button>
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -61,35 +69,43 @@ export default function ErpnextForHealthcare() {
             </section>
 
             {/* 2. Why Healthcare Businesses Choose ERPNext */}
-            <section className="py-24 bg-transparent text-center">
-                <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
-                    <div className="text-center mb-12">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                            Why Choose ERPNext
-                        </span>
-                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Why Healthcare Businesses Choose ERPNext
-                        </h2>
-                    </div>
+            <section className="pt-24 pb-12 text-center relative z-10">
+                <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
+                        WHY CHOOSE ERPNEXT
+                    </span>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                        Why Healthcare Businesses Choose ERPNext
+                    </h2>
                 </div>
                 
-                <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                    <div className="container mx-auto max-w-6xl">
-                        <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                             {[
-                                { icon: Target, title: "Complete Workflow Coverage", desc: "OPD, IPD, lab, pharmacy, billing, HR, inventory & more — all modules integrated under one roof." },
+                                { icon: Target, title: "Complete Workflow Coverage", desc: "OPD, IPD, lab, pharmacy, billing, HR, inventory & more - all modules integrated under one roof." },
                                 { icon: FileCheck, title: "No Licensing Fee", desc: "ERPNext is open-source (GPL-licensed), reducing upfront software costs and avoiding recurring license fees." },
                                 { icon: Activity, title: "Customizable & Scalable", desc: "Adjust the system to your clinic/hospital size; from small clinics to large multi-department hospitals; add or remove modules as needed." },
-                                { icon: Heart, title: "Compliance & Data Safety", desc: "Manage patient records, clinical data, billing, and employee data — with audit trails, role-based access, and compliance readiness for healthcare regulations." },
-                                { icon: Clock, title: "All-in-One ERP + HMS", desc: "Not just a Healthcare Management System; you get ERP features for accounting, payroll, inventory, asset management, purchasing — useful for hospitals/clinics running multiple functions." },
-                                { icon: Search, title: "Global & Local", desc: "Affordable implementation — As a Gnosys Digital offering, you get expert implementation, customization & support — priced for small/mid-size to large healthcare businesses." }
+                                { icon: Heart, title: "Compliance & Data Safety", desc: "Manage patient records, clinical data, billing, and employee data - with audit trails, role-based access, and compliance readiness for healthcare regulations." },
+                                { icon: Clock, title: "All-in-One ERP + HMS", desc: "Not just a Healthcare Management System; you get ERP features for accounting, payroll, inventory, asset management, purchasing - useful for hospitals/clinics running multiple functions." },
+                                { icon: Search, title: "Global & Local", desc: "Affordable implementation - As a Gnosys Digital offering, you get expert implementation, customization & support - priced for small/mid-size to large healthcare businesses." }
                             ].map((item, i) => (
-                                <div key={i} className="bg-white/60 backdrop-blur-lg border border-white/80 rounded-2xl p-8 flex flex-col items-center hover:shadow-2xl hover:shadow-zinc-900/10 hover:-translate-y-1 transition-all duration-300">
-                                    <div className="size-14 rounded-full bg-white shadow-sm border border-gray-100 text-zinc-900 flex items-center justify-center mb-6">
-                                        <item.icon className="size-6" />
+                                <div 
+                                    key={i} 
+                                    className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                >
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    
+                                    <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                        <item.icon className="size-7 text-[#00477b]" />
                                     </div>
-                                    <h3 className="text-lg font-bold text-[#00477b] mb-2">{item.title}</h3>
-                                    <p className="text-zinc-600 text-sm leading-relaxed">{item.desc}</p>
+                                    
+                                    <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">
+                                        {item.desc}
+                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -147,8 +163,8 @@ export default function ErpnextForHealthcare() {
                                         <tr key={i} className="hover:bg-blue-50/40 transition-colors group">
                                             <td className="py-4.5 sm:py-5 px-6 sm:px-8 border-r border-zinc-200/60">
                                                 <div className="flex items-start gap-4">
-                                                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 text-[#00477b] border border-[#00477b]/15 flex items-center justify-center shrink-0 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 shadow-2xs mt-0.5">
-                                                        <row.icon className="size-5" />
+                                                    <div className="w-10 h-10 rounded-xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center shrink-0 mt-0.5">
+                                                        <row.icon className="size-5 text-[#00477b]" />
                                                     </div>
                                                     <div className="flex flex-col">
                                                         <span className="font-bold text-[#00477b] text-[15px] sm:text-base leading-snug group-hover:text-[#003355]">
@@ -201,14 +217,14 @@ export default function ErpnextForHealthcare() {
                     <div className="w-full px-4 md:px-8">
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                             {[
-                                { icon: FileText, title: "Automated Calculations", desc: "wages, overtime, deductions, bonuses — all calculated accurately." },
+                                { icon: FileText, title: "Automated Calculations", desc: "wages, overtime, deductions, bonuses - all calculated accurately." },
                                 { icon: Clock, title: "Integrate Attendance & Leave", desc: "payroll reflects real-time shifts and leave balances." },
                                 { icon: FileCheck, title: "Compliance & Reporting", desc: "maintain audit-ready records and comply with local labor laws." },
                                 { icon: Target, title: "Employee Self-Service", desc: "staff can view payslips, leave, and salary history online." },
                                 { icon: Activity, title: "Scalable for Any Facility", desc: "works for small clinics to multi-department hospitals." }
                             ].map((item, i) => (
                                 <div key={i} className="bg-white/60 backdrop-blur-lg border border-white/85 rounded-2xl shadow-sm p-6 text-left hover:-translate-y-1 transition-transform w-full">
-                                    <div className="size-12 rounded-full bg-white shadow-sm border border-gray-100 text-zinc-900 flex items-center justify-center mb-4">
+                                    <div className="size-12 rounded-full bg-white shadow-sm border border-gray-100 text-[#00477b] flex items-center justify-center mb-4">
                                         <item.icon className="size-5" />
                                     </div>
                                     <h3 className="font-bold text-[#00477b] mb-2">{item.title}</h3>
@@ -346,7 +362,7 @@ export default function ErpnextForHealthcare() {
                         Let's Turn Search Into Sales
                     </h2>
                     <p className="text-zinc-600 font-medium mb-8">
-                        Your customers are searching. Let's make sure they find you — and choose you.
+                        Your customers are searching. Let's make sure they find you - and choose you.
                     </p>
                     <Button asChild className="bg-[#00477b] hover:bg-[#003862] text-white font-bold h-12 px-8 shadow-lg">
                         <Link href="/free-digital-consultation">
@@ -384,7 +400,7 @@ export default function ErpnextForHealthcare() {
                                     key={i} 
                                     className="bg-white/60 backdrop-blur-lg border border-white/80 rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-5 w-full min-h-[220px]"
                                 >
-                                    <div className="size-14 rounded-full bg-white shadow-sm border border-gray-100 text-zinc-900 flex items-center justify-center shrink-0">
+                                    <div className="size-14 rounded-full bg-white shadow-sm border border-gray-100 text-[#00477b] flex items-center justify-center shrink-0">
                                         <item.icon className="size-6" />
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -406,7 +422,7 @@ export default function ErpnextForHealthcare() {
                                     key={i} 
                                     className="bg-white/60 backdrop-blur-lg border border-white/80 rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-start gap-5 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] min-h-[220px]"
                                 >
-                                    <div className="size-14 rounded-full bg-white shadow-sm border border-gray-100 text-zinc-900 flex items-center justify-center shrink-0">
+                                    <div className="size-14 rounded-full bg-white shadow-sm border border-gray-100 text-[#00477b] flex items-center justify-center shrink-0">
                                         <item.icon className="size-6" />
                                     </div>
                                     <div className="flex flex-col gap-2">
@@ -436,11 +452,11 @@ export default function ErpnextForHealthcare() {
                             
                             <FaqAccordion 
                                 items={[
-                                    { q: "Does ERPNext require license fees?", a: "No — ERPNext is open-source (GPL). You pay only implementation and hosting costs." },
+                                    { q: "Does ERPNext require license fees?", a: "No - ERPNext is open-source (GPL). You pay only implementation and hosting costs." },
                                     { q: "Can we start small and scale later (add more modules)?", a: "Absolutely. ERPNext is modular. You can start with core modules (OPD, Pharmacy, Accounting) and expand as needed." },
-                                    { q: "Is patient data secure?", a: "Yes — ERPNext supports role-based access, audit trails, and secure storage. We can also help with additional hosting/security setup." },
+                                    { q: "Is patient data secure?", a: "Yes - ERPNext supports role-based access, audit trails, and secure storage. We can also help with additional hosting/security setup." },
                                     { q: "Can we integrate with third-party labs/pharmacy systems/insurance software?", a: "Yes. Because ERPNext is open-source and flexible, integrations are possible. We'll assess during the consultation." },
-                                    { q: "What about training and support?", a: "Gnosys Digital handles training of doctors, staff, admin, lab technicians — plus post-launch support, updates, and customizations." }
+                                    { q: "What about training and support?", a: "Gnosys Digital handles training of doctors, staff, admin, lab technicians - plus post-launch support, updates, and customizations." }
                                 ]}
                                 containerClassName="bg-white/40 backdrop-blur-lg border border-white/60 rounded-[2rem] shadow-sm overflow-hidden"
                                 itemClassName="border-b border-white/40 last:border-0"
@@ -461,7 +477,7 @@ export default function ErpnextForHealthcare() {
                                     Book Your Healthcare ERP Consultation
                                 </h2>
                                 <p className="text-zinc-600 font-medium mb-8 text-sm sm:text-base leading-relaxed">
-                                    Let's understand your facility — its size, workflows, and goals — and propose a tailored implementation plan. No obligation. Just clarity, practicality, and the right system.
+                                    Let's understand your facility - its size, workflows, and goals - and propose a tailored implementation plan. No obligation. Just clarity, practicality, and the right system.
                                 </p>
                                 <Button className="bg-[#00477b] hover:bg-[#003862] text-white font-bold h-14 px-8 w-full rounded-xl shadow-lg transition-all hover:scale-102">
                                     Schedule My Healthcare ERP Discovery Call

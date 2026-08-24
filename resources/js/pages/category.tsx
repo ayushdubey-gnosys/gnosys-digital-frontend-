@@ -491,17 +491,17 @@ export default function Category({ type, slug }: CategoryProps) {
                                                 {/* Glow effect on hover */}
                                                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                                <div className="size-14 bg-white/80 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg border border-white/60 text-blue-600 mb-3 group-hover:scale-110 transition-transform duration-500 relative z-10">
-                                                    <Package className="size-7" strokeWidth={1.5} />
+                                                <div className="size-14 bg-white shadow-md shadow-blue-900/5 rounded-2xl flex items-center justify-center border border-white text-[#00477b] mb-3 relative z-10">
+                                                    <Package className="size-7 text-[#00477b]" strokeWidth={1.5} />
                                                 </div>
-                                                <span className="text-[11px] font-bold text-blue-900/50 uppercase tracking-widest relative z-10">
+                                                <span className="text-[11px] font-bold text-[#00477b]/70 uppercase tracking-widest relative z-10">
                                                     Digital Asset
                                                 </span>
                                             </div>
 
                                             {/* Content */}
                                             <div className="pt-6 pb-2 px-3 flex flex-col flex-1 items-center text-center">
-                                                <h4 className="font-extrabold text-[15px] text-[#00477b] mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors">
+                                                <h4 className="font-extrabold text-[15px] text-[#00477b] mb-2 line-clamp-2 leading-tight">
                                                     {product.title}
                                                 </h4>
                                                 
@@ -537,7 +537,7 @@ export default function Category({ type, slug }: CategoryProps) {
                             {/* Pagination (Static for now) */}
                             <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6">
                                 <div className="text-[15px] text-gray-500 font-medium">
-                                    Showing 1–{displayProducts.length} of {products.length} results
+                                    Showing 1-{displayProducts.length} of {products.length} results
                                 </div>
                                 
                                 <div className="flex items-center gap-1.5">

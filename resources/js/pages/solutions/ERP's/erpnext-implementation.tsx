@@ -37,7 +37,7 @@ export default function ErpnextImplementation() {
     const faqs = [
         {
             question: "How long does it take to implement ERPNext?",
-            answer: "Typically 3–6 weeks depending on scope and customization."
+            answer: "Typically 3-6 weeks depending on scope and customization."
         },
         {
             question: "Do I need my own server?",
@@ -57,48 +57,59 @@ export default function ErpnextImplementation() {
         <MainLayout>
             <Head title="ERPNext Implementation Partner" />
 
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
+
             {/* 1. Hero Section */}
-            <section className="relative overflow-hidden py-24 lg:py-32 flex flex-col items-center justify-center text-center min-h-[60vh] text-white">
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
+                {/* Background Container */}
                 <div className="absolute inset-0 z-0">
-                    <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                        style={{ backgroundImage: "url('/assets/erp-imp.webp')", backgroundColor: '#09090b' }}
+                    <div 
+                        className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/erp-implememtion.webp')", backgroundColor: '#020b18' }}
                     ></div>
-                    <div className="absolute inset-0 bg-black/40"></div>
+                    {/* Soft gradient on the left to ensure text is 100% readable while the office graphic on the right remains crystal clear */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent pointer-events-none lg:w-3/5"></div>
                 </div>
 
-                <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-                    <ScrollReveal animation="fade-up" delay={80}>
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Simplify Your Operations With ERPNext Fully Implemented, Configured, And Supported
-                        </h1>
-                    </ScrollReveal>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
+                    <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                ERPNEXT IMPLEMENTATION PARTNER
+                            </span>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+                                Simplify Your Operations <br />
+                                <span className="text-blue-100 font-normal">With Fully Implemented ERPNext</span>
+                            </h1>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={180}>
-                        <p className="text-lg md:text-xl text-zinc-200/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                            Automate accounting, inventory, CRM, and HR — all in one open-source platform. We help SMEs deploy ERPNext fast, affordably, and with zero chaos.
-                        </p>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={180}>
+                            <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
+                                Automate accounting, inventory, CRM, and HR - all in one open-source platform. We help SMEs deploy ERPNext fast, affordably, and with zero chaos.
+                            </p>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={280}>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Button asChild className="group relative overflow-hidden bg-transparent backdrop-blur-md border border-white text-white hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 rounded-full px-10 h-14 text-base font-extrabold transition-all duration-300">
-                                <Link href="/free-digital-consultation">
-                                    <span className="relative z-10 flex items-center gap-2">Book a free consultation <span className="text-xl">&rarr;</span></span>
-                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                                </Link>
-                            </Button>
-                            <Button className="bg-transparent text-white border border-white/40 hover:bg-white/10 hover:border-white rounded-full px-8 h-14 text-base font-bold shadow-lg transition-all duration-300">
-                                Request a Quote
-                            </Button>
-                        </div>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={280}>
+                            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                                <Button asChild className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        <span className="relative z-10 flex items-center gap-2">Book a Free Consultation <ArrowRight className="size-5" /></span>
+                                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                    </Link>
+                                </Button>
+                                <Button className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 rounded-full px-8 h-14 text-sm sm:text-base font-bold shadow-lg transition-all w-full sm:w-auto">
+                                    Request a Quote
+                                </Button>
+                            </div>
+                        </ScrollReveal>
 
-                    <ScrollReveal animation="fade-up" delay={380}>
-                        <div className="mt-12 text-sm text-zinc-300 font-medium tracking-wide">
-                            Trusted by growing manufacturers, distributors and service providers across India.
-                        </div>
-                    </ScrollReveal>
+                        <ScrollReveal animation="fade-up" delay={380}>
+                            <div className="mt-8 text-xs sm:text-sm text-blue-100/80 font-medium tracking-wide">
+                                Trusted by growing manufacturers, distributors, and service providers across India.
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
 
                 {/* Curved Wave Divider */}
@@ -109,9 +120,9 @@ export default function ErpnextImplementation() {
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
                     <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why ERPNext</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Why ERPNext — One Platform For Your Entire Business</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Why ERPNext - One Platform For Your Entire Business</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        ERPNext helps you run your entire business from one place — with zero recurring license costs. It's open-source, modular, and designed for SMEs who want control, scalability, and savings.
+                        ERPNext helps you run your entire business from one place - with zero recurring license costs. It's open-source, modular, and designed for SMEs who want control, scalability, and savings.
                     </p>
                 </div>
 
@@ -123,15 +134,15 @@ export default function ErpnextImplementation() {
                             { icon: Package, title: 'Inventory & Warehouse', desc: 'Track stock levels, batches, and transfers effortlessly.' },
                             { icon: Factory, title: 'Manufacturing', desc: 'Manage production planning, BOMs, and material lists.' },
                             { icon: Briefcase, title: 'CRM & Sales', desc: 'Automate leads, quotes, and follow-ups.' },
-                            { icon: Users, title: 'HR & Payroll', desc: 'Employee records, attendance, and salary slips – all in one place.' },
+                            { icon: Users, title: 'HR & Payroll', desc: 'Employee records, attendance, and salary slips - all in one place.' },
                             { icon: Cloud, title: 'Cloud-Based Access', desc: 'Work from anywhere with role-based permissions.' },
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-8 flex flex-col items-center text-center hover:shadow-2xl hover:shadow-zinc-900/10 hover:-translate-y-1 transition-all duration-300">
-                                <div className="w-14 h-14 bg-zinc-100 text-zinc-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                    <item.icon className="size-7" />
+                            <div key={idx} className="bg-white/60 backdrop-blur-xl border border-white/80 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-xl hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden">
+                                <div className="size-16 bg-white shadow-md shadow-blue-900/5 rounded-2xl border border-white text-[#00477b] flex items-center justify-center mx-auto mb-6">
+                                    <item.icon className="size-7 text-[#00477b]" />
                                 </div>
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3">{item.title}</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">{item.title}</h3>
+                                <p className="text-zinc-600 text-sm leading-relaxed font-medium">{item.desc}</p>
                             </div>
                         ))}
                         </div>
@@ -143,9 +154,9 @@ export default function ErpnextImplementation() {
             <section className="pt-24 bg-transparent border-t border-white/40">
                 <div className="w-full px-4 lg:px-8 mb-12 text-center">
                     <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why Gnosys Digital</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Your Implementation Partner For ERPNext — Done Right</h2>
+                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Your Implementation Partner For ERPNext - Done Right</h2>
                     <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        We're not just ERP implementers — we're a digital transformation partner who understands SMEs.
+                        We're not just ERP implementers - we're a digital transformation partner who understands SMEs.
                     </p>
                 </div>
 
@@ -159,7 +170,7 @@ export default function ErpnextImplementation() {
                         ].map((item, idx) => (
                             <div key={idx} className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-8">
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-10 h-10 bg-white shadow-sm text-zinc-700 rounded-full flex items-center justify-center">
+                                    <div className="w-10 h-10 bg-white shadow-sm text-[#00477b] rounded-full flex items-center justify-center">
                                         <item.icon className="size-5" />
                                     </div>
                                     <h3 className="text-lg font-bold text-[#00477b]">{item.title}</h3>
@@ -188,7 +199,7 @@ export default function ErpnextImplementation() {
                         <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                             <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">S</span>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-zinc-800 flex items-center justify-center border border-zinc-100">
+                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
                                     <Zap className="size-5" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Strengths</h3>
@@ -207,7 +218,7 @@ export default function ErpnextImplementation() {
                         <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                             <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">W</span>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-zinc-800 flex items-center justify-center border border-zinc-100">
+                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
                                     <Search className="size-5" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Weaknesses</h3>
@@ -226,7 +237,7 @@ export default function ErpnextImplementation() {
                         <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                             <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">O</span>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-zinc-800 flex items-center justify-center border border-zinc-100">
+                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
                                     <Rocket className="size-5" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Opportunities</h3>
@@ -245,7 +256,7 @@ export default function ErpnextImplementation() {
                         <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
                             <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">T</span>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-zinc-800 flex items-center justify-center border border-zinc-100">
+                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
                                     <Database className="size-5" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Threats</h3>
@@ -289,10 +300,10 @@ export default function ErpnextImplementation() {
                                     >
                                         <div>
                                             <div className="flex items-center justify-between w-full mb-4">
-                                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 text-[#00477b] flex items-center justify-center group-hover:bg-[#00477b] group-hover:text-white group-hover:border-[#00477b] transition-all duration-300 shadow-sm">
-                                                    <step.icon className="size-5" />
+                                                <div className="w-12 h-12 rounded-xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
+                                                    <step.icon className="size-5 text-[#00477b]" />
                                                 </div>
-                                                <span className="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-[#00477b]/10 text-[#00477b] group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                <span className="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-[#00477b]/10 text-[#00477b]">
                                                     0{idx + 1}
                                                 </span>
                                             </div>
@@ -329,40 +340,40 @@ export default function ErpnextImplementation() {
                 <div className="w-full">
                     <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
                         <div className="max-w-5xl mx-auto w-full">
-                            <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl shadow-sm overflow-hidden mb-8">
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-[#00477b] text-white">
-                                        <th className="py-5 px-6 font-bold w-1/4">Plan</th>
-                                        <th className="py-5 px-6 font-bold w-1/4 border-l border-white/20">Ideal For</th>
-                                        <th className="py-5 px-6 font-bold w-1/3 border-l border-white/20">What's Included</th>
-                                        <th className="py-5 px-6 font-bold w-1/6 border-l border-white/20">Starting From</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr className="border-b border-white/40 hover:bg-white/40 transition-colors">
-                                        <td className="py-5 px-6 font-bold text-zinc-900">Starter Implementation</td>
-                                        <td className="py-5 px-6 text-gray-600 border-l border-white/40">Small business (1-2 modules)</td>
-                                        <td className="py-5 px-6 text-gray-600 border-l border-white/40">Basic setup, 5 users, core training</td>
-                                        <td className="py-5 px-6 text-zinc-900 font-semibold border-l border-white/40">₹50,000</td>
-                                    </tr>
-                                    <tr className="border-b border-white/40 hover:bg-white/40 transition-colors bg-white/30">
-                                        <td className="py-5 px-6 font-bold text-zinc-900">Standard Implementation</td>
-                                        <td className="py-5 px-6 text-gray-600 border-l border-white/40">SMEs (3-5 modules)</td>
-                                        <td className="py-5 px-6 text-gray-600 border-l border-white/40">Full configuration, minor customization, data migration</td>
-                                        <td className="py-5 px-6 text-zinc-900 font-semibold border-l border-white/40">₹1,25,000</td>
-                                    </tr>
-                                    <tr className="hover:bg-white/40 transition-colors">
-                                        <td className="py-5 px-6 font-bold text-zinc-900">Advanced Setup</td>
-                                        <td className="py-5 px-6 text-gray-600 border-l border-white/40">Growing businesses</td>
-                                        <td className="py-5 px-6 text-gray-600 border-l border-white/40">Multi-company setup, advanced workflows, integrations</td>
-                                        <td className="py-5 px-6 text-zinc-900 font-semibold border-l border-white/40">₹2,50,000+</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                            <div className="bg-white/70 backdrop-blur-2xl border border-white/80 rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,0.05)] overflow-hidden mb-8">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-left border-collapse">
+                                        <thead>
+                                            <tr className="bg-gradient-to-r from-[#00477b] to-[#003862] text-white">
+                                                <th className="py-5 px-8 font-bold text-sm uppercase tracking-wider w-1/4">Plan</th>
+                                                <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider w-1/4">Ideal For</th>
+                                                <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider w-1/3">What's Included</th>
+                                                <th className="py-5 px-8 font-bold text-sm uppercase tracking-wider w-1/6 text-right sm:text-left">Starting From</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-zinc-200/50 text-sm">
+                                            <tr className="hover:bg-white/80 transition-colors">
+                                                <td className="py-6 px-8 font-bold text-zinc-900 text-base">Starter Implementation</td>
+                                                <td className="py-6 px-6 text-zinc-600 font-medium">Small business (1-2 modules)</td>
+                                                <td className="py-6 px-6 text-zinc-600 font-medium">Basic setup, 5 users, core training</td>
+                                                <td className="py-6 px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹50,000</td>
+                                            </tr>
+                                            <tr className="hover:bg-white/80 transition-colors bg-blue-50/20">
+                                                <td className="py-6 px-8 font-bold text-zinc-900 text-base">Standard Implementation</td>
+                                                <td className="py-6 px-6 text-zinc-600 font-medium">SMEs (3-5 modules)</td>
+                                                <td className="py-6 px-6 text-zinc-600 font-medium">Full configuration, minor customization, data migration</td>
+                                                <td className="py-6 px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹1,25,000</td>
+                                            </tr>
+                                            <tr className="hover:bg-white/80 transition-colors">
+                                                <td className="py-6 px-8 font-bold text-zinc-900 text-base">Advanced Setup</td>
+                                                <td className="py-6 px-6 text-zinc-600 font-medium">Growing businesses</td>
+                                                <td className="py-6 px-6 text-zinc-600 font-medium">Multi-company setup, advanced workflows, integrations</td>
+                                                <td className="py-6 px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹2,50,000+</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 
                     <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-6 text-center shadow-sm">
                         <p className="text-gray-700 font-medium text-lg">
@@ -381,21 +392,29 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 7. Add-Ons */}
-            <section className="py-24 bg-transparent border-t border-white/40 overflow-hidden">
-                <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-                    <div className="w-full lg:w-1/2">
-                        <div className="relative overflow-hidden shadow-2xl ring-1 ring-zinc-200/50 aspect-[4/3] lg:aspect-[16/10] bg-white rounded-r-[2rem]">
-                            <img src="/assets/erp-cycle.png" alt="ERP Next Cycle Workflow" width="800" height="600" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            <section className="py-16 bg-transparent border-t border-white/40 overflow-hidden">
+                <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+                    <div className="w-full lg:w-[57%]">
+                        <div className="relative overflow-hidden shadow-[20px_0_50px_-5px_rgba(0,0,0,0.28),_10px_0_25px_-5px_rgba(0,71,123,0.3)] ring-1 ring-zinc-200/50 aspect-[16/10] sm:aspect-[16/9.5] bg-white rounded-r-[2rem] lg:rounded-r-[3rem]">
+                            <img 
+                                src="/assets/erp-imp.webp" 
+                                alt="ERPNext Implementation Add-Ons" 
+                                width="900" 
+                                height="550" 
+                                loading="lazy" 
+                                decoding="async" 
+                                className="w-full h-full object-cover object-center" 
+                            />
                         </div>
                     </div>
-                    <div className="w-full lg:w-1/2 px-4 sm:px-8 lg:px-12 lg:pr-24">
-                        <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-6">Powerful Extensions</span>
-                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">ERPNext Add-Ons We Offer</h2>
-                        <p className="text-lg text-gray-600 mb-10 leading-relaxed max-w-xl">
+                    <div className="w-full lg:w-[43%] px-4 sm:px-6 lg:px-8 lg:pr-12">
+                        <span className="inline-block w-fit px-4 py-1.5 rounded-full bg-white text-[12px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Powerful Extensions</span>
+                        <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-[#00477b] mb-4 leading-tight">ERPNext Add-Ons We Offer</h2>
+                        <p className="text-sm sm:text-[15px] text-gray-600 mb-6 leading-relaxed max-w-lg">
                             Extend your ERP with modules and automations designed for your industry. Scale without limits using our custom integrations.
                         </p>
                         
-                        <ul className="space-y-4 mb-12">
+                        <ul className="space-y-2.5 mb-8">
                             {[
                                 "API Integrations (CRM, Shopify, WooCommerce)",
                                 "WhatsApp & Email Automation",
@@ -404,16 +423,16 @@ export default function ErpnextImplementation() {
                                 "Server Setup & Cloud Hosting (AWS, DigitalOcean)",
                                 "Mobile App Enablement"
                             ].map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-4 bg-white/60 backdrop-blur-sm border border-zinc-200/60 rounded-xl p-4 shadow-sm hover:shadow-md hover:border-blue-200/60 hover:-translate-y-0.5 transition-all duration-300 group">
-                                    <div className="bg-blue-50 text-blue-600 rounded-full p-2 shadow-sm group-hover:bg-[#00477b] group-hover:text-white group-hover:scale-110 transition-all duration-300">
-                                        <Check className="size-4 stroke-[3]" />
+                                <li key={idx} className="flex items-center gap-3 bg-white/70 backdrop-blur-md border border-white/80 rounded-xl px-3.5 py-2.5 shadow-xs hover:shadow-sm hover:bg-white hover:-translate-y-0.5 transition-all duration-300 group">
+                                    <div className="size-6 rounded-full bg-blue-50/80 text-[#00477b] border border-blue-100/60 flex items-center justify-center shrink-0 shadow-2xs">
+                                        <Check className="size-3.5 stroke-[2.5]" />
                                     </div>
-                                    <span className="text-zinc-800 font-semibold">{item}</span>
+                                    <span className="text-zinc-800 font-semibold text-[13.5px]">{item}</span>
                                 </li>
                             ))}
                         </ul>
 
-                        <Button className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-14 rounded-xl text-base font-bold shadow-xl shadow-blue-900/20 hover:shadow-blue-900/40 hover:-translate-y-1 transition-all duration-300 border-none">
+                        <Button className="w-fit bg-[#00477b] hover:bg-[#003355] text-white px-7 h-11 rounded-xl text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-blue-900/30 hover:-translate-y-0.5 transition-all duration-300 border-none">
                             Explore Custom Solutions
                         </Button>
                     </div>
@@ -495,7 +514,7 @@ export default function ErpnextImplementation() {
                                     <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Get Started</span>
                                     <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">Let's Simplify Your Operations With ERPNext</h2>
                                     <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
-                                        Tell us about your business — we'll recommend the right modules, timeline, and cost. Start your digital transformation journey today.
+                                        Tell us about your business - we'll recommend the right modules, timeline, and cost. Start your digital transformation journey today.
                                     </p>
                                     <div className="space-y-6 mt-4 hidden lg:block">
                                         <div className="flex items-center gap-4 text-zinc-700">

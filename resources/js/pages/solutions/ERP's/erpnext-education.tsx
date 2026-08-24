@@ -7,7 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import {
     GraduationCap, Users, BookOpen, Building2,
     CheckSquare, Star, Search, Database, Settings,
-    MonitorPlay, Rocket, ArrowRight
+    MonitorPlay, Rocket, ArrowRight, CheckCircle2
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
@@ -251,7 +251,7 @@ export default function ErpnextEducation() {
                             <h3 className="text-[#00477b] font-normal text-xl mb-3">Schools (K-12)</h3>
                             <p className="text-zinc-500 text-xs leading-relaxed">Parent portal, homework tracking, and co-curricular assessment</p>
                         </div>
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
+                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
                             <h3 className="text-[#00477b] font-normal text-xl mb-3">Colleges & Universities</h3>
                             <p className="text-zinc-500 text-xs leading-relaxed">Credit systems, research tracking, placement management</p>
                         </div>
@@ -287,8 +287,8 @@ export default function ErpnextEducation() {
                             
                             {/* Step 1 */}
                             <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
-                                    <Search className="size-7" strokeWidth={1.5} />
+                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
+                                    <Search className="size-7 text-[#00477b]" strokeWidth={1.5} />
                                 </div>
                                 <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Discovery</h4>
                                 <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Review academic workflows and identify core requirements.</p>
@@ -301,8 +301,8 @@ export default function ErpnextEducation() {
 
                             {/* Step 2 */}
                             <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
-                                    <Settings className="size-7" strokeWidth={1.5} />
+                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
+                                    <Settings className="size-7 text-[#00477b]" strokeWidth={1.5} />
                                 </div>
                                 <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Configuration</h4>
                                 <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Set up courses, fees, roles, and dashboards.</p>
@@ -315,8 +315,8 @@ export default function ErpnextEducation() {
 
                             {/* Step 3 */}
                             <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
-                                    <Database className="size-7" strokeWidth={1.5} />
+                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
+                                    <Database className="size-7 text-[#00477b]" strokeWidth={1.5} />
                                 </div>
                                 <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Migration</h4>
                                 <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Import student and staff data and connect integrations.</p>
@@ -329,8 +329,8 @@ export default function ErpnextEducation() {
 
                             {/* Step 4 */}
                             <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
-                                    <MonitorPlay className="size-7" strokeWidth={1.5} />
+                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
+                                    <MonitorPlay className="size-7 text-[#00477b]" strokeWidth={1.5} />
                                 </div>
                                 <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Training</h4>
                                 <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Train admin, faculty, and support teams for launch.</p>
@@ -343,8 +343,8 @@ export default function ErpnextEducation() {
 
                             {/* Step 5 */}
                             <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 shadow-sm flex items-center justify-center text-[#00477b] mb-5 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white">
-                                    <Rocket className="size-7" strokeWidth={1.5} />
+                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
+                                    <Rocket className="size-7 text-[#00477b]" strokeWidth={1.5} />
                                 </div>
                                 <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Optimization</h4>
                                 <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Refine workflows and provide ongoing support.</p>
@@ -354,7 +354,7 @@ export default function ErpnextEducation() {
                     </div>
             </section>
 
-            {/* 6. Results You Can Expect */}
+            {/* 7. Results You Can Expect */}
             <section className="py-24 bg-transparent relative z-10 border-b border-white/20">
                 <div className="container mx-auto px-4 max-w-6xl text-center">
                     <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
@@ -388,7 +388,7 @@ export default function ErpnextEducation() {
                 </div>
             </section>
 
-            {/* 7. Success Highlights */}
+            {/* 8. Success Highlights */}
             <section className="pt-28 pb-40 relative z-10 overflow-hidden border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
@@ -504,7 +504,7 @@ export default function ErpnextEducation() {
                             }
                         ].map((item, i) => (
                             <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/80 p-8 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center">
-                                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-sky-100 border border-white flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-sm">
+                                <div className="w-16 h-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
                                     {item.icon}
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-3">{item.title}</h3>
@@ -518,128 +518,130 @@ export default function ErpnextEducation() {
             </section>
 
             {/* 9 & 10. Pricing and Assessment Form Combined */}
-            <section className="py-24 bg-white/40 backdrop-blur-xl border-y border-white/60 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                <div className="w-full px-4 lg:px-8 xl:px-12 mx-auto max-w-[100rem]">
-                    
-                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-stretch">
+            <section className="py-20 lg:py-24 bg-white/50 backdrop-blur-2xl border-y border-white/60 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12 mx-auto max-w-[95rem]">
+                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-stretch">
                         
-                        {/* Left Side: Pricing Card */}
-                        <div className="bg-white/80 backdrop-blur-xl rounded-[40px] shadow-[0_15px_50px_rgb(0,0,0,0.05)] border border-white/60 overflow-hidden flex flex-col justify-center p-8 lg:p-12 xl:p-16 h-full transition-transform hover:-translate-y-1 duration-300">
-                            <div className="mb-10 text-center lg:text-left">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                        {/* Left Side: Pricing Card (5 cols) */}
+                        <div className="lg:col-span-5 group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 border border-white/70 overflow-hidden flex flex-col justify-between p-8 sm:p-10 lg:p-12 h-full transition-all duration-500">
+                            <div className="absolute top-0 right-0 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                            
+                            <div className="relative z-10">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-xs text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                                     PRICING & PACKAGES
                                 </span>
-                                <h2 className="text-3xl lg:text-4xl font-normal text-[#00477b] tracking-tight">
+                                <h2 className="text-3xl lg:text-4xl font-normal text-[#00477b] tracking-tight mb-6">
                                     Education ERP Package
                                 </h2>
+
+                                {/* Pricing Box */}
+                                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 sm:p-7 text-center border border-white shadow-md shadow-blue-900/5 mb-6">
+                                    <h3 className="text-xs font-extrabold text-zinc-500 uppercase tracking-widest mb-1.5">Starting At</h3>
+                                    <p className="text-4xl sm:text-5xl font-extrabold text-[#00477b] tracking-tight">₹1,50,000<span className="text-2xl text-[#00477b]/70 font-semibold">*</span></p>
+                                    <p className="text-xs text-zinc-500 mt-2 font-medium">Includes all core modules, data migration, staff training & 1-year support</p>
+                                </div>
+
+                                <div className="space-y-6">
+                                    <div>
+                                        <h4 className="font-bold text-[#00477b] text-xs uppercase tracking-wider mb-3">Included Core Modules:</h4>
+                                        <div className="p-4 rounded-2xl bg-white/70 border border-white shadow-xs">
+                                            <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">
+                                                Student Lifecycle, Fee Collection & Accounts, Attendance & Timetable, 2 Marketplace Integrations, Automated GST, 5 User Licenses, Training & Go-Live Support.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-bold text-[#00477b] text-xs uppercase tracking-wider mb-3">Limited-Time Included Bonuses:</h4>
+                                        <div className="grid sm:grid-cols-2 gap-2.5">
+                                            {[
+                                                "NAAC / NBA Compliance Engine",
+                                                "Student & Parent Mobile App",
+                                                "Online Exam & Grading System",
+                                                "RFID & Biometric Sync"
+                                            ].map((bonus, bIdx) => (
+                                                <div key={bIdx} className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-white shadow-xs">
+                                                    <CheckCircle2 className="size-4 text-[#00477b] shrink-0" />
+                                                    <span className="text-xs font-semibold text-zinc-700">{bonus}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div className="bg-white rounded-3xl p-8 text-center border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] mb-8 transition-transform hover:-translate-y-1 duration-300">
-                                <h3 className="text-base font-bold text-[#00477b] mb-2">Starting At</h3>
-                                {/* Changed Amount Color to Gradient */}
-                                <p className="text-4xl xl:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#00477b] to-sky-400">₹1,50,000*</p>
-                            </div>
-                            
-                            <p className="text-sm mb-6 text-zinc-700 leading-relaxed">
-                                Includes all modules, data migration, training, and support
-                            </p>
-
-                            <h4 className="font-normal text-[#00477b] mb-3 text-sm tracking-wide">Bonus items for a limited period:</h4>
-                            <ul className="space-y-3 mb-8 list-none">
-                                <li className="flex items-start gap-2 text-sm text-zinc-600">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
-                                    <span>Order & Inventory Management, 2 Marketplace Integrations, Automated Shipping & GST, 5 User Licenses, Training & Go-Live Support.</span>
-                                </li>
-                            </ul>
-
-                            <h4 className="font-normal text-[#00477b] mb-3 text-sm tracking-wide">Limited time bonuses:</h4>
-                            <ul className="space-y-3 list-none">
-                                <li className="flex items-start gap-2 text-sm text-zinc-600">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
-                                    <span>NAAC / NBA compliance</span>
-                                </li>
-                                <li className="flex items-start gap-2 text-sm text-zinc-600">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
-                                    <span>Mobile app</span>
-                                </li>
-                                <li className="flex items-start gap-2 text-sm text-zinc-600">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 shrink-0"></div>
-                                    <span>Online exam system</span>
-                                </li>
-                            </ul>
                         </div>
 
-                        {/* Right Side: Contact Form Card */}
-                        <div className="bg-white/80 backdrop-blur-xl rounded-[40px] shadow-[0_15px_50px_rgb(0,0,0,0.05)] border border-white/60 overflow-hidden flex flex-col justify-center p-8 lg:p-12 xl:p-16 h-full transition-transform hover:-translate-y-1 duration-300">
-                            <div className="mb-10 text-center lg:text-left">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                        {/* Right Side: Contact Form Card (7 cols) */}
+                        <div className="lg:col-span-7 bg-gradient-to-br from-white/90 via-white/70 to-white/45 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl border border-white/80 overflow-hidden flex flex-col justify-between p-8 sm:p-10 lg:p-12 h-full transition-all duration-500">
+                            <div className="mb-6">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-xs text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-3">
                                     GET STARTED
                                 </span>
-                                <h2 className="text-3xl lg:text-4xl font-normal text-[#00477b] tracking-tight">
+                                <h2 className="text-3xl lg:text-4xl font-normal text-[#00477b] tracking-tight mb-2">
                                     Request Campus Assessment
                                 </h2>
+                                <p className="text-zinc-600 text-sm font-normal">
+                                    Fill in your institution details for a customized digital readiness roadmap and transparent cost estimate.
+                                </p>
                             </div>
 
-                            <form className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="fullName" className="text-xs font-bold text-zinc-700">Full Name</Label>
-                                        <Input id="fullName" placeholder="Enter your full name" className="h-12 rounded-xl border-zinc-200 bg-zinc-50/50 shadow-none focus:bg-white focus:border-[#00477b] focus:ring-4 focus:ring-[#00477b]/10 transition-all text-sm" />
+                            <form className="space-y-4">
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="fullName" className="text-xs font-bold text-zinc-700">Full Name *</Label>
+                                        <Input id="fullName" placeholder="Enter your full name" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="email" className="text-xs font-bold text-zinc-700">Email Address</Label>
-                                        <Input id="email" type="email" placeholder="Enter your email" className="h-12 rounded-xl border-zinc-200 bg-zinc-50/50 shadow-none focus:bg-white focus:border-[#00477b] focus:ring-4 focus:ring-[#00477b]/10 transition-all text-sm" />
-                                    </div>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="phone" className="text-xs font-bold text-zinc-700">Phone Number</Label>
-                                        <Input id="phone" placeholder="Enter your phone number" className="h-12 rounded-xl border-zinc-200 bg-zinc-50/50 shadow-none focus:bg-white focus:border-[#00477b] focus:ring-4 focus:ring-[#00477b]/10 transition-all text-sm" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="institutionName" className="text-xs font-bold text-zinc-700">Institution Name</Label>
-                                        <Input id="institutionName" placeholder="Enter your institution name" className="h-12 rounded-xl border-zinc-200 bg-zinc-50/50 shadow-none focus:bg-white focus:border-[#00477b] focus:ring-4 focus:ring-[#00477b]/10 transition-all text-sm" />
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="email" className="text-xs font-bold text-zinc-700">Email Address *</Label>
+                                        <Input id="email" type="email" placeholder="Enter your official email" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
                                     </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="typeOfInstitution" className="text-xs font-bold text-zinc-700">Type of Institution</Label>
-                                        <select id="typeOfInstitution" className="w-full h-12 rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2 text-sm shadow-none focus:outline-none focus:ring-4 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white transition-all text-zinc-700">
-                                            <option>Select Type</option>
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="phone" className="text-xs font-bold text-zinc-700">Phone Number *</Label>
+                                        <Input id="phone" placeholder="+91 98765 43210" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="institutionName" className="text-xs font-bold text-zinc-700">Institution Name *</Label>
+                                        <Input id="institutionName" placeholder="Enter school / college name" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
+                                    </div>
+                                </div>
+
+                                <div className="grid md:grid-cols-2 gap-4">
+                                    <div className="space-y-1.5">
+                                        <Label htmlFor="typeOfInstitution" className="text-xs font-bold text-zinc-700">Institution Type</Label>
+                                        <select id="typeOfInstitution" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 px-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white text-zinc-700">
                                             <option>School (K-12)</option>
-                                            <option>College / University</option>
-                                            <option>Coaching Institute</option>
-                                            <option>Other</option>
+                                            <option>College / Higher Education</option>
+                                            <option>University / Multi-Campus Group</option>
+                                            <option>Coaching & Training Institute</option>
                                         </select>
                                     </div>
-                                    <div className="space-y-2">
+                                    <div className="space-y-1.5">
                                         <Label htmlFor="studentStrength" className="text-xs font-bold text-zinc-700">Student Strength</Label>
-                                        <select id="studentStrength" className="w-full h-12 rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2 text-sm shadow-none focus:outline-none focus:ring-4 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white transition-all text-zinc-700">
-                                            <option>Select Option</option>
-                                            <option>Under 500</option>
-                                            <option>500 - 2,000</option>
-                                            <option>2,000 - 5,000</option>
-                                            <option>5,000+</option>
+                                        <select id="studentStrength" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 px-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white text-zinc-700">
+                                            <option>Under 500 Students</option>
+                                            <option>500 - 2,000 Students</option>
+                                            <option>2,000 - 5,000 Students</option>
+                                            <option>5,000+ Students</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div className="space-y-2">
-                                    <Label htmlFor="primaryChallenges" className="text-xs font-bold text-zinc-700">Primary Challenges</Label>
-                                    <select id="primaryChallenges" className="w-full h-12 rounded-xl border border-zinc-200 bg-zinc-50/50 px-4 py-2 text-sm shadow-none focus:outline-none focus:ring-4 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white transition-all text-zinc-700">
-                                        <option>Select Option</option>
-                                        <option>Admissions & Enrollment</option>
-                                        <option>Fee Collection & Finance</option>
-                                        <option>Academics & Grading</option>
-                                        <option>Compliance & Reporting</option>
+                                <div className="space-y-1.5">
+                                    <Label htmlFor="primaryChallenges" className="text-xs font-bold text-zinc-700">Primary Digitisation Priority</Label>
+                                    <select id="primaryChallenges" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 px-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white text-zinc-700">
+                                        <option>Admissions & Fee Collection Automation</option>
+                                        <option>Online Exams & Grading Governance</option>
+                                        <option>NAAC / NIRF Compliance & Reporting</option>
+                                        <option>Complete Multi-Campus ERP Overhaul</option>
                                     </select>
                                 </div>
 
-                                <div className="pt-4">
-                                    <Button className="bg-[#00477b] text-white hover:bg-[#00365d] px-8 h-14 font-bold w-full shadow-[0_8px_20px_rgb(0,71,123,0.2)] hover:shadow-[0_12px_25px_rgb(0,71,123,0.3)] hover:-translate-y-0.5 rounded-xl transition-all">
-                                        Request Digital Campus Audit
+                                <div className="pt-3">
+                                    <Button className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-14 font-extrabold w-full shadow-lg shadow-blue-900/10 hover:-translate-y-0.5 transition-all text-base">
+                                        Request Digital Campus Audit &rarr;
                                     </Button>
                                 </div>
                             </form>

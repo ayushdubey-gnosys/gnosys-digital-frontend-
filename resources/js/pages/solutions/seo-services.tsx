@@ -38,7 +38,7 @@ export default function SeoServices() {
 
                         <ScrollReveal animation="fade-up" delay={280}>
                             <p className="mb-8 text-base sm:text-lg text-blue-50/95 font-medium drop-shadow-md leading-relaxed">
-                                We don't just get you on Google — we grow your revenue. At Gnosys Digital, SEO is not about vanity metrics; it's about measurable outcomes — traffic that converts, content that scales, and visibility that drives profit.
+                                We don't just get you on Google - we grow your revenue. At Gnosys Digital, SEO is not about vanity metrics; it's about measurable outcomes - traffic that converts, content that scales, and visibility that drives profit.
                             </p>
                         </ScrollReveal>
 
@@ -81,15 +81,15 @@ export default function SeoServices() {
             <div className="relative z-10 w-full bg-transparent">
                 {/* 2. Why SEO Matters Now */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Why SEO Matters Now
                         </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mx-auto mb-4 max-w-4xl">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] leading-tight mb-4">
                             Visibility Is Profit. If You're Not Ranking, You're Not In The Game.
                         </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium mx-auto max-w-3xl leading-relaxed">
-                            93% of online experiences start with a search — and 75% of users never go past page one. But SEO today is not just about keywords — it's about <strong className="text-zinc-800 font-semibold">data-driven visibility, intent-based optimization, and strategic storytelling</strong> that makes search engines and humans trust you.
+                        <p className="text-sm sm:text-base text-zinc-600 font-medium mx-auto max-w-4xl leading-relaxed">
+                            93% of online experiences start with a search - and 75% of users never go past page one. But SEO today is not just about keywords - it's about <strong className="text-zinc-800 font-semibold">data-driven visibility, intent-based optimization, and strategic storytelling</strong> that makes search engines and humans trust you.
                         </p>
                     </div>
 
@@ -101,9 +101,9 @@ export default function SeoServices() {
                                     { icon: <FileText className="size-7" />, title: 'Companies that blog consistently see 13× higher ROI.' },
                                     { icon: <Target className="size-7" />, title: 'Organic leads convert 8× better than outbound ones.' },
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center justify-center min-h-[180px] h-full relative overflow-hidden group">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-center min-h-[180px] h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {item.icon}
                                         </div>
                                         <h3 className="text-base sm:text-lg font-bold text-[#00477b] leading-snug relative z-10">{item.title}</h3>
@@ -124,12 +124,12 @@ export default function SeoServices() {
 
                 {/* 3. The Gnosys SEO Engine */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Our SEO Framework- Built for Outcomes
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            The Gnosys SEO Engine — Designed For Measurable Results
+                            The Gnosys SEO Engine - Designed For Measurable Results
                         </h2>
                         <p className="text-sm sm:text-base text-zinc-600 font-medium mx-auto max-w-3xl leading-relaxed">
                             We combine <strong className="text-zinc-800 font-semibold">data intelligence, creative content</strong>, and <strong className="text-zinc-800 font-semibold">technical precision</strong> to deliver growth you can measure in revenue, not vanity metrics.
@@ -143,7 +143,7 @@ export default function SeoServices() {
                                     { 
                                         icon: <Wrench className="size-6" />, 
                                         title: 'Technical SEO Excellence', 
-                                        desc: 'Fix what search engines see first — site speed, structure, crawl depth, Core Web Vitals.',
+                                        desc: 'Fix what search engines see first - site speed, structure, crawl depth, Core Web Vitals.',
                                         result: '40% faster indexing, improved SERP stability.'
                                     },
                                     { 
@@ -165,12 +165,11 @@ export default function SeoServices() {
                                         result: 'Full transparency, real-time performance tracking.'
                                     },
                                 ].map((step, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white p-8 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group flex flex-col justify-between h-full">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        
-                                        <div className="relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
                                             <div className="flex items-center justify-between mb-6">
-                                                <div className="size-13 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
                                                     {step.icon}
                                                 </div>
                                                 <span className="text-[11px] font-black text-zinc-400 tracking-widest uppercase">
@@ -191,14 +190,14 @@ export default function SeoServices() {
                     </div>
                 </section>
 
-                {/* 4. Measurable Outcomes — Our Promise */}
+                {/* 4. Measurable Outcomes - Our Promise */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Measurable Outcomes— Our Promise
+                            Measurable Outcomes - Our Promise
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            We Don’t Talk Traffic — We Talk ROI.
+                            We Don’t Talk Traffic - We Talk ROI.
                         </h2>
                     </div>
 
@@ -237,11 +236,9 @@ export default function SeoServices() {
                                         impact: "Measured through sales-qualified leads"
                                     }
                                 ].map((card, idx) => (
-                                    <div key={idx} className="bg-gradient-to-br from-white/90 via-white/70 to-white/45 backdrop-blur-md border border-white rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between h-full relative overflow-hidden">
-                                        <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-[#00477b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-[2.25rem]"></div>
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.25rem] pointer-events-none"></div>
-
-                                        <div className="relative z-10 flex flex-col justify-between h-full">
+                                <div key={idx} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10 flex flex-col justify-between h-full">
                                             <div className="mb-4 inline-flex items-center justify-center gap-1.5 self-center px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/60 shadow-inner">
                                                 <span className="size-1.5 rounded-full bg-[#00477b]"></span>
                                                 <span className="text-[11px] font-semibold text-[#00477b] tracking-wider uppercase">Metric {card.step}</span>
@@ -269,9 +266,9 @@ export default function SeoServices() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.25rem] pointer-events-none"></div>
                                 <Quote className="size-8 text-[#00477b]/30 mx-auto mb-3" />
                                 <p className="text-lg sm:text-xl font-normal text-[#00477b] italic mb-2 tracking-tight">
-                                    "If SEO doesn't move your business KPIs, it's not SEO — it's noise."
+                                    "If SEO doesn't move your business KPIs, it's not SEO - it's noise."
                                 </p>
-                                <span className="text-xs sm:text-sm font-medium uppercase tracking-widest text-zinc-500">— Team Gnosys Digital</span>
+                                <span className="text-xs sm:text-sm font-medium uppercase tracking-widest text-zinc-500">- Team Gnosys Digital</span>
                             </div>
                         </div>
                     </div>
@@ -279,7 +276,7 @@ export default function SeoServices() {
 
                 {/* 5. Industry-Focused SEO Strategies */}
                 <section className="pt-24 pb-16 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-14">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Industry-Focused SEO Strategies
                         </span>
@@ -287,7 +284,7 @@ export default function SeoServices() {
                             Tailored SEO For Every Industry
                         </h2>
                         <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto">
-                            Every business is unique — so is your search strategy. We craft vertical-specific SEO blueprints that blend industry trends with AI-powered keyword intelligence.
+                            Every business is unique - so is your search strategy. We craft vertical-specific SEO blueprints that blend industry trends with AI-powered keyword intelligence.
                         </p>
                     </div>
 
@@ -331,15 +328,14 @@ export default function SeoServices() {
                                         }
                                     ].map((node, i) => (
                                         <div key={i} className="flex flex-col h-full group">
-                                            <div className="bg-gradient-to-b from-white/90 via-white/70 to-white/40 backdrop-blur-xl border border-white rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,71,123,0.12)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col items-center text-center h-full relative overflow-hidden">
-                                                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-[#00477b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-[2.25rem]"></div>
-                                                
-                                                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/60 shadow-inner">
+                                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-white shadow-sm">
                                                     <span className="size-1.5 rounded-full bg-[#00477b]"></span>
                                                     <span className="text-[11px] font-black text-[#00477b] tracking-wider uppercase">Stage {node.step}</span>
                                                 </div>
 
-                                                <div className="size-18 mb-5 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                                <div className="size-18 mb-5 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                                     {node.icon}
                                                 </div>
 
@@ -369,7 +365,7 @@ export default function SeoServices() {
 
                 {/* 6. Client Results That Speak Louder Than Claims */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Client Results That Speak Louder Than Claims
                         </span>
@@ -398,9 +394,9 @@ export default function SeoServices() {
                                         desc: 'Local SEO optimization increased appointment bookings by 55%' 
                                     },
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center justify-between min-h-[220px] h-full relative overflow-hidden group">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between min-h-[220px] h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {item.icon}
                                         </div>
                                         <h3 className="text-xl font-bold text-[#00477b] mb-3 relative z-10">{item.title}</h3>
@@ -414,7 +410,7 @@ export default function SeoServices() {
 
                 {/* 7. How We Work - The Gnosys Growth Playbook */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             How We Work - The Gnosys Growth Playbook
                         </span>
@@ -433,9 +429,9 @@ export default function SeoServices() {
                                     { icon: <BarChart3 className="size-7" />, title: "Deliver", desc: "Transparent weekly reports" },
                                     { icon: <TrendingUp className="size-7" />, title: "Dominate", desc: "Continuous optimization & authority scaling" }
                                 ].map((step, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {step.icon}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
@@ -457,7 +453,7 @@ export default function SeoServices() {
                             Let's Turn Search Into Sales
                         </h2>
                         <p className="text-base sm:text-lg text-zinc-700 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Your customers are searching. Let’s make sure they find you — and choose you.
+                            Your customers are searching. Let’s make sure they find you - and choose you.
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">

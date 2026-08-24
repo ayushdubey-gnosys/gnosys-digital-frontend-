@@ -86,7 +86,7 @@ export default function ErpnextNgo() {
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="grid md:grid-cols-3 gap-6 text-left mb-6">
                             <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                <div className="p-3.5 bg-blue-50/50 text-[#3b82f6] rounded-2xl inline-flex mb-6 border border-blue-100/50">
+                                <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 border border-blue-100/50">
                                     <HandHeart className="size-6" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-4 tracking-tight">Funding & Donor Management</h3>
@@ -97,7 +97,7 @@ export default function ErpnextNgo() {
                                 </ul>
                             </div>
                             <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                <div className="p-3.5 bg-blue-50/50 text-[#3b82f6] rounded-2xl inline-flex mb-6 border border-blue-100/50">
+                                <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 border border-blue-100/50">
                                     <ClipboardList className="size-6" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-4 tracking-tight">Program & Project Delivery</h3>
@@ -109,7 +109,7 @@ export default function ErpnextNgo() {
                                 </ul>
                             </div>
                             <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                <div className="p-3.5 bg-blue-50/50 text-[#3b82f6] rounded-2xl inline-flex mb-6 border border-blue-100/50">
+                                <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 border border-blue-100/50">
                                     <ShieldCheck className="size-6" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-4 tracking-tight">Compliance & Reporting</h3>
@@ -123,7 +123,7 @@ export default function ErpnextNgo() {
 
                         <div className="grid md:grid-cols-2 gap-6 text-left max-w-4xl mx-auto">
                             <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                <div className="p-3.5 bg-blue-50/50 text-[#3b82f6] rounded-2xl inline-flex mb-6 border border-blue-100/50">
+                                <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 border border-blue-100/50">
                                     <PieChart className="size-6" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-4 tracking-tight">Financial Management</h3>
@@ -134,7 +134,7 @@ export default function ErpnextNgo() {
                                 </ul>
                             </div>
                             <div className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                <div className="p-3.5 bg-blue-50/50 text-[#3b82f6] rounded-2xl inline-flex mb-6 border border-blue-100/50">
+                                <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 border border-blue-100/50">
                                     <Users className="size-6" />
                                 </div>
                                 <h3 className="text-lg font-bold text-[#00477b] mb-4 tracking-tight">Volunteer & Staff Coordination</h3>
@@ -226,14 +226,14 @@ export default function ErpnextNgo() {
                                 }
                             ].map((mod, i) => (
                                 <div key={i} className="bg-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/60 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full">
-                                    <div className="p-3.5 bg-blue-50/50 text-[#3b82f6] rounded-2xl inline-flex mb-6 border border-blue-100/50">
+                                    <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 border border-blue-100/50">
                                         <mod.icon className="size-6" />
                                     </div>
                                     <h3 className="text-lg font-bold text-[#00477b] mb-4 tracking-tight">{mod.title}</h3>
                                     <ul className="space-y-3 text-left w-full">
                                         {mod.points.map((pt, j) => (
                                             <li key={j} className="flex items-start gap-2 text-sm text-zinc-600 leading-relaxed">
-                                                <div className="bg-[#e0f2fe] rounded-sm p-0.5 mt-0.5 shrink-0 text-[#0284c7]">
+                                                <div className="bg-[#e0f2fe] rounded-sm p-0.5 mt-0.5 shrink-0 text-[#00477b]">
                                                     <CheckSquare className="size-3" />
                                                 </div>
                                                 <span>{pt}</span>
@@ -262,15 +262,15 @@ export default function ErpnextNgo() {
                     <div className="container mx-auto px-4 max-w-5xl">
                         <div className="grid md:grid-cols-3 gap-6">
                             {[
-                                { title: "Healthcare & Medical NGOs", desc: "Patient registration, medicine distribution, health camps", icon: <HeartPulse className="size-8 text-[#3b82f6]" /> },
-                                { title: "Education & Literacy", desc: "Student tracking, learning outcomes, teacher performance", icon: <GraduationCap className="size-8 text-[#3b82f6]" /> },
-                                { title: "Livelihood & Rural Development", desc: "SHG tracking, skill training, microfinance monitoring", icon: <Tractor className="size-8 text-[#3b82f6]" /> },
-                                { title: "WASH Projects", desc: "Water source mapping, sanitation tracking, hygiene behavior measurement", icon: <Droplets className="size-8 text-[#3b82f6]" /> },
-                                { title: "Child & Women Welfare", desc: "Case management, shelters, legal aid", icon: <Users2 className="size-8 text-[#3b82f6]" /> },
-                                { title: "Environment & Conservation", desc: "Project site monitoring, community engagement", icon: <Trees className="size-8 text-[#3b82f6]" /> }
+                                { title: "Healthcare & Medical NGOs", desc: "Patient registration, medicine distribution, health camps", icon: <HeartPulse className="size-8 text-[#00477b]" /> },
+                                { title: "Education & Literacy", desc: "Student tracking, learning outcomes, teacher performance", icon: <GraduationCap className="size-8 text-[#00477b]" /> },
+                                { title: "Livelihood & Rural Development", desc: "SHG tracking, skill training, microfinance monitoring", icon: <Tractor className="size-8 text-[#00477b]" /> },
+                                { title: "WASH Projects", desc: "Water source mapping, sanitation tracking, hygiene behavior measurement", icon: <Droplets className="size-8 text-[#00477b]" /> },
+                                { title: "Child & Women Welfare", desc: "Case management, shelters, legal aid", icon: <Users2 className="size-8 text-[#00477b]" /> },
+                                { title: "Environment & Conservation", desc: "Project site monitoring, community engagement", icon: <Trees className="size-8 text-[#00477b]" /> }
                             ].map((type, i) => (
                                 <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 text-center hover:-translate-y-2 flex flex-col items-center group">
-                                    <div className="p-4 bg-blue-50/50 rounded-2xl mb-5 border border-blue-100/50 group-hover:scale-110 transition-transform duration-300">
+                                    <div className="p-4 bg-white shadow-md shadow-blue-900/5 rounded-2xl mb-5 border border-white text-[#00477b]">
                                         {type.icon}
                                     </div>
                                     <h3 className="text-[#00477b] font-bold text-lg mb-3 tracking-tight">{type.title}</h3>
@@ -301,19 +301,18 @@ export default function ErpnextNgo() {
                     <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto">
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:gap-8 relative z-10">
                             {[
-                                { step: "01", week: "Week 1–2", title: "Mission Alignment", desc: "Stakeholder interviews, logic mapping, compliance setup.", icon: <Search className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                { step: "02", week: "Week 3–5", title: "System Configuration", desc: "Configure donor/beneficiary data, programs, and budgets.", icon: <Settings className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                { step: "03", week: "Week 6–7", title: "Data Migration", desc: "Import historical data, set up apps, integrate payments.", icon: <Database className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                { step: "04", week: "Week 8", title: "Testing & Training", desc: "Role-based training, dashboards, and reporting workshops.", icon: <MonitorPlay className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                { step: "05", week: "Week 9–12", title: "Go-Live & Support", desc: "Pilot rollout, feedback, and organization-wide deployment.", icon: <Rocket className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> }
+                                { step: "01", week: "Week 1-2", title: "Mission Alignment", desc: "Stakeholder interviews, logic mapping, compliance setup.", icon: <Search className="size-6 text-[#00477b]" /> },
+                                { step: "02", week: "Week 3-5", title: "System Configuration", desc: "Configure donor/beneficiary data, programs, and budgets.", icon: <Settings className="size-6 text-[#00477b]" /> },
+                                { step: "03", week: "Week 6-7", title: "Data Migration", desc: "Import historical data, set up apps, integrate payments.", icon: <Database className="size-6 text-[#00477b]" /> },
+                                { step: "04", week: "Week 8", title: "Testing & Training", desc: "Role-based training, dashboards, and reporting workshops.", icon: <MonitorPlay className="size-6 text-[#00477b]" /> },
+                                { step: "05", week: "Week 9-12", title: "Go-Live & Support", desc: "Pilot rollout, feedback, and organization-wide deployment.", icon: <Rocket className="size-6 text-[#00477b]" /> }
                             ].map((item, i) => (
                                 <div key={i} className={`group relative bg-white border border-white/80 p-6 xl:p-8 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 aspect-square flex flex-col justify-center ${i % 2 === 0 ? 'lg:-mt-4' : 'lg:mt-4'}`}>
                                     {/* Number Badge */}
                                     <div className="absolute top-4 right-6 text-5xl xl:text-6xl font-extrabold text-[#00477b]/5 drop-shadow-sm pointer-events-none group-hover:text-[#00477b]/10 transition-colors duration-500">{item.step}</div>
 
                                     {/* Icon Circle */}
-                                    <div className="size-14 xl:size-16 rounded-full bg-white/60 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 group-hover:shadow-md transition-all duration-300 relative">
-                                        <div className="absolute inset-0 rounded-full bg-[#00477b]/5 scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                                    <div className="size-14 xl:size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mx-auto mb-6 relative">
                                         <div className="relative z-10">{item.icon}</div>
                                     </div>
 
@@ -342,13 +341,13 @@ export default function ErpnextNgo() {
                     <div className="container mx-auto px-4 max-w-6xl">
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             {[
-                                { title: "Funding & Donor Relations", desc: "+40% donor retention, 50% faster grant reporting", icon: <HandHeart className="size-6 text-[#3b82f6]" /> },
-                                { title: "Program Delivery", desc: "60% faster beneficiary tracking, real-time field data", icon: <Rocket className="size-6 text-[#3b82f6]" /> },
-                                { title: "Financial Transparency", desc: "100% fund utilization visibility, automated statutory compliance", icon: <PieChart className="size-6 text-[#3b82f6]" /> },
-                                { title: "Operational Efficiency", desc: "70% less manual entry, 50% time saved in reporting", icon: <ShieldCheck className="size-6 text-[#3b82f6]" /> }
+                                { title: "Funding & Donor Relations", desc: "+40% donor retention, 50% faster grant reporting", icon: <HandHeart className="size-6 text-[#00477b]" /> },
+                                { title: "Program Delivery", desc: "60% faster beneficiary tracking, real-time field data", icon: <Rocket className="size-6 text-[#00477b]" /> },
+                                { title: "Financial Transparency", desc: "100% fund utilization visibility, automated statutory compliance", icon: <PieChart className="size-6 text-[#00477b]" /> },
+                                { title: "Operational Efficiency", desc: "70% less manual entry, 50% time saved in reporting", icon: <ShieldCheck className="size-6 text-[#00477b]" /> }
                             ].map((impact, i) => (
                                 <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col group">
-                                    <div className="p-3 bg-blue-50/50 rounded-2xl mb-6 inline-flex border border-blue-100/50 self-start group-hover:scale-110 transition-transform duration-300">
+                                    <div className="p-3 bg-white shadow-md shadow-blue-900/5 rounded-2xl mb-6 inline-flex border border-white self-start text-[#00477b]">
                                         {impact.icon}
                                     </div>
                                     <h3 className="text-lg font-bold text-[#00477b] mb-3 tracking-tight">{impact.title}</h3>
@@ -383,7 +382,7 @@ export default function ErpnextNgo() {
                                 </div>
                                 <h3 className="text-xl font-bold mb-3 text-[#00477b] relative z-10">Education NGO</h3>
                                 <div className="mb-8 relative z-10">
-                                    <span className="text-[10px] text-[#3b82f6] font-bold uppercase tracking-widest bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">Rajasthan</span>
+                                    <span className="text-[10px] text-[#00477b] font-bold uppercase tracking-widest bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">Rajasthan</span>
                                 </div>
                                 <p className="text-sm text-zinc-600 leading-relaxed font-medium italic relative z-10">"15,000+ students tracked, 65% reduction in donor reporting time."</p>
                             </div>
@@ -395,7 +394,7 @@ export default function ErpnextNgo() {
                                 </div>
                                 <h3 className="text-xl font-bold mb-3 text-[#00477b] relative z-10">Healthcare NGO</h3>
                                 <div className="mb-8 relative z-10">
-                                    <span className="text-[10px] text-[#3b82f6] font-bold uppercase tracking-widest bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">Tamil Nadu</span>
+                                    <span className="text-[10px] text-[#00477b] font-bold uppercase tracking-widest bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">Tamil Nadu</span>
                                 </div>
                                 <p className="text-sm text-zinc-600 leading-relaxed font-medium italic relative z-10">"200+ clinics, 85% patient follow-up rate, zero stockouts."</p>
                             </div>
@@ -407,7 +406,7 @@ export default function ErpnextNgo() {
                                 </div>
                                 <h3 className="text-xl font-bold mb-3 text-[#00477b] relative z-10">Rural Development NGO</h3>
                                 <div className="mb-8 relative z-10">
-                                    <span className="text-[10px] text-[#3b82f6] font-bold uppercase tracking-widest bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">Odisha</span>
+                                    <span className="text-[10px] text-[#00477b] font-bold uppercase tracking-widest bg-blue-50/50 px-3 py-1.5 rounded-full border border-blue-100/50">Odisha</span>
                                 </div>
                                 <p className="text-sm text-zinc-600 leading-relaxed font-medium italic relative z-10">"5,000 SHG members managed, 25% better loan recovery."</p>
                             </div>
@@ -438,8 +437,8 @@ export default function ErpnextNgo() {
                             ].map((item, i) => (
                                 <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center group min-h-[160px] relative overflow-hidden">
                                     <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                    <div className="bg-blue-50/50 p-3 rounded-2xl mb-4 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                        <CheckSquare className="size-5" />
+                                    <div className="bg-white shadow-md shadow-blue-900/5 p-3 rounded-2xl mb-4 border border-white text-[#00477b] relative z-10">
+                                        <CheckSquare className="size-5 text-[#00477b]" />
                                     </div>
                                     <p className="text-sm font-bold text-[#00477b] leading-relaxed relative z-10">{item}</p>
                                 </div>
@@ -460,7 +459,7 @@ export default function ErpnextNgo() {
                                 PRICING & PACKAGES
                             </span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-8">
-                                Non-Profit ERP Package – Special Offer
+                                Non-Profit ERP Package - Special Offer
                             </h2>
 
                             {/* Upgraded Premium Pricing Card UI */}
@@ -522,7 +521,7 @@ export default function ErpnextNgo() {
                                             "Implementation & Training"
                                         ].map((feature, idx) => (
                                             <li key={idx} className="flex items-center gap-2.5 text-xs text-zinc-700 font-medium bg-white/50 hover:bg-white/80 transition-colors duration-300 p-2.5 rounded-xl border border-white shadow-sm">
-                                                <div className="bg-blue-50/50 p-1 rounded-md text-[#3b82f6] shrink-0 border border-blue-100/50">
+                                                <div className="bg-blue-50/50 p-1 rounded-md text-[#00477b] shrink-0 border border-blue-100/50">
                                                     <CheckSquare className="size-3.5" />
                                                 </div>
                                                 <span className="leading-tight">{feature}</span>

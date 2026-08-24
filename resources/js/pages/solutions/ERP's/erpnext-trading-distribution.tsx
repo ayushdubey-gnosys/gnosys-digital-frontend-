@@ -92,8 +92,8 @@ export default function ErpnextTradingDistribution() {
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center text-center h-full group relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="p-3.5 bg-blue-50/50 text-[#00477b] rounded-2xl inline-flex mb-6 group-hover:scale-110 transition-transform duration-300 border border-blue-100/50 relative z-10">
-                                            {React.cloneElement(item.icon, { className: "size-6" })}
+                                        <div className="p-3.5 bg-white shadow-md shadow-blue-900/5 text-[#00477b] rounded-2xl inline-flex mb-6 border border-white relative z-10">
+                                            {React.cloneElement(item.icon, { className: "size-6 text-[#00477b]" })}
                                         </div>
                                         <h3 className="text-base font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
                                         <p className="text-xs text-zinc-600 font-medium leading-relaxed relative z-10">{item.desc}</p>
@@ -209,8 +209,8 @@ export default function ErpnextTradingDistribution() {
                                 ].map((mod, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-start text-left h-full group relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="p-3.5 bg-blue-50/50 rounded-2xl mb-6 border border-blue-100/50 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                            {mod.icon}
+                                        <div className="p-3.5 bg-white shadow-md shadow-blue-900/5 text-[#00477b] rounded-2xl mb-6 border border-white relative z-10">
+                                            {React.cloneElement(mod.icon, { className: "size-6 text-[#00477b]" })}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-4 relative z-10">{mod.title}</h3>
                                         <ul className="space-y-3 mt-auto text-left w-full relative z-10">
@@ -270,7 +270,7 @@ export default function ErpnextTradingDistribution() {
                                 ].map((phase, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col text-left relative overflow-hidden group">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="size-11 rounded-full border border-blue-100 bg-blue-50/70 flex items-center justify-center mb-6 text-[#00477b] font-bold text-base shadow-sm group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                        <div className="size-11 rounded-full border border-blue-100 bg-blue-50/70 flex items-center justify-center mb-6 text-[#00477b] font-bold text-base shadow-sm relative z-10">
                                             {phase.step}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-4 relative z-10">{phase.title}</h3>
@@ -291,7 +291,7 @@ export default function ErpnextTradingDistribution() {
 
                 {/* 6. Success Stories */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             STORIES
                         </span>
@@ -398,7 +398,7 @@ export default function ErpnextTradingDistribution() {
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center group min-h-[160px] relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="bg-blue-50/50 p-3 rounded-2xl mb-4 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                        <div className="bg-white shadow-md shadow-blue-900/5 p-3 rounded-2xl mb-4 border border-white text-[#00477b] relative z-10">
                                             <CheckCircle className="size-5 text-[#00477b]" />
                                         </div>
                                         <p className="text-sm font-bold text-[#00477b] leading-relaxed relative z-10">{item}</p>
@@ -411,7 +411,7 @@ export default function ErpnextTradingDistribution() {
 
                 {/* 9. Contact Form + Special Offer Combined */}
                 <section className="pt-24 pb-12 relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl text-center mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             GET STARTED
                         </span>
@@ -426,8 +426,8 @@ export default function ErpnextTradingDistribution() {
 
                                 {/* Left Column: Special Offer */}
                                 <div className="lg:col-span-5 lg:sticky lg:top-24">
-                                    <div className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden group">
-                                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100/40 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                                    <div className="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                         <div className="text-center border-b border-zinc-200/60 pb-8 mb-8 relative z-10">
                                             <h3 className="text-[11px] font-black text-zinc-400 mb-3 uppercase tracking-[0.2em]">Package Starts At</h3>
@@ -435,7 +435,7 @@ export default function ErpnextTradingDistribution() {
                                                 <span className="text-2xl font-bold text-[#00477b] mt-2">₹</span>
                                                 <p className="text-6xl font-black text-[#00477b] tracking-tighter">75,000</p>
                                             </div>
-                                            <span className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-gradient-to-r from-blue-50 to-blue-100/50 text-[#00477b] text-xs font-bold uppercase tracking-widest border border-blue-200/60 shadow-sm">
+                                            <span className="inline-flex items-center justify-center px-5 py-2 rounded-full bg-white/80 text-[#00477b] text-xs font-bold uppercase tracking-widest border border-white shadow-sm">
                                                 Ideal for SME distributors
                                             </span>
                                         </div>
@@ -462,8 +462,8 @@ export default function ErpnextTradingDistribution() {
 
                                 {/* Right Column: Contact Form */}
                                 <div className="lg:col-span-7">
-                                    <div className="bg-gradient-to-br from-white/70 to-white/30 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative overflow-hidden">
-                                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-50/50 rounded-full blur-3xl -ml-16 -mb-16 pointer-events-none"></div>
+                                    <div className="group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                         <h3 className="text-2xl font-bold text-[#00477b] mb-2 relative z-10">Tell Us About Your Business</h3>
                                         <p className="text-sm text-zinc-500 font-medium mb-8 relative z-10">Let us understand your operations and recommend the best ERP solution.</p>

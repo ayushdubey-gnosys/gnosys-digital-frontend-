@@ -83,7 +83,7 @@ export default function GrowthSystemsDiscoveryCall() {
 
                     <ScrollReveal animation="fade-up" delay={280}>
                         <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
-                            A zero-pressure exploratory session to uncover where your website, custom software, ERP, or sales funnel is leaking revenue — and show you how to turn digital bottlenecks into scalable growth machines.
+                            A zero-pressure exploratory session to uncover where your website, custom software, ERP, or sales funnel is leaking revenue - and show you how to turn digital bottlenecks into scalable growth machines.
                         </p>
 
                         <p className="text-xs sm:text-sm text-blue-200/80 mb-10 max-w-2xl mx-auto font-medium">
@@ -255,11 +255,12 @@ export default function GrowthSystemsDiscoveryCall() {
                             ].map((item, idx) => (
                                 <div 
                                     key={idx}
-                                    className="group bg-white/80 backdrop-blur-md border border-white/90 rounded-[2rem] p-6 sm:p-7 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full"
+                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
                                 >
-                                    <div>
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] mb-6 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <item.icon className="size-7" />
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
+                                            <item.icon className="size-7 text-[#00477b]" />
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-3 tracking-tight">{item.title}</h3>
                                         <p className="text-zinc-600 text-sm leading-relaxed whitespace-pre-line font-normal">{item.desc}</p>
@@ -287,7 +288,7 @@ export default function GrowthSystemsDiscoveryCall() {
                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why Businesses Choose Gnosys Digital</span>
                     </div>
                     <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        We Don't Just Build Websites Or Tools — We Build Small-Business Growth Systems.
+                        We Don't Just Build Websites Or Tools - We Build Small-Business Growth Systems.
                     </h2>
                     <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
                         Gnosys Digital is not an agency; we are digital systems architects who deliver production-ready code on time. All built in-house for clients in India, US, Canada, and Europe.
@@ -300,7 +301,7 @@ export default function GrowthSystemsDiscoveryCall() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
                             {[
                                 { icon: Users, title: "100% In-House Expertise", desc: "No outsourcing. Every developer, UI/UX designer, and strategist is on our payroll." },
-                                { icon: Rocket, title: "Business-First Approach", desc: "We measure success by revenue, speed, and efficiency — not just lines of code." },
+                                { icon: Rocket, title: "Business-First Approach", desc: "We measure success by revenue, speed, and efficiency - not just lines of code." },
                                 { icon: CheckSquare, title: "Clear Pricing for SME Projects", desc: "Fair pricing for quality code. Zero hidden fees or scope creep surprises." },
                                 { icon: TrendingUp, title: "Proven, Scalable Systems", desc: "Modern stacks engineered for high uptime, clean structure, and effortless scaling." },
                                 { icon: Globe, title: "International Quality, SME-Friendly", desc: "Enterprise-grade code standards, accessible pricing, global communication quality." },
@@ -308,13 +309,16 @@ export default function GrowthSystemsDiscoveryCall() {
                             ].map((item, idx) => (
                                 <div 
                                     key={idx}
-                                    className="group bg-white/80 backdrop-blur-md border border-white/90 rounded-[2rem] p-6 sm:p-7 shadow-sm hover:shadow-lg hover:bg-white hover:-translate-y-1 transition-all duration-300"
+                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden"
                                 >
-                                    <div className="size-12 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] mb-5 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                        <item.icon className="size-6" />
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
+                                        <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-5 shadow-md shadow-blue-900/5">
+                                            <item.icon className="size-6 text-[#00477b]" />
+                                        </div>
+                                        <h4 className="text-lg font-bold text-[#00477b] mb-2">{item.title}</h4>
+                                        <p className="text-zinc-600 text-sm leading-relaxed">{item.desc}</p>
                                     </div>
-                                    <h4 className="text-lg font-bold text-[#00477b] mb-2">{item.title}</h4>
-                                    <p className="text-zinc-600 text-sm leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
                         </div>

@@ -71,7 +71,7 @@ export default function DeliveryEngagementModels() {
             {/* 1. Hero Section */}
             <section 
                 className="relative text-white overflow-hidden min-h-[calc(100vh-76px)] flex items-center justify-center py-20 lg:py-24 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: 'url("/assets/delevery.webp")' }}
+                style={{ backgroundImage: 'url("/assets/about-engaement.png")' }}
             >
                 {/* Clean transparent overlay for 100% crystal clear image */}
                 <div className="absolute inset-0 bg-black/20"></div>
@@ -85,7 +85,7 @@ export default function DeliveryEngagementModels() {
 
                     <ScrollReveal animation="fade-up" delay={200}>
                         <p className="text-lg md:text-xl text-blue-100/90 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
-                            Whether you're launching your first website or optimizing an existing digital ecosystem — our flexible engagement models guarantee control, scale, and clear ROI.
+                            Whether you're launching your first website or optimizing an existing digital ecosystem - our flexible engagement models guarantee control, scale, and clear ROI.
                         </p>
                     </ScrollReveal>
 
@@ -140,12 +140,13 @@ export default function DeliveryEngagementModels() {
                                 { title: "Fixed Scope. No Surprises", desc: "Defined deliverables and fixed timelines so you know exactly what to expect from day one.", icon: Clock },
                                 { title: "Agile Delivery", desc: "Sprints with continuous updates, feedback loops, and iterative rollouts without delays.", icon: Rocket },
                                 { title: "Transparent Reporting", desc: "Direct visibility into task progress, burndown charts, and weekly sprints.", icon: BarChart3 },
-                                { title: "Direct Communication", desc: "Talk directly to the engineers and tech leads working on your project on Slack.", icon: MessageSquare },
+                                { title: "Direct Communication", desc: "Talk directly to the engineers and tech leads working on your project on Slack.", icon: MessageSquare }
                             ].map((item, idx) => (
-                                <div key={idx} className="group bg-white/80 backdrop-blur-md border border-white/90 rounded-[2.2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full">
-                                    <div>
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] mb-6 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <item.icon className="size-6" />
+                                <div key={idx} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
+                                            <item.icon className="size-6 text-[#00477b]" />
                                         </div>
                                         <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">{item.title}</h3>
                                         <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item.desc}</p>
@@ -175,12 +176,12 @@ export default function DeliveryEngagementModels() {
                 <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
                     <div className="w-full px-3 sm:px-5 lg:px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
-                            {/* 1. Fixed Scope Projects */}
-                            <div className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:bg-white hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-full">
-                                <div>
+                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                <div className="relative z-10">
                                     <div className="flex items-center justify-between mb-6">
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <FileText className="size-6" />
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                            <FileText className="size-6 text-[#00477b]" />
                                         </div>
                                         <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
                                             Model 01
@@ -222,11 +223,12 @@ export default function DeliveryEngagementModels() {
                             </div>
 
                             {/* 2. Retainer-Based Engagements */}
-                            <div className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:bg-white hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-full">
-                                <div>
+                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                <div className="relative z-10">
                                     <div className="flex items-center justify-between mb-6">
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <Clock className="size-6" />
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                            <Clock className="size-6 text-[#00477b]" />
                                         </div>
                                         <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
                                             Model 02
@@ -268,11 +270,12 @@ export default function DeliveryEngagementModels() {
                             </div>
 
                             {/* 3. Hybrid Model */}
-                            <div className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:bg-white hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-full">
-                                <div>
+                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                <div className="relative z-10">
                                     <div className="flex items-center justify-between mb-6">
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <Rocket className="size-6" />
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                            <Rocket className="size-6 text-[#00477b]" />
                                         </div>
                                         <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
                                             Model 03
@@ -314,11 +317,12 @@ export default function DeliveryEngagementModels() {
                             </div>
 
                             {/* 4. Task-Based Mini Engagements */}
-                            <div className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:bg-white hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between h-full">
-                                <div>
+                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-7 sm:p-8 lg:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                <div className="relative z-10">
                                     <div className="flex items-center justify-between mb-6">
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <PackageCheck className="size-6" />
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                            <PackageCheck className="size-6 text-[#00477b]" />
                                         </div>
                                         <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
                                             Model 04
@@ -334,7 +338,7 @@ export default function DeliveryEngagementModels() {
                                         <h4 className="font-bold text-[#00477b] mb-3.5 text-xs uppercase tracking-wider">Key Perks:</h4>
                                         <ul className="space-y-3">
                                             {[
-                                                "Completed within 3–7 business days",
+                                                "Completed within 3-7 business days",
                                                 "Zero long-term commitment",
                                                 "High-priority rapid turnaround"
                                             ].map((perk, bIdx) => (
@@ -438,12 +442,12 @@ export default function DeliveryEngagementModels() {
                                 },
                                 {
                                     title: "Milestone-Based Billing",
-                                    desc: "Payments are linked directly to approved deliverables — zero hidden costs or surprise change fees.",
+                                    desc: "Payments are linked directly to approved deliverables - zero hidden costs or surprise change fees.",
                                     icon: DollarSign
                                 },
                                 {
                                     title: "Direct Engineer Access",
-                                    desc: "Collaborate directly with your technical leads via dedicated Slack channels — no communication bottlenecks.",
+                                    desc: "Collaborate directly with your technical leads via dedicated Slack channels - no communication bottlenecks.",
                                     icon: MessageSquare
                                 },
                                 {
@@ -489,7 +493,7 @@ export default function DeliveryEngagementModels() {
                         <div className="space-y-3.5">
                             {[
                                 "Faster time-to-market with zero-overhead sprints",
-                                "Direct engineer communication — no middlemen",
+                                "Direct engineer communication - no middlemen",
                                 "100% in-house execution",
                                 "Scalable code architectures engineered for high concurrency"
                             ].map((item, idx) => (
@@ -577,7 +581,7 @@ export default function DeliveryEngagementModels() {
                                     Let's Discuss The Right Model For Your Project
                                 </h2>
                                 <p className="text-base sm:text-lg text-zinc-600">
-                                    Whether you need a full turnkey build or dedicated developers — we'll help you choose the best model.
+                                    Whether you need a full turnkey build or dedicated developers - we'll help you choose the best model.
                                 </p>
                             </div>
 

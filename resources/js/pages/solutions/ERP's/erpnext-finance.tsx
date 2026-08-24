@@ -43,7 +43,7 @@ export default function ErpnextFinance() {
 
                         <ScrollReveal animation="fade-up" delay={180}>
                             <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
-                                Streamline client onboarding, investment management, regulatory reporting, and fee tracking. Reduce risk and improve efficiency—all in a single platform designed for financial services.
+                                Streamline client onboarding, investment management, regulatory reporting, and fee tracking. Reduce risk and improve efficiency - all in a single platform designed for financial services.
                             </p>
                         </ScrollReveal>
 
@@ -141,7 +141,7 @@ export default function ErpnextFinance() {
                                     <ul className="space-y-4 relative z-10">
                                         {mod.points.map((pt, j) => (
                                             <li key={j} className="flex items-start gap-3 text-sm text-zinc-700 leading-relaxed font-medium">
-                                                <div className="w-5 h-5 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-sky-100 transition-colors">
+                                                <div className="w-5 h-5 rounded-full bg-sky-50 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5 border border-sky-100">
                                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                                 </div>
                                                 <span>{pt}</span>
@@ -167,7 +167,7 @@ export default function ErpnextFinance() {
                                     <ul className="space-y-4 relative z-10">
                                         {mod.points.map((pt, j) => (
                                             <li key={j} className="flex items-start gap-3 text-sm text-zinc-700 leading-relaxed font-medium">
-                                                <div className="w-5 h-5 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-sky-100 transition-colors">
+                                                <div className="w-5 h-5 rounded-full bg-sky-50 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5 border border-sky-100">
                                                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                                 </div>
                                                 <span>{pt}</span>
@@ -231,8 +231,8 @@ export default function ErpnextFinance() {
                         <div className="grid md:grid-cols-3 gap-8 text-left">
                             <div className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 relative group overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-all"></div>
-                                <div className="bg-sky-50 text-sky-600 size-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform border border-sky-100">
-                                    <TrendingUp className="size-6" strokeWidth={2} />
+                                <div className="bg-white text-[#00477b] size-14 rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-900/5 border border-white">
+                                    <TrendingUp className="size-6 text-[#00477b]" strokeWidth={2} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-[#00477b]">Wealth Management Firm</h3>
                                 <p className="text-base text-zinc-600 leading-relaxed font-medium">Automated AUM calculation and fee billing across 500+ HNI clients, reducing month-end closing time by 5 days.</p>
@@ -240,8 +240,8 @@ export default function ErpnextFinance() {
 
                             <div className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 relative group overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-all"></div>
-                                <div className="bg-sky-50 text-sky-600 size-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform border border-sky-100">
-                                    <Target className="size-6" strokeWidth={2} />
+                                <div className="bg-white text-[#00477b] size-14 rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-900/5 border border-white">
+                                    <Target className="size-6 text-[#00477b]" strokeWidth={2} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-[#00477b]">Stock Broking Company</h3>
                                 <p className="text-base text-zinc-600 leading-relaxed font-medium">Streamlined sub-broker commissions and consolidated multi-exchange data into a single compliance-ready dashboard.</p>
@@ -249,8 +249,8 @@ export default function ErpnextFinance() {
 
                             <div className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 relative group overflow-hidden">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-all"></div>
-                                <div className="bg-sky-50 text-sky-600 size-14 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform border border-sky-100">
-                                    <Trophy className="size-6" strokeWidth={2} />
+                                <div className="bg-white text-[#00477b] size-14 rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-900/5 border border-white">
+                                    <Trophy className="size-6 text-[#00477b]" strokeWidth={2} />
                                 </div>
                                 <h3 className="text-2xl font-bold mb-4 text-[#00477b]">Financial Advisory</h3>
                                 <p className="text-base text-zinc-600 leading-relaxed font-medium">Replaced 4 legacy systems with a single platform, cutting IT costs by 40% and providing clients with self-service portals.</p>
@@ -282,7 +282,7 @@ export default function ErpnextFinance() {
                                 "Proven ROI and efficiency gains"
                             ].map((item, i) => (
                                 <div key={i} className="bg-white/70 backdrop-blur-md border border-white p-6 rounded-3xl shadow-[0_10px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] hover:bg-white/90 transition-all duration-300 flex items-start gap-4 text-left max-w-sm w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group">
-                                    <div className="w-6 h-6 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-sky-100 transition-colors border border-sky-100">
+                                    <div className="w-6 h-6 rounded-full bg-sky-50 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5 border border-sky-100">
                                         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
                                     </div>
                                     <span className="text-sm font-bold text-zinc-800 leading-snug">{item}</span>

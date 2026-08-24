@@ -89,7 +89,7 @@ export default function ErpnextRetail() {
 
                 {/* 2. Retail Challenges */}
                 <section className="pt-24 pb-12 bg-transparent border-t border-white/40">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             CHALLENGES
                         </span>
@@ -112,10 +112,10 @@ export default function ErpnextRetail() {
                                         { icon: <Users />, title: "Job Work & Contract Manufacturing", desc: "Purchase patterns and customer loyalty are not visible in a single view." },
                                         { icon: <Store />, title: "Month-End Pain", desc: "Reconciliation is time-consuming, taking hours or even days." }
                                     ].map((item, i) => (
-                                        <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                            <div className="size-16 rounded-full bg-[#00477b] text-white shadow-md flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                                {React.cloneElement(item.icon, { className: "size-7" })}
+                                        <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center mb-6 relative z-10">
+                                                {React.cloneElement(item.icon, { className: "size-7 text-[#00477b]" })}
                                             </div>
                                             <h3 className="text-base font-semibold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
                                             <p className="text-xs text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
@@ -129,7 +129,7 @@ export default function ErpnextRetail() {
 
                 {/* 3. ERPNext Retail Solutions */}
                 <section className="pt-24 pb-12 bg-transparent border-t border-white/40">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             SOLUTIONS
                         </span>
@@ -153,10 +153,10 @@ export default function ErpnextRetail() {
                                         { icon: <BarChart3 />, title: "Financial Clarity", desc: "GST-ready invoicing, automated reconciliation, dashboards." },
                                         { icon: <Globe />, title: "Omnichannel Operations", desc: "Connect physical stores, online channels, and marketplaces." }
                                     ].map((item, i) => (
-                                        <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                            <div className="size-16 rounded-full bg-[#00477b] text-white shadow-md flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                                {React.cloneElement(item.icon, { className: "size-7" })}
+                                        <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center mb-6 relative z-10">
+                                                {React.cloneElement(item.icon, { className: "size-7 text-[#00477b]" })}
                                             </div>
                                             <h3 className="text-base font-semibold text-[#00477b] mb-2 relative z-10">{item.title}</h3>
                                             <p className="text-sm text-zinc-700 font-normal leading-relaxed relative z-10">{item.desc}</p>
@@ -170,7 +170,7 @@ export default function ErpnextRetail() {
 
                 {/* 4. Key Modules */}
                 <section className="pt-24 pb-12 bg-transparent border-t border-white/40">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             MODULES
                         </span>
@@ -191,10 +191,10 @@ export default function ErpnextRetail() {
                                         { icon: <Store />, title: "Staff & Store Management", desc: "Shift scheduling, performance monitoring, attendance, role-based access, task checklists." },
                                         { icon: <CreditCard />, title: "Finance & Reporting", desc: "Sales, expense tracking, P&L, GST-compliant invoices, automated bank reconciliation, dashboards." }
                                     ].map((mod, i) => (
-                                        <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                            <div className="size-16 rounded-full bg-[#00477b] text-white shadow-md flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                                {React.cloneElement(mod.icon, { className: "size-7" })}
+                                        <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center mb-6 relative z-10">
+                                                {React.cloneElement(mod.icon, { className: "size-7 text-[#00477b]" })}
                                             </div>
                                             <h3 className="text-base font-semibold mb-3 text-[#00477b] relative z-10">{mod.title}</h3>
                                             <ul className="space-y-2 mt-auto text-left w-full relative z-10">
@@ -215,7 +215,7 @@ export default function ErpnextRetail() {
 
                 {/* 5. Implementation Process */}
                 <section className="pt-24 pb-12 bg-transparent border-t border-white/40">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             ROADMAP
                         </span>
@@ -236,15 +236,15 @@ export default function ErpnextRetail() {
                                 <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 relative z-10">
                                     {[
                                         { week: "Week 1", title: "Retail Operations Analysis", desc: "Analyze retail operations and workflows.", icon: <Search /> },
-                                        { week: "Weeks 2–3", title: "System Customization", desc: "Customize stores, POS, and dashboards.", icon: <Settings /> },
-                                        { week: "Weeks 4–5", title: "Data Migration & Integration", desc: "Migrate data and connect integrations.", icon: <Database /> },
-                                        { week: "Weeks 5–6", title: "Training", desc: "Train teams across all retail functions.", icon: <Users /> },
-                                        { week: "Weeks 7–8", title: "Go-Live & Support", desc: "Launch system and support improvement.", icon: <Rocket /> }
+                                        { week: "Weeks 2-3", title: "System Customization", desc: "Customize stores, POS, and dashboards.", icon: <Settings /> },
+                                        { week: "Weeks 4-5", title: "Data Migration & Integration", desc: "Migrate data and connect integrations.", icon: <Database /> },
+                                        { week: "Weeks 5-6", title: "Training", desc: "Train teams across all retail functions.", icon: <Users /> },
+                                        { week: "Weeks 7-8", title: "Go-Live & Support", desc: "Launch system and support improvement.", icon: <Rocket /> }
                                     ].map((step, i) => (
                                         <div key={i} className="flex flex-col items-center group pt-2">
                                             {/* Icon Node */}
-                                            <div className="size-16 mb-8 rounded-full bg-white backdrop-blur-md border-4 border-blue-50/80 shadow-md flex items-center justify-center relative z-10 text-[#00477b] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white group-hover:border-[#00477b]/20">
-                                                {React.cloneElement(step.icon, { className: "size-6" })}
+                                            <div className="size-16 mb-8 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center relative z-10 text-[#00477b]">
+                                                {React.cloneElement(step.icon, { className: "size-6 text-[#00477b]" })}
                                             </div>
 
                                             {/* Content Card */}
@@ -265,7 +265,7 @@ export default function ErpnextRetail() {
 
                 {/* 6. Retail Formats */}
                 <section className="pt-24 pb-12 bg-transparent border-t border-white/40">
-                    <div className="container mx-auto px-4 max-w-5xl text-center">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             FORMATS
                         </span>
@@ -289,10 +289,10 @@ export default function ErpnextRetail() {
                                         { bold: "Grocery & Supermarkets", text: "Perishables, weight-based items, rapid checkout." },
                                         { bold: "Specialty Stores", text: "Custom attributes, gift wrapping, and delivery options." }
                                     ].map((item, i) => (
-                                        <div key={i} className="bg-gradient-to-br from-white/60 to-white/20 backdrop-blur-md border border-white/80 p-8 rounded-[2rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                            <div className="size-16 rounded-full bg-[#00477b] text-white shadow-md flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                                <CheckCircle className="size-7" />
+                                        <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center mb-6 relative z-10">
+                                                <CheckCircle className="size-7 text-[#00477b]" />
                                             </div>
                                             <h3 className="font-semibold text-[#00477b] text-base mb-2 relative z-10">{item.bold}</h3>
                                             <p className="text-sm text-zinc-700 font-normal leading-relaxed relative z-10">{item.text}</p>
@@ -346,11 +346,11 @@ export default function ErpnextRetail() {
                                     <div key={idx} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 text-left hover:-translate-y-2 flex flex-col group relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
 
-                                        <div className="p-3 bg-blue-50/50 rounded-2xl mb-6 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 self-start">
+                                        <div className="p-3 bg-white shadow-md shadow-blue-900/5 rounded-2xl mb-6 border border-white text-[#00477b] self-start">
                                             {benefit.icon}
                                         </div>
 
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-6 tracking-tight group-hover:text-blue-600 transition-colors">{benefit.title}</h3>
+                                        <h3 className="text-xl font-bold text-[#00477b] mb-6 tracking-tight">{benefit.title}</h3>
 
                                         <ul className="space-y-3.5 mt-auto relative z-10">
                                             {benefit.points.map((point, pIdx) => (
@@ -389,7 +389,7 @@ export default function ErpnextRetail() {
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center group min-h-[160px] relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="bg-blue-50/50 p-3 rounded-2xl mb-4 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                                        <div className="bg-white shadow-md shadow-blue-900/5 p-3 rounded-2xl mb-4 border border-white text-[#00477b] relative z-10">
                                             <CheckCircle className="size-5 text-[#00477b]" />
                                         </div>
                                         <p className="text-sm font-bold text-[#00477b] leading-relaxed relative z-10">{item}</p>

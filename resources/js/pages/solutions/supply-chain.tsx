@@ -45,7 +45,7 @@ export default function SupplyChain() {
                         
                         <ScrollReveal animation="fade-up" delay={180}>
                             <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
-                                Every manufacturer has its own processes, partners, and pain points. At Gnosys Digital, we build <strong className="text-white font-semibold">custom Supply Chain &amp; Logistics software</strong> designed exactly around your workflow — not someone else’s.
+                                Every manufacturer has its own processes, partners, and pain points. At Gnosys Digital, we build <strong className="text-white font-semibold">custom Supply Chain &amp; Logistics software</strong> designed exactly around your workflow - not someone else’s.
                             </p>
                         </ScrollReveal>
                         
@@ -72,13 +72,12 @@ export default function SupplyChain() {
             <div className="relative z-10 w-full bg-transparent">
                 {/* 2. The Reality of SME Supply Chains (5 Cards) */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             The Reality of SME Supply Chains
                         </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] max-w-3xl mx-auto leading-tight">
-                            No Two Manufacturers Are The Same — <br className="hidden sm:inline" />
-                            So Why Use The Same Software?
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] leading-tight">
+                            No Two Manufacturers Are The Same - So Why Use The Same Software?
                         </h2>
                     </div>
 
@@ -89,12 +88,12 @@ export default function SupplyChain() {
                                     { icon: <Truck className="size-7" />, title: "Different Dispatch Models", desc: "Some deliver via transporters, others via distributors." },
                                     { icon: <FileText className="size-7" />, title: "Manual LR & Paper Processes", desc: "Nothing integrates across departments." },
                                     { icon: <Clock className="size-7" />, title: "No Real-Time Tracking", desc: "Once it leaves the gate, visibility disappears." },
-                                    { icon: <Network className="size-7" />, title: "Disconnected Data", desc: "Tally, WhatsApp, and Excel — none talk to each other." },
+                                    { icon: <Network className="size-7" />, title: "Disconnected Data", desc: "Tally, WhatsApp, and Excel - none talk to each other." },
                                     { icon: <Settings className="size-7" />, title: "ERP Overkill", desc: "Big-brand systems cost too much and fit too little." }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {item.icon}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
@@ -104,7 +103,7 @@ export default function SupplyChain() {
                             </div>
 
                             <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                You get a system that feels native to your business — <span className="font-bold text-[#00477b]">because it's built from it.</span>
+                                You get a system that feels native to your business - <span className="font-bold text-[#00477b]">because it's built from it.</span>
                             </p>
                         </div>
                     </div>
@@ -112,15 +111,15 @@ export default function SupplyChain() {
 
                 {/* 3. What We Build For You (Balanced 8-Card Grid) */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             What We Build for You
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            From Warehouse To Dealer — We Design Your Digital Backbone.
+                            From Warehouse To Dealer - We Design Your Digital Backbone.
                         </h2>
                         <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                            We design and develop custom supply chain platforms that give you total visibility and control — built around your business logic, your partners, and your workflows.
+                            We design and develop custom supply chain platforms that give you total visibility and control - built around your business logic, your partners, and your workflows.
                         </p>
                     </div>
 
@@ -137,11 +136,10 @@ export default function SupplyChain() {
                                     { icon: <Cpu className="size-6" />, f: "ERP / Tally Integration", c: "Live sync for accounts and invoices." },
                                     { icon: <Zap className="size-6" />, f: "Automation", c: "Alerts, escalations, and reporting rules." }
                                 ].map((row, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-7 rounded-[2rem] border border-white shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col relative overflow-hidden h-full">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        
-                                        <div className="flex items-center justify-between mb-5 relative z-10">
-                                            <div className="size-12 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="flex items-center justify-between mb-5 relative z-10">
+                                            <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
                                                 {row.icon}
                                             </div>
                                             <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase">
@@ -172,7 +170,7 @@ export default function SupplyChain() {
 
                 {/* 4. Connected Logistics Pipeline */}
                 <section className="pt-24 pb-16 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-14">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             WORKFLOW PIPELINE
                         </span>
@@ -237,7 +235,7 @@ export default function SupplyChain() {
                                                     <span className="text-[11px] font-black text-[#00477b] tracking-wider uppercase">Step {node.step}</span>
                                                 </div>
 
-                                                <div className="size-18 mb-5 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                                <div className="size-18 mb-5 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                                     {node.icon}
                                                 </div>
 
@@ -263,12 +261,12 @@ export default function SupplyChain() {
 
                 {/* 5. How We Work (Development Process) */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             How We Work
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            From Process Mapping To Deployment — End-To-End Custom Development.
+                            From Process Mapping To Deployment - End-To-End Custom Development.
                         </h2>
                     </div>
 
@@ -277,13 +275,13 @@ export default function SupplyChain() {
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                                 {[
                                     { icon: <Search className="size-7" />, title: "Discovery & Process Mapping", desc: "We study your current supply chain and identify digital touchpoints." },
-                                    { icon: <TabletSmartphone className="size-7" />, title: "Blueprint & UX Design", desc: "You see screen flows, approval logic, and dashboard samples — before we code." },
+                                    { icon: <TabletSmartphone className="size-7" />, title: "Blueprint & UX Design", desc: "You see screen flows, approval logic, and dashboard samples - before we code." },
                                     { icon: <Code className="size-7" />, title: "Development & Integration", desc: "Built on Laravel full stack, API-ready, scalable, and secure." },
                                     { icon: <Zap className="size-7" />, title: "Training & Go-Live", desc: "We deploy, train your staff, and fine-tune post-launch." }
                                 ].map((step, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {step.icon}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
@@ -293,7 +291,7 @@ export default function SupplyChain() {
                             </div>
 
                             <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                Our approach feels like an IT partner — <span className="font-bold text-[#00477b]">not a software vendor.</span>
+                                Our approach feels like an IT partner - <span className="font-bold text-[#00477b]">not a software vendor.</span>
                             </p>
                         </div>
                     </div>
@@ -318,8 +316,8 @@ export default function SupplyChain() {
                                         {[
                                             "Tailored to your existing process, not the other way around.",
                                             "Lower cost and faster implementation than ERP platforms.",
-                                            "Integrates seamlessly with your current tools — Tally, Excel, WhatsApp.",
-                                            "Future-ready — we build it modularly so you can add features later.",
+                                            "Integrates seamlessly with your current tools - Tally, Excel, WhatsApp.",
+                                            "Future-ready - we build it modularly so you can add features later.",
                                             "Local development, support, and training."
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-start gap-3.5">
@@ -356,7 +354,7 @@ export default function SupplyChain() {
 
                 {/* 7. Technology & Capabilities (Modern 6-Card Grid) */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Technology & Capabilities
                         </span>
@@ -364,7 +362,7 @@ export default function SupplyChain() {
                             Modern Tech, Tailored To Your Business.
                         </h2>
                         <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto">
-                            We design and develop custom supply chain platforms that give you total visibility and control — built around your business logic, your partners, and your workflows.
+                            We design and develop custom supply chain platforms that give you total visibility and control - built around your business logic, your partners, and your workflows.
                         </p>
                     </div>
 
@@ -409,13 +407,12 @@ export default function SupplyChain() {
                                         stack: ["JWT Auth", "Role-based Access", "Data Encryption"]
                                     }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-
-                                        <div className="relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
                                             {/* Header with Icon & Category */}
                                             <div className="flex items-center gap-4 mb-4">
-                                                <div className="size-13 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
                                                     {item.icon}
                                                 </div>
                                                 <div>
@@ -447,7 +444,7 @@ export default function SupplyChain() {
                             </div>
 
                             <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                Built like enterprise software — <span className="font-bold text-[#00477b]">customized for SME realities.</span>
+                                Built like enterprise software - <span className="font-bold text-[#00477b]">customized for SME realities.</span>
                             </p>
                         </div>
                     </div>
@@ -455,7 +452,7 @@ export default function SupplyChain() {
 
                 {/* 8. Engagement Models */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Engagement Models
                         </span>
@@ -487,9 +484,9 @@ export default function SupplyChain() {
                                         btn: "Book Consultation"
                                     }
                                 ].map((card, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-8 sm:p-9 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center justify-between relative overflow-hidden h-full">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {card.icon}
                                         </div>
                                         <h3 className="text-xl font-bold text-[#00477b] mb-3 leading-tight relative z-10">{card.title}</h3>
@@ -510,7 +507,7 @@ export default function SupplyChain() {
 
                 {/* 9. Why Gnosys Digital */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                             Why Gnosys Digital
                         </span>
@@ -526,12 +523,12 @@ export default function SupplyChain() {
                                     "10+ years of experience building systems for manufacturing, logistics, and service operations.",
                                     "Proven expertise in Laravel full-stack architecture.",
                                     "Deep understanding of Indian supply chain workflows.",
-                                    "Strong focus on ROI, usability, and adoption — not just code.",
+                                    "Strong focus on ROI, usability, and adoption - not just code.",
                                     "Transparent delivery models and post-launch support."
                                 ].map((point, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-6 rounded-[1.75rem] border border-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden h-full">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[1.75rem] pointer-events-none"></div>
-                                        <div className="size-10 mb-4 rounded-xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 flex items-center justify-center font-black text-sm relative z-10 group-hover:bg-[#00477b] group-hover:text-white transition-colors">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[1.75rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden h-full">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-10 mb-4 rounded-xl bg-white shadow-md shadow-blue-900/5 text-[#00477b] border border-white flex items-center justify-center font-black text-sm relative z-10">
                                             0{i + 1}
                                         </div>
                                         <p className="text-xs sm:text-sm text-zinc-700 font-semibold leading-relaxed relative z-10">

@@ -69,12 +69,12 @@ export default function CustomManufacturing() {
             <div className="relative z-10 w-full bg-transparent">
                 {/* 2. Why Generic ERP Systems Fail For SMEs */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-12">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             WHY GENERIC ERP SYSTEMS FAIL FOR SMES
                         </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] max-w-3xl mx-auto leading-tight">
-                            Your Process Isn't Standard — So Why Use Standard Software?
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] leading-tight">
+                            Your Process Isn't Standard - So Why Use Standard Software?
                         </h2>
                     </div>
 
@@ -86,11 +86,11 @@ export default function CustomManufacturing() {
                                     { icon: <FileText className="size-7" />, title: "Manual Job Cards", desc: "Operators track production on paper or WhatsApp." },
                                     { icon: <Clock className="size-7" />, title: "Unlogged Downtime", desc: "Machines stop, no one records why." },
                                     { icon: <Factory className="size-7" />, title: "Disconnected Departments", desc: "Production, store, and quality don't share live data." },
-                                    { icon: <BarChart3 className="size-7" />, title: "Delayed Reporting", desc: "You only see yesterday's data — today." }
+                                    { icon: <BarChart3 className="size-7" />, title: "Delayed Reporting", desc: "You only see yesterday's data - today." }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {item.icon}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
@@ -100,7 +100,7 @@ export default function CustomManufacturing() {
                             </div>
 
                             <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                You don't need “ERP.” You need <span className="font-bold text-[#00477b]">your own control system</span> — built for how you manufacture.
+                                You don't need “ERP.” You need <span className="font-bold text-[#00477b]">your own control system</span> - built for how you manufacture.
                             </p>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export default function CustomManufacturing() {
 
                 {/* 3. What We Build For You (Balanced 4-Column 8-Card Grid) */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             WHAT WE BUILD FOR YOU
                         </span>
@@ -116,7 +116,7 @@ export default function CustomManufacturing() {
                             We Design Your Factory's Digital Nervous System.
                         </h2>
                         <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                            Every manufacturing unit operates differently. We develop custom Manufacturing & Operations Control Systems that digitize your unique process — from raw material to dispatch — without disrupting how your team already works.
+                            Every manufacturing unit operates differently. We develop custom Manufacturing & Operations Control Systems that digitize your unique process - from raw material to dispatch - without disrupting how your team already works.
                         </p>
                     </div>
 
@@ -133,11 +133,10 @@ export default function CustomManufacturing() {
                                     { icon: <Boxes className="size-6" />, f: "Dispatch Sync", c: "Production-to-dispatch linkage, order fulfillment dashboard" },
                                     { icon: <TrendingUp className="size-6" />, f: "Analytics & KPIs", c: "OEE, productivity, output, and downtime analysis" }
                                 ].map((row, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-7 rounded-[2rem] border border-white shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col relative overflow-hidden h-full">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        
-                                        <div className="flex items-center justify-between mb-5 relative z-10">
-                                            <div className="size-12 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="flex items-center justify-between mb-5 relative z-10">
+                                            <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
                                                 {row.icon}
                                             </div>
                                             <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase">
@@ -160,7 +159,7 @@ export default function CustomManufacturing() {
 
                 {/* 4. Custom Manufacturing Flow (Stylish Connected Pipeline) */}
                 <section className="pt-24 pb-16 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-14">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             WORKFLOW PIPELINE
                         </span>
@@ -230,7 +229,7 @@ export default function CustomManufacturing() {
                                                 </div>
 
                                                 {/* Soft Light Icon Container */}
-                                                <div className="size-18 mb-5 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                                <div className="size-18 mb-5 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                                     {node.icon}
                                                 </div>
 
@@ -260,7 +259,7 @@ export default function CustomManufacturing() {
 
                 {/* 5. Our Approach */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             OUR APPROACH
                         </span>
@@ -281,9 +280,9 @@ export default function CustomManufacturing() {
                                     { icon: <Code className="size-7" />, title: "Development & Integration", desc: "Built using Laravel full-stack architecture with modules for roles, reports, and automation." },
                                     { icon: <Zap className="size-7" />, title: "Training, Deployment & Support", desc: "We train your staff, roll out the system in phases, and stay onboard for refinements." }
                                 ].map((step, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-md p-8 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {step.icon}
                                         </div>
                                         <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
@@ -293,7 +292,7 @@ export default function CustomManufacturing() {
                             </div>
 
                             <p className="text-xs sm:text-sm text-zinc-600 font-medium">
-                                Your process. Your terminology. Your control — <span className="font-bold text-[#00477b]">now digital.</span>
+                                Your process. Your terminology. Your control - <span className="font-bold text-[#00477b]">now digital.</span>
                             </p>
                         </div>
                     </div>
@@ -323,7 +322,7 @@ export default function CustomManufacturing() {
                                             {[
                                                 "Built around your machines, people, and workflows.",
                                                 "Lower investment than full-scale ERPs.",
-                                                "Works offline (PWA) — perfect for shop floors.",
+                                                "Works offline (PWA) - perfect for shop floors.",
                                                 "Integrates with Tally, Excel, or your existing systems."
                                             ].map((item, i) => (
                                                 <li key={i} className="flex items-start gap-3.5">
@@ -362,7 +361,7 @@ export default function CustomManufacturing() {
 
                 {/* 7. Technology & Capabilities (Modern 6-Card Grid) */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Technology & Capabilities
                         </span>
@@ -415,13 +414,12 @@ export default function CustomManufacturing() {
                                         stack: ["JWT Auth", "Role-based Access", "Backups", "Logs"]
                                     }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md border border-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-between h-full relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-
-                                        <div className="relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
                                             {/* Header with Icon & Category */}
                                             <div className="flex items-center gap-4 mb-4">
-                                                <div className="size-13 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/60 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
                                                     {item.icon}
                                                 </div>
                                                 <div>
@@ -457,7 +455,7 @@ export default function CustomManufacturing() {
 
                 {/* 8. Engagement Models */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
                             Engagement Models
                         </span>
@@ -489,9 +487,9 @@ export default function CustomManufacturing() {
                                         btn: "Book a Discovery Call"
                                     }
                                 ].map((card, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-8 sm:p-9 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col items-center text-center justify-between relative overflow-hidden h-full">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <div className="size-16 mb-6 rounded-2xl bg-blue-50/80 text-[#00477b] border border-blue-100/50 shadow-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
                                             {card.icon}
                                         </div>
                                         <h3 className="text-xl font-bold text-[#00477b] mb-3 leading-tight relative z-10">{card.title}</h3>
@@ -512,7 +510,7 @@ export default function CustomManufacturing() {
 
                 {/* 9. Why Gnosys Digital */}
                 <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-5xl mb-12">
+                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                             Why Gnosys Digital
                         </span>
@@ -532,9 +530,9 @@ export default function CustomManufacturing() {
                                     { step: "04", text: "Agile delivery and transparent project management." },
                                     { step: "05", text: "Long-term support, training, and evolution." }
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-gradient-to-br from-white/85 to-white/45 backdrop-blur-md p-6 rounded-[2rem] border border-white shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group flex flex-col justify-start min-h-[160px] relative overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
-                                        <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase mb-3 relative z-10">
+                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-start min-h-[160px] overflow-hidden">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase mb-3 relative z-10">
                                             {item.step}
                                         </span>
                                         <p className="text-xs sm:text-sm text-zinc-700 font-semibold leading-relaxed relative z-10">{item.text}</p>

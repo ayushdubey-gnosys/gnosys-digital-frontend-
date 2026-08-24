@@ -64,7 +64,7 @@ const blogPosts = [
         imageText: "Transforming Businesses with Modern Software",
         badge: "DIGITAL TRANSFORMATION",
         title: "Transforming Businesses with Modern Software Solutions",
-        excerpt: "How Modern Tech Stacks and ERPs Drive Efficiency, Growth, and ROI In today's digital-first business environment, legacy systems are no longer just an inconvenience — they are a business risk.",
+        excerpt: "How Modern Tech Stacks and ERPs Drive Efficiency, Growth, and ROI In today's digital-first business environment, legacy systems are no longer just an inconvenience - they are a business risk.",
         author: "Jay Thanki",
         date: "July 4, 2025",
         comments: "No Comments",
@@ -139,10 +139,9 @@ export default function Blog() {
                         {blogPosts.map((post, index) => (
                             <ScrollReveal key={index} animation="fade-up" delay={index * 70} className="h-full">
                                 <div 
-                                    className="group bg-gradient-to-br from-white/50 via-white/35 to-white/20 backdrop-blur-xl border border-white/60 hover:border-white/80 rounded-[2rem] p-6 sm:p-7 flex flex-col shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/50 hover:-translate-y-2 transition-all duration-400 h-full relative overflow-hidden"
+                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 sm:p-7 flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 h-full overflow-hidden"
                                 >
-                                    {/* Ambient Hover Glow */}
-                                    <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] pointer-events-none"></div>
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                     {/* Top Glassmorphism Banner / Thumbnail */}
                                     <div className="h-44 w-full bg-gradient-to-br from-white/45 via-white/25 to-blue-50/20 backdrop-blur-md border border-white/60 rounded-2xl flex flex-col items-center justify-center p-6 text-center mb-6 relative overflow-hidden shadow-inner group-hover:scale-[1.02] transition-transform duration-500">

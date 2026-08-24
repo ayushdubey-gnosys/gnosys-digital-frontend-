@@ -87,7 +87,7 @@ export default function ErpnextEcommerce() {
                                 { icon: FileText, title: "GST & Compliance Headaches", desc: "Monthly filing becomes a scrambling exercise of manual calculations and mismatched tax reports." }
                             ].map((pain, i) => (
                                 <div key={i} className="bg-white/20 backdrop-blur-lg border border-white/40 hover:bg-white/40 rounded-xl p-8 flex flex-col items-center shadow-sm hover:shadow-md transition-all text-center group">
-                                    <div className="bg-white/80 shadow-sm p-4 rounded-full mb-6 group-hover:scale-110 transition-transform">
+                                    <div className="bg-white shadow-md shadow-blue-900/5 p-4 rounded-2xl mb-6 border border-white text-[#00477b]">
                                         <pain.icon className="size-8 text-[#00477b]" />
                                     </div>
                                     <h3 className="text-lg font-bold text-[#00477b] mb-3">{pain.title}</h3>
@@ -213,10 +213,10 @@ export default function ErpnextEcommerce() {
                                 >
                                     <div>
                                         <div className="flex items-center justify-between w-full mb-4">
-                                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00477b]/10 to-[#00477b]/5 border border-[#00477b]/15 text-[#00477b] flex items-center justify-center group-hover:bg-[#00477b] group-hover:text-white group-hover:border-[#00477b] transition-all duration-300 shadow-2xs">
-                                                <item.icon className="size-5" />
+                                            <div className="w-12 h-12 rounded-xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
+                                                <item.icon className="size-5 text-[#00477b]" />
                                             </div>
-                                            <span className="text-xs font-bold font-mono px-3 py-1 rounded-full bg-[#00477b]/10 text-[#00477b] group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
+                                            <span className="text-xs font-bold font-mono px-3 py-1 rounded-full bg-[#00477b]/10 text-[#00477b]">
                                                 0{i + 1}
                                             </span>
                                         </div>

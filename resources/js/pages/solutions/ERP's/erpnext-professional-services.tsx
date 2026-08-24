@@ -198,8 +198,8 @@ export default function ErpnextProfessionalServices() {
                                     ].map((mod, i) => (
                                         <div key={i} className="bg-white/50 backdrop-blur-md px-5 lg:px-7 py-8 rounded-[2rem] border border-white/80 shadow-sm hover:bg-white/70 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center h-full relative overflow-hidden">
                                             <div className="relative z-10 w-full flex flex-col items-center">
-                                                <div className="p-4 bg-white/60 text-[#123b61] rounded-2xl border border-white/80 inline-flex mb-6 group-hover:bg-[#123b61] group-hover:text-white transition-colors duration-300 shadow-sm">
-                                                    <mod.icon className="size-6" />
+                                                <div className="p-4 bg-white text-[#123b61] rounded-2xl border border-white shadow-md shadow-blue-900/5 inline-flex mb-6">
+                                                    <mod.icon className="size-6 text-[#123b61]" />
                                                 </div>
                                                 <h3 className="mb-5 text-xl font-semibold text-[#123b61]">{mod.title}</h3>
                                                 <ul className="space-y-3 text-left w-full">
@@ -292,10 +292,10 @@ export default function ErpnextProfessionalServices() {
                                 ].map((industry, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 text-left hover:-translate-y-2 flex flex-col group relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="p-3 bg-blue-50/50 rounded-2xl mb-5 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 self-start">
+                                        <div className="p-3 bg-white shadow-md shadow-blue-900/5 rounded-2xl mb-5 border border-white text-[#00477b] self-start">
                                             <Briefcase className="size-6 text-[#00477b]" />
                                         </div>
-                                        <h3 className="text-[#00477b] font-bold text-lg mb-2 tracking-tight group-hover:text-blue-600 transition-colors">{industry.title}</h3>
+                                        <h3 className="text-[#00477b] font-bold text-lg mb-2 tracking-tight">{industry.title}</h3>
                                         <p className="text-zinc-600 text-sm leading-relaxed font-medium">{industry.desc}</p>
                                     </div>
                                 ))}
@@ -316,19 +316,18 @@ export default function ErpnextProfessionalServices() {
                         <div className="relative w-full px-4 sm:px-6 lg:px-8 xl:px-12 mx-auto">
                             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:gap-8 relative z-10">
                                 {[
-                                    { step: "01", week: "Week 1", title: "Requirement Discovery", desc: "Analyze workflows, gather requirements, and map processes.", icon: <Search className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                    { step: "02", week: "Week 2", title: "System Configuration", desc: "Set up templates, roles, permissions, and dashboards.", icon: <Settings className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                    { step: "03", week: "Week 3", title: "Data Migration", desc: "Import client, project, and resource data.", icon: <Database className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                    { step: "04", week: "Week 4", title: "Testing & Validation", desc: "Conduct user acceptance testing and validate workflows.", icon: <MonitorPlay className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> },
-                                    { step: "05", week: "Week 5", title: "Training & Go-Live", desc: "Train teams, launch the system, and optimize operations.", icon: <Rocket className="size-6 text-[#00477b] group-hover:text-blue-500 transition-colors" /> }
+                                    { step: "01", week: "Week 1", title: "Requirement Discovery", desc: "Analyze workflows, gather requirements, and map processes.", icon: <Search className="size-6 text-[#00477b]" /> },
+                                    { step: "02", week: "Week 2", title: "System Configuration", desc: "Set up templates, roles, permissions, and dashboards.", icon: <Settings className="size-6 text-[#00477b]" /> },
+                                    { step: "03", week: "Week 3", title: "Data Migration", desc: "Import client, project, and resource data.", icon: <Database className="size-6 text-[#00477b]" /> },
+                                    { step: "04", week: "Week 4", title: "Testing & Validation", desc: "Conduct user acceptance testing and validate workflows.", icon: <MonitorPlay className="size-6 text-[#00477b]" /> },
+                                    { step: "05", week: "Week 5", title: "Training & Go-Live", desc: "Train teams, launch the system, and optimize operations.", icon: <Rocket className="size-6 text-[#00477b]" /> }
                                 ].map((item, i) => (
                                     <div key={i} className={`group relative bg-white border border-white/80 p-6 xl:p-8 rounded-[2rem] shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2 aspect-square flex flex-col justify-center ${i % 2 === 0 ? 'lg:-mt-4' : 'lg:mt-4'}`}>
                                         {/* Number Badge */}
                                         <div className="absolute top-4 right-6 text-5xl xl:text-6xl font-extrabold text-[#00477b]/5 drop-shadow-sm pointer-events-none group-hover:text-[#00477b]/10 transition-colors duration-500">{item.step}</div>
 
                                         {/* Icon Circle */}
-                                        <div className="size-14 xl:size-16 rounded-full bg-white/60 backdrop-blur-sm border border-white shadow-sm flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 group-hover:shadow-md transition-all duration-300 relative">
-                                            <div className="absolute inset-0 rounded-full bg-[#00477b]/5 scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                                        <div className="size-14 xl:size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mx-auto mb-6 relative">
                                             <div className="relative z-10">{item.icon}</div>
                                         </div>
 
@@ -364,8 +363,8 @@ export default function ErpnextProfessionalServices() {
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white rounded-[2rem] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-white/80 hover:border-white transition-all duration-500 hover:-translate-y-2 flex flex-col items-center justify-center text-center group min-h-[160px] relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4 opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none"></div>
-                                        <div className="bg-blue-50/50 p-3 rounded-2xl mb-4 border border-blue-100/50 text-[#3b82f6] group-hover:scale-110 transition-transform duration-300 relative z-10">
-                                            <CheckSquare className="size-5" />
+                                        <div className="bg-white shadow-md shadow-blue-900/5 p-3 rounded-2xl mb-4 border border-white text-[#00477b] relative z-10">
+                                            <CheckSquare className="size-5 text-[#00477b]" />
                                         </div>
                                         <p className="text-sm font-bold text-[#00477b] leading-relaxed relative z-10">{item}</p>
                                     </div>
@@ -422,7 +421,7 @@ export default function ErpnextProfessionalServices() {
                                                 "2 custom report development"
                                             ].map((feature, idx) => (
                                                 <li key={idx} className="flex items-center gap-2.5 text-xs text-zinc-700 font-medium bg-white/50 hover:bg-white/80 transition-colors duration-300 p-2.5 rounded-xl border border-white shadow-sm">
-                                                    <div className="bg-blue-50/50 p-1 rounded-md text-[#3b82f6] shrink-0 border border-blue-100/50">
+                                                    <div className="bg-blue-50/50 p-1 rounded-md text-[#00477b] shrink-0 border border-blue-100/50">
                                                         <CheckSquare className="size-3.5" />
                                                     </div>
                                                     <span className="leading-tight">{feature}</span>
@@ -471,9 +470,9 @@ export default function ErpnextProfessionalServices() {
                                                 <Label htmlFor="teamSize" className="text-xs font-bold text-zinc-700 uppercase tracking-wider ml-1">Team Size</Label>
                                                 <select id="teamSize" className="w-full h-12 rounded-xl border-white/60 bg-white/50 backdrop-blur-md px-4 py-2 text-sm font-medium shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00477b]/30 focus:border-[#00477b]/50 text-zinc-700">
                                                     <option value="" className="bg-white">Select Team Size</option>
-                                                    <option value="1-10" className="bg-white">1–10 employees</option>
-                                                    <option value="11-50" className="bg-white">11–50 employees</option>
-                                                    <option value="51-200" className="bg-white">51–200 employees</option>
+                                                    <option value="1-10" className="bg-white">1-10 employees</option>
+                                                    <option value="11-50" className="bg-white">11-50 employees</option>
+                                                    <option value="51-200" className="bg-white">51-200 employees</option>
                                                     <option value="200+" className="bg-white">200+ employees</option>
                                                 </select>
                                             </div>

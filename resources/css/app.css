@@ -62,6 +62,9 @@
 
     --animate-blob: blob 7s infinite;
     --animate-shimmer: shimmer 1.5s infinite;
+    --animate-marquee: marquee 35s linear infinite;
+    --animate-beam-sweep: beamSweep 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    --animate-beam-fast: beamSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 
     @keyframes blob {
         0% { transform: translate(0px, 0px) scale(1); }
@@ -72,6 +75,28 @@
 
     @keyframes shimmer {
         100% { transform: translateX(100%); }
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+    }
+
+    @keyframes beamSweep {
+        0% {
+            transform: translateX(-120%) skewX(-20deg);
+            opacity: 0;
+        }
+        20% {
+            opacity: 0.55;
+        }
+        65% {
+            opacity: 0.55;
+        }
+        100% {
+            transform: translateX(380%) skewX(-20deg);
+            opacity: 0;
+        }
     }
 }
 
@@ -164,6 +189,12 @@
     body {
         @apply bg-background text-foreground;
     }
+
+    /* Professional sleek stroke weight for all Lucide and UI icons */
+    svg.lucide,
+    svg[data-lucide] {
+        stroke-width: 1.5px;
+    }
 }
 
 @layer utilities {
@@ -212,4 +243,13 @@
     .brand-grid {
         @apply grid gap-6 md:gap-8;
     }
+
+    .glass-card {
+        @apply relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 overflow-hidden;
+    }
+
+    .glass-card-lg {
+        @apply relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 overflow-hidden;
+    }
 }
+

@@ -23,6 +23,7 @@ import {
     Calendar,
     ArrowRight,
     Lock
+} from 'lucide-react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
 import ScrollReveal from '@/components/scroll-reveal';
 
@@ -56,7 +57,7 @@ export default function FreeDigitalConsultation() {
         },
         {
             q: "Who will I be talking to?",
-            a: "You will speak directly with a Senior Digital Architect or Tech Lead who understands business ROI, frameworks, and architecture — never a pushy junior sales rep."
+            a: "You will speak directly with a Senior Digital Architect or Tech Lead who understands business ROI, frameworks, and architecture - never a pushy junior sales rep."
         },
         {
             q: "What do I need to prepare before the call?",
@@ -68,7 +69,7 @@ export default function FreeDigitalConsultation() {
         },
         {
             q: "How soon can we schedule a call?",
-            a: "Once you fill out the form, our team will coordinate calendar invites within 24 hours, usually locking in a slot within 1–2 business days."
+            a: "Once you fill out the form, our team will coordinate calendar invites within 24 hours, usually locking in a slot within 1-2 business days."
         }
     ];
 
@@ -99,7 +100,7 @@ export default function FreeDigitalConsultation() {
 
                     <ScrollReveal animation="fade-up" delay={280}>
                         <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
-                            Get expert guidance on your website, app, or marketing system without commitment. Free growth audit for businesses ready to scale. Tell us your current bottlenecks, and we'll deliver actionable insights — whether you decide to work with us or not.
+                            Get expert guidance on your website, app, or marketing system without commitment. Free growth audit for businesses ready to scale. Tell us your current bottlenecks, and we'll deliver actionable insights - whether you decide to work with us or not.
                         </p>
                     </ScrollReveal>
 
@@ -186,12 +187,13 @@ export default function FreeDigitalConsultation() {
                             ].map((item, idx) => (
                                 <ScrollReveal key={idx} animation="fade-up" delay={idx * 80} className="h-full">
                                     <div 
-                                        className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full"
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
                                     >
-                                        <div>
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
                                             <div className="flex items-center justify-between mb-5">
-                                                <div className="size-13 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] p-3 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                                    <item.icon className="size-6" />
+                                                <div className="size-13 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] p-3 shadow-md shadow-blue-900/5">
+                                                    <item.icon className="size-6 text-[#00477b]" />
                                                 </div>
                                                 <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3 py-1.5 rounded-full border border-blue-100">
                                                     Challenge 0{idx + 1}
@@ -211,7 +213,7 @@ export default function FreeDigitalConsultation() {
                     <div className="w-full px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center mt-6">
                         <div className="p-6 rounded-2xl bg-blue-50/60 border border-blue-100">
                             <p className="text-sm sm:text-base text-[#00477b] font-medium">
-                                💡 During our 30-minute session, we explore your unique digital architecture — and give you actionable clarity on what to fix first.
+                                💡 During our 30-minute session, we explore your unique digital architecture - and give you actionable clarity on what to fix first.
                             </p>
                         </div>
                     </div>
@@ -225,10 +227,10 @@ export default function FreeDigitalConsultation() {
                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">What We Deliver</span>
                     </div>
                     <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        We Don't Sell — We Solve. Get Clarity & Direction.
+                        We Don't Sell - We Solve. Get Clarity & Direction.
                     </h2>
                     <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-                        We will give you the exact roadmap you need to solve your challenges — clear, actionable, and free of jargon.
+                        We will give you the exact roadmap you need to solve your challenges - clear, actionable, and free of jargon.
                     </p>
                 </div>
 
@@ -270,11 +272,12 @@ export default function FreeDigitalConsultation() {
                             ].map((item, idx) => (
                                 <div 
                                     key={idx}
-                                    className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden"
                                 >
-                                    <div>
-                                        <div className="size-14 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] mb-6 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <item.icon className="size-6" />
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
+                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
+                                            <item.icon className="size-6 text-[#00477b]" />
                                         </div>
                                         <h3 className="text-xl font-bold text-[#00477b] mb-4 tracking-tight">{item.title}</h3>
                                         <ul className="space-y-2.5">
@@ -302,14 +305,14 @@ export default function FreeDigitalConsultation() {
                 </div>
             </section>
 
-            {/* 4. Simple Process, Real Results — In 3 Easy Steps */}
+            {/* 4. Simple Process, Real Results - In 3 Easy Steps */}
             <section className="py-20 lg:py-28 bg-transparent">
                 <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
                     <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">How It Works?</span>
                     </div>
                     <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Simple Process, Real Results — In 3 Easy Steps
+                        Simple Process, Real Results - In 3 Easy Steps
                     </h2>
                     <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
                         We respect your time. No tedious back-and-forths, just 3 simple steps to total clarity.
@@ -334,7 +337,7 @@ export default function FreeDigitalConsultation() {
                                 {
                                     icon: CheckCircle2,
                                     step: "3. Receive Custom Action Plan",
-                                    desc: "Get your clear recommendation document — yours to keep, whether we work together or not."
+                                    desc: "Get your clear recommendation document - yours to keep, whether we work together or not."
                                 }
                             ].map((item, idx) => (
                                 <div 
@@ -368,7 +371,7 @@ export default function FreeDigitalConsultation() {
                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why Businesses Choose Gnosys Digital?</span>
                     </div>
                     <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        We Go Beyond Development — We Build Growth Systems
+                        We Go Beyond Development - We Build Growth Systems
                     </h2>
                     <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
                         We don't just write code; we partner with businesses to eliminate manual chaos and scale revenue.
@@ -384,7 +387,7 @@ export default function FreeDigitalConsultation() {
                                 { title: "SEO That Actually Ranks", desc: "Data-backed search strategies designed to dominate competitive keywords and bring inbound leads." },
                                 { title: "Transparent & Accountable", desc: "Clear milestone-based pricing, direct communication, and weekly sprint reporting. No surprises." },
                                 { title: "Proven Digital Transformation", desc: "Custom ERPs, CRMs, and system integrations that automate operations and eliminate busywork." },
-                                { title: "Partnership Approach", desc: "We treat your business as our own — advising on long-term strategy, not just one-off tasks." },
+                                { title: "Partnership Approach", desc: "We treat your business as our own - advising on long-term strategy, not just one-off tasks." },
                                 { title: "100% Code Ownership", desc: "Complete source code, documentation, and IP transferred to you with zero vendor lock-in." }
                             ].map((item, idx) => (
                                 <div 
@@ -433,21 +436,21 @@ export default function FreeDigitalConsultation() {
                                 {
                                     initials: "SJ",
                                     name: "Sarah Johnson",
-                                    role: "Operations Director — Logistics Group",
+                                    role: "Operations Director - Logistics Group",
                                     quote: "The free consultation gave us more actionable clarity in 30 minutes than 3 other agencies did in an entire month. We hired Gnosys immediately after.",
                                     tag: "Operations Audit"
                                 },
                                 {
                                     initials: "DR",
                                     name: "David Rodriguez",
-                                    role: "Founder — E-commerce Brand",
+                                    role: "Founder - E-commerce Brand",
                                     quote: "Their technical roadmap helped us double our page speed and cut infrastructure costs by 40%. The most high-ROI 30 minutes we ever spent.",
                                     tag: "Performance & Scale"
                                 },
                                 {
                                     initials: "AV",
                                     name: "Aman Verma",
-                                    role: "CTO — FinTech Solutions",
+                                    role: "CTO - FinTech Solutions",
                                     quote: "Zero sales fluff or aggressive pitching. They pointed out two critical database bottlenecks we had no idea about. Total game-changer for our launch.",
                                     tag: "Architecture Review"
                                 }
@@ -559,7 +562,7 @@ export default function FreeDigitalConsultation() {
                                     Request Your Free Strategy Session Today
                                 </h2>
                                 <p className="text-base sm:text-lg text-zinc-600">
-                                    Fill out the form below — our team will reach out within 24 hours to confirm your session time.
+                                    Fill out the form below - our team will reach out within 24 hours to confirm your session time.
                                 </p>
                             </div>
 
@@ -744,11 +747,12 @@ export default function FreeDigitalConsultation() {
                             ].map((item, idx) => (
                                 <div 
                                     key={idx}
-                                    className="group bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 lg:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full"
+                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
                                 >
-                                    <div>
-                                        <div className="size-14 bg-blue-50/80 border border-blue-100 text-[#00477b] rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-sm group-hover:bg-[#00477b] group-hover:text-white transition-all duration-300">
-                                            <item.icon className="size-6" />
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                    <div className="relative z-10">
+                                        <div className="size-14 bg-white border border-white text-[#00477b] rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-md shadow-blue-900/5">
+                                            <item.icon className="size-6 text-[#00477b]" />
                                         </div>
                                         <div className="text-xs font-black text-[#00477b] uppercase tracking-widest mb-1.5">Step {item.step}</div>
                                         <h4 className="font-bold text-lg text-[#00477b] mb-2.5">{item.title}</h4>
