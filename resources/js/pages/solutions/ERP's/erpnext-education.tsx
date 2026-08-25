@@ -6,8 +6,11 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import {
     GraduationCap, Users, BookOpen, Building2,
-    CheckSquare, Star, Search, Database, Settings,
-    MonitorPlay, Rocket, ArrowRight, CheckCircle2
+    CheckSquare, Search, Database, Settings,
+    MonitorPlay, Rocket, ArrowRight, CheckCircle2,
+    Calculator, LineChart, ShieldCheck, Clock, Check, ChevronDown,
+    UserCheck, ClipboardCheck, Briefcase, Receipt, Bus,
+    Smartphone, Laptop, FileCheck2
 } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
@@ -19,8 +22,8 @@ export default function ErpnextEducation() {
         <MainLayout>
             <Head title="ERPNext For Education Institutions" />
 
-            {/* Ambient Background */}
-            <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-blue-100/60 via-purple-50/50 to-pink-100/60 pointer-events-none"></div>
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
 
             {/* 1. Hero Section */}
             <section className="relative overflow-hidden pt-24 pb-36 lg:pt-36 lg:pb-48 flex items-center min-h-[92vh] lg:min-h-[100vh] w-full">
@@ -30,6 +33,20 @@ export default function ErpnextEducation() {
                         style={{ backgroundImage: "url('/assets/erp-education.webp')", backgroundColor: '#001a30' }}
                     ></div>
                     <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none lg:w-1/2"></div>
+                </div>
+
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
@@ -63,619 +80,621 @@ export default function ErpnextEducation() {
             </section>
 
             {/* 2. The Challenge Modern Institutions Face */}
-            <section className="pt-24 bg-transparent relative z-10 text-center">
-                <div className="container mx-auto px-4 max-w-6xl relative z-10 mb-12">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        THE CHALLENGE
-                    </span>
-                    <h2 className="text-4xl font-normal text-[#00477b] mb-4 tracking-tight">
-                        The Challenge Modern Institutions Face
-                    </h2>
-                    <p className="text-zinc-600 text-base max-w-2xl mx-auto">
-                        Education organizations are trying to balance legacy systems with rising digital expectations. Common issues include:
-                    </p>
-                </div>
-
-                <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full text-left">
-                        <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-xl font-normal mb-4 text-[#00477b]">Operational Inefficiency</h3>
-                            <ul className="text-sm text-zinc-600 leading-relaxed list-disc pl-4 space-y-2">
-                                <li>Manual admission handling is causing delays</li>
-                                <li>Paper-based communication and approvals</li>
-                                <li>Unreliable attendance and grading processes</li>
-                                <li>Timetable conflicts across classrooms, labs, and faculty</li>
-                            </ul>
-                        </div>
-                        <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-xl font-normal mb-4 text-[#00477b]">Financial & Compliance Pressure</h3>
-                            <ul className="text-sm text-zinc-600 leading-relaxed list-disc pl-4 space-y-2">
-                                <li>Complex fee collection and reconciliation</li>
-                                <li>Scholarship and concession tracking errors</li>
-                                <li>Reporting for UGC, AICTE, NAAC, and other bodies</li>
-                                <li>Limited visibility into budgets and expenditure</li>
-                            </ul>
-                        </div>
-                        <div className="bg-white/80 backdrop-blur-xl p-8 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-xl font-normal mb-4 text-[#00477b]">Academic Quality Gaps</h3>
-                            <ul className="text-sm text-zinc-600 leading-relaxed list-disc pl-4 space-y-2">
-                                <li>Multiple versions of syllabi and course documents</li>
-                                <li>Non-standardized assessments</li>
-                                <li>Difficulty tracking academic outcomes</li>
-                                <li>Poor research and publication management</li>
-                            </ul>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 3. The Complete Digital Campus Solution */}
-            <section className="pt-24 bg-transparent relative z-10 border-t border-white/20">
-                <div className="container mx-auto px-4 max-w-6xl mb-12">
-                    <div className="text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            OUR SOLUTION
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            The Challenge
                         </span>
-                        <h2 className="text-4xl font-normal text-[#00477b] mb-4 tracking-tight">
-                            The Complete Digital Campus Solution
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            The Challenge Modern Institutions Face
                         </h2>
-                        <p className="text-zinc-600 text-sm font-medium">
-                            ERPNext connects every part of your institution to a single system.
-                        </p>
                     </div>
-                </div>
+                </ScrollReveal>
 
-                <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-6 lg:px-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-[1650px] mx-auto w-full">
-                        {/* Column 1 */}
-                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
-                            <div>
-                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Streamlined Administration</h3>
-                                <ul className="space-y-4">
-                                    {[
-                                        "Automated online admissions",
-                                        "Centralized communication (portal, mobile app, SMS, email)",
-                                        "Facility, asset, and library management",
-                                        "Transport and hostel operations"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
-                                                <CheckSquare className="size-3.5" />
-                                            </div>
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                        {/* Column 2 */}
-                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
-                            <div>
-                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Academic Delivery & Learning</h3>
-                                <ul className="space-y-4">
-                                    {[
-                                        "Curriculum planning and smart timetable scheduling",
-                                        "Digital exams and automated grade books",
-                                        "Assignment and learning content management",
-                                        "Student performance insights"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
-                                                <CheckSquare className="size-3.5" />
-                                            </div>
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                        {/* Column 3 */}
-                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
-                            <div>
-                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Financial and Control</h3>
-                                <ul className="space-y-4">
-                                    {[
-                                        "End-to-end fee cycle automation",
-                                        "Scholarship and concession management",
-                                        "Payroll and vendor payments",
-                                        "Built-in statutory and audit reports"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
-                                                <CheckSquare className="size-3.5" />
-                                            </div>
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                        {/* Column 4 */}
-                        <div className="bg-white/90 hover:bg-white backdrop-blur-xl p-8 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/80 hover:-translate-y-1.5 transition-all duration-300 h-full flex flex-col justify-between group">
-                            <div>
-                                <h3 className="font-bold text-[#00477b] text-xl mb-6 group-hover:text-[#002f52] transition-colors">Data-Driven Leadership</h3>
-                                <ul className="space-y-4">
-                                    {[
-                                        "Real-time dashboards for all stakeholders",
-                                        "Student and faculty analytics",
-                                        "Accreditation reporting automation"
-                                    ].map((item, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700 leading-snug">
-                                            <div className="bg-[#00477b]/10 rounded-md p-1 mt-0.5 shrink-0 text-[#00477b]">
-                                                <CheckSquare className="size-3.5" />
-                                            </div>
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="container mx-auto px-4 max-w-7xl mt-16 pb-24">
-                    <div className="text-center">
-                        <h3 className="text-4xl tracking-tight font-normal text-[#00477b] mb-12">Core Modules</h3>
-                        <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 text-left">
                             {[
-                                "Student Information System", "Admissions & Enrollment", "Placement and Alumni",
-                                "Fee & Accounting", "HR & Payroll", "Library & Inventory", "Hostel & Transport",
-                                "Mobile App", "LMS & Assignments", "Examination & Assessment"
-                            ].map((module, i) => (
-                                <div key={i} className="border border-white/60 text-[#1a4464] font-medium text-base px-6 py-3 shadow-[0_4px_20px_rgb(0,0,0,0.03)] bg-white/80 backdrop-blur-md hover:bg-white hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-0.5 transition-all cursor-default rounded-full">
-                                    {module}
-                                </div>
+                                {
+                                    icon: Clock,
+                                    title: "Operational Inefficiency",
+                                    points: [
+                                        "Manual admission handling causing massive delays",
+                                        "Paper-based communication and slow approvals",
+                                        "Unreliable attendance and manual grading processes",
+                                        "Timetable conflicts across classrooms, labs, and faculty"
+                                    ]
+                                },
+                                {
+                                    icon: Calculator,
+                                    title: "Financial & Compliance Pressure",
+                                    points: [
+                                        "Complex fee collection and manual reconciliation",
+                                        "Scholarship and concession tracking errors",
+                                        "Reporting burden for UGC, AICTE, NAAC, and CBSE",
+                                        "Limited visibility into department budgets and expenditure"
+                                    ]
+                                },
+                                {
+                                    icon: GraduationCap,
+                                    title: "Academic Quality Gaps",
+                                    points: [
+                                        "Multiple versions of syllabi and course documents",
+                                        "Non-standardized assessment & outcome tracking",
+                                        "Difficulty measuring student learning outcomes",
+                                        "Poor research and publication repository management"
+                                    ]
+                                }
+                            ].map((item, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <item.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-4 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                        <ul className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed space-y-2.5 relative z-10">
+                                            {item.points.map((pt, pIdx) => (
+                                                <li key={pIdx} className="flex items-start gap-2.5">
+                                                    <div className="w-1.5 h-1.5 rounded-full bg-[#00477b] mt-2 shrink-0"></div>
+                                                    <span>{pt}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </ScrollReveal>
                             ))}
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 4. Who We Serve */}
-            <section className="py-24 bg-white/40 backdrop-blur-xl border-y border-white/60 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent"></div>
-                <div className="w-full px-6 lg:px-12 xl:px-20 mx-auto max-w-[100rem] relative z-10">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        WHO WE SERVE
-                    </span>
-                    <h2 className="text-4xl font-normal text-[#00477b] mb-12 tracking-tight">
-                        Who We Serve
-                    </h2>
+            {/* 3. The Complete Digital Campus Solution */}
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Our Solution
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            The Complete Digital Campus Solution
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-[#00477b] font-normal text-xl mb-3">Schools (K-12)</h3>
-                            <p className="text-zinc-500 text-xs leading-relaxed">Parent portal, homework tracking, and co-curricular assessment</p>
-                        </div>
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-[#00477b] font-normal text-xl mb-3">Colleges & Universities</h3>
-                            <p className="text-zinc-500 text-xs leading-relaxed">Credit systems, research tracking, placement management</p>
-                        </div>
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-[#00477b] font-normal text-xl mb-3">Coaching & Training Institutes</h3>
-                            <p className="text-zinc-500 text-xs leading-relaxed">Batch scheduling, test analytics, franchise management</p>
-                        </div>
-                        <div className="bg-white/80 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 hover:bg-white/90 transition-all duration-300">
-                            <h3 className="text-[#00477b] font-normal text-xl mb-3">Professional & Technical Institutions</h3>
-                            <p className="text-zinc-500 text-xs leading-relaxed">Lab booking, internship tracking, and industry collaboration</p>
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-10 text-left">
+                            {[
+                                {
+                                    icon: Building2,
+                                    title: "Streamlined Administration",
+                                    items: [
+                                        "Automated online admissions",
+                                        "Centralized parent/student portal",
+                                        "Facility, asset & library control",
+                                        "Transport & hostel operations"
+                                    ]
+                                },
+                                {
+                                    icon: GraduationCap,
+                                    title: "Academic Delivery",
+                                    items: [
+                                        "Curriculum & smart timetable setup",
+                                        "Digital exams & grade books",
+                                        "Assignment & content repository",
+                                        "Student performance analytics"
+                                    ]
+                                },
+                                {
+                                    icon: Calculator,
+                                    title: "Financial Control",
+                                    items: [
+                                        "End-to-end fee cycle automation",
+                                        "Scholarship & concession tracking",
+                                        "Payroll & vendor payment system",
+                                        "Built-in statutory & audit reports"
+                                    ]
+                                },
+                                {
+                                    icon: LineChart,
+                                    title: "Data-Driven Leadership",
+                                    items: [
+                                        "Real-time dashboards for executives",
+                                        "Student and faculty performance",
+                                        "Automated NAAC / NBA reports",
+                                        "Multi-campus governance"
+                                    ]
+                                }
+                            ].map((col, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <col.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-4 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{col.title}</h3>
+                                        <ul className="text-sm sm:text-[15px] text-zinc-600 font-normal leading-relaxed space-y-2.5 relative z-10">
+                                            {col.items.map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-2.5">
+                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                    <span>{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 5. Implementation Journey (Timeline) */}
-            <section className="py-24 bg-transparent text-center overflow-hidden relative z-10">
-                <div className="w-full px-4 sm:px-6 lg:px-12 max-w-[1650px] mx-auto">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        IMPLEMENTATION
-                    </span>
-                    <h2 className="text-4xl font-normal text-[#00477b] mb-4 tracking-tight">
-                        Education ERP Implementation Journey
-                    </h2>
-                    <p className="text-zinc-600 text-sm font-medium mx-auto max-w-2xl">
-                        Structured 5-phase rollout for smooth adoption across your institution
-                    </p>
-                </div>
+            {/* 4. All Included Campus Modules */}
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Campus Ecosystem
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            All Included Campus Modules
+                        </h2>
+                        <p className="text-zinc-600 text-sm font-normal mt-2 max-w-2xl mx-auto">
+                            A fully unified open-source ecosystem connecting students, faculty, administration, and accounts.
+                        </p>
+                    </div>
+                </ScrollReveal>
 
-                {/* Custom Timeline Layout */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-12 md:py-16 mt-16">
-                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-[1650px] mx-auto flex flex-col md:flex-row items-stretch justify-between gap-3 lg:gap-4 relative z-10">
-                            
-                            {/* Step 1 */}
-                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
-                                    <Search className="size-7 text-[#00477b]" strokeWidth={1.5} />
-                                </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Discovery</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Review academic workflows and identify core requirements.</p>
-                            </div>
-
-                            {/* Arrow 1 */}
-                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
-                            </div>
-
-                            {/* Step 2 */}
-                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
-                                    <Settings className="size-7 text-[#00477b]" strokeWidth={1.5} />
-                                </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Configuration</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Set up courses, fees, roles, and dashboards.</p>
-                            </div>
-
-                            {/* Arrow 2 */}
-                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
-                            </div>
-
-                            {/* Step 3 */}
-                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
-                                    <Database className="size-7 text-[#00477b]" strokeWidth={1.5} />
-                                </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Migration</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Import student and staff data and connect integrations.</p>
-                            </div>
-
-                            {/* Arrow 3 */}
-                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
-                            </div>
-
-                            {/* Step 4 */}
-                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
-                                    <MonitorPlay className="size-7 text-[#00477b]" strokeWidth={1.5} />
-                                </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Training</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Train admin, faculty, and support teams for launch.</p>
-                            </div>
-
-                            {/* Arrow 4 */}
-                            <div className="flex items-center justify-center shrink-0 text-[#00477b]/30 rotate-90 md:rotate-0 py-2 md:py-0">
-                                <ArrowRight className="size-5 lg:size-6" strokeWidth={1.8} />
-                            </div>
-
-                            {/* Step 5 */}
-                            <div className="bg-white/90 hover:bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/80 flex-1 w-full relative group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)]">
-                                <div className="size-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center text-[#00477b] mb-5">
-                                    <Rocket className="size-7 text-[#00477b]" strokeWidth={1.5} />
-                                </div>
-                                <h4 className="font-bold text-[#00477b] text-base lg:text-lg mb-2">Optimization</h4>
-                                <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed font-normal">Refine workflows and provide ongoing support.</p>
-                            </div>
-
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5">
+                            {[
+                                { icon: UserCheck, title: "Student SIS", desc: "Profiles, enrollment, batch tracking & lifecycle records" },
+                                { icon: ClipboardCheck, title: "Admissions Portal", desc: "Online application forms, merit lists & automated document checks" },
+                                { icon: Briefcase, title: "Placement & Alumni", desc: "Campus drive management, interview rounds & alumni directory" },
+                                { icon: Receipt, title: "Fee & Accounting", desc: "Online payment sync, installments & automated GST receipts" },
+                                { icon: Users, title: "HR & Payroll", desc: "Biometric attendance, faculty workload & auto salary processing" },
+                                { icon: BookOpen, title: "Library & Inventory", desc: "Barcode book cataloging, circulation & campus asset registry" },
+                                { icon: Bus, title: "Hostel & Fleet", desc: "Room allotment, route optimization & GPS live transport tracking" },
+                                { icon: Smartphone, title: "Mobile Apps", desc: "Dedicated iOS & Android apps for students, parents & staff" },
+                                { icon: Laptop, title: "LMS & Classroom", desc: "Digital study material, quiz portals & assignment submissions" },
+                                { icon: FileCheck2, title: "Exams & Grading", desc: "Hall ticket generation, mark sheet publishing & CBCS credits" }
+                            ].map((module, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={50 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/45 backdrop-blur-xl border border-white/75 hover:border-white rounded-2xl p-4 sm:p-5 shadow-[0_8px_25px_rgb(0,0,0,0.03)] hover:shadow-xl hover:shadow-blue-900/10 hover:bg-white/70 hover:-translate-y-1.5 transition-all duration-400 flex flex-col items-center text-center h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-400 pointer-events-none"></div>
+                                        <div className="size-12 mb-3 rounded-xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10 group-hover:scale-105 transition-transform duration-300">
+                                            <module.icon className="size-6 text-[#00477b]" />
+                                        </div>
+                                        <h4 className="text-sm sm:text-[15px] font-normal text-[#00477b] mb-1.5 leading-snug tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
+                                            {module.title}
+                                        </h4>
+                                        <p className="text-[11px] sm:text-xs text-zinc-500 font-normal leading-relaxed relative z-10">
+                                            {module.desc}
+                                        </p>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
                         </div>
                     </div>
+                </div>
             </section>
 
-            {/* 7. Results You Can Expect */}
-            <section className="py-24 bg-transparent relative z-10 border-b border-white/20">
-                <div className="container mx-auto px-4 max-w-6xl text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        EXPECTED RESULTS
-                    </span>
-                    <h2 className="text-4xl font-normal text-[#00477b] mb-12 tracking-tight">
-                        Results You Can Expect
-                    </h2>
+            {/* 5. Who We Serve */}
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Who We Serve
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Tailored For Every Education Format
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl mx-auto">
-                        {[
-                            { area: "Administrative processing", impact: "80%", suffix: "FASTER" },
-                            { area: "Attendance & grading", impact: "90%", suffix: "ACCURACY" },
-                            { area: "Fee collection", impact: "70%", suffix: "INCREASE" },
-                            { area: "Statutory reporting", impact: "100%", suffix: "COMPLIANCE" }
-                        ].map((stat, i) => (
-                            <div key={i} className="bg-white/80 backdrop-blur-xl rounded-[24px] p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-white/60 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] transition-all duration-300 flex flex-col items-center justify-center text-center group cursor-default">
-                                <div className="text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#00477b] to-sky-400 mb-2 group-hover:scale-110 transition-transform duration-500">
-                                    {stat.impact}
-                                </div>
-                                <div className="text-[11px] font-black text-sky-600 tracking-[0.2em] uppercase mb-5">
-                                    {stat.suffix}
-                                </div>
-                                <div className="h-[2px] w-8 bg-sky-100 mb-5 group-hover:w-16 group-hover:bg-sky-400 transition-all duration-500"></div>
-                                <p className="text-[13px] lg:text-sm text-zinc-600 font-medium leading-relaxed">
-                                    {stat.area}
-                                </p>
-                            </div>
-                        ))}
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                            {[
+                                { icon: BookOpen, title: "Schools (K-12)", desc: "Parent portal, homework tracking, fee collection and co-curricular assessments." },
+                                { icon: GraduationCap, title: "Colleges & Universities", desc: "CBCS credit systems, research repositories, alumni & placement management." },
+                                { icon: Users, title: "Coaching & Training", desc: "Batch scheduling, test analytics, fee installments & multi-center management." },
+                                { icon: Building2, title: "Technical Institutions", desc: "Lab booking, internship tracking, accreditation reporting & industry tie-ups." }
+                            ].map((item, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <item.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                        <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* 8. Success Highlights */}
-            <section className="pt-28 pb-40 relative z-10 overflow-hidden border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                {/* Background Image */}
+            {/* 5. Implementation Journey */}
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Implementation
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Education ERP Implementation Journey
+                        </h2>
+                    </div>
+                </ScrollReveal>
+
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                            {[
+                                { step: "Phase 1", icon: Search, title: "Discovery", desc: "Review academic workflows and identify core department requirements." },
+                                { step: "Phase 2", icon: Settings, title: "Configuration", desc: "Set up courses, fees, roles, grading rules, and admin dashboards." },
+                                { step: "Phase 3", icon: Database, title: "Migration", desc: "Import legacy student, staff, and financial data with QA verification." },
+                                { step: "Phase 4", icon: MonitorPlay, title: "Training", desc: "Comprehensive hands-on training for faculty, admin, and management." },
+                                { step: "Phase 5", icon: Rocket, title: "Go-Live & Support", desc: "Smooth campus launch followed by dedicated operational handholding." },
+                            ].map((item, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl p-7 sm:p-8 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-5 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <item.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        
+                                        <span className="inline-block px-3 py-1 rounded-full bg-blue-50/90 border border-blue-100 text-[#00477b] font-bold text-xs uppercase tracking-wider mb-2.5 relative z-10">
+                                            {item.step}
+                                        </span>
+                                        <h3 className="text-lg font-normal text-[#00477b] mb-2 leading-snug tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed relative z-10">
+                                            {item.desc}
+                                        </p>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 6. Results You Can Expect */}
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Expected Results
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Results You Can Expect
+                        </h2>
+                    </div>
+                </ScrollReveal>
+
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { area: "Administrative processing speed", impact: "80%", suffix: "FASTER" },
+                                { area: "Attendance & grading accuracy", impact: "90%", suffix: "ACCURACY" },
+                                { area: "On-time fee collections", impact: "70%", suffix: "INCREASE" },
+                                { area: "Statutory & NAAC compliance", impact: "100%", suffix: "COMPLIANCE" }
+                            ].map((stat, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center justify-center text-center overflow-hidden h-full"
+                                    >
+                                        <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="text-4xl sm:text-5xl font-extrabold text-[#00477b] mb-1 relative z-10">
+                                            {stat.impact}
+                                        </div>
+                                        <div className="text-[11px] font-bold text-[#00477b] tracking-[0.2em] uppercase mb-3 relative z-10">
+                                            {stat.suffix}
+                                        </div>
+                                        <div className="h-0.5 w-10 bg-blue-200 mb-3 relative z-10"></div>
+                                        <p className="text-sm text-zinc-600 font-normal leading-relaxed relative z-10">
+                                            {stat.area}
+                                        </p>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 7. Success Highlights */}
+            <section className="relative overflow-hidden py-14 sm:py-16 text-white border-t border-white/40">
                 <div className="absolute inset-0 z-0">
                     <img src="/assets/edu-erp.webp" alt="Education ERP Highlights" width="1200" height="600" loading="lazy" decoding="async" className="w-full h-full object-cover object-bottom" />
+                    <div className="absolute inset-0 bg-[#00477b]/40 backdrop-blur-xs"></div>
                 </div>
 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1600px] relative z-10 text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        SUCCESS HIGHLIGHTS
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-16 tracking-tight">
-                        Success Highlights
-                    </h2>
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-sm text-xs font-bold text-white uppercase tracking-wider mb-3">
+                            Case Studies
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-center mb-10 text-white">
+                            Success Highlights Across Institutions
+                        </h2>
+                    </ScrollReveal>
 
-                    <div className="grid md:grid-cols-3 gap-6 lg:gap-8 text-left">
-                        <div className="bg-white/85 hover:bg-white backdrop-blur-xl border border-white/70 p-8 sm:p-9 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300">
-                            <h3 className="text-2xl font-bold mb-1 text-[#00477b]">CBSE school group</h3>
-                            <p className="text-xs text-indigo-600 font-bold mb-6 uppercase tracking-wider">Mumbai</p>
-                            <ul className="space-y-3 list-none text-sm text-zinc-700 leading-snug">
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>95% of processes are automated</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>70% reduction in parent inquiry calls</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>98% fee collection efficiency</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="bg-white/85 hover:bg-white backdrop-blur-xl border border-white/70 p-8 sm:p-9 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300">
-                            <h3 className="text-2xl font-bold mb-1 text-[#00477b]">Engineering College</h3>
-                            <p className="text-xs text-indigo-600 font-bold mb-6 uppercase tracking-wider">Pune</p>
-                            <ul className="space-y-3 list-none text-sm text-zinc-700 leading-snug">
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>60% faster NAAC document automation</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>30% increase in research publications</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="bg-white/85 hover:bg-white backdrop-blur-xl border border-white/70 p-8 sm:p-9 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300">
-                            <h3 className="text-2xl font-bold mb-1 text-[#00477b]">Coaching institute network</h3>
-                            <p className="text-xs text-indigo-600 font-bold mb-6 uppercase tracking-wider">Delhi</p>
-                            <ul className="space-y-3 list-none text-sm text-zinc-700 leading-snug">
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>Scaled from 500 to 5000 students without expanding staff</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 shrink-0"></div>
-                                    <span>25% improvement in results</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div className="grid md:grid-cols-3 gap-6 text-left">
+                        {[
+                            {
+                                name: "CBSE School Group",
+                                loc: "Mumbai",
+                                points: [
+                                    "95% of administrative workflows automated",
+                                    "70% reduction in parent inquiry calls",
+                                    "98% on-time fee collection efficiency"
+                                ]
+                            },
+                            {
+                                name: "Engineering College",
+                                loc: "Pune",
+                                points: [
+                                    "60% faster NAAC document preparation",
+                                    "30% increase in faculty research tracking",
+                                    "Automated digital grade book publishing"
+                                ]
+                            },
+                            {
+                                name: "Coaching Institute Network",
+                                loc: "Delhi",
+                                points: [
+                                    "Scaled from 500 to 5,000 students smoothly",
+                                    "Integrated app for real-time exam reports",
+                                    "Multi-branch billing & centralized fees"
+                                ]
+                            }
+                        ].map((item, i) => (
+                            <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                <div className="bg-black/35 backdrop-blur-lg border border-white/20 p-7 sm:p-8 rounded-[2rem] shadow-xl transition-all flex flex-col h-full">
+                                    <h3 className="text-xl font-normal text-white mb-1">{item.name}</h3>
+                                    <p className="text-xs text-blue-200 font-bold mb-4 uppercase tracking-wider">{item.loc}</p>
+                                    <ul className="space-y-2.5 list-none text-sm text-zinc-100 font-normal leading-relaxed">
+                                        {item.points.map((pt, pIdx) => (
+                                            <li key={pIdx} className="flex items-start gap-2.5">
+                                                <CheckCircle2 className="size-4 text-blue-300 mt-0.5 shrink-0" />
+                                                <span>{pt}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </ScrollReveal>
+                        ))}
                     </div>
                 </div>
             </section>
 
             {/* 8. Why Partner With Gnosys Digital */}
-            <section className="py-24 bg-transparent relative z-10 border-b border-white/20">
-                <div className="container mx-auto px-4 max-w-7xl text-center">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        WHY GNOSYS
-                    </span>
-                    <h2 className="text-4xl font-normal text-[#00477b] mb-16 tracking-tight">
-                        Why Partner With Gnosys Digital
-                    </h2>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Why Gnosys
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Why Partner With Gnosys Digital
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {[
-                            {
-                                title: "35+ Institutions",
-                                desc: "35+ institutions transformed and digitized across India.",
-                                icon: (
-                                    <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                    </svg>
-                                )
-                            },
-                            {
-                                title: "Academic & Compliance",
-                                desc: "Strong knowledge of Indian academic and accreditation needs.",
-                                icon: (
-                                    <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                                    </svg>
-                                )
-                            },
-                            {
-                                title: "Dedicated Experts",
-                                desc: "Dedicated education ERP experts tailored for your institution.",
-                                icon: (
-                                    <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
-                                )
-                            },
-                            {
-                                title: "Proven Support",
-                                desc: "Proven support and training framework for long-term success.",
-                                icon: (
-                                    <svg className="w-7 h-7 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                                    </svg>
-                                )
-                            }
-                        ].map((item, i) => (
-                            <div key={i} className="group bg-white/60 backdrop-blur-xl border border-white/80 p-8 rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center">
-                                <div className="w-16 h-16 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white flex items-center justify-center mb-6 text-[#00477b]">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-lg font-bold text-[#00477b] mb-3">{item.title}</h3>
-                                <p className="text-sm text-zinc-600 leading-relaxed font-medium">
-                                    {item.desc}
-                                </p>
-                            </div>
-                        ))}
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                            {[
+                                {
+                                    title: "35+ Institutions",
+                                    desc: "35+ schools and colleges transformed and digitized across India.",
+                                    icon: Building2
+                                },
+                                {
+                                    title: "Academic & Compliance",
+                                    desc: "Deep knowledge of Indian academic governance, NAAC, NBA, and CBSE.",
+                                    icon: ShieldCheck
+                                },
+                                {
+                                    title: "Dedicated Experts",
+                                    desc: "Domain specialists who understand daily campus operations.",
+                                    icon: Users
+                                },
+                                {
+                                    title: "Proven Support",
+                                    desc: "Dedicated training and AMC support for long-term operational success.",
+                                    icon: CheckCircle2
+                                }
+                            ].map((item, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <item.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                        <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* 9 & 10. Pricing and Assessment Form Combined */}
-            <section className="py-20 lg:py-24 bg-white/50 backdrop-blur-2xl border-y border-white/60 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                <div className="w-full px-4 sm:px-6 lg:px-10 xl:px-12 mx-auto max-w-[95rem]">
-                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-stretch">
-                        
-                        {/* Left Side: Pricing Card (5 cols) */}
-                        <div className="lg:col-span-5 group relative bg-white/40 backdrop-blur-xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 border border-white/70 overflow-hidden flex flex-col justify-between p-8 sm:p-10 lg:p-12 h-full transition-all duration-500">
-                            <div className="absolute top-0 right-0 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+            {/* 9. Pricing & Campus Assessment Form */}
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 md:px-8 lg:px-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="w-full">
+                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
                             
-                            <div className="relative z-10">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-xs text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                                    PRICING & PACKAGES
+                            {/* Left Side: Pricing Card (5 cols) */}
+                            <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-5 flex flex-col justify-start">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3 w-fit">
+                                    Pricing & Packages
                                 </span>
-                                <h2 className="text-3xl lg:text-4xl font-normal text-[#00477b] tracking-tight mb-6">
+                                <h2 className="text-3xl sm:text-4xl font-normal text-[#00477b] tracking-tight mb-4">
                                     Education ERP Package
                                 </h2>
+                                <p className="text-zinc-600 font-normal mb-6 text-sm sm:text-base leading-relaxed">
+                                    Complete campus digital transformation package with zero hidden costs.
+                                </p>
 
                                 {/* Pricing Box */}
-                                <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 sm:p-7 text-center border border-white shadow-md shadow-blue-900/5 mb-6">
-                                    <h3 className="text-xs font-extrabold text-zinc-500 uppercase tracking-widest mb-1.5">Starting At</h3>
-                                    <p className="text-4xl sm:text-5xl font-extrabold text-[#00477b] tracking-tight">₹1,50,000<span className="text-2xl text-[#00477b]/70 font-semibold">*</span></p>
-                                    <p className="text-xs text-zinc-500 mt-2 font-medium">Includes all core modules, data migration, staff training & 1-year support</p>
-                                </div>
-
-                                <div className="space-y-6">
-                                    <div>
-                                        <h4 className="font-bold text-[#00477b] text-xs uppercase tracking-wider mb-3">Included Core Modules:</h4>
-                                        <div className="p-4 rounded-2xl bg-white/70 border border-white shadow-xs">
-                                            <p className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">
-                                                Student Lifecycle, Fee Collection & Accounts, Attendance & Timetable, 2 Marketplace Integrations, Automated GST, 5 User Licenses, Training & Go-Live Support.
-                                            </p>
+                                <div className="bg-white/70 backdrop-blur-xl rounded-3xl shadow-xl border border-white/80 p-6 sm:p-7 flex flex-col gap-5 relative group overflow-hidden mb-5">
+                                    <div className="border-b border-blue-100/80 pb-4">
+                                        <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">Starting At</div>
+                                        <div className="text-4xl sm:text-5xl font-extrabold text-[#00477b] tracking-tight">
+                                            ₹1,50,000
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <h4 className="font-bold text-[#00477b] text-xs uppercase tracking-wider mb-3">Limited-Time Included Bonuses:</h4>
-                                        <div className="grid sm:grid-cols-2 gap-2.5">
-                                            {[
-                                                "NAAC / NBA Compliance Engine",
-                                                "Student & Parent Mobile App",
-                                                "Online Exam & Grading System",
-                                                "RFID & Biometric Sync"
-                                            ].map((bonus, bIdx) => (
-                                                <div key={bIdx} className="flex items-center gap-2.5 p-3 rounded-xl bg-white/80 border border-white shadow-xs">
-                                                    <CheckCircle2 className="size-4 text-[#00477b] shrink-0" />
-                                                    <span className="text-xs font-semibold text-zinc-700">{bonus}</span>
+                                    <div className="space-y-3">
+                                        <h4 className="font-bold text-[#00477b] uppercase tracking-wider text-xs">Included Core Modules:</h4>
+                                        <p className="text-sm text-zinc-600 font-normal leading-relaxed">
+                                            Student Lifecycle, Fee Collection & Accounts, Attendance & Timetable, 5 User Licenses, Data Migration, Staff Training & Dedicated Go-Live Support.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Bonus Box */}
+                                <div className="bg-blue-50/70 backdrop-blur-md rounded-2xl p-5 border border-blue-100/90 shadow-sm relative overflow-hidden">
+                                    <h4 className="font-bold text-[#00477b] mb-2.5 uppercase tracking-wider text-xs flex items-center gap-2">
+                                        Limited Time Campus Bonuses:
+                                    </h4>
+                                    <ul className="space-y-2 text-xs sm:text-sm text-zinc-700 font-normal">
+                                        <li className="flex items-center gap-2">
+                                            <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                            <span>NAAC / NBA Compliance Document Engine</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                            <span>Student & Parent Mobile App Setup</span>
+                                        </li>
+                                        <li className="flex items-center gap-2">
+                                            <span className="size-1.5 rounded-full bg-[#00477b] shrink-0" />
+                                            <span>RFID & Biometric Sync Configuration</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </ScrollReveal>
+
+                            {/* Right Side: Contact Form Card (7 cols) */}
+                            <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-7 w-full">
+                                <div className="bg-white/40 backdrop-blur-xl border border-white/70 p-6 sm:p-8 rounded-[2rem] shadow-xl w-full">
+                                    <div className="mb-6">
+                                        <span className="inline-block px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-[10px] font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                            Get Started
+                                        </span>
+                                        <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-[#00477b] mb-2">
+                                            Request Campus Assessment
+                                        </h3>
+                                        <p className="text-zinc-600 text-sm font-normal">
+                                            Fill in your institution details for a customized digital readiness roadmap and cost estimate.
+                                        </p>
+                                    </div>
+
+                                    <form className="space-y-4">
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="fullName" className="text-xs font-medium text-[#00477b]">Full Name *</Label>
+                                                <Input id="fullName" placeholder="Enter your full name" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="email" className="text-xs font-medium text-[#00477b]">Email Address *</Label>
+                                                <Input id="email" type="email" placeholder="Enter your official email" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                        </div>
+
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="phone" className="text-xs font-medium text-[#00477b]">Phone Number *</Label>
+                                                <Input id="phone" placeholder="+91 98765 43210" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="institutionName" className="text-xs font-medium text-[#00477b]">Institution Name *</Label>
+                                                <Input id="institutionName" placeholder="Enter school / college name" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                        </div>
+
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="typeOfInstitution" className="text-xs font-medium text-[#00477b]">Institution Type</Label>
+                                                <div className="relative">
+                                                    <select id="typeOfInstitution" className="w-full h-11 rounded-xl border border-white/80 bg-white/60 px-3 py-2 text-sm text-[#00477b] font-medium placeholder:text-zinc-400 focus:bg-white focus:border-[#00477b] focus-visible:outline-none transition-all appearance-none">
+                                                        <option className="bg-white">School (K-12)</option>
+                                                        <option className="bg-white">College / Higher Education</option>
+                                                        <option className="bg-white">University / Multi-Campus Group</option>
+                                                        <option className="bg-white">Coaching & Training Institute</option>
+                                                    </select>
+                                                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-[#00477b] pointer-events-none" />
                                                 </div>
-                                            ))}
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="studentStrength" className="text-xs font-medium text-[#00477b]">Student Strength</Label>
+                                                <div className="relative">
+                                                    <select id="studentStrength" className="w-full h-11 rounded-xl border border-white/80 bg-white/60 px-3 py-2 text-sm text-[#00477b] font-medium placeholder:text-zinc-400 focus:bg-white focus:border-[#00477b] focus-visible:outline-none transition-all appearance-none">
+                                                        <option className="bg-white">Under 500 Students</option>
+                                                        <option className="bg-white">500 - 2,000 Students</option>
+                                                        <option className="bg-white">2,000 - 5,000 Students</option>
+                                                        <option className="bg-white">5,000+ Students</option>
+                                                    </select>
+                                                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-[#00477b] pointer-events-none" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+
+                                        <div className="space-y-1.5">
+                                            <Label htmlFor="primaryChallenges" className="text-xs font-medium text-[#00477b]">Primary Digitisation Priority</Label>
+                                            <div className="relative">
+                                                <select id="primaryChallenges" className="w-full h-11 rounded-xl border border-white/80 bg-white/60 px-3 py-2 text-sm text-[#00477b] font-medium placeholder:text-zinc-400 focus:bg-white focus:border-[#00477b] focus-visible:outline-none transition-all appearance-none">
+                                                    <option className="bg-white">Admissions & Fee Collection Automation</option>
+                                                    <option className="bg-white">Online Exams & Grading Governance</option>
+                                                    <option className="bg-white">NAAC / NIRF Compliance & Reporting</option>
+                                                    <option className="bg-white">Complete Multi-Campus ERP Overhaul</option>
+                                                </select>
+                                                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-[#00477b] pointer-events-none" />
+                                            </div>
+                                        </div>
+
+                                        <div className="pt-2">
+                                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 font-bold w-full shadow-lg shadow-blue-900/10 hover:-translate-y-0.5 transition-all text-base flex items-center justify-center gap-2">
+                                                Request Digital Campus Audit <ArrowRight className="size-4" />
+                                            </Button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>
+                            </ScrollReveal>
+
                         </div>
-
-                        {/* Right Side: Contact Form Card (7 cols) */}
-                        <div className="lg:col-span-7 bg-gradient-to-br from-white/90 via-white/70 to-white/45 backdrop-blur-2xl rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl border border-white/80 overflow-hidden flex flex-col justify-between p-8 sm:p-10 lg:p-12 h-full transition-all duration-500">
-                            <div className="mb-6">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-xs text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-3">
-                                    GET STARTED
-                                </span>
-                                <h2 className="text-3xl lg:text-4xl font-normal text-[#00477b] tracking-tight mb-2">
-                                    Request Campus Assessment
-                                </h2>
-                                <p className="text-zinc-600 text-sm font-normal">
-                                    Fill in your institution details for a customized digital readiness roadmap and transparent cost estimate.
-                                </p>
-                            </div>
-
-                            <form className="space-y-4">
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="fullName" className="text-xs font-bold text-zinc-700">Full Name *</Label>
-                                        <Input id="fullName" placeholder="Enter your full name" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="email" className="text-xs font-bold text-zinc-700">Email Address *</Label>
-                                        <Input id="email" type="email" placeholder="Enter your official email" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
-                                    </div>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="phone" className="text-xs font-bold text-zinc-700">Phone Number *</Label>
-                                        <Input id="phone" placeholder="+91 98765 43210" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="institutionName" className="text-xs font-bold text-zinc-700">Institution Name *</Label>
-                                        <Input id="institutionName" placeholder="Enter school / college name" className="h-14 rounded-2xl border-white/80 bg-white/80 shadow-sm focus:bg-white focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-sm text-zinc-800" />
-                                    </div>
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="typeOfInstitution" className="text-xs font-bold text-zinc-700">Institution Type</Label>
-                                        <select id="typeOfInstitution" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 px-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white text-zinc-700">
-                                            <option>School (K-12)</option>
-                                            <option>College / Higher Education</option>
-                                            <option>University / Multi-Campus Group</option>
-                                            <option>Coaching & Training Institute</option>
-                                        </select>
-                                    </div>
-                                    <div className="space-y-1.5">
-                                        <Label htmlFor="studentStrength" className="text-xs font-bold text-zinc-700">Student Strength</Label>
-                                        <select id="studentStrength" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 px-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white text-zinc-700">
-                                            <option>Under 500 Students</option>
-                                            <option>500 - 2,000 Students</option>
-                                            <option>2,000 - 5,000 Students</option>
-                                            <option>5,000+ Students</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div className="space-y-1.5">
-                                    <Label htmlFor="primaryChallenges" className="text-xs font-bold text-zinc-700">Primary Digitisation Priority</Label>
-                                    <select id="primaryChallenges" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 px-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/10 focus:border-[#00477b] focus:bg-white text-zinc-700">
-                                        <option>Admissions & Fee Collection Automation</option>
-                                        <option>Online Exams & Grading Governance</option>
-                                        <option>NAAC / NIRF Compliance & Reporting</option>
-                                        <option>Complete Multi-Campus ERP Overhaul</option>
-                                    </select>
-                                </div>
-
-                                <div className="pt-3">
-                                    <Button className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-14 font-extrabold w-full shadow-lg shadow-blue-900/10 hover:-translate-y-0.5 transition-all text-base">
-                                        Request Digital Campus Audit &rarr;
-                                    </Button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 11. Final CTA */}
-            <section className="py-24 relative z-10 border-t border-white/20 overflow-hidden">
-                {/* Background Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-300/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
-                
-                <div className="container mx-auto px-4 max-w-3xl text-center relative z-10">
-                    <span className="inline-block px-5 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-black text-[#00477b] uppercase tracking-widest mb-8">
-                        NEXT STEPS
-                    </span>
-                    
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00477b] via-sky-600 to-[#00477b] mb-6 tracking-tight leading-tight bg-[length:200%_auto] animate-gradient">
-                        Ready To Transform?
-                    </h2>
-                    
-                    <p className="text-lg md:text-xl text-zinc-600 mb-12 max-w-2xl mx-auto font-medium">
-                        Take the first step towards a fully digitized, compliant, and efficient campus today.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
-                        <Button className="bg-[#00477b] text-white hover:bg-[#00365d] h-14 px-10 font-bold shadow-[0_8px_20px_rgb(0,71,123,0.2)] hover:shadow-[0_12px_25px_rgb(0,71,123,0.3)] hover:-translate-y-0.5 rounded-xl transition-all w-full sm:w-auto text-base">
-                            Book Assessment
-                        </Button>
-                        <Button className="bg-white text-zinc-900 border-2 border-slate-200 hover:border-[#00477b] hover:bg-slate-50 h-14 px-10 font-bold shadow-sm hover:shadow-md rounded-xl transition-all w-full sm:w-auto text-base group">
-                            Talk To An Expert
-                            <svg className="w-4 h-4 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                        </Button>
                     </div>
                 </div>
             </section>

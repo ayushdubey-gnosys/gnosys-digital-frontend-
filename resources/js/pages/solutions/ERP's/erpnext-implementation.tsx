@@ -72,6 +72,20 @@ export default function ErpnextImplementation() {
                     <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent pointer-events-none lg:w-3/5"></div>
                 </div>
 
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
+                </div>
+
                 <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
                     <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
                         <ScrollReveal animation="fade-up" delay={80}>
@@ -117,33 +131,50 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 2. Why ERPNext Grid */}
-            <section className="pt-24 bg-transparent border-t border-white/40">
-                <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why ERPNext</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Why ERPNext - One Platform For Your Entire Business</h2>
-                    <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        ERPNext helps you run your entire business from one place - with zero recurring license costs. It's open-source, modular, and designed for SMEs who want control, scalability, and savings.
-                    </p>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block w-fit mx-auto px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3">
+                            Why ERPNext
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            One Platform For Your Entire Business
+                        </h2>
+                        <p className="mt-3 text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+                            ERPNext helps you run your entire business from one place - with zero recurring license costs. Open-source, modular, and built for scalable SME growth.
+                        </p>
+                    </div>
+                </ScrollReveal>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto w-full">
                         {[
-                            { icon: Calculator, title: 'Accounting & Finance', desc: 'Manage invoices, ledgers, and reports in real-time.' },
-                            { icon: Package, title: 'Inventory & Warehouse', desc: 'Track stock levels, batches, and transfers effortlessly.' },
-                            { icon: Factory, title: 'Manufacturing', desc: 'Manage production planning, BOMs, and material lists.' },
-                            { icon: Briefcase, title: 'CRM & Sales', desc: 'Automate leads, quotes, and follow-ups.' },
-                            { icon: Users, title: 'HR & Payroll', desc: 'Employee records, attendance, and salary slips - all in one place.' },
-                            { icon: Cloud, title: 'Cloud-Based Access', desc: 'Work from anywhere with role-based permissions.' },
+                            { icon: Calculator, title: 'Accounting & Finance', desc: 'Manage invoices, ledgers, tax returns, and real-time cashflow reports with automated reconciliation.' },
+                            { icon: Package, title: 'Inventory & Warehouse', desc: 'Track multi-location stock levels, batch/serial tracking, reorder triggers, and transfers effortlessly.' },
+                            { icon: Factory, title: 'Manufacturing & Production', desc: 'Manage production planning, multi-level BOMs, capacity scheduling, and job cards seamlessly.' },
+                            { icon: Briefcase, title: 'CRM & Sales Automation', desc: 'Capture leads, automate pipelines, manage quotation approvals, and track deal closures.' },
+                            { icon: Users, title: 'HR & Payroll Management', desc: 'Digital employee lifecycle, biometric attendance, tax deduction, and automated salary slip dispatch.' },
+                            { icon: Cloud, title: 'Cloud & Secure Access', desc: 'Access your ERP securely from any device with granular, role-based permission controls.' },
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-white/60 backdrop-blur-xl border border-white/80 rounded-[2rem] p-8 flex flex-col items-center text-center shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-xl hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 group relative overflow-hidden">
-                                <div className="size-16 bg-white shadow-md shadow-blue-900/5 rounded-2xl border border-white text-[#00477b] flex items-center justify-center mx-auto mb-6">
-                                    <item.icon className="size-7 text-[#00477b]" />
+                            <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
+                                <div 
+                                    className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                >
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                    <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                        <item.icon className="size-7 text-[#00477b]" />
+                                    </div>
+
+                                    <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">
+                                        {item.desc}
+                                    </p>
                                 </div>
-                                <h3 className="text-xl font-bold text-[#00477b] mb-3 tracking-tight">{item.title}</h3>
-                                <p className="text-zinc-600 text-sm leading-relaxed font-medium">{item.desc}</p>
-                            </div>
+                            </ScrollReveal>
                         ))}
                         </div>
                     </div>
@@ -151,32 +182,62 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 3. Why Gnosys Digital */}
-            <section className="pt-24 bg-transparent border-t border-white/40">
-                <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Why Gnosys Digital</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Your Implementation Partner For ERPNext - Done Right</h2>
-                    <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        We're not just ERP implementers - we're a digital transformation partner who understands SMEs.
-                    </p>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block w-fit mx-auto px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3">
+                            Why Gnosys Digital
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Your Implementation Partner - Done Right
+                        </h2>
+                        <p className="mt-3 text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+                            We're not just ERP implementers - we're a digital transformation partner that translates complex operations into streamlined digital workflows.
+                        </p>
+                    </div>
+                </ScrollReveal>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto w-full">
                         {[
-                            { icon: Search, title: 'Business Understanding First', desc: 'We start with your workflows, not just modules. Every setup is aligned with how your business runs.' },
-                            { icon: Settings, title: 'End-to-End Implementation', desc: 'From installation and configuration to training and hosting - everything handled in-house.' },
-                            { icon: IndianRupee, title: 'Affordable & Transparent', desc: 'Fixed-cost packages designed for small businesses - no enterprise pricing traps.' },
+                            { 
+                                number: '01',
+                                icon: Search, 
+                                title: 'Business Understanding First', 
+                                desc: 'We start with your operational workflows, not just pre-built modules. Every single configuration is tuned to mirror how your business actually runs.'
+                            },
+                            { 
+                                number: '02',
+                                icon: Settings, 
+                                title: 'End-to-End Implementation', 
+                                desc: 'From cloud architecture, system setup, data migration, and custom scripts to team training and go-live assistance - everything is handled in-house.'
+                            },
+                            { 
+                                number: '03',
+                                icon: IndianRupee, 
+                                title: 'Affordable & Transparent', 
+                                desc: 'Transparent milestone pricing and fixed packages tailored for SMEs. No hidden vendor lock-in fees or recurring per-user enterprise licensing traps.'
+                            },
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-2xl p-8">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-10 h-10 bg-white shadow-sm text-[#00477b] rounded-full flex items-center justify-center">
-                                        <item.icon className="size-5" />
+                            <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
+                                <div 
+                                    className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                >
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                    <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                        <item.icon className="size-7 text-[#00477b]" />
                                     </div>
-                                    <h3 className="text-lg font-bold text-[#00477b]">{item.title}</h3>
+
+                                    <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">
+                                        {item.desc}
+                                    </p>
                                 </div>
-                                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
-                            </div>
+                            </ScrollReveal>
                         ))}
                         </div>
                     </div>
@@ -184,145 +245,292 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 4. SWOT Analysis */}
-            <section className="pt-24 bg-transparent border-t border-white/40">
-                <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Client-Side SWOT Analysis</h2>
-                    <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-                        A clear understanding of the client's strengths, weaknesses, opportunities, and threats helps us deliver a tailored ERP solution that drives efficiency and growth.
-                    </p>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block w-fit mx-auto px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3">
+                            Strategic Evaluation
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Client-Side SWOT Analysis
+                        </h2>
+                        <p className="mt-3 text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+                            A structured assessment of strengths, weaknesses, opportunities, and threats to deliver an ERP deployment that drives real ROI.
+                        </p>
+                    </div>
+                </ScrollReveal>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 px-3 sm:px-6 lg:px-8 shadow-lg shadow-blue-900/5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 max-w-7xl mx-auto w-full">
                         {/* Strengths */}
-                        <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                            <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">S</span>
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
-                                    <Zap className="size-5" />
+                        <ScrollReveal animation="fade-right" delay={100} className="h-full">
+                            <div className="relative overflow-hidden p-6 sm:p-8 rounded-3xl border border-white/90 bg-white/75 hover:bg-white backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.08)] transition-all duration-300 hover:-translate-y-1 group h-full">
+                                <span className="absolute -bottom-8 -right-3 text-[9rem] sm:text-[11rem] font-black text-[#00477b]/[0.03] select-none pointer-events-none font-mono">S</span>
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="size-11 rounded-2xl bg-[#00477b]/5 text-[#00477b] border border-[#00477b]/10 flex items-center justify-center">
+                                            <Zap className="size-5 text-[#00477b]" />
+                                        </div>
+                                        <div>
+                                            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Internal Advantage</span>
+                                            <h3 className="text-xl font-bold text-[#00477b] tracking-tight">Strengths</h3>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#00477b] bg-[#00477b]/5 px-3 py-1 rounded-full border border-[#00477b]/10">High Impact</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Strengths</h3>
+                                <div className="grid grid-cols-1 gap-2.5 relative z-10">
+                                    {[
+                                        { title: "Centralized Single Source of Truth", sub: "Unified database eliminating manual data silos across departments." },
+                                        { title: "Real-Time Operational Insights", sub: "Live financial, inventory, and production metrics at a glance." },
+                                        { title: "Automated Multi-Step Workflows", sub: "Eliminates repetitive tasks and cuts approval bottlenecks." }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-2xs">
+                                            <div className="size-5 rounded-full bg-[#00477b]/10 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5">
+                                                <Check className="size-3 stroke-[2.5]" />
+                                            </div>
+                                            <div>
+                                                <div className="text-zinc-800 text-sm font-semibold">{item.title}</div>
+                                                <div className="text-zinc-500 text-xs mt-0.5">{item.sub}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <ul className="space-y-3 relative z-10">
-                                {["Centralized data", "Real-time insights", "Automated workflows"].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2.5 text-zinc-600 text-sm font-medium">
-                                        <Check className="size-4 text-zinc-400 shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Weaknesses */}
-                        <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                            <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">W</span>
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
-                                    <Search className="size-5" />
+                        <ScrollReveal animation="fade-left" delay={150} className="h-full">
+                            <div className="relative overflow-hidden p-6 sm:p-8 rounded-3xl border border-white/90 bg-white/75 hover:bg-white backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.08)] transition-all duration-300 hover:-translate-y-1 group h-full">
+                                <span className="absolute -bottom-8 -right-3 text-[9rem] sm:text-[11rem] font-black text-[#00477b]/[0.03] select-none pointer-events-none font-mono">W</span>
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="size-11 rounded-2xl bg-[#00477b]/5 text-[#00477b] border border-[#00477b]/10 flex items-center justify-center">
+                                            <Search className="size-5 text-[#00477b]" />
+                                        </div>
+                                        <div>
+                                            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Mitigated by Us</span>
+                                            <h3 className="text-xl font-bold text-[#00477b] tracking-tight">Weaknesses</h3>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#00477b] bg-[#00477b]/5 px-3 py-1 rounded-full border border-[#00477b]/10">Manageable</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Weaknesses</h3>
+                                <div className="grid grid-cols-1 gap-2.5 relative z-10">
+                                    {[
+                                        { title: "Initial Learning Curve", sub: "Addressed via hands-on interactive role-based team training." },
+                                        { title: "Upfront Setup & Mapping Effort", sub: "Fully managed data cleanup and import handled by Gnosys." },
+                                        { title: "Initial Dependency on Technical Support", sub: "30-day post-launch hypercare included to ensure complete self-reliance." }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-2xs">
+                                            <div className="size-5 rounded-full bg-[#00477b]/10 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5">
+                                                <Check className="size-3 stroke-[2.5]" />
+                                            </div>
+                                            <div>
+                                                <div className="text-zinc-800 text-sm font-semibold">{item.title}</div>
+                                                <div className="text-zinc-500 text-xs mt-0.5">{item.sub}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <ul className="space-y-3 relative z-10">
-                                {["Learning curve", "Initial setup effort", "Reliance on support"].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2.5 text-zinc-600 text-sm font-medium">
-                                        <Check className="size-4 text-zinc-400 shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Opportunities */}
-                        <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                            <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">O</span>
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
-                                    <Rocket className="size-5" />
+                        <ScrollReveal animation="fade-right" delay={200} className="h-full">
+                            <div className="relative overflow-hidden p-6 sm:p-8 rounded-3xl border border-white/90 bg-white/75 hover:bg-white backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.08)] transition-all duration-300 hover:-translate-y-1 group h-full">
+                                <span className="absolute -bottom-8 -right-3 text-[9rem] sm:text-[11rem] font-black text-[#00477b]/[0.03] select-none pointer-events-none font-mono">O</span>
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="size-11 rounded-2xl bg-[#00477b]/5 text-[#00477b] border border-[#00477b]/10 flex items-center justify-center">
+                                            <Rocket className="size-5 text-[#00477b]" />
+                                        </div>
+                                        <div>
+                                            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Growth Enablers</span>
+                                            <h3 className="text-xl font-bold text-[#00477b] tracking-tight">Opportunities</h3>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#00477b] bg-[#00477b]/5 px-3 py-1 rounded-full border border-[#00477b]/10">Scale Up</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Opportunities</h3>
+                                <div className="grid grid-cols-1 gap-2.5 relative z-10">
+                                    {[
+                                        { title: "Rapid Multi-Branch Scalability", sub: "Easily open new warehouses, locations, and companies with zero license friction." },
+                                        { title: "Ecosystem Integrations", sub: "Connect seamlessly with Shopify, WhatsApp, banks, and payment gateways." },
+                                        { title: "Data-Driven Strategic Decisions", sub: "Accurate forecasting and cost control backed by real-time analytics." }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-2xs">
+                                            <div className="size-5 rounded-full bg-[#00477b]/10 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5">
+                                                <Check className="size-3 stroke-[2.5]" />
+                                            </div>
+                                            <div>
+                                                <div className="text-zinc-800 text-sm font-semibold">{item.title}</div>
+                                                <div className="text-zinc-500 text-xs mt-0.5">{item.sub}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <ul className="space-y-3 relative z-10">
-                                {["Business growth", "System integrations", "Data-driven decisions"].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2.5 text-zinc-600 text-sm font-medium">
-                                        <Check className="size-4 text-zinc-400 shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Threats */}
-                        <div className="relative overflow-hidden p-8 rounded-2xl border border-white/60 bg-white/40 backdrop-blur-md shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                            <span className="absolute -bottom-10 -right-4 text-[10rem] font-extrabold text-zinc-950/[0.03] select-none pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-2">T</span>
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-white shadow-sm text-[#00477b] flex items-center justify-center border border-zinc-100">
-                                    <Database className="size-5" />
+                        <ScrollReveal animation="fade-left" delay={250} className="h-full">
+                            <div className="relative overflow-hidden p-6 sm:p-8 rounded-3xl border border-white/90 bg-white/75 hover:bg-white backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.08)] transition-all duration-300 hover:-translate-y-1 group h-full">
+                                <span className="absolute -bottom-8 -right-3 text-[9rem] sm:text-[11rem] font-black text-[#00477b]/[0.03] select-none pointer-events-none font-mono">T</span>
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <div className="size-11 rounded-2xl bg-[#00477b]/5 text-[#00477b] border border-[#00477b]/10 flex items-center justify-center">
+                                            <Database className="size-5 text-[#00477b]" />
+                                        </div>
+                                        <div>
+                                            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest block">Risk Protection</span>
+                                            <h3 className="text-xl font-bold text-[#00477b] tracking-tight">Threats</h3>
+                                        </div>
+                                    </div>
+                                    <span className="text-xs font-semibold text-[#00477b] bg-[#00477b]/5 px-3 py-1 rounded-full border border-[#00477b]/10">De-Risked</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-[#00477b] uppercase tracking-wider">Threats</h3>
+                                <div className="grid grid-cols-1 gap-2.5 relative z-10">
+                                    {[
+                                        { title: "Operational Downtime During Migration", sub: "Prevented via parallel running and staged phase rollouts." },
+                                        { title: "Employee Resistance to New Systems", sub: "Overcome through user-friendly UI presets and dedicated training." },
+                                        { title: "Legacy Data Inconsistencies", sub: "Pre-validated with strict schema checks prior to live database import." }
+                                    ].map((item, i) => (
+                                        <div key={i} className="flex items-start gap-3 p-3 rounded-2xl bg-white/60 border border-white/80 shadow-2xs">
+                                            <div className="size-5 rounded-full bg-[#00477b]/10 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5">
+                                                <Check className="size-3 stroke-[2.5]" />
+                                            </div>
+                                            <div>
+                                                <div className="text-zinc-800 text-sm font-semibold">{item.title}</div>
+                                                <div className="text-zinc-500 text-xs mt-0.5">{item.sub}</div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <ul className="space-y-3 relative z-10">
-                                {["Implementation disruption", "Employee resistance", "Migration risks"].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2.5 text-zinc-600 text-sm font-medium">
-                                        <Check className="size-4 text-zinc-400 shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        </ScrollReveal>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* 5. Implementation Process */}
-            <section className="pt-24 bg-transparent border-t border-white/40">
-                <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Implementation Process</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Our ERPNext Implementation Process</h2>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block w-fit mx-auto px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3">
+                            Implementation Process
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Our ERPNext Implementation Process
+                        </h2>
+                        <p className="mt-3 text-zinc-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+                            Our battle-tested implementation framework ensures on-time delivery with zero business disruption.
+                        </p>
+                    </div>
+                </ScrollReveal>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-6 lg:px-10 xl:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="max-w-[1700px] mx-auto w-full">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 xl:gap-4 w-full">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 px-3 sm:px-6 lg:px-8 shadow-lg shadow-blue-900/5">
+                        <div className="max-w-4xl mx-auto w-full">
+                            <div className="space-y-4 sm:space-y-5">
                                 {[
-                                    { icon: Search, title: "Business Requirement Analysis", desc: "Identify workflows, pain points, and the exact modules your team needs." },
-                                    { icon: Settings, title: "System Setup & Configuration", desc: "Configure modules, permissions, roles, and basic settings based on your processes." },
-                                    { icon: Database, title: "Data Migration", desc: "Prepare, clean, and import your existing data into ERPNext." },
-                                    { icon: Wrench, title: "Customization & Workflow Setup", desc: "Add custom fields, forms, automation rules, and approvals to match your operations." },
-                                    { icon: GraduationCap, title: "User Training & Testing", desc: "Train your team, run test scenarios, and validate every function works smoothly." },
-                                    { icon: Rocket, title: "Go-Live & Post-Launch Support", desc: "Deploy the system and offer continuous guidance to ensure stable adoption." }
-                                ].map((step, idx) => (
-                                    <div 
-                                        key={idx} 
-                                        className="relative bg-white/80 hover:bg-white backdrop-blur-md border border-white/90 hover:border-[#00477b]/20 p-5 lg:p-6 rounded-2xl flex flex-col justify-between shadow-[0_4px_24px_rgba(0,40,90,0.04)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.12)] transition-all duration-300 hover:-translate-y-1.5 group min-h-[260px]"
-                                    >
-                                        <div>
-                                            <div className="flex items-center justify-between w-full mb-4">
-                                                <div className="w-12 h-12 rounded-xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
-                                                    <step.icon className="size-5 text-[#00477b]" />
-                                                </div>
-                                                <span className="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-[#00477b]/10 text-[#00477b]">
-                                                    0{idx + 1}
+                                    { 
+                                        week: 'WEEK 1-2', 
+                                        step: '1', 
+                                        tag: 'Phase 1: Discovery',
+                                        title: 'Process Discovery & Scoping', 
+                                        desc: 'Comprehensive operational mapping, identifying bottlenecks, and defining module requirements.',
+                                        deliverables: ['Workflow Blueprint', 'Gap Analysis', 'Module Scope']
+                                    },
+                                    { 
+                                        week: 'WEEK 3-4', 
+                                        step: '2', 
+                                        tag: 'Phase 2: Configuration',
+                                        title: 'System Setup & Architecture', 
+                                        desc: 'Configuring company structures, permissions, chart of accounts, master data templates, and user roles.',
+                                        deliverables: ['Chart of Accounts', 'User Role Matrix', 'Company Hierarchy']
+                                    },
+                                    { 
+                                        week: 'WEEK 5-6', 
+                                        step: '3', 
+                                        tag: 'Phase 3: Migration',
+                                        title: 'Data Migration & Customization', 
+                                        desc: 'Cleansing legacy records, automated master data import, and building bespoke print formats and workflows.',
+                                        deliverables: ['Data Validation', 'Custom Print Formats', 'Automation Rules']
+                                    },
+                                    { 
+                                        week: 'WEEK 7',   
+                                        step: '4', 
+                                        tag: 'Phase 4: Validation',
+                                        title: 'User Acceptance Testing & Training', 
+                                        desc: 'Simulating end-to-end departmental scenarios and delivering interactive, role-based staff training.',
+                                        deliverables: ['UAT Sign-off', 'Role-Based Workshops', 'Standard SOPs']
+                                    },
+                                    { 
+                                        week: 'WEEK 8+',  
+                                        step: '5', 
+                                        tag: 'Phase 5: Launch',
+                                        title: 'Go-Live & Hypercare Support', 
+                                        desc: 'Seamless production cutover with zero downtime, continuous monitoring, and dedicated 30-day hypercare.',
+                                        deliverables: ['Production Switchover', '30-Day Hypercare', 'Dedicated SLA']
+                                    }
+                                ].map((item, idx) => (
+                                    <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)}>
+                                        <div className="relative flex items-center gap-3 sm:gap-6 group">
+                                            {/* Left: Week Tag */}
+                                            <div className="w-18 sm:w-24 shrink-0 text-right">
+                                                <span className="text-[11px] sm:text-xs font-bold tracking-wider text-zinc-500 uppercase font-mono">
+                                                    {item.week}
                                                 </span>
                                             </div>
-                                            <div className="w-8 h-1 rounded-full bg-[#00477b]/20 group-hover:w-full group-hover:bg-[#00477b] transition-all duration-500 mb-3" />
-                                            <h4 className="font-bold text-[#00477b] text-[15px] mb-2 leading-snug tracking-tight group-hover:text-[#002f52]">
-                                                {step.title}
-                                            </h4>
-                                            <p className="text-xs text-zinc-600 leading-relaxed font-normal">
-                                                {step.desc}
-                                            </p>
+
+                                            {/* Middle: Number Badge + Centered Connecting Line */}
+                                            <div className="relative flex items-center justify-center shrink-0 self-stretch">
+                                                {idx !== 0 && (
+                                                    <div className="absolute -top-3.5 sm:-top-4 bottom-1/2 w-[2px] bg-zinc-200" />
+                                                )}
+                                                {idx !== 4 && (
+                                                    <div className="absolute top-1/2 -bottom-3.5 sm:-bottom-4 w-[2px] bg-zinc-200" />
+                                                )}
+                                                <div className="size-9 sm:size-10 rounded-full bg-gradient-to-b from-[#00477b] to-[#00335e] text-white font-bold text-xs sm:text-sm flex items-center justify-center shadow-md shadow-blue-900/10 ring-4 ring-white/95 z-10">
+                                                    {item.step}
+                                                </div>
+                                            </div>
+
+                                            {/* Right: Content Card */}
+                                            <div className="flex-1 bg-white/85 hover:bg-white backdrop-blur-xl border border-white/90 hover:border-[#00477b]/25 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-[0_4px_25px_rgba(0,0,0,0.02)] hover:shadow-[0_16px_36px_rgba(0,71,123,0.08)] transition-all duration-300 hover:-translate-y-0.5">
+                                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-2">
+                                                    <h3 className="text-base sm:text-lg font-bold text-[#00477b] tracking-tight">
+                                                        {item.title}
+                                                    </h3>
+                                                    <span className="w-fit text-[11px] font-semibold text-[#00477b] bg-[#00477b]/5 border border-[#00477b]/10 px-2.5 py-0.5 rounded-full">
+                                                        {item.tag}
+                                                    </span>
+                                                </div>
+
+                                                <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal mb-3.5">
+                                                    {item.desc}
+                                                </p>
+
+                                                <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-zinc-100">
+                                                    <span className="text-[11px] font-medium text-zinc-400 mr-1">Deliverables:</span>
+                                                    {item.deliverables.map((deliv, dIdx) => (
+                                                        <span key={dIdx} className="inline-flex items-center gap-1.5 text-xs text-zinc-700 bg-zinc-50 border border-zinc-200/70 px-2.5 py-1 rounded-lg">
+                                                            <Check className="size-3 text-[#00477b]" />
+                                                            {deliv}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                             
-                            <div className="mt-14 text-center">
-                                <Button className="group bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold rounded-xl shadow-lg shadow-blue-900/15 hover:shadow-xl hover:shadow-blue-900/25 hover:-translate-y-0.5 border-none transition-all duration-300 inline-flex items-center gap-2">
-                                    <span>Start Your Implementation</span>
-                                    <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                            <div className="mt-8 sm:mt-10 text-center">
+                                <Button asChild className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold rounded-full shadow-md hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 cursor-pointer border-none">
+                                    <Link href="/free-digital-consultation">
+                                        <span>Start Your Implementation</span>
+                                        <ArrowRight className="size-4" />
+                                    </Link>
                                 </Button>
                             </div>
                         </div>
@@ -331,70 +539,80 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 6. Pricing Packages */}
-            <section className="pt-24 bg-transparent border-t border-white/40">
-                <div className="w-full px-4 lg:px-8 mb-12 text-center">
-                    <span className="inline-block w-fit mx-auto px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Engagement Models / Packages</span>
-                    <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b]">Flexible Plans For Every Stage Of Your ERP Journey</h2>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block w-fit mx-auto px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3">
+                            Engagement Models / Packages
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Flexible Plans For Every Stage of ERP Journey
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="max-w-5xl mx-auto w-full">
-                            <div className="bg-white/70 backdrop-blur-2xl border border-white/80 rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,0.05)] overflow-hidden mb-8">
-                                <div className="overflow-x-auto">
-                                    <table className="w-full text-left border-collapse">
-                                        <thead>
-                                            <tr className="bg-gradient-to-r from-[#00477b] to-[#003862] text-white">
-                                                <th className="py-5 px-8 font-bold text-sm uppercase tracking-wider w-1/4">Plan</th>
-                                                <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider w-1/4">Ideal For</th>
-                                                <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider w-1/3">What's Included</th>
-                                                <th className="py-5 px-8 font-bold text-sm uppercase tracking-wider w-1/6 text-right sm:text-left">Starting From</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody className="divide-y divide-zinc-200/50 text-sm">
-                                            <tr className="hover:bg-white/80 transition-colors">
-                                                <td className="py-6 px-8 font-bold text-zinc-900 text-base">Starter Implementation</td>
-                                                <td className="py-6 px-6 text-zinc-600 font-medium">Small business (1-2 modules)</td>
-                                                <td className="py-6 px-6 text-zinc-600 font-medium">Basic setup, 5 users, core training</td>
-                                                <td className="py-6 px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹50,000</td>
-                                            </tr>
-                                            <tr className="hover:bg-white/80 transition-colors bg-blue-50/20">
-                                                <td className="py-6 px-8 font-bold text-zinc-900 text-base">Standard Implementation</td>
-                                                <td className="py-6 px-6 text-zinc-600 font-medium">SMEs (3-5 modules)</td>
-                                                <td className="py-6 px-6 text-zinc-600 font-medium">Full configuration, minor customization, data migration</td>
-                                                <td className="py-6 px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹1,25,000</td>
-                                            </tr>
-                                            <tr className="hover:bg-white/80 transition-colors">
-                                                <td className="py-6 px-8 font-bold text-zinc-900 text-base">Advanced Setup</td>
-                                                <td className="py-6 px-6 text-zinc-600 font-medium">Growing businesses</td>
-                                                <td className="py-6 px-6 text-zinc-600 font-medium">Multi-company setup, advanced workflows, integrations</td>
-                                                <td className="py-6 px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹2,50,000+</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 px-3 sm:px-6 lg:px-8 shadow-lg shadow-blue-900/5">
+                        <div className="max-w-7xl mx-auto w-full">
+                            <ScrollReveal animation="fade-up" delay={100}>
+                                <div className="bg-white/70 backdrop-blur-2xl border border-white/80 rounded-[2rem] shadow-[0_12px_40px_rgba(0,0,0,0.05)] overflow-hidden mb-6">
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left border-collapse">
+                                            <thead>
+                                                <tr className="bg-gradient-to-r from-[#00477b] to-[#003862] text-white">
+                                                    <th className="py-5 px-6 sm:px-8 font-bold text-sm uppercase tracking-wider w-1/4">Plan</th>
+                                                    <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider w-1/4">Ideal For</th>
+                                                    <th className="py-5 px-6 font-bold text-sm uppercase tracking-wider w-1/3">What's Included</th>
+                                                    <th className="py-5 px-6 sm:px-8 font-bold text-sm uppercase tracking-wider w-1/6 text-right sm:text-left">Starting From</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-zinc-200/50 text-sm">
+                                                <tr className="hover:bg-white/80 transition-colors">
+                                                    <td className="py-5 px-6 sm:px-8 font-bold text-zinc-900 text-base">Starter Implementation</td>
+                                                    <td className="py-5 px-6 text-zinc-600 font-medium">Small business (1-2 modules)</td>
+                                                    <td className="py-5 px-6 text-zinc-600 font-medium">Basic setup, 5 users, core training</td>
+                                                    <td className="py-5 px-6 sm:px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹50,000</td>
+                                                </tr>
+                                                <tr className="hover:bg-white/80 transition-colors bg-blue-50/20">
+                                                    <td className="py-5 px-6 sm:px-8 font-bold text-zinc-900 text-base">Standard Implementation</td>
+                                                    <td className="py-5 px-6 text-zinc-600 font-medium">SMEs (3-5 modules)</td>
+                                                    <td className="py-5 px-6 text-zinc-600 font-medium">Full configuration, minor customization, data migration</td>
+                                                    <td className="py-5 px-6 sm:px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹1,25,000</td>
+                                                </tr>
+                                                <tr className="hover:bg-white/80 transition-colors">
+                                                    <td className="py-5 px-6 sm:px-8 font-bold text-zinc-900 text-base">Advanced Setup</td>
+                                                    <td className="py-5 px-6 text-zinc-600 font-medium">Growing businesses</td>
+                                                    <td className="py-5 px-6 text-zinc-600 font-medium">Multi-company setup, advanced workflows, integrations</td>
+                                                    <td className="py-5 px-6 sm:px-8 text-zinc-900 font-bold text-base text-right sm:text-left">₹2,50,000+</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
+                            </ScrollReveal>
+
+                            <ScrollReveal animation="fade-up" delay={150}>
+                                <div className="bg-white/70 backdrop-blur-xl border border-white/80 rounded-2xl p-5 text-center shadow-sm max-w-4xl mx-auto">
+                                    <p className="text-zinc-700 font-medium text-base">
+                                        Need something custom? We also offer on-premise deployment, self-hosting, and extended AMC support.
+                                    </p>
+                                </div>
+                            </ScrollReveal>
+
+                            <div className="mt-6 text-center">
+                                <Button asChild className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold rounded-full shadow-md border-none transition-all cursor-pointer">
+                                    <Link href="/free-digital-consultation">Get a Detailed Quote</Link>
+                                </Button>
                             </div>
-
-                    <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-xl p-6 text-center shadow-sm">
-                        <p className="text-gray-700 font-medium text-lg">
-                            Need something custom? We also offer on-premise deployment, self-hosting, and extended AMC support.
-                        </p>
-                    </div>
-
-                    <div className="mt-8 text-center">
-                        <Button className="bg-[#00477b] hover:bg-[#003355] text-white px-8 h-12 text-sm font-bold shadow-md border-none transition-all">
-                            Get a Detailed Quote
-                        </Button>
-                    </div>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* 7. Add-Ons */}
-            <section className="py-16 bg-transparent border-t border-white/40 overflow-hidden">
+            <section className="py-10 sm:py-12 bg-transparent border-t border-white/40 overflow-hidden">
                 <div className="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-                    <div className="w-full lg:w-[57%]">
+                    <ScrollReveal animation="fade-right" delay={100} className="w-full lg:w-[57%]">
                         <div className="relative overflow-hidden shadow-[20px_0_50px_-5px_rgba(0,0,0,0.28),_10px_0_25px_-5px_rgba(0,71,123,0.3)] ring-1 ring-zinc-200/50 aspect-[16/10] sm:aspect-[16/9.5] bg-white rounded-r-[2rem] lg:rounded-r-[3rem]">
                             <img 
                                 src="/assets/erp-imp.webp" 
@@ -406,8 +624,8 @@ export default function ErpnextImplementation() {
                                 className="w-full h-full object-cover object-center" 
                             />
                         </div>
-                    </div>
-                    <div className="w-full lg:w-[43%] px-4 sm:px-6 lg:px-8 lg:pr-12">
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-left" delay={150} className="w-full lg:w-[43%] px-4 sm:px-6 lg:px-8 lg:pr-12">
                         <span className="inline-block w-fit px-4 py-1.5 rounded-full bg-white text-[12px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Powerful Extensions</span>
                         <h2 className="text-3xl sm:text-4xl font-normal tracking-tight text-[#00477b] mb-4 leading-tight">ERPNext Add-Ons We Offer</h2>
                         <p className="text-sm sm:text-[15px] text-gray-600 mb-6 leading-relaxed max-w-lg">
@@ -432,55 +650,63 @@ export default function ErpnextImplementation() {
                             ))}
                         </ul>
 
-                        <Button className="w-fit bg-[#00477b] hover:bg-[#003355] text-white px-7 h-11 rounded-xl text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-blue-900/30 hover:-translate-y-0.5 transition-all duration-300 border-none">
-                            Explore Custom Solutions
+                        <Button asChild className="w-fit bg-[#00477b] hover:bg-[#003355] text-white px-7 h-11 rounded-xl text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-blue-900/30 hover:-translate-y-0.5 transition-all duration-300 border-none cursor-pointer">
+                            <Link href="/free-digital-consultation">Explore Custom Solutions</Link>
                         </Button>
-                    </div>
+                    </ScrollReveal>
                 </div>
             </section>
 
             {/* 8. FAQs & Case Study */}
-            <section className="pt-24 bg-transparent border-t border-white/40">
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
                 <div className="w-full">
-                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-20 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
-                        <div className="max-w-[90rem] mx-auto w-full">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                    <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-lg shadow-blue-900/5">
+                        <div className="max-w-7xl mx-auto w-full">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-start">
                         
                         {/* Left: Case Study */}
-                        <div className="flex flex-col h-full lg:pr-8">
-                            <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Case Study</span>
-                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">ERPNext In Action</h2>
-                            <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
+                        <ScrollReveal animation="fade-right" delay={100} className="flex flex-col h-full">
+                            <span className="inline-block w-fit px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3.5">
+                                Case Study
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3.5 leading-tight">
+                                ERPNext In Action
+                            </h2>
+                            <p className="text-base text-zinc-600 mb-6 leading-relaxed max-w-lg">
                                 See how a real SME transformed their business operations, streamlined workflows, and boosted efficiency using our tailored ERPNext solutions.
                             </p>
                             
-                            <div className="relative bg-transparent backdrop-blur-sm border border-white/60 rounded-3xl p-8 sm:p-10 shadow-xl shadow-blue-900/5 text-zinc-900 overflow-hidden group flex-grow">
+                            <div className="relative bg-white/70 backdrop-blur-xl border border-white/90 rounded-3xl p-7 sm:p-8 shadow-xl shadow-blue-900/5 text-zinc-900 overflow-hidden group flex-grow">
                                 <div className="absolute -top-4 -right-4 p-6 opacity-30 text-blue-200 group-hover:scale-110 transition-transform duration-500">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24" fill="currentColor" stroke="none" className="text-zinc-200"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path></svg>
                                 </div>
                                 <div className="relative z-10 flex flex-col h-full">
-                                    <div className="flex gap-2 mb-6 text-[#00477b]">
+                                    <div className="flex gap-2 mb-5 text-amber-500">
                                         <Star className="size-5 fill-current" />
                                         <Star className="size-5 fill-current" />
                                         <Star className="size-5 fill-current" />
                                         <Star className="size-5 fill-current" />
                                         <Star className="size-5 fill-current" />
                                     </div>
-                                    <p className="text-xl sm:text-2xl font-normal leading-relaxed mb-8 text-zinc-800">
+                                    <p className="text-base sm:text-lg font-normal leading-relaxed mb-6 text-zinc-800">
                                         "Implementing ERPNext with Gnosys Digital was a game-changer. We reduced operational costs by 30% and improved delivery times significantly within the first quarter."
                                     </p>
-                                    <div className="mt-auto pt-6 border-t border-zinc-200/80">
-                                        <h4 className="font-bold text-lg text-[#00477b]">Rajesh Kumar</h4>
-                                        <p className="text-zinc-500 text-sm font-medium">CEO, Manufacturing Solutions Pvt. Ltd.</p>
+                                    <div className="mt-auto pt-5 border-t border-zinc-200/80">
+                                        <h4 className="font-bold text-base text-[#00477b]">Rajesh Kumar</h4>
+                                        <p className="text-zinc-500 text-xs font-medium">CEO, Manufacturing Solutions Pvt. Ltd.</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Right: FAQs */}
-                        <div className="flex flex-col h-full mt-10 lg:mt-0">
-                            <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Support & Queries</span>
-                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-8 leading-tight">Implementation FAQs</h2>
+                        <ScrollReveal animation="fade-left" delay={150} className="flex flex-col h-full mt-8 lg:mt-0">
+                            <span className="inline-block w-fit px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-[#00477b] uppercase tracking-[0.15em] shadow-sm border border-white/80 mb-3.5">
+                                Support & Queries
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4 leading-tight">
+                                Implementation FAQs
+                            </h2>
                             
                             <div className="flex-grow">
                                 <FaqAccordion 
@@ -488,13 +714,13 @@ export default function ErpnextImplementation() {
                                     iconPosition="right"
                                     iconSize={5}
                                     iconColorClass="text-[#00477b]"
-                                    containerClassName="bg-white/60 backdrop-blur-xl border border-zinc-200/60 rounded-3xl shadow-xl shadow-blue-900/5 overflow-hidden"
+                                    containerClassName="bg-white/70 backdrop-blur-xl border border-white/90 rounded-3xl shadow-xl shadow-blue-900/5 overflow-hidden"
                                     itemClassName="border-b border-zinc-200/60 last:border-0"
-                                    buttonClassName="text-zinc-900 font-medium px-6 sm:px-8 py-6 text-left hover:bg-white/80 transition-colors"
-                                    answerClassName="px-6 sm:px-8 pb-8 text-gray-600 bg-white/40 pt-2 leading-relaxed"
+                                    buttonClassName="text-[#00477b] font-medium px-6 sm:px-8 py-5 text-left hover:bg-white/80 transition-colors text-sm sm:text-base"
+                                    answerClassName="px-6 sm:px-8 pb-6 text-gray-600 bg-white/40 pt-2 leading-relaxed text-xs sm:text-sm"
                                 />
                             </div>
-                        </div>
+                        </ScrollReveal>
 
                             </div>
                         </div>
@@ -503,14 +729,14 @@ export default function ErpnextImplementation() {
             </section>
 
             {/* 9. Contact Form */}
-            <section className="py-24 bg-transparent border-t border-white/40">
+            <section className="pt-10 sm:pt-12 pb-12 sm:pb-14 bg-transparent border-t border-white/40">
                 <div className="w-full">
-                    <div className="py-20 px-4 lg:px-12 xl:px-24">
+                    <div className="py-4 sm:py-6 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
                         <div className="w-full">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-x-16 items-center">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-x-14 items-center">
                                 
                                 {/* Left: Text Content */}
-                                <div className="flex flex-col lg:pr-8">
+                                <ScrollReveal animation="fade-right" delay={100} className="flex flex-col lg:pr-8">
                                     <span className="inline-block w-fit px-5 py-2 rounded-full bg-white text-[13px] font-bold text-[#00477b] uppercase tracking-[0.1em] shadow-sm mb-4">Get Started</span>
                                     <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">Let's Simplify Your Operations With ERPNext</h2>
                                     <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-lg">
@@ -536,10 +762,10 @@ export default function ErpnextImplementation() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </ScrollReveal>
 
                                 {/* Right: Form */}
-                                <div>
+                                <ScrollReveal animation="fade-left" delay={150}>
                                     <form className="bg-white/50 backdrop-blur-md border border-white/50 p-8 md:p-10 rounded-[2rem] shadow-sm">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 mb-8">
                                             <div className="space-y-3">
@@ -602,7 +828,7 @@ export default function ErpnextImplementation() {
                                             Send Message
                                         </Button>
                                     </form>
-                                </div>
+                                </ScrollReveal>
 
                             </div>
                         </div>

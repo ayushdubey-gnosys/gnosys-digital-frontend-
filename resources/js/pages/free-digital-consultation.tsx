@@ -85,6 +85,20 @@ export default function FreeDigitalConsultation() {
                 {/* Clean transparent overlay for 100% crystal clear image */}
                 <div className="absolute inset-0 bg-black/20"></div>
 
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
+                </div>
+
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
                     <ScrollReveal animation="fade-up" delay={80}>
                         <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-5 py-2 border border-white/20 shadow-sm">
@@ -134,25 +148,24 @@ export default function FreeDigitalConsultation() {
             </section>
 
             {/* 2. Why a Free Consultation? */}
-            <section className="py-20 lg:py-28 bg-transparent">
-                <ScrollReveal animation="fade-up" delay={100}>
-                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
-                        <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                            <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why a Free Consultation?</span>
+            <section className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 max-w-7xl mx-auto text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                Why a Free Consultation?
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                Because Every Business Faces Unique Digital Challenges
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                Most agencies sell boilerplate solutions before understanding the root cause. We believe in asking the right questions before recommending any system:
+                            </p>
                         </div>
-                        <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Because Every Business Faces Unique Digital Challenges
-                        </h2>
-                        <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-                            Most agencies sell boilerplate solutions before understanding the root cause. We believe in asking the right questions before recommending any system:
-                        </p>
-                    </div>
-                </ScrollReveal>
+                    </ScrollReveal>
 
-                {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
-                    <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left">
+                    <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 text-left">
                             {[
                                 {
                                     title: "Lead Generation & Conversion",
@@ -185,59 +198,60 @@ export default function FreeDigitalConsultation() {
                                     icon: BarChart3
                                 }
                             ].map((item, idx) => (
-                                <ScrollReveal key={idx} animation="fade-up" delay={idx * 80} className="h-full">
+                                <ScrollReveal key={idx} animation="fade-up" delay={80 + (idx % 3) * 80} className="h-full">
                                     <div 
-                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
                                     >
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                         <div className="relative z-10">
-                                            <div className="flex items-center justify-between mb-5">
-                                                <div className="size-13 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] p-3 shadow-md shadow-blue-900/5">
+                                            <div className="flex items-center justify-between mb-4">
+                                                <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] p-2.5 shadow-md shadow-blue-900/5">
                                                     <item.icon className="size-6 text-[#00477b]" />
                                                 </div>
-                                                <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3 py-1.5 rounded-full border border-blue-100">
+                                                <span className="text-[11px] font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3 py-1 rounded-full border border-blue-100">
                                                     Challenge 0{idx + 1}
                                                 </span>
                                             </div>
-                                            <h3 className="text-xl font-bold text-[#00477b] mb-2.5 tracking-tight">{item.title}</h3>
-                                            <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item.desc}</p>
+                                            <h3 className="text-lg sm:text-xl font-bold text-[#00477b] mb-2 tracking-tight">{item.title}</h3>
+                                            <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal">{item.desc}</p>
                                         </div>
                                     </div>
                                 </ScrollReveal>
                             ))}
                         </div>
+
+                        <ScrollReveal animation="fade-up" delay={200}>
+                            <div className="w-full max-w-3xl mx-auto text-center mt-6">
+                                <div className="p-4 sm:p-5 rounded-2xl bg-white/60 backdrop-blur-md border border-white/80 shadow-xs">
+                                    <p className="text-xs sm:text-sm text-[#00477b] font-medium">
+                                        💡 During our 30-minute session, we explore your unique digital architecture - and give you actionable clarity on what to fix first.
+                                    </p>
+                                </div>
+                            </div>
+                        </ScrollReveal>
                     </div>
                 </div>
-
-                <ScrollReveal animation="fade-up" delay={200}>
-                    <div className="w-full px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center mt-6">
-                        <div className="p-6 rounded-2xl bg-blue-50/60 border border-blue-100">
-                            <p className="text-sm sm:text-base text-[#00477b] font-medium">
-                                💡 During our 30-minute session, we explore your unique digital architecture - and give you actionable clarity on what to fix first.
-                            </p>
-                        </div>
-                    </div>
-                </ScrollReveal>
             </section>
 
             {/* 3. What We Deliver */}
-            <section className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">What We Deliver</span>
-                    </div>
-                    <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        We Don't Sell - We Solve. Get Clarity & Direction.
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-                        We will give you the exact roadmap you need to solve your challenges - clear, actionable, and free of jargon.
-                    </p>
-                </div>
+            <section className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 max-w-7xl mx-auto text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                What We Deliver
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                We Don't Sell - We Solve. Get Clarity & Direction.
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                We will give you the exact roadmap you need to solve your challenges - clear, actionable, and free of jargon.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
-                    <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left">
+                    <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 text-left">
                             {[
                                 {
                                     icon: Activity,
@@ -270,59 +284,63 @@ export default function FreeDigitalConsultation() {
                                     points: ["Database integrity & API vulnerability check", "Cloud scalability readiness assessment"]
                                 }
                             ].map((item, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden"
-                                >
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
-                                            <item.icon className="size-6 text-[#00477b]" />
+                                <ScrollReveal key={idx} animation="fade-up" delay={80 + (idx % 3) * 80} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-4 shadow-md shadow-blue-900/5">
+                                                <item.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-lg sm:text-xl font-bold text-[#00477b] mb-3 tracking-tight">{item.title}</h3>
+                                            <ul className="space-y-2">
+                                                {item.points.map((pt, pIdx) => (
+                                                    <li key={pIdx} className="flex items-start gap-2 text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal">
+                                                        <CheckCircle2 className="size-4 text-[#00477b] shrink-0 mt-0.5" />
+                                                        <span>{pt}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-4 tracking-tight">{item.title}</h3>
-                                        <ul className="space-y-2.5">
-                                            {item.points.map((pt, pIdx) => (
-                                                <li key={pIdx} className="flex items-start gap-2.5 text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">
-                                                    <CheckCircle2 className="size-4 text-[#00477b] shrink-0 mt-1" />
-                                                    <span>{pt}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
-                    </div>
-                </div>
 
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mt-8">
-                    <Button 
-                        onClick={scrollToForm}
-                        className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 sm:px-10 h-14 text-base font-bold shadow-xl shadow-blue-900/20 transition-all duration-300 hover:-translate-y-1"
-                    >
-                        Claim Your Free 30-Minute Consultation
-                    </Button>
+                        <ScrollReveal animation="fade-up" delay={150}>
+                            <div className="w-full max-w-7xl mx-auto text-center mt-6">
+                                <Button 
+                                    onClick={scrollToForm}
+                                    className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 sm:px-10 h-12 text-sm font-bold shadow-lg shadow-blue-900/20 transition-all duration-300 hover:-translate-y-0.5"
+                                >
+                                    Claim Your Free 30-Minute Consultation
+                                </Button>
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
 
             {/* 4. Simple Process, Real Results - In 3 Easy Steps */}
-            <section className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">How It Works?</span>
-                    </div>
-                    <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Simple Process, Real Results - In 3 Easy Steps
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-                        We respect your time. No tedious back-and-forths, just 3 simple steps to total clarity.
-                    </p>
-                </div>
+            <section className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 max-w-7xl mx-auto text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                How It Works?
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                Simple Process, Real Results - In 3 Easy Steps
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto leading-relaxed">
+                                We respect your time. No tedious back-and-forths, just 3 simple steps to total clarity.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
-                    <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-center">
+                    <div className="w-full px-2 sm:px-4 max-w-[90rem] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 text-center">
                             {[
                                 {
                                     icon: FileText,
@@ -340,48 +358,53 @@ export default function FreeDigitalConsultation() {
                                     desc: "Get your clear recommendation document - yours to keep, whether we work together or not."
                                 }
                             ].map((item, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-8 sm:p-10 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center justify-between"
-                                >
-                                    <div>
-                                        <div className="size-16 rounded-2xl bg-blue-50/80 border border-blue-100 text-[#00477b] flex items-center justify-center mx-auto mb-6 shadow-sm">
-                                            <item.icon className="size-7" />
+                                <ScrollReveal key={idx} animation="fade-up" delay={100 * (idx + 1)} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center justify-between h-full"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            <div className="size-14 rounded-2xl bg-white border border-white text-[#00477b] flex items-center justify-center mx-auto mb-4 shadow-md shadow-blue-900/5">
+                                                <item.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-lg sm:text-xl font-bold text-[#00477b] mb-2">{item.step}</h3>
+                                            <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal">{item.desc}</p>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-3">{item.step}</h3>
-                                        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item.desc}</p>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
-                    </div>
-                </div>
 
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mt-6">
-                    <p className="text-sm font-semibold text-zinc-500 uppercase tracking-wider">
-                        🔒 No Pressure. No Obligation. Just pure clarity on your digital roadmap.
-                    </p>
+                        <ScrollReveal animation="fade-up" delay={200}>
+                            <div className="w-full max-w-7xl mx-auto text-center mt-5">
+                                <p className="text-xs sm:text-sm font-semibold text-zinc-500 uppercase tracking-wider">
+                                    🔒 No Pressure. No Obligation. Just pure clarity on your digital roadmap.
+                                </p>
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
 
             {/* 5. Why Businesses Choose Gnosys Digital? */}
-            <section className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Why Businesses Choose Gnosys Digital?</span>
-                    </div>
-                    <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        We Go Beyond Development - We Build Growth Systems
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-3xl mx-auto leading-relaxed">
-                        We don't just write code; we partner with businesses to eliminate manual chaos and scale revenue.
-                    </p>
-                </div>
+            <section className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 max-w-7xl mx-auto text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                Why Businesses Choose Gnosys Digital?
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                We Go Beyond Development - We Build Growth Systems
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                We don't just write code; we partner with businesses to eliminate manual chaos and scale revenue.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
-                    <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left">
+                    <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 text-left">
                             {[
                                 { title: "Websites That Convert", desc: "High-performance architectures engineered for speed, clean UX, and consistent revenue generation." },
                                 { title: "SEO That Actually Ranks", desc: "Data-backed search strategies designed to dominate competitive keywords and bring inbound leads." },
@@ -390,48 +413,53 @@ export default function FreeDigitalConsultation() {
                                 { title: "Partnership Approach", desc: "We treat your business as our own - advising on long-term strategy, not just one-off tasks." },
                                 { title: "100% Code Ownership", desc: "Complete source code, documentation, and IP transferred to you with zero vendor lock-in." }
                             ].map((item, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 sm:p-8 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
-                                >
-                                    <div>
-                                        <h4 className="text-xl font-bold text-[#00477b] mb-3">{item.title}</h4>
-                                        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item.desc}</p>
+                                <ScrollReveal key={idx} animation="fade-up" delay={80 + (idx % 3) * 80} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            <h4 className="text-lg sm:text-xl font-bold text-[#00477b] mb-2">{item.title}</h4>
+                                            <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal">{item.desc}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
-                    </div>
-                </div>
 
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mt-8">
-                    <Button 
-                        onClick={scrollToForm}
-                        className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-lg shadow-blue-900/20"
-                    >
-                        Book A Free Strategy Call Now
-                    </Button>
+                        <ScrollReveal animation="fade-up" delay={200}>
+                            <div className="w-full max-w-7xl mx-auto text-center mt-6">
+                                <Button 
+                                    onClick={scrollToForm}
+                                    className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all"
+                                >
+                                    Book A Free Strategy Call Now
+                                </Button>
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
 
             {/* 6. Social Proof / Testimonials & Stats */}
-            <section className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-8">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Social Proof & Client Stories</span>
-                    </div>
-                    <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Hear From Businesses That Started With A Consultation
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
-                        Real leaders who booked a 30-minute session and unlocked clear technical direction.
-                    </p>
-                </div>
+            <section className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 max-w-7xl mx-auto text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                Social Proof & Client Stories
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                Hear From Businesses That Started With A Consultation
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto leading-relaxed">
+                                Real leaders who booked a 30-minute session and unlocked clear technical direction.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
-                    <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-left">
+                    <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 text-left">
                             {[
                                 {
                                     initials: "SJ",
@@ -455,270 +483,281 @@ export default function FreeDigitalConsultation() {
                                     tag: "Architecture Review"
                                 }
                             ].map((item, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-7 sm:p-8 lg:p-9 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full"
-                                >
-                                    <div>
-                                        <div className="flex items-center justify-between gap-2 mb-6">
-                                            <div className="flex gap-1 text-amber-400">
-                                                {[...Array(5)].map((_, i) => (
-                                                    <Star key={i} className="size-4 fill-amber-400" />
-                                                ))}
+                                <ScrollReveal key={idx} animation="fade-up" delay={80 + (idx % 3) * 80} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            <div className="flex items-center justify-between gap-2 mb-4">
+                                                <div className="flex gap-1 text-amber-400">
+                                                    {[...Array(5)].map((_, i) => (
+                                                        <Star key={i} className="size-4 fill-amber-400" />
+                                                    ))}
+                                                </div>
+                                                <span className="text-[11px] font-semibold text-[#00477b] bg-blue-50/80 px-3 py-1 rounded-full border border-blue-100">
+                                                    {item.tag}
+                                                </span>
                                             </div>
-                                            <span className="text-xs font-semibold text-[#00477b] bg-blue-50/80 px-3 py-1 rounded-full border border-blue-100">
-                                                {item.tag}
-                                            </span>
+
+                                            <p className="text-zinc-700 text-sm sm:text-base leading-relaxed font-normal mb-6">
+                                                “{item.quote}”
+                                            </p>
                                         </div>
 
-                                        <p className="text-zinc-700 text-base leading-relaxed font-normal mb-8">
-                                            “{item.quote}”
-                                        </p>
-                                    </div>
-
-                                    <div className="pt-6 border-t border-zinc-200/70 flex items-center gap-3.5">
-                                        <div className="size-11 rounded-2xl bg-blue-50/80 border border-blue-100 text-[#00477b] flex items-center justify-center font-bold text-sm shrink-0 shadow-sm">
-                                            {item.initials}
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-[#00477b] text-base tracking-tight">{item.name}</h4>
-                                            <p className="text-xs text-zinc-500 font-medium">{item.role}</p>
+                                        <div className="pt-4 border-t border-zinc-200/70 flex items-center gap-3.5 relative z-10">
+                                            <div className="size-10 rounded-xl bg-white border border-blue-100 text-[#00477b] flex items-center justify-center font-bold text-sm shrink-0 shadow-xs">
+                                                {item.initials}
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-[#00477b] text-sm sm:text-base tracking-tight">{item.name}</h4>
+                                                <p className="text-xs text-zinc-500 font-medium">{item.role}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
-                    </div>
-                </div>
 
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mt-10">
-                    {/* Stats Counter */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                        {[
-                            { value: "25+", label: "Successful Scaled Projects" },
-                            { value: "4.9 / 5", label: "Client Satisfaction Rating" },
-                            { value: "2.5x", label: "Average Client Growth" }
-                        ].map((stat, sIdx) => (
-                            <div key={sIdx} className="bg-white/80 backdrop-blur-xl border border-white/90 rounded-[2rem] p-7 shadow-sm">
-                                <div className="text-3xl sm:text-4xl font-bold text-[#00477b] mb-1.5 tracking-tight">{stat.value}</div>
-                                <div className="text-xs font-semibold text-zinc-600 uppercase tracking-wider">{stat.label}</div>
+                        {/* Stats Counter */}
+                        <ScrollReveal animation="fade-up" delay={150}>
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto mt-6">
+                                {[
+                                    { value: "25+", label: "Successful Scaled Projects" },
+                                    { value: "4.9 / 5", label: "Client Satisfaction Rating" },
+                                    { value: "2.5x", label: "Average Client Growth" }
+                                ].map((stat, sIdx) => (
+                                    <div key={sIdx} className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-5 shadow-xs">
+                                        <div className="text-2xl sm:text-3xl font-bold text-[#00477b] mb-1 tracking-tight">{stat.value}</div>
+                                        <div className="text-[11px] font-semibold text-zinc-600 uppercase tracking-wider">{stat.label}</div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
 
             {/* 7. Combined Booking Form & FAQ Section */}
-            <section id="booking-form" className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-3 sm:px-5 lg:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                        {/* Left Side: FAQ */}
-                        <div className="lg:col-span-5">
-                            <div className="mb-8 text-left">
-                                <div className="mb-4 inline-flex items-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50 w-fit">
-                                    <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">FAQ & Next Steps</span>
-                                </div>
-                                <h2 className="mb-3 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                                    Frequently Asked Questions
-                                </h2>
-                                <p className="text-base sm:text-lg text-zinc-600">
-                                    You have questions, we have clear answers.
-                                </p>
-                            </div>
-
-                            <div className="space-y-3.5">
-                                {faqs.map((faq, idx) => {
-                                    const isOpen = faqOpen === idx;
-                                    return (
-                                        <div 
-                                            key={idx}
-                                            className="bg-white/85 backdrop-blur-xl border border-white/95 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
-                                        >
-                                            <button 
-                                                onClick={() => setFaqOpen(isOpen ? null : idx)}
-                                                className="w-full py-4.5 px-5 text-left flex items-center justify-between font-semibold text-sm sm:text-base text-[#00477b] focus:outline-none"
-                                            >
-                                                <span>{faq.q}</span>
-                                                <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
-                                            </button>
-                                            {isOpen && (
-                                                <div className="px-5 pb-5 pt-1 text-zinc-600 text-sm leading-relaxed border-t border-zinc-100 font-normal">
-                                                    {faq.a}
-                                                </div>
-                                            )}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Right Side: Booking Form */}
-                        <div className="lg:col-span-7">
-                            <div className="mb-8 text-left">
-                                <div className="mb-4 inline-flex items-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50 w-fit">
-                                    <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Form & Action Section</span>
-                                </div>
-                                <h2 className="mb-3 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                                    Request Your Free Strategy Session Today
-                                </h2>
-                                <p className="text-base sm:text-lg text-zinc-600">
-                                    Fill out the form below - our team will reach out within 24 hours to confirm your session time.
-                                </p>
-                            </div>
-
-                            <div className="bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.5rem] p-6 sm:p-8 lg:p-10 shadow-xl shadow-blue-900/5">
-                                {formSubmitted ? (
-                                    <div className="text-center py-12">
-                                        <div className="size-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
-                                            <CheckCircle2 className="size-8" />
-                                        </div>
-                                        <h3 className="text-2xl font-bold text-[#00477b] mb-2">Thank You for Booking!</h3>
-                                        <p className="text-zinc-600 max-w-md mx-auto mb-6 font-normal">
-                                            We've received your request. One of our senior strategists will contact you via email within 24 hours with calendar slots.
+            <section id="booking-form" className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                            {/* Left Side: FAQ */}
+                            <div className="lg:col-span-5 text-left">
+                                <ScrollReveal animation="fade-up" delay={80}>
+                                    <div className="mb-6">
+                                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                            FAQ & Next Steps
+                                        </span>
+                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-2">
+                                            Frequently Asked Questions
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-zinc-600">
+                                            You have questions, we have clear answers.
                                         </p>
-                                        <Button onClick={() => setFormSubmitted(false)} variant="outline" className="rounded-full">
-                                            Submit Another Request
-                                        </Button>
                                     </div>
-                                ) : (
-                                    <form onSubmit={handleFormSubmit} className="space-y-5 text-left">
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                            <div className="space-y-2">
-                                                <Label htmlFor="fullname" className="text-sm font-semibold text-zinc-700">
-                                                    Full Name *
-                                                </Label>
-                                                <Input 
-                                                    id="fullname" 
-                                                    required 
-                                                    placeholder="Rahul Sharma" 
-                                                    className="h-12 rounded-xl bg-white/90 border-gray-200 focus:border-[#00477b]"
-                                                />
-                                            </div>
+                                </ScrollReveal>
 
-                                            <div className="space-y-2">
-                                                <Label htmlFor="email" className="text-sm font-semibold text-zinc-700">
-                                                    Work Email *
-                                                </Label>
-                                                <Input 
-                                                    id="email" 
-                                                    type="email" 
-                                                    required 
-                                                    placeholder="rahul@company.com" 
-                                                    className="h-12 rounded-xl bg-white/90 border-gray-200 focus:border-[#00477b]"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className="space-y-2">
-                                            <Label htmlFor="company" className="text-sm font-semibold text-zinc-700">
-                                                Company / Website URL *
-                                            </Label>
-                                            <Input 
-                                                id="company" 
-                                                required 
-                                                placeholder="www.yourcompany.com" 
-                                                className="h-12 rounded-xl bg-white/90 border-gray-200 focus:border-[#00477b]"
-                                            />
-                                        </div>
-
-                                        <div className="space-y-3 pt-2">
-                                            <Label className="text-sm font-semibold text-zinc-700">
-                                                What challenge are you facing? (Select all that apply)
-                                            </Label>
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                                                {[
-                                                    "Web / App Development",
-                                                    "SEO & Digital Marketing",
-                                                    "ERP & Automation Systems",
-                                                    "UI/UX Redesign & Conversion"
-                                                ].map((challenge) => {
-                                                    const isChecked = selectedChallenges.includes(challenge);
-                                                    return (
-                                                        <div 
-                                                            key={challenge}
-                                                            onClick={() => toggleChallenge(challenge)}
-                                                            className={`cursor-pointer px-3.5 py-3 rounded-xl border text-sm font-medium flex items-center gap-2.5 transition-all ${
-                                                                isChecked 
-                                                                    ? 'bg-[#00477b] text-white border-[#00477b]' 
-                                                                    : 'bg-white/90 text-zinc-700 border-gray-200 hover:border-gray-300'
-                                                            }`}
-                                                        >
-                                                            <div className={`size-4 rounded border flex items-center justify-center shrink-0 ${isChecked ? 'bg-white border-white' : 'border-gray-300'}`}>
-                                                                {isChecked && <div className="size-2 rounded-sm bg-[#00477b]" />}
-                                                            </div>
-                                                            <span className="text-xs sm:text-sm font-normal">{challenge}</span>
-                                                        </div>
-                                                    );
-                                                })}
-                                            </div>
-                                        </div>
-
-                                        <div className="space-y-2.5 pt-2">
-                                            <Label className="text-sm font-semibold text-zinc-700">
-                                                Preferred Call Time
-                                            </Label>
-                                            <div className="flex flex-wrap gap-3">
-                                                {["Morning", "Afternoon", "Evening"].map((time) => (
-                                                    <label 
-                                                        key={time} 
-                                                        className={`cursor-pointer px-4 py-2 rounded-full border text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all ${
-                                                            preferredTime === time 
-                                                                ? 'bg-blue-50 border-[#00477b] text-[#00477b]' 
-                                                                : 'bg-white border-gray-200 text-zinc-600'
-                                                        }`}
+                                <div className="space-y-3">
+                                    {faqs.map((faq, idx) => {
+                                        const isOpen = faqOpen === idx;
+                                        return (
+                                            <ScrollReveal key={idx} animation="fade-up" delay={60 * (idx + 1)}>
+                                                <div 
+                                                    className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all"
+                                                >
+                                                    <button 
+                                                        onClick={() => setFaqOpen(isOpen ? null : idx)}
+                                                        className="w-full py-4 px-5 text-left flex items-center justify-between font-semibold text-sm sm:text-base text-[#00477b] focus:outline-none"
                                                     >
-                                                        <input 
-                                                            type="radio" 
-                                                            name="preferredTime" 
-                                                            value={time} 
-                                                            checked={preferredTime === time} 
-                                                            onChange={() => setPreferredTime(time)}
-                                                            className="hidden" 
-                                                        />
-                                                        <span>{time}</span>
-                                                    </label>
-                                                ))}
+                                                        <span>{faq.q}</span>
+                                                        <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
+                                                    </button>
+                                                    {isOpen && (
+                                                        <div className="px-5 pb-4 pt-1 text-zinc-600 text-xs sm:text-sm leading-relaxed border-t border-zinc-100 font-normal">
+                                                            {faq.a}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </ScrollReveal>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* Right Side: Booking Form */}
+                            <div className="lg:col-span-7 text-left">
+                                <ScrollReveal animation="fade-left" delay={120}>
+                                    <div className="mb-6">
+                                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                            Form & Action Section
+                                        </span>
+                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-2">
+                                            Request Your Free Strategy Session Today
+                                        </h2>
+                                        <p className="text-sm sm:text-base text-zinc-600">
+                                            Fill out the form below - our team will reach out within 24 hours to confirm your session time.
+                                        </p>
+                                    </div>
+
+                                    <div className="bg-white/60 backdrop-blur-xl border border-white/80 rounded-[2rem] p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
+                                        {formSubmitted ? (
+                                            <div className="text-center py-8">
+                                                <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+                                                    <CheckCircle2 className="size-7" />
+                                                </div>
+                                                <h3 className="text-xl font-bold text-[#00477b] mb-2">Thank You for Booking!</h3>
+                                                <p className="text-zinc-600 text-sm max-w-md mx-auto mb-5 font-normal">
+                                                    We've received your request. One of our senior strategists will contact you via email within 24 hours with calendar slots.
+                                                </p>
+                                                <Button onClick={() => setFormSubmitted(false)} variant="outline" className="rounded-full h-10 text-xs">
+                                                    Submit Another Request
+                                                </Button>
                                             </div>
-                                        </div>
+                                        ) : (
+                                            <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                                    <div className="space-y-1.5">
+                                                        <Label htmlFor="fullname" className="text-xs sm:text-sm font-semibold text-zinc-700">
+                                                            Full Name *
+                                                        </Label>
+                                                        <Input 
+                                                            id="fullname" 
+                                                            required 
+                                                            placeholder="Rahul Sharma" 
+                                                            className="h-11 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b] text-sm"
+                                                        />
+                                                    </div>
 
-                                        <div className="pt-2">
-                                            <Button 
-                                                type="submit" 
-                                                className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-13 text-base font-bold shadow-lg shadow-blue-900/15 transition-all duration-300 hover:-translate-y-0.5"
-                                            >
-                                                Book My Free Consultation
-                                            </Button>
-                                        </div>
+                                                    <div className="space-y-1.5">
+                                                        <Label htmlFor="email" className="text-xs sm:text-sm font-semibold text-zinc-700">
+                                                            Work Email *
+                                                        </Label>
+                                                        <Input 
+                                                            id="email" 
+                                                            type="email" 
+                                                            required 
+                                                            placeholder="rahul@company.com" 
+                                                            className="h-11 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b] text-sm"
+                                                        />
+                                                    </div>
+                                                </div>
 
-                                        <div className="text-center pt-2 flex items-center justify-center gap-2 text-xs text-zinc-500 font-medium">
-                                            <Lock className="size-3.5 text-zinc-400" />
-                                            <span>Your information is 100% secure. We never share your data or spam.</span>
-                                        </div>
-                                    </form>
-                                )}
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="company" className="text-xs sm:text-sm font-semibold text-zinc-700">
+                                                        Company / Website URL *
+                                                    </Label>
+                                                    <Input 
+                                                        id="company" 
+                                                        required 
+                                                        placeholder="www.yourcompany.com" 
+                                                        className="h-11 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b] text-sm"
+                                                    />
+                                                </div>
+
+                                                <div className="space-y-2 pt-1">
+                                                    <Label className="text-xs sm:text-sm font-semibold text-zinc-700">
+                                                        What challenge are you facing? (Select all that apply)
+                                                    </Label>
+                                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                                        {[
+                                                            "Web / App Development",
+                                                            "SEO & Digital Marketing",
+                                                            "ERP & Automation Systems",
+                                                            "UI/UX Redesign & Conversion"
+                                                        ].map((challenge) => {
+                                                            const isChecked = selectedChallenges.includes(challenge);
+                                                            return (
+                                                                <div 
+                                                                    key={challenge}
+                                                                    onClick={() => toggleChallenge(challenge)}
+                                                                    className={`cursor-pointer px-3.5 py-2.5 rounded-xl border text-xs sm:text-sm font-medium flex items-center gap-2.5 transition-all ${
+                                                                        isChecked 
+                                                                            ? 'bg-[#00477b] text-white border-[#00477b]' 
+                                                                            : 'bg-white/80 text-zinc-700 border-gray-200 hover:border-gray-300'
+                                                                    }`}
+                                                                >
+                                                                    <div className={`size-4 rounded border flex items-center justify-center shrink-0 ${isChecked ? 'bg-white border-white' : 'border-gray-300'}`}>
+                                                                        {isChecked && <div className="size-2 rounded-sm bg-[#00477b]" />}
+                                                                    </div>
+                                                                    <span className="text-xs sm:text-sm font-normal">{challenge}</span>
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </div>
+
+                                                <div className="space-y-2 pt-1">
+                                                    <Label className="text-xs sm:text-sm font-semibold text-zinc-700">
+                                                        Preferred Call Time
+                                                    </Label>
+                                                    <div className="flex flex-wrap gap-2.5">
+                                                        {["Morning", "Afternoon", "Evening"].map((time) => (
+                                                            <label 
+                                                                key={time} 
+                                                                className={`cursor-pointer px-4 py-1.5 rounded-full border text-xs sm:text-sm font-semibold flex items-center gap-2 transition-all ${
+                                                                    preferredTime === time 
+                                                                        ? 'bg-blue-50 border-[#00477b] text-[#00477b]' 
+                                                                        : 'bg-white border-gray-200 text-zinc-600'
+                                                                }`}
+                                                            >
+                                                                <input 
+                                                                    type="radio" 
+                                                                    name="preferredTime" 
+                                                                    value={time} 
+                                                                    checked={preferredTime === time} 
+                                                                    onChange={() => setPreferredTime(time)}
+                                                                    className="hidden" 
+                                                                />
+                                                                <span>{time}</span>
+                                                            </label>
+                                                        ))}
+                                                    </div>
+                                                </div>
+
+                                                <div className="pt-2">
+                                                    <Button 
+                                                        type="submit" 
+                                                        className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 text-sm sm:text-base font-bold shadow-lg shadow-blue-900/15 transition-all duration-300 hover:-translate-y-0.5"
+                                                    >
+                                                        Book My Free Consultation
+                                                    </Button>
+                                                </div>
+
+                                                <div className="text-center pt-1 flex items-center justify-center gap-2 text-[11px] text-zinc-500 font-medium">
+                                                    <Lock className="size-3 text-zinc-400" />
+                                                    <span>Your information is 100% secure. We never share your data or spam.</span>
+                                                </div>
+                                            </form>
+                                        )}
+                                    </div>
+                                </ScrollReveal>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* 9. What Happens Next? (Journey) */}
-            <section className="py-20 lg:py-28 bg-transparent">
-                <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center mb-6">
-                    <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">What Happens Next?</span>
-                    </div>
-                    <h2 className="mb-3 text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                        Here's Your Journey After Booking
-                    </h2>
-                    <p className="text-base sm:text-lg text-zinc-600 max-w-2xl mx-auto">
-                        A clear, predictable roadmap from the moment you submit your request.
-                    </p>
-                </div>
+            {/* 8. What Happens Next? (Journey) */}
+            <section className="mt-16 sm:mt-24 text-center">
+                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 max-w-7xl mx-auto text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                What Happens Next?
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                Here's Your Journey After Booking
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto">
+                                A clear, predictable roadmap from the moment you submit your request.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-10 sm:py-14 my-4">
-                    <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-center">
+                    <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-center">
                             {[
                                 {
                                     step: "01",
@@ -745,29 +784,32 @@ export default function FreeDigitalConsultation() {
                                     icon: FileText
                                 }
                             ].map((item, idx) => (
-                                <div 
-                                    key={idx}
-                                    className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-7 lg:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
-                                >
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="size-14 bg-white border border-white text-[#00477b] rounded-2xl flex items-center justify-center mx-auto mb-5 shadow-md shadow-blue-900/5">
-                                            <item.icon className="size-6 text-[#00477b]" />
+                                <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
+                                    <div 
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-6 lg:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            <div className="size-12 bg-white border border-white text-[#00477b] rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md shadow-blue-900/5">
+                                                <item.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <div className="text-[11px] font-black text-[#00477b] uppercase tracking-widest mb-1">Step {item.step}</div>
+                                            <h4 className="font-bold text-base sm:text-lg text-[#00477b] mb-2">{item.title}</h4>
+                                            <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">{item.desc}</p>
                                         </div>
-                                        <div className="text-xs font-black text-[#00477b] uppercase tracking-widest mb-1.5">Step {item.step}</div>
-                                        <h4 className="font-bold text-lg text-[#00477b] mb-2.5">{item.title}</h4>
-                                        <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">{item.desc}</p>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
-                    </div>
-                </div>
 
-                <div className="text-center mt-8">
-                    <Button onClick={scrollToForm} className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-10 h-14 shadow-xl shadow-blue-900/20 text-base font-bold transition-all hover:-translate-y-0.5">
-                        Schedule Your 30-Min Call
-                    </Button>
+                        <ScrollReveal animation="fade-up" delay={200}>
+                            <div className="text-center mt-6">
+                                <Button onClick={scrollToForm} className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 sm:px-10 h-12 shadow-lg shadow-blue-900/20 text-sm sm:text-base font-bold transition-all hover:-translate-y-0.5">
+                                    Schedule Your 30-Min Call
+                                </Button>
+                            </div>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </section>
         </MainLayout>

@@ -54,7 +54,7 @@ export default function FaqAccordion({
                         <button
                             type="button"
                             className={cn(
-                                "w-full text-left px-6 py-5 font-bold text-gray-900 text-sm sm:text-base flex justify-between items-center hover:bg-gray-50 focus:outline-none transition-colors",
+                                "w-full text-left px-6 py-5 font-medium text-[#00477b] text-sm sm:text-base flex justify-between items-center hover:bg-white/60 focus:outline-none transition-colors",
                                 buttonClassName
                             )}
                             onClick={() => toggleFaq(idx)}
@@ -62,7 +62,7 @@ export default function FaqAccordion({
                             {iconPosition === 'left' ? (
                                 <div className="flex items-center gap-3">
                                     <div className={cn(iconColorClass, "shrink-0")}>
-                                        <IconComponent className={`size-${iconSize}`} />
+                                        <IconComponent className="size-4 sm:size-5" />
                                     </div>
                                     <span>{questionText}</span>
                                 </div>
@@ -70,7 +70,7 @@ export default function FaqAccordion({
                                 <>
                                     <span>{questionText}</span>
                                     <div className={cn(iconColorClass, "shrink-0 ml-4")}>
-                                        <IconComponent className={`size-${iconSize}`} />
+                                        <IconComponent className="size-4 sm:size-5" />
                                     </div>
                                 </>
                             )}

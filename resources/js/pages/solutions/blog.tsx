@@ -122,8 +122,25 @@ export default function Blog() {
         <MainLayout>
             <Head title="Blog | Gnosys Digital" />
             
-            <div className="bg-transparent min-h-screen py-24">
-                <div className="w-full mx-auto px-4 lg:px-12 max-w-[1600px] text-center">
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
+
+            <div className="bg-transparent min-h-screen py-24 relative overflow-hidden">
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
+                </div>
+
+                <div className="w-full mx-auto px-4 lg:px-12 max-w-[1600px] text-center relative z-10">
                     
                     <ScrollReveal animation="fade-up" delay={80}>
                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">

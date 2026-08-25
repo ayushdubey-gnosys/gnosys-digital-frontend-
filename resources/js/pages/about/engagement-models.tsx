@@ -15,453 +15,637 @@ import {
     Rocket,
     SearchCheck,
     PackageCheck,
-    CheckSquare
+    CheckSquare,
+    ArrowRight,
+    Sparkles,
+    ShieldCheck
 } from 'lucide-react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
+import ScrollReveal from '@/components/scroll-reveal';
+import React from 'react';
 
 export default function EngagementModels() {
     return (
         <MainLayout>
             <Head title="Delivery & Engagement Models - Gnosys Digital" />
 
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
+
             {/* 1. Hero Section */}
             <section
-                className="relative text-white overflow-hidden py-28 lg:py-40 bg-cover bg-center bg-no-repeat"
+                className="relative text-white overflow-hidden py-24 lg:py-36 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: 'url("/assets/about-engaement.png")' }}
             >
                 {/* Lighter blue overlay to make the image clearly visible */}
-                <div className="absolute inset-0 bg-[#00477b]/30 mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-[#022c54]/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-[#00477b]/40 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#022c54]/50 via-transparent to-[#022c54]/30"></div>
+
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
+                </div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
-                        Smart, Scalable Delivery Models For Every Business
-                    </h1>
-                    <p className="text-lg md:text-xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-                        Whether you're launching your first website or optimizing an existing digital ecosystem - our flexible engagement models guarantee control, scale, and clear ROI.
-                    </p>
-                    <div className="flex flex-col items-center gap-4">
-                        <div className="border border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-full font-medium text-sm md:text-base mb-2 inline-block shadow-sm">
-                            Find The Model That Fits Your Business (Budget: 50K - 3L)
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-sm text-xs font-bold text-white uppercase tracking-wider mb-4">
+                            TRANSPARENT ENGAGEMENT
+                        </span>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={180}>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6 leading-tight tracking-tight">
+                            Smart, Scalable Delivery Models For <span className="font-normal text-blue-100">Every Business</span>
+                        </h1>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={280}>
+                        <p className="text-base sm:text-lg md:text-xl text-blue-100/95 mb-8 max-w-3xl mx-auto leading-relaxed font-normal">
+                            Whether you're launching your first digital product or scaling an enterprise ERP - our flexible engagement models guarantee control, agility, and clear ROI.
+                        </p>
+                    </ScrollReveal>
+                    <ScrollReveal animation="fade-up" delay={380}>
+                        <div className="flex flex-col items-center gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Button asChild className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        <span className="relative z-10 flex items-center gap-2">Get a Fixed Price Quote <ArrowRight className="size-5" /></span>
+                                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                    </Link>
+                                </Button>
+                                <Button asChild className="bg-white/10 backdrop-blur-md text-white hover:bg-white/20 border border-white/60 rounded-full px-8 h-14 text-sm sm:text-base font-bold shadow-sm transition-all w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        Hire Dedicated Team
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <Button className="bg-white text-[#00477b] hover:bg-gray-50 rounded-full px-8 h-14 text-base font-semibold shadow-lg transition-all duration-300 hover:-translate-y-0.5 border-2 border-transparent">
-                                Get a Fixed Price Quote
-                            </Button>
-                            <Button className="bg-transparent text-white hover:bg-white/10 border-2 border-white/60 rounded-full px-8 h-14 text-base font-semibold shadow-sm transition-all duration-300">
-                                Hire Dedicated Team
-                            </Button>
-                        </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
 
                 {/* Curved Wave Divider */}
                 <HeroWaveDivider />
             </section>
 
-            {/* 2. Built For Clarity */}
-            <section className="py-12 lg:py-16">
-                <div className="container mx-auto px-4 max-w-7xl text-center">
-                    <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 shadow-sm border border-blue-50">
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#00477b]">Built For Clarity, Speed, And Control</span>
-                    </div>
-                    <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">Built For Clarity, Speed, And Control</h2>
-                    <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        We don't do hidden fees, vague scopes, or "wait and see" development. Every project, big or small, is structured for maximum transparency and agility. Choose from our standard models or contact us to build a custom approach for your 50K to 3L project.
-                    </p>
-                </div>
+            <div className="relative z-10 w-full bg-transparent">
 
-                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)] mt-8 lg:mt-10">
-                    <div className="w-full px-4 lg:px-10 mx-auto max-w-[1600px]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                            {[
-                                { title: "Clear Scope & Timeline", desc: "Fixed deliverables and deadlines you can count on.", icon: Clock },
-                                { title: "Agile Delivery", desc: "Iterative sprints ensure you get value faster.", icon: Truck },
-                                { title: "Transparent Reporting", desc: "Full visibility into task progress and billable hours.", icon: BarChart3 },
-                                { title: "Direct Communication", desc: "Work directly with developers and project managers.", icon: MessageSquare }
-                            ].map((item, idx) => (
-                                <div key={idx} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full text-left overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
-                                            <item.icon className="size-5 text-[#00477b]" />
-                                        </div>
-                                        <h3 className="text-lg font-medium text-[#00477b] mb-3 tracking-tight">{item.title}</h3>
-                                        <p className="text-zinc-600 text-sm leading-relaxed font-normal">{item.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 3. Our Delivery Models */}
-            <section className="py-12 lg:py-16">
-                <div className="w-full px-4 lg:px-10 mx-auto">
-                    <div className="text-center mb-8 lg:mb-10">
-                        <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 shadow-sm border border-blue-50">
-                            <span className="text-xs font-bold uppercase tracking-widest text-[#00477b]">Choose Your Engagement Route</span>
-                        </div>
-                        <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">Our Delivery Models</h2>
-                    </div>
-                </div>
-
-                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-12 mx-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-6 xl:gap-8">
-
-                            {/* 1. Fixed Scope */}
-                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-8 sm:p-9 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full min-h-[620px] overflow-hidden">
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                <div className="relative z-10">
-                                    <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
-                                        <FileText className="size-5 text-[#00477b]" />
-                                    </div>
-                                    <h3 className="text-2xl font-normal text-[#00477b] mb-3 tracking-tight">1. Fixed Scope Projects</h3>
-                                    <p className="text-zinc-600 text-sm mb-6 leading-relaxed font-normal">
-                                        <span className="font-medium text-zinc-800">Ideal For:</span> Startups and businesses with strict budgets and clear requirements (Websites, Apps, Integrations).
-                                    </p>
-
-                                    <div className="mb-8">
-                                        <h4 className="font-medium text-[#00477b] mb-4 text-xs uppercase tracking-wider">Key Benefits:</h4>
-                                        <ul className="space-y-3">
-                                            {[
-                                                "Fixed deliverables and pre-agreed milestones.",
-                                                "Detailed project plan with specific deadlines.",
-                                                "Upfront estimate - no hidden percentage."
-                                            ].map((benefit, bIdx) => (
-                                                <li key={bIdx} className="flex items-start gap-3">
-                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-1 shrink-0" />
-                                                    <span className="text-sm text-zinc-600 leading-relaxed font-normal">{benefit}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className="pt-6 border-t border-zinc-200/60 mt-auto">
-                                    <p className="text-sm text-zinc-600 mb-1 font-normal"><span className="font-medium text-zinc-800">Budget:</span> ₹50K to ₹1.5L</p>
-                                    <p className="text-xs text-zinc-500 mb-6 font-normal"><span className="font-medium text-zinc-700">Best for:</span> MVP Development, Marketing Websites, Digital Products</p>
-                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 text-sm font-medium shadow-md shadow-blue-900/10 transition-all">
-                                        Get A Fixed Scope Quote
-                                    </Button>
-                                </div>
-                            </div>
-
-                            {/* 2. Retainer Based */}
-                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-8 sm:p-9 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full min-h-[620px] overflow-hidden">
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                <div className="relative z-10">
-                                    <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
-                                        <Clock className="size-5 text-[#00477b]" />
-                                    </div>
-                                    <h3 className="text-2xl font-normal text-[#00477b] mb-3 tracking-tight">2. Retainer Engagements</h3>
-                                    <p className="text-zinc-600 text-sm mb-6 leading-relaxed font-normal">
-                                        <span className="font-medium text-zinc-800">Ideal For:</span> Ongoing maintenance, continuous improvement, and steady team extensions.
-                                    </p>
-
-                                    <div className="mb-8">
-                                        <h4 className="font-medium text-[#00477b] mb-4 text-xs uppercase tracking-wider">Key Benefits:</h4>
-                                        <ul className="space-y-3">
-                                            {[
-                                                "Block of hours (e.g., 40, 80) per month.",
-                                                "Flexibility to prioritize and shift tasks.",
-                                                "Weekly reporting - complete control."
-                                            ].map((benefit, bIdx) => (
-                                                <li key={bIdx} className="flex items-start gap-3">
-                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-1 shrink-0" />
-                                                    <span className="text-sm text-zinc-600 leading-relaxed font-normal">{benefit}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className="pt-6 border-t border-zinc-200/60 mt-auto">
-                                    <p className="text-sm text-zinc-600 mb-1 font-normal"><span className="font-medium text-zinc-800">Budget:</span> ₹30K/mo - ₹1L+/mo</p>
-                                    <p className="text-xs text-zinc-500 mb-6 font-normal"><span className="font-medium text-zinc-700">Best for:</span> Ongoing Marketing, SEO, App Maintenance</p>
-                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 text-sm font-medium shadow-md shadow-blue-900/10 transition-all">
-                                        Hire On Retainer
-                                    </Button>
-                                </div>
-                            </div>
-
-                            {/* 3. Hybrid Model */}
-                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-8 sm:p-9 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full min-h-[620px] overflow-hidden">
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                <div className="relative z-10">
-                                    <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
-                                        <Rocket className="size-5 text-[#00477b]" />
-                                    </div>
-                                    <h3 className="text-2xl font-normal text-[#00477b] mb-3 tracking-tight">3. Hybrid Model</h3>
-                                    <p className="text-zinc-600 text-sm mb-6 leading-relaxed font-normal">
-                                        <span className="font-medium text-zinc-800">Ideal For:</span> Businesses that need a foundational project built first, followed by continuous monthly support.
-                                    </p>
-
-                                    <div className="mb-8">
-                                        <h4 className="font-medium text-[#00477b] mb-4 text-xs uppercase tracking-wider">Key Benefits:</h4>
-                                        <ul className="space-y-3">
-                                            {[
-                                                "Phase 1: Fixed-scope build (Clarity and alignment).",
-                                                "Phase 2: Retainer model (Ongoing improvements).",
-                                                "Seamless transition from launch to daily operations."
-                                            ].map((benefit, bIdx) => (
-                                                <li key={bIdx} className="flex items-start gap-3">
-                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-1 shrink-0" />
-                                                    <span className="text-sm text-zinc-600 leading-relaxed font-normal">{benefit}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className="pt-6 border-t border-zinc-200/60 mt-auto">
-                                    <p className="text-sm text-zinc-600 mb-1 font-normal"><span className="font-medium text-zinc-800">Budget:</span> ₹1L Build + ₹30K/mo Retainer</p>
-                                    <p className="text-xs text-zinc-500 mb-6 font-normal"><span className="font-medium text-zinc-700">Best for:</span> Custom SaaS, E-commerce, Marketing Campaigns</p>
-                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 text-sm font-medium shadow-md shadow-blue-900/10 transition-all">
-                                        Explore Hybrid Model
-                                    </Button>
-                                </div>
-                            </div>
-
-                            {/* 4. Task-Based */}
-                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-8 sm:p-9 xl:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full min-h-[620px] overflow-hidden">
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                <div className="relative z-10">
-                                    <div className="size-12 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
-                                        <PackageCheck className="size-5 text-[#00477b]" />
-                                    </div>
-                                    <h3 className="text-2xl font-normal text-[#00477b] mb-3 tracking-tight">4. Task-Based Mini</h3>
-                                    <p className="text-zinc-600 text-sm mb-6 leading-relaxed font-normal">
-                                        <span className="font-medium text-zinc-800">Ideal For:</span> Quick fixes, small feature additions, and one-off integrations.
-                                    </p>
-
-                                    <div className="mb-8">
-                                        <h4 className="font-medium text-[#00477b] mb-4 text-xs uppercase tracking-wider">Key Benefits:</h4>
-                                        <ul className="space-y-3">
-                                            {[
-                                                "Pay-as-you-go, fast execution (1-2 weeks).",
-                                                "Specialized expertise on demand.",
-                                                "No long-term contracts."
-                                            ].map((benefit, bIdx) => (
-                                                <li key={bIdx} className="flex items-start gap-3">
-                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-1 shrink-0" />
-                                                    <span className="text-sm text-zinc-600 leading-relaxed font-normal">{benefit}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className="pt-6 border-t border-zinc-200/60 mt-auto">
-                                    <p className="text-sm text-zinc-600 mb-1 font-normal"><span className="font-medium text-zinc-800">Budget:</span> ₹10K - ₹50K</p>
-                                    <p className="text-xs text-zinc-500 mb-6 font-normal"><span className="font-medium text-zinc-700">Best for:</span> Bug fixes, UI updates, API Integrations</p>
-                                    <Button className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 text-sm font-medium shadow-md shadow-blue-900/10 transition-all">
-                                        View Tasks
-                                    </Button>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* 4. Our Delivery Process */}
-            <section className="py-12 lg:py-16 border-y border-white/40">
-                <div className="w-full px-4 lg:px-10 mx-auto">
-                    <div className="text-center mb-8 lg:mb-10">
-                        <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5 shadow-sm border border-blue-50">
-                            <span className="text-xs font-bold uppercase tracking-widest text-[#00477b]">How We Approach Every Project</span>
-                        </div>
-                        <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">Our Delivery Process</h2>
-                    </div>
-                </div>
-
-                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-16 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <div className="w-full px-4 lg:px-10 mx-auto max-w-[1600px]">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 lg:gap-8">
-                            {[
-                                { step: "01", title: "Discovery & Scoping", desc: "We understand your goals and define the exact scope of the project.", icon: Handshake },
-                                { step: "02", title: "Proposal & Agreement", desc: "Detailed plan, timeline, and a completely transparent cost breakdown.", icon: FileText },
-                                { step: "03", title: "Kickoff & Execution", desc: "Dedicated team begins work with full transparency and regular updates.", icon: Rocket },
-                                { step: "04", title: "Review & Feedback", desc: "Weekly check-ins, testing, and continuous progress reviews.", icon: SearchCheck },
-                                { step: "05", title: "Delivery & Handover", desc: "Final delivery, robust training, and transition to ongoing support.", icon: PackageCheck }
-                            ].map((proc, pIdx) => (
-                                <div key={pIdx} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 lg:p-8 text-center shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="size-14 bg-white border border-white text-[#00477b] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-md shadow-blue-900/5">
-                                            <proc.icon className="size-6 text-[#00477b]" />
-                                        </div>
-                                        <h4 className="font-medium text-lg text-[#00477b] mb-2 tracking-tight">{proc.title}</h4>
-                                        <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">{proc.desc}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="text-center mt-12 lg:mt-14">
-                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-10 h-14 shadow-lg text-base font-semibold hover:-translate-y-0.5 transition-all">
-                                Start Your Project Now
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* 6. Scales Growth Section */}
-            <section className="relative overflow-hidden w-full flex flex-col lg:flex-row items-stretch bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] my-16">
-                {/* Left Side: Content */}
-                <div className="w-full lg:w-1/2 flex justify-end">
-                    <div className="w-full max-w-[800px] py-16 lg:py-24 px-6 sm:px-10 lg:px-14 xl:px-16 flex flex-col justify-center space-y-8">
-                        <div>
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                                SEE HOW IT WORKS
-                            </span>
-                            <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                                How Our Delivery Model Scales Growth
-                            </h2>
-                        </div>
-
-                        <div className="space-y-4">
-                            {[
-                                "Predictable costs for budget-conscious projects (50K to 3L).",
-                                "Fast deployment, keeping you ahead of the curve.",
-                                "Dedicated resources to ensure long-term stability.",
-                                "Scale up or down effortlessly as your business needs evolve."
-                            ].map((item, idx) => (
-                                <div key={idx} className="flex items-start gap-4 p-4 bg-white/50 backdrop-blur-md rounded-2xl border border-white/60 hover:bg-white/80 transition-all duration-200">
-                                    <div className="mt-0.5 flex-shrink-0 text-[#00477b] bg-blue-50/80 p-2.5 rounded-xl border border-blue-100 shadow-sm">
-                                        <CheckCircle2 className="size-5" />
-                                    </div>
-                                    <span className="text-zinc-600 text-sm sm:text-base leading-relaxed font-normal">{item}</span>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="pt-2">
-                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-10 h-14 shadow-lg text-base font-semibold hover:-translate-y-0.5 transition-all w-fit">
-                                Discuss Your Project
-                            </Button>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Right Side: Seamless Image with NO border radius */}
-                <div className="relative w-full lg:w-1/2 min-h-[420px] lg:min-h-0">
-                    <div
-                        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat shadow-[-15px_0_40px_-10px_rgba(0,71,123,0.15)]"
-                        style={{ backgroundImage: 'url("/assets/office-story.webp")' }}
-                    ></div>
-                </div>
-            </section>
-
-            {/* 7. Combined Transparency & Contact Section */}
-            <section className="py-20 lg:py-28 my-12 relative">
-                <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-14 items-start">
-                        {/* Left Column: Transparency Promise */}
-                        <div className="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
-                            <div>
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                                    NO HIDDEN FEES, NO SURPRISES
+                {/* 2. Built For Clarity (4 Cards) */}
+                <section className="mt-4 sm:mt-6 text-center">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <div className="w-full px-4 sm:px-6 mb-5 sm:mb-6 text-center">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                    Transparency First
                                 </span>
-                                <h2 className="mb-6 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                                    Our Transparency Promise
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                    Built For Clarity, Speed, And Control
                                 </h2>
-                                <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal">
-                                    Every engagement is backed by transparent workflows, direct communication with developers, and zero surprise invoices.
+                                <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                    We don't do hidden fees, vague scopes, or "wait and see" development. Every sprint is structured for complete visibility and agility.
                                 </p>
                             </div>
+                        </ScrollReveal>
 
-                            <div className="space-y-4">
+                        <div className="container mx-auto max-w-[90rem]">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 text-center">
                                 {[
-                                    "Detailed proposals outlining exactly what you pay for.",
-                                    "Clear communication and fast response times.",
-                                    "Direct access to engineers - no middlemen.",
-                                    "Structured weekly progress & sprint reports.",
-                                    "Flexible contracts tailored to your requirements."
+                                    { title: "Clear Scope & Timeline", desc: "Fixed deliverables and pre-agreed milestone deadlines you can count on with zero scope creep.", icon: Clock },
+                                    { title: "Agile Rapid Delivery", desc: "Bi-weekly sprint demos ensure you review working software early and ship value faster.", icon: Truck },
+                                    { title: "Transparent Reporting", desc: "Full visibility into sprint boards, pull requests, automated test runs, and project progress.", icon: BarChart3 },
+                                    { title: "Direct Engineer Access", desc: "Collaborate directly with lead software engineers and architects without agency middlemen.", icon: MessageSquare }
                                 ].map((item, idx) => (
-                                    <div key={idx} className="flex items-start gap-4 p-4 sm:p-5 bg-gradient-to-br from-white/90 via-white/70 to-white/45 backdrop-blur-2xl rounded-2xl border border-white/80 shadow-sm hover:shadow-md transition-all duration-200">
-                                        <div className="mt-0.5 flex-shrink-0 text-[#00477b] bg-blue-50/80 p-2.5 rounded-xl border border-blue-100 shadow-sm">
-                                            <CheckSquare className="size-5" />
+                                    <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
+                                        <div 
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-7 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="relative z-10 flex flex-col items-center text-center">
+                                                <div className="size-16 mb-5 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center">
+                                                    <item.icon className="size-7 text-[#00477b]" />
+                                                </div>
+                                                <h3 className="text-xl font-normal text-[#00477b] mb-2 leading-tight tracking-tight group-hover:text-[#00335e] transition-colors">
+                                                    {item.title}
+                                                </h3>
+                                                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed font-normal">
+                                                    {item.desc}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <span className="text-zinc-700 text-sm sm:text-base leading-relaxed font-normal">{item}</span>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        {/* Right Column: Contact Form */}
-                        <div className="lg:col-span-7">
-                            <div className="mb-8">
-                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                                    START FINDING WHAT YOU NEED
+                {/* 3. Our Delivery Models (4 Detailed Model Cards matching screenshot) */}
+                <section className="mt-4 sm:mt-6 text-center">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-6 sm:py-8 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <div className="w-full px-4 sm:px-6 mb-5 sm:mb-6 text-center">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                    PICK THE MODEL THAT FITS YOUR PROJECT
                                 </span>
-                                <h2 className="mb-4 text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                                    Let's Discuss Your Project
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                    Our Delivery Models
                                 </h2>
-                                <p className="text-base sm:text-lg text-zinc-600 leading-relaxed font-normal">
-                                    Fill out the form below and let us know about your project, your timeline, and your budget requirements.
+                                <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                    Flexible structures designed around your roadmap, budget, and release timelines.
                                 </p>
                             </div>
+                        </ScrollReveal>
 
-                            <form className="bg-gradient-to-br from-white/90 via-white/70 to-white/45 backdrop-blur-2xl p-8 sm:p-10 lg:p-12 border border-white/80 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl transition-all duration-400">
-                                <div className="space-y-6 mb-8">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="space-y-2.5">
-                                            <Label htmlFor="name" className="text-[#00477b] font-medium text-sm">Full Name *</Label>
-                                            <Input id="name" placeholder="John Doe" className="h-14 rounded-2xl border-white/80 bg-white/80 focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 shadow-sm text-zinc-800" />
+                        <div className="container mx-auto max-w-[95rem]">
+                            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-5 xl:gap-6 text-left">
+
+                                {/* 1. Fixed Scope */}
+                                <ScrollReveal animation="fade-up" delay={100} className="h-full">
+                                    <div className="group relative bg-white/70 backdrop-blur-2xl border border-white/90 rounded-[2.25rem] p-6 sm:p-7 xl:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-blue-900/15 hover:bg-white/90 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-36 h-36 bg-blue-400/15 rounded-full blur-2xl group-hover:bg-blue-500/25 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            {/* Top Header: Icon + Model Tag */}
+                                            <div className="flex items-center justify-between gap-2 mb-5">
+                                                <div className="size-12 rounded-xl bg-white border border-blue-50 shadow-xs flex items-center justify-center text-[#00477b]">
+                                                    <FileText className="size-6 text-[#00477b]" />
+                                                </div>
+                                                <span className="px-3 py-1 rounded-full bg-blue-50/90 text-[#00477b] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider border border-blue-100/80">
+                                                    MODEL 01
+                                                </span>
+                                            </div>
+
+                                            <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-2 tracking-tight">
+                                                Fixed Scope Projects
+                                            </h3>
+                                            <p className="text-xs text-zinc-600 mb-5 leading-relaxed">
+                                                <span className="font-bold text-zinc-900">Best For:</span> Projects with clearly defined deliverables, key milestones, and a fixed timeline.
+                                            </p>
+
+                                            <div className="mb-6">
+                                                <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-3">KEY PERKS:</h4>
+                                                <ul className="space-y-2.5">
+                                                    {[
+                                                        "Fixed deliverables & agreed budget",
+                                                        "Guaranteed sprint milestone reviews",
+                                                        "Total code ownership & 30-day warranty"
+                                                    ].map((perk, pIdx) => (
+                                                        <li key={pIdx} className="flex items-start gap-2.5">
+                                                            <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                            <span className="text-xs sm:text-[13px] text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
 
-                                        <div className="space-y-2.5">
-                                            <Label htmlFor="email" className="text-[#00477b] font-medium text-sm">Email Address *</Label>
-                                            <Input id="email" type="email" placeholder="john@example.com" className="h-14 rounded-2xl border-white/80 bg-white/80 focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 shadow-sm text-zinc-800" />
+                                        {/* Bottom Pricing & CTA */}
+                                        <div className="pt-5 border-t border-zinc-200/60 mt-auto relative z-10">
+                                            <div className="mb-4">
+                                                <p className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-1">BUDGET RANGE</p>
+                                                <p className="text-lg sm:text-xl font-bold text-[#002f52] mb-0.5">₹50,000 - ₹3,00,000+</p>
+                                                <p className="text-[11px] text-zinc-500">Websites, Custom Web Apps, MVPs</p>
+                                            </div>
+                                            <Button asChild className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md shadow-blue-900/10 transition-all">
+                                                <Link href="/free-digital-consultation">
+                                                    Start a Fixed Scope Project
+                                                </Link>
+                                            </Button>
                                         </div>
                                     </div>
+                                </ScrollReveal>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="space-y-2.5">
-                                            <Label htmlFor="budget" className="text-[#00477b] font-medium text-sm">Estimated Budget *</Label>
-                                            <select id="budget" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 shadow-sm px-4 text-zinc-700">
-                                                <option value="">Select Budget</option>
-                                                <option value="10k-50k">₹10K - ₹50K</option>
-                                                <option value="50k-150k">₹50K - ₹1.5L</option>
-                                                <option value="150k-300k">₹1.5L - ₹3L</option>
-                                                <option value="300k+">₹3L+</option>
-                                            </select>
+                                {/* 2. Retainer Based */}
+                                <ScrollReveal animation="fade-up" delay={180} className="h-full">
+                                    <div className="group relative bg-white/70 backdrop-blur-2xl border border-white/90 rounded-[2.25rem] p-6 sm:p-7 xl:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-blue-900/15 hover:bg-white/90 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-36 h-36 bg-blue-400/15 rounded-full blur-2xl group-hover:bg-blue-500/25 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            {/* Top Header: Icon + Model Tag */}
+                                            <div className="flex items-center justify-between gap-2 mb-5">
+                                                <div className="size-12 rounded-xl bg-white border border-blue-50 shadow-xs flex items-center justify-center text-[#00477b]">
+                                                    <Clock className="size-6 text-[#00477b]" />
+                                                </div>
+                                                <span className="px-3 py-1 rounded-full bg-blue-50/90 text-[#00477b] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider border border-blue-100/80">
+                                                    MODEL 02
+                                                </span>
+                                            </div>
+
+                                            <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-2 tracking-tight">
+                                                Retainer Engagements
+                                            </h3>
+                                            <p className="text-xs text-zinc-600 mb-5 leading-relaxed">
+                                                <span className="font-bold text-zinc-900">Best For:</span> Ongoing development, dedicated maintenance, SEO, or continuous feature rollouts.
+                                            </p>
+
+                                            <div className="mb-6">
+                                                <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-3">KEY PERKS:</h4>
+                                                <ul className="space-y-2.5">
+                                                    {[
+                                                        "Monthly dedicated hours allocation",
+                                                        "Priority SLA support & rapid response",
+                                                        "Rolling sprint cycle with flexible tasks"
+                                                    ].map((perk, pIdx) => (
+                                                        <li key={pIdx} className="flex items-start gap-2.5">
+                                                            <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                            <span className="text-xs sm:text-[13px] text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
                                         </div>
 
-                                        <div className="space-y-2.5">
-                                            <Label htmlFor="projectType" className="text-[#00477b] font-medium text-sm">Project Type *</Label>
-                                            <select id="projectType" className="w-full h-14 rounded-2xl border border-white/80 bg-white/80 focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 shadow-sm px-4 text-zinc-700">
-                                                <option value="">Select Project Type</option>
-                                                <option value="web">Website / E-commerce</option>
-                                                <option value="saas">Web App / SaaS</option>
-                                                <option value="erp">ERP Implementation</option>
-                                                <option value="seo">SEO / Digital Marketing</option>
-                                                <option value="maintenance">Ongoing Maintenance</option>
-                                            </select>
+                                        {/* Bottom Pricing & CTA */}
+                                        <div className="pt-5 border-t border-zinc-200/60 mt-auto relative z-10">
+                                            <div className="mb-4">
+                                                <p className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-1">MONTHLY RETAINER</p>
+                                                <p className="text-lg sm:text-xl font-bold text-[#002f52] mb-0.5">₹25,000 - ₹1,50,000 / mo</p>
+                                                <p className="text-[11px] text-zinc-500">Continuous SEO, Server Maint., Dev</p>
+                                            </div>
+                                            <Button asChild className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md shadow-blue-900/10 transition-all">
+                                                <Link href="/free-digital-consultation">
+                                                    Explore Retainers
+                                                </Link>
+                                            </Button>
                                         </div>
                                     </div>
+                                </ScrollReveal>
 
-                                    <div className="space-y-2.5">
-                                        <Label htmlFor="message" className="text-[#00477b] font-medium text-sm">Project Details</Label>
-                                        <Textarea id="message" placeholder="Tell us briefly about your project goals and timeline..." className="min-h-[130px] rounded-2xl border-white/80 bg-white/80 focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 shadow-sm resize-none p-4 text-zinc-800" />
+                                {/* 3. Hybrid Model */}
+                                <ScrollReveal animation="fade-up" delay={260} className="h-full">
+                                    <div className="group relative bg-white/70 backdrop-blur-2xl border border-white/90 rounded-[2.25rem] p-6 sm:p-7 xl:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-blue-900/15 hover:bg-white/90 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-36 h-36 bg-blue-400/15 rounded-full blur-2xl group-hover:bg-blue-500/25 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            {/* Top Header: Icon + Model Tag */}
+                                            <div className="flex items-center justify-between gap-2 mb-5">
+                                                <div className="size-12 rounded-xl bg-white border border-blue-50 shadow-xs flex items-center justify-center text-[#00477b]">
+                                                    <Rocket className="size-6 text-[#00477b]" />
+                                                </div>
+                                                <span className="px-3 py-1 rounded-full bg-blue-50/90 text-[#00477b] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider border border-blue-100/80">
+                                                    MODEL 03
+                                                </span>
+                                            </div>
+
+                                            <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-2 tracking-tight">
+                                                Hybrid Model
+                                            </h3>
+                                            <p className="text-xs text-zinc-600 mb-5 leading-relaxed">
+                                                <span className="font-bold text-zinc-900">Best For:</span> Projects that start with a defined MVP and transition into continuous agile sprints.
+                                            </p>
+
+                                            <div className="mb-6">
+                                                <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-3">KEY PERKS:</h4>
+                                                <ul className="space-y-2.5">
+                                                    {[
+                                                        "Phase 1: Fixed-scope core MVP build",
+                                                        "Phase 2: Agile sprint retainer for scaling",
+                                                        "Cost-effective with low upfront risk"
+                                                    ].map((perk, pIdx) => (
+                                                        <li key={pIdx} className="flex items-start gap-2.5">
+                                                            <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                            <span className="text-xs sm:text-[13px] text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        {/* Bottom Pricing & CTA */}
+                                        <div className="pt-5 border-t border-zinc-200/60 mt-auto relative z-10">
+                                            <div className="mb-4">
+                                                <p className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-1">HYBRID STRUCTURE</p>
+                                                <p className="text-lg sm:text-xl font-bold text-[#002f52] mb-0.5">₹75,000+ & Retainer</p>
+                                                <p className="text-[11px] text-zinc-500">SaaS, Custom ERP, Portals</p>
+                                            </div>
+                                            <Button asChild className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md shadow-blue-900/10 transition-all">
+                                                <Link href="/free-digital-consultation">
+                                                    Discuss Hybrid Model
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+
+                                {/* 4. Mini Engagements */}
+                                <ScrollReveal animation="fade-up" delay={340} className="h-full">
+                                    <div className="group relative bg-white/70 backdrop-blur-2xl border border-white/90 rounded-[2.25rem] p-6 sm:p-7 xl:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-blue-900/15 hover:bg-white/90 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-36 h-36 bg-blue-400/15 rounded-full blur-2xl group-hover:bg-blue-500/25 transition-all duration-500 pointer-events-none"></div>
+                                        <div className="relative z-10">
+                                            {/* Top Header: Icon + Model Tag */}
+                                            <div className="flex items-center justify-between gap-2 mb-5">
+                                                <div className="size-12 rounded-xl bg-white border border-blue-50 shadow-xs flex items-center justify-center text-[#00477b]">
+                                                    <PackageCheck className="size-6 text-[#00477b]" />
+                                                </div>
+                                                <span className="px-3 py-1 rounded-full bg-blue-50/90 text-[#00477b] text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider border border-blue-100/80">
+                                                    MODEL 04
+                                                </span>
+                                            </div>
+
+                                            <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-2 tracking-tight">
+                                                Mini Engagements
+                                            </h3>
+                                            <p className="text-xs text-zinc-600 mb-5 leading-relaxed">
+                                                <span className="font-bold text-zinc-900">Best For:</span> Quick fixes, performance optimization, integrations, or specific security audits.
+                                            </p>
+
+                                            <div className="mb-6">
+                                                <h4 className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-3">KEY PERKS:</h4>
+                                                <ul className="space-y-2.5">
+                                                    {[
+                                                        "Completed within 3-7 business days",
+                                                        "Zero long-term commitment",
+                                                        "High-priority rapid turnaround"
+                                                    ].map((perk, pIdx) => (
+                                                        <li key={pIdx} className="flex items-start gap-2.5">
+                                                            <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                            <span className="text-xs sm:text-[13px] text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        {/* Bottom Pricing & CTA */}
+                                        <div className="pt-5 border-t border-zinc-200/60 mt-auto relative z-10">
+                                            <div className="mb-4">
+                                                <p className="text-[10px] font-extrabold uppercase tracking-wider text-zinc-400 mb-1">PER TASK PRICING</p>
+                                                <p className="text-lg sm:text-xl font-bold text-[#002f52] mb-0.5">From ₹5,000 / task</p>
+                                                <p className="text-[11px] text-zinc-500">API fixes, UI tweaks, Speed boost</p>
+                                            </div>
+                                            <Button asChild className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md shadow-blue-900/10 transition-all">
+                                                <Link href="/free-digital-consultation">
+                                                    Hire for a Task
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 4. Our Delivery Process (Connected Horizontal Roadmap Timeline / 5 Steps) */}
+                <section className="mt-4 sm:mt-6 text-center">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-6 sm:py-8 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <ScrollReveal animation="fade-up" delay={80}>
+                            <div className="w-full px-4 sm:px-6 mb-6 sm:mb-8 text-center">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                    EXECUTION ROADMAP
+                                </span>
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2">
+                                    Our 5-Stage Delivery Process
+                                </h2>
+                                <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto">
+                                    A structured, milestone-driven approach ensuring zero surprise changes and on-time delivery.
+                                </p>
+                            </div>
+                        </ScrollReveal>
+
+                        <div className="relative max-w-[88rem] mx-auto">
+                            
+                            {/* Horizontal Roadmap Connector Track */}
+                            <div className="hidden lg:block absolute top-9 left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 border-t-2 border-dashed border-[#00477b]/40 z-0"></div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 lg:gap-4 relative z-10">
+                                {[
+                                    { step: "01", title: "Discovery & Scoping", desc: "Audit business objectives and define explicit functional requirements.", icon: Handshake },
+                                    { step: "02", title: "Architecture & SOW", desc: "Detailed technical specification, milestones, and fixed pricing breakdown.", icon: FileText },
+                                    { step: "03", title: "Kickoff & Sprints", desc: "Dedicated squad begins agile execution with regular staging deployments.", icon: Rocket },
+                                    { step: "04", title: "Review & Quality QA", desc: "Continuous integration testing, client reviews, and automated verification.", icon: SearchCheck },
+                                    { step: "05", title: "Deployment & SLAs", desc: "Zero-downtime go-live, team onboarding, and ongoing maintenance support.", icon: PackageCheck }
+                                ].map((proc, pIdx) => (
+                                    <ScrollReveal key={pIdx} animation="fade-up" delay={80 * (pIdx + 1)} className="h-full">
+                                        <div className="group relative flex flex-col items-center h-full">
+                                            
+                                            {/* Top Roadmap Node */}
+                                            <div className="relative mb-5">
+                                                <div className="size-16 rounded-2xl bg-white shadow-lg shadow-blue-900/10 border-2 border-white ring-4 ring-blue-100/80 group-hover:ring-[#00477b]/30 group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative z-10 text-[#00477b]">
+                                                    <proc.icon className="size-6 text-[#00477b]" />
+                                                </div>
+                                                {/* Step Number Tag */}
+                                                <span className="absolute -top-2 -right-2 size-5 rounded-full bg-[#00477b] text-white text-[10px] font-bold flex items-center justify-center shadow-md z-20">
+                                                    {proc.step}
+                                                </span>
+                                            </div>
+
+                                            {/* Content Card */}
+                                            <div className="w-full h-full bg-white/40 backdrop-blur-xl border border-white/70 p-5 sm:p-6 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] group-hover:shadow-2xl group-hover:shadow-blue-900/10 group-hover:bg-white/60 group-hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center overflow-hidden relative">
+                                                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                                <h3 className="text-base font-normal text-[#00477b] mb-1.5 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
+                                                    {proc.title}
+                                                </h3>
+
+                                                <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">
+                                                    {proc.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </ScrollReveal>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 5. How Our Delivery Model Scales Growth (Edge-to-Edge Split Image Section) */}
+                <section className="relative z-10 mt-4 sm:mt-6">
+                    <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[460px]">
+                            
+                            {/* Left Side: Checklist Content */}
+                            <ScrollReveal animation="fade-right" delay={100} className="h-full">
+                                <div className="p-7 sm:p-10 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-white/90 via-white/70 to-white/40 h-full">
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3 self-start">
+                                        THE IMPACT
+                                    </span>
+                                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-5">
+                                        How Our Delivery Model Scales Growth
+                                    </h2>
+
+                                    <div className="space-y-3 mb-6">
+                                        {[
+                                            "Predictable costs and zero budget creep for high-velocity software builds.",
+                                            "Fast deployments with bi-weekly release cycles, keeping your product ahead.",
+                                            "Senior engineers and Frappe/Laravel architects ensuring production stability.",
+                                            "Scale engineering capacity up or down effortlessly as business priorities evolve."
+                                        ].map((item, idx) => (
+                                            <div key={idx} className="flex items-start gap-3 p-3 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 shadow-xs">
+                                                <div className="mt-0.5 flex-shrink-0 text-[#00477b] bg-white p-1.5 rounded-xl border border-blue-100 shadow-xs">
+                                                    <CheckCircle2 className="size-4" />
+                                                </div>
+                                                <span className="text-zinc-700 text-xs sm:text-sm leading-relaxed font-normal">{item}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex">
+                                        <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-11 text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all">
+                                            <Link href="/free-digital-consultation">
+                                                Discuss Your Project
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </div>
+                            </ScrollReveal>
+
+                            {/* Right Side: Full-Bleed Image */}
+                            <ScrollReveal animation="fade-left" delay={150} className="h-full">
+                                <div className="relative min-h-[300px] lg:min-h-full w-full overflow-hidden group h-full">
+                                    <img
+                                        src="/assets/office-story.webp"
+                                        alt="Office Collaboration"
+                                        className="absolute inset-0 w-full h-full object-cover rounded-none transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#002440]/60 via-transparent to-transparent pointer-events-none"></div>
+                                </div>
+                            </ScrollReveal>
+
+                        </div>
+                    </div>
+                </section>
+
+                {/* 6. FAQ & Interactive Transparent Consultation Form */}
+                <section className="relative z-10 my-6 sm:my-8">
+                    <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-4 sm:px-6 lg:px-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[92rem]">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+                                
+                                {/* Left Column: FAQ Accordion */}
+                                <div className="lg:col-span-6 space-y-6">
+                                    <ScrollReveal animation="fade-up" delay={80}>
+                                        <div>
+                                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                                FAQ & CLARIFICATIONS
+                                            </span>
+                                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                                Frequently Asked Questions
+                                            </h2>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed">
+                                                Everything you need to know about our engagement terms, intellectual property, and delivery process.
+                                            </p>
+                                        </div>
+                                    </ScrollReveal>
+
+                                    <div className="space-y-3">
+                                        {[
+                                            {
+                                                q: "Which delivery model is right for my project?",
+                                                a: "If your specifications and deliverables are well-defined, the Fixed Scope model is best. For continuous evolving products, Retainer Squad or Hybrid Model offers maximum sprint flexibility."
+                                            },
+                                            {
+                                                q: "Do I get full ownership of the source code and IP?",
+                                                a: "Yes. 100% of the source code, repository commits, databases, and IP rights transfer fully to you with no proprietary vendor lock-in."
+                                            },
+                                            {
+                                                q: "How are payments and milestones structured?",
+                                                a: "Fixed-scope projects are split into 3-4 verifiable milestone deliverables with transparent escrow/approval sign-offs. Retainers are billed monthly with clear task tracking."
+                                            },
+                                            {
+                                                q: "What happens if we need changes during development?",
+                                                a: "For retainer models, tasks are re-prioritized on the fly in sprint planning. For fixed-scope projects, we provide clear addendum estimates before executing any new feature."
+                                            },
+                                            {
+                                                q: "Is there a post-launch warranty period?",
+                                                a: "Yes, every fixed-scope deployment includes a complimentary 30-day post-launch bug-fix warranty and ongoing monitoring support."
+                                            }
+                                        ].map((faq, fIdx) => (
+                                            <ScrollReveal key={fIdx} animation="fade-up" delay={60 * (fIdx + 1)}>
+                                                <details 
+                                                    className="group bg-white/60 backdrop-blur-xl border border-white/80 rounded-2xl p-4 sm:p-5 shadow-xs hover:shadow-md transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+                                                >
+                                                    <summary className="flex items-center justify-between cursor-pointer font-medium text-sm sm:text-base text-[#00477b] select-none gap-3">
+                                                        <span>{faq.q}</span>
+                                                        <span className="shrink-0 size-7 rounded-xl bg-white border border-blue-100 flex items-center justify-center text-[#00477b] transition-transform duration-300 group-open:rotate-180">
+                                                            <ChevronDown className="size-4" />
+                                                        </span>
+                                                    </summary>
+                                                    <p className="mt-3 pt-3 border-t border-zinc-200/50 text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed">
+                                                        {faq.a}
+                                                    </p>
+                                                </details>
+                                            </ScrollReveal>
+                                        ))}
                                     </div>
                                 </div>
 
-                                <Button className="w-full sm:w-auto bg-[#00477b] hover:bg-[#00335e] text-white px-10 h-14 rounded-full shadow-lg shadow-blue-900/10 text-base font-semibold transition-all hover:-translate-y-0.5">
-                                    Submit Request
-                                </Button>
-                            </form>
+                                {/* Right Column: Transparent Contact Form */}
+                                <div className="lg:col-span-6">
+                                    <ScrollReveal animation="fade-left" delay={120}>
+                                        <div className="mb-6">
+                                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                                GET IN TOUCH
+                                            </span>
+                                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                                Let's Discuss The Right Model For Your Project
+                                            </h2>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed">
+                                                Whether you need a full turnkey build or dedicated developers - we'll help you choose the best model.
+                                            </p>
+                                        </div>
+
+                                        <form className="bg-white/40 backdrop-blur-xl p-7 sm:p-9 border border-white/70 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] space-y-4">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="name" className="text-[#00477b] font-medium text-xs">Full Name *</Label>
+                                                    <Input id="name" placeholder="Rahul Sharma" className="h-12 rounded-xl border-white/80 bg-white/60 backdrop-blur-md focus:border-[#00477b] text-sm shadow-xs text-zinc-800" />
+                                                </div>
+
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="email" className="text-[#00477b] font-medium text-xs">Work Email *</Label>
+                                                    <Input id="email" type="email" placeholder="rahul@company.com" className="h-12 rounded-xl border-white/80 bg-white/60 backdrop-blur-md focus:border-[#00477b] text-sm shadow-xs text-zinc-800" />
+                                                </div>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="budget" className="text-[#00477b] font-medium text-xs">Estimated Budget *</Label>
+                                                    <select id="budget" className="w-full h-12 rounded-xl border border-white/80 bg-white/60 backdrop-blur-md focus:border-[#00477b] text-sm shadow-xs px-3 text-zinc-700">
+                                                        <option value="">Select Budget</option>
+                                                        <option value="10k-50k">₹10K - ₹50K</option>
+                                                        <option value="50k-150k">₹50K - ₹1.5L</option>
+                                                        <option value="150k-300k">₹1.5L - ₹3L</option>
+                                                        <option value="300k+">₹3L+</option>
+                                                    </select>
+                                                </div>
+
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="projectType" className="text-[#00477b] font-medium text-xs">Preferred Model / Project *</Label>
+                                                    <select id="projectType" className="w-full h-12 rounded-xl border border-white/80 bg-white/60 backdrop-blur-md focus:border-[#00477b] text-sm shadow-xs px-3 text-zinc-700">
+                                                        <option value="">Select Delivery Model</option>
+                                                        <option value="fixed">Fixed Scope Project</option>
+                                                        <option value="retainer">Retainer Squad</option>
+                                                        <option value="hybrid">Hybrid Engagement</option>
+                                                        <option value="tasks">Mini Task On-Demand</option>
+                                                        <option value="erp">ERP Implementation</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="message" className="text-[#00477b] font-medium text-xs">Project Brief & Requirements</Label>
+                                                <Textarea id="message" placeholder="Tell us briefly about your goals, timelines, or technology preferences..." className="min-h-[110px] rounded-xl border-white/80 bg-white/60 backdrop-blur-md focus:border-[#00477b] text-sm shadow-xs resize-none p-3 text-zinc-800" />
+                                            </div>
+
+                                            <Button type="button" className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-9 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full sm:w-auto">
+                                                Discuss Project & Get Proposal
+                                            </Button>
+                                        </form>
+                                    </ScrollReveal>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+            </div>
         </MainLayout>
     );
 }

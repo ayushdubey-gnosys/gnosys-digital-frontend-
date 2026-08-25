@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Package, ChevronRight, Search, Menu } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import ScrollReveal from '@/components/scroll-reveal';
 interface CategoryProps {
     type: string;
     slug: string | null;
@@ -482,55 +483,57 @@ export default function Category({ type, slug }: CategoryProps) {
                         <div className="mb-2"></div>
                             {/* Products Grid */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
-                                {displayProducts.map((product) => (
-                                    <div key={product.id} className="group relative bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-3 hover:bg-white/60 transition-all duration-500 cursor-pointer shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col overflow-hidden">
-                                        
-                                        <Link href="/product/90-claude-secret-codes" className="flex flex-col flex-1">
-                                            {/* Image Container */}
-                                            <div className="relative h-48 w-full rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-pink-500/10 border border-white/50 flex flex-col items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
-                                                {/* Glow effect on hover */}
-                                                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                {displayProducts.map((product, pIdx) => (
+                                    <ScrollReveal key={product.id} animation="fade-up" delay={60 * (pIdx + 1)} className="h-full">
+                                        <div className="group relative bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-3 hover:bg-white/60 transition-all duration-500 cursor-pointer shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col overflow-hidden h-full">
+                                            
+                                            <Link href="/product/90-claude-secret-codes" className="flex flex-col flex-1">
+                                                {/* Image Container */}
+                                                <div className="relative h-48 w-full rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-pink-500/10 border border-white/50 flex flex-col items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
+                                                    {/* Glow effect on hover */}
+                                                    <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                                <div className="size-14 bg-white shadow-md shadow-blue-900/5 rounded-2xl flex items-center justify-center border border-white text-[#00477b] mb-3 relative z-10">
-                                                    <Package className="size-7 text-[#00477b]" strokeWidth={1.5} />
-                                                </div>
-                                                <span className="text-[11px] font-bold text-[#00477b]/70 uppercase tracking-widest relative z-10">
-                                                    Digital Asset
-                                                </span>
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="pt-6 pb-2 px-3 flex flex-col flex-1 items-center text-center">
-                                                <h4 className="font-extrabold text-[15px] text-[#00477b] mb-2 line-clamp-2 leading-tight">
-                                                    {product.title}
-                                                </h4>
-                                                
-                                                <div className="flex items-end gap-2 mb-6 mt-auto">
-                                                    {product.originalPrice && (
-                                                        <span className="text-gray-400 text-sm line-through font-semibold">
-                                                            {product.originalPrice}
-                                                        </span>
-                                                    )}
-                                                    <span className="font-black text-zinc-900 text-xl tracking-tight">
-                                                        {product.price}
+                                                    <div className="size-14 bg-white shadow-md shadow-blue-900/5 rounded-2xl flex items-center justify-center border border-white text-[#00477b] mb-3 relative z-10">
+                                                        <Package className="size-7 text-[#00477b]" strokeWidth={1.5} />
+                                                    </div>
+                                                    <span className="text-[11px] font-bold text-[#00477b]/70 uppercase tracking-widest relative z-10">
+                                                        Digital Asset
                                                     </span>
                                                 </div>
-                                            </div>
-                                        </Link>
 
-                                        <div className="px-3 pb-2">
-                                            <Button 
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    window.dispatchEvent(new CustomEvent('open-cart'));
-                                                }}
-                                                size="sm"
-                                                className="w-full bg-white hover:bg-zinc-900 hover:text-white text-zinc-900 border border-gray-200 hover:border-zinc-900 rounded-full h-11 font-bold transition-all duration-300 shadow-sm group-hover:shadow-md"
-                                            >
-                                                {product.buttonText}
-                                            </Button>
+                                                {/* Content */}
+                                                <div className="pt-6 pb-2 px-3 flex flex-col flex-1 items-center text-center">
+                                                    <h4 className="font-extrabold text-[15px] text-[#00477b] mb-2 line-clamp-2 leading-tight">
+                                                        {product.title}
+                                                    </h4>
+                                                    
+                                                    <div className="flex items-end gap-2 mb-6 mt-auto">
+                                                        {product.originalPrice && (
+                                                            <span className="text-gray-400 text-sm line-through font-semibold">
+                                                                {product.originalPrice}
+                                                            </span>
+                                                        )}
+                                                        <span className="font-black text-zinc-900 text-xl tracking-tight">
+                                                            {product.price}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </Link>
+
+                                            <div className="px-3 pb-2">
+                                                <Button 
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        window.dispatchEvent(new CustomEvent('open-cart'));
+                                                    }}
+                                                    size="sm"
+                                                    className="w-full bg-white/70 backdrop-blur-md hover:bg-gradient-to-r hover:from-[#00477b] hover:to-[#00335e] text-[#00477b] hover:text-white border border-white/80 hover:border-transparent rounded-full h-11 font-bold transition-all duration-300 shadow-sm hover:shadow-[0_8px_20px_rgb(0,71,123,0.25)] hover:scale-[1.02] cursor-pointer"
+                                                >
+                                                    {product.buttonText}
+                                                </Button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
 

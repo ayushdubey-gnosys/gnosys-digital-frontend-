@@ -7,7 +7,7 @@ import {
     Smartphone, Zap, CheckCircle2, FileCode, CheckCircle, ArrowRight, Search,
     Globe, Activity, ShieldCheck, TrendingUp, BarChart3, MapPin, RotateCcw,
     BadgePercent, UserCheck, ShoppingCart, MessageCircle, Clock, Lightbulb,
-    Handshake, Compass
+    Handshake, Compass, ArrowUpRight, Trophy, Sparkles
 } from 'lucide-react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
 import ScrollReveal from '@/components/scroll-reveal';
@@ -23,20 +23,33 @@ export default function ChannelDistribution() {
 
             {/* 1. Hero Section */}
             <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
-                {/* Background Container */}
                 <div className="absolute inset-0 z-0">
                     <div
                         className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
                         style={{ backgroundImage: "url('/assets/channel-distribution.webp')", backgroundColor: '#020b18' }}
-                    ></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent pointer-events-none lg:w-1/2"></div>
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent pointer-events-none lg:w-1/2" />
+                </div>
+
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
                     <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
                         <ScrollReveal animation="fade-up" delay={80}>
                             <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
-                                CHANNEL DISTRIBUTION ERP
+                                Channel Distribution ERP
                             </span>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
                                 Your Dealers & Distributors <br />
@@ -52,12 +65,11 @@ export default function ChannelDistribution() {
 
                         <ScrollReveal animation="fade-up" delay={280}>
                             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                                <Button className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
-                                    <span className="relative z-10 flex items-center gap-2">Talk To An Expert <ArrowRight className="size-5" /></span>
-                                    <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
-                                </Button>
-                                <Button className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 rounded-full px-8 h-14 text-sm sm:text-base font-bold shadow-lg transition-all w-full sm:w-auto">
-                                    Explore Features
+                                <Button asChild className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        <span className="relative z-10 flex items-center gap-2">Talk To An Expert <ArrowRight className="size-5" /></span>
+                                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
+                                    </Link>
                                 </Button>
                             </div>
                         </ScrollReveal>
@@ -69,445 +81,459 @@ export default function ChannelDistribution() {
             </section>
 
             <div className="relative z-10 w-full bg-transparent">
-                {/* 2. Why Off-the-Shelf CRMs Don't Work */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            WHY STANDARD CRMs FAIL
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] leading-tight">
-                            Every Manufacturer's Distribution Model Is Different
-                        </h2>
-                    </div>
+                
+                {/* 2. Why Off-the-Shelf CRMs Don't Work / The Challenges */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                The Challenge
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Why Generic CRMs Fail Indian Channel Networks
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[84rem]">
+                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
                                 {[
-                                    { icon: <Users className="size-7" />, title: "Different Dealer Hierarchies", desc: "Distributors, sub-dealers, and retailers - all managed differently." },
-                                    { icon: <MessageCircle className="size-7" />, title: "Orders on WhatsApp", desc: "No structured order tracking or approvals." },
-                                    { icon: <Clock className="size-7" />, title: "Delayed Payments", desc: "No real-time collection and outstanding visibility." },
-                                    { icon: <TrendingUp className="size-7" />, title: "Commission Confusion", desc: "Complex incentive rules that generic tools can't handle." },
-                                    { icon: <Globe className="size-7" />, title: "No Territory Insights", desc: "No way to track sales by geography, product, or dealer." }
+                                    { icon: Users, title: "Complex Dealer Tiers", desc: "Distributors, super-stockists, sub-dealers, and retailers each needing distinct pricing." },
+                                    { icon: MessageCircle, title: "Orders on WhatsApp", desc: "Unorganized messaging leading to lost orders, missed delivery schedules, and zero tracking." },
+                                    { icon: Clock, title: "Delayed Collections", desc: "No real-time visibility into customer credit limits, outstanding balances, and aging dues." },
+                                    { icon: TrendingUp, title: "Incentive Confusion", desc: "Complex rebate schemes and slab-based commission rules that generic software cannot compute." },
+                                    { icon: Globe, title: "Zero Territory Insights", desc: "Lack of real-time visibility into region-wise primary vs secondary sales performance." }
                                 ].map((item, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {item.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-15 mb-4 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <item.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-lg font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                            <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{item.desc}</p>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 3. What We Build For You (Original 8-Card Grid) */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            WHAT WE BUILD
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            From Order To Payment. Complete Visibility.
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                            We design, develop, and implement custom channel software and portals. Give your dealers an app to place orders and give your management a dashboard to track inventory, commissions, and targets in real-time.
-                        </p>
-                    </div>
+                {/* 3. What We Build For You (8 Core Capabilities) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Capabilities
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                From Order To Payment: Complete Network Control
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                Give your dealers an easy app to place orders and give your leadership a real-time dashboard to track secondary sales and commissions.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-left">
                                 {[
-                                    { icon: <UserCheck className="size-6" />, f: "Dealer Management", c: "Multi-level dealer hierarchies, onboarding & approvals." },
-                                    { icon: <ShoppingCart className="size-6" />, f: "Order Management", c: "Dealer portals, order workflows, and mobile order capture." },
-                                    { icon: <Boxes className="size-6" />, f: "Stock Visibility", c: "Warehouse-to-dealer stock mapping, real-time dashboards." },
-                                    { icon: <Zap className="size-6" />, f: "Commission Engine", c: "Rule-based incentive and commission automation." },
-                                    { icon: <CircleDollarSign className="size-6" />, f: "Credit Control", c: "Outstanding tracking, auto-reminders, and approvals." },
-                                    { icon: <MapPin className="size-6" />, f: "Territory & Sales Insights", c: "Region-wise sales, performance dashboards." },
-                                    { icon: <RotateCcw className="size-6" />, f: "ERP / Tally Integration", c: "Sync orders, invoices, and payments seamlessly." },
-                                    { icon: <BadgePercent className="size-6" />, f: "Alerts & Triggers", c: "WhatsApp / SMS updates for dealers and managers." }
-                                ].map((row, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="flex items-center justify-between mb-5 relative z-10">
-                                            <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
-                                                {row.icon}
-                                            </div>
-                                            <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase">
-                                                0{i + 1}
-                                            </span>
-                                        </div>
+                                    { icon: UserCheck, title: "Dealer Hierarchy Management", desc: "Multi-tier dealer network onboarding, KYC approvals, and territory mapping." },
+                                    { icon: ShoppingCart, title: "Mobile Order Capture", desc: "Dealer mobile app & web portal with tiered wholesale price schemes and 1-click ordering." },
+                                    { icon: Boxes, title: "Warehouse Stock Visibility", desc: "Depot-to-dealer stock mapping with live inventory visibility and automated dispatch alerts." },
+                                    { icon: Zap, title: "Automated Commission Engine", desc: "Automated rule-based rebate, target bonus, and seasonal incentive calculations." },
+                                    { icon: CircleDollarSign, title: "Credit Limit & Aging Control", desc: "Automated credit balance locks, payment reminders, and dealer ledger statements." },
+                                    { icon: MapPin, title: "Territory & Sales Insights", desc: "Granular sales heatmaps by state, city, dealer category, and product SKU." },
+                                    { icon: RotateCcw, title: "ERP & Tally Sync", desc: "Two-way automated sync for sales invoices, stock levels, and ledger receipts." },
+                                    { icon: BadgePercent, title: "Instant Alerts & Notifications", desc: "Automated WhatsApp & SMS updates for order dispatches, payments, and schemes." }
+                                ].map((mod, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * ((i % 4) + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-snug relative z-10">
-                                            {row.f}
-                                        </h3>
-                                        <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed relative z-10 mt-auto">
-                                            {row.c}
-                                        </p>
-                                    </div>
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <mod.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{mod.title}</h3>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{mod.desc}</p>
+                                        </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 4. Built for Your Network (Stylish Enterprise Pipeline) */}
-                <section className="pt-24 pb-16 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            NETWORK FLOW
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Built for Your Connected Network
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-2xl mx-auto">
-                            Seamless data flow connecting every tier of your supply chain in real-time.
-                        </p>
-                    </div>
+                {/* 4. Built for Your Connected Network (Connected Horizontal Roadmap Timeline) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Network Flow
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                Built for Your Connected Supply Chain
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto">
+                                Seamless data and order flow connecting every tier of your channel in real-time.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-16 pb-20 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[92rem]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-10 sm:py-14 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="relative max-w-[85rem] mx-auto">
                             
-                            {/* Workflow Grid with Connections */}
-                            <div className="relative">
-                                {/* Background connecting track line on desktop */}
-                                <div className="hidden lg:block absolute top-[6.5rem] left-[5%] right-[5%] h-0.5 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 z-0"></div>
+                            {/* Horizontal Roadmap Connector Track */}
+                            <div className="hidden lg:block absolute top-9 left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 border-t-2 border-dashed border-[#00477b]/40 z-0"></div>
 
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5 items-stretch relative z-10">
-                                    {[
-                                        {
-                                            step: "01",
-                                            tag: "Order Entry",
-                                            icon: <Store className="size-7" />,
-                                            title: "Dealer",
-                                            desc: "Places orders directly via dedicated mobile app or dealer portal with instant pricing."
-                                        },
-                                        {
-                                            step: "02",
-                                            tag: "Allocation",
-                                            icon: <Truck className="size-7" />,
-                                            title: "Distributor",
-                                            desc: "Validates credit limits, approves orders & locks stock allocation automatically."
-                                        },
-                                        {
-                                            step: "03",
-                                            tag: "Fulfillment",
-                                            icon: <Warehouse className="size-7" />,
-                                            title: "Warehouse",
-                                            desc: "Packs batch-coded inventory, auto-generates E-Way bills & schedules dispatch."
-                                        },
-                                        {
-                                            step: "04",
-                                            tag: "Production",
-                                            icon: <Factory className="size-7" />,
-                                            title: "Factory",
-                                            desc: "Triggered on reorder levels to push manufactured stock to regional depots."
-                                        },
-                                        {
-                                            step: "05",
-                                            tag: "Intelligence",
-                                            icon: <Package className="size-7" />,
-                                            title: "Depot / HQ",
-                                            desc: "Real-time visibility into secondary sales, dealer targets, and commission analytics."
-                                        }
-                                    ].map((node, i) => (
-                                        <div key={i} className="flex flex-col h-full group">
-                                            <div className="bg-gradient-to-b from-white/90 via-white/70 to-white/40 backdrop-blur-xl border border-white rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,71,123,0.12)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col items-center text-center h-full relative overflow-hidden">
-                                                
-                                                {/* Top Glow on Hover */}
-                                                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-[#00477b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-[2.25rem]"></div>
-                                                
-                                                {/* Step Number Badge */}
-                                                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/60 shadow-inner">
-                                                    <span className="size-1.5 rounded-full bg-[#00477b]"></span>
-                                                    <span className="text-[11px] font-black text-[#00477b] tracking-wider uppercase">Step {node.step}</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5 relative z-10">
+                                {[
+                                    {
+                                        step: "01",
+                                        tag: "Order Entry",
+                                        icon: Store,
+                                        title: "Dealer & Retailer",
+                                        desc: "Places orders directly via dedicated mobile app or dealer portal with instant pricing schemes."
+                                    },
+                                    {
+                                        step: "02",
+                                        tag: "Allocation",
+                                        icon: Truck,
+                                        title: "Distributor",
+                                        desc: "Validates dealer credit balance, approves order lines, and locks stock allocation automatically."
+                                    },
+                                    {
+                                        step: "03",
+                                        tag: "Fulfillment",
+                                        icon: Warehouse,
+                                        title: "Depot Warehouse",
+                                        desc: "Packs batch-coded inventory, auto-generates E-Way bills, and dispatches via integrated logistics."
+                                    },
+                                    {
+                                        step: "04",
+                                        tag: "Production",
+                                        icon: Factory,
+                                        title: "Manufacturing Plant",
+                                        desc: "Triggered automatically on reorder thresholds to schedule production runs and restock depots."
+                                    },
+                                    {
+                                        step: "05",
+                                        tag: "HQ Intelligence",
+                                        icon: Package,
+                                        title: "Corporate HQ",
+                                        desc: "Live visibility into secondary sales, dealer target achievements, and automated commission payouts."
+                                    }
+                                ].map((node, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div className="group relative flex flex-col items-center h-full">
+                                            
+                                            {/* Top Roadmap Node */}
+                                            <div className="relative mb-6">
+                                                <div className="size-18 rounded-2xl bg-white shadow-lg shadow-blue-900/10 border-2 border-white ring-4 ring-blue-100/80 group-hover:ring-[#00477b]/30 group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative z-10 text-[#00477b]">
+                                                    <node.icon className="size-7 text-[#00477b]" />
                                                 </div>
+                                                {/* Step Number Tag */}
+                                                <span className="absolute -top-2 -right-2 size-6 rounded-full bg-[#00477b] text-white text-[11px] font-bold flex items-center justify-center shadow-md z-20">
+                                                    {node.step}
+                                                </span>
+                                            </div>
 
-                                                {/* Soft Light Icon Container */}
-                                                <div className="size-18 mb-5 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                                    {node.icon}
-                                                </div>
+                                            {/* Content Card */}
+                                            <div className="w-full h-full bg-white/40 backdrop-blur-xl border border-white/70 p-6 sm:p-7 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] group-hover:shadow-2xl group-hover:shadow-blue-900/10 group-hover:bg-white/60 group-hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center overflow-hidden relative">
+                                                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
-                                                {/* Node Tag */}
-                                                <span className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1.5">
+                                                <span className="inline-block px-3 py-1 rounded-full bg-blue-50/90 border border-blue-100 text-[#00477b] font-bold text-[10px] uppercase tracking-wider mb-2.5 relative z-10">
                                                     {node.tag}
                                                 </span>
 
-                                                {/* Node Title */}
-                                                <h3 className="font-bold text-[#00477b] text-xl mb-3 tracking-tight">
+                                                <h3 className="text-base font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
                                                     {node.title}
                                                 </h3>
 
-                                                {/* Description */}
-                                                <p className="text-xs text-zinc-600 font-medium leading-relaxed mt-auto">
+                                                <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">
                                                     {node.desc}
                                                 </p>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
+                                    </ScrollReveal>
+                                ))}
                             </div>
-
                         </div>
                     </div>
                 </section>
 
                 {/* 5. Our Development Process */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            OUR DEVELOPMENT PROCESS
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            We Design Around Your Business - Not Around Software.
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                            We combine data intelligence creative content and technical precision to deliver growth you can measure in revenue, not vanity metrics.
-                        </p>
-                    </div>
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Our Process
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                Tailored Around Your Network, Not Generic Templates
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto leading-relaxed">
+                                We architect customized workflows to match your exact channel structures and dealer expectations.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                                 {[
                                     { 
-                                        icon: <Search className="size-7" />, 
+                                        icon: Search, 
                                         title: "Process Discovery & Mapping", 
-                                        desc: "We study your current sales and dealer network structure to identify pain points and process gaps." 
+                                        desc: "We study your current sales hierarchies, dealer slabs, and operational bottlenecks." 
                                     },
                                     { 
-                                        icon: <Smartphone className="size-7" />, 
-                                        title: "Blueprint & UI/UX Design", 
-                                        desc: "We design a system that matches your flow - approval logic, dealer levels, and reporting structure." 
+                                        icon: Smartphone, 
+                                        title: "Blueprint & UX Design", 
+                                        desc: "We design a frictionless mobile & web interface tailored for busy dealers and sales reps." 
                                     },
                                     { 
-                                        icon: <Code className="size-7" />, 
+                                        icon: Code, 
                                         title: "Development & Integration", 
-                                        desc: "Built with Laravel full stack, optimized for scalability, API-ready for ERP or mobile integration." 
+                                        desc: "Built with scalable Laravel & React architectures with ready Tally / ERP API connectors." 
                                     },
                                     { 
-                                        icon: <Users className="size-7" />, 
-                                        title: "Training & Support", 
-                                        desc: "We train your internal team and dealers, go live in phases, and provide ongoing optimization." 
+                                        icon: Users, 
+                                        title: "Rollout & Dealer Training", 
+                                        desc: "Hands-on regional training, staged deployment, and ongoing SLA maintenance." 
                                     }
                                 ].map((step, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {step.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <step.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{step.title}</h3>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{step.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{step.desc}</p>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
-
-                            <p className="text-xs sm:text-sm text-zinc-600 font-medium">
-                                You get a system that feels native to your business - <span className="font-bold text-[#00477b]">because it's built from it.</span>
-                            </p>
                         </div>
                     </div>
                 </section>
 
                 {/* 6. Why Custom Channel Systems Outperform CRMs */}
-                <section className="relative z-10">
+                <section className="relative z-10 my-10 sm:my-12">
                     <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="w-full">
                             <div className="grid lg:grid-cols-12 items-stretch">
                                 {/* Left Side Checklist */}
-                                <div className="lg:col-span-5 px-6 sm:px-10 lg:px-12 xl:px-16 py-10 lg:py-12 flex flex-col justify-center">
-                                    <div className="max-w-xl">
-                                        <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-5">
-                                            Why Custom Channel Systems Outperform CRMs
-                                        </span>
-                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
-                                            Because Your Channel Isn't Generic - It's Your Biggest Competitive Edge.
-                                        </h2>
+                                <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-5 h-full">
+                                    <div className="px-6 sm:px-10 lg:px-12 xl:px-16 py-10 lg:py-12 flex flex-col justify-center h-full">
+                                        <div className="max-w-xl">
+                                            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-5">
+                                                Why Custom Channel Systems Outperform CRMs
+                                            </span>
+                                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
+                                                Because Your Channel Isn't Generic - It's Your Biggest Competitive Edge.
+                                            </h2>
 
-                                        <div className="space-y-3 mb-6">
-                                            {[
-                                                "Designed to match your dealer network, product mix, and territories.",
-                                                "Handles complex commission rules and multi-level approvals.",
-                                                "Seamless integration with your Tally or ERP.",
-                                                "Built-in analytics and alert systems.",
-                                                "Modular - start with one region, scale nationwide."
-                                            ].map((item, i) => (
-                                                <div key={i} className="flex items-center gap-3 p-3 bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:bg-white hover:shadow-md transition-all duration-200">
-                                                    <div className="flex-shrink-0 size-7 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm">
-                                                        <CheckCircle className="size-4" />
+                                            <div className="space-y-3 mb-6">
+                                                {[
+                                                    "Designed to match your dealer network, product mix, and territories.",
+                                                    "Handles complex commission rules and multi-level approvals.",
+                                                    "Seamless integration with your Tally or ERP.",
+                                                    "Built-in analytics and alert systems.",
+                                                    "Modular - start with one region, scale nationwide."
+                                                ].map((item, i) => (
+                                                    <div key={i} className="flex items-center gap-3 p-3 bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:bg-white hover:shadow-md transition-all duration-200">
+                                                        <div className="flex-shrink-0 size-7 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] shadow-sm">
+                                                            <CheckCircle className="size-4" />
+                                                        </div>
+                                                        <span className="text-zinc-800 text-xs sm:text-sm font-semibold leading-tight">{item}</span>
                                                     </div>
-                                                    <span className="text-zinc-800 text-xs sm:text-sm font-semibold leading-tight">{item}</span>
-                                                </div>
-                                            ))}
-                                        </div>
+                                                ))}
+                                            </div>
 
-                                        <div>
-                                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-md transition-all">
-                                                <Link href="/free-digital-consultation">
-                                                    Book a Free Consultation
-                                                </Link>
-                                            </Button>
+                                            <div>
+                                                <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-md transition-all">
+                                                    <Link href="/free-digital-consultation">
+                                                        Book a Free Consultation
+                                                    </Link>
+                                                </Button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </ScrollReveal>
 
                                 {/* Right Side Image (Full Image Visible, No Cropping, Edge-to-Edge) */}
-                                <div className="lg:col-span-7 relative bg-[#02050f] overflow-hidden flex items-center justify-center min-h-[380px] lg:min-h-[480px]">
-                                    <img 
-                                        src="/assets/custom-channels.webp" 
-                                        alt="Custom Channel Systems" 
-                                        className="w-full h-full object-cover object-center rounded-none"
-                                        loading="lazy"
-                                    />
-                                </div>
+                                <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-7 h-full">
+                                    <div className="relative bg-[#02050f] overflow-hidden flex items-center justify-center min-h-[380px] lg:min-h-[480px] h-full">
+                                        <img 
+                                            src="/assets/custom-channels.webp" 
+                                            alt="Custom Channel Systems" 
+                                            className="w-full h-full object-cover object-center rounded-none"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </ScrollReveal>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* 7. Why Gnosys Digital */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                            Why Gnosys Digital
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-2 leading-tight">
-                            Your Business. Your Channel.
-                        </h2>
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b]">
-                            Your Software - Custom-Built.
-                        </h3>
-                    </div>
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Why Gnosys
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Why Choose Gnosys Digital
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-10 text-left">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
                                 {[
-                                    { step: "01", text: "10+ years of experience with manufacturing and sales workflows." },
-                                    { step: "02", text: "Deep domain knowledge of Indian dealer & distribution networks." },
-                                    { step: "03", text: "Expert Laravel full-stack development team." },
-                                    { step: "04", text: "Proven track record in building modular, scalable enterprise systems." },
-                                    { step: "05", text: "Local support, transparent pricing, and long-term partnerships." }
+                                    { title: "10+ Years Experience", desc: "Proven track record designing enterprise distribution systems across manufacturing sectors.", icon: Trophy },
+                                    { title: "Indian Network Expertise", desc: "Deep domain knowledge of dealer credit habits, billing nuances, and FMCG trade workflows.", icon: Globe },
+                                    { title: "Laravel & React Masters", desc: "High-performance full-stack architectures optimized for massive concurrent order peaks.", icon: Code },
+                                    { title: "Modular Architecture", desc: "Modular microservices that grow seamlessly as you expand into new states and dealer slabs.", icon: Sparkles },
+                                    { title: "Dedicated Support", desc: "Transparent pricing, on-ground dealer training, and 24/7 technical assistance.", icon: ShieldCheck }
                                 ].map((item, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-start min-h-[160px] overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase mb-3 relative z-10">
-                                            {item.step}
-                                        </span>
-                                        <p className="text-xs sm:text-sm text-zinc-700 font-semibold leading-relaxed relative z-10">{item.text}</p>
-                                    </div>
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <item.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
+                                        </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
-
-                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-lg px-8 h-12 text-sm font-bold shadow-md transition-all">
-                                <Link href="/free-digital-consultation">
-                                    Talk to Gnosys Solutions Expert
-                                </Link>
-                            </Button>
                         </div>
                     </div>
                 </section>
 
                 {/* 8. Technology & Capabilities */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Technology & Capabilities
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Modern Technology, Flexible Architecture, Built To Last.
-                        </h2>
-                    </div>
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Tech Stack
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Modern Technology, Built To Scale
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-5xl">
-                            {/* Table */}
-                            <div className="overflow-hidden rounded-[2rem] border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-xl mb-6 text-left">
-                                <table className="w-full border-collapse">
-                                    <thead>
-                                        <tr className="bg-[#00477b] text-white">
-                                            <th className="py-4 px-6 text-sm font-bold w-1/3 border-r border-[#003861]">Area</th>
-                                            <th className="py-4 px-6 text-sm font-bold">Tools & Tech</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-blue-100/50 text-xs sm:text-sm">
-                                        {[
-                                            { area: "Backend", tech: "Laravel (PHP 8+), MySQL, Redis" },
-                                            { area: "Frontend", tech: "Vue / React + Tailwind CSS" },
-                                            { area: "Mobile Access", tech: "PWA for dealers + optional Android/iOS apps" },
-                                            { area: "Integrations", tech: "Tally, Zoho, SAP B1, WhatsApp API, Email/SMS" },
-                                            { area: "Hosting", tech: "AWS / DigitalOcean / On-premise" },
-                                            { area: "Security", tech: "JWT Auth, RBAC, Encryption, Audit Logs" }
-                                        ].map((row, i) => (
-                                            <tr key={i} className="hover:bg-blue-50/50 transition-colors">
-                                                <td className="py-3.5 px-6 font-semibold text-zinc-900 border-r border-blue-100/50">{row.area}</td>
-                                                <td className="py-3.5 px-6 text-zinc-600 font-medium">{row.tech}</td>
+                            <ScrollReveal animation="zoom-in" delay={120}>
+                                <div className="overflow-hidden rounded-[2rem] border border-white/80 shadow-lg bg-white/60 backdrop-blur-xl text-left">
+                                    <table className="w-full border-collapse">
+                                        <thead>
+                                            <tr className="bg-[#00477b] text-white">
+                                                <th className="py-4 px-6 text-sm font-bold w-1/3 border-r border-[#003861]">Architecture Layer</th>
+                                                <th className="py-4 px-6 text-sm font-bold">Tools & Technologies</th>
                                             </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <p className="text-xs sm:text-sm text-zinc-600 font-medium">
-                                Enterprise-grade systems, engineered for SME budgets.
-                            </p>
+                                        </thead>
+                                        <tbody className="divide-y divide-blue-100/60 text-xs sm:text-sm">
+                                            {[
+                                                { area: "Backend Core", tech: "Laravel (PHP 8.3), MySQL, Redis Caching, Queues" },
+                                                { area: "Frontend Interfaces", tech: "React 19 + TypeScript, Tailwind CSS v4, Inertia.js" },
+                                                { area: "Mobile Access", tech: "PWA Mobile Apps + Optional Native Android/iOS Portals" },
+                                                { area: "ERP Integrations", tech: "Tally Prime, Zoho Books, SAP Business One, WhatsApp Cloud API" },
+                                                { area: "Hosting & DevOps", tech: "AWS Cloud / DigitalOcean / Dedicated Bare-Metal Servers" },
+                                                { area: "Enterprise Security", tech: "JWT / Sanctum Auth, Granular RBAC, 256-bit Encryption, Audit Logs" }
+                                            ].map((row, i) => (
+                                                <tr key={i} className="hover:bg-blue-50/50 transition-colors">
+                                                    <td className="py-3.5 px-6 font-semibold text-[#00477b] border-r border-blue-100/60">{row.area}</td>
+                                                    <td className="py-3.5 px-6 text-zinc-600 font-normal">{row.tech}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </section>
 
                 {/* 9. Engagement Models */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Engagement Models
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Flexible Engagement, Transparent Outcomes.
-                        </h2>
-                    </div>
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Engagement
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Flexible Engagement Models
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-6xl">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-center">
                                 {[
                                     {
-                                        icon: <Lightbulb className="size-7" />,
+                                        icon: Lightbulb,
                                         title: "Fixed-Scope Project",
-                                        desc: "You know what you want. We develop it end-to-end - fixed milestones, clear deliverables, and timelines.",
+                                        desc: "Clear milestones, pre-agreed deliverables, and predictable timelines for fixed network rollouts.",
                                         btn: "Get a Proposal"
                                     },
                                     {
-                                        icon: <Handshake className="size-7" />,
+                                        icon: Handshake,
                                         title: "Dedicated Development Partner",
-                                        desc: "You need a long-term tech ally. Our team works as your in-house extension, continuously evolving your platform.",
+                                        desc: "Long-term tech team working as your in-house extension to continuously enhance your custom portal.",
                                         btn: "Discuss Partnership"
                                     },
                                     {
-                                        icon: <Compass className="size-7" />,
-                                        title: "Process + Tech Consulting",
-                                        desc: "You're still exploring? We map your sales process and design a blueprint before you commit to full development.",
+                                        icon: Compass,
+                                        title: "Process & Tech Consulting",
+                                        desc: "Comprehensive sales network audit and technical blueprinting before committing to full development.",
                                         btn: "Book Discovery Session"
                                     }
                                 ].map((card, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {card.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <card.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10">{card.title}</h3>
+                                            <p className="text-sm text-zinc-600 font-normal leading-relaxed mb-6 relative z-10">
+                                                {card.desc}
+                                            </p>
+                                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-6 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full relative z-10">
+                                                <Link href="/free-digital-consultation">
+                                                    {card.btn}
+                                                </Link>
+                                            </Button>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-3 leading-tight relative z-10">{card.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed mb-8 flex-1 relative z-10">
-                                            {card.desc}
-                                        </p>
-                                        <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-xl px-6 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full relative z-10">
-                                            <Link href="/free-digital-consultation">
-                                                {card.btn}
-                                            </Link>
-                                        </Button>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
@@ -515,26 +541,28 @@ export default function ChannelDistribution() {
                 </section>
 
                 {/* 10. Ready To Start Something Great? */}
-                <section className="py-32 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
-                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
-                            Ready To Start Something Great?
-                        </h2>
-                        <p className="text-base sm:text-lg text-zinc-700 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Whether you want to launch a store, scale marketing, or streamline your workflows - Gnosys Digital is your in-house growth partner.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                            <Button className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-semibold shadow-md transition-all w-full sm:w-auto">
+                <section className="py-20 text-center relative z-10">
+                    <ScrollReveal animation="fade-up" delay={100}>
+                        <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-4">
                                 Get Started
-                            </Button>
-                            <Button asChild className="bg-white border border-white/80 text-zinc-900 hover:bg-white/80 rounded-full px-8 h-12 text-sm font-semibold shadow-sm transition-all w-full sm:w-auto">
-                                <Link href="/free-digital-consultation">
-                                    Book a Free Consultation
-                                </Link>
-                            </Button>
+                            </span>
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                                Ready To Modernize Your Dealer Network?
+                            </h2>
+                            <p className="text-base sm:text-lg text-zinc-700 font-normal mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Whether you want to launch a dealer ordering app, integrate Tally, or build custom commission engines - Gnosys Digital is your tech growth partner.
+                            </p>
+
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                                <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        Book a Free Consultation
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </section>
 
             </div>

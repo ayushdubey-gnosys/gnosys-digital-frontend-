@@ -537,7 +537,7 @@ export default function Welcome() {
                                             </div>
 
                                             {/* Action Button */}
-                                            <Button size="sm" className="w-full bg-white/90 hover:bg-[#00477b] hover:text-white text-[#00477b] border border-[#00477b]/25 hover:border-[#00477b] rounded-full h-11 font-bold transition-all duration-300 shadow-xs group-hover:shadow-md cursor-pointer">
+                                            <Button size="sm" className="w-full bg-white/70 backdrop-blur-md hover:bg-gradient-to-r hover:from-[#00477b] hover:to-[#00335e] text-[#00477b] hover:text-white border border-white/80 hover:border-transparent rounded-full h-11 font-bold transition-all duration-300 shadow-sm hover:shadow-[0_8px_20px_rgb(0,71,123,0.25)] hover:scale-[1.02] cursor-pointer">
                                                 Buy Now
                                             </Button>
                                         </div>

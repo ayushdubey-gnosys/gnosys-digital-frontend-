@@ -6,7 +6,7 @@ import {
     CheckCircle2, FileCode, Users, CheckCircle, 
     Search, TabletSmartphone, Code, Zap, ShieldCheck,
     Boxes, Warehouse, BarChart3, ArrowRight, Lightbulb,
-    Server, Layout, Smartphone, Cpu, Cloud, Package, Handshake, Compass
+    Server, Layout, Smartphone, Cpu, Cloud, Package, Handshake, Compass, Trophy, Sparkles
 } from 'lucide-react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
 import ScrollReveal from '@/components/scroll-reveal';
@@ -22,30 +22,43 @@ export default function SupplyChain() {
             
             {/* 1. Hero Section (Clear & Full Background Image) */}
             <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
-                {/* Background Container */}
                 <div className="absolute inset-0 z-0">
                     <div
                         className="absolute inset-0 bg-cover bg-center lg:bg-[center_right] bg-no-repeat transition-all duration-700"
                         style={{ backgroundImage: "url('/assets/supply-chain.webp')", backgroundColor: '#020b18' }}
-                    ></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none lg:w-1/2"></div>
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent pointer-events-none lg:w-1/2" />
+                </div>
+
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
                 </div>
                 
                 <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
                     <div className="max-w-2xl text-center lg:text-left flex flex-col items-center lg:items-start">
                         <ScrollReveal animation="fade-up" delay={80}>
                             <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
-                                Your Supply Chain Is Unique. Your Software Should Be Too.
+                                Supply Chain & Logistics Control
                             </span>
                             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-                                You Don’t Need Another Off-The-Shelf ERP. <br />
-                                <span className="text-blue-100 font-normal">You Need Software That Fits The Way Your Business Actually Runs.</span>
+                                You Don’t Need Another Rigid ERP. <br />
+                                <span className="text-blue-100 font-normal">You Need Software Built For How You Actually Ship.</span>
                             </h1>
                         </ScrollReveal>
                         
                         <ScrollReveal animation="fade-up" delay={180}>
                             <p className="text-base sm:text-lg text-blue-50/95 leading-relaxed font-normal mb-10 max-w-xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.9)]">
-                                Every manufacturer has its own processes, partners, and pain points. At Gnosys Digital, we build <strong className="text-white font-semibold">custom Supply Chain &amp; Logistics software</strong> designed exactly around your workflow - not someone else’s.
+                                Every manufacturer has unique transport models, dealer tiers, and dispatch workflows. Gnosys Digital engineers custom Supply Chain platforms tailored to your physical operations.
                             </p>
                         </ScrollReveal>
                         
@@ -57,9 +70,6 @@ export default function SupplyChain() {
                                         <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
                                     </Link>
                                 </Button>
-                                <Button className="bg-white/10 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 rounded-full px-8 h-14 text-sm sm:text-base font-bold shadow-lg transition-all w-full sm:w-auto">
-                                    Explore Past Projects
-                                </Button>
                             </div>
                         </ScrollReveal>
                     </div>
@@ -70,511 +80,530 @@ export default function SupplyChain() {
             </section>
 
             <div className="relative z-10 w-full bg-transparent">
-                {/* 2. The Reality of SME Supply Chains (5 Cards) */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            The Reality of SME Supply Chains
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] leading-tight">
-                            No Two Manufacturers Are The Same - So Why Use The Same Software?
-                        </h2>
-                    </div>
+                
+                {/* 2. The Reality of SME Supply Chains (5 Rectangular Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                The Challenge
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Why Generic Supply Chain Software Fails
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-3 sm:px-4 lg:px-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[95rem]">
+                            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
                                 {[
-                                    { icon: <Truck className="size-7" />, title: "Different Dispatch Models", desc: "Some deliver via transporters, others via distributors." },
-                                    { icon: <FileText className="size-7" />, title: "Manual LR & Paper Processes", desc: "Nothing integrates across departments." },
-                                    { icon: <Clock className="size-7" />, title: "No Real-Time Tracking", desc: "Once it leaves the gate, visibility disappears." },
-                                    { icon: <Network className="size-7" />, title: "Disconnected Data", desc: "Tally, WhatsApp, and Excel - none talk to each other." },
-                                    { icon: <Settings className="size-7" />, title: "ERP Overkill", desc: "Big-brand systems cost too much and fit too little." }
+                                    { icon: Truck, title: "Complex Dispatch", desc: "Multiple delivery modes: own fleet, market transporters, or dealer self-pickups with no unified hub." },
+                                    { icon: FileText, title: "Paper LRs & Gate Passes", desc: "Drivers, security, and billing rely on physical slips leading to transit delays and misplacement." },
+                                    { icon: Clock, title: "Zero Live Visibility", desc: "Once a vehicle leaves the plant gate, stock location visibility disappears until delivery complaints arrive." },
+                                    { icon: Network, title: "Disconnected Data", desc: "Tally, WhatsApp driver groups, and dispatch spreadsheets never reconcile automatically." },
+                                    { icon: Settings, title: "ERP Overkill", desc: "Expensive enterprise software requires too many complex screens and never gets adopted on the floor." }
                                 ].map((item, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {item.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-14 mb-4 rounded-xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <item.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-lg font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                            <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-tight relative z-10">{item.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{item.desc}</p>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
-
-                            <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                You get a system that feels native to your business - <span className="font-bold text-[#00477b]">because it's built from it.</span>
-                            </p>
                         </div>
                     </div>
                 </section>
 
-                {/* 3. What We Build For You (Balanced 8-Card Grid) */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            What We Build for You
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            From Warehouse To Dealer - We Design Your Digital Backbone.
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                            We design and develop custom supply chain platforms that give you total visibility and control - built around your business logic, your partners, and your workflows.
-                        </p>
-                    </div>
+                {/* 3. What We Build For You (8 Core Capabilities) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Capabilities
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                From Warehouse To Dealer: Your Digital Logistics Backbone
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto leading-relaxed">
+                                We design custom supply chain platforms that deliver real-time visibility, automated vehicle tracking, and rapid dealer fulfillment.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-left">
                                 {[
-                                    { icon: <Truck className="size-6" />, f: "Dispatch Management", c: "Digital gate pass, dispatch slips, vehicle tracking." },
-                                    { icon: <Network className="size-6" />, f: "Transporter Integration", c: "Assign, track, and reconcile shipments." },
-                                    { icon: <Warehouse className="size-6" />, f: "Warehouse Sync", c: "Real-time stock across multiple locations." },
-                                    { icon: <Users className="size-6" />, f: "Dealer / Distributor Portal", c: "Place orders, track deliveries, manage returns." },
-                                    { icon: <CheckCircle className="size-6" />, f: "Delivery Proof", c: "Photo, signature, or QR confirmation." },
-                                    { icon: <BarChart3 className="size-6" />, f: "KPI Dashboards", c: "Delivery performance, order turnaround, cost metrics." },
-                                    { icon: <Cpu className="size-6" />, f: "ERP / Tally Integration", c: "Live sync for accounts and invoices." },
-                                    { icon: <Zap className="size-6" />, f: "Automation", c: "Alerts, escalations, and reporting rules." }
-                                ].map((row, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="flex items-center justify-between mb-5 relative z-10">
-                                            <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
-                                                {row.icon}
+                                    { icon: Truck, title: "Dispatch Management", desc: "Digital gate passes, multi-item dispatch slips, weight bridge integration, and vehicle load balancing." },
+                                    { icon: Network, title: "Transporter & Freight Portal", desc: "Assign freight tenders, track transporter SLAs, compare lane rates, and automate freight billing." },
+                                    { icon: Warehouse, title: "Multi-Hub Inventory Sync", desc: "Real-time stock ledger synchronization across central plants, regional CFAs, and transit hubs." },
+                                    { icon: Users, title: "Dealer Ordering Portal", desc: "Allow dealers to place orders, check live credit limits, download invoices, and initiate warranty claims." },
+                                    { icon: CheckCircle, title: "Digital Proof of Delivery (POD)", desc: "Capture geo-tagged mobile signatures, QR package scans, and damage photos for instant settlement." },
+                                    { icon: BarChart3, title: "Logistics KPI Dashboards", desc: "Live turn-around time (TAT), lane freight costs, vehicle idle times, and dispatch fill rates." },
+                                    { icon: Cpu, title: "ERP & Tally Integration", desc: "Automated two-way posting of sales orders, tax invoices, and payment receipts with Tally and ERPs." },
+                                    { icon: Zap, title: "Automated WhatsApp Alerts", desc: "Trigger instant milestone notifications to dealers and sales managers when shipments are dispatched." }
+                                ].map((mod, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * ((i % 4) + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <mod.icon className="size-7 text-[#00477b]" />
                                             </div>
-                                            <span className="text-[11px] font-black text-zinc-400/80 tracking-widest uppercase">
-                                                0{i + 1}
-                                            </span>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{mod.title}</h3>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{mod.desc}</p>
                                         </div>
-
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-2 leading-snug relative z-10">
-                                            {row.f}
-                                        </h3>
-                                        <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed relative z-10 mt-auto">
-                                            {row.c}
-                                        </p>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
-                            </div>
-
-                            <div className="mt-12 text-center">
-                                <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold shadow-md transition-all">
-                                    <Link href="/free-digital-consultation">
-                                        Discuss Your Requirements
-                                    </Link>
-                                </Button>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 4. Connected Logistics Pipeline */}
-                <section className="pt-24 pb-16 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            WORKFLOW PIPELINE
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Seamless Order-to-Delivery Pipeline
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-2xl mx-auto">
-                            Unified digital checkpoints ensuring zero loss, accurate routing, and faster dealer fulfillment.
-                        </p>
-                    </div>
+                {/* 4. Connected Logistics Pipeline (Roadmap Style) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Pipeline Flow
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                Seamless Order-to-Delivery Pipeline
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto">
+                                Unified digital checkpoints ensuring zero loss, accurate routing, and faster dealer fulfillment.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-16 pb-20 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[92rem]">
-                            <div className="relative">
-                                {/* Connecting Line */}
-                                <div className="hidden lg:block absolute top-[6.5rem] left-[6%] right-[6%] h-0.5 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 z-0"></div>
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-10 sm:py-14 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="relative max-w-[85rem] mx-auto">
+                            
+                            {/* Horizontal Roadmap Connector Track */}
+                            <div className="hidden lg:block absolute top-9 left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 border-t-2 border-dashed border-[#00477b]/40 z-0"></div>
 
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
-                                    {[
-                                        {
-                                            step: "01",
-                                            tag: "Order Entry",
-                                            icon: <Package className="size-7" />,
-                                            title: "Dealer Portal",
-                                            desc: "Direct dealer ordering with credit limits & stock hold."
-                                        },
-                                        {
-                                            step: "02",
-                                            tag: "Allocation",
-                                            icon: <Warehouse className="size-7" />,
-                                            title: "Plant Fulfillment",
-                                            desc: "FIFO/FEFO batch allocation & pick-list dispatch."
-                                        },
-                                        {
-                                            step: "03",
-                                            tag: "Documentation",
-                                            icon: <FileText className="size-7" />,
-                                            title: "E-Way & LR",
-                                            desc: "Auto-generation of gate passes, E-Way bills & LR."
-                                        },
-                                        {
-                                            step: "04",
-                                            tag: "Logistics",
-                                            icon: <Truck className="size-7" />,
-                                            title: "Transit & Tracking",
-                                            desc: "Live GPS updates and automated WhatsApp milestones."
-                                        },
-                                        {
-                                            step: "05",
-                                            tag: "Closing",
-                                            icon: <CheckCircle className="size-7" />,
-                                            title: "Digital POD",
-                                            desc: "Instant mobile sign-off & automated ledger settlement."
-                                        }
-                                    ].map((node, i) => (
-                                        <div key={i} className="flex flex-col h-full group">
-                                            <div className="bg-gradient-to-b from-white/90 via-white/70 to-white/40 backdrop-blur-xl border border-white rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,71,123,0.12)] hover:-translate-y-2.5 transition-all duration-500 flex flex-col items-center text-center h-full relative overflow-hidden">
-                                                <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-[#00477b] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-[2.25rem]"></div>
-                                                
-                                                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/60 shadow-inner">
-                                                    <span className="size-1.5 rounded-full bg-[#00477b]"></span>
-                                                    <span className="text-[11px] font-black text-[#00477b] tracking-wider uppercase">Step {node.step}</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5 relative z-10">
+                                {[
+                                    {
+                                        step: "01",
+                                        tag: "Order Entry",
+                                        icon: Package,
+                                        title: "Dealer Portal",
+                                        desc: "Direct dealer ordering with credit limits, batch holds, and live delivery ETAs."
+                                    },
+                                    {
+                                        step: "02",
+                                        tag: "Allocation",
+                                        icon: Warehouse,
+                                        title: "Plant Fulfillment",
+                                        desc: "FIFO/FEFO batch allocation, automated pick-lists, and staging bay direction."
+                                    },
+                                    {
+                                        step: "03",
+                                        tag: "Documentation",
+                                        icon: FileText,
+                                        title: "E-Way & Digital LR",
+                                        desc: "Auto-generation of gate passes, NIC E-Way bills, and QR-coded lorry receipts."
+                                    },
+                                    {
+                                        step: "04",
+                                        tag: "Logistics",
+                                        icon: Truck,
+                                        title: "Transit & Tracking",
+                                        desc: "Live GPS updates, FASTag checkpoint sync, and automated WhatsApp milestones."
+                                    },
+                                    {
+                                        step: "05",
+                                        tag: "Closing",
+                                        icon: CheckCircle,
+                                        title: "Digital POD & Settlement",
+                                        desc: "Instant mobile sign-off, shortage logging, and automated ledger settlement."
+                                    }
+                                ].map((node, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div className="group relative flex flex-col items-center h-full">
+                                            
+                                            {/* Top Roadmap Node */}
+                                            <div className="relative mb-6">
+                                                <div className="size-18 rounded-2xl bg-white shadow-lg shadow-blue-900/10 border-2 border-white ring-4 ring-blue-100/80 group-hover:ring-[#00477b]/30 group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative z-10 text-[#00477b]">
+                                                    <node.icon className="size-7 text-[#00477b]" />
                                                 </div>
+                                                {/* Step Number Tag */}
+                                                <span className="absolute -top-2 -right-2 size-6 rounded-full bg-[#00477b] text-white text-[11px] font-bold flex items-center justify-center shadow-md z-20">
+                                                    {node.step}
+                                                </span>
+                                            </div>
 
-                                                <div className="size-18 mb-5 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                                    {node.icon}
-                                                </div>
+                                            {/* Content Card */}
+                                            <div className="w-full h-full bg-white/40 backdrop-blur-xl border border-white/70 p-6 sm:p-7 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] group-hover:shadow-2xl group-hover:shadow-blue-900/10 group-hover:bg-white/60 group-hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center overflow-hidden relative">
+                                                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
-                                                <span className="text-[10px] font-extrabold text-zinc-400 uppercase tracking-widest mb-1.5">
+                                                <span className="inline-block px-3 py-1 rounded-full bg-blue-50/90 border border-blue-100 text-[#00477b] font-bold text-[10px] uppercase tracking-wider mb-2.5 relative z-10">
                                                     {node.tag}
                                                 </span>
 
-                                                <h3 className="font-bold text-[#00477b] text-xl mb-3 tracking-tight">
+                                                <h3 className="text-base font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
                                                     {node.title}
                                                 </h3>
 
-                                                <p className="text-xs text-zinc-600 font-medium leading-relaxed mt-auto">
+                                                <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">
                                                     {node.desc}
                                                 </p>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
+                                    </ScrollReveal>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* 5. How We Work (Development Process) */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            How We Work
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            From Process Mapping To Deployment - End-To-End Custom Development.
-                        </h2>
-                    </div>
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Methodology
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                From Process Mapping To Deployment: End-To-End Development
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-2xl mx-auto leading-relaxed">
+                                Our systematic 4-phase rollout methodology engineered for zero interruption to ongoing dispatches.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                                 {[
-                                    { icon: <Search className="size-7" />, title: "Discovery & Process Mapping", desc: "We study your current supply chain and identify digital touchpoints." },
-                                    { icon: <TabletSmartphone className="size-7" />, title: "Blueprint & UX Design", desc: "You see screen flows, approval logic, and dashboard samples - before we code." },
-                                    { icon: <Code className="size-7" />, title: "Development & Integration", desc: "Built on Laravel full stack, API-ready, scalable, and secure." },
-                                    { icon: <Zap className="size-7" />, title: "Training & Go-Live", desc: "We deploy, train your staff, and fine-tune post-launch." }
+                                    { 
+                                        icon: Search, 
+                                        title: "Discovery & Process Mapping", 
+                                        desc: "We study your current dispatch points, transporter workflows, and paper bottlenecks." 
+                                    },
+                                    { 
+                                        icon: TabletSmartphone, 
+                                        title: "Blueprint & UX Design", 
+                                        desc: "We design simple, high-contrast screens for security gate guards, drivers, and accountants." 
+                                    },
+                                    { 
+                                        icon: Code, 
+                                        title: "Development & Integration", 
+                                        desc: "Engineered on Laravel & React with APIs for GPS telematics, Tally, and WhatsApp gateways." 
+                                    },
+                                    { 
+                                        icon: Zap, 
+                                        title: "Training & Phased Go-Live", 
+                                        desc: "Hands-on staff onboarding, transporter training, and 24/7 hypercare support post-launch." 
+                                    }
                                 ].map((step, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {step.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <step.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{step.title}</h3>
+                                            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{step.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{step.desc}</p>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
-
-                            <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                Our approach feels like an IT partner - <span className="font-bold text-[#00477b]">not a software vendor.</span>
-                            </p>
                         </div>
                     </div>
                 </section>
 
                 {/* 6. Why Custom Development Wins for SMEs (Full Width Edge-to-Edge Split Layout) */}
-                <section className="pt-24 pb-12 relative z-10">
+                <section className="relative z-10 my-10 sm:my-12">
                     <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="w-full">
                             <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[540px]">
                                 
                                 {/* Left Content: Text & Points */}
-                                <div className="p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center max-w-2xl lg:max-w-none lg:ml-auto">
-                                    <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6 w-fit">
-                                        Why Custom Development Wins for SMEs
-                                    </span>
-                                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
-                                        Because One-Size Software Never Fits Indian Manufacturing.
-                                    </h2>
-                                    
-                                    <ul className="space-y-4 mb-10">
-                                        {[
-                                            "Tailored to your existing process, not the other way around.",
-                                            "Lower cost and faster implementation than ERP platforms.",
-                                            "Integrates seamlessly with your current tools - Tally, Excel, WhatsApp.",
-                                            "Future-ready - we build it modularly so you can add features later.",
-                                            "Local development, support, and training."
-                                        ].map((item, i) => (
-                                            <li key={i} className="flex items-start gap-3.5">
-                                                <div className="size-6 rounded-full bg-blue-50 border border-blue-200/60 flex items-center justify-center shrink-0 mt-0.5 text-[#00477b]">
-                                                    <CheckCircle2 className="size-4" />
+                                <ScrollReveal animation="fade-right" delay={100} className="h-full">
+                                    <div className="p-8 sm:p-12 lg:p-16 xl:p-20 flex flex-col justify-center max-w-2xl lg:max-w-none lg:ml-auto text-left h-full">
+                                        <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6 w-fit">
+                                            Custom Logistics Control
+                                        </span>
+                                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-6 leading-tight">
+                                            Because One-Size Software Never Fits Indian Manufacturing.
+                                        </h2>
+                                        
+                                        <div className="space-y-3.5 mb-10">
+                                            {[
+                                                "Tailored to your exact freight settlement rules and multi-tier dealer structures",
+                                                "Significantly lower total cost of ownership compared to bloated enterprise ERPs",
+                                                "Integrates seamlessly with your current tools - Tally, Excel, FASTag, WhatsApp",
+                                                "Modular architecture designed to scale as you add new plants and regional depots",
+                                                "Local on-ground engineering support and driver onboarding in regional languages"
+                                            ].map((item, i) => (
+                                                <div key={i} className="flex items-center gap-3.5 p-3.5 bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-xs hover:bg-white transition-all">
+                                                    <div className="size-7 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 text-[#00477b]">
+                                                        <CheckCircle className="size-4" />
+                                                    </div>
+                                                    <span className="text-zinc-700 font-semibold text-xs sm:text-sm">{item}</span>
                                                 </div>
-                                                <span className="text-zinc-800 font-semibold text-sm sm:text-[15px]">{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    
-                                    <div>
-                                        <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-10 h-14 text-sm font-bold shadow-lg shadow-blue-900/15 transition-all">
-                                            <Link href="/free-digital-consultation">
-                                                Schedule a Consultation
-                                            </Link>
-                                        </Button>
+                                            ))}
+                                        </div>
+                                        
+                                        <div>
+                                            <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold shadow-md transition-all w-fit">
+                                                <Link href="/free-digital-consultation">
+                                                    Schedule a Logistics Audit
+                                                </Link>
+                                            </Button>
+                                        </div>
                                     </div>
-                                </div>
+                                </ScrollReveal>
 
-                                {/* Right Content: Edge-to-Edge Image with No Radius and No Padding */}
-                                <div className="relative w-full h-[400px] lg:h-full min-h-[460px] overflow-hidden">
-                                    <img 
-                                        src="/assets/supply-port.webp" 
-                                        alt="Supply Chain Operations" 
-                                        className="w-full h-full object-cover object-center rounded-none" 
-                                    />
-                                </div>
+                                {/* Right Content: Edge-to-Edge Image */}
+                                <ScrollReveal animation="fade-left" delay={150} className="h-full">
+                                    <div className="relative w-full h-[400px] lg:h-full min-h-[460px] bg-[#02050f] overflow-hidden flex items-center justify-center">
+                                        <img 
+                                            src="/assets/supply-port.webp" 
+                                            alt="Supply Chain Operations" 
+                                            className="w-full h-full object-cover object-center rounded-none" 
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                </ScrollReveal>
 
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 7. Technology & Capabilities (Modern 6-Card Grid) */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Technology & Capabilities
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Modern Tech, Tailored To Your Business.
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto">
-                            We design and develop custom supply chain platforms that give you total visibility and control - built around your business logic, your partners, and your workflows.
-                        </p>
-                    </div>
+                {/* 7. Technology & Capabilities (6 Architecture Layer Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Tech Stack
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Enterprise Technology, Engineered For High-Volume Logistics
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-left">
                                 {[
                                     {
-                                        icon: <Server className="size-6" />,
-                                        area: "Backend",
-                                        desc: "High-concurrency data processing, custom business logic, and transactional database integrity.",
-                                        stack: ["Laravel (PHP 8+)", "MySQL", "Redis", "REST APIs"]
+                                        icon: Server,
+                                        area: "Backend Engine",
+                                        desc: "High-concurrency data processing, transactional dispatch locks, and rapid SKU allocation.",
+                                        stack: ["Laravel (PHP 8.3)", "MySQL", "Redis Caching"]
                                     },
                                     {
-                                        icon: <Layout className="size-6" />,
-                                        area: "Frontend",
-                                        desc: "Ultra-fast, touch-responsive interfaces designed specifically for plant operators and managers.",
-                                        stack: ["React", "Vue", "Tailwind CSS"]
+                                        icon: Layout,
+                                        area: "Operator & Driver UI",
+                                        desc: "Ultra-fast, touch-responsive interfaces designed for security gate staff and dispatchers.",
+                                        stack: ["React 19", "Tailwind CSS v4", "Inertia.js"]
                                     },
                                     {
-                                        icon: <Smartphone className="size-6" />,
-                                        area: "Mobile Access",
-                                        desc: "Offline-first shop floor mobile applications and rugged handheld workstations.",
-                                        stack: ["Progressive Web App (offline-ready)"]
+                                        icon: Smartphone,
+                                        area: "Mobile & Telematics",
+                                        desc: "Offline-first shop floor PWA mobile apps and rugged handheld barcode workstations.",
+                                        stack: ["Offline PWA", "GPS Telematics", "Android Handhelds"]
                                     },
                                     {
-                                        icon: <Cpu className="size-6" />,
-                                        area: "Integration",
-                                        desc: "Real-time barcode scanners, vehicle telemetry, and bi-directional ERP synchronization.",
-                                        stack: ["Tally", "SAP B1", "Zoho", "WhatsApp", "SMS Gateways"]
+                                        icon: Cpu,
+                                        area: "IoT & Gateway Bridges",
+                                        desc: "Weighbridge telemetry, FASTag API checkpoints, and automated WhatsApp/SMS notifications.",
+                                        stack: ["Weighbridge API", "FASTag Sync", "WhatsApp Cloud API"]
                                     },
                                     {
-                                        icon: <Cloud className="size-6" />,
-                                        area: "Hosting",
-                                        desc: "99.9% uptime SLA with automatic failover, containerization, and flexible cloud environments.",
-                                        stack: ["AWS", "DigitalOcean", "On-premise"]
+                                        icon: Cloud,
+                                        area: "Cloud Infrastructure",
+                                        desc: "99.9% uptime SLA with automatic failover, containerization, and secure cloud backups.",
+                                        stack: ["AWS Cloud", "DigitalOcean", "Docker Pipelines"]
                                     },
                                     {
-                                        icon: <ShieldCheck className="size-6" />,
-                                        area: "Security",
-                                        desc: "Bank-grade data encryption, granular role permissions, and immutable audit logs.",
-                                        stack: ["JWT Auth", "Role-based Access", "Data Encryption"]
+                                        icon: ShieldCheck,
+                                        area: "Security & Governance",
+                                        desc: "Bank-grade data encryption, granular role permissions, and immutable delivery audit logs.",
+                                        stack: ["Sanctum Auth", "Granular RBAC", "Immutable Audit Trails"]
                                     }
                                 ].map((item, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                            {/* Header with Icon & Category */}
-                                            <div className="flex items-center gap-4 mb-4">
-                                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
-                                                    {item.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            
+                                            <div className="relative z-10">
+                                                <div className="size-16 mb-5 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center">
+                                                    <item.icon className="size-7 text-[#00477b]" />
                                                 </div>
-                                                <div>
-                                                    <h3 className="text-lg font-bold text-[#00477b] leading-tight">
-                                                        {item.area}
-                                                    </h3>
-                                                    <span className="text-[11px] font-black text-zinc-400 uppercase tracking-wider">
-                                                        LAYER 0{i + 1}
-                                                    </span>
-                                                </div>
+
+                                                <h3 className="text-xl font-normal text-[#00477b] mb-2 leading-tight tracking-tight">
+                                                    {item.area}
+                                                </h3>
+
+                                                <p className="text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed mb-6">
+                                                    {item.desc}
+                                                </p>
                                             </div>
 
-                                            {/* Description */}
-                                            <p className="text-xs sm:text-sm text-zinc-600 font-medium leading-relaxed mb-6">
-                                                {item.desc}
-                                            </p>
+                                            <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-200/60 relative z-10">
+                                                {item.stack.map((tech, idx) => (
+                                                    <span key={idx} className="px-3 py-1 rounded-full bg-white/90 border border-blue-100 text-[11px] font-bold text-[#00477b] shadow-xs">
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
-
-                                        {/* Tech Badges / Pills */}
-                                        <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-200/60 relative z-10">
-                                            {item.stack.map((tech, idx) => (
-                                                <span key={idx} className="px-3 py-1 rounded-full bg-white/90 border border-blue-100/80 text-[12px] font-bold text-zinc-700 shadow-sm hover:bg-blue-50 hover:text-[#00477b] transition-colors">
-                                                    {tech}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
-
-                            <p className="text-xs sm:text-sm text-zinc-600 font-medium mt-10">
-                                Built like enterprise software - <span className="font-bold text-[#00477b]">customized for SME realities.</span>
-                            </p>
                         </div>
                     </div>
                 </section>
 
                 {/* 8. Engagement Models */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Engagement Models
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
-                            Flexible Engagement. Real Partnership.
-                        </h2>
-                    </div>
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Engagement
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Transparent Engagement Models
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-6xl">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 text-center">
                                 {[
-                                    { 
-                                        icon: <Lightbulb className="size-7" />, 
-                                        title: "Fixed Scope Project", 
-                                        desc: "You have a clear requirement. We build it end-to-end with milestones, pricing, and delivery timelines.",
+                                    {
+                                        icon: Lightbulb,
+                                        title: "Fixed Scope Project",
+                                        desc: "Clear dispatch and logistics requirements built end-to-end with pre-agreed timelines and costs.",
                                         btn: "Get Proposal"
                                     },
-                                    { 
-                                        icon: <Handshake className="size-7" />, 
-                                        title: "Dedicated Development Partner", 
-                                        desc: "You want a long-term tech partner. Hire a Gnosys team to continuously develop, maintain, and evolve your system.",
+                                    {
+                                        icon: Handshake,
+                                        title: "Dedicated Supply Chain Partner",
+                                        desc: "Long-term tech partnership with a dedicated Laravel team evolving your logistics software continuously.",
                                         btn: "Discuss Partnership"
                                     },
-                                    { 
-                                        icon: <Compass className="size-7" />, 
-                                        title: "Process + Tech Consulting", 
-                                        desc: "Unsure where to start? We'll map your workflows, define requirements, and recommend the right tech path.",
+                                    {
+                                        icon: Compass,
+                                        title: "Process & Logistics Consulting",
+                                        desc: "Comprehensive supply chain workflow audit and technical blueprinting before software investment.",
                                         btn: "Book Consultation"
                                     }
                                 ].map((card, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {card.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <card.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10">{card.title}</h3>
+                                            <p className="text-sm text-zinc-600 font-normal leading-relaxed mb-6 relative z-10">
+                                                {card.desc}
+                                            </p>
+                                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-6 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full relative z-10">
+                                                <Link href="/free-digital-consultation">
+                                                    {card.btn}
+                                                </Link>
+                                            </Button>
                                         </div>
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-3 leading-tight relative z-10">{card.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed mb-8 flex-1 relative z-10">
-                                            {card.desc}
-                                        </p>
-                                        <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-xl px-6 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full relative z-10">
-                                            <Link href="/free-digital-consultation">
-                                                {card.btn}
-                                            </Link>
-                                        </Button>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 9. Why Gnosys Digital */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
-                            Why Gnosys Digital
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4 leading-tight">
-                            We Bring Enterprise Thinking To SME Manufacturing.
-                        </h2>
-                    </div>
+                {/* 9. Why Gnosys Digital (5 Rectangular Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Why Gnosys
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Why Choose Gnosys Digital
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-left">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-3 sm:px-4 lg:px-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[95rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
                                 {[
-                                    "10+ years of experience building systems for manufacturing, logistics, and service operations.",
-                                    "Proven expertise in Laravel full-stack architecture.",
-                                    "Deep understanding of Indian supply chain workflows.",
-                                    "Strong focus on ROI, usability, and adoption - not just code.",
-                                    "Transparent delivery models and post-launch support."
-                                ].map((point, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[1.75rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden h-full">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-10 mb-4 rounded-xl bg-white shadow-md shadow-blue-900/5 text-[#00477b] border border-white flex items-center justify-center font-black text-sm relative z-10">
-                                            0{i + 1}
-                                        </div>
-                                        <p className="text-xs sm:text-sm text-zinc-700 font-semibold leading-relaxed relative z-10">
-                                            {point}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
+                                    { title: "10+ Years Plant Experience", desc: "Proven track record designing production, quality, and shop floor tracking systems.", icon: Trophy },
+                                    { title: "Laravel & React Core", desc: "Rock-solid backend and reactive interfaces built for zero latency on rugged floor tablets.", icon: Code },
+                                    { title: "Ground-Level Understanding", desc: "Designed for Indian plant supervisors, machine operators, and store keepers.", icon: Warehouse },
+                                    { title: "Agile Phased Rollout", desc: "No production stoppages; we deploy line by line with clear progress milestones.", icon: Sparkles },
+                                    { title: "Ongoing Support & SLAs", desc: "Transparent pricing, on-ground floor training, and continuous system evolution.", icon: ShieldCheck }
+                                ].map((item, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl p-5 sm:p-6 rounded-[2rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
-                            <div className="mt-12 text-center">
-                                <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-13 text-sm font-bold shadow-md hover:shadow-xl transition-all">
-                                    <Link href="/free-digital-consultation">
-                                        Talk to Gnosys Solutions Expert
-                                    </Link>
-                                </Button>
+                                            <div className="size-14 mb-4 rounded-xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <item.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-lg font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                            <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
+                                        </div>
+                                    </ScrollReveal>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* 10. Bottom CTA */}
-                <section className="py-32 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            DIGITIZE YOUR LOGISTICS
-                        </span>
-                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
-                            We Bring Enterprise Thinking To SME Manufacturing
-                        </h2>
-                        <p className="text-base sm:text-lg text-zinc-700 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Stop running on WhatsApp and paper LRs. Build a custom logistics & supply chain platform with Gnosys Digital.
-                        </p>
+                <section className="py-20 text-center relative z-10">
+                    <ScrollReveal animation="fade-up" delay={100}>
+                        <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-4">
+                                Digitize Your Logistics
+                            </span>
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                                We Bring Enterprise Thinking To SME Manufacturing
+                            </h2>
+                            <p className="text-base sm:text-lg text-zinc-700 font-normal mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Stop running on WhatsApp and paper LRs. Build a custom logistics & supply chain platform with Gnosys Digital.
+                            </p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                            <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-10 h-14 text-base font-bold shadow-md transition-all w-full sm:w-auto">
-                                <Link href="/free-digital-consultation">
-                                    Talk To Our Tech Expert
-                                </Link>
-                            </Button>
-                            <Button asChild className="bg-white border border-white/80 text-zinc-900 hover:bg-white/80 rounded-full px-10 h-14 text-base font-semibold shadow-sm transition-all w-full sm:w-auto">
-                                <Link href="/free-digital-consultation">
-                                    Book a Demo
-                                </Link>
-                            </Button>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                                <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        Book a Free Consultation
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </section>
             </div>
         </MainLayout>

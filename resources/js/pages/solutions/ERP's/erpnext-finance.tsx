@@ -1,10 +1,15 @@
 import MainLayout from '@/layouts/main-layout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { CheckSquare, Shield, CheckCircle2, AlertTriangle, TrendingUp, Trophy, Target } from 'lucide-react';
+import {
+    CheckSquare, Shield, CheckCircle2, AlertTriangle,
+    TrendingUp, Trophy, Target, ArrowRight, Database,
+    RefreshCw, ShieldAlert, Calculator, Clock, Lock,
+    Users, LineChart, Briefcase, ChevronDown, Check
+} from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
 import HeroWaveDivider from '@/components/hero-wave-divider';
@@ -15,8 +20,8 @@ export default function ErpnextFinance() {
         <MainLayout>
             <Head title="ERPNext For Financial Services" />
 
-            {/* Ambient Background */}
-            <div className="fixed inset-0 z-[-1] bg-gradient-to-br from-blue-100/60 via-purple-50/50 to-pink-100/60 pointer-events-none"></div>
+            {/* Custom Ambient Background */}
+            <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
 
             {/* 1. Hero Section */}
             <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
@@ -27,6 +32,20 @@ export default function ErpnextFinance() {
                         style={{ backgroundImage: "url('/assets/erp-finance.webp')", backgroundColor: '#020b18' }}
                     ></div>
                     <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/20 to-transparent pointer-events-none lg:w-1/2"></div>
+                </div>
+
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
@@ -61,120 +80,181 @@ export default function ErpnextFinance() {
             </section>
 
             {/* 2. Challenges */}
-            <section className="py-24 bg-transparent relative z-10 border-b border-white/20">
-                <div className="w-full px-4 md:px-12 lg:px-24">
-                    <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
-                        {/* Left Column: Headings */}
-                        <div className="text-left">
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                                THE CHALLENGE
-                            </span>
-                            <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-6 tracking-tight">
-                                Challenges Faced By Financial Services Firms
-                            </h2>
-                            <p className="text-zinc-600 text-lg leading-relaxed max-w-lg">
-                                Managing client portfolios, operations, and compliance is complex with un-unified systems.
-                            </p>
-                        </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            The Challenge
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Challenges Faced By Financial Services Firms
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                        {/* Right Column: Problems Box */}
-                        <div className="text-left bg-white/40 backdrop-blur-xl border border-white/60 rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                            <div className="flex items-center gap-3 mb-8 border-b border-white/60 pb-4">
-                                <div className="bg-red-100/50 p-2 rounded-full">
-                                    <AlertTriangle className="size-6 text-red-500" strokeWidth={2} />
-                                </div>
-                                <h3 className="font-extrabold text-[#00477b] text-xl tracking-tight">Common Problems</h3>
-                            </div>
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {[
-                                    "Fragmented client data across CRM, spreadsheets, and legacy tools",
-                                    "Manual reconciliation of transactions and portfolios",
-                                    "Increasing regulatory pressures from SEBI, RBI, IRDAI, and GST",
-                                    "Fee and commission calculation errors affecting profitability",
-                                    "Delays in client communications and personalized recommendations",
-                                    "Data security and audit trail inconsistencies"
-                                ].map((problem, i) => (
-                                    <div key={i} className="flex items-start gap-3 bg-white/50 border border-white/60 p-4 rounded-2xl hover:bg-white/70 hover:shadow-sm hover:-translate-y-0.5 transition-all duration-300">
-                                        <div className="bg-red-50 rounded-full p-1 mt-0.5 shrink-0 text-red-400">
-                                            <AlertTriangle className="size-4" strokeWidth={2.5} />
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                            {[
+                                {
+                                    icon: Database,
+                                    title: "Fragmented Client Data",
+                                    desc: "Customer data scattered across CRM, spreadsheets, and disconnected legacy tools without a unified view."
+                                },
+                                {
+                                    icon: RefreshCw,
+                                    title: "Manual Reconciliation",
+                                    desc: "Hours spent daily reconciling transactions, multi-asset portfolios, and bank/broker statements manually."
+                                },
+                                {
+                                    icon: ShieldAlert,
+                                    title: "Regulatory Pressure",
+                                    desc: "Mounting compliance mandates from SEBI, RBI, IRDAI, and GST with strict audit and reporting requirements."
+                                },
+                                {
+                                    icon: Calculator,
+                                    title: "Fee & Commission Errors",
+                                    desc: "Complex advisor commission structures leading to calculation mistakes and revenue leakage."
+                                },
+                                {
+                                    icon: Clock,
+                                    title: "Client Service Delays",
+                                    desc: "Slow report generation, delayed portfolio insights, and lack of self-service investor portals."
+                                },
+                                {
+                                    icon: Lock,
+                                    title: "Security & Audit Risks",
+                                    desc: "Inconsistent permission models and incomplete audit trails creating data privacy and regulatory risks."
+                                }
+                            ].map((item, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <item.icon className="size-7 text-[#00477b]" />
                                         </div>
-                                        <span className="text-zinc-700 font-medium text-sm leading-snug">{problem}</span>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                        <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
                                     </div>
-                                ))}
-                            </div>
+                                </ScrollReveal>
+                            ))}
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* 3. ERPNext Solution Grid */}
-            <section className="pt-24 pb-12 bg-transparent relative z-10 border-b border-white/20">
-                <div className="container mx-auto px-4 max-w-6xl mb-16">
-                    <div className="text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            OUR SOLUTION
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Our Solution
                         </span>
-                        <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] mb-4 tracking-tight">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
                             ERPNext Solution For Financial Services
                         </h2>
-                        <p className="text-zinc-600 text-base max-w-2xl mx-auto">
-                            A fully integrated platform that connects client management, investment operations, billing, and compliance.
-                        </p>
                     </div>
-                </div>
+                </ScrollReveal>
 
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <div className="container mx-auto px-4 max-w-6xl">
-                        {/* Top Row - 3 Cards */}
-                        <div className="grid lg:grid-cols-3 gap-6 mb-6">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 text-left">
                             {[
-                                { title: "Client Management", points: ["Unified CRM / client profiles across all products", "Automated onboarding workflows and document management", "Secure client portals for statements and portfolio insights"] },
-                                { title: "Investment Operations", points: ["Multi-asset portfolio tracking in real time", "Transaction processing and automated reconciliation", "Performance analytics and benchmark comparisons"] },
-                                { title: "Financial Control", points: ["Flexible fee structures and automated billing", "Commission tracking for advisors and channels", "Revenue recognition and profitability analytics"] }
+                                {
+                                    icon: Users,
+                                    title: "Client Management",
+                                    points: [
+                                        "Unified CRM / client profiles across all financial products",
+                                        "Automated onboarding workflows and digital KYC verification",
+                                        "Secure client self-service portal for portfolio statements"
+                                    ]
+                                },
+                                {
+                                    icon: Briefcase,
+                                    title: "Investment Operations",
+                                    points: [
+                                        "Multi-asset portfolio tracking in real time (Equity, Debt, MF)",
+                                        "Automated trade reconciliation with exchanges and depositories",
+                                        "Benchmark comparisons and NAV performance analytics"
+                                    ]
+                                },
+                                {
+                                    icon: Calculator,
+                                    title: "Financial Control & Billing",
+                                    points: [
+                                        "Flexible fee structures (AUM-based, advisory, transaction)",
+                                        "Automated sub-broker and channel commission tracking",
+                                        "Automated GST billing, revenue recognition, and ledger sync"
+                                    ]
+                                }
                             ].map((mod, i) => (
-                                <div key={i} className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 h-full flex flex-col group relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-colors duration-500"></div>
-                                    <h3 className="text-xl font-bold text-[#00477b] mb-6 relative z-10 flex items-center gap-3">
-                                        <div className="w-1.5 h-6 bg-[#00477b] rounded-full"></div>
-                                        {mod.title}
-                                    </h3>
-                                    <ul className="space-y-4 relative z-10">
-                                        {mod.points.map((pt, j) => (
-                                            <li key={j} className="flex items-start gap-3 text-sm text-zinc-700 leading-relaxed font-medium">
-                                                <div className="w-5 h-5 rounded-full bg-sky-50 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5 border border-sky-100">
-                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                                </div>
-                                                <span>{pt}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <mod.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-4 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{mod.title}</h3>
+                                        <ul className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed space-y-2.5 relative z-10">
+                                            {mod.points.map((pt, j) => (
+                                                <li key={j} className="flex items-start gap-2.5">
+                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                    <span>{pt}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </ScrollReveal>
                             ))}
                         </div>
 
-                        {/* Bottom Row - 2 Wide Cards */}
-                        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto text-left">
                             {[
-                                { title: "Compliance & Risk Management", points: ["Automated regulatory reporting (KYC, AML)", "Audit-ready transaction logs and access controls", "Risk assessment workflows and limit monitoring"] },
-                                { title: "Analytics & Insights", points: ["Custom dashboards for management reporting", "Predictive analytics for client behavior", "Data consolidation for single source of truth"] }
+                                {
+                                    icon: Shield,
+                                    title: "Compliance & Risk Management",
+                                    points: [
+                                        "Automated regulatory reporting for SEBI, RBI, and IRDAI",
+                                        "Immutable audit trails, versioning, and role-based access control",
+                                        "Pre-trade risk limit monitoring and automated compliance alerts"
+                                    ]
+                                },
+                                {
+                                    icon: LineChart,
+                                    title: "Analytics & Executive Insights",
+                                    points: [
+                                        "Real-time executive dashboards for AUM and branch performance",
+                                        "Client churn prediction and cross-selling opportunity scoring",
+                                        "Consolidated multi-entity P&L and balance sheet reporting"
+                                    ]
+                                }
                             ].map((mod, i) => (
-                                <div key={i} className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 h-full flex flex-col group relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-colors duration-500"></div>
-                                    <h3 className="text-xl font-bold text-[#00477b] mb-6 relative z-10 flex items-center gap-3">
-                                        <div className="w-1.5 h-6 bg-[#00477b] rounded-full"></div>
-                                        {mod.title}
-                                    </h3>
-                                    <ul className="space-y-4 relative z-10">
-                                        {mod.points.map((pt, j) => (
-                                            <li key={j} className="flex items-start gap-3 text-sm text-zinc-700 leading-relaxed font-medium">
-                                                <div className="w-5 h-5 rounded-full bg-sky-50 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5 border border-sky-100">
-                                                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                                                </div>
-                                                <span>{pt}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <mod.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-4 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{mod.title}</h3>
+                                        <ul className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed space-y-2.5 relative z-10">
+                                            {mod.points.map((pt, j) => (
+                                                <li key={j} className="flex items-start gap-2.5">
+                                                    <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
+                                                    <span>{pt}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </ScrollReveal>
                             ))}
                         </div>
                     </div>
@@ -182,33 +262,46 @@ export default function ErpnextFinance() {
             </section>
 
             {/* 4. Measurable Business Impact */}
-            <section className="pt-24 pb-12 bg-transparent relative z-10 border-b border-white/20">
-                <div className="container mx-auto px-4 max-w-6xl text-center mb-12">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        BUSINESS IMPACT
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] tracking-tight">
-                        Measurable Business Impact
-                    </h2>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Business Impact
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Measurable Business Impact
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <div className="container mx-auto px-4 max-w-6xl">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
                         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                             {[
-                                { title: "Operational Efficiency", desc: "60-70% reduction in manual reconciliation, faster onboarding" },
-                                { title: "Revenue & Profitability", desc: "20-30% improvement in fee collection and cross-selling" },
-                                { title: "Risk & Compliance", desc: "100% audit trail, zero regulatory delays" },
-                                { title: "Client Experience", desc: "90% satisfaction score, say customers empowered with insights" }
-                            ].map((impact, i) => (
-                                <div key={i} className="relative overflow-hidden bg-white/70 backdrop-blur-md border border-white p-8 sm:p-10 rounded-3xl shadow-[0_10px_30px_rgb(0,0,0,0.04)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-300 group flex flex-col justify-center min-h-[220px]">
-                                    {/* Decorative number */}
-                                    <div className="absolute -right-2 -bottom-6 text-[120px] leading-none font-black text-[#00477b]/[0.03] group-hover:text-[#00477b]/[0.08] group-hover:-translate-y-2 transition-all duration-500 pointer-events-none select-none">
-                                        0{i + 1}
+                                { impact: "70%", suffix: "FASTER", title: "Operational Speed", desc: "60-70% reduction in manual reconciliation and client onboarding time." },
+                                { impact: "30%", suffix: "INCREASE", title: "Revenue Optimization", desc: "20-30% improvement in fee collection efficiency and cross-selling." },
+                                { impact: "100%", suffix: "COMPLIANCE", title: "Audit Readiness", desc: "100% complete digital audit trails with zero regulatory penalties." },
+                                { impact: "90%", suffix: "SATISFACTION", title: "Client Retention", desc: "90%+ client satisfaction through transparent, real-time portal reporting." }
+                            ].map((stat, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center justify-center text-center overflow-hidden h-full"
+                                    >
+                                        <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="text-4xl sm:text-5xl font-extrabold text-[#00477b] mb-1 relative z-10">
+                                            {stat.impact}
+                                        </div>
+                                        <div className="text-[11px] font-bold text-[#00477b] tracking-[0.2em] uppercase mb-2 relative z-10">
+                                            {stat.suffix}
+                                        </div>
+                                        <div className="h-0.5 w-10 bg-blue-200 mb-3 relative z-10"></div>
+                                        <h3 className="text-lg font-normal text-[#00477b] mb-1.5 relative z-10">{stat.title}</h3>
+                                        <p className="text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed relative z-10">
+                                            {stat.desc}
+                                        </p>
                                     </div>
-                                    <h3 className="text-xl font-bold text-[#00477b] mb-4 relative z-10">{impact.title}</h3>
-                                    <p className="text-sm sm:text-base text-zinc-600 font-medium leading-relaxed relative z-10">{impact.desc}</p>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
                     </div>
@@ -216,77 +309,112 @@ export default function ErpnextFinance() {
             </section>
 
             {/* 5. Success Stories */}
-            <section className="pt-24 pb-12 bg-transparent text-zinc-900 relative z-10 border-b border-white/20">
-                <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center mb-16">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        SUCCESS STORIES
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] tracking-tight">
-                        Success Stories
-                    </h2>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Case Studies
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Success Stories in Financial Services
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <div className="container mx-auto px-4 max-w-7xl">
-                        <div className="grid md:grid-cols-3 gap-8 text-left">
-                            <div className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 relative group overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-all"></div>
-                                <div className="bg-white text-[#00477b] size-14 rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-900/5 border border-white">
-                                    <TrendingUp className="size-6 text-[#00477b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-[#00477b]">Wealth Management Firm</h3>
-                                <p className="text-base text-zinc-600 leading-relaxed font-medium">Automated AUM calculation and fee billing across 500+ HNI clients, reducing month-end closing time by 5 days.</p>
-                            </div>
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 text-left">
+                            {[
+                                {
+                                    icon: TrendingUp,
+                                    title: "Wealth Management Firm",
+                                    loc: "Mumbai",
+                                    desc: "Automated AUM calculation and fee billing across 500+ HNI clients, reducing month-end closing time by 5 working days."
+                                },
+                                {
+                                    icon: Target,
+                                    title: "Stock Broking Company",
+                                    loc: "Ahmedabad",
+                                    desc: "Streamlined sub-broker commissions and consolidated multi-exchange settlement data into a single compliance dashboard."
+                                },
+                                {
+                                    icon: Trophy,
+                                    title: "Financial Advisory",
+                                    loc: "Bengaluru",
+                                    desc: "Replaced 4 legacy tools with a unified ERPNext platform, cutting software IT costs by 40% with client self-service."
+                                }
+                            ].map((story, i) => (
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
-                            <div className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 relative group overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-all"></div>
-                                <div className="bg-white text-[#00477b] size-14 rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-900/5 border border-white">
-                                    <Target className="size-6 text-[#00477b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-[#00477b]">Stock Broking Company</h3>
-                                <p className="text-base text-zinc-600 leading-relaxed font-medium">Streamlined sub-broker commissions and consolidated multi-exchange data into a single compliance-ready dashboard.</p>
-                            </div>
-
-                            <div className="bg-white/70 backdrop-blur-md border border-white p-8 rounded-[32px] shadow-[0_10px_40px_rgb(0,0,0,0.05)] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgb(0,0,0,0.08)] hover:bg-white/90 transition-all duration-500 relative group overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100/50 rounded-full blur-3xl group-hover:bg-sky-200/50 transition-all"></div>
-                                <div className="bg-white text-[#00477b] size-14 rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-900/5 border border-white">
-                                    <Trophy className="size-6 text-[#00477b]" strokeWidth={2} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-[#00477b]">Financial Advisory</h3>
-                                <p className="text-base text-zinc-600 leading-relaxed font-medium">Replaced 4 legacy systems with a single platform, cutting IT costs by 40% and providing clients with self-service portals.</p>
-                            </div>
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <story.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-1 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{story.title}</h3>
+                                        <span className="text-xs font-bold text-[#00477b]/80 uppercase tracking-wider mb-3 relative z-10">{story.loc}</span>
+                                        <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{story.desc}</p>
+                                    </div>
+                                </ScrollReveal>
+                            ))}
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* 6. Why Gnosys Digital */}
-            <section className="pt-24 pb-12 bg-transparent relative z-10 border-b border-white/20">
-                <div className="container mx-auto px-4 max-w-6xl text-center mb-16">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                        WHY GNOSYS
-                    </span>
-                    <h2 className="text-4xl sm:text-5xl font-normal text-[#00477b] tracking-tight">
-                        Why Gnosys Digital
-                    </h2>
-                </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                <ScrollReveal animation="fade-up" delay={80}>
+                    <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                            Why Gnosys
+                        </span>
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                            Why Partner With Gnosys Digital
+                        </h2>
+                    </div>
+                </ScrollReveal>
 
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-16 relative z-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                    <div className="container mx-auto px-4 max-w-6xl">
-                        <div className="flex flex-wrap justify-center gap-6">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[90rem]">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                             {[
-                                "50+ financial services implementations across India",
-                                "Regulatory expertise (SEBI, RBI, IRDAI, GST)",
-                                "Bank-grade security and audit-ready operations",
-                                "Dedicated financial services consultants",
-                                "Proven ROI and efficiency gains"
+                                {
+                                    title: "50+ Financial Deployments",
+                                    desc: "50+ financial services implementations across wealth, broking, and NBFC sectors in India.",
+                                    icon: Briefcase
+                                },
+                                {
+                                    title: "Regulatory Expertise",
+                                    desc: "Deep knowledge of SEBI, RBI, IRDAI, and GST statutory compliance frameworks.",
+                                    icon: Shield
+                                },
+                                {
+                                    title: "Bank-Grade Security",
+                                    desc: "Enterprise-grade encryption, audit trails, and strict data confidentiality protocols.",
+                                    icon: Lock
+                                },
+                                {
+                                    title: "Dedicated Specialists",
+                                    desc: "Domain consultants who understand financial accounting and reconciliation.",
+                                    icon: Users
+                                }
                             ].map((item, i) => (
-                                <div key={i} className="bg-white/70 backdrop-blur-md border border-white p-6 rounded-3xl shadow-[0_10px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] hover:bg-white/90 transition-all duration-300 flex items-start gap-4 text-left max-w-sm w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] group">
-                                    <div className="w-6 h-6 rounded-full bg-sky-50 text-[#00477b] flex items-center justify-center shrink-0 mt-0.5 border border-sky-100">
-                                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                                <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                    <div
+                                        className="group relative bg-white/40 backdrop-blur-xl p-8 sm:p-9 rounded-[2.25rem] border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                    >
+                                        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                        <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <item.icon className="size-7 text-[#00477b]" />
+                                        </div>
+                                        <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{item.title}</h3>
+                                        <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
                                     </div>
-                                    <span className="text-sm font-bold text-zinc-800 leading-snug">{item}</span>
-                                </div>
+                                </ScrollReveal>
                             ))}
                         </div>
                     </div>
@@ -294,96 +422,118 @@ export default function ErpnextFinance() {
             </section>
 
             {/* 7. CTA & Contact Form Split Section */}
-            <section className="py-24 bg-transparent relative z-10 border-b border-white/20">
-                <div className="w-full px-4 md:px-12 lg:px-24">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                        
-                        {/* Left Column: CTA Text */}
-                        <div className="text-left lg:pt-12 xl:pr-10">
-                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                                NEXT STEPS
-                            </span>
-                            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[#00477b] mb-6 tracking-tight leading-tight">
-                                Ready To Transform Your Financial Operations?
-                            </h2>
-                            <p className="text-zinc-600 mb-10 text-lg leading-relaxed max-w-lg">
-                                Partner with Gnosys Digital to build a scalable, compliant, and efficient financial ecosystem. Take the first step by requesting a confidential assessment.
-                            </p>
-                            
-                            <div className="flex flex-col sm:flex-row gap-5">
-                                <Button className="bg-[#00477b] text-white hover:bg-[#003866] h-14 px-8 text-base font-bold shadow-[0_8px_25px_rgba(0,71,123,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-2xl">
-                                    Book Assessment
-                                </Button>
-                                <Button className="bg-white text-zinc-800 hover:bg-zinc-50 h-14 px-8 text-base font-bold shadow-[0_8px_25px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-all duration-300 rounded-2xl border border-zinc-100">
-                                    Speak To An Expert
-                                </Button>
-                            </div>
-                        </div>
+            <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40">
+                <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 md:px-8 lg:px-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="container mx-auto max-w-[1450px]">
+                        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
 
-                        {/* Right Column: Contact Form */}
-                        <div className="bg-white/40 backdrop-blur-xl border border-white/60 rounded-[32px] p-8 md:p-12 shadow-[0_15px_50px_rgb(0,0,0,0.05)] relative z-10">
-                            <div className="text-left mb-10 border-b border-white/60 pb-8">
-                                <h3 className="text-3xl sm:text-4xl font-normal text-[#00477b] tracking-tight">
-                                    Request Your Confidential Assessment
-                                </h3>
-                            </div>
+                            {/* Left Column: CTA Text (5 cols) */}
+                            <ScrollReveal animation="fade-right" delay={100} className="lg:col-span-5 text-left">
+                                <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                    Next Steps
+                                </span>
+                                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#00477b] mb-4 tracking-tight leading-tight">
+                                    Ready To Transform Your Financial Operations?
+                                </h2>
+                                <p className="text-zinc-600 mb-6 text-sm sm:text-base leading-relaxed font-normal">
+                                    Partner with Gnosys Digital to build a scalable, compliant, and efficient financial ecosystem. Take the first step by requesting a confidential assessment.
+                                </p>
 
-                            <form className="space-y-6">
-                                <div className="space-y-2">
-                                    <Label htmlFor="fullName" className="text-xs font-bold text-zinc-700">Full Name</Label>
-                                    <Input id="fullName" placeholder="Enter your full name" className="h-11 rounded-xl border-white/80 bg-white/50 focus:bg-white transition-colors" />
+                                <div className="space-y-3.5">
+                                    {[
+                                        { title: "Free Compliance & Process Audit", desc: "Identify manual bottlenecks in your reconciliation and portfolio reporting." },
+                                        { title: "Tailored Architecture Roadmap", desc: "Get a clear scope, integration timeline, and transparent ROI estimate." }
+                                    ].map((feat, fIdx) => (
+                                        <div key={fIdx} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-2xl p-4.5 shadow-xs flex items-start gap-3.5">
+                                            <div className="size-10 rounded-xl bg-white text-[#00477b] flex items-center justify-center shrink-0 shadow-xs border border-white">
+                                                <Check className="size-4 text-[#00477b]" />
+                                            </div>
+                                            <div>
+                                                <h4 className="text-sm font-normal text-[#00477b] mb-0.5">{feat.title}</h4>
+                                                <p className="text-xs text-zinc-600 font-normal leading-relaxed">{feat.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
+                            </ScrollReveal>
 
-                                <div className="space-y-2">
-                                    <Label htmlFor="email" className="text-xs font-bold text-zinc-700">Email Address</Label>
-                                    <Input id="email" type="email" placeholder="Enter your email" className="h-11 rounded-xl border-white/80 bg-white/50 focus:bg-white transition-colors" />
-                                </div>
-
-                                <div className="space-y-2">
-                                    <Label htmlFor="phone" className="text-xs font-bold text-zinc-700">Phone Number</Label>
-                                    <Input id="phone" placeholder="Enter your phone number" className="h-11 rounded-xl border-white/80 bg-white/50 focus:bg-white transition-colors" />
-                                </div>
-
-                                <div className="grid md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <Label htmlFor="company" className="text-xs font-bold text-zinc-700">Company Name</Label>
-                                        <Input id="company" placeholder="Company name" className="h-11 rounded-xl border-white/80 bg-white/50 focus:bg-white transition-colors" />
+                            {/* Right Column: Contact Form (7 cols) */}
+                            <ScrollReveal animation="fade-left" delay={150} className="lg:col-span-7">
+                                <div className="bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-xl relative z-10">
+                                    <div className="text-left mb-6">
+                                        <span className="inline-block px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-xs text-[10px] font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                            Get In Touch
+                                        </span>
+                                        <h3 className="text-2xl sm:text-3xl font-normal text-[#00477b] tracking-tight mb-1">
+                                            Request Confidential Assessment
+                                        </h3>
+                                        <p className="text-zinc-600 text-xs sm:text-sm font-normal">
+                                            Fill in your details below and our financial solutions architect will connect with you.
+                                        </p>
                                     </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="teamSize" className="text-xs font-bold text-zinc-700">Team Size</Label>
-                                        <select id="teamSize" className="w-full h-11 rounded-xl border border-white/80 bg-white/50 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#00477b]/20 focus:bg-white transition-colors">
-                                            <option>Select Size</option>
-                                            <option>1-10</option>
-                                            <option>11-50</option>
-                                            <option>51-200</option>
-                                            <option>200+</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div className="space-y-3 pt-2">
-                                    <Label className="text-xs font-bold text-zinc-700">Current Challenges</Label>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        {[
-                                            "Data fragmentation",
-                                            "Manual reconciliation",
-                                            "Regulatory compliance",
-                                            "Inefficient onboarding"
-                                        ].map((challenge, i) => (
-                                            <label key={i} className="flex items-start gap-2 cursor-pointer">
-                                                <Checkbox className="mt-1 border-white/80 bg-white/50 data-[state=checked]:bg-[#00477b] data-[state=checked]:text-white data-[state=checked]:border-[#00477b]" />
-                                                <span className="text-xs text-zinc-600 font-medium leading-snug">{challenge}</span>
-                                            </label>
-                                        ))}
-                                    </div>
-                                </div>
+                                    <form className="space-y-4">
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="fullName" className="text-xs font-medium text-[#00477b]">Full Name *</Label>
+                                                <Input id="fullName" placeholder="Enter your full name" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="email" className="text-xs font-medium text-[#00477b]">Official Email *</Label>
+                                                <Input id="email" type="email" placeholder="Enter your official email" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                        </div>
 
-                                <div className="pt-6">
-                                    <Button className="bg-[#00477b] text-white hover:bg-[#003866] h-14 text-base font-bold w-full shadow-[0_8px_25px_rgba(0,71,123,0.3)] hover:-translate-y-1 transition-all duration-300 rounded-2xl">
-                                        Submit Request
-                                    </Button>
+                                        <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="phone" className="text-xs font-medium text-[#00477b]">Phone Number *</Label>
+                                                <Input id="phone" placeholder="+91 98765 43210" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                            <div className="space-y-1.5">
+                                                <Label htmlFor="company" className="text-xs font-medium text-[#00477b]">Company / Firm Name *</Label>
+                                                <Input id="company" placeholder="e.g. Acme Capital Partners" className="h-11 rounded-xl border-white/80 bg-white/60 focus:bg-white focus:border-[#00477b] text-sm text-[#00477b] font-medium placeholder:text-zinc-400" />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-1.5">
+                                            <Label htmlFor="teamSize" className="text-xs font-medium text-[#00477b]">Firm Category / Size</Label>
+                                            <div className="relative">
+                                                <select id="teamSize" className="w-full h-11 rounded-xl border border-white/80 bg-white/60 px-3 py-2 text-sm text-[#00477b] font-medium focus:bg-white focus:border-[#00477b] focus-visible:outline-none transition-all appearance-none">
+                                                    <option className="bg-white">Wealth Management / RIA</option>
+                                                    <option className="bg-white">Stock Broker / Sub-Broker Network</option>
+                                                    <option className="bg-white">NBFC / Microfinance</option>
+                                                    <option className="bg-white">Asset Management / Mutual Funds</option>
+                                                </select>
+                                                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 size-4 text-[#00477b] pointer-events-none" />
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-2 pt-1">
+                                            <Label className="text-xs font-medium text-[#00477b]">Primary Operational Priorities</Label>
+                                            <div className="grid grid-cols-2 gap-2.5">
+                                                {[
+                                                    "Portfolio Reconciliation",
+                                                    "SEBI / RBI Compliance",
+                                                    "Client Portal & Statements",
+                                                    "Sub-broker Commission Sync"
+                                                ].map((challenge, i) => (
+                                                    <label key={i} className="flex items-center gap-2 cursor-pointer bg-white/50 p-2.5 rounded-xl border border-white/70 hover:bg-white/80 transition-colors">
+                                                        <Checkbox className="border-white/80 bg-white/70 data-[state=checked]:bg-[#00477b] data-[state=checked]:text-white data-[state=checked]:border-[#00477b]" />
+                                                        <span className="text-xs text-zinc-700 font-normal leading-tight">{challenge}</span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        <div className="pt-2">
+                                            <Button className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 font-bold w-full shadow-lg shadow-blue-900/10 hover:-translate-y-0.5 transition-all text-base flex items-center justify-center gap-2">
+                                                Submit Assessment Request <ArrowRight className="size-4" />
+                                            </Button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </ScrollReveal>
+
                         </div>
                     </div>
                 </div>

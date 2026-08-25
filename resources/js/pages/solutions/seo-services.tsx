@@ -4,11 +4,95 @@ import { Button } from '@/components/ui/button';
 import { 
     PieChart, FileText, Target, Wrench, Link2, BarChart3, PenTool, 
     CheckCircle2, Search, Zap, TrendingUp, CheckCircle, ArrowRight, ShieldCheck, Quote,
-    ShoppingCart, Landmark, Activity, GraduationCap, Briefcase, Store, UserCheck
+    ShoppingCart, Landmark, Activity, GraduationCap, Briefcase, Store, UserCheck, Sparkles, Trophy
 } from 'lucide-react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
 import ScrollReveal from '@/components/scroll-reveal';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
+// Smooth Count-Up Animation Component with IntersectionObserver
+function AnimatedCount({ 
+    endNum,
+    startRange,
+    endRange,
+    prefix = '', 
+    suffix = '', 
+    duration = 1800 
+}: { 
+    endNum?: number;
+    startRange?: number;
+    endRange?: number;
+    prefix?: string;
+    suffix?: string;
+    duration?: number;
+}) {
+    const [hasAnimated, setHasAnimated] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const elementRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    setHasAnimated(true);
+                }
+            },
+            { threshold: 0.15 }
+        );
+
+        if (elementRef.current) {
+            observer.observe(elementRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, [hasAnimated]);
+
+    useEffect(() => {
+        if (!hasAnimated) return;
+
+        let startTime: number | null = null;
+        let animationFrame: number;
+
+        const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+            const progressRatio = Math.min(elapsed / duration, 1);
+
+            // Ease-out cubic for realistic smooth deceleration
+            const easeProgress = 1 - Math.pow(1 - progressRatio, 3);
+            setProgress(easeProgress);
+
+            if (progressRatio < 1) {
+                animationFrame = requestAnimationFrame(animate);
+            }
+        };
+
+        animationFrame = requestAnimationFrame(animate);
+
+        return () => cancelAnimationFrame(animationFrame);
+    }, [hasAnimated, duration]);
+
+    if (startRange !== undefined && endRange !== undefined) {
+        const currentStart = Math.round(startRange * progress);
+        const currentEnd = Math.round(endRange * progress);
+        return (
+            <span ref={elementRef} className="tabular-nums">
+                {prefix}{currentStart}-{currentEnd}{suffix}
+            </span>
+        );
+    }
+
+    if (endNum !== undefined) {
+        const currentVal = Math.round(endNum * progress);
+        return (
+            <span ref={elementRef} className="tabular-nums">
+                {prefix}{currentVal}{suffix}
+            </span>
+        );
+    }
+
+    return <span ref={elementRef}>{prefix}{suffix}</span>;
+}
 
 export default function SeoServices() {
     return (
@@ -18,39 +102,58 @@ export default function SeoServices() {
             {/* Custom Ambient Background */}
             <div className="fixed inset-0 z-[-1] bg-gradient-to-r from-blue-200 via-blue-100 to-pink-200 pointer-events-none"></div>
 
-            {/* 1. Hero Section (Clear Background - Left Aligned Text for full graphic visibility) */}
-            <section
-                className="relative overflow-hidden flex min-h-[85vh] lg:min-h-[90vh] items-center pb-20 pt-24 lg:pt-32 bg-cover bg-right lg:bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/assets/seo service.webp')" }}
-            >
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl">
+            {/* 1. Hero Section (Clear & Full Background Image) */}
+            <section className="relative overflow-hidden pt-20 pb-36 lg:pt-32 lg:pb-48 flex items-center min-h-[90vh] lg:min-h-[100vh] w-full">
+                <div className="absolute inset-0 z-0">
+                    <div
+                        className="absolute inset-0 bg-cover bg-right lg:bg-center bg-no-repeat transition-all duration-700"
+                        style={{ backgroundImage: "url('/assets/seo service.webp')", backgroundColor: '#020b18' }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent pointer-events-none lg:w-1/2" />
+                </div>
+
+                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
+                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
+                    />
+                    <div 
+                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
+                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
+                    />
+                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
+                </div>
+
+                <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-12 max-w-[1550px]">
                     <div className="max-w-2xl lg:max-w-xl text-left">
                         <ScrollReveal animation="fade-up" delay={80}>
-                            <p className="text-[13px] font-extrabold text-blue-200 uppercase tracking-widest mb-4 drop-shadow-lg">
-                                DATA-DRIVEN SEO &amp; REVENUE ACCELERATION
-                            </p>
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-[#00477b]/80 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-md backdrop-blur-xs">
+                                Data-Driven SEO &amp; Revenue Growth
+                            </span>
                         </ScrollReveal>
                         <ScrollReveal animation="fade-up" delay={180}>
-                            <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-white leading-tight drop-shadow-xl">
-                                Be Found. Be Chosen.<br /> <span className="text-blue-300">Be Profitable.</span>
+                            <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight text-white leading-tight drop-shadow-xl">
+                                Be Found. Be Chosen.<br /> <span className="text-blue-100 font-normal">Be Profitable.</span>
                             </h1>
                         </ScrollReveal>
 
                         <ScrollReveal animation="fade-up" delay={280}>
-                            <p className="mb-8 text-base sm:text-lg text-blue-50/95 font-medium drop-shadow-md leading-relaxed">
-                                We don't just get you on Google - we grow your revenue. At Gnosys Digital, SEO is not about vanity metrics; it's about measurable outcomes - traffic that converts, content that scales, and visibility that drives profit.
+                            <p className="mb-8 text-base sm:text-lg text-blue-50/95 font-normal drop-shadow-md leading-relaxed">
+                                We don't just get you on Google - we grow your revenue. At Gnosys Digital, SEO is about measurable outcomes: traffic that converts, content that scales, and top-tier organic visibility.
                             </p>
                         </ScrollReveal>
 
                         <ScrollReveal animation="fade-up" delay={380}>
                             <div className="mb-10 flex flex-wrap gap-8 sm:gap-12 text-left">
                                 {[
-                                    { value: '300%', label: 'Traffic Growth' },
-                                    { value: '5X', label: 'ROI within 6 Months' },
-                                    { value: '50%', label: 'Faster Results' },
-                                ].map((stat) => (
-                                    <div key={stat.label}>
-                                        <p className="mb-1 text-3xl sm:text-4xl font-bold tracking-tight text-white drop-shadow-lg">{stat.value}</p>
+                                    { renderValue: () => <AnimatedCount endNum={300} suffix="%" />, label: 'Traffic Growth' },
+                                    { renderValue: () => <AnimatedCount endNum={5} suffix="X" />, label: 'ROI within 6 Months' },
+                                    { renderValue: () => <AnimatedCount endNum={50} suffix="%" />, label: 'Faster Indexing' },
+                                ].map((stat, idx) => (
+                                    <div key={idx}>
+                                        <p className="mb-1 text-3xl sm:text-4xl font-bold tracking-tight text-white drop-shadow-lg">{stat.renderValue()}</p>
                                         <p className="text-[11px] font-extrabold uppercase tracking-wider text-blue-200 drop-shadow-md">{stat.label}</p>
                                     </div>
                                 ))}
@@ -59,14 +162,10 @@ export default function SeoServices() {
 
                         <ScrollReveal animation="fade-up" delay={480}>
                             <div className="flex flex-col sm:flex-row items-center gap-4">
-                                <Button asChild className="bg-white text-[#022c54] hover:bg-slate-100 rounded-full px-8 h-13 text-sm sm:text-base font-bold shadow-xl transition-all w-full sm:w-auto">
+                                <Button asChild className="group relative overflow-hidden bg-[#00477b] hover:bg-[#003355] text-white border border-white/30 hover:shadow-[0_0_25px_rgba(0,71,123,0.6)] hover:scale-105 rounded-full px-8 sm:px-10 h-14 text-sm sm:text-base font-bold shadow-xl transition-all duration-300 w-full sm:w-auto">
                                     <Link href="/free-digital-consultation">
-                                        Get My SEO Growth Plan
-                                    </Link>
-                                </Button>
-                                <Button asChild className="bg-transparent border border-white text-white hover:bg-white/10 rounded-full px-8 h-13 text-sm sm:text-base font-bold shadow-xl transition-all w-full sm:w-auto">
-                                    <Link href="/free-digital-consultation">
-                                        Talk to an expert
+                                        <span className="relative z-10 flex items-center gap-2">Get My SEO Growth Plan <ArrowRight className="size-5" /></span>
+                                        <div className="absolute inset-0 -translate-x-[150%] group-hover:translate-x-[150%] bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-12 transition-transform duration-1000 ease-in-out z-0" />
                                     </Link>
                                 </Button>
                             </div>
@@ -79,364 +178,384 @@ export default function SeoServices() {
             </section>
 
             <div className="relative z-10 w-full bg-transparent">
-                {/* 2. Why SEO Matters Now */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Why SEO Matters Now
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] leading-tight mb-4">
-                            Visibility Is Profit. If You're Not Ranking, You're Not In The Game.
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium mx-auto max-w-4xl leading-relaxed">
-                            93% of online experiences start with a search - and 75% of users never go past page one. But SEO today is not just about keywords - it's about <strong className="text-zinc-800 font-semibold">data-driven visibility, intent-based optimization, and strategic storytelling</strong> that makes search engines and humans trust you.
-                        </p>
-                    </div>
+                
+                {/* 2. Why SEO Matters Now (3 Frosted Glass Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                The Opportunity
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                Visibility Is Profit. If You're Not Ranking, You're Not In The Game.
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal mx-auto max-w-3xl leading-relaxed">
+                                93% of online buyer journeys begin with a search. We engineer intent-based optimization and technical authority so high-intent buyers choose you.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-6xl">
                             <div className="grid gap-6 md:grid-cols-3">
                                 {[
-                                    { icon: <PieChart className="size-7" />, title: '57% of marketers say SEO drives more sales than paid ads.' },
-                                    { icon: <FileText className="size-7" />, title: 'Companies that blog consistently see 13× higher ROI.' },
-                                    { icon: <Target className="size-7" />, title: 'Organic leads convert 8× better than outbound ones.' },
+                                    { icon: PieChart, title: '57% of enterprise leaders report organic search drives more qualified pipeline than paid channels.' },
+                                    { icon: FileText, title: 'Companies publishing authoritative, intent-led content achieve 13× higher customer acquisition ROI.' },
+                                    { icon: Target, title: 'Organic inbound search leads convert 8× better than cold outreach or display advertising.' },
                                 ].map((item, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-center min-h-[180px] h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {item.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-center min-h-[220px] h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <item.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-base sm:text-lg font-normal text-[#00477b] leading-relaxed relative z-10">{item.title}</h3>
                                         </div>
-                                        <h3 className="text-base sm:text-lg font-bold text-[#00477b] leading-snug relative z-10">{item.title}</h3>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
-                            </div>
-
-                            <div className="mt-12 text-center">
-                                <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold shadow-md transition-all">
-                                    <Link href="/free-digital-consultation">
-                                        Get My SEO Growth Plan
-                                    </Link>
-                                </Button>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 3. The Gnosys SEO Engine */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Our SEO Framework- Built for Outcomes
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            The Gnosys SEO Engine - Designed For Measurable Results
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium mx-auto max-w-3xl leading-relaxed">
-                            We combine <strong className="text-zinc-800 font-semibold">data intelligence, creative content</strong>, and <strong className="text-zinc-800 font-semibold">technical precision</strong> to deliver growth you can measure in revenue, not vanity metrics.
-                        </p>
-                    </div>
+                {/* 3. The Gnosys SEO Engine (4 Framework Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Our Framework
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                The Gnosys SEO Engine: Designed For Measurable ROI
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal mx-auto max-w-3xl leading-relaxed">
+                                We combine deep technical audit rigor, semantic topic clustering, and digital PR to capture dominant organic share.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-left">
                                 {[
                                     { 
-                                        icon: <Wrench className="size-6" />, 
+                                        icon: Wrench, 
                                         title: 'Technical SEO Excellence', 
-                                        desc: 'Fix what search engines see first - site speed, structure, crawl depth, Core Web Vitals.',
-                                        result: '40% faster indexing, improved SERP stability.'
+                                        desc: 'Site speed optimization, Core Web Vitals remediation, clean canonical structures, and crawl budget efficiency.',
+                                        result: '40% faster indexing and zero indexation bloat.'
                                     },
                                     { 
-                                        icon: <PenTool className="size-6" />, 
-                                        title: 'Content Intelligence', 
-                                        desc: 'We turn keywords into compelling narratives that rank and convert.',
-                                        result: '3× average time on page, 25% lower bounce rates.'
+                                        icon: PenTool, 
+                                        title: 'Content & Semantic Clustering', 
+                                        desc: 'We map user search intent to deep pillar pages and topic clusters that establish unquestioned authority.',
+                                        result: '3× average dwell time and 25% lower bounce rates.'
                                     },
                                     { 
-                                        icon: <Link2 className="size-6" />, 
-                                        title: 'Authority Building & Backlinks', 
-                                        desc: 'Acquire contextual, high-trust backlinks through ethical digital PR and outreach.',
-                                        result: 'Domain Authority +25%, organic traffic surge within 90 days.'
+                                        icon: Link2, 
+                                        title: 'Authority Building & Digital PR', 
+                                        desc: 'Acquire editorial, high-trust contextual backlinks from verified industry publications through digital PR.',
+                                        result: 'Domain Authority lift and resilient rankings.'
                                     },
                                     { 
-                                        icon: <BarChart3 className="size-6" />, 
-                                        title: 'Performance Analytics & Reporting', 
-                                        desc: 'Weekly dashboards that tie clicks to conversions and ROI.',
-                                        result: 'Full transparency, real-time performance tracking.'
+                                        icon: BarChart3, 
+                                        title: 'Revenue Analytics & Attribution', 
+                                        desc: 'Transparent Looker Studio dashboards tracking keyword movements directly to demo requests and CRM revenue.',
+                                        result: '100% transparent attribution and real-time ROI.'
                                     },
                                 ].map((step, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                            <div className="flex items-center justify-between mb-6">
-                                                <div className="size-13 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center">
-                                                    {step.icon}
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="relative z-10">
+                                                <div className="flex items-center justify-between mb-6">
+                                                    <div className="size-16 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center">
+                                                        <step.icon className="size-7 text-[#00477b]" />
+                                                    </div>
+                                                    <span className="text-[11px] font-black text-zinc-400 tracking-widest uppercase">
+                                                        0{i + 1}
+                                                    </span>
                                                 </div>
-                                                <span className="text-[11px] font-black text-zinc-400 tracking-widest uppercase">
-                                                    0{i + 1}
-                                                </span>
+                                                <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight">{step.title}</h3>
+                                                <p className="text-sm font-normal leading-relaxed text-zinc-600 mb-6">{step.desc}</p>
                                             </div>
-                                            <h3 className="text-xl font-bold text-[#00477b] mb-3">{step.title}</h3>
-                                            <p className="text-sm font-medium leading-relaxed text-zinc-600 mb-4">{step.desc}</p>
-                                            <div className="pt-3 border-t border-zinc-200/60">
-                                                <span className="text-xs font-bold text-zinc-800">→ Result: </span>
+                                            <div className="pt-3 border-t border-zinc-200/60 relative z-10">
+                                                <span className="text-xs font-bold text-[#00477b]">→ Key Outcome: </span>
                                                 <span className="text-xs text-zinc-600 font-medium">{step.result}</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 4. Measurable Outcomes - Our Promise */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Measurable Outcomes - Our Promise
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            We Don’t Talk Traffic - We Talk ROI.
-                        </h2>
-                    </div>
+                {/* 4. Measurable Outcomes (5 Rectangular Cards + Quote) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                The ROI
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                We Don’t Talk Vanity Traffic: We Deliver Business ROI
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-14 pb-18 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-3 sm:px-4 lg:px-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[95rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
                                 {[
                                     {
                                         step: "01",
-                                        metric: "250-400%",
+                                        renderMetric: () => <AnimatedCount startRange={250} endRange={400} suffix="%" />,
                                         title: "Organic Traffic Growth",
-                                        impact: "Within 6 months of engagement"
+                                        impact: "Within 6 months of systematic optimization"
                                     },
                                     {
                                         step: "02",
-                                        metric: "↑ 3-5x",
-                                        title: "Conversion Rate Lift",
-                                        impact: "Through content and UX optimization"
+                                        renderMetric: () => <AnimatedCount prefix="↑ " startRange={3} endRange={5} suffix="x" />,
+                                        title: "Conversion Lift",
+                                        impact: "Through high-intent searcher alignment"
                                     },
                                     {
                                         step: "03",
-                                        metric: "↓ 30-40%",
-                                        title: "Cost Per Lead (CPL)",
-                                        impact: "Lower vs. PPC channels"
+                                        renderMetric: () => <AnimatedCount prefix="↓ " startRange={30} endRange={40} suffix="%" />,
+                                        title: "Lower Cost Per Lead",
+                                        impact: "Substantial savings compared to paid Google Ads"
                                     },
                                     {
                                         step: "04",
-                                        metric: "+20-30 Positions",
-                                        title: "Average Ranking Improvement",
-                                        impact: "Across 50+ tracked keywords"
+                                        renderMetric: () => <AnimatedCount prefix="+" startRange={20} endRange={30} />,
+                                        title: "Top 3 Positions",
+                                        impact: "Across high-converting target keywords"
                                     },
                                     {
                                         step: "05",
-                                        metric: "90 Days",
+                                        renderMetric: () => <AnimatedCount endNum={90} suffix=" Days" />,
                                         title: "ROI Realization",
-                                        impact: "Measured through sales-qualified leads"
+                                        impact: "Measured in pipeline growth and inbound SQLs"
                                     }
                                 ].map((card, idx) => (
-                                <div key={idx} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10 flex flex-col justify-between h-full">
-                                            <div className="mb-4 inline-flex items-center justify-center gap-1.5 self-center px-3 py-1 rounded-full bg-blue-50/90 border border-blue-200/60 shadow-inner">
-                                                <span className="size-1.5 rounded-full bg-[#00477b]"></span>
-                                                <span className="text-[11px] font-semibold text-[#00477b] tracking-wider uppercase">Metric {card.step}</span>
-                                            </div>
-
-                                            <div className="my-3">
-                                                <div className="text-3xl sm:text-4xl lg:text-[2.6rem] font-light text-[#00477b] tracking-tight mb-2 leading-none">
-                                                    {card.metric}
+                                    <ScrollReveal key={idx} animation="fade-up" delay={70 * (idx + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="relative z-10 w-full flex flex-col items-center">
+                                                <span className="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 border border-blue-100 text-[#00477b] font-bold text-[10px] uppercase tracking-wider mb-2">
+                                                    Metric {card.step}
+                                                </span>
+                                                <div className="text-3xl sm:text-4xl font-light text-[#00477b] tracking-tight mb-1.5">
+                                                    {card.renderMetric()}
                                                 </div>
-                                                <h3 className="text-sm sm:text-[15px] font-medium text-zinc-800 leading-snug">
+                                                <h3 className="text-sm font-normal text-zinc-800 mb-2 leading-tight">
                                                     {card.title}
                                                 </h3>
+                                                <p className="text-xs text-zinc-600 font-normal leading-relaxed pt-2.5 border-t border-zinc-200/60 w-full">
+                                                    {card.impact}
+                                                </p>
                                             </div>
-
-                                            <p className="text-xs text-zinc-600 font-normal leading-relaxed pt-4 border-t border-zinc-200/60 mt-auto">
-                                                {card.impact}
-                                            </p>
                                         </div>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
 
                             {/* Quote Box */}
-                            <div className="mt-12 max-w-3xl mx-auto p-8 rounded-[2.25rem] bg-gradient-to-br from-white/95 via-white/80 to-blue-50/60 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#00477b]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2.25rem] pointer-events-none"></div>
-                                <Quote className="size-8 text-[#00477b]/30 mx-auto mb-3" />
-                                <p className="text-lg sm:text-xl font-normal text-[#00477b] italic mb-2 tracking-tight">
-                                    "If SEO doesn't move your business KPIs, it's not SEO - it's noise."
-                                </p>
-                                <span className="text-xs sm:text-sm font-medium uppercase tracking-widest text-zinc-500">- Team Gnosys Digital</span>
-                            </div>
+                            <ScrollReveal animation="fade-up" delay={200}>
+                                <div className="mt-8 max-w-3xl mx-auto p-6 sm:p-7 rounded-[2rem] bg-gradient-to-br from-white/95 via-white/80 to-blue-50/60 border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-center relative overflow-hidden group">
+                                    <Quote className="size-6 text-[#00477b]/40 mx-auto mb-2" />
+                                    <p className="text-base sm:text-lg font-normal text-[#00477b] italic mb-1.5 tracking-tight">
+                                        "If SEO doesn't move your business KPIs, it's not SEO - it's noise."
+                                    </p>
+                                    <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">- Team Gnosys Digital</span>
+                                </div>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </section>
 
-                {/* 5. Industry-Focused SEO Strategies */}
-                <section className="pt-24 pb-16 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Industry-Focused SEO Strategies
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Tailored SEO For Every Industry
-                        </h2>
-                        <p className="text-sm sm:text-base text-zinc-600 font-medium max-w-3xl mx-auto">
-                            Every business is unique - so is your search strategy. We craft vertical-specific SEO blueprints that blend industry trends with AI-powered keyword intelligence.
-                        </p>
-                    </div>
+                {/* 5. Industry-Focused SEO Strategies (Connected Horizontal Roadmap Timeline) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Industry Verticals
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-3">
+                                Tailored SEO For High-Growth Industries
+                            </h2>
+                            <p className="text-sm sm:text-base text-zinc-600 font-normal max-w-3xl mx-auto">
+                                Every sector has distinct conversion patterns. We engineer vertical-specific strategies matching user psychology.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-16 pb-20 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[92rem]">
-                            <div className="relative">
-                                {/* Connecting Line */}
-                                <div className="hidden lg:block absolute top-[6.5rem] left-[6%] right-[6%] h-0.5 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 z-0"></div>
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-10 sm:py-14 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="relative max-w-[85rem] mx-auto">
+                            
+                            {/* Horizontal Roadmap Connector Track */}
+                            <div className="hidden lg:block absolute top-9 left-[8%] right-[8%] h-1 bg-gradient-to-r from-blue-200 via-[#00477b]/30 to-blue-200 border-t-2 border-dashed border-[#00477b]/40 z-0"></div>
 
-                                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
-                                    {[
-                                        {
-                                            step: "01",
-                                            icon: <ShoppingCart className="size-7" />,
-                                            title: "E-Commerce",
-                                            desc: "Product-focused SEO and schema setup"
-                                        },
-                                        {
-                                            step: "02",
-                                            icon: <Landmark className="size-7" />,
-                                            title: "BFSI",
-                                            desc: "Compliance-safe keywords and secure tech SEO"
-                                        },
-                                        {
-                                            step: "03",
-                                            icon: <Activity className="size-7" />,
-                                            title: "Healthcare",
-                                            desc: "HIPAA-safe content and local search"
-                                        },
-                                        {
-                                            step: "04",
-                                            icon: <GraduationCap className="size-7" />,
-                                            title: "Education",
-                                            desc: "Search funnels for student acquisition"
-                                        },
-                                        {
-                                            step: "05",
-                                            icon: <Briefcase className="size-7" />,
-                                            title: "Consulting",
-                                            desc: "Authority-based SEO for lead growth"
-                                        }
-                                    ].map((node, i) => (
-                                        <div key={i} className="flex flex-col h-full group">
-                                            <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
-                                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 border border-white shadow-sm">
-                                                    <span className="size-1.5 rounded-full bg-[#00477b]"></span>
-                                                    <span className="text-[11px] font-black text-[#00477b] tracking-wider uppercase">Stage {node.step}</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-5 relative z-10">
+                                {[
+                                    {
+                                        step: "01",
+                                        icon: ShoppingCart,
+                                        title: "E-Commerce",
+                                        desc: "Category schema, PLP search optimization, and product feed ranking."
+                                    },
+                                    {
+                                        step: "02",
+                                        icon: Landmark,
+                                        title: "BFSI & FinTech",
+                                        desc: "Compliance-safe financial keywords and secure architecture."
+                                    },
+                                    {
+                                        step: "03",
+                                        icon: Activity,
+                                        title: "Healthcare",
+                                        desc: "E-E-A-T medical authority, local clinic packs, and patient search."
+                                    },
+                                    {
+                                        step: "04",
+                                        icon: GraduationCap,
+                                        title: "EdTech & Education",
+                                        desc: "Course discovery funnels, program landing pages, and admissions."
+                                    },
+                                    {
+                                        step: "05",
+                                        icon: Briefcase,
+                                        title: "B2B & SaaS",
+                                        desc: "High-intent buyer keywords, competitor comparisons, and demos."
+                                    }
+                                ].map((node, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div className="group relative flex flex-col items-center h-full">
+                                            
+                                            {/* Top Roadmap Node */}
+                                            <div className="relative mb-6">
+                                                <div className="size-18 rounded-2xl bg-white shadow-lg shadow-blue-900/10 border-2 border-white ring-4 ring-blue-100/80 group-hover:ring-[#00477b]/30 group-hover:scale-105 transition-all duration-300 flex items-center justify-center relative z-10 text-[#00477b]">
+                                                    <node.icon className="size-7 text-[#00477b]" />
                                                 </div>
+                                                {/* Step Number Tag */}
+                                                <span className="absolute -top-2 -right-2 size-6 rounded-full bg-[#00477b] text-white text-[11px] font-bold flex items-center justify-center shadow-md z-20">
+                                                    {node.step}
+                                                </span>
+                                            </div>
 
-                                                <div className="size-18 mb-5 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                                    {node.icon}
-                                                </div>
+                                            {/* Content Card */}
+                                            <div className="w-full h-full bg-white/40 backdrop-blur-xl border border-white/70 p-6 sm:p-7 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] group-hover:shadow-2xl group-hover:shadow-blue-900/10 group-hover:bg-white/60 group-hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center overflow-hidden relative">
+                                                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
-                                                <h3 className="font-bold text-[#00477b] text-xl mb-3 tracking-tight">
+                                                <h3 className="text-base font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
                                                     {node.title}
                                                 </h3>
 
-                                                <p className="text-xs text-zinc-600 font-medium leading-relaxed mt-auto">
+                                                <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">
                                                     {node.desc}
                                                 </p>
                                             </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="mt-12 text-center">
-                                <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-8 h-12 text-sm font-bold shadow-md transition-all">
-                                    <Link href="/free-digital-consultation">
-                                        Explore Industry Use Cases
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* 6. Client Results That Speak Louder Than Claims */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Client Results That Speak Louder Than Claims
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            Real Clients. Real Results.
-                        </h2>
-                    </div>
-
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-6xl">
-                            <div className="grid gap-6 md:grid-cols-3">
-                                {[
-                                    { 
-                                        icon: <Store className="size-7" />, 
-                                        title: 'E-Commerce Brand', 
-                                        desc: '400% increase in organic traffic in 5 months → $180K revenue increase via SEO-only channel' 
-                                    },
-                                    { 
-                                        icon: <UserCheck className="size-7" />, 
-                                        title: 'SaaS Client', 
-                                        desc: '120 high-intent keywords ranked in top 10 → 4× demo bookings within 90 days' 
-                                    },
-                                    { 
-                                        icon: <Activity className="size-7" />, 
-                                        title: 'Healthcare Client', 
-                                        desc: 'Local SEO optimization increased appointment bookings by 55%' 
-                                    },
-                                ].map((item, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between min-h-[220px] h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {item.icon}
-                                        </div>
-                                        <h3 className="text-xl font-bold text-[#00477b] mb-3 relative z-10">{item.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{item.desc}</p>
-                                    </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* 7. How We Work - The Gnosys Growth Playbook */}
-                <section className="pt-24 pb-12 text-center relative z-10">
-                    <div className="w-full px-4 sm:px-6 max-w-7xl mx-auto mb-10 text-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            How We Work - The Gnosys Growth Playbook
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
-                            SEO That Starts With Data. Ends With Revenue.
-                        </h2>
-                    </div>
+                {/* 6. Client Results That Speak Louder Than Claims (3 Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Case Studies
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                Real Clients. Verified Revenue Results.
+                            </h2>
+                        </div>
+                    </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                        <div className="container mx-auto max-w-[90rem]">
-                            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-6xl">
+                            <div className="grid gap-6 md:grid-cols-3">
                                 {[
-                                    { icon: <Search className="size-7" />, title: "Discover", desc: "Deep audit & competitor gap analysis" },
-                                    { icon: <Target className="size-7" />, title: "Define", desc: "Strategy roadmap with measurable KPIs" },
-                                    { icon: <Zap className="size-7" />, title: "Deploy", desc: "On-page, off-page, and technical rollout" },
-                                    { icon: <BarChart3 className="size-7" />, title: "Deliver", desc: "Transparent weekly reports" },
-                                    { icon: <TrendingUp className="size-7" />, title: "Dominate", desc: "Continuous optimization & authority scaling" }
-                                ].map((step, i) => (
-                                <div key={i} className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden">
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="size-16 mb-6 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center relative z-10">
-                                            {step.icon}
+                                    { 
+                                        icon: Store, 
+                                        title: 'E-Commerce Brand', 
+                                        desc: '400% increase in organic traffic in 5 months resulting in substantial top-line revenue growth exclusively from organic search.' 
+                                    },
+                                    { 
+                                        icon: UserCheck, 
+                                        title: 'Enterprise B2B SaaS', 
+                                        desc: '120+ high-intent category keywords ranked in top 3 positions, quadrupling qualified sales demo requests within 90 days.' 
+                                    },
+                                    { 
+                                        icon: Activity, 
+                                        title: 'Healthcare Network', 
+                                        desc: 'Local cluster search optimization and schema remediation increased direct patient appointment bookings by 55%.' 
+                                    },
+                                ].map((item, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between min-h-[220px] h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <item.icon className="size-7 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 relative z-10">{item.title}</h3>
+                                            <p className="text-sm text-zinc-600 font-normal leading-relaxed relative z-10">{item.desc}</p>
                                         </div>
-                                        <h3 className="text-lg font-bold text-[#00477b] mb-3 leading-tight relative z-10">{step.title}</h3>
-                                        <p className="text-sm text-zinc-600 font-medium leading-relaxed relative z-10">{step.desc}</p>
-                                    </div>
+                                    </ScrollReveal>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* 7. How We Work - The Gnosys Growth Playbook (5 Rectangular Cards) */}
+                <section className="pt-10 sm:pt-12 bg-transparent border-t border-white/40 text-center">
+                    <ScrollReveal animation="fade-up" delay={80}>
+                        <div className="w-full px-4 sm:px-6 mb-7 sm:mb-8 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                Execution Playbook
+                            </span>
+                            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#00477b]">
+                                SEO That Starts With Data. Ends With Revenue.
+                            </h2>
+                        </div>
+                    </ScrollReveal>
+
+                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-3 sm:px-4 lg:px-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                        <div className="container mx-auto max-w-[95rem]">
+                            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5">
+                                {[
+                                    { icon: Search, title: "01. Discover", desc: "Comprehensive technical audit, competitive whitespace analysis, and keyword gap mapping." },
+                                    { icon: Target, title: "02. Define", desc: "Strategic topic cluster roadmap with commercial intent prioritization and clear KPI targets." },
+                                    { icon: Zap, title: "03. Deploy", desc: "High-impact on-page optimization, Core Web Vitals remediation, and structured data injection." },
+                                    { icon: BarChart3, title: "04. Deliver", desc: "Live Looker dashboards with weekly ranking progress and transparent lead attribution." },
+                                    { icon: TrendingUp, title: "05. Dominate", desc: "Continuous algorithmic adaptation, digital PR backlink velocity, and organic market dominance." }
+                                ].map((step, i) => (
+                                    <ScrollReveal key={i} animation="fade-up" delay={70 * (i + 1)} className="h-full">
+                                        <div
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-5 sm:p-6 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center h-full overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
+
+                                            <div className="size-14 mb-4 rounded-xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                                <step.icon className="size-6 text-[#00477b]" />
+                                            </div>
+                                            <h3 className="text-lg font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">{step.title}</h3>
+                                            <p className="text-xs sm:text-[13px] text-zinc-600 font-normal leading-relaxed relative z-10">{step.desc}</p>
+                                        </div>
+                                    </ScrollReveal>
                                 ))}
                             </div>
                         </div>
@@ -444,31 +563,28 @@ export default function SeoServices() {
                 </section>
 
                 {/* 8. Bottom CTA */}
-                <section className="py-32 text-center relative z-10">
-                    <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
-                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-6">
-                            Ready To Scale Your Search Success?
-                        </span>
-                        <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-6">
-                            Let's Turn Search Into Sales
-                        </h2>
-                        <p className="text-base sm:text-lg text-zinc-700 font-normal mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Your customers are searching. Let’s make sure they find you - and choose you.
-                        </p>
+                <section className="py-20 text-center relative z-10">
+                    <ScrollReveal animation="fade-up" delay={100}>
+                        <div className="container mx-auto px-4 max-w-4xl flex flex-col items-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-4">
+                                Ready To Scale Your Search Success?
+                            </span>
+                            <h2 className="text-4xl sm:text-5xl font-normal tracking-tight text-[#00477b] mb-4">
+                                Let's Turn Search Into Predictable Revenue
+                            </h2>
+                            <p className="text-base sm:text-lg text-zinc-700 font-normal mb-8 max-w-2xl mx-auto leading-relaxed">
+                                Your customers are actively searching. Let’s make sure they find you - and choose you.
+                            </p>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                            <Button asChild className="bg-[#00477b] text-white hover:bg-[#00335e] rounded-full px-10 h-14 text-base font-bold shadow-md transition-all w-full sm:w-auto">
-                                <Link href="/free-digital-consultation">
-                                    Request a Free SEO Audit
-                                </Link>
-                            </Button>
-                            <Button asChild className="bg-white border border-white/80 text-zinc-900 hover:bg-white/80 rounded-full px-10 h-14 text-base font-semibold shadow-sm transition-all w-full sm:w-auto">
-                                <Link href="/free-digital-consultation">
-                                    Schedule a Discovery Call
-                                </Link>
-                            </Button>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                                <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-8 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full sm:w-auto">
+                                    <Link href="/free-digital-consultation">
+                                        Request a Free SEO Audit
+                                    </Link>
+                                </Button>
+                            </div>
                         </div>
-                    </div>
+                    </ScrollReveal>
                 </section>
             </div>
         </MainLayout>

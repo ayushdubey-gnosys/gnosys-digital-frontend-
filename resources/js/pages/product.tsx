@@ -2,6 +2,7 @@ import MainLayout from '@/layouts/main-layout';
 import { Head, Link } from '@inertiajs/react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import ScrollReveal from '@/components/scroll-reveal';
 
 interface ProductProps {
     slug: string | null;
@@ -17,7 +18,7 @@ export default function Product({ slug }: ProductProps) {
                     <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8 bg-white/40 backdrop-blur-2xl border border-white/50 w-full p-4 sm:p-8">
                         
                         {/* Left: Product Image */}
-                        <div className="w-full lg:w-[60%] relative flex justify-center px-4 lg:px-6">
+                        <ScrollReveal animation="fade-right" delay={100} className="w-full lg:w-[60%] relative flex justify-center px-4 lg:px-6">
                             <div className="w-full max-w-full relative">
                                 <div className="absolute top-6 left-6 z-20 bg-[#a3b118] text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md tracking-wider uppercase">
                                     Sale!
@@ -40,10 +41,10 @@ export default function Product({ slug }: ProductProps) {
                                     <div className="absolute bottom-1/4 right-1/4 size-56 bg-blue-500/10 rounded-full blur-3xl"></div>
                                 </div>
                             </div>
-                        </div>
+                        </ScrollReveal>
 
                         {/* Right: Product Details */}
-                        <div className="w-full lg:w-[40%] flex justify-center px-4 lg:px-6">
+                        <ScrollReveal animation="fade-left" delay={150} className="w-full lg:w-[40%] flex justify-center px-4 lg:px-6">
                             <div className="w-full max-w-full bg-white/40 backdrop-blur-xl border border-white/60 rounded-none p-8 sm:p-10 lg:p-12 shadow-2xl shadow-blue-900/10 flex flex-col justify-center relative overflow-hidden">
                                 {/* Decorative blur */}
                                 <div className="absolute top-0 right-0 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl -z-10 transform translate-x-1/3 -translate-y-1/3"></div>
@@ -111,7 +112,7 @@ export default function Product({ slug }: ProductProps) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </ScrollReveal>
                     </div>
                 </div>
             </div>
