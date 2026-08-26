@@ -79,63 +79,49 @@ export default function FreeDigitalConsultation() {
 
             {/* 1. Hero Section */}
             <section 
-                className="relative text-white overflow-hidden min-h-[calc(100vh-76px)] flex items-center justify-center py-20 lg:py-24 bg-cover bg-center bg-no-repeat"
+                className="relative text-white overflow-hidden min-h-[calc(100vh-76px)] lg:min-h-[90vh] flex items-center justify-center pt-16 sm:pt-20 pb-28 sm:pb-36 lg:pb-40 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: 'url("/assets/consulting.webp")' }}
             >
-                {/* Clean transparent overlay for 100% crystal clear image */}
-                <div className="absolute inset-0 bg-black/20"></div>
-
-                {/* Dynamic Shining Ambient Light Beam Sweep & Pulse Glows */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-85">
-                    <div 
-                        className="absolute -inset-y-32 -left-1/3 w-[55%] bg-gradient-to-r from-transparent via-cyan-400/15 via-blue-500/10 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-3xl opacity-0" 
-                        style={{ animationDelay: '1.4s', animationFillMode: 'backwards' }}
-                    />
-                    <div 
-                        className="absolute -inset-y-32 -left-1/3 w-[28%] bg-gradient-to-r from-transparent via-white/12 to-transparent animate-[beamSweep_8s_cubic-bezier(0.4,0,0.2,1)_infinite] blur-xl opacity-0" 
-                        style={{ animationDelay: '1.65s', animationFillMode: 'backwards' }}
-                    />
-                    <div className="absolute top-1/4 left-1/4 size-72 bg-blue-500/10 rounded-full blur-[110px] animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
-                    <div className="absolute top-1/2 right-1/3 size-80 bg-teal-400/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6.5s', animationDelay: '1s' }} />
-                </div>
+                {/* Crisp subtle dark gradient overlay so the photo is 100% clear and vibrant */}
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/30 to-slate-950/50"></div>
 
                 <div className="container mx-auto px-4 relative z-10 text-center max-w-5xl">
                     <ScrollReveal animation="fade-up" delay={80}>
-                        <div className="mb-6 inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-md px-5 py-2 border border-white/20 shadow-sm">
+                        <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur-md px-4 py-1.5 border border-white/25 shadow-sm">
                             <span className="text-xs font-extrabold uppercase tracking-widest text-blue-100">Free Digital Strategy Session</span>
                         </div>
                     </ScrollReveal>
 
                     <ScrollReveal animation="fade-up" delay={180}>
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal mb-6 leading-tight tracking-tight">
+                        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-normal mb-4 leading-tight tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
                             Your Digital Transformation <br className="hidden sm:inline" /> Starts With A Conversation
                         </h1>
                     </ScrollReveal>
 
                     <ScrollReveal animation="fade-up" delay={280}>
-                        <p className="text-base sm:text-lg md:text-xl text-blue-100/90 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
+                        <p className="text-sm sm:text-base md:text-lg text-blue-50/95 mb-6 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
                             Get expert guidance on your website, app, or marketing system without commitment. Free growth audit for businesses ready to scale. Tell us your current bottlenecks, and we'll deliver actionable insights - whether you decide to work with us or not.
                         </p>
                     </ScrollReveal>
 
                     <ScrollReveal animation="fade-up" delay={380}>
-                        <div className="flex flex-col items-center gap-6">
+                        <div className="flex flex-col items-center gap-5">
                             <Button 
                                 onClick={scrollToForm}
-                                className="bg-white text-[#00477b] hover:bg-blue-50 rounded-full px-8 sm:px-10 h-14 text-base font-bold shadow-2xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1"
+                                className="bg-white text-[#00477b] hover:bg-blue-50 rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base font-bold shadow-2xl shadow-blue-950/40 transition-all duration-300 hover:-translate-y-1"
                             >
                                 Book Your Free Consultation Today
                             </Button>
 
                             {/* 3 Pillars / Feature Pills */}
-                            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 pt-2">
-                                <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
+                            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1">
+                                <span className="px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs sm:text-sm font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
                                     ✓ No-sales pressure
                                 </span>
-                                <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
+                                <span className="px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs sm:text-sm font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
                                     ✓ 30-minute consultation
                                 </span>
-                                <span className="px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold text-white">
+                                <span className="px-4 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs sm:text-sm font-semibold text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
                                     ✓ Senior experts only
                                 </span>
                             </div>

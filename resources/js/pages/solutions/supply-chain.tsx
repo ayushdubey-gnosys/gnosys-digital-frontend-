@@ -499,39 +499,43 @@ export default function SupplyChain() {
                                         icon: Lightbulb,
                                         title: "Fixed Scope Project",
                                         desc: "Clear dispatch and logistics requirements built end-to-end with pre-agreed timelines and costs.",
-                                        btn: "Get Proposal"
+                                        btn: "Get Proposal",
+                                        href: "/delivery-engagement-models"
                                     },
                                     {
                                         icon: Handshake,
                                         title: "Dedicated Supply Chain Partner",
                                         desc: "Long-term tech partnership with a dedicated Laravel team evolving your logistics software continuously.",
-                                        btn: "Discuss Partnership"
+                                        btn: "Discuss Partnership",
+                                        href: "/free-digital-consultation"
                                     },
                                     {
                                         icon: Compass,
                                         title: "Process & Logistics Consulting",
                                         desc: "Comprehensive supply chain workflow audit and technical blueprinting before software investment.",
-                                        btn: "Book Consultation"
+                                        btn: "Book Consultation",
+                                        href: "/growth-systems-discovery-call"
                                     }
                                 ].map((card, i) => (
                                     <ScrollReveal key={i} animation="fade-up" delay={80 * (i + 1)} className="h-full">
-                                        <div
-                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full"
+                                        <Link
+                                            href={card.href}
+                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center justify-between overflow-hidden h-full cursor-pointer block"
                                         >
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10">
+                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center relative z-10 transition-transform group-hover:scale-105">
                                                 <card.icon className="size-7 text-[#00477b]" />
                                             </div>
-                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10">{card.title}</h3>
+                                            <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e]">{card.title}</h3>
                                             <p className="text-sm text-zinc-600 font-normal leading-relaxed mb-6 relative z-10">
                                                 {card.desc}
                                             </p>
-                                            <Button asChild className="bg-[#00477b] hover:bg-[#00335e] text-white rounded-full px-6 h-12 text-sm font-bold shadow-md hover:shadow-lg transition-all w-full relative z-10">
-                                                <Link href="/free-digital-consultation">
+                                            <div className="w-full relative z-10">
+                                                <Button className="bg-[#00477b] group-hover:bg-[#00335e] text-white rounded-full px-6 h-12 text-sm font-bold shadow-md group-hover:shadow-lg transition-all w-full pointer-events-none">
                                                     {card.btn}
-                                                </Link>
-                                            </Button>
-                                        </div>
+                                                </Button>
+                                            </div>
+                                        </Link>
                                     </ScrollReveal>
                                 ))}
                             </div>

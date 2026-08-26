@@ -569,37 +569,40 @@ export default function Welcome() {
                             {[
                                 {
                                     icon: Briefcase,
-                                    badge: "Gigs",
-                                    title: "In-House Digital Gigs",
-                                    desc: "Modular web development, server setups, and automations executed with sprint velocity.",
-                                    features: ["Direct dev execution", "Flat transparent rates", "Quick turnaround"],
-                                    link: "/digital-services"
+                                    badge: "Delivery Models",
+                                    title: "Delivery & Engagement Models",
+                                    desc: "Structured milestone execution, dedicated retainers, and agile sprint delivery models.",
+                                    features: ["Direct dev execution", "Milestone-based delivery", "Full IP ownership"],
+                                    link: "/delivery-engagement-models"
                                 },
                                 {
                                     icon: Layers,
-                                    badge: "Enterprise",
-                                    title: "Full Digital Transformation",
+                                    badge: "Consultation",
+                                    title: "Free Digital Consultation",
                                     desc: "End-to-end ERPNext systems, multi-system cloud architecture, and custom business portals.",
                                     features: ["Dedicated architects", "Legacy migration support", "SLA-backed delivery"],
                                     link: "/free-digital-consultation"
                                 },
                                 {
-                                    icon: Package,
-                                    badge: "Products",
-                                    title: "Instant Digital Assets",
-                                    desc: "Production-ready templates, UI themes, and workflows built to drop straight into your stack.",
-                                    features: ["Instant access", "Lifetime updates", "Full documentation"],
-                                    link: "/digital-services"
+                                    icon: Rocket,
+                                    badge: "Discovery",
+                                    title: "Growth Systems Discovery Call",
+                                    desc: "In-depth 30-minute system architecture audit, technical roadmap, and growth strategy session.",
+                                    features: ["Architecture audit", "Clear rollout roadmap", "Preliminary ROI projection"],
+                                    link: "/growth-systems-discovery-call"
                                 },
                             ].map((sol, i) => (
                                 <ScrollReveal key={i} animation="fade-up" delay={i * 100} className="h-full">
-                                    <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] overflow-hidden h-full">
+                                    <Link 
+                                        href={sol.link}
+                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] overflow-hidden h-full cursor-pointer block"
+                                    >
                                         {/* Subtle ambient hover glow */}
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                         <div>
                                             <div className="relative z-10 flex items-center justify-between w-full mb-6">
-                                                <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center shadow-xs">
+                                                <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center shadow-xs transition-transform group-hover:scale-105">
                                                     <sol.icon className="size-5 text-[#00477b]" />
                                                 </div>
                                                 <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/60 backdrop-blur-md text-[#00477b] border border-white/80">
@@ -607,7 +610,7 @@ export default function Welcome() {
                                                 </span>
                                             </div>
 
-                                            <h4 className="relative z-10 text-lg sm:text-xl font-medium text-[#00477b] mb-2 tracking-tight">
+                                            <h4 className="relative z-10 text-lg sm:text-xl font-medium text-[#00477b] mb-2 tracking-tight group-hover:text-[#00335e]">
                                                 {sol.title}
                                             </h4>
                                             <p className="relative z-10 text-xs sm:text-sm text-zinc-600 leading-relaxed mb-6 font-normal">
@@ -625,16 +628,13 @@ export default function Welcome() {
                                             </div>
                                         </div>
 
-                                        <Link 
-                                            href={sol.link}
-                                            className="relative z-10 pt-4 border-t border-white/60 mt-auto flex items-center justify-between text-xs font-medium text-[#00477b] group-hover:text-[#00335e] transition-colors"
-                                        >
+                                        <div className="relative z-10 pt-4 border-t border-white/60 mt-auto flex items-center justify-between text-xs font-medium text-[#00477b] group-hover:text-[#00335e] transition-colors">
                                             <span>Explore Path</span>
-                                            <div className="size-7 rounded-full bg-white/80 border border-white/90 text-[#00477b] flex items-center justify-center shadow-2xs">
+                                            <div className="size-7 rounded-full bg-white/80 border border-white/90 text-[#00477b] flex items-center justify-center shadow-2xs transition-transform group-hover:translate-x-1">
                                                 <ArrowRight className="size-3.5" />
                                             </div>
-                                        </Link>
-                                    </div>
+                                        </div>
+                                    </Link>
                                 </ScrollReveal>
                             ))}
                             </div>
