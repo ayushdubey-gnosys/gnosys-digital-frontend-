@@ -526,32 +526,58 @@ export default function FreeDigitalConsultation() {
 
             {/* 7. Combined Booking Form & FAQ Section */}
             <section id="booking-form" className="mt-16 sm:mt-24 text-center">
-                <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                {/* Headers row outside background strip */}
+                <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 max-w-[95rem] mx-auto mb-6 sm:mb-8 text-left">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end">
+                        {/* Left Side Header: FAQ */}
+                        <div className="lg:col-span-5">
+                            <ScrollReveal animation="fade-up" delay={80}>
+                                <div>
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                        FAQ & Next Steps
+                                    </span>
+                                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-2">
+                                        Frequently Asked Questions
+                                    </h2>
+                                    <p className="text-sm sm:text-base text-zinc-600">
+                                        You have questions, we have clear answers.
+                                    </p>
+                                </div>
+                            </ScrollReveal>
+                        </div>
+
+                        {/* Right Side Header: Booking Form */}
+                        <div className="lg:col-span-7">
+                            <ScrollReveal animation="fade-left" delay={120}>
+                                <div>
+                                    <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
+                                        Form & Action Section
+                                    </span>
+                                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-2">
+                                        Request Your Free Strategy Session Today
+                                    </h2>
+                                    <p className="text-sm sm:text-base text-zinc-600">
+                                        Fill out the form below - our team will reach out within 24 hours to confirm your session time.
+                                    </p>
+                                </div>
+                            </ScrollReveal>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Full-width strip wrapping ONLY the cards (FAQ list & Booking Form) */}
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-12 px-3 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     <div className="w-full px-2 sm:px-4 max-w-[95rem] mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-                            {/* Left Side: FAQ */}
+                            {/* Left Side: FAQ Cards */}
                             <div className="lg:col-span-5 text-left">
-                                <ScrollReveal animation="fade-up" delay={80}>
-                                    <div className="mb-6">
-                                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
-                                            FAQ & Next Steps
-                                        </span>
-                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-2">
-                                            Frequently Asked Questions
-                                        </h2>
-                                        <p className="text-sm sm:text-base text-zinc-600">
-                                            You have questions, we have clear answers.
-                                        </p>
-                                    </div>
-                                </ScrollReveal>
-
                                 <div className="space-y-3">
                                     {faqs.map((faq, idx) => {
                                         const isOpen = faqOpen === idx;
                                         return (
                                             <ScrollReveal key={idx} animation="fade-up" delay={60 * (idx + 1)}>
                                                 <div 
-                                                    className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition-all"
+                                                    className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-2xl overflow-hidden shadow-sm transition-all"
                                                 >
                                                     <button 
                                                         onClick={() => setFaqOpen(isOpen ? null : idx)}
@@ -561,7 +587,7 @@ export default function FreeDigitalConsultation() {
                                                         <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
                                                     </button>
                                                     {isOpen && (
-                                                        <div className="px-5 pb-4 pt-1 text-zinc-600 text-xs sm:text-sm leading-relaxed border-t border-zinc-100 font-normal">
+                                                        <div className="px-5 pb-4 pt-1 text-zinc-600 text-xs sm:text-sm leading-relaxed border-t border-white/40 font-normal">
                                                             {faq.a}
                                                         </div>
                                                     )}
@@ -572,22 +598,10 @@ export default function FreeDigitalConsultation() {
                                 </div>
                             </div>
 
-                            {/* Right Side: Booking Form */}
+                            {/* Right Side: Booking Form Card */}
                             <div className="lg:col-span-7 text-left">
                                 <ScrollReveal animation="fade-left" delay={120}>
-                                    <div className="mb-6">
-                                        <span className="inline-block px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md border border-white/80 shadow-sm text-xs font-bold text-[#00477b] uppercase tracking-wider mb-2">
-                                            Form & Action Section
-                                        </span>
-                                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b] mb-2">
-                                            Request Your Free Strategy Session Today
-                                        </h2>
-                                        <p className="text-sm sm:text-base text-zinc-600">
-                                            Fill out the form below - our team will reach out within 24 hours to confirm your session time.
-                                        </p>
-                                    </div>
-
-                                    <div className="bg-white/60 backdrop-blur-xl border border-white/80 rounded-[2rem] p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.03)]">
+                                    <div className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-6 sm:p-8 shadow-xl shadow-blue-900/5">
                                         {formSubmitted ? (
                                             <div className="text-center py-8">
                                                 <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
@@ -612,7 +626,7 @@ export default function FreeDigitalConsultation() {
                                                             id="fullname" 
                                                             required 
                                                             placeholder="Rahul Sharma" 
-                                                            className="h-11 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b] text-sm"
+                                                            className="h-11 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b] text-sm"
                                                         />
                                                     </div>
 
@@ -625,7 +639,7 @@ export default function FreeDigitalConsultation() {
                                                             type="email" 
                                                             required 
                                                             placeholder="rahul@company.com" 
-                                                            className="h-11 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b] text-sm"
+                                                            className="h-11 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b] text-sm"
                                                         />
                                                     </div>
                                                 </div>
@@ -638,7 +652,7 @@ export default function FreeDigitalConsultation() {
                                                         id="company" 
                                                         required 
                                                         placeholder="www.yourcompany.com" 
-                                                        className="h-11 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b] text-sm"
+                                                        className="h-11 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b] text-sm"
                                                     />
                                                 </div>
 

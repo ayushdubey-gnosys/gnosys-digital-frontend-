@@ -19,7 +19,9 @@ import {
     DollarSign,
     ShieldCheck,
     ChevronDown,
-    Lock
+    Lock,
+    Check,
+    ArrowRight
 } from 'lucide-react';
 import HeroWaveDivider from '@/components/hero-wave-divider';
 import ScrollReveal from '@/components/scroll-reveal';
@@ -144,7 +146,7 @@ export default function DeliveryEngagementModels() {
                 </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 my-2">
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-6 sm:py-8 my-2">
                     <div className="w-full px-3 sm:px-5 lg:px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-left">
                             {[
@@ -154,10 +156,10 @@ export default function DeliveryEngagementModels() {
                                 { title: "Direct Communication", desc: "Talk directly to the engineers and tech leads working on your project on Slack.", icon: MessageSquare }
                             ].map((item, idx) => (
                                 <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
-                                    <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                         <div className="relative z-10">
-                                            <div className="size-12 sm:size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-4 sm:mb-5 shadow-md shadow-blue-900/5">
+                                            <div className="size-12 sm:size-14 rounded-2xl bg-white/80 border border-white/90 flex items-center justify-center text-[#00477b] mb-4 sm:mb-5 shadow-sm">
                                                 <item.icon className="size-6 text-[#00477b]" />
                                             </div>
                                             <h3 className="text-lg sm:text-xl font-bold text-[#00477b] mb-2 tracking-tight">{item.title}</h3>
@@ -188,53 +190,71 @@ export default function DeliveryEngagementModels() {
                 </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 my-2">
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-6 sm:py-8 my-2">
                     <div className="w-full px-3 sm:px-5 lg:px-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 items-stretch">
                             {/* Model 01 */}
                             <ScrollReveal animation="fade-up" delay={100} className="h-full">
-                                <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="flex items-center justify-between mb-4 sm:mb-5">
-                                            <div className="size-12 sm:size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                    <div className="relative z-10 flex flex-col flex-grow">
+                                        {/* Header */}
+                                        <div className="flex items-center justify-between mb-5">
+                                            <div className="size-12 sm:size-13 rounded-2xl bg-gradient-to-br from-white/90 to-white/60 border border-white shadow-sm flex items-center justify-center text-[#00477b] group-hover:scale-105 transition-transform duration-300">
                                                 <FileText className="size-6 text-[#00477b]" />
                                             </div>
-                                            <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
+                                            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#00477b] bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/90 shadow-2xs">
                                                 Model 01
                                             </span>
                                         </div>
                                         
-                                        <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2.5 tracking-tight">Fixed Scope Projects</h3>
-                                        <p className="text-zinc-600 text-xs sm:text-sm mb-4 sm:mb-5 leading-relaxed font-normal">
-                                            <span className="font-semibold text-[#00477b]">Best For:</span> Projects with clearly defined deliverables, key milestones, and a fixed timeline.
-                                        </p>
+                                        {/* Title */}
+                                        <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-3 tracking-tight">Fixed Scope Projects</h3>
                                         
-                                        <div className="mb-6">
-                                            <h4 className="font-bold text-[#00477b] mb-2.5 text-xs uppercase tracking-wider">Key Perks:</h4>
+                                        {/* Best For Box */}
+                                        <div className="mb-5 p-3.5 rounded-2xl bg-white/40 border border-white/60 backdrop-blur-md text-xs sm:text-[13px] text-zinc-700 leading-relaxed shadow-2xs">
+                                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#00477b] mb-1 flex items-center gap-1.5">
+                                                <span className="size-1.5 rounded-full bg-[#00477b]"></span>
+                                                Best Suited For
+                                            </div>
+                                            <p className="text-zinc-600 font-medium">Projects with clearly defined deliverables, key milestones, and a fixed timeline.</p>
+                                        </div>
+                                        
+                                        {/* Key Perks */}
+                                        <div className="mb-6 flex-grow">
+                                            <div className="text-[11px] font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                                Key Highlights
+                                            </div>
                                             <ul className="space-y-2.5">
                                                 {[
                                                     "Fixed deliverables & agreed budget",
                                                     "Guaranteed sprint milestone reviews",
                                                     "Total code ownership & 30-day warranty"
                                                 ].map((perk, bIdx) => (
-                                                    <li key={bIdx} className="flex items-start gap-2">
-                                                        <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
-                                                        <span className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                    <li key={bIdx} className="flex items-start gap-2.5 group/item">
+                                                        <div className="size-5 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-[#00477b] group-hover/item:text-white transition-colors duration-200">
+                                                            <Check className="size-3 text-[#00477b] group-hover/item:text-white transition-colors" />
+                                                        </div>
+                                                        <span className="text-xs sm:text-[13px] text-zinc-700 leading-snug font-medium">{perk}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
                                     </div>
                                     
-                                    <div className="pt-4 border-t border-zinc-200/80 mt-auto">
-                                        <div className="mb-3">
-                                            <div className="text-[11px] uppercase font-bold text-zinc-400 tracking-wider mb-0.5">Budget Range</div>
-                                            <div className="text-base sm:text-lg font-bold text-[#00477b]">₹50,000 - ₹3,00,000+</div>
-                                            <div className="text-[11px] text-zinc-500 mt-0.5">Websites, Custom Web Apps, MVPs</div>
+                                    {/* Bottom Pricing & CTA */}
+                                    <div className="pt-2 mt-auto relative z-10">
+                                        <div className="p-4 rounded-2xl bg-white/45 backdrop-blur-md border border-white/70 shadow-2xs mb-3.5">
+                                            <div className="flex items-center justify-between mb-1">
+                                                <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Budget Range</span>
+                                                <span className="text-[10px] font-bold text-[#00477b] bg-white/90 border border-white/90 px-2.5 py-0.5 rounded-full shadow-2xs">Milestone-Based</span>
+                                            </div>
+                                            <div className="text-lg sm:text-xl font-semibold text-[#00477b] tracking-tight">₹50,000 - ₹3,00,000+</div>
+                                            <div className="text-[11px] text-zinc-500 font-medium mt-0.5">Websites, Custom Web Apps, MVPs</div>
                                         </div>
-                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md">
-                                            Start a Fixed Scope Project
+                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 sm:h-12 text-xs sm:text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-xl hover:shadow-blue-900/25 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.01]">
+                                            <span>Start Fixed Scope Project</span>
+                                            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                                         </Button>
                                     </div>
                                 </div>
@@ -242,48 +262,66 @@ export default function DeliveryEngagementModels() {
 
                             {/* Model 02 */}
                             <ScrollReveal animation="fade-up" delay={200} className="h-full">
-                                <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="flex items-center justify-between mb-4 sm:mb-5">
-                                            <div className="size-12 sm:size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                    <div className="relative z-10 flex flex-col flex-grow">
+                                        {/* Header */}
+                                        <div className="flex items-center justify-between mb-5">
+                                            <div className="size-12 sm:size-13 rounded-2xl bg-gradient-to-br from-white/90 to-white/60 border border-white shadow-sm flex items-center justify-center text-[#00477b] group-hover:scale-105 transition-transform duration-300">
                                                 <Clock className="size-6 text-[#00477b]" />
                                             </div>
-                                            <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
+                                            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#00477b] bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/90 shadow-2xs">
                                                 Model 02
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2.5 tracking-tight">Retainer Engagements</h3>
-                                        <p className="text-zinc-600 text-xs sm:text-sm mb-4 sm:mb-5 leading-relaxed font-normal">
-                                            <span className="font-semibold text-[#00477b]">Best For:</span> Ongoing development, dedicated maintenance, SEO, or continuous feature rollouts.
-                                        </p>
+                                        {/* Title */}
+                                        <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-3 tracking-tight">Retainer Engagements</h3>
                                         
-                                        <div className="mb-6">
-                                            <h4 className="font-bold text-[#00477b] mb-2.5 text-xs uppercase tracking-wider">Key Perks:</h4>
+                                        {/* Best For Box */}
+                                        <div className="mb-5 p-3.5 rounded-2xl bg-white/40 border border-white/60 backdrop-blur-md text-xs sm:text-[13px] text-zinc-700 leading-relaxed shadow-2xs">
+                                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#00477b] mb-1 flex items-center gap-1.5">
+                                                <span className="size-1.5 rounded-full bg-[#00477b]"></span>
+                                                Best Suited For
+                                            </div>
+                                            <p className="text-zinc-600 font-medium">Ongoing development, dedicated maintenance, SEO, or continuous feature rollouts.</p>
+                                        </div>
+                                        
+                                        {/* Key Perks */}
+                                        <div className="mb-6 flex-grow">
+                                            <div className="text-[11px] font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                                Key Highlights
+                                            </div>
                                             <ul className="space-y-2.5">
                                                 {[
                                                     "Monthly dedicated hours allocation",
                                                     "Priority SLA support & rapid response",
                                                     "Rolling sprint cycle with flexible tasks"
                                                 ].map((perk, bIdx) => (
-                                                    <li key={bIdx} className="flex items-start gap-2">
-                                                        <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
-                                                        <span className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                    <li key={bIdx} className="flex items-start gap-2.5 group/item">
+                                                        <div className="size-5 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-[#00477b] group-hover/item:text-white transition-colors duration-200">
+                                                            <Check className="size-3 text-[#00477b] group-hover/item:text-white transition-colors" />
+                                                        </div>
+                                                        <span className="text-xs sm:text-[13px] text-zinc-700 leading-snug font-medium">{perk}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
                                     </div>
 
-                                    <div className="pt-4 border-t border-zinc-200/80 mt-auto">
-                                        <div className="mb-3">
-                                            <div className="text-[11px] uppercase font-bold text-zinc-400 tracking-wider mb-0.5">Monthly Pricing</div>
-                                            <div className="text-base sm:text-lg font-bold text-[#00477b]">₹35,000 - ₹1,50,000/mo</div>
-                                            <div className="text-[11px] text-zinc-500 mt-0.5">Maintenance, Feature Sprints, SEO</div>
+                                    {/* Bottom Pricing & CTA */}
+                                    <div className="pt-2 mt-auto relative z-10">
+                                        <div className="p-4 rounded-2xl bg-white/45 backdrop-blur-md border border-white/70 shadow-2xs mb-3.5">
+                                            <div className="flex items-center justify-between mb-1">
+                                                <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Monthly Pricing</span>
+                                                <span className="text-[10px] font-bold text-[#00477b] bg-white/90 border border-white/90 px-2.5 py-0.5 rounded-full shadow-2xs">Dedicated Capacity</span>
+                                            </div>
+                                            <div className="text-lg sm:text-xl font-semibold text-[#00477b] tracking-tight">₹35,000 - ₹1,50,000/mo</div>
+                                            <div className="text-[11px] text-zinc-500 font-medium mt-0.5">Maintenance, Feature Sprints, SEO</div>
                                         </div>
-                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md">
-                                            Book Dedicated Capacity
+                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 sm:h-12 text-xs sm:text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-xl hover:shadow-blue-900/25 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.01]">
+                                            <span>Book Dedicated Capacity</span>
+                                            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                                         </Button>
                                     </div>
                                 </div>
@@ -291,48 +329,66 @@ export default function DeliveryEngagementModels() {
 
                             {/* Model 03 */}
                             <ScrollReveal animation="fade-up" delay={300} className="h-full">
-                                <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="flex items-center justify-between mb-4 sm:mb-5">
-                                            <div className="size-12 sm:size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                    <div className="relative z-10 flex flex-col flex-grow">
+                                        {/* Header */}
+                                        <div className="flex items-center justify-between mb-5">
+                                            <div className="size-12 sm:size-13 rounded-2xl bg-gradient-to-br from-white/90 to-white/60 border border-white shadow-sm flex items-center justify-center text-[#00477b] group-hover:scale-105 transition-transform duration-300">
                                                 <Rocket className="size-6 text-[#00477b]" />
                                             </div>
-                                            <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
+                                            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#00477b] bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/90 shadow-2xs">
                                                 Model 03
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2.5 tracking-tight">Hybrid MVP + Retainer</h3>
-                                        <p className="text-zinc-600 text-xs sm:text-sm mb-4 sm:mb-5 leading-relaxed font-normal">
-                                            <span className="font-semibold text-[#00477b]">Best For:</span> Startups launching an MVP and immediately transitioning into scaling and product optimization.
-                                        </p>
+                                        {/* Title */}
+                                        <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-3 tracking-tight">Hybrid MVP + Retainer</h3>
                                         
-                                        <div className="mb-6">
-                                            <h4 className="font-bold text-[#00477b] mb-2.5 text-xs uppercase tracking-wider">Key Perks:</h4>
+                                        {/* Best For Box */}
+                                        <div className="mb-5 p-3.5 rounded-2xl bg-white/40 border border-white/60 backdrop-blur-md text-xs sm:text-[13px] text-zinc-700 leading-relaxed shadow-2xs">
+                                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#00477b] mb-1 flex items-center gap-1.5">
+                                                <span className="size-1.5 rounded-full bg-[#00477b]"></span>
+                                                Best Suited For
+                                            </div>
+                                            <p className="text-zinc-600 font-medium">Startups launching an MVP and immediately transitioning into scaling & product optimization.</p>
+                                        </div>
+                                        
+                                        {/* Key Perks */}
+                                        <div className="mb-6 flex-grow">
+                                            <div className="text-[11px] font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                                Key Highlights
+                                            </div>
                                             <ul className="space-y-2.5">
                                                 {[
                                                     "Fixed MVP kickoff sprint at discounted rate",
                                                     "Smooth transition into continuous feature releases",
                                                     "Architecture reviews & scalability audits"
                                                 ].map((perk, bIdx) => (
-                                                    <li key={bIdx} className="flex items-start gap-2">
-                                                        <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
-                                                        <span className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                    <li key={bIdx} className="flex items-start gap-2.5 group/item">
+                                                        <div className="size-5 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-[#00477b] group-hover/item:text-white transition-colors duration-200">
+                                                            <Check className="size-3 text-[#00477b] group-hover/item:text-white transition-colors" />
+                                                        </div>
+                                                        <span className="text-xs sm:text-[13px] text-zinc-700 leading-snug font-medium">{perk}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
                                     </div>
 
-                                    <div className="pt-4 border-t border-zinc-200/80 mt-auto">
-                                        <div className="mb-3">
-                                            <div className="text-[11px] uppercase font-bold text-zinc-400 tracking-wider mb-0.5">Pricing Structure</div>
-                                            <div className="text-base sm:text-lg font-bold text-[#00477b]">₹1,20,000 + ₹45,000/mo</div>
-                                            <div className="text-[11px] text-zinc-500 mt-0.5">SaaS, Enterprise Portals, Products</div>
+                                    {/* Bottom Pricing & CTA */}
+                                    <div className="pt-2 mt-auto relative z-10">
+                                        <div className="p-4 rounded-2xl bg-white/45 backdrop-blur-md border border-white/70 shadow-2xs mb-3.5">
+                                            <div className="flex items-center justify-between mb-1">
+                                                <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Pricing Structure</span>
+                                                <span className="text-[10px] font-bold text-[#00477b] bg-white/90 border border-white/90 px-2.5 py-0.5 rounded-full shadow-2xs">Most Popular</span>
+                                            </div>
+                                            <div className="text-lg sm:text-xl font-semibold text-[#00477b] tracking-tight">₹1,20,000 + ₹45,000/mo</div>
+                                            <div className="text-[11px] text-zinc-500 font-medium mt-0.5">SaaS, Enterprise Portals, Products</div>
                                         </div>
-                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md">
-                                            Launch With Hybrid Model
+                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 sm:h-12 text-xs sm:text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-xl hover:shadow-blue-900/25 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.01]">
+                                            <span>Launch With Hybrid Model</span>
+                                            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                                         </Button>
                                     </div>
                                 </div>
@@ -340,48 +396,66 @@ export default function DeliveryEngagementModels() {
 
                             {/* Model 04 */}
                             <ScrollReveal animation="fade-up" delay={400} className="h-full">
-                                <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
-                                    <div className="relative z-10">
-                                        <div className="flex items-center justify-between mb-4 sm:mb-5">
-                                            <div className="size-12 sm:size-14 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] shadow-md shadow-blue-900/5">
+                                    <div className="relative z-10 flex flex-col flex-grow">
+                                        {/* Header */}
+                                        <div className="flex items-center justify-between mb-5">
+                                            <div className="size-12 sm:size-13 rounded-2xl bg-gradient-to-br from-white/90 to-white/60 border border-white shadow-sm flex items-center justify-center text-[#00477b] group-hover:scale-105 transition-transform duration-300">
                                                 <SearchCheck className="size-6 text-[#00477b]" />
                                             </div>
-                                            <span className="text-xs font-bold uppercase tracking-wider text-[#00477b] bg-blue-50/80 px-3.5 py-1.5 rounded-full border border-blue-100">
+                                            <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#00477b] bg-white/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/90 shadow-2xs">
                                                 Model 04
                                             </span>
                                         </div>
 
-                                        <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2.5 tracking-tight">Task-Based Mini Sprints</h3>
-                                        <p className="text-zinc-600 text-xs sm:text-sm mb-4 sm:mb-5 leading-relaxed font-normal">
-                                            <span className="font-semibold text-[#00477b]">Best For:</span> Quick fixes, performance optimizations, third-party API integrations, or bug hunting.
-                                        </p>
+                                        {/* Title */}
+                                        <h3 className="text-xl sm:text-[22px] font-bold text-[#00477b] mb-3 tracking-tight">Task-Based Mini Sprints</h3>
                                         
-                                        <div className="mb-6">
-                                            <h4 className="font-bold text-[#00477b] mb-2.5 text-xs uppercase tracking-wider">Key Perks:</h4>
+                                        {/* Best For Box */}
+                                        <div className="mb-5 p-3.5 rounded-2xl bg-white/40 border border-white/60 backdrop-blur-md text-xs sm:text-[13px] text-zinc-700 leading-relaxed shadow-2xs">
+                                            <div className="text-[10px] font-bold uppercase tracking-wider text-[#00477b] mb-1 flex items-center gap-1.5">
+                                                <span className="size-1.5 rounded-full bg-[#00477b]"></span>
+                                                Best Suited For
+                                            </div>
+                                            <p className="text-zinc-600 font-medium">Quick fixes, performance optimizations, third-party API integrations, or bug hunting.</p>
+                                        </div>
+                                        
+                                        {/* Key Perks */}
+                                        <div className="mb-6 flex-grow">
+                                            <div className="text-[11px] font-bold text-[#00477b] uppercase tracking-wider mb-3">
+                                                Key Highlights
+                                            </div>
                                             <ul className="space-y-2.5">
                                                 {[
                                                     "Fast turnaround within 48 to 72 hours",
                                                     "No long-term contracts required",
                                                     "Fixed quote provided upfront before start"
                                                 ].map((perk, bIdx) => (
-                                                    <li key={bIdx} className="flex items-start gap-2">
-                                                        <CheckCircle2 className="size-4 text-[#00477b] mt-0.5 shrink-0" />
-                                                        <span className="text-xs sm:text-sm text-zinc-700 leading-relaxed font-normal">{perk}</span>
+                                                    <li key={bIdx} className="flex items-start gap-2.5 group/item">
+                                                        <div className="size-5 rounded-full bg-blue-50/90 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-[#00477b] group-hover/item:text-white transition-colors duration-200">
+                                                            <Check className="size-3 text-[#00477b] group-hover/item:text-white transition-colors" />
+                                                        </div>
+                                                        <span className="text-xs sm:text-[13px] text-zinc-700 leading-snug font-medium">{perk}</span>
                                                     </li>
                                                 ))}
                                             </ul>
                                         </div>
                                     </div>
 
-                                    <div className="pt-4 border-t border-zinc-200/80 mt-auto">
-                                        <div className="mb-3">
-                                            <div className="text-[11px] uppercase font-bold text-zinc-400 tracking-wider mb-0.5">Pricing Structure</div>
-                                            <div className="text-base sm:text-lg font-bold text-[#00477b]">₹15,000 - ₹40,000</div>
-                                            <div className="text-[11px] text-zinc-500 mt-0.5">Speed Optimization, Integrations, Fixes</div>
+                                    {/* Bottom Pricing & CTA */}
+                                    <div className="pt-2 mt-auto relative z-10">
+                                        <div className="p-4 rounded-2xl bg-white/45 backdrop-blur-md border border-white/70 shadow-2xs mb-3.5">
+                                            <div className="flex items-center justify-between mb-1">
+                                                <span className="text-[10px] uppercase font-bold text-zinc-500 tracking-wider">Pricing Structure</span>
+                                                <span className="text-[10px] font-bold text-[#00477b] bg-white/90 border border-white/90 px-2.5 py-0.5 rounded-full shadow-2xs">On-Demand</span>
+                                            </div>
+                                            <div className="text-lg sm:text-xl font-semibold text-[#00477b] tracking-tight">₹15,000 - ₹40,000</div>
+                                            <div className="text-[11px] text-zinc-500 font-medium mt-0.5">Speed Optimization, Integrations, Fixes</div>
                                         </div>
-                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 text-xs sm:text-sm font-bold shadow-md">
-                                            Request a Quick Sprint
+                                        <Button onClick={scrollToContact} className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-11 sm:h-12 text-xs sm:text-sm font-bold shadow-lg shadow-blue-900/15 hover:shadow-xl hover:shadow-blue-900/25 transition-all duration-300 flex items-center justify-center gap-2 group-hover:scale-[1.01]">
+                                            <span>Request a Quick Sprint</span>
+                                            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
                                         </Button>
                                     </div>
                                 </div>
@@ -408,7 +482,7 @@ export default function DeliveryEngagementModels() {
                 </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 my-2">
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-6 sm:py-8 my-2">
                     <div className="w-full px-3 sm:px-5 lg:px-6">
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                             {[
@@ -419,9 +493,9 @@ export default function DeliveryEngagementModels() {
                                 { step: "05", title: "Handover & Scale", desc: "Full code & IP transfer, deployment to your cloud, and 30-day warranty." }
                             ].map((stage, idx) => (
                                 <ScrollReveal key={idx} animation="fade-up" delay={70 * (idx + 1)} className="h-full">
-                                    <div className="bg-white/50 backdrop-blur-xl border border-white/80 rounded-[2rem] p-5 sm:p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full">
+                                    <div className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-5 sm:p-6 shadow-sm hover:shadow-lg hover:bg-white/35 transition-all flex flex-col justify-between h-full">
                                         <div>
-                                            <div className="text-2xl sm:text-3xl font-extrabold text-[#00477b]/20 mb-2">{stage.step}</div>
+                                            <div className="text-2xl sm:text-3xl font-extrabold text-[#00477b]/30 mb-2">{stage.step}</div>
                                             <h3 className="text-base sm:text-lg font-bold text-[#00477b] mb-1.5">{stage.title}</h3>
                                             <p className="text-zinc-600 text-xs sm:text-sm leading-relaxed font-normal">{stage.desc}</p>
                                         </div>
@@ -458,7 +532,7 @@ export default function DeliveryEngagementModels() {
                 </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 my-2">
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-6 sm:py-8 my-2">
                     <div className="w-full px-3 sm:px-5 lg:px-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 text-left">
                             {[
@@ -494,9 +568,9 @@ export default function DeliveryEngagementModels() {
                                 }
                             ].map((item, idx) => (
                                 <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
-                                    <div className="bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.2rem] p-6 sm:p-7 shadow-sm hover:shadow-xl hover:bg-white hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full">
+                                    <div className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.2rem] p-6 sm:p-7 shadow-sm hover:shadow-xl hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full">
                                         <div>
-                                            <div className="size-11 sm:size-12 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-[#00477b] mb-4 shadow-sm">
+                                            <div className="size-11 sm:size-12 rounded-2xl bg-white/80 border border-white/90 flex items-center justify-center text-[#00477b] mb-4 shadow-sm">
                                                 <item.icon className="size-5" />
                                             </div>
                                             <h3 className="text-base sm:text-lg font-bold text-[#00477b] mb-2">{item.title}</h3>
@@ -511,7 +585,7 @@ export default function DeliveryEngagementModels() {
             </section>
 
             {/* 6. How Our Delivery Model Scales Growth */}
-            <section className="relative overflow-hidden w-full flex flex-col lg:flex-row items-stretch border-y border-white/60 my-6 sm:my-8 bg-white/30 backdrop-blur-md">
+            <section className="relative overflow-hidden w-full flex flex-col lg:flex-row items-stretch border-y border-white/60 my-6 sm:my-8 bg-white/20 backdrop-blur-md">
                 {/* Left Side: Content aligned to left edge */}
                 <div className="w-full lg:w-1/2 flex justify-start">
                     <ScrollReveal animation="fade-right" delay={100} className="w-full">
@@ -532,7 +606,7 @@ export default function DeliveryEngagementModels() {
                                     "100% in-house execution",
                                     "Scalable code architectures engineered for high concurrency"
                                 ].map((item, idx) => (
-                                    <div key={idx} className="flex items-start gap-3 p-3.5 bg-white/70 backdrop-blur-md rounded-2xl border border-white/80">
+                                    <div key={idx} className="flex items-start gap-3 p-3.5 bg-white/25 backdrop-blur-md rounded-2xl border border-white/50">
                                         <CheckCircle2 className="size-5 text-[#00477b] mt-0.5 shrink-0" />
                                         <span className="text-zinc-700 text-xs sm:text-sm font-normal leading-relaxed">{item}</span>
                                     </div>
@@ -567,12 +641,13 @@ export default function DeliveryEngagementModels() {
 
             {/* 7. Combined Booking Form & FAQ Section */}
             <section id="contact-section" className="pt-10 sm:pt-14 pb-14 sm:pb-18 bg-transparent">
-                <div className="w-full px-3 sm:px-5 lg:px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-                        {/* Left Side: FAQ */}
+                {/* Headers row outside background strip */}
+                <div className="w-full px-3 sm:px-5 lg:px-6 mb-6 sm:mb-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+                        {/* Left Side Header: FAQ */}
                         <div className="lg:col-span-5">
                             <ScrollReveal animation="fade-right" delay={100}>
-                                <div className="mb-5 sm:mb-6 text-left">
+                                <div className="text-left">
                                     <div className="mb-3 inline-flex items-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50 w-fit">
                                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">FAQ & Clarifications</span>
                                     </div>
@@ -583,38 +658,13 @@ export default function DeliveryEngagementModels() {
                                         Everything you need to know about our engagement terms and delivery process.
                                     </p>
                                 </div>
-
-                                <div className="space-y-3">
-                                    {faqs.map((faq, idx) => {
-                                        const isOpen = faqOpen === idx;
-                                        return (
-                                            <div 
-                                                key={idx}
-                                                className="bg-white/85 backdrop-blur-xl border border-white/95 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
-                                            >
-                                                <button 
-                                                    onClick={() => setFaqOpen(isOpen ? null : idx)}
-                                                    className="w-full py-3.5 px-4 sm:px-5 text-left flex items-center justify-between font-semibold text-xs sm:text-sm text-[#00477b] focus:outline-none"
-                                                >
-                                                    <span>{faq.q}</span>
-                                                    <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
-                                                </button>
-                                                {isOpen && (
-                                                    <div className="px-4 sm:px-5 pb-4 pt-1 text-zinc-600 text-xs sm:text-sm leading-relaxed border-t border-zinc-100 font-normal">
-                                                        {faq.a}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        );
-                                    })}
-                                </div>
                             </ScrollReveal>
                         </div>
 
-                        {/* Right Side: Contact / Inquiry Form */}
+                        {/* Right Side Header: Contact Form */}
                         <div className="lg:col-span-7">
                             <ScrollReveal animation="fade-left" delay={150}>
-                                <div className="mb-5 sm:mb-6 text-left">
+                                <div className="text-left">
                                     <div className="mb-3 inline-flex items-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50 w-fit">
                                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Get In Touch</span>
                                     </div>
@@ -625,79 +675,121 @@ export default function DeliveryEngagementModels() {
                                         Whether you need a full turnkey build or dedicated developers - we'll help you choose the best model.
                                     </p>
                                 </div>
+                            </ScrollReveal>
+                        </div>
+                    </div>
+                </div>
 
-                                <div className="bg-white/85 backdrop-blur-2xl border border-white/95 rounded-[2.5rem] p-6 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5">
-                                    {formSubmitted ? (
-                                        <div className="text-center py-10">
-                                            <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
-                                                <CheckCircle2 className="size-7" />
-                                            </div>
-                                            <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2">Inquiry Submitted Successfully!</h3>
-                                            <p className="text-zinc-600 text-sm max-w-md mx-auto mb-5 font-normal">
-                                                Our technical lead will review your project requirements and get back to you within 24 hours.
-                                            </p>
-                                            <Button onClick={() => setFormSubmitted(false)} variant="outline" className="rounded-full">
-                                                Submit Another Request
-                                            </Button>
-                                        </div>
-                                    ) : (
-                                        <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                                                <div className="space-y-1.5">
-                                                    <Label htmlFor="name" className="text-xs sm:text-sm font-semibold text-zinc-700">Full Name *</Label>
-                                                    <Input id="name" placeholder="Rahul Sharma" required className="h-11 sm:h-12 rounded-xl border-gray-200 bg-white/90 focus:border-[#00477b]" />
+                {/* Full-width strip wrapping ONLY the cards (FAQ list & Contact Form) */}
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-12 my-2 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="w-full px-3 sm:px-5 lg:px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+                            {/* Left Side: FAQ Cards */}
+                            <div className="lg:col-span-5">
+                                <ScrollReveal animation="fade-right" delay={100}>
+                                    <div className="space-y-3">
+                                        {faqs.map((faq, idx) => {
+                                            const isOpen = faqOpen === idx;
+                                            return (
+                                                <div 
+                                                    key={idx}
+                                                    className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+                                                >
+                                                    <button 
+                                                        onClick={() => setFaqOpen(isOpen ? null : idx)}
+                                                        className="w-full py-3.5 px-4 sm:px-5 text-left flex items-center justify-between font-semibold text-xs sm:text-sm text-[#00477b] focus:outline-none"
+                                                    >
+                                                        <span>{faq.q}</span>
+                                                        <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
+                                                    </button>
+                                                    {isOpen && (
+                                                        <div className="px-4 sm:px-5 pb-3.5 text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed border-t border-white/40 pt-2.5">
+                                                            {faq.a}
+                                                        </div>
+                                                    )}
                                                 </div>
-                                                
-                                                <div className="space-y-1.5">
-                                                    <Label htmlFor="email" className="text-xs sm:text-sm font-semibold text-zinc-700">Work Email *</Label>
-                                                    <Input id="email" type="email" placeholder="rahul@company.com" required className="h-11 sm:h-12 rounded-xl border-gray-200 bg-white/90 focus:border-[#00477b]" />
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                                                <div className="space-y-1.5">
-                                                    <Label htmlFor="budget" className="text-xs sm:text-sm font-semibold text-zinc-700">Estimated Budget *</Label>
-                                                    <select id="budget" className="w-full h-11 sm:h-12 rounded-xl border border-gray-200 bg-white/90 focus:border-[#00477b] px-4 text-xs sm:text-sm text-zinc-700">
-                                                        <option value="">Select Budget</option>
-                                                        <option value="under50k">Under ₹50K</option>
-                                                        <option value="50k-100k">₹50K - ₹1L</option>
-                                                        <option value="100k-300k">₹1L - ₹3L</option>
-                                                        <option value="300k+">₹3L+</option>
-                                                    </select>
-                                                </div>
-                                                
-                                                <div className="space-y-1.5">
-                                                    <Label htmlFor="projectType" className="text-xs sm:text-sm font-semibold text-zinc-700">Preferred Model / Project *</Label>
-                                                    <select id="projectType" className="w-full h-11 sm:h-12 rounded-xl border border-gray-200 bg-white/90 focus:border-[#00477b] px-4 text-xs sm:text-sm text-zinc-700">
-                                                        <option value="">Select Delivery Model</option>
-                                                        <option value="fixed">Fixed Scope Project</option>
-                                                        <option value="retainer">Retainer-Based Engagement</option>
-                                                        <option value="hybrid">Hybrid Model (MVP + Retainer)</option>
-                                                        <option value="task">Task-Based Mini Engagement</option>
-                                                        <option value="custom">Custom Architecture Solution</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            
-                                            <div className="space-y-1.5">
-                                                <Label htmlFor="message" className="text-xs sm:text-sm font-semibold text-zinc-700">Project Brief & Requirements</Label>
-                                                <Textarea id="message" rows={3} placeholder="Tell us briefly about your goals, timelines, or technology preferences..." className="rounded-xl border-gray-200 bg-white/90 focus:border-[#00477b] p-3 sm:p-4 text-xs sm:text-sm text-zinc-800" />
-                                            </div>
+                                            );
+                                        })}
+                                    </div>
+                                </ScrollReveal>
+                            </div>
 
-                                            <div className="pt-2">
-                                                <Button type="submit" className="w-full bg-[#00477b] hover:bg-[#00335e] text-white h-12 sm:h-13 rounded-full shadow-lg shadow-blue-900/15 text-sm sm:text-base font-bold transition-all duration-300 hover:-translate-y-0.5">
-                                                    Submit Inquiry
+                            {/* Right Side: Contact / Inquiry Form */}
+                            <div className="lg:col-span-7">
+                                <ScrollReveal animation="fade-left" delay={150}>
+                                    <div className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-6 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5">
+                                        {formSubmitted ? (
+                                            <div className="text-center py-10">
+                                                <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+                                                    <CheckCircle2 className="size-7" />
+                                                </div>
+                                                <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2">Inquiry Submitted Successfully!</h3>
+                                                <p className="text-zinc-600 text-sm max-w-md mx-auto mb-5 font-normal">
+                                                    Our technical lead will review your project requirements and get back to you within 24 hours.
+                                                </p>
+                                                <Button onClick={() => setFormSubmitted(false)} variant="outline" className="rounded-full">
+                                                    Submit Another Request
                                                 </Button>
                                             </div>
+                                        ) : (
+                                            <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                                    <div className="space-y-1.5">
+                                                        <Label htmlFor="name" className="text-xs sm:text-sm font-semibold text-zinc-700">Full Name *</Label>
+                                                        <Input id="name" placeholder="Rahul Sharma" required className="h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b]" />
+                                                    </div>
+                                                    
+                                                    <div className="space-y-1.5">
+                                                        <Label htmlFor="email" className="text-xs sm:text-sm font-semibold text-zinc-700">Work Email *</Label>
+                                                        <Input id="email" type="email" placeholder="rahul@company.com" required className="h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b]" />
+                                                    </div>
+                                                </div>
+                                                
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                                    <div className="space-y-1.5">
+                                                        <Label htmlFor="budget" className="text-xs sm:text-sm font-semibold text-zinc-700">Estimated Budget *</Label>
+                                                        <select id="budget" className="w-full h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border border-white/80 focus:border-[#00477b] px-4 text-xs sm:text-sm text-zinc-700">
+                                                            <option value="">Select Budget</option>
+                                                            <option value="under50k">Under ₹50K</option>
+                                                            <option value="50k-100k">₹50K - ₹1L</option>
+                                                            <option value="100k-300k">₹1L - ₹3L</option>
+                                                            <option value="300k+">₹3L+</option>
+                                                        </select>
+                                                    </div>
+                                                    
+                                                    <div className="space-y-1.5">
+                                                        <Label htmlFor="projectType" className="text-xs sm:text-sm font-semibold text-zinc-700">Preferred Model / Project *</Label>
+                                                        <select id="projectType" className="w-full h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border border-white/80 focus:border-[#00477b] px-4 text-xs sm:text-sm text-zinc-700">
+                                                            <option value="">Select Delivery Model</option>
+                                                            <option value="fixed">Fixed Scope Project</option>
+                                                            <option value="retainer">Retainer-Based Engagement</option>
+                                                            <option value="hybrid">Hybrid Model (MVP + Retainer)</option>
+                                                            <option value="task">Task-Based Mini Engagement</option>
+                                                            <option value="custom">Custom Architecture Solution</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="message" className="text-xs sm:text-sm font-semibold text-zinc-700">Project Brief & Requirements</Label>
+                                                    <Textarea id="message" rows={3} placeholder="Tell us briefly about your goals, timelines, or technology preferences..." className="rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b] p-3 sm:p-4 text-xs sm:text-sm text-zinc-800" />
+                                                </div>
 
-                                            <div className="text-center pt-1 flex items-center justify-center gap-2 text-xs text-zinc-500 font-medium">
-                                                <Lock className="size-3.5 text-zinc-400" />
-                                                <span>Your information is 100% secure. We never share your data or spam.</span>
-                                            </div>
-                                        </form>
-                                    )}
-                                </div>
-                            </ScrollReveal>
+                                                <div className="pt-2">
+                                                    <Button type="submit" className="w-full bg-[#00477b] hover:bg-[#00335e] text-white h-12 sm:h-13 rounded-full shadow-lg shadow-blue-900/15 text-sm sm:text-base font-bold transition-all duration-300 hover:-translate-y-0.5">
+                                                        Submit Inquiry
+                                                    </Button>
+                                                </div>
+
+                                                <div className="text-center pt-1 flex items-center justify-center gap-2 text-xs text-zinc-500 font-medium">
+                                                    <Lock className="size-3.5 text-zinc-400" />
+                                                    <span>Your information is 100% secure. We never share your data or spam.</span>
+                                                </div>
+                                            </form>
+                                        )}
+                                    </div>
+                                </ScrollReveal>
+                            </div>
                         </div>
                     </div>
                 </div>

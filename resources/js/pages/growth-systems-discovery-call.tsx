@@ -367,7 +367,7 @@ export default function GrowthSystemsDiscoveryCall() {
                 </ScrollReveal>
 
                 {/* Full-width strip wrapping only the cards */}
-                <div className="w-full bg-white/40 backdrop-blur-xl border-y border-white/60 py-6 sm:py-8 my-2">
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-6 sm:py-8 my-2 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 text-left">
                             {[
@@ -386,7 +386,7 @@ export default function GrowthSystemsDiscoveryCall() {
                             ].map((item, idx) => (
                                 <ScrollReveal key={idx} animation="fade-up" delay={100 * (idx + 1)} className="h-full">
                                     <div 
-                                        className="bg-white/80 backdrop-blur-md border border-white/90 rounded-[2rem] p-6 sm:p-7 shadow-sm hover:shadow-lg hover:bg-white transition-all flex flex-col justify-between h-full"
+                                        className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full"
                                     >
                                         <p className="text-zinc-700 text-xs sm:text-sm italic leading-relaxed mb-4 sm:mb-5">
                                             {item.quote}
@@ -416,12 +416,13 @@ export default function GrowthSystemsDiscoveryCall() {
 
             {/* 7. Combined Booking Form & FAQ Section */}
             <section id="booking-form" className="pt-10 sm:pt-14 pb-14 sm:pb-18 bg-transparent">
-                <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 max-w-[1550px] mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-                        {/* Left Side: FAQ */}
+                {/* Headers row outside background strip */}
+                <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 max-w-[1550px] mx-auto mb-6 sm:mb-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-end">
+                        {/* Left Side Header: FAQ */}
                         <div className="lg:col-span-5">
                             <ScrollReveal animation="fade-up" delay={80}>
-                                <div className="mb-5 sm:mb-6 text-left">
+                                <div className="text-left">
                                     <div className="mb-3 inline-flex items-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50 w-fit">
                                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">FAQ</span>
                                     </div>
@@ -433,38 +434,12 @@ export default function GrowthSystemsDiscoveryCall() {
                                     </p>
                                 </div>
                             </ScrollReveal>
-
-                            <div className="space-y-3 sm:space-y-4">
-                                {faqs.map((faq, idx) => {
-                                    const isOpen = faqOpen === idx;
-                                    return (
-                                        <ScrollReveal key={idx} animation="fade-up" delay={60 * (idx + 1)}>
-                                            <div 
-                                                className="bg-white/80 backdrop-blur-xl border border-white/90 rounded-2xl overflow-hidden shadow-sm transition-all"
-                                            >
-                                                <button 
-                                                    onClick={() => setFaqOpen(isOpen ? null : idx)}
-                                                    className="w-full py-3.5 px-4 sm:px-5 text-left flex items-center justify-between font-bold text-xs sm:text-sm text-[#00477b] focus:outline-none"
-                                                >
-                                                    <span>{faq.q}</span>
-                                                    <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
-                                                </button>
-                                                {isOpen && (
-                                                    <div className="px-4 sm:px-5 pb-4 pt-1 text-zinc-600 text-xs sm:text-sm leading-relaxed border-t border-zinc-100">
-                                                        {faq.a}
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </ScrollReveal>
-                                    );
-                                })}
-                            </div>
                         </div>
 
-                        {/* Right Side: Booking Form */}
+                        {/* Right Side Header: Booking Form */}
                         <div className="lg:col-span-7">
                             <ScrollReveal animation="fade-left" delay={120}>
-                                <div className="mb-5 sm:mb-6 text-left">
+                                <div className="text-left">
                                     <div className="mb-3 inline-flex items-center rounded-full bg-white/80 backdrop-blur-md px-4 py-1.5 shadow-sm border border-blue-50 w-fit">
                                         <span className="text-xs font-extrabold uppercase tracking-widest text-[#00477b]">Reserve Your Slot</span>
                                     </div>
@@ -475,90 +450,131 @@ export default function GrowthSystemsDiscoveryCall() {
                                         No hard sales pitch. Just honest advice on what system fits your business stage.
                                     </p>
                                 </div>
+                            </ScrollReveal>
+                        </div>
+                    </div>
+                </div>
 
-                                <div className="bg-white/80 backdrop-blur-2xl border border-white/90 rounded-[2.5rem] p-6 sm:p-8 lg:p-9 shadow-2xl shadow-blue-900/10">
-                                    {formSubmitted ? (
-                                        <div className="text-center py-10">
-                                            <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
-                                                <CheckCircle2 className="size-7" />
-                                            </div>
-                                            <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2">Discovery Call Request Received!</h3>
-                                            <p className="text-zinc-600 text-sm max-w-md mx-auto mb-5">
-                                                We'll review your details and email you calendar slots within 24 hours.
-                                            </p>
-                                            <Button onClick={() => setFormSubmitted(false)} variant="outline" className="rounded-full">
-                                                Submit Another Request
-                                            </Button>
-                                        </div>
-                                    ) : (
-                                        <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
-                                            <div className="space-y-1.5">
-                                                <Label htmlFor="name" className="text-xs sm:text-sm font-bold text-zinc-700">
-                                                    Name *
-                                                </Label>
-                                                <Input 
-                                                    id="name" 
-                                                    required 
-                                                    placeholder="Your Name" 
-                                                    className="h-11 sm:h-12 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b]"
-                                                />
-                                            </div>
-
-                                            <div className="space-y-1.5">
-                                                <Label htmlFor="email" className="text-xs sm:text-sm font-bold text-zinc-700">
-                                                    Email *
-                                                </Label>
-                                                <Input 
-                                                    id="email" 
-                                                    type="email" 
-                                                    required 
-                                                    placeholder="yourname@company.com" 
-                                                    className="h-11 sm:h-12 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b]"
-                                                />
-                                            </div>
-
-                                            <div className="space-y-1.5">
-                                                <Label htmlFor="phone" className="text-xs sm:text-sm font-bold text-zinc-700">
-                                                    Phone Number *
-                                                </Label>
-                                                <Input 
-                                                    id="phone" 
-                                                    type="tel" 
-                                                    required 
-                                                    placeholder="+91 98765 43210" 
-                                                    className="h-11 sm:h-12 rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b]"
-                                                />
-                                            </div>
-
-                                            <div className="space-y-1.5">
-                                                <Label htmlFor="brief" className="text-xs sm:text-sm font-bold text-zinc-700">
-                                                    Business / Project Brief & Current Bottlenecks
-                                                </Label>
-                                                <Textarea 
-                                                    id="brief" 
-                                                    rows={3} 
-                                                    placeholder="Tell us a little about your business, the systems you currently use, and what you're trying to solve..." 
-                                                    className="rounded-xl bg-white/80 border-gray-200 focus:border-[#00477b]"
-                                                />
-                                            </div>
-
-                                            <div className="pt-2">
-                                                <Button 
-                                                    type="submit" 
-                                                    className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 sm:h-14 text-sm sm:text-base font-bold shadow-xl shadow-blue-900/20 transition-all duration-300 hover:-translate-y-0.5"
+                {/* Full-width strip wrapping ONLY the cards (FAQ list & Booking Form) */}
+                <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-12 my-2 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="w-full px-4 sm:px-6 md:px-10 lg:px-16 max-w-[1550px] mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+                            {/* Left Side: FAQ Cards */}
+                            <div className="lg:col-span-5">
+                                <div className="space-y-3 sm:space-y-4">
+                                    {faqs.map((faq, idx) => {
+                                        const isOpen = faqOpen === idx;
+                                        return (
+                                            <ScrollReveal key={idx} animation="fade-up" delay={60 * (idx + 1)}>
+                                                <div 
+                                                    className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-2xl overflow-hidden shadow-sm transition-all"
                                                 >
-                                                    Book Discovery Session Now
+                                                    <button 
+                                                        onClick={() => setFaqOpen(isOpen ? null : idx)}
+                                                        className="w-full py-3.5 px-4 sm:px-5 text-left flex items-center justify-between font-bold text-xs sm:text-sm text-[#00477b] focus:outline-none"
+                                                    >
+                                                        <span>{faq.q}</span>
+                                                        <ChevronDown className={`size-4 transition-transform duration-300 text-zinc-500 shrink-0 ml-3 ${isOpen ? 'rotate-180 text-[#00477b]' : ''}`} />
+                                                    </button>
+                                                    {isOpen && (
+                                                        <div className="px-4 sm:px-5 pb-4 pt-1 text-zinc-600 text-xs sm:text-sm leading-relaxed border-t border-white/40">
+                                                            {faq.a}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </ScrollReveal>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
+                            {/* Right Side: Booking Form Card */}
+                            <div className="lg:col-span-7">
+                                <ScrollReveal animation="fade-left" delay={120}>
+                                    <div className="bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-6 sm:p-8 lg:p-9 shadow-xl shadow-blue-900/5">
+                                        {formSubmitted ? (
+                                            <div className="text-center py-10">
+                                                <div className="size-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3">
+                                                    <CheckCircle2 className="size-7" />
+                                                </div>
+                                                <h3 className="text-xl sm:text-2xl font-bold text-[#00477b] mb-2">Discovery Call Request Received!</h3>
+                                                <p className="text-zinc-600 text-sm max-w-md mx-auto mb-5">
+                                                    We'll review your details and email you calendar slots within 24 hours.
+                                                </p>
+                                                <Button onClick={() => setFormSubmitted(false)} variant="outline" className="rounded-full">
+                                                    Submit Another Request
                                                 </Button>
                                             </div>
+                                        ) : (
+                                            <form onSubmit={handleFormSubmit} className="space-y-4 text-left">
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="name" className="text-xs sm:text-sm font-bold text-zinc-700">
+                                                        Name *
+                                                    </Label>
+                                                    <Input 
+                                                        id="name" 
+                                                        required 
+                                                        placeholder="Your Name" 
+                                                        className="h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b]"
+                                                    />
+                                                </div>
 
-                                            <div className="text-center pt-1 flex items-center justify-center gap-2 text-xs text-zinc-500 font-medium">
-                                                <Lock className="size-3.5 text-zinc-400" />
-                                                <span>We respect your privacy. No spam, ever. Only actionable guidance.</span>
-                                            </div>
-                                        </form>
-                                    )}
-                                </div>
-                            </ScrollReveal>
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="email" className="text-xs sm:text-sm font-bold text-zinc-700">
+                                                        Email *
+                                                    </Label>
+                                                    <Input 
+                                                        id="email" 
+                                                        type="email" 
+                                                        required 
+                                                        placeholder="yourname@company.com" 
+                                                        className="h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b]"
+                                                    />
+                                                </div>
+
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="phone" className="text-xs sm:text-sm font-bold text-zinc-700">
+                                                        Phone Number *
+                                                    </Label>
+                                                    <Input 
+                                                        id="phone" 
+                                                        type="tel" 
+                                                        required 
+                                                        placeholder="+91 98765 43210" 
+                                                        className="h-11 sm:h-12 rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b]"
+                                                    />
+                                                </div>
+
+                                                <div className="space-y-1.5">
+                                                    <Label htmlFor="brief" className="text-xs sm:text-sm font-bold text-zinc-700">
+                                                        Business / Project Brief & Current Bottlenecks
+                                                    </Label>
+                                                    <Textarea 
+                                                        id="brief" 
+                                                        rows={3} 
+                                                        placeholder="Tell us a little about your business, the systems you currently use, and what you're trying to solve..." 
+                                                        className="rounded-xl bg-white/60 backdrop-blur-md border-white/80 focus:border-[#00477b]"
+                                                    />
+                                                </div>
+
+                                                <div className="pt-2">
+                                                    <Button 
+                                                        type="submit" 
+                                                        className="w-full bg-[#00477b] hover:bg-[#00335e] text-white rounded-full h-12 sm:h-14 text-sm sm:text-base font-bold shadow-xl shadow-blue-900/20 transition-all duration-300 hover:-translate-y-0.5"
+                                                    >
+                                                        Book Discovery Session Now
+                                                    </Button>
+                                                </div>
+
+                                                <div className="text-center pt-1 flex items-center justify-center gap-2 text-xs text-zinc-500 font-medium">
+                                                    <Lock className="size-3.5 text-zinc-400" />
+                                                    <span>We respect your privacy. No spam, ever. Only actionable guidance.</span>
+                                                </div>
+                                            </form>
+                                        )}
+                                    </div>
+                                </ScrollReveal>
+                            </div>
                         </div>
                     </div>
                 </div>

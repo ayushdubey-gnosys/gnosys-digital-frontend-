@@ -75,11 +75,11 @@ export default function Contact() {
                         {/* Form Side */}
                         <div className="lg:col-span-7">
                             <ScrollReveal animation="fade-up" delay={100} className="h-full">
-                                <form className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-8 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 transition-all duration-500 h-full flex flex-col justify-between space-y-8 overflow-hidden">
+                                <form className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-8 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 transition-all duration-500 h-full flex flex-col justify-between space-y-8 overflow-hidden">
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                     <div className="relative z-10">
                                         <div className="mb-8">
-                                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
+                                            <span className="inline-block px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">
                                                 SEND US A MESSAGE
                                             </span>
                                             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-normal tracking-tight text-[#00477b]">
@@ -94,33 +94,33 @@ export default function Contact() {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2.5">
                                                     <Label htmlFor="firstName" className="text-[#00477b] font-medium text-sm">Your Name <span className="text-rose-500">*</span></Label>
-                                                    <Input id="firstName" placeholder="John" className="h-14 bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
+                                                    <Input id="firstName" placeholder="John" className="h-14 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
                                                 </div>
                                                 <div className="space-y-2.5">
                                                     <Label htmlFor="surname" className="text-[#00477b] font-medium text-sm">Your Surname <span className="text-rose-500">*</span></Label>
-                                                    <Input id="surname" placeholder="Doe" className="h-14 bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
+                                                    <Input id="surname" placeholder="Doe" className="h-14 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
                                                 </div>
                                             </div>
 
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2.5">
                                                     <Label htmlFor="email" className="text-[#00477b] font-medium text-sm">Your Email <span className="text-rose-500">*</span></Label>
-                                                    <Input id="email" type="email" placeholder="john@example.com" className="h-14 bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
+                                                    <Input id="email" type="email" placeholder="john@example.com" className="h-14 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
                                                 </div>
                                                 <div className="space-y-2.5">
                                                     <Label htmlFor="website" className="text-[#00477b] font-medium text-sm">Website URL</Label>
-                                                    <Input id="website" placeholder="https://example.com" className="h-14 bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
+                                                    <Input id="website" placeholder="https://example.com" className="h-14 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
                                                 </div>
                                             </div>
 
                                             <div className="space-y-2.5">
                                                 <Label htmlFor="subject" className="text-[#00477b] font-medium text-sm">Subject <span className="text-rose-500">*</span></Label>
-                                                <Input id="subject" placeholder="e.g. ERPNext Implementation or Custom Web App" className="h-14 bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
+                                                <Input id="subject" placeholder="e.g. ERPNext Implementation or Custom Web App" className="h-14 bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 text-zinc-800" />
                                             </div>
 
                                             <div className="space-y-2.5">
                                                 <Label htmlFor="message" className="text-[#00477b] font-medium text-sm">Your Message <span className="text-rose-500">*</span></Label>
-                                                <Textarea id="message" placeholder="Briefly describe your requirements, timeline, and goals..." className="min-h-[140px] bg-white/80 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 resize-none p-4 text-zinc-800" />
+                                                <Textarea id="message" placeholder="Briefly describe your requirements, timeline, and goals..." className="min-h-[140px] bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl shadow-sm focus:border-[#00477b] focus:ring-2 focus:ring-[#00477b]/10 resize-none p-4 text-zinc-800" />
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +138,7 @@ export default function Contact() {
                         {/* Details Side */}
                         <div className="lg:col-span-5 flex flex-col justify-between">
                             <ScrollReveal animation="fade-left" delay={150} className="h-full">
-                                <div className="relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.5rem] p-8 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 transition-all duration-500 h-full flex flex-col justify-between space-y-8 overflow-hidden">
+                                <div className="relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.5rem] p-8 sm:p-10 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 transition-all duration-500 h-full flex flex-col justify-between space-y-8 overflow-hidden">
                                     <div className="absolute top-0 right-0 w-40 h-40 bg-blue-400/10 rounded-full blur-2xl pointer-events-none"></div>
                                     <div className="relative z-10">
                                         <span className="inline-block px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-white/80 shadow-sm text-xs font-extrabold text-[#00477b] uppercase tracking-wider mb-4">

@@ -279,7 +279,7 @@ export default function Welcome() {
                     </div>
 
                     <div className="w-full">
-                        <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
+                        <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
                             {[
                                 { 
@@ -311,32 +311,32 @@ export default function Welcome() {
                                     benefit: "High-load stress tested"
                                 },
                                 { 
+                                    icon: ShieldCheck, 
+                                    tag: "RELIABILITY",
+                                    title: "Enterprise Security", 
+                                    desc: "Bank-grade encryption, rigorous automated testing, and compliance built into every release pipeline.",
+                                    benefit: "100% test coverage"
+                                },
+                                { 
                                     icon: Globe, 
                                     tag: "INTERNATIONAL",
                                     title: "Global Expertise", 
                                     desc: "Proven track record delivering enterprise-grade digital systems across North America, Europe, and Asia.",
                                     benefit: "Multi-continent reach"
                                 },
-                                { 
-                                    icon: ShieldCheck, 
-                                    tag: "TRANSPARENCY",
-                                    title: "Full IP Ownership", 
-                                    desc: "You retain 100% intellectual property, code access, and repository ownership with zero lock-in contracts.",
-                                    benefit: "100% code & data rights"
-                                },
                             ].map((item, i) => (
                                 <ScrollReveal key={i} animation="fade-up" delay={i * 80} className="h-full">
-                                    <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden h-full">
+                                    <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-7 sm:p-8 text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden h-full">
                                         {/* Subtle ambient hover glow */}
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                         
                                         {/* Top Header Row with Icon and Tag */}
                                         <div className="relative z-10 flex items-center justify-between mb-6">
-                                            <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center shadow-xs">
+                                            <div className="size-12 rounded-2xl bg-white/80 shadow-sm border border-white/90 text-[#00477b] flex items-center justify-center">
                                                 <item.icon className="size-5 text-[#00477b]" />
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <span className="text-[10px] font-semibold tracking-wider text-[#00477b] bg-white/60 backdrop-blur-md border border-white/80 px-2.5 py-1 rounded-full uppercase">
+                                                <span className="text-[10px] font-semibold tracking-wider text-[#00477b] bg-white/80 backdrop-blur-md border border-white/90 px-2.5 py-1 rounded-full uppercase">
                                                     {item.tag}
                                                 </span>
                                             </div>
@@ -353,7 +353,7 @@ export default function Welcome() {
                                         </div>
 
                                         {/* Verified Footer Pill */}
-                                        <div className="relative z-10 pt-4 border-t border-white/60 mt-auto flex items-center justify-between text-xs font-normal text-zinc-500">
+                                        <div className="relative z-10 pt-4 border-t border-white/50 mt-auto flex items-center justify-between text-xs font-normal text-zinc-500">
                                             <span>{item.benefit}</span>
                                             <CheckCircle2 className="size-4 text-emerald-600 shrink-0" />
                                         </div>
@@ -506,11 +506,11 @@ export default function Welcome() {
                     </div>
 
                     <div className="w-full">
-                        <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
+                        <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 pt-10 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12 w-full">
                             {[1, 2, 3, 4].map((item, idx) => (
                                 <ScrollReveal key={item} animation="fade-up" delay={idx * 100} className="h-full">
-                                    <div className="group relative bg-white/40 backdrop-blur-xl border border-white/60 rounded-[2rem] p-3 hover:bg-white/60 transition-all duration-500 cursor-pointer shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col overflow-hidden h-full">
+                                    <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-3 hover:bg-white/35 transition-all duration-500 cursor-pointer shadow-lg shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-2 flex flex-col overflow-hidden h-full">
 
                                         {/* Product Image Placeholder (Gradient Glass) */}
                                         <div className="relative h-48 w-full rounded-3xl overflow-hidden bg-gradient-to-br from-blue-500/10 via-purple-500/5 to-pink-500/10 border border-white/50 flex flex-col items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
@@ -518,7 +518,7 @@ export default function Welcome() {
                                             <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                                             {/* Center Icon */}
-                                            <div className="size-14 bg-white rounded-2xl flex items-center justify-center shadow-md border border-white/60 text-[#00477b] mb-3 relative z-10">
+                                            <div className="size-14 bg-white/80 rounded-2xl flex items-center justify-center shadow-md border border-white/90 text-[#00477b] mb-3 relative z-10">
                                                 <Package className="size-7 text-[#00477b]" />
                                             </div>
                                             <span className="text-[11px] font-bold text-[#00477b]/70 uppercase tracking-widest relative z-10">Digital Asset</span>
@@ -537,7 +537,7 @@ export default function Welcome() {
                                             </div>
 
                                             {/* Action Button */}
-                                            <Button size="sm" className="w-full bg-white/70 backdrop-blur-md hover:bg-gradient-to-r hover:from-[#00477b] hover:to-[#00335e] text-[#00477b] hover:text-white border border-white/80 hover:border-transparent rounded-full h-11 font-bold transition-all duration-300 shadow-sm hover:shadow-[0_8px_20px_rgb(0,71,123,0.25)] hover:scale-[1.02] cursor-pointer">
+                                            <Button size="sm" className="w-full bg-white/80 backdrop-blur-md hover:bg-gradient-to-r hover:from-[#00477b] hover:to-[#00335e] text-[#00477b] hover:text-white border border-white/80 hover:border-transparent rounded-full h-11 font-bold transition-all duration-300 shadow-sm hover:shadow-[0_8px_20px_rgb(0,71,123,0.25)] hover:scale-[1.02] cursor-pointer">
                                                 Buy Now
                                             </Button>
                                         </div>
@@ -564,7 +564,7 @@ export default function Welcome() {
                     </div>
 
                     <div className="w-full">
-                        <div className="bg-white/40 backdrop-blur-xl border-y border-white/60 pt-12 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
+                        <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 pt-12 pb-16 px-4 sm:px-8 lg:px-12 shadow-lg shadow-blue-900/5">
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto mb-12 w-full">
                             {[
                                 {
@@ -595,17 +595,17 @@ export default function Welcome() {
                                 <ScrollReveal key={i} animation="fade-up" delay={i * 100} className="h-full">
                                     <Link 
                                         href={sol.link}
-                                        className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-7 sm:p-8 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] overflow-hidden h-full cursor-pointer block"
+                                        className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-7 sm:p-8 hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] overflow-hidden h-full cursor-pointer block"
                                     >
                                         {/* Subtle ambient hover glow */}
                                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                         <div>
                                             <div className="relative z-10 flex items-center justify-between w-full mb-6">
-                                                <div className="size-12 rounded-2xl bg-white shadow-md shadow-blue-900/5 border border-white text-[#00477b] flex items-center justify-center shadow-xs transition-transform group-hover:scale-105">
+                                                <div className="size-12 rounded-2xl bg-white/80 shadow-sm border border-white/90 text-[#00477b] flex items-center justify-center transition-transform group-hover:scale-105">
                                                     <sol.icon className="size-5 text-[#00477b]" />
                                                 </div>
-                                                <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/60 backdrop-blur-md text-[#00477b] border border-white/80">
+                                                <span className="text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-md text-[#00477b] border border-white/90">
                                                     {sol.badge}
                                                 </span>
                                             </div>
@@ -628,7 +628,7 @@ export default function Welcome() {
                                             </div>
                                         </div>
 
-                                        <div className="relative z-10 pt-4 border-t border-white/60 mt-auto flex items-center justify-between text-xs font-medium text-[#00477b] group-hover:text-[#00335e] transition-colors">
+                                        <div className="relative z-10 pt-4 border-t border-white/50 mt-auto flex items-center justify-between text-xs font-medium text-[#00477b] group-hover:text-[#00335e] transition-colors">
                                             <span>Explore Path</span>
                                             <div className="size-7 rounded-full bg-white/80 border border-white/90 text-[#00477b] flex items-center justify-center shadow-2xs transition-transform group-hover:translate-x-1">
                                                 <ArrowRight className="size-3.5" />
@@ -835,7 +835,7 @@ export default function Welcome() {
                                 ].map((test, i) => (
                                     <div 
                                         key={i} 
-                                        className="w-[340px] sm:w-[410px] shrink-0 group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2rem] p-6 text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex items-center gap-4 sm:gap-5 overflow-hidden"
+                                        className="w-[340px] sm:w-[410px] shrink-0 group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2rem] p-6 text-left shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex items-center gap-4 sm:gap-5 overflow-hidden"
                                     >
                                         {/* Subtle ambient hover glow */}
                                         <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>

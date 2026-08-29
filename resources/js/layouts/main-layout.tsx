@@ -369,8 +369,27 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             </main>
 
             {/* Footer - Project Theme Aligned */}
-            <footer className="bg-transparent pt-16 pb-0 flex flex-col mt-auto text-zinc-900 border-t border-white/60 relative z-10">
+            <footer className="bg-transparent pt-8 sm:pt-10 pb-0 flex flex-col mt-auto text-zinc-900 border-t border-white/60 relative z-10">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-0 text-left">
+                    {/* Top-Left Gnosys Logo with Compact Padding */}
+                    <div className="mb-6 sm:mb-8">
+                        <Link 
+                            href="/" 
+                            aria-label="Gnosys Digital Home" 
+                            className="inline-block cursor-pointer transition-transform duration-300 hover:scale-105"
+                        >
+                            <img 
+                                src="/gnosysLogo.png" 
+                                alt="Gnosys Digital Logo" 
+                                width="300" 
+                                height="75" 
+                                className="h-10 sm:h-12 md:h-14 w-auto object-contain" 
+                                loading="lazy" 
+                                decoding="async" 
+                            />
+                        </Link>
+                    </div>
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
                         {/* 1. Brand & Contact */}
                         <div className="flex flex-col items-start w-full">
@@ -489,10 +508,10 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
                             {/* Visit Our Portfolio Button Link - Theme Gradient Aligned (Enlarged) */}
                             <div className="mt-6 sm:mt-8 flex flex-col items-start w-full">
-                                <a
-                                    href="https://portfolio.gnosysdigital.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <a 
+                                    href="https://portfolio.gnosysdigital.com/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
                                     className="group relative inline-flex items-center gap-3 px-8 py-3.5 sm:px-9 sm:py-4 rounded-2xl bg-gradient-to-r from-blue-100 via-blue-50 to-pink-100 text-[#00477b] text-[15px] sm:text-base font-bold tracking-wide shadow-[0_4px_14px_rgba(0,71,123,0.08),0_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0_6px_20px_rgba(0,71,123,0.14)] hover:-translate-y-0.5 transition-all duration-300 overflow-hidden cursor-pointer"
                                 >
                                     {/* Shimmer light sweep animation on hover */}
@@ -509,27 +528,8 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
                     </div>
                 </div>
 
-                {/* Big Centered Gnosys Logo - 100% Full Width Edge-to-Edge Frosted Glass Banner */}
-                <div className="w-full bg-white/15 backdrop-blur-md border-y border-white/40 py-6 sm:py-8 mt-6 sm:mt-8 flex items-center justify-center text-center">
-                    <Link 
-                        href="/" 
-                        aria-label="Gnosys Digital Home" 
-                        className="inline-block cursor-pointer"
-                    >
-                        <img 
-                            src="/gnosysLogo.png" 
-                            alt="Gnosys Digital Logo" 
-                            width="360" 
-                            height="90" 
-                            className="h-12 sm:h-16 md:h-18 w-auto object-contain" 
-                            loading="lazy" 
-                            decoding="async" 
-                        />
-                    </Link>
-                </div>
-
                 {/* Clearly Visible 3-Layer Dynamic Curved Wave Divider (Matching Hero Section Multi-Layer Style) */}
-                <div className="w-full overflow-hidden leading-[0] pointer-events-none relative z-10 -mb-2">
+                <div className="w-full overflow-hidden leading-[0] pointer-events-none relative z-10 -mb-2 mt-4">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1440 250"

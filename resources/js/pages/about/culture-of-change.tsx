@@ -129,17 +129,17 @@ export default function CultureOfChange() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-6xl">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 text-left">
                                 
                                 {/* Card 1 */}
                                 <ScrollReveal animation="fade-up" delay={100} className="h-full">
-                                    <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.25rem] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                         <div className="absolute top-0 right-0 w-36 h-36 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                         <div className="relative z-10">
-                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center">
+                                            <div className="size-16 mb-6 rounded-2xl bg-white/80 text-[#00477b] border border-white/90 shadow-sm flex items-center justify-center">
                                                 <Layout className="size-7 text-[#00477b]" />
                                             </div>
                                             <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-[#00477b] mb-3">
@@ -163,11 +163,11 @@ export default function CultureOfChange() {
 
                                 {/* Card 2 */}
                                 <ScrollReveal animation="fade-up" delay={200} className="h-full">
-                                    <div className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
+                                    <div className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.25rem] p-8 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden">
                                         <div className="absolute top-0 right-0 w-36 h-36 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                         <div className="relative z-10">
-                                            <div className="size-16 mb-6 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center">
+                                            <div className="size-16 mb-6 rounded-2xl bg-white/80 text-[#00477b] border border-white/90 shadow-sm flex items-center justify-center">
                                                 <Settings className="size-7 text-[#00477b]" />
                                             </div>
                                             <h3 className="text-2xl sm:text-3xl font-normal tracking-tight text-[#00477b] mb-3">
@@ -210,7 +210,7 @@ export default function CultureOfChange() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-left">
                                 {[
@@ -221,11 +221,11 @@ export default function CultureOfChange() {
                                 ].map((item, idx) => (
                                     <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
                                         <div 
-                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                            className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
                                         >
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                             <div className="relative z-10">
-                                                <div className="size-16 rounded-2xl bg-white border border-white flex items-center justify-center text-[#00477b] mb-6 shadow-md shadow-blue-900/5">
+                                                <div className="size-16 rounded-2xl bg-white/80 border border-white/90 flex items-center justify-center text-[#00477b] mb-6 shadow-sm">
                                                     <item.icon className="size-7 text-[#00477b]" />
                                                 </div>
                                                 <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight">
@@ -259,7 +259,7 @@ export default function CultureOfChange() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-10 sm:py-14 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 py-10 sm:py-14 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="relative max-w-[85rem] mx-auto">
                             
                             {/* Horizontal Roadmap Connector Track */}
@@ -287,7 +287,7 @@ export default function CultureOfChange() {
                                             </div>
 
                                             {/* Content Card */}
-                                            <div className="w-full h-full bg-white/40 backdrop-blur-xl border border-white/70 p-6 sm:p-7 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] group-hover:shadow-2xl group-hover:shadow-blue-900/10 group-hover:bg-white/60 group-hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center overflow-hidden relative">
+                                            <div className="w-full h-full bg-white/20 backdrop-blur-xl border border-white/50 p-6 sm:p-7 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.03)] group-hover:shadow-2xl group-hover:shadow-blue-900/10 group-hover:bg-white/35 group-hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center text-center overflow-hidden relative">
                                                 <div className="absolute top-0 right-0 w-24 h-24 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
                                                 <h3 className="text-xl font-normal text-[#00477b] mb-2 leading-tight tracking-tight relative z-10 group-hover:text-[#00335e] transition-colors">
@@ -319,7 +319,7 @@ export default function CultureOfChange() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-[90rem]">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-left">
                                 {[
@@ -330,11 +330,11 @@ export default function CultureOfChange() {
                                 ].map((item, idx) => (
                                     <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
                                         <div 
-                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                                            className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.25rem] p-8 sm:p-9 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
                                         >
                                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                             <div className="relative z-10">
-                                                <div className="size-16 rounded-2xl bg-white text-[#00477b] border border-white shadow-md shadow-blue-900/5 flex items-center justify-center mb-6">
+                                                <div className="size-16 rounded-2xl bg-white/80 text-[#00477b] border border-white/90 shadow-sm flex items-center justify-center mb-6">
                                                     <item.icon className="size-7 text-[#00477b]" />
                                                 </div>
                                                 <h3 className="text-xl font-normal text-[#00477b] mb-3 leading-tight tracking-tight">
@@ -408,7 +408,7 @@ export default function CultureOfChange() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="bg-white/50 backdrop-blur-2xl border-y border-white/60 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div className="bg-white/20 backdrop-blur-xl border-y border-white/40 py-8 sm:py-10 px-4 sm:px-6 lg:px-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                         <div className="container mx-auto max-w-6xl">
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
                                 {[
@@ -419,7 +419,7 @@ export default function CultureOfChange() {
                                 ].map((item, idx) => (
                                     <ScrollReveal key={idx} animation="fade-up" delay={80 * (idx + 1)} className="h-full">
                                         <div 
-                                            className="group relative bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center justify-between text-center min-h-[220px] overflow-hidden h-full"
+                                            className="group relative bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.25rem] p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col items-center justify-between text-center min-h-[220px] overflow-hidden h-full"
                                         >
                                             <div className="absolute top-0 right-0 w-28 h-28 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
                                             <div className="flex-1 flex items-center justify-center w-full py-4 h-24 relative z-10">
@@ -459,7 +459,7 @@ export default function CultureOfChange() {
                         </div>
                     </ScrollReveal>
 
-                    <div className="w-full bg-white/50 backdrop-blur-2xl border-y border-white/60 py-10 sm:py-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative">
+                    <div className="w-full bg-white/20 backdrop-blur-xl border-y border-white/40 py-10 sm:py-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] relative">
                         {/* Left & Right Gradient Masks */}
                         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-blue-100/90 via-blue-50/60 to-transparent z-20"></div>
                         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-pink-100/90 via-pink-50/60 to-transparent z-20"></div>
@@ -550,7 +550,7 @@ export default function CultureOfChange() {
                             ].map((person, idx) => (
                                 <div 
                                     key={idx} 
-                                    className="group relative w-[320px] sm:w-[360px] bg-white/40 backdrop-blur-xl border border-white/70 rounded-[2.25rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/60 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden shrink-0 select-none text-left"
+                                    className="group relative w-[320px] sm:w-[360px] bg-white/20 backdrop-blur-xl border border-white/50 rounded-[2.25rem] p-6 sm:p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-2xl hover:shadow-blue-900/10 hover:bg-white/35 hover:-translate-y-1.5 transition-all duration-500 flex flex-col justify-between overflow-hidden shrink-0 select-none text-left"
                                 >
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-all duration-500 pointer-events-none"></div>
 
